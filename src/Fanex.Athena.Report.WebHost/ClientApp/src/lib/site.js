@@ -1,0 +1,89 @@
+const _rootUrl = window.rootUrl || "/";
+const _isSelfMode = !!window.isSelfMode;
+let _xsrfToken = null;
+export default class Site {
+    static getXsrfToken() {
+        if (!_xsrfToken) {
+            _xsrfToken = document.querySelector("input[name=__RequestVerificationToken]").value;
+        }
+
+        return _xsrfToken;
+    }
+
+    static resolveClientUrl(relativeUrl) {
+        return _rootUrl + relativeUrl;
+    }
+
+    static getLrfSubsidiary() {
+        try {
+            return (_isSelfMode && top.getLrfSubsidiarySearch && top.getLrfSubsidiarySearch()) || {}
+        } catch (e) {
+            return {}
+        }
+    }
+
+    static convertDateToString(date) {
+        return typeof date === "string" ? date : date.format("MM/DD/YYYY");
+    }
+
+    static isEmptyObject(obj = {}) {
+        return Object.entries(obj).length === 0 && obj.constructor === Object
+    }
+
+
+    static asNull(text) {
+        if (text != null) {
+            text = text.trim();
+            if (text === '') {
+                return null;
+            }
+        }
+
+        return text;
+    }
+
+    static downloadFile(data, fileName) {
+        const url = window.URL.createObjectURL(new Blob([data]));
+        const link = document.createElement('a');
+        link.href = url;
+        link.setAttribute('download', fileName);
+        document.body.appendChild(link);
+        link.click();
+        link.parentNode.removeChild(link);
+        window.URL.revokeObjectURL(url);
+    }
+
+    static readAsJson(blob, callback) {
+        const reader = new FileReader();
+        reader.onload = function () {
+            callback && callback(JSON.parse(reader.result));
+        }
+        reader.readAsText(blob);
+    }
+
+    static getRootUrl() {
+        return _rootUrl;
+    }
+
+    static setCookie(cname, cvalue, exdays) {
+        const d = new Date();
+        d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+        let expires = "expires=" + d.toUTCString();
+        document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+    }
+
+    static getCookie(cname) {
+        let name = cname + "=";
+        let ca = document.cookie.split(';');
+        for (let i = 0; i < ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
+}

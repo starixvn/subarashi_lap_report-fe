@@ -1,0 +1,35 @@
+﻿@model (string identity, string rootURL)
+<script type="text/javascript" language="javascript">
+    function getJSON(url, onSuccess) {
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.open('GET', url, true);
+        xmlhttp.onreadystatechange = function () {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                if (typeof (onSuccess) === "function") {
+                    var data = JSON.parse(xmlhttp.responseText);
+                    onSuccess(data);
+                }
+            }
+        };
+
+        xmlhttp.send(null);
+    }
+
+    window.onload = function () {
+        var internalSessionUrl = '@Model.rootURL' + 'Utility/SessionIsAlive' + '?identityName=' + '@Model.identity';
+        var internalSignOutUrl = '@Model.rootURL' + 'Authorization/InternalSignOut';
+        var umUrl = '@Model.rootURL' + 'Utility/UnderMaintenance';
+        setInterval(function () {
+            getJSON(internalSessionUrl, function (data) {
+                if (data.IsUM === true) {
+                    document.location.href = umUrl;
+                } else if (data.IsAuthenticated === false) {
+                    document.location.href = internalSignOutUrl;
+                } else {
+                    //no thing
+                }
+            });
+        }, 30000);
+    };
+
+</script>

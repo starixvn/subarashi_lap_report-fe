@@ -1,0 +1,2 @@
+export const SET_DATE_RANGE = 'SET_DATE_RANGE';
+export const TOGGLE_LOADER = 'TOGGLE_LOADER';

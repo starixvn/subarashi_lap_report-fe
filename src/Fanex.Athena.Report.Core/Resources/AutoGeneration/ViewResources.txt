@@ -1,0 +1,8 @@
+﻿
+
+// Generated helper templates
+// Generated items
+// Fanex.Athena.Report.ClientApp\ClientApp\src\languages\ViewResources.zh-CN.js
+// Fanex.Athena.Report.ClientApp\ClientApp\src\languages\ViewResources.vi-VN.js
+// Fanex.Athena.Report.ClientApp\ClientApp\src\languages\ViewResources.js
+
