@@ -14,10 +14,15 @@
 
 // components styles
 @import "components/3rd-custom";
-
+@import "components/legion-lib";
 @import "components/loader";
 @import "components/date-range";
+
+@import "components/popup";
 
 // layout styles
 @import "layout/filter";
 @import "layout/content";
+
+// // pages styles
+// @import "pages/settledmatchcount";

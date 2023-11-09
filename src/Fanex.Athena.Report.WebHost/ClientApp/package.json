@@ -21,6 +21,7 @@
     "redux-thunk": "^2.4.2"
   },
   "devDependencies": {
+    "@9softstudio/react-grid": "^1.0.10",
     "@babel/core": "^7.23.2",
     "@babel/preset-env": "^7.23.2",
     "@babel/preset-react": "^7.22.15",

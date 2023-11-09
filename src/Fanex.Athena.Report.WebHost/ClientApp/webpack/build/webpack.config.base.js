@@ -15,7 +15,7 @@ module.exports = {
         extensions: [".js", ".jsx"],
     },
     output: {
-        filename: "[name].chunk.js",
+        filename: "[name].js",
         chunkFilename: "js/pages/[name].[contenthash].chunk.js",
         path: path.join(pathConfig.projectRoot, "wwwroot"),
     },
@@ -49,13 +49,14 @@ module.exports = {
     plugins: [
         new MiniCssExtractPlugin({
             filename: '[name].css', // Name of the output CSS file
-            chunkFilename: 'css/[name].chunks.css'
+            chunkFilename: 'css/pages/[name].[contenthash].chunk.css'
         }),
         new CleanWebpackPlugin(),
         new RemoveEmptyScriptsPlugin(),
     ],
     optimization: {
         splitChunks: {
+            chunks: "all",
             minSize: 17000,
             minRemainingSize: 0,
             maxAsyncRequests: 30,
@@ -63,22 +64,22 @@ module.exports = {
             automaticNameDelimiter: "_",
             enforceSizeThreshold: 30000,
             cacheGroups: {
-                commons: {
-                    name: 'js/common',
-                    filename: "[name].chunk.js",
-                    chunks: 'initial',
-                    minChunks: 2,
-                    priority: -10,
-                },
                 vendor: {
                     test: /[\\/]node_modules[\\/]/,
                     priority: -5,
-                    reuseExistingChunk: true,
-                    chunks: "all",
                     minChunks: 1,
                     name: "js/vendor",
-                    minSize: 0,
                     filename: "[name].chunk.js",
+                    reuseExistingChunk: true,
+
+                },
+                commons: {
+                    name: 'js/common',
+                    filename: "[name].chunk.js",
+                    minChunks: 2,
+                    priority: -10,
+                    reuseExistingChunk: true,
+
                 },
                 default: false
             },

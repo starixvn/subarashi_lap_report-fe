@@ -1,2 +1,6 @@
 export const SET_DATE_RANGE = 'SET_DATE_RANGE';
 export const TOGGLE_LOADER = 'TOGGLE_LOADER';
+
+export const SET_REQUEST_PARAM = 'SET_REQUEST_PARAM';
+export const SET_GRID_DATA = 'SET_GRID_DATA';
+export const USER_GUIDE_CONTENT = 'USER_GUIDE_CONTENT';

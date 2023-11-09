@@ -5,11 +5,10 @@ import App from "./App";
 
 const root = createRoot(document.getElementById("root"));
 const _rootUrl = window.rootUrl || "/";
-
 root.render(
-    <React.StrictMode>
+    <React.Fragment>
         <BrowserRouter basename={_rootUrl}>
             <App />
         </BrowserRouter>
-    </React.StrictMode>
+    </React.Fragment>
 );

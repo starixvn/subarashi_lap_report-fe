@@ -11,10 +11,10 @@ const App = () => {
                 <Route index element={<div><h1>Report Client App is Running ...</h1></div>} />
                 <Route path="SettledMatchCountReport/*" element={<RouteConfig.SettledMatchCountRoute />} />
                 <Route path="WeeklyLiveMatchReport/*" element={<RouteConfig.WeeklyLiveMatchRoute />} />
-                <Route path="*" element={<NotFound/>} />
+                <Route path="*" element={<NotFound />} />
             </Route>
         </Routes>
     );
 };
 
-export default App;
+export default React.memo(App);

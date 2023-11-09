@@ -26,16 +26,16 @@
     </div>
     <script defer src="@UrlHelper.ContentLink("/js/vendor.chunk.js", rootUrl, webRootPath, cdnDomain)"></script>
     <script defer src="@UrlHelper.ContentLink("/js/common.chunk.js", rootUrl, webRootPath, cdnDomain)"></script>
-    <script defer src="@UrlHelper.ContentLink("/js/index.chunk.js", rootUrl, webRootPath, cdnDomain)"></script>
+    <script defer src="@UrlHelper.ContentLink("/js/index.js", rootUrl, webRootPath, cdnDomain)"></script>
     <script type="text/javascript">
         var PageLanguage = "@langCode";
         window.rootUrl = '@rootUrl';
     </script>
 
-    <script src="@UrlHelper.ContentLink("/js/lang-en-US.chunk.js", rootUrl, webRootPath, cdnDomain)"></script>
+    <script src="@UrlHelper.ContentLink("/js/languages/lang-en-US.js", rootUrl, webRootPath, cdnDomain)"></script>
     @if (langCode != "en-US")
     {
-        <script src = "@UrlHelper.ContentLink("/js/lang-" + langCode + ".chunk.js", rootUrl, webRootPath, cdnDomain)" ></script>
+        <script src="@UrlHelper.ContentLink("/js/languages/lang-" + langCode + ".js", rootUrl, webRootPath, cdnDomain)"></script>
     }
 
     @if (!isSelfMode)

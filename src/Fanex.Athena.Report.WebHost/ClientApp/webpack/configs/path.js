@@ -8,15 +8,13 @@ const scriptPath = {
     [`${jsPath}/index`]: "./src/index.js",
 
     // language script
-    [`${jsPath}/lang-en-US`]: "./src/languages/ViewResources.js",
-    [`${jsPath}/lang-vi-VN`]: "./src/languages/ViewResources.vi-VN.js",
-    [`${jsPath}/lang-zh-CN`]: "./src/languages/ViewResources.zh-CN.js",
+    [`${jsPath}/languages/lang-en-US`]: "./src/languages/ViewResources.js",
+    [`${jsPath}/languages/lang-vi-VN`]: "./src/languages/ViewResources.vi-VN.js",
+    [`${jsPath}/languages/lang-zh-CN`]: "./src/languages/ViewResources.zh-CN.js",
 };
 
 const stylePath = {
     [`${cssPath}/index`]: "./src/styles/index.scss",
-
-    // report styles
 };
 
 module.exports = {

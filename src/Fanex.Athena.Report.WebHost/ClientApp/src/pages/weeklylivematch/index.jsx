@@ -12,7 +12,6 @@ const WeeklyLiveMatch = (props) => {
     );
 
     const store = Store.createStore(reducer, defaultState);
-
     return (
         <Provider store={store}>
             <AppContainer />

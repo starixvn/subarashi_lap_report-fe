@@ -1,6 +1,7 @@
 ﻿import React, { useState } from 'react';
 import Popup from './Popup';
 import PropTypes from 'prop-types';
+import {USER_GUIDE_WIDTH, USER_GUIDE_HEIGHT} from '@srcRoot/constants/config';
 
 const UserGuide = (props) => {
     const [isShow, setIsShow] = useState(false);
@@ -21,7 +22,7 @@ const UserGuide = (props) => {
     return (
         <div>
             <i className={className} onClick={_onClickHandler} title={title}></i>
-            <Popup width={640} height={480} isShow={isDisplay} title={contentTitle} onClose={_onCloseHandler} isHtml={isHtml}>
+            <Popup width={USER_GUIDE_WIDTH} height={USER_GUIDE_HEIGHT} isShow={isDisplay} title={contentTitle} onClose={_onCloseHandler} isHtml={isHtml}>
                 {content}
             </Popup>
         </div>

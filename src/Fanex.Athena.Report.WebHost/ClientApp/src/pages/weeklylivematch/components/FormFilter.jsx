@@ -49,7 +49,6 @@ const FormFilter = (props) => {
         const params = _getParams();
         DataService.postReportData(ApiUrl.REPORT_DATA_URL, params)
             .then(response => {
-                console.log(response.data);
                 props.toggleLoader(false);
             })
             .catch(error => {

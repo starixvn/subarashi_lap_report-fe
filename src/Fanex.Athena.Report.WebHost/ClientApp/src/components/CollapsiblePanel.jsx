@@ -35,11 +35,11 @@ const CollapsiblePanel = (props) => {
     };
 
     return (
-        <div className={`${props.className}`}>
+        <div className={`${props.className} ${props.children ? `` : `min`}`}>
             <div style={{ display: isCollapsed ? 'none' : 'block' }}>
-                {props.children}
+                {props.children? props.children : <div style={{opacity: 0}}>Extend Row</div>}
             </div>
-            <div className='caret-block'>
+            <div className={`caret-block ${props.children ? `` : `min`}`}>
                 {stickyFooter}
             </div>
             {!!props.isCollapseMode && <div className="filter-handle" style={iconContainerStyle} onClick={_onClick}>
