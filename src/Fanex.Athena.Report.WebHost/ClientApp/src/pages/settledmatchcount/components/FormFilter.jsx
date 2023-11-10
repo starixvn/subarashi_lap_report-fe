@@ -10,7 +10,7 @@ import DataService from '@srcRoot/lib/DataService';
 const FormFilter = (props) => {
   const dispatch = useDispatch();
   const userGuideContent = useSelector((state) => state.userGuideContent);
-  const { getUserGuideContent, setMatches } = ActionCreators;
+  const { getUserGuideContent, setGridData } = ActionCreators;
   const { sendRequest } = useToggleRequest();
 
   useEffect(() => {
@@ -19,7 +19,7 @@ const FormFilter = (props) => {
 
   const _updateData = (result) => {
     if (result != null) {
-      dispatch(setMatches(result.data));
+      dispatch(setGridData(result.data));
     }
   }
 

@@ -1,17 +1,22 @@
 import React from "react";
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { DateRange } from '@srcRoot/components/date-range';
 import CollapsiblePanel from '@srcRoot/components/CollapsiblePanel';
+import UserGuide from "@srcRoot/components/UserGuide";
 import LangHelper from "@srcRoot/helpers/langHelper";
 import { ActionCreators } from '../actions';
-import moment from "moment";
 import DataService from '@srcRoot/lib/DataService';
+import useToggleRequest from "@srcRoot/hooks/useToggleRequest";
 import Site from '@srcRoot/lib/site';
-import { ApiUrl } from '../constants/apiUrl';
+import Constants from '../constants/index';
 
 const FormFilter = (props) => {
-    const dateConstraint = { minDate: '01/01/2012', maxDate: moment().add(-1, 'd').format("MM/DD/yyyy"), limitedMonthRange: null };
+    const dispatch = useDispatch();
+    const { ApiUrl, DateConstraint } = Constants;
+    const { setDateRange, setGridData, getUserGuideContent } = ActionCreators;
+    const { sendRequest } = useToggleRequest();
+    const dateRange = useSelector(state => state.dateRange);
+    const userGuideContent = useSelector(state => state.userGuideContent);
 
     const isValidModel = () => {
         const result = true;
@@ -20,7 +25,7 @@ const FormFilter = (props) => {
 
     const _onChangeDateRange = (range, isValid = true) => {
         if (isValid) {
-            props.setDateRange(range);
+            dispatch(setDateRange(range));
         } else {
             const message = LangHelper.getSingleResource("DateRangeExceedMsg").replace("{0}", dateConstraint.limitedMonthRange);
             alert(message);
@@ -30,47 +35,71 @@ const FormFilter = (props) => {
     const _renderDateFilter = () => {
         return (
             <DateRange
-                startDate={props.dateRange.fromDate} endDate={props.dateRange.toDate}
-                minDate={dateConstraint.minDate} maxDate={dateConstraint.maxDate}
-                today={props.dateRange.toDate} limitedMonthRange={dateConstraint.limitedMonthRange}
+                startDate={dateRange.fromDate} endDate={dateRange.toDate}
+                minDate={DateConstraint.minDate} maxDate={DateConstraint.maxDate}
+                today={dateRange.toDate} limitedMonthRange={DateConstraint.limitedMonthRange}
                 onChange={_onChangeDateRange}
             />
         )
     }
 
     const _renderSupportButton = () => {
-        return (<div></div>);
+        return (
+            <>
+                <i
+                    className="icon-excel right"
+                    onClick={onExportExcel}
+                    title={LangHelper.getSingleResource("ExportToExcel")}
+                ></i>
+                <UserGuide
+                    title={LangHelper.getSingleResource("UserGuide")}
+                    contentTitle={LangHelper.getSingleResource("WeeklyLiveMatches")}
+                    onClick={() => dispatch(getUserGuideContent("WeeklyLiveMatches", true))}
+                    content={userGuideContent}
+                />
+            </>
+        );
     }
 
-    const onSubmit = (event) => {
-        event.preventDefault();
-        props.toggleLoader(true);
-
-        const params = _getParams();
-        DataService.postReportData(ApiUrl.REPORT_DATA_URL, params)
-            .then(response => {
-                props.toggleLoader(false);
-            })
-            .catch(error => {
-                alert(LangHelper.getSingleResource('ErrorProcessingMsg'));
-                props.toggleLoader(false);
-            })
+    const _updateData = (result) => {
+        if (result != null) {
+            dispatch(setGridData(result.data));
+        }
     }
 
     const _getParams = () => {
-        if (!isValidModel()) {
-            return null;
-        }
-
-        const { fromDate, toDate } = props.dateRange;
+        const { fromDate, toDate } = dateRange;
         return {
             FromDate: Site.convertDateToString(fromDate),
             ToDate: Site.convertDateToString(toDate),
         };
     }
 
+    const onSubmit = (event) => {
+        event.preventDefault();
+        const params = _getParams();
+        sendRequest(() => DataService.postReportData(ApiUrl.REPORT_DATA_URL, params), _updateData);
+    }
+
+    const _downLoadExcel = (response) => {
+        const NoContentStatusCode = 204;
+
+        if (response.status === NoContentStatusCode) {
+            alert(LangHelper.getSingleResource("NoInfo"));
+        }
+        else {
+            const fileName = 'WeeklyLiveMatches.xls';
+            Site.downloadFile(response.data, fileName);
+        }
+    }
+
+    const onExportExcel = () => {
+        const params = _getParams();
+        sendRequest(() => DataService.getProxyFile(DataService.apiKeys.report, ApiUrl.EXPORT_REPORT_DATA_URL, params), _downLoadExcel);
+    }
+
     return (
-        <CollapsiblePanel className="page-filter" stickyFooter={_renderSupportButton()}>
+        <CollapsiblePanel className="page-filter" stickyFooter={_renderSupportButton()} isCollapseMode={false}>
             <div className="row">
                 <div className="col-12 col-md-3 col-sm-6 col-lg-4 col-xl-2">
                     <div className="form-group">
@@ -90,16 +119,4 @@ const FormFilter = (props) => {
     );
 }
 
-function mapStateToProps(state) {
-    const { dateRange } = state;
-
-    return Object.assign({}, { dateRange });
-}
-
-function mapDispatchToProps(dispatch) {
-    const { toggleLoader, setDateRange } = ActionCreators;
-    return bindActionCreators({ toggleLoader, setDateRange }, dispatch);
-}
-
-
-export default connect(mapStateToProps, mapDispatchToProps)(FormFilter);
+export default FormFilter;

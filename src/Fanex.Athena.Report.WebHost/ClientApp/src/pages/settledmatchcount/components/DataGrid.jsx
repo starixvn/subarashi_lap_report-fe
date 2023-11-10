@@ -7,8 +7,8 @@ import { Table, Row, Cell, HeaderRow, HeaderCell } from '@9softstudio/react-grid
 import NoDataTitle from "@srcRoot/components/NoDataTitle";
 
 const DataGrid = (props) => {
-  const data = useSelector(state => state.matches)
-  if (!data) {
+  const gridData = useSelector(state => state.gridData);
+  if (JSON.stringify(gridData) === JSON.stringify({})) {
     return <NoDataTitle />;
   }
 
@@ -34,7 +34,7 @@ const DataGrid = (props) => {
 
   }
 
-  const _buildBody = () => {
+  const _buildBody = (data) => {
     return data.map((item) => {
       return (
         <Row key={`settled_match_count_row_${item.sportName}`}>
@@ -55,7 +55,7 @@ const DataGrid = (props) => {
         maxWidth={MAX_WIDTH_PAGE}
         autoHeight={true}
         header={_buildHeader()}
-        body={_buildBody()}
+        body={_buildBody(gridData)}
         containerPadding={30}
         shouldResetScrollPosition={true} />
     </React.Fragment>

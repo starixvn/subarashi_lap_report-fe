@@ -5,11 +5,19 @@ import Store from "@srcRoot/lib/store";
 import reducer from './reducers';
 import moment from 'moment/moment';
 
+// import styles
+import "@srcRoot/styles/pages/_weeklylivematch.scss";
+
+
 const WeeklyLiveMatch = (props) => {
     const toDate = moment().add(-1, 'd');
-    const defaultState = Object.assign({},
-        { dateRange: { fromDate: toDate.clone().weekday(1).format("MM/DD/yyyy"), toDate: toDate.format("MM/DD/yyyy") } }
-    );
+    const initData = {
+        dateRange: {
+            fromDate: toDate.clone().weekday(1).format("MM/DD/yyyy"),
+            toDate: toDate.format("MM/DD/yyyy")
+        }
+    }
+    const defaultState = Object.assign({}, initData);
 
     const store = Store.createStore(reducer, defaultState);
     return (

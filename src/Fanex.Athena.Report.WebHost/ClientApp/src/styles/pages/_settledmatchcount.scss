@@ -1,21 +1,23 @@
 .table {
-    table-layout: fixed;
-    width: 100%;
+    line-height: 1.5;
 }
 
-.table>thead>tr>th {
-    vertical-align: middle;
-    text-align: center;
-    background: #d1dae1;
-    border: 1px solid #ffffff;
-    border-top: 1px solid #d1dae1;
-    color: #314453;
-    font-weight: 500;
-    padding: 2px 5px;
-    border-radius: 0;
-}
+// .body-content {
+//     max-height: calc(100% - 20px) !important;
+// }
 
-.table>thead>tr>th {
-    background: #4C6375;
-    color: #fff;
+.header-content {
+
+    .table>thead>tr>th {
+        vertical-align: middle;
+        text-align: center;
+        border: 1px solid #ffffff;
+        border-top: 1px solid #d1dae1;
+        border-radius: 0;
+        font-weight: 500;
+        padding: 2px 5px;
+        background: #4C6375;
+        color: #fff;
+    }
+
 }
