@@ -4,22 +4,22 @@
 		<Nullable>enable</Nullable>
 		<ImplicitUsings>enable</ImplicitUsings>
 	</PropertyGroup>
+	
 	<ItemGroup>
-		<EmbeddedResource Remove="wwwroot\css\**" />
+	  <Compile Remove="ClientApp\**" />
+	  <Content Remove="ClientApp\**" />
+	  <EmbeddedResource Remove="ClientApp\**" />
+	  <!--<None Remove="ClientApp\**" />-->
 	</ItemGroup>
 	
 	<ItemGroup>
 		<PackageReference Include="IdentityModel.AspNetCore.OAuth2Introspection" Version="6.2.0" />
 	</ItemGroup>
-	
-	<ItemGroup>
-		<Folder Include="ClientApp\" />
-	</ItemGroup>
 
 	<ItemGroup>
 	  <ProjectReference Include="..\Fanex.Athena.Report.Core\Fanex.Athena.Report.Core.csproj" />
 	</ItemGroup>
-
+	
 	<ItemGroup>
 	  <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
 	</ItemGroup>

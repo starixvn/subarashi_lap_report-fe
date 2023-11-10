@@ -25,3 +25,6 @@ bld/
 msbuild.log
 msbuild.err
 msbuild.wrn
+
+# publish folder
+[Pp]ublish/

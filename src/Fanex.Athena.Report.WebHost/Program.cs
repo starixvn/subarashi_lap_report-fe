@@ -30,6 +30,8 @@ services.AddCore();
 
 var app = builder.Build();
 
+app.MapGet("/", () => "LAP Report Client App is Running ...");
+
 app.UseForwardedHeaders();
 
 app.UseStaticFiles();

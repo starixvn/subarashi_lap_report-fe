@@ -5,7 +5,7 @@ import { ActionCreators } from "../actions/index";
 import LangHelper from "@srcRoot/helpers/langHelper";
 import CollapsiblePanel from "@srcRoot/components/CollapsiblePanel";
 import UserGuide from "@srcRoot/components/UserGuide";
-import DataService from '@srcRoot/lib/DataService';
+import DataService from '@srcRoot/lib/dataService';
 
 const FormFilter = (props) => {
   const dispatch = useDispatch();
@@ -18,9 +18,11 @@ const FormFilter = (props) => {
   }, []);
 
   const _updateData = (result) => {
-    if (result != null) {
+    if (result && result.data !== null) {
       dispatch(setGridData(result.data));
+      return;
     }
+    dispatch(setGridData(null));
   }
 
   const SupportButton = (

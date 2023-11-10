@@ -1,18 +1,18 @@
 import React from "react";
 import { useDispatch, useSelector } from 'react-redux';
-import { DateRange } from '@srcRoot/components/date-range';
+import { DateRange } from '@legion-lib/react-daterangepicker';
 import CollapsiblePanel from '@srcRoot/components/CollapsiblePanel';
 import UserGuide from "@srcRoot/components/UserGuide";
 import LangHelper from "@srcRoot/helpers/langHelper";
 import { ActionCreators } from '../actions';
-import DataService from '@srcRoot/lib/DataService';
+import DataService from '@srcRoot/lib/dataService';
 import useToggleRequest from "@srcRoot/hooks/useToggleRequest";
 import Site from '@srcRoot/lib/site';
 import Constants from '../constants/index';
 
 const FormFilter = (props) => {
     const dispatch = useDispatch();
-    const { ApiUrl, DateConstraint } = Constants;
+    const { ApiUrl, DateConstraint, FirstDayOfWeek } = Constants;
     const { setDateRange, setGridData, getUserGuideContent } = ActionCreators;
     const { sendRequest } = useToggleRequest();
     const dateRange = useSelector(state => state.dateRange);
@@ -27,7 +27,7 @@ const FormFilter = (props) => {
         if (isValid) {
             dispatch(setDateRange(range));
         } else {
-            const message = LangHelper.getSingleResource("DateRangeExceedMsg").replace("{0}", dateConstraint.limitedMonthRange);
+            const message = LangHelper.getSingleResource("DateRangeExceedMsg").replace("{0}", DateConstraint.limitedMonthRange);
             alert(message);
         }
     }
@@ -37,8 +37,10 @@ const FormFilter = (props) => {
             <DateRange
                 startDate={dateRange.fromDate} endDate={dateRange.toDate}
                 minDate={DateConstraint.minDate} maxDate={DateConstraint.maxDate}
-                today={dateRange.toDate} limitedMonthRange={DateConstraint.limitedMonthRange}
+                today={DateConstraint.toDay} limitedMonthRange={DateConstraint.limitedMonthRange}
+                firstDayOfWeek={FirstDayOfWeek}
                 onChange={_onChangeDateRange}
+                langHandler={key => LangHelper.getSingleResource(key)}
             />
         )
     }
@@ -62,9 +64,11 @@ const FormFilter = (props) => {
     }
 
     const _updateData = (result) => {
-        if (result != null) {
+        if (result && result.data !== null) {
             dispatch(setGridData(result.data));
+            return;
         }
+        dispatch(setGridData(null));
     }
 
     const _getParams = () => {

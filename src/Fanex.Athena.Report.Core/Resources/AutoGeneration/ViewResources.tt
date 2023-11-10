@@ -14,7 +14,7 @@
 	var manager = TemplateFileManager.Create(this);	
 	string[] filePaths = Directory.GetFiles(solutionPath, "ViewResources*.resx", SearchOption.AllDirectories);
 	string[] outputPaths = new [] { 
-				$"{solutionPath}\\Fanex.Athena.Report.ClientApp\\ClientApp\\src\\languages",
+				$"{solutionPath}\\src\\Fanex.Athena.Report.WebHost\\ClientApp\\src\\languages",
 	};
 	foreach(var filePath in filePaths)
 	{        
