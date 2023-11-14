@@ -13,6 +13,10 @@
         string IdentityName { get; }
         byte AppMode { get; }
 
+        public bool IsAdministrator { get; }
+
+        public IEnumerable<string> GetFunctionKeys();
+
         bool ForceIgnoreSharding { get; }
 
         bool IsInRoles(params string[] roles);

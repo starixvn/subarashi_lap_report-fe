@@ -35,13 +35,23 @@ namespace Fanex.Athena.Report.Core.Services
         public string IdentityName => GetClaimValue("name");
 
         public byte AppMode => IdentityName.StartsWith(Portal_Identity_Key, StringComparison.OrdinalIgnoreCase) ? Constants.AppMode.LAP : Constants.AppMode.LRF;
+
         public bool IsFakeLicensee => GetClaimValue<bool>("IsFakeLicensee");
+
+        public bool IsAdministrator => GetClaimValue("Administrator", false);
 
         public string SiteDBServer => GetClaimValue("SiteDBServer");
 
         public bool IsInRoles(params string[] roles)
         {
             return Array.Exists(roles, x => User.IsInRole(x));
+        }
+
+        public IEnumerable<string> GetFunctionKeys()
+        {
+            return User.Claims
+            .Where(_ => _.Type.Equals("role", StringComparison.OrdinalIgnoreCase))
+            .Select(_ => _.Value).ToList();
         }
 
         public bool ForceIgnoreSharding => bool.TrueString.Equals(Context.Request.Headers["X-IgnoreSharding"], StringComparison.OrdinalIgnoreCase);

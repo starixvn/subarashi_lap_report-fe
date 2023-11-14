@@ -7,6 +7,8 @@
     var rootUrl = string.Concat(HttpContextAccessor?.HttpContext?.Request.Headers["RootUrl"].ToString().TrimEnd('/'), "/");
     var cdnDomain = appSettings.StaticDomain;
     var webRootPath = WebHostEnviroment.WebRootPath;
+    var functionKeys = contextService.GetFunctionKeys();
+    var isAdmin = contextService.IsAdministrator;
 }
 <!DOCTYPE html>
 
@@ -29,7 +31,9 @@
     <script defer src="@UrlHelper.ContentLink("/js/index.js", rootUrl, webRootPath, cdnDomain)"></script>
     <script type="text/javascript">
         var PageLanguage = "@langCode";
-        window.rootUrl = '@rootUrl';
+        window.rootUrl = "@rootUrl";
+        window.functionKeys = @Html.Raw(Json.Serialize(functionKeys));
+        window.isAdmin = "@isAdmin";
     </script>
 
     <script src="@UrlHelper.ContentLink("/js/languages/lang-en-US.js", rootUrl, webRootPath, cdnDomain)"></script>

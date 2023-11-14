@@ -86,4 +86,16 @@ export default class Site {
         }
         return "";
     }
+
+    static redirectToUrl(url) {
+        window.location.replace(this.resolveClientUrl(url));
+    }
+
+    static getFunctionKeys() {
+        return Object.values(window.functionKeys);
+    }
+
+    static isAdmin() {
+        return window.isAdmin == "True";
+    }
 }

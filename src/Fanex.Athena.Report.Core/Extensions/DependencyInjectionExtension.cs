@@ -6,7 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Fanex.Athena.Report.Core.Extensions
 {
-    public static class DefendencyInjectionExtension
+    public static class DependencyInjectionExtension
     {
         public static IServiceCollection AddSettings(this IServiceCollection services, IConfiguration configuration)
         {
