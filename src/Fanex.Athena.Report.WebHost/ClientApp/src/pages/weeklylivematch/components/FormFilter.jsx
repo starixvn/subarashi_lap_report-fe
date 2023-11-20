@@ -48,11 +48,7 @@ const FormFilter = (props) => {
     const _renderSupportButton = () => {
         return (
             <>
-                <i
-                    className="icon-excel right"
-                    onClick={onExportExcel}
-                    title={LangHelper.getSingleResource("ExportToExcel")}
-                ></i>
+                <i className="icon-excel right" onClick={onExportExcel} title={LangHelper.getSingleResource("ExportToExcel")} />
                 <UserGuide
                     title={LangHelper.getSingleResource("UserGuide")}
                     contentTitle={LangHelper.getSingleResource("WeeklyLiveMatches")}

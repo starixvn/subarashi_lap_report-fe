@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Routes, BrowserRouter, RouterProvider, createBrowserRouter, createRoutesFromElements } from "react-router-dom";
+import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from "react-router-dom";
 import RouteConfig from "./routes";
 import AppLayout from "./layouts/AppLayout";
 import NotFound from "./pages/NotFound";
