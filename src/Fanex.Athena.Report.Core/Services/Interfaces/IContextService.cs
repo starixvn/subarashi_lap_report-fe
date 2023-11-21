@@ -2,23 +2,12 @@
 {
     public interface IContextService
     {
-        int LicenseeId { get; }
-        string Language { get; }
-        string SiteName { get; }
-        string SiteDBServer { get; }
-        bool IsAllowedCustomerComm { get; }
-        bool IsEnableBA { get; }
-        bool IsEnableSingleWallet { get; }
-        bool IsFakeLicensee { get; }
         string IdentityName { get; }
+
         byte AppMode { get; }
 
         public bool IsAdministrator { get; }
 
         public IEnumerable<string> GetFunctionKeys();
-
-        bool ForceIgnoreSharding { get; }
-
-        bool IsInRoles(params string[] roles);
     }
 }
