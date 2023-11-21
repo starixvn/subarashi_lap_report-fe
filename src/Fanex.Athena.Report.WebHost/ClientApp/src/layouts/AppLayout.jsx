@@ -4,7 +4,7 @@ import { Outlet } from 'react-router-dom';
 const AppLayout = () => {
     return (
         <div id="container" className="container-fluid">
-            <Outlet/>
+            <Outlet />
         </div>
     );
 };

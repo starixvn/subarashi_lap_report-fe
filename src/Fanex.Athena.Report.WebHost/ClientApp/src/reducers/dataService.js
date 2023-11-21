@@ -1,11 +1,11 @@
-import axios from 'axios'
-import Site from '../lib/site'
+import axios from 'axios';
+import Site from '../lib/site';
 
 export default class DataService {
     static apiKeys = {
         report: 'Report',
-        betlist: 'BetList'
-    }
+        betlist: 'BetList',
+    };
 
     static buildProxyUrl(apiKey, apiUrl) {
         const encodeUrl = apiUrl.replace(new RegExp('/', 'g'), '_');
@@ -30,19 +30,17 @@ export default class DataService {
 
     static getData(url, params, cancellationTokenSource) {
         const token = cancellationTokenSource ? cancellationTokenSource.token : this.genCancellationToken().token;
-        return axios.get(url, 
-            { 
-                params: params,
-                cancelToken: token
-            });
+        return axios.get(url, {
+            params: params,
+            cancelToken: token,
+        });
     }
 
-    static genCancellationToken(){
+    static genCancellationToken() {
         return axios.CancelToken.source();
     }
 
-    static isCancel(thrown)
-    {
+    static isCancel(thrown) {
         return axios.isCancel(thrown);
     }
 
@@ -50,8 +48,8 @@ export default class DataService {
         return axios.post(url, params, {
             headers: {
                 'X-Requested-With': 'XMLHttpRequest',
-                '__RequestVerificationToken': Site.getXsrfToken()
-            }
+                __RequestVerificationToken: Site.getXsrfToken(),
+            },
         });
     }
 
@@ -60,13 +58,12 @@ export default class DataService {
             responseType: 'blob',
             headers: {
                 'X-Requested-With': 'XMLHttpRequest',
-                '__RequestVerificationToken': Site.getXsrfToken()
-            }
+                __RequestVerificationToken: Site.getXsrfToken(),
+            },
         };
         let requestOptions = Object.assign({}, defaultOptions, options);
         return axios.post(url, params, requestOptions);
     }
-
 
     static postReportData(url, params) {
         return this.postProxyData(this.apiKeys.report, url, params);

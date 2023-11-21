@@ -1,16 +1,16 @@
 import SettledMatchCountRoute from './SettledMatchCountRoute';
 import WeeklyLiveMatchRoute from './WeeklyLiveMatchRoute';
-import * as permission from "@srcRoot/constants/permission";
+import * as permission from '@srcRoot/constants/permission';
 
 export default [
     {
-        Path: "SettledMatchCountReport/*",
+        Path: 'SettledMatchCountReport/*',
         Permissions: [permission.SETTLED_MATCH_COUNT],
-        Component: SettledMatchCountRoute
+        Component: SettledMatchCountRoute,
     },
     {
-        Path: "WeeklyLiveMatchReport/*",
+        Path: 'WeeklyLiveMatchReport/*',
         Permissions: [permission.WEEKLY_LIVE_MATCHES],
-        Component: WeeklyLiveMatchRoute
-    }
+        Component: WeeklyLiveMatchRoute,
+    },
 ];

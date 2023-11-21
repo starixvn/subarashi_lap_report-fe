@@ -17,8 +17,12 @@ const DataGrid = (props) => {
 
     const _buildHeader = (headers) => {
         var headerCells = [
-            <HeaderCell colWidth={40} key="header-index">#</HeaderCell>,
-            <HeaderCell colWidth={180} key="header-sport">{LangHelper.getSingleResource('Sport')}</HeaderCell>,
+            <HeaderCell colWidth={40} key="header-index">
+                #
+            </HeaderCell>,
+            <HeaderCell colWidth={180} key="header-sport">
+                {LangHelper.getSingleResource('Sport')}
+            </HeaderCell>,
             ...headers.map((header) => (
                 <HeaderCell colWidth={90} key={`header-${header}`}>
                     {header}

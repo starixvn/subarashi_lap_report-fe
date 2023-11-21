@@ -1,13 +1,12 @@
 import React from 'react';
 import AppContainer from './components/AppContainer';
 import { Provider } from 'react-redux';
-import Store from "@srcRoot/lib/store";
+import Store from '@srcRoot/lib/store';
 import reducer from './reducers';
-import Constants from "./constants";
+import Constants from './constants';
 
 // import styles
-import "@srcRoot/styles/pages/_weeklylivematch.scss";
-
+import '@srcRoot/styles/pages/_weeklylivematch.scss';
 
 const WeeklyLiveMatch = (props) => {
     const defaultState = Object.assign({}, { dateRange: Constants.DateRange });
@@ -17,7 +16,7 @@ const WeeklyLiveMatch = (props) => {
         <Provider store={store}>
             <AppContainer />
         </Provider>
-    )
-}
+    );
+};
 
 export default WeeklyLiveMatch;

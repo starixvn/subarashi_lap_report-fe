@@ -1,8 +1,11 @@
-import * as types from '../actions/types'
-import createReducer from '../lib/createReducer'
+import * as types from '../actions/types';
+import createReducer from '../lib/createReducer';
 
-export const requestParam = createReducer({}, {
-    [types.SET_REQUEST_PARAM](state, action) {
-        return {...action.data }
+export const requestParam = createReducer(
+    {},
+    {
+        [types.SET_REQUEST_PARAM](state, action) {
+            return { ...action.data };
+        },
     }
-});
+);

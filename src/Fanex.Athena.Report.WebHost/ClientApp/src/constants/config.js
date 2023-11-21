@@ -1,9 +1,9 @@
 export const debuggingConfig = {
-    name: "__lrfConfig__",
-    env: "local"
-}
+    name: '__lrfConfig__',
+    env: 'local',
+};
 
-export const ACCESS_DENIED_URL = "Utility/AccessDenied?mesage=AccessDenied";
+export const ACCESS_DENIED_URL = 'Utility/AccessDenied?mesage=AccessDenied';
 
 export const MAX_WIDTH_PAGE = Math.min(document.body.clientWidth, 1920);
 

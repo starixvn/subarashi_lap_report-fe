@@ -1,14 +1,13 @@
-const DEFAULT_RESOURCE_NAME = "_language_en_US";
-const langCode = window.PageLanguage || "en-US";
-const resourceName = `_language_${langCode.replace("-", "_")}`;
+const DEFAULT_RESOURCE_NAME = '_language_en_US';
+const langCode = window.PageLanguage || 'en-US';
+const resourceName = `_language_${langCode.replace('-', '_')}`;
 
 export default class LangHelper {
-
     static languageKeys = {
-        eng: "en-US",
-        zhCN: "zh-CN",
-        viVN: "vi-VN",
-    }
+        eng: 'en-US',
+        zhCN: 'zh-CN',
+        viVN: 'vi-VN',
+    };
 
     static get currentLanguage() {
         return langCode;

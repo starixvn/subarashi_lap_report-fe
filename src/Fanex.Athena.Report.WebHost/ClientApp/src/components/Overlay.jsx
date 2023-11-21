@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 const wrapperClasses = {
-    OVERLAY: "overlay",
-    OVERLAY_OPEN: "overlay-open"
-}
+    OVERLAY: 'overlay',
+    OVERLAY_OPEN: 'overlay-open',
+};
 
 export default class Overlay extends Component {
     constructor(props) {
@@ -14,25 +14,27 @@ export default class Overlay extends Component {
 
         this.containerElement = null;
         this.refHandlers = {
-            container: (ref) => { this.containerElement = ref }
-        }
+            container: (ref) => {
+                this.containerElement = ref;
+            },
+        };
 
         this.state = {
-            isOpening: this.props.isOpening
-        }
+            isOpening: this.props.isOpening,
+        };
     }
 
     static propTypes = {
         closeOnOutsideClick: PropTypes.bool,
         isOpening: PropTypes.bool,
         onOpen: PropTypes.func,
-        onClose: PropTypes.func
-    }
+        onClose: PropTypes.func,
+    };
 
     static defaultProps = {
         closeOnOutsideClick: true,
-        isOpening: false
-    }
+        isOpening: false,
+    };
 
     componentDidUpdate(prevProps, prevState) {
         if (this.props.isOpening !== prevProps.isOpening) {
@@ -43,8 +45,7 @@ export default class Overlay extends Component {
             window.setTimeout(() => {
                 if (this.props.isOpening) {
                     this._registerEvents();
-                }
-                else {
+                } else {
                     this._unRegisterEvents();
                 }
             }, 0);
@@ -69,7 +70,7 @@ export default class Overlay extends Component {
         if (closeOnOutsideClick) {
             document.removeEventListener('click', this._handleClickOutSide);
         }
-    }
+    };
 
     _handleClickOutSide = (event) => {
         const clickOutside = this.containerElement && !this.containerElement.contains(event.target);
@@ -77,7 +78,7 @@ export default class Overlay extends Component {
         if (clickOutside && this.state.isOpening) {
             this._close();
         }
-    }
+    };
 
     _close() {
         const { onClose } = this.props;
@@ -89,18 +90,18 @@ export default class Overlay extends Component {
         const mergedClassName = classNames(
             wrapperClasses.OVERLAY,
             {
-                [wrapperClasses.OVERLAY_OPEN]: this.state.isOpening
+                [wrapperClasses.OVERLAY_OPEN]: this.state.isOpening,
             },
             className
         );
         const style = {
-            display: this.state.isOpening ? "block" : "none"
-        }
+            display: this.state.isOpening ? 'block' : 'none',
+        };
 
         return (
             <div className={mergedClassName} style={style} ref={this.refHandlers.container}>
                 {children}
             </div>
-        )
+        );
     }
 }

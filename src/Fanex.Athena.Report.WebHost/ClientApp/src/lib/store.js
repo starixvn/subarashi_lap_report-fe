@@ -1,7 +1,7 @@
-import { legacy_createStore as createStore, applyMiddleware, compose } from 'redux'
-import thunkMiddleware from 'redux-thunk'
+import { legacy_createStore as createStore, applyMiddleware, compose } from 'redux';
+import thunkMiddleware from 'redux-thunk';
 
-import Logger from './logger'
+import Logger from './logger';
 
 export default class Store {
     static createStore(reducer, initialState) {

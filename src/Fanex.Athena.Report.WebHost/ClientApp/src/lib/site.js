@@ -1,10 +1,10 @@
-const _rootUrl = window.rootUrl || "/";
+const _rootUrl = window.rootUrl || '/';
 const _isSelfMode = !!window.isSelfMode;
 let _xsrfToken = null;
 export default class Site {
     static getXsrfToken() {
         if (!_xsrfToken) {
-            _xsrfToken = document.querySelector("input[name=__RequestVerificationToken]").value;
+            _xsrfToken = document.querySelector('input[name=__RequestVerificationToken]').value;
         }
 
         return _xsrfToken;
@@ -16,20 +16,19 @@ export default class Site {
 
     static getLrfSubsidiary() {
         try {
-            return (_isSelfMode && top.getLrfSubsidiarySearch && top.getLrfSubsidiarySearch()) || {}
+            return (_isSelfMode && top.getLrfSubsidiarySearch && top.getLrfSubsidiarySearch()) || {};
         } catch (e) {
-            return {}
+            return {};
         }
     }
 
     static convertDateToString(date) {
-        return typeof date === "string" ? date : date.format("MM/DD/YYYY");
+        return typeof date === 'string' ? date : date.format('MM/DD/YYYY');
     }
 
     static isEmptyObject(obj = {}) {
-        return Object.entries(obj).length === 0 && obj.constructor === Object
+        return Object.entries(obj).length === 0 && obj.constructor === Object;
     }
-
 
     static asNull(text) {
         if (text != null) {
@@ -57,7 +56,7 @@ export default class Site {
         const reader = new FileReader();
         reader.onload = function () {
             callback && callback(JSON.parse(reader.result));
-        }
+        };
         reader.readAsText(blob);
     }
 
@@ -67,13 +66,13 @@ export default class Site {
 
     static setCookie(cname, cvalue, exdays) {
         const d = new Date();
-        d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-        let expires = "expires=" + d.toUTCString();
-        document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+        d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
+        let expires = 'expires=' + d.toUTCString();
+        document.cookie = cname + '=' + cvalue + ';' + expires + ';path=/';
     }
 
     static getCookie(cname) {
-        let name = cname + "=";
+        let name = cname + '=';
         let ca = document.cookie.split(';');
         for (let i = 0; i < ca.length; i++) {
             let c = ca[i];
@@ -84,7 +83,7 @@ export default class Site {
                 return c.substring(name.length, c.length);
             }
         }
-        return "";
+        return '';
     }
 
     static redirectToUrl(url) {
@@ -96,6 +95,6 @@ export default class Site {
     }
 
     static isAdmin() {
-        return window.isAdmin == "True";
+        return window.isAdmin == 'True';
     }
 }
