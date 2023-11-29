@@ -53,7 +53,7 @@ namespace Fanex.Athena.Report.Core.Middleware
             result.Add("Local Port", context.Connection.LocalPort);
             result.Add("Client Ip", context.Connection.RemoteIpAddress.ToString());
             result.Add("Server Time", DateTime.Now.ToString(CultureInfo.InvariantCulture));
-            result.Add("Last Upadted", File.GetCreationTime(typeof(WhoAmIHealthCheck).Assembly.Location).ToString(CultureInfo.InvariantCulture));
+            result.Add("Last Updated", File.GetCreationTime(typeof(WhoAmIHealthCheck).Assembly.Location).ToString(CultureInfo.InvariantCulture));
             result.Add("Host", context.Request.Host);
             result.Add("Schema", context.Request.Scheme);
         }
