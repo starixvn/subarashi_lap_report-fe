@@ -1,11 +1,8 @@
 ﻿import * as types from '../actions/types';
 import createReducer from '../lib/createReducer';
 
-export const userGuideParams = createReducer(
-    {},
-    {
-        [types.USER_GUIDE_PARAMS](state, action) {
-            return action.data;
-        },
-    }
-);
+export const userGuideContent = createReducer(null, {
+    [types.USER_GUIDE_CONTENT](state, action) {
+        return action.data;
+    },
+});

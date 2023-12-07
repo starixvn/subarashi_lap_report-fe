@@ -1,5 +1,5 @@
 const DEFAULT_RESOURCE_NAME = '_language_en_US';
-const langCode = window.PageLanguage || 'en-US';
+const langCode = window.pageLanguage || 'en-US';
 const resourceName = `_language_${langCode.replace('-', '_')}`;
 
 export default class LangHelper {

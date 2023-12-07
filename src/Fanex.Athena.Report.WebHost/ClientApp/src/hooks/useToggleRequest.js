@@ -11,7 +11,9 @@ const useToggleRequest = () => {
         requestFunc()
             .then((response) => {
                 dispatch(toggleLoader(false));
-                callbackFunc(response);
+                if (callbackFunc) {
+                    callbackFunc(response);
+                }
             })
             .catch((error) => {
                 alert(LangHelper.getSingleResource('ErrorProcessingMsg'));
