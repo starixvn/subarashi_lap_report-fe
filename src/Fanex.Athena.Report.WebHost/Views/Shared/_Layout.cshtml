@@ -1,8 +1,10 @@
 ﻿
 @{
+    var context = HttpContextAccessor?.HttpContext;
     var isProduction = string.Equals(WebHostEnviroment.EnvironmentName, "PROD", StringComparison.OrdinalIgnoreCase);
-    var langCode = HttpContextAccessor?.HttpContext?.Request.Headers["Language"].ToString();
-    var rootUrl = string.Concat(HttpContextAccessor?.HttpContext?.Request.Headers["RootUrl"].ToString().TrimEnd('/'), "/");
+    var langCode = context?.Request.Headers["Language"].ToString();
+    var rootUrl = string.Concat(context?.Request.Headers["RootUrl"].ToString().TrimEnd('/'), "/");
+    var appBaseUrl = $"{context?.Request.Scheme}://{context?.Request.Host}{context?.Request.PathBase}";
     var cdnDomain = appSettings.StaticDomain;
     var webRootPath = WebHostEnviroment.WebRootPath;
 }
@@ -15,33 +17,33 @@
     <title>@ViewBag.Title</title>
     <meta name="description" content="The Risk & Forecast System" />
     <base href="@rootUrl" />
-    <link href="@UrlHelper.ContentLink("/css/index.css", rootUrl, webRootPath, cdnDomain)" rel="stylesheet">
+    <link href="@UrlHelper.ContentLink("/css/index.css", appBaseUrl, webRootPath, cdnDomain)" rel="stylesheet">
 </head>
 <body>
     <div class="wrapper">
         @RenderBody()
     </div>
-    <script defer src="@UrlHelper.ContentLink("/js/vendor.chunk.js", rootUrl, webRootPath, cdnDomain)"></script>
-    <script defer src="@UrlHelper.ContentLink("/js/common.chunk.js", rootUrl, webRootPath, cdnDomain)"></script>
-    <script defer src="@UrlHelper.ContentLink("/js/index.js", rootUrl, webRootPath, cdnDomain)"></script>
+
     <script type="text/javascript">
         window.pageLanguage = "@langCode";
         window.rootUrl = "@rootUrl";
     </script>
 
-    <script src="@UrlHelper.ContentLink("/js/languages/lang-en-US.js", rootUrl, webRootPath, cdnDomain)"></script>
-    @if (langCode != "en-US")
+    <script defer src="@UrlHelper.ContentLink("/js/vendor.chunk.js", appBaseUrl, webRootPath, cdnDomain)"></script>
+    <script defer src="@UrlHelper.ContentLink("/js/common.chunk.js", appBaseUrl, webRootPath, cdnDomain)"></script>
+    <script defer src="@UrlHelper.ContentLink("/js/index.js", appBaseUrl, webRootPath, cdnDomain)"></script>
+    <script src="@UrlHelper.ContentLink("/js/languages/lang-en-US.js", appBaseUrl, webRootPath, cdnDomain)"></script>
+    @if (!string.IsNullOrEmpty(langCode) && langCode != "en-US")
     {
-        <script src="@UrlHelper.ContentLink("/js/languages/lang-" + langCode + ".js", rootUrl, webRootPath, cdnDomain)"></script>
+        <script src="@UrlHelper.ContentLink("/js/languages/lang-" + langCode + ".js", appBaseUrl, webRootPath, cdnDomain)"></script>
     }
-
 
     @if (isProduction)
     {
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-M09N5LNEH1"></script>
         <script>
-                window.dataLayer = window.dataLayer || [];
+            window.dataLayer = window.dataLayer || [];
             function gtag() { dataLayer.push(arguments); }
             gtag('js', new Date());
 

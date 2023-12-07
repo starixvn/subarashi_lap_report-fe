@@ -2,13 +2,9 @@
 {
     public static class UrlHelper
     {
-        private const string subPath = "Static/ReportClientApp";
-
-        public static string ContentLink(string contentPath, string rootUrl, string webRootPath, string cdnDomain)
+        public static string ContentLink(string contentPath, string appBaseUrl, string webRootPath, string cdnDomain)
         {
-            var rootPath = Path.Join(rootUrl, subPath);
-
-            var appPath = string.IsNullOrEmpty(cdnDomain) ? rootPath : cdnDomain;
+            var appPath = string.IsNullOrEmpty(cdnDomain) ? appBaseUrl : cdnDomain;
             var baseUrl = appPath != null && appPath.Length > 1 ? appPath : string.Empty;
             var version = GenerateContentVersion(contentPath, webRootPath);
             return $"{baseUrl}{contentPath}?v={version}";

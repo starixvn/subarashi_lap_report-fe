@@ -11,7 +11,7 @@ export const AuthorizeRequestInfo = async (params) => {
 
     validatePermission(params.permissions, data.FunctionKeys);
 
-    if (!data.isSelfMode) {
+    if (!data.IsSelfMode) {
         clearInterval(currentInterval);
         currentInterval = checkAliveInterval(data.IdentityName);
     }
@@ -24,7 +24,7 @@ const validatePermission = (permissions, functionKeys) => {
         return;
     }
 
-    if (!functionKeys.some((res) => res[hasPermission] === true)) {
+    if (!functionKeys || functionKeys.every((res) => res[hasPermission] === false)) {
         Site.redirectToUrl(ACCESS_DENIED_URL);
     }
 };
@@ -36,9 +36,9 @@ const checkAliveInterval = (identityName) => {
         DataService.getData(internalSessionUrl).then((response) => {
             const data = response.data;
 
-            if (data.IsUM === true) {
+            if (data.IsUM) {
                 document.location.href = UM_URL;
-            } else if (data.IsAuthenticated === false) {
+            } else if (!data.IsAuthenticated) {
                 document.location.href = SIGN_OUT_URL;
             }
         });
