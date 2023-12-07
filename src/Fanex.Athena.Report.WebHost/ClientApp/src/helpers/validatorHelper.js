@@ -1,23 +1,46 @@
 import Site from '@srcRoot/lib/site';
-import { ACCESS_DENIED_URL } from '@srcRoot/constants/config';
+import { ACCESS_DENIED_URL, SIGN_OUT_URL, UM_URL } from '@srcRoot/constants/config';
+import DataService from '../lib/dataService';
 
-const FunctionKey = 'FunctionKey';
-const HasPermission = 'HasPermission';
+const hasPermission = 'HasPermission';
+let currentInterval = null;
 
-export const AuthorizedFunc = (permissions) => {
-    if (!permissions) return;
+export const AuthorizeRequestInfo = async (params) => {
+    const response = await DataService.postData('Utility/RequestAuthorizedInfo', params);
+    const data = response.data;
 
-    const isAdmin = Site.isAdmin();
-    const functionKeys = Site.getFunctionKeys();
+    validatePermission(params.permissions, data.FunctionKeys);
 
-    const results = permissions.map((key) => ({
-        [FunctionKey]: key,
-        [HasPermission]: isAdmin || functionKeys.some((functionKey) => functionKey.toLowerCase() === key.toLowerCase()),
-    }));
-
-    if (!results.some((res) => res[HasPermission] === true)) {
-        return Site.redirectToUrl(ACCESS_DENIED_URL);
+    if (!data.isSelfMode) {
+        clearInterval(currentInterval);
+        currentInterval = checkAliveInterval(data.IdentityName);
     }
 
-    return results;
+    return data;
+};
+
+const validatePermission = (permissions, functionKeys) => {
+    if (!permissions || !permissions.length) {
+        return;
+    }
+
+    if (!functionKeys.some((res) => res[hasPermission] === true)) {
+        Site.redirectToUrl(ACCESS_DENIED_URL);
+    }
+};
+
+const checkAliveInterval = (identityName) => {
+    const internalSessionUrl = `Utility/SessionIsAlive?identityName=${identityName}`;
+
+    return setInterval(function () {
+        DataService.getData(internalSessionUrl).then((response) => {
+            const data = response.data;
+
+            if (data.IsUM === true) {
+                document.location.href = UM_URL;
+            } else if (data.IsAuthenticated === false) {
+                document.location.href = SIGN_OUT_URL;
+            }
+        });
+    }, 30000);
 };

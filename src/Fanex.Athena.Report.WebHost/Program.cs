@@ -1,46 +1,48 @@
 var builder = WebApplication.CreateBuilder(args);
 
+builder.WebHost.UseSentry();
+
 var services = builder.Services;
 var configuration = builder.Configuration;
 
 services.AddControllersWithViews();
 
-var instrospecCacheDuration = int.TryParse(configuration["IdentityServer:CacheDuration"], out int cache) ? cache : 0;
-services.AddAuthentication("Bearer")
-   .AddOAuth2Introspection("Bearer", options =>
-   {
-       options.Authority = configuration["IdentityServer:Host"];
-       options.ClientId = configuration["IdentityServer:CredentialIntrospection:ClientId"];
-       options.ClientSecret = configuration["IdentityServer:CredentialIntrospection:ClientSecret"];
-       options.SaveToken = true;
-       options.SkipTokensWithDots = true;
-       options.EnableCaching = instrospecCacheDuration > 0;
-       options.CacheKeyPrefix = "OAuth2Introspection:";
-       options.CacheDuration = TimeSpan.FromMinutes(instrospecCacheDuration);
-       options.DiscoveryPolicy.RequireHttps = false;
-       options.TokenRetriever = TokenRetrieval.FromAuthorizationHeader();
-   });
-
 services.AddHttpContextAccessor();
 services.AddHealthChecks().AddCheck<WhoAmIHealthCheck>("WhoAmIHealthCheck");
 
-services.ConfigRequestLocalization();
 services.AddSettings(configuration);
-services.AddCore();
 
 var app = builder.Build();
 
-app.MapGet("/", () => "LAP Report Client App is Running ...");
-
 app.UseForwardedHeaders();
 
-app.UseStaticFiles();
+if (app.Environment.IsProduction() || string.Equals(configuration["UseErrorHandler"], "1"))
+{
+    app.UseErrorHandler();
+}
+else
+{
+    app.UseDeveloperExceptionPage(); //NOSONAR not used in secure context
+}
+
+app.UseStaticFiles(new StaticFileOptions
+{
+    OnPrepareResponse = ctx =>
+    {
+        const int OneYear = 60 * 60 * 24 * 365;
+        ctx.Context.Response.Headers[HeaderNames.CacheControl] = app.Environment.IsDevelopment() ?
+        "no-cache" : "public,max-age=" + OneYear;
+        ctx.Context.Response.Headers[HeaderNames.AccessControlAllowOrigin] = "*";
+    }
+});
+
 app.UseWhoAmICheck();
 
 app.UseRouting();
-app.UseAuthentication();
-app.UseAuthorization();
 app.UseRequestLocalization();
+app.UseCors();
+
+app.MapGet("/", () => "LAP Report Client App is Running ...");
 
 app.UseEndpoints(endpoints =>
 {

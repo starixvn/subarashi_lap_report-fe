@@ -5,7 +5,15 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fanex.Athena.Report.WebHost", "src\Fanex.Athena.Report.WebHost\Fanex.Athena.Report.WebHost.csproj", "{E9C7A842-45E4-4DA2-8811-5CBFEB7AB9EC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fanex.Athena.Report.Core", "src\Fanex.Athena.Report.Core\Fanex.Athena.Report.Core.csproj", "{B375C326-4EB8-4545-89A7-E2245E1C34BA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fanex.Athena.Report.Core", "src\Fanex.Athena.Report.Core\Fanex.Athena.Report.Core.csproj", "{B375C326-4EB8-4545-89A7-E2245E1C34BA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{C2BDF361-C874-4097-A03B-D3264D80404E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{3E0FC8B7-287C-466D-BE19-2DF41EFC5D6E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fanex.Athena.Report.UnitTests.Common", "test\Fanex.Athena.Report.UnitTests.Common\Fanex.Athena.Report.UnitTests.Common.csproj", "{269BDD41-AA03-410A-8802-0CF050BB9DE5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fanex.Athena.Report.Core.Tests", "test\Fanex.Athena.Report.Core.Tests\Fanex.Athena.Report.Core.Tests.csproj", "{E58519D3-9C36-4867-B81D-0A7828A6C0DA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,9 +29,23 @@ Global
 		{B375C326-4EB8-4545-89A7-E2245E1C34BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B375C326-4EB8-4545-89A7-E2245E1C34BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B375C326-4EB8-4545-89A7-E2245E1C34BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{269BDD41-AA03-410A-8802-0CF050BB9DE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{269BDD41-AA03-410A-8802-0CF050BB9DE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{269BDD41-AA03-410A-8802-0CF050BB9DE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{269BDD41-AA03-410A-8802-0CF050BB9DE5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E58519D3-9C36-4867-B81D-0A7828A6C0DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E58519D3-9C36-4867-B81D-0A7828A6C0DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E58519D3-9C36-4867-B81D-0A7828A6C0DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E58519D3-9C36-4867-B81D-0A7828A6C0DA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E9C7A842-45E4-4DA2-8811-5CBFEB7AB9EC} = {C2BDF361-C874-4097-A03B-D3264D80404E}
+		{B375C326-4EB8-4545-89A7-E2245E1C34BA} = {C2BDF361-C874-4097-A03B-D3264D80404E}
+		{269BDD41-AA03-410A-8802-0CF050BB9DE5} = {3E0FC8B7-287C-466D-BE19-2DF41EFC5D6E}
+		{E58519D3-9C36-4867-B81D-0A7828A6C0DA} = {3E0FC8B7-287C-466D-BE19-2DF41EFC5D6E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {93DEB3FB-3591-405F-A9B9-5870E8A75C02}

@@ -48,7 +48,6 @@ export default class DataService {
         return axios.post(url, params, {
             headers: {
                 'X-Requested-With': 'XMLHttpRequest',
-                __RequestVerificationToken: Site.getXsrfToken(),
             },
         });
     }
@@ -58,7 +57,6 @@ export default class DataService {
             responseType: 'blob',
             headers: {
                 'X-Requested-With': 'XMLHttpRequest',
-                __RequestVerificationToken: Site.getXsrfToken(),
             },
         };
         let requestOptions = Object.assign({}, defaultOptions, options);
@@ -75,13 +73,5 @@ export default class DataService {
 
     static getReportFile(url, params) {
         return this.getProxyFile(this.apiKeys.report, url, params);
-    }
-
-    static postBetListData(url, params) {
-        return this.postProxyData(this.apiKeys.betlist, url, params);
-    }
-
-    static getBetListFile(url, params) {
-        return this.getProxyFile(this.apiKeys.betlist, url, params);
     }
 }

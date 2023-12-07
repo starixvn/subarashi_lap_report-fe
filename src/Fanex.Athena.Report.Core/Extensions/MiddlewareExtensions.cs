@@ -1,4 +1,5 @@
 ﻿using System.Net.Mime;
+using Fanex.Athena.Report.Core.Middleware;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.Http;
@@ -28,6 +29,11 @@ namespace Fanex.Athena.Report.Core.Extensions
                     await context.Response.WriteAsync(result);
                 }
             });
+        }
+
+        public static void UseErrorHandler(this IApplicationBuilder app)
+        {
+            app.UseMiddleware<ErrorHandler>();
         }
     }
 }

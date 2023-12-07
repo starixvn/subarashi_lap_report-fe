@@ -1,14 +1,10 @@
 ﻿
 @{
     var isProduction = string.Equals(WebHostEnviroment.EnvironmentName, "PROD", StringComparison.OrdinalIgnoreCase);
-    var isSelfMode = contextService.AppMode == AppMode.LRF;
-    var identityName = contextService.IdentityName;
-    var langCode = System.Globalization.CultureInfo.CurrentUICulture.IetfLanguageTag;
+    var langCode = HttpContextAccessor?.HttpContext?.Request.Headers["Language"].ToString();
     var rootUrl = string.Concat(HttpContextAccessor?.HttpContext?.Request.Headers["RootUrl"].ToString().TrimEnd('/'), "/");
     var cdnDomain = appSettings.StaticDomain;
     var webRootPath = WebHostEnviroment.WebRootPath;
-    var functionKeys = contextService.GetFunctionKeys();
-    var isAdmin = contextService.IsAdministrator;
 }
 <!DOCTYPE html>
 
@@ -22,7 +18,6 @@
     <link href="@UrlHelper.ContentLink("/css/index.css", rootUrl, webRootPath, cdnDomain)" rel="stylesheet">
 </head>
 <body>
-    @Html.AntiForgeryToken()
     <div class="wrapper">
         @RenderBody()
     </div>
@@ -30,10 +25,8 @@
     <script defer src="@UrlHelper.ContentLink("/js/common.chunk.js", rootUrl, webRootPath, cdnDomain)"></script>
     <script defer src="@UrlHelper.ContentLink("/js/index.js", rootUrl, webRootPath, cdnDomain)"></script>
     <script type="text/javascript">
-        var PageLanguage = "@langCode";
+        window.pageLanguage = "@langCode";
         window.rootUrl = "@rootUrl";
-        window.functionKeys = @Html.Raw(Json.Serialize(functionKeys));
-        window.isAdmin = "@isAdmin";
     </script>
 
     <script src="@UrlHelper.ContentLink("/js/languages/lang-en-US.js", rootUrl, webRootPath, cdnDomain)"></script>
@@ -42,10 +35,6 @@
         <script src="@UrlHelper.ContentLink("/js/languages/lang-" + langCode + ".js", rootUrl, webRootPath, cdnDomain)"></script>
     }
 
-    @if (!isSelfMode)
-    {
-        <partial name="~/Views/Shared/_SessionScript.cshtml" model="(identityName, rootUrl)" />
-    }
 
     @if (isProduction)
     {
