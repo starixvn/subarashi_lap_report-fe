@@ -1,4 +1,5 @@
 FROM hub.nexdev.net/base/dotnet/core/sdk:6.0 AS builder
+ARG TRANSFORM_CONFIG
 
 RUN apt-get update  \
     && curl --silent --location https://deb.nodesource.com/setup_20.x | bash -  \
@@ -30,7 +31,13 @@ COPY src .
 WORKDIR /src/Fanex.Athena.Report.WebHost/ClientApp
 
 #build front-end
-RUN npm run build-prod
+RUN if [ "$TRANSFORM_CONFIG" = "LOCAL" ]; then \
+        npm run build-dev ; \
+    elif [ "$TRANSFORM_CONFIG" = "SIT" ]; then \
+        npm run build-dev ; \
+    else \
+        npm run build-prod; \
+    fi
 
 WORKDIR /src/Fanex.Athena.Report.WebHost
 

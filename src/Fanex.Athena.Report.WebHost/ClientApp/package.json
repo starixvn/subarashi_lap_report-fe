@@ -6,6 +6,7 @@
   "scripts": {
     "build-dev": "node node_modules/webpack/bin/webpack.js --config webpack/build/webpack.config.dev.js",
     "build-prod": "node node_modules/webpack/bin/webpack.js --config webpack/build/webpack.config.prod.js",
+    "build-watch":  "node node_modules/webpack/bin/webpack.js --config webpack/build/webpack.config.dev.js --watch",
     "format": "eslint \"src/**/*.{js,jsx}\" --fix"
   },
   "keywords": [],
