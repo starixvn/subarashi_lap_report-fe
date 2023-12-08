@@ -8,15 +8,16 @@ var configuration = builder.Configuration;
 services.AddControllersWithViews();
 
 services.AddHttpContextAccessor();
-services.AddHealthChecks().AddCheck<WhoAmIHealthCheck>("WhoAmIHealthCheck");
+services.AddHealthCheck();
 
 services.AddSettings(configuration);
 
 var app = builder.Build();
 
 app.UseForwardedHeaders();
+app.UseHttpsScheme();
 
-if (app.Environment.IsProduction() || string.Equals(configuration["UseErrorHandler"], "1"))
+if (app.Environment.IsEnvironment("PROD") || string.Equals(configuration["UseErrorHandler"], "1"))
 {
     app.UseErrorHandler();
 }
@@ -25,21 +26,18 @@ else
     app.UseDeveloperExceptionPage(); //NOSONAR not used in secure context
 }
 
-app.UseStaticFiles(new StaticFileOptions
+if (!app.Environment.IsDevelopment())
 {
-    OnPrepareResponse = ctx =>
-    {
-        const int OneYear = 60 * 60 * 24 * 365;
-        ctx.Context.Response.Headers[HeaderNames.CacheControl] = app.Environment.IsDevelopment() ?
-        "no-cache" : "public,max-age=" + OneYear;
-        ctx.Context.Response.Headers[HeaderNames.AccessControlAllowOrigin] = "*";
-    }
-});
+    app.UseHsts();
+}
+
+app.UseHttpsRedirection();
+
+app.UseStaticFiles(app.Environment.IsDevelopment());
 
 app.UseWhoAmICheck();
 
 app.UseRouting();
-app.UseRequestLocalization();
 app.UseCors();
 
 app.MapGet("/", () => "LAP Report Client App is Running ...");

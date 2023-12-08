@@ -1,12 +1,11 @@
-﻿
-@{
+﻿@{
     var context = HttpContextAccessor?.HttpContext;
-    var isProduction = string.Equals(WebHostEnviroment.EnvironmentName, "PROD", StringComparison.OrdinalIgnoreCase);
+    var isProduction = WebHostEnvironment.IsEnvironment("PROD");
     var langCode = context?.Request.Headers["Language"].ToString();
     var rootUrl = string.Concat(context?.Request.Headers["RootUrl"].ToString().TrimEnd('/'), "/");
     var appBaseUrl = $"{context?.Request.Scheme}://{context?.Request.Host}{context?.Request.PathBase}";
     var cdnDomain = appSettings.StaticDomain;
-    var webRootPath = WebHostEnviroment.WebRootPath;
+    var webRootPath = WebHostEnvironment.WebRootPath;
 }
 <!DOCTYPE html>
 
