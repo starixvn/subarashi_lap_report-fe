@@ -6,15 +6,15 @@
   "scripts": {
     "build-dev": "node node_modules/webpack/bin/webpack.js --config webpack/build/webpack.config.dev.js",
     "build-prod": "node node_modules/webpack/bin/webpack.js --config webpack/build/webpack.config.prod.js",
-    "build-watch":  "node node_modules/webpack/bin/webpack.js --config webpack/build/webpack.config.dev.js --watch",
+    "build-watch": "node node_modules/webpack/bin/webpack.js --config webpack/build/webpack.config.dev.js --watch",
     "format": "eslint \"src/**/*.{js,jsx}\" --fix"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@9softstudio/react-grid": "^1.0.10",
     "@legion-lib/react-daterangepicker": "^1.0.1",
+    "@legion-lib/react-grid": "^1.0.1",
     "axios": "^1.6.0",
     "classnames": "^2.3.2",
     "moment": "^2.29.4",

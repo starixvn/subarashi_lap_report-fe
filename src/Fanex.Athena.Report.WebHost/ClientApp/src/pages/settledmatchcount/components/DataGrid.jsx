@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import LangHelper from '@srcRoot/helpers/langHelper';
 import moment from 'moment';
 import { MAX_WIDTH_PAGE, MIN_WIDTH_PAGE } from '@srcRoot/constants/config';
-import { Table, Row, Cell, HeaderRow, HeaderCell } from '@9softstudio/react-grid';
+import { Table, Row, Cell, HeaderRow, HeaderCell } from '@legion-lib/react-grid';
 import NoDataTitle from '@srcRoot/components/NoDataTitle';
 
 const DataGrid = (props) => {
