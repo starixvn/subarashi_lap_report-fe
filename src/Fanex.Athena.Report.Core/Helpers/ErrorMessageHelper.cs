@@ -34,6 +34,7 @@ namespace Fanex.Athena.Report.Core.Helpers
                 builder.AppendLine($"{item.Key}: {item.Value}");
             }
         }
+
         private static void AddExceptionInfo(StringBuilder builder, Exception exception, int limitedInnerException)
         {
             builder.AppendLine();
@@ -52,14 +53,14 @@ namespace Fanex.Athena.Report.Core.Helpers
         private static IDictionary<string, object> GetRequestInfo(HttpContext context)
         {
             var request = context.Request;
-            return request == null
-                    ? new Dictionary<string, object>()
-                    : new Dictionary<string, object>
-                    {
-                        [nameof(request.Host)] = request.Host,
-                        [nameof(request.Path)] = request.Path,
-                        ["Remote IP"] = context.Connection?.RemoteIpAddress
-                    };
+            return request == null ?
+                new Dictionary<string, object>() :
+                new Dictionary<string, object>
+                {
+                    [nameof(request.Host)] = request.Host,
+                    [nameof(request.Path)] = request.Path,
+                    ["Remote IP"] = context.Connection?.RemoteIpAddress
+                };
         }
     }
 }

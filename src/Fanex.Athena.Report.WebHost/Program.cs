@@ -15,9 +15,9 @@ services.AddSettings(configuration);
 var app = builder.Build();
 
 app.UseForwardedHeaders();
-app.UseHttpsScheme();
+app.UseForwardedHttpScheme();
 
-if (app.Environment.IsEnvironment("PROD") || string.Equals(configuration["UseErrorHandler"], "1"))
+if (app.Environment.IsProduction() || string.Equals(configuration["UseErrorHandler"], "1"))
 {
     app.UseErrorHandler();
 }
@@ -44,7 +44,7 @@ app.MapGet("/", () => "LAP Report Client App is Running ...");
 
 app.UseEndpoints(endpoints =>
 {
-    endpoints.MapControllerRoute(name: "Default", pattern: "{controller=Home}/{action=Index}");
+    endpoints.MapControllerRoute("Default", "{controller=Home}/{action=Index}");
     endpoints.MapFallbackToController("Index", "Home");
 });
 

@@ -6,35 +6,36 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Routing;
 using NSubstitute;
 
-namespace Fanex.Athena.Report.UnitTests.Common.AutoData;
-
-public class AutoContextDataAttribute : AutoDataAttribute
+namespace Fanex.Athena.Report.UnitTests.Common.AutoData
 {
-    public AutoContextDataAttribute() :
-        base(() =>
-             {
-                 var fixture = new Fixture();
-
-                 RegisterHttpContext(fixture);
-
-                 fixture.Customize(new AutoNSubstituteCustomization());
-                 return fixture;
-             })
-    { }
-
-    private static void RegisterHttpContext(IFixture fixture)
+    public class AutoContextDataAttribute : AutoDataAttribute
     {
-        var context = new DefaultHttpContext
-        {
-            Request =
+        public AutoContextDataAttribute() :
+            base(() =>
             {
-                RouteValues = new RouteValueDictionary(new[]
+                var fixture = new Fixture();
+
+                RegisterHttpContext(fixture);
+
+                fixture.Customize(new AutoNSubstituteCustomization());
+                return fixture;
+            })
+        { }
+
+        private static void RegisterHttpContext(IFixture fixture)
+        {
+            var context = new DefaultHttpContext
+            {
+                Request =
                 {
-                    new KeyValuePair<string, object>("controller", "Any")
-                })
-            }
-        };
-        fixture.Register<HttpContext>(() => context);
-        fixture.Register<RequestDelegate>(() => Substitute.For<RequestDelegate>());
+                    RouteValues = new RouteValueDictionary(new[]
+                    {
+                        new KeyValuePair<string, object>("controller", "Any")
+                    })
+                }
+            };
+            fixture.Register<HttpContext>(() => context);
+            fixture.Register(() => Substitute.For<RequestDelegate>());
+        }
     }
 }

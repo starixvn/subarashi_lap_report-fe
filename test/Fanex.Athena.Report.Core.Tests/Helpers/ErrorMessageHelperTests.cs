@@ -42,7 +42,9 @@ namespace Fanex.Athena.Report.Core.Tests.Helpers
         public class MockException : Exception
         {
             public bool IsCallMessage;
+
             public bool IsCallSource;
+
             public bool IsCallStackTrace;
 
             public override string Message

@@ -13,8 +13,7 @@ namespace Fanex.Athena.Report.Core.Tests.MiddleWares
 {
     public class ErrorHandlerTest
     {
-        [Theory]
-        [AutoContextData]
+        [Theory, AutoContextData]
         public async Task Invoke_WithoutError_InvokeNext(
             HttpContext httpContext,
             RequestDelegate next,
@@ -30,8 +29,7 @@ namespace Fanex.Athena.Report.Core.Tests.MiddleWares
             await next.Received().Invoke(httpContext);
         }
 
-        [Theory]
-        [AutoContextData]
+        [Theory, AutoContextData]
         public async Task Invoke_HandleErrorWithException_RedirectResult(
             HttpContext httpContext,
             Exception exception,

@@ -1,13 +1,11 @@
 ﻿using AutoFixture;
 
-namespace Fanex.Athena.Report.UnitTests.Common;
-
-public static class FakeHelper
+namespace Fanex.Athena.Report.UnitTests.Common
 {
-    private static readonly Fixture Fixture = new();
-
-    public static T Create<T>()
+    public static class FakeHelper
     {
-        return Fixture.Create<T>();
+        private static readonly Fixture Fixture = new();
+
+        public static T Create<T>() => Fixture.Create<T>();
     }
 }

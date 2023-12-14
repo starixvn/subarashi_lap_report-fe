@@ -3,36 +3,38 @@ using Fanex.Athena.Report.Core.Helpers;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 
-namespace Fanex.Athena.Report.Core.Middleware;
-
-public class ErrorHandler
+namespace Fanex.Athena.Report.Core.Middleware
 {
-    private readonly RequestDelegate next;
-    private readonly ILogger<ErrorHandler> logger;
-
-    public ErrorHandler(RequestDelegate next, ILogger<ErrorHandler> logger)
+    public class ErrorHandler
     {
-        this.next = next;
-        this.logger = logger;
-    }
+        private readonly ILogger<ErrorHandler> logger;
 
-    public async Task Invoke(HttpContext context)
-    {
-        try
+        private readonly RequestDelegate next;
+
+        public ErrorHandler(RequestDelegate next, ILogger<ErrorHandler> logger)
         {
-            await next.Invoke(context);
+            this.next = next;
+            this.logger = logger;
         }
-        catch (Exception exception)
-        {
-            HandleError(context, exception);
-        }
-    }
 
-    private void HandleError(HttpContext context, Exception exception)
-    {
-        var errorMsg = ErrorMessageHelper.GenerateMessage(exception, context);
-        logger.LogCritical(exception, errorMsg);
-        context.Response.Clear();
-        context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
+        public async Task Invoke(HttpContext context)
+        {
+            try
+            {
+                await next.Invoke(context);
+            }
+            catch (Exception exception)
+            {
+                HandleError(context, exception);
+            }
+        }
+
+        private void HandleError(HttpContext context, Exception exception)
+        {
+            var errorMsg = ErrorMessageHelper.GenerateMessage(exception, context);
+            logger.LogCritical(exception, errorMsg);
+            context.Response.Clear();
+            context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
+        }
     }
 }

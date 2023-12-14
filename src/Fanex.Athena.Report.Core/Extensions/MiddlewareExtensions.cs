@@ -9,7 +9,7 @@ using Newtonsoft.Json;
 
 namespace Fanex.Athena.Report.Core.Extensions
 {
-    public static class MiddlewareExtensions
+    public static class MiddleWareExtensions
     {
         public static IApplicationBuilder UseWhoAmICheck(this IApplicationBuilder app)
         {
@@ -19,12 +19,16 @@ namespace Fanex.Athena.Report.Core.Extensions
                 Predicate = _ => true,
                 ResponseWriter = async (context, report) =>
                 {
-                    var result = JsonConvert.SerializeObject(
-                        new
+                    var result = JsonConvert.SerializeObject(new
+                    {
+                        status = report.Status.ToString(),
+                        monitors = report.Entries.Select(e => new
                         {
-                            status = report.Status.ToString(),
-                            monitors = report.Entries.Select(e => new { name = e.Key, status = Enum.GetName(typeof(HealthStatus), e.Value.Status), values = e.Value.Data })
-                        }, Formatting.Indented);
+                            name = e.Key,
+                            status = Enum.GetName(typeof(HealthStatus), e.Value.Status),
+                            values = e.Value.Data
+                        })
+                    }, Formatting.Indented);
 
                     context.Response.ContentType = MediaTypeNames.Application.Json;
                     await context.Response.WriteAsync(result);
@@ -45,17 +49,19 @@ namespace Fanex.Athena.Report.Core.Extensions
                 {
                     const int OneYear = 60 * 60 * 24 * 365;
                     ctx.Context.Response.Headers[HeaderNames.CacheControl] = isDev ?
-                    "no-cache" : "public,max-age=" + OneYear;
+                        "no-cache" :
+                        "public,max-age=" + OneYear;
                     ctx.Context.Response.Headers[HeaderNames.AccessControlAllowOrigin] = "*";
                 }
             });
         }
 
-        public static void UseHttpsScheme(this IApplicationBuilder app)
+        public static void UseForwardedHttpScheme(this IApplicationBuilder app)
         {
             app.Use((ctx, next) =>
             {
                 var scheme = ctx.Request.Headers["X-Forwarded-Proto"].ToString();
+
                 if (!string.IsNullOrEmpty(scheme))
                 {
                     ctx.Request.Scheme = scheme;
