@@ -36,11 +36,11 @@ const FormFilter = (props) => {
     const _renderDateFilter = () => {
         return (
             <DateRange
-                startDate={dateRange.fromDate}
-                endDate={dateRange.toDate}
+                startDate={Constants.DateRange.fromDate}
+                endDate={Constants.DateRange.toDate}
                 minDate={DateConstraint.minDate}
                 maxDate={DateConstraint.maxDate}
-                today={DateConstraint.toDay}
+                today={DateConstraint.today}
                 limitedMonthRange={DateConstraint.limitedMonthRange}
                 firstDayOfWeek={FirstDayOfWeek}
                 onChange={_onChangeDateRange}
@@ -111,7 +111,7 @@ const FormFilter = (props) => {
     };
 
     return (
-        <CollapsiblePanel className="page-filter" stickyFooter={_renderSupportButton()} isCollapseMode={false}>
+        <CollapsiblePanel stickyFooter={_renderSupportButton()} isCollapseMode={false}>
             <div className="row">
                 <div className="col-12 col-md-3 col-sm-6 col-lg-4 col-xl-2">
                     <div className="form-group">

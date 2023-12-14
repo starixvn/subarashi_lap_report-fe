@@ -2,10 +2,11 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import LangHelper from '@srcRoot/helpers/langHelper';
 import { MAX_WIDTH_PAGE, MIN_WIDTH_PAGE } from '@srcRoot/constants/config';
-import { Table, Row, Cell, HeaderRow, HeaderCell } from '@legion-lib/react-grid';
+import { Table, Row, Cell, HeaderRow } from '@legion-lib/react-grid';
 import NoDataTitle from '@srcRoot/components/NoDataTitle';
 import { ActionCreators } from '../actions';
 import Constants from '../constants';
+import HeaderCell from '../customGrid/HeaderCell';
 
 const DataGrid = (props) => {
     const dispatch = useDispatch();
@@ -24,7 +25,7 @@ const DataGrid = (props) => {
     }
 
     const _buildHeader = (headers) => {
-        var headerCells = [
+        const headerCells = [
             <HeaderCell colWidth={40} key="header-index">
                 #
             </HeaderCell>,
@@ -113,7 +114,7 @@ const DataGrid = (props) => {
                 autoHeight={true}
                 header={_buildHeader(gridData.weekHeaders)}
                 body={_buildBody(gridData.data)}
-                footer={_buildFooter(gridData.totalData)}
+                footer={_buildFooter(gridData.weeksTotalData)}
                 containerPadding={30}
                 onSort={_onSort}
                 shouldResetScrollPosition={true}

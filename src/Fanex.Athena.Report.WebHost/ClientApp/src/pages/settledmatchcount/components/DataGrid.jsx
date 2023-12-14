@@ -42,9 +42,9 @@ const DataGrid = (props) => {
     };
 
     const _buildBody = (data) => {
-        return data.map((item) => {
+        return data.map((item, index) => {
             return (
-                <Row key={`settled_match_count_row_${item.sportName}`}>
+                <Row key={`settled_match_count_row_${index}`}>
                     <Cell className="left-align">{item.sportName}</Cell>
                     <Cell className="right-align">{item.yesterdayEntered}</Cell>
                     <Cell className="right-align">{item.yesterdayNonEntered}</Cell>

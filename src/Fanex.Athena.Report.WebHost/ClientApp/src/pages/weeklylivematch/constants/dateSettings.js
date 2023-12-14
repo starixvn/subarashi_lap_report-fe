@@ -9,7 +9,7 @@ const fromDate = toDate.clone().weekday(FirstDayOfWeek);
 export const DateConstraint = {
     minDate: '05/31/2012',
     maxDate: now.clone().add(-1, 'd').format('MM/DD/yyyy'),
-    toDay: now.format('MM/DD/yyyy'),
+    today: now.format('MM/DD/yyyy'),
     limitedMonthRange: 2,
 };
 
