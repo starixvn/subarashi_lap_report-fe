@@ -32,10 +32,6 @@ ul {
     padding: 0;
 }
 
-.wrapper {
-    position: relative;
-}
-
 .container {
     padding-right: 15px;
     padding-left: 15px;
@@ -55,28 +51,9 @@ ul {
     text-align: right;
 }
 
-.text-bold {
-    font-weight: bold;
-}
 
-.warning-note {
-    color: $red;
-}
 
-.info-note {
-    color: #ff7b26;
-    font-style: italic;
-}
 
-.circle {
-    display: inline-block;
-    vertical-align: middle;
-    margin-right: 5px;
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: #f94a4a;
-}
 
 .arrow-icon {
     display: inline-block;

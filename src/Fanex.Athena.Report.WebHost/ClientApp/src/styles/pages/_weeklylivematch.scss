@@ -11,12 +11,7 @@
     }
 }
 
-// .body-content{
-
-// }
-
 .header-content {
-
     .table>thead>tr>th {
         vertical-align: middle;
         text-align: center;
@@ -28,5 +23,19 @@
         background: #4C6375;
         color: #fff;
     }
-
 }
+
+.header-title {
+    position: relative;
+    background-clip: padding-box;
+    div {
+        width: 100%;
+    }
+
+    &.selected {
+        text-decoration: underline;
+    }
+}
+
+
+
