@@ -2,18 +2,22 @@
 import PropTypes from 'prop-types';
 
 const Popup = (props) => {
-    const { title, isShow, width, height, isHtml, children, iframeUrl } = props;
+    const { title, isShow, containerClassName, contentClassName, className, isHtml, children, iframeUrl } = props;
     let content;
     if (iframeUrl) {
-        content = <iframe frameBorder="0" src={iframeUrl} width="100%" height="100%" />;
+        content = <iframe style={{ border: 'none' }} src={iframeUrl} width="100%" height="100%" />;
     } else {
-        content = isHtml ? <div className="popup-content" dangerouslySetInnerHTML={{ __html: children }} /> : <div className="popup-content">{children}</div>;
+        content = isHtml ? (
+            <div className={`popup-content ${contentClassName}`} dangerouslySetInnerHTML={{ __html: children }} />
+        ) : (
+            <div className={`popup-content ${contentClassName}`}>{children}</div>
+        );
     }
 
     return (
-        <div className={`popup-container ${isShow ? 'show' : 'hide'}`} onClick={props.onClick}>
+        <div className={`popup-container ${containerClassName ?? ''} ${isShow ? 'show' : 'hide'}`} onClick={props.onClick}>
             <div className="popup-block-body"></div>
-            <div className="flat-popup" style={{ height: height, width: width }}>
+            <div className={`flat-popup ${className ?? ''}`}>
                 <div className="popup-title">
                     <div className="txt-title">{title}</div>
                     <a
@@ -31,22 +35,21 @@ const Popup = (props) => {
 };
 
 Popup.propTypes = {
-    width: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-    height: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     title: PropTypes.string,
     isShow: PropTypes.bool,
     onClose: PropTypes.func,
     isHtml: PropTypes.bool,
     iframeUrl: PropTypes.string,
+    contentClassName: PropTypes.string,
     onClick: PropTypes.func,
 };
 
 Popup.defaultProps = {
-    width: '55%',
-    height: '55%',
     isShow: false,
     isHtml: false,
     iframeUrl: null,
+    className: '',
+    contentClassName: '',
 };
 
 export default Popup;
