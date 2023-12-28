@@ -1,7 +1,9 @@
 import SettledMatchCountRoute from './SettledMatchCountRoute';
 import WeeklyLiveMatchRoute from './WeeklyLiveMatchRoute';
-import * as permission from '@srcRoot/constants/permission';
-import * as pages from '@srcRoot/constants/pages';
+import CustomerBalanceRoute from './CustomerBalanceRoute';
+
+import * as permission from '../constants/permission';
+import * as pages from '../constants/pages';
 
 export default [
     {
@@ -15,5 +17,11 @@ export default [
         Path: 'WeeklyLiveMatchReport/*',
         Permissions: [permission.WEEKLY_LIVE_MATCHES],
         Component: WeeklyLiveMatchRoute,
+    },
+    {
+        Id: pages.CUSTOMER_BALANCE,
+        Path: 'CustomerBalanceReport/*',
+        Permissions: [permission.CUSTOMER_BALANCE],
+        Component: CustomerBalanceRoute,
     },
 ];

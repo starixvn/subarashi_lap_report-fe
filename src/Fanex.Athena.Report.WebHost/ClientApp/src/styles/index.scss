@@ -13,9 +13,10 @@
 @import "fonts/roboto";
 
 // components styles
+@import "components/3rd-lib";
+@import "components/user-guide";
 @import "components/legion-lib";
 @import "components/loader";
-@import "components/user-guide";
 @import "components/popup";
 
 // layout styles

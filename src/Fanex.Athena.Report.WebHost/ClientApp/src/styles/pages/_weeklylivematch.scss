@@ -1,16 +1,3 @@
-.table {
-    line-height: 1.5;
-}
-
-.footer-content {
-    .table>tbody>tr>td {
-        border: 1px solid #d1dae1;
-        border-bottom: none;
-        background: #B8C3C9;
-        color: #404040;
-    }
-}
-
 .header-content {
     .table>thead>tr>th {
         vertical-align: middle;
@@ -26,12 +13,6 @@
 }
 
 .header-title {
-    position: relative;
-    background-clip: padding-box;
-    div {
-        width: 100%;
-    }
-
     &.selected {
         text-decoration: underline;
     }

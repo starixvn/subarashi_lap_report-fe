@@ -7,6 +7,7 @@ $indexLoader: 1000;
     bottom: 0;
     right: 0;
     z-index: $indexLoader;
+    display: none;
 
     .icon-loading {
         position: absolute;
@@ -16,6 +17,10 @@ $indexLoader: 1000;
 
     &.default {
         background: rgba(255, 255, 255, 0.7) no-repeat;
+    }
+
+    &.loading {
+        display: block;
     }
 }
 

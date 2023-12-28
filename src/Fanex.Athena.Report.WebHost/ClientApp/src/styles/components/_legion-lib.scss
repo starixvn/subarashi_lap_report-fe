@@ -1,9 +1,68 @@
 @import '@legion-lib/react-grid/dist/style.css';
 @import '@legion-lib/react-daterangepicker/dist/style.css';
-
-// ----- Custom Here -----
+@import '@legion-lib/react-multiselect/dist/style.css';
 
 /* React Grid */
+.table {
+    line-height: 1.5;
+}
 
+.footer-content {
+    .table>tbody>tr>td {
+        border: 1px solid #d1dae1;
+        border-bottom: none;
+        background: #B8C3C9;
+        color: #404040;
+    }
+}
 
-/* Date Range Picker */
+.page-container {
+    font-size: 1.1rem;
+
+    .icon {
+        font-family: 'icomoon' !important;
+    }
+
+    .page-first {
+        &:before {
+            content: "\ea21";
+        }
+    }
+
+    .page-prev {
+        &:before {
+            content: "\ea1f";
+        }
+    }
+
+    .page-next {
+        &:before {
+            content: "\ea20";
+        }
+    }
+
+    .page-last {
+        &:before {
+            content: "\ea22";
+        }
+    }
+}
+
+/* multiple-select */
+.multiple-select-label {
+    height: 23px;
+    padding-top: 3px;
+    padding-bottom: 5px;
+}
+
+.multiple-select-options-container {
+    .multiple-select-item label {
+        color: $black;
+    }
+}
+
+.risk-level {
+    display: flex;
+    padding: 0;
+}
+

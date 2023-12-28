@@ -10,10 +10,10 @@ const useToggleRequest = () => {
         dispatch(toggleLoader(true));
         requestFunc()
             .then((response) => {
-                dispatch(toggleLoader(false));
                 if (callbackFunc) {
                     callbackFunc(response);
                 }
+                dispatch(toggleLoader(false));
             })
             .catch((error) => {
                 alert(LangHelper.getSingleResource('ErrorProcessingMsg'));
