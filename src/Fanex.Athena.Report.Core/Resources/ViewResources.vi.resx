@@ -378,4 +378,22 @@
   <data name="ExcludeTestData" xml:space="preserve">
     <value>Loại trừ Dữ liệu Kiểm Thử</value>
   </data>
+  <data name="CustomerSupportTask" xml:space="preserve">
+    <value>Nhiệm Vụ Hỗ Trợ Khách Hàng</value>
+  </data>
+  <data name="ErrorProcessingMsg" xml:space="preserve">
+    <value>Xin lỗi, đã xảy ra lỗi trong quá trình thực hiện yêu cầu của bạn.</value>
+  </data>
+  <data name="GetAllCustomersHavingPositiveClosingBalance" xml:space="preserve">
+    <value>Chỉ hiển thị khách hàng có số dư cuối kỳ &gt; 0</value>
+  </data>
+  <data name="GetAllCustomersHavingRunningTickets" xml:space="preserve">
+    <value>Xem tất cả các khách hàng có vé cược đang diễn ra</value>
+  </data>
+  <data name="GetAllRunningTickets" xml:space="preserve">
+    <value>Xem tất cả các vé đang diễn ra</value>
+  </data>
+  <data name="SupportTask" xml:space="preserve">
+    <value>Nhiệm vụ hỗ trợ</value>
+  </data>
 </root>

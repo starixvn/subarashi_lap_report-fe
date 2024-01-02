@@ -22,7 +22,6 @@
 		foreach (var outputPath in outputPaths)
 		{
 					manager.StartNewFile($"{outputPath}\\{fileName}");
-					const string ignoreKey = "ignorejs";
 					using (var stream = new FileStream(filePath, FileMode.Open, FileAccess.Read))
 						{
 						   var xdoc = System.Xml.Linq.XDocument.Load(stream);
@@ -40,15 +39,7 @@ window.<#=GetJsObjectName(fileName)#> = {
 							{
 								var se = index < lastIndex;
 								var valueItem = item.Descendants("value").FirstOrDefault();
-								var commentItem = item.Descendants("comment").FirstOrDefault();
 								index++;
-								var noGenerate = (commentItem?.Value?.ToString() ?? string.Empty)
-													.ToLower()
-													.Contains(ignoreKey);
-								if(noGenerate) 
-								{
-									continue;
-								}
 						#>
 <#=CreateJsonProperties(item.Attribute("name").Value, valueItem.Value, se)#>
 <# }} #>

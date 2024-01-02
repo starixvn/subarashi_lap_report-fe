@@ -383,4 +383,22 @@
   <data name="ExcludeTestData" xml:space="preserve">
     <value>Exclude Test Data</value>
   </data>
+  <data name="CustomerSupportTask" xml:space="preserve">
+    <value>Customer Support Task</value>
+  </data>
+  <data name="ErrorProcessingMsg" xml:space="preserve">
+    <value>Sorry, an error occurred while processing your request.</value>
+  </data>
+  <data name="GetAllCustomersHavingPositiveClosingBalance" xml:space="preserve">
+    <value>Only show customers having closing balance &gt; 0</value>
+  </data>
+  <data name="GetAllCustomersHavingRunningTickets" xml:space="preserve">
+    <value>Get all customers having running tickets</value>
+  </data>
+  <data name="GetAllRunningTickets" xml:space="preserve">
+    <value>Get all running tickets</value>
+  </data>
+  <data name="SupportTask" xml:space="preserve">
+    <value>Support Task</value>
+  </data>
 </root>

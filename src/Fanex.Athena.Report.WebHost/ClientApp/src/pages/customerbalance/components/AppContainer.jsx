@@ -27,7 +27,6 @@ export const AppContainer = (props) => {
 
         result.data.currencies = result.data.currencies.map((item) => ({ value: item.key, label: item.value }));
         result.data.IsExcludedTestData = true;
-
         dispatch(setFormData(result.data));
         dispatch(setSelectedProducts(result.data.productOptions));
         dispatch(

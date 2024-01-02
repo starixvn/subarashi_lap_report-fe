@@ -1,6 +1,7 @@
 import SettledMatchCountRoute from './SettledMatchCountRoute';
 import WeeklyLiveMatchRoute from './WeeklyLiveMatchRoute';
 import CustomerBalanceRoute from './CustomerBalanceRoute';
+import CustomerSupportTaskRoute from './CustomerSupportTasksRoute';
 
 import * as permission from '../constants/permission';
 import * as pages from '../constants/pages';
@@ -23,5 +24,11 @@ export default [
         Path: 'CustomerBalanceReport/*',
         Permissions: [permission.CUSTOMER_BALANCE],
         Component: CustomerBalanceRoute,
+    },
+    {
+        Id: pages.CUSTOMER_SUPPORT_TASK,
+        Path: 'CustomerSupportTaskReport/*',
+        Permissions: [permission.CUSTOMER_SUPPORT_TASK],
+        Component: CustomerSupportTaskRoute,
     },
 ];

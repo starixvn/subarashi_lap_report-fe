@@ -1,13 +1,12 @@
 const _rootUrl = window.rootUrl || '/';
-const _isSelfMode = !!window.isSelfMode;
 export default class Site {
     static resolveClientUrl(relativeUrl) {
         return _rootUrl + relativeUrl;
     }
 
-    static getLrfSubsidiary() {
+    static getLrfSubsidiary(isSelfMode) {
         try {
-            return (_isSelfMode && top.getLrfSubsidiarySearch && top.getLrfSubsidiarySearch()) || {};
+            return (isSelfMode && top.getLrfSubsidiarySearch && top.getLrfSubsidiarySearch()) || {};
         } catch (e) {
             return {};
         }
