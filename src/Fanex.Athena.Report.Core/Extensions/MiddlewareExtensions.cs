@@ -11,7 +11,7 @@ namespace Fanex.Athena.Report.Core.Extensions
 {
     public static class MiddleWareExtensions
     {
-        public static IApplicationBuilder UseWhoAmICheck(this IApplicationBuilder app)
+        public static IApplicationBuilder UseWhoAmICheck(this IApplicationBuilder app, string environment)
         {
             return app.UseHealthChecks("/whoami", new HealthCheckOptions
             {
@@ -22,13 +22,20 @@ namespace Fanex.Athena.Report.Core.Extensions
                     var result = JsonConvert.SerializeObject(new
                     {
                         status = report.Status.ToString(),
-                        monitors = report.Entries.Select(e => new
+                        monitors = report.Entries.Select(e =>
                         {
-                            name = e.Key,
-                            status = Enum.GetName(typeof(HealthStatus), e.Value.Status),
-                            values = e.Value.Data
+                            var data = e.Value.Data.ToDictionary(_ => _.Key, _ => _.Value);
+                            data["Env"] = environment;
+
+                            return new
+                            {
+                                name = e.Key,
+                                status = Enum.GetName(typeof(HealthStatus), e.Value.Status),
+                                values = data
+                            };
                         })
                     }, Formatting.Indented);
+
 
                     context.Response.ContentType = MediaTypeNames.Application.Json;
                     await context.Response.WriteAsync(result);

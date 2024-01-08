@@ -35,7 +35,7 @@ app.UseHttpsRedirection();
 
 app.UseStaticFiles(app.Environment.IsDevelopment());
 
-app.UseWhoAmICheck();
+app.UseWhoAmICheck(configuration["Env"]);
 
 app.UseRouting();
 app.UseCors();
