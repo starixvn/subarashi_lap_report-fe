@@ -4,5 +4,7 @@
 // Generated items
 // Fanex.Athena.Report.WebHost\ClientApp\src\languages\ViewResources.zh-CN.js
 // Fanex.Athena.Report.WebHost\ClientApp\src\languages\ViewResources.vi-VN.js
+// Fanex.Athena.Report.WebHost\ClientApp\src\languages\ViewResources.th-TH.js
 // Fanex.Athena.Report.WebHost\ClientApp\src\languages\ViewResources.js
+// Fanex.Athena.Report.WebHost\ClientApp\src\languages\ViewResources.id-ID.js
 

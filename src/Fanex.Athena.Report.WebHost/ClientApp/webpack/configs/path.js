@@ -11,6 +11,8 @@ const scriptPath = {
     [`${jsPath}/languages/lang-en-US`]: "./src/languages/ViewResources.js",
     [`${jsPath}/languages/lang-vi-VN`]: "./src/languages/ViewResources.vi-VN.js",
     [`${jsPath}/languages/lang-zh-CN`]: "./src/languages/ViewResources.zh-CN.js",
+    [`${jsPath}/languages/lang-id-ID`]: "./src/languages/ViewResources.id-ID.js",
+    [`${jsPath}/languages/lang-th-TH`]: "./src/languages/ViewResources.th-TH.js",
 };
 
 const stylePath = {
