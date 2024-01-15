@@ -13,6 +13,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@legion-lib/react-breadcrumb": "^1.0.0",
     "@legion-lib/react-daterangepicker": "^2.0.2",
     "@legion-lib/react-grid": "^1.0.1",
     "@legion-lib/react-multiselect": "^2.0.1",
@@ -27,7 +28,8 @@
     "react-select": "^5.8.0",
     "redux": "^4.2.1",
     "redux-logger": "^3.0.6",
-    "redux-thunk": "^2.4.2"
+    "redux-thunk": "^2.4.2",
+    "uuid": "^9.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.23.2",

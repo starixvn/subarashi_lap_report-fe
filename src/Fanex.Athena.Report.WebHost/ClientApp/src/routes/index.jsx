@@ -2,6 +2,7 @@ import SettledMatchCountRoute from './SettledMatchCountRoute';
 import WeeklyLiveMatchRoute from './WeeklyLiveMatchRoute';
 import CustomerBalanceRoute from './CustomerBalanceRoute';
 import CustomerSupportTaskRoute from './CustomerSupportTasksRoute';
+import ExtraPayoutRoute from './ExtraPayoutRoute';
 
 import * as permission from '../constants/permission';
 import * as pages from '../constants/pages';
@@ -30,5 +31,11 @@ export default [
         Path: 'CustomerSupportTaskReport/*',
         Permissions: [permission.CUSTOMER_SUPPORT_TASK],
         Component: CustomerSupportTaskRoute,
+    },
+    {
+        Id: pages.EXTRA_PAYOUT,
+        Path: 'ExtraPayoutReport/*',
+        Permissions: [permission.EXTRA_PAYOUT],
+        Component: ExtraPayoutRoute,
     },
 ];

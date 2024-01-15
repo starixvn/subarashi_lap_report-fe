@@ -18,6 +18,10 @@
     cursor: pointer;
     display: inline-block;
     margin-top: 3px;
+
+    &.right {
+        float: right;
+    }
 }
 
 .icon-book {

@@ -6,4 +6,6 @@ export const CUSTOMER_BALANCE = 'CustomerBalance';
 
 export const CUSTOMER_SUPPORT_TASK = 'CustomerSupportTask';
 
+export const EXTRA_PAYOUT = 'ExtraPayout';
+
 export const USER_GUIDE = 'UserGuide';

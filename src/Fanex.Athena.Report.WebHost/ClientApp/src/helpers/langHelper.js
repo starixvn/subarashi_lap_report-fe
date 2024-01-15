@@ -7,6 +7,8 @@ export default class LangHelper {
         eng: 'en-US',
         zhCN: 'zh-CN',
         viVN: 'vi-VN',
+        idID: 'id-ID',
+        thTH: 'th-TH',
     };
 
     static get currentLanguage() {
@@ -15,7 +17,6 @@ export default class LangHelper {
 
     static getSingleResource(key) {
         var langHandler = window[resourceName];
-
         return (langHandler && langHandler[key]) || (window[DEFAULT_RESOURCE_NAME] && window[DEFAULT_RESOURCE_NAME][key]) || key;
     }
 
