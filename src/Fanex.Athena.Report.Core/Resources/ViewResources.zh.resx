@@ -378,4 +378,70 @@
   <data name="ErrorProcessingMsg" xml:space="preserve">
     <value>对不起, 处理您的请求时有错误发生。</value>
   </data>
+  <data name="BaseCurrency" xml:space="preserve">
+    <value>基础货币</value>
+  </data>
+  <data name="ConvertAllFiguresToBaseCurrency" xml:space="preserve">
+    <value>将所有数据转换为基础货币</value>
+  </data>
+  <data name="Daily" xml:space="preserve">
+    <value>每日</value>
+  </data>
+  <data name="ExternalIdOrSystemId" xml:space="preserve">
+    <value>或系统帐号(支援前缀搜寻)</value>
+  </data>
+  <data name="Monthly" xml:space="preserve">
+    <value>每月</value>
+  </data>
+  <data name="Product" xml:space="preserve">
+    <value>产品</value>
+  </data>
+  <data name="PromotionType" xml:space="preserve">
+    <value>基础货币</value>
+  </data>
+  <data name="ReportBy" xml:space="preserve">
+    <value>报告由</value>
+  </data>
+  <data name="Subsidiary" xml:space="preserve">
+    <value>子网站</value>
+  </data>
+  <data name="SubsidiarySearch" xml:space="preserve">
+    <value>收寻子网站</value>
+  </data>
+  <data name="Username" xml:space="preserve">
+    <value>用户名</value>
+  </data>
+  <data name="WhiteLabel" xml:space="preserve">
+    <value>包网商</value>
+  </data>
+  <data name="PromotionDetails" xml:space="preserve">
+    <value>活动详情</value>
+  </data>
+  <data name="RefNo" xml:space="preserve">
+    <value>注单号码</value>
+  </data>
+  <data name="TotalTransaction" xml:space="preserve">
+    <value>总交易数</value>
+  </data>
+  <data name="CustomerAmount" xml:space="preserve">
+    <value>玩家金額</value>
+  </data>
+  <data name="LicSharingAmount" xml:space="preserve">
+    <value>承租公司分擔金額</value>
+  </data>
+  <data name="Main" xml:space="preserve">
+    <value>主</value>
+  </data>
+  <data name="Customer" xml:space="preserve">
+    <value>会员</value>
+  </data>
+  <data name="TotalIn" xml:space="preserve">
+    <value>总计在</value>
+  </data>
+  <data name="BetId" xml:space="preserve">
+    <value>投注单号</value>
+  </data>
+  <data name="LicenseeW_L" xml:space="preserve">
+    <value>承租公司输赢</value>
+  </data>
 </root>

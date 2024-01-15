@@ -401,4 +401,73 @@
   <data name="SupportTask" xml:space="preserve">
     <value>Support Task</value>
   </data>
+  <data name="BaseCurrency" xml:space="preserve">
+    <value>Base Currency</value>
+  </data>
+  <data name="ConvertAllFiguresToBaseCurrency" xml:space="preserve">
+    <value>Convert all figures to Base Currency</value>
+  </data>
+  <data name="Daily" xml:space="preserve">
+    <value>Daily</value>
+  </data>
+  <data name="ExternalIdOrSystemId" xml:space="preserve">
+    <value>External ID or System ID</value>
+  </data>
+  <data name="Monthly" xml:space="preserve">
+    <value>Monthly</value>
+  </data>
+  <data name="PromotionType" xml:space="preserve">
+    <value>Promotion Type</value>
+  </data>
+  <data name="ReportBy" xml:space="preserve">
+    <value>Report By</value>
+  </data>
+  <data name="Subsidiary" xml:space="preserve">
+    <value>Subsidiary</value>
+  </data>
+  <data name="SubsidiarySearch" xml:space="preserve">
+    <value>Subsidiary Search</value>
+  </data>
+  <data name="Username" xml:space="preserve">
+    <value>Username</value>
+  </data>
+  <data name="WhiteLabel" xml:space="preserve">
+    <value>WhiteLabel</value>
+  </data>
+  <data name="Customer" xml:space="preserve">
+    <value>Customer</value>
+  </data>
+  <data name="CustomerAmount" xml:space="preserve">
+    <value>Customer Amount</value>
+  </data>
+  <data name="LicSharingAmount" xml:space="preserve">
+    <value>Licensee Sharing Amount</value>
+  </data>
+  <data name="Main" xml:space="preserve">
+    <value>Main</value>
+  </data>
+  <data name="Product" xml:space="preserve">
+    <value>Product</value>
+  </data>
+  <data name="PromotionDetails" xml:space="preserve">
+    <value>Promotion Details</value>
+  </data>
+  <data name="RefNo" xml:space="preserve">
+    <value>Ref No</value>
+  </data>
+  <data name="TotalTransaction" xml:space="preserve">
+    <value>Total Transaction</value>
+  </data>
+  <data name="TotalIn" xml:space="preserve">
+    <value>Total in</value>
+  </data>
+  <data name="BetId" xml:space="preserve">
+    <value>Bet ID</value>
+  </data>
+  <data name="ExtraPayoutBetIDTooltip" xml:space="preserve">
+    <value>Data is available only for Sportsbook Promotion - Saba Reward Risk-free Rebate</value>
+  </data>
+  <data name="LicenseeW_L" xml:space="preserve">
+    <value>Licensee W/L</value>
+  </data>
 </root>

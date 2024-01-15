@@ -117,7 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-<data name="AccessDeniedMsg" xml:space="preserve">
+  <data name="AccessDeniedMsg" xml:space="preserve">
     <value>Maaf, Anda tidak memiliki izin untuk mengakses halaman ini.</value>
   </data>
   <data name="Adjustment" xml:space="preserve">
@@ -398,5 +398,71 @@
   </data>
   <data name="Yesterday" xml:space="preserve">
     <value>Kemarin</value>
+  </data>
+  <data name="BaseCurrency" xml:space="preserve">
+    <value>Mata Uang Dasar</value>
+  </data>
+  <data name="ConvertAllFiguresToBaseCurrency" xml:space="preserve">
+    <value>Konversi semua angka ke Mata Uang Dasar</value>
+  </data>
+  <data name="Daily" xml:space="preserve">
+    <value>Harian</value>
+  </data>
+  <data name="ExternalIdOrSystemId" xml:space="preserve">
+    <value>ID Eksternal atau ID Sistem</value>
+  </data>
+  <data name="Monthly" xml:space="preserve">
+    <value>Bulanan</value>
+  </data>
+  <data name="Product" xml:space="preserve">
+    <value>Produk</value>
+  </data>
+  <data name="PromotionType" xml:space="preserve">
+    <value>Jenis Promosi</value>
+  </data>
+  <data name="ReportBy" xml:space="preserve">
+    <value>Laporan Berdasarkan</value>
+  </data>
+  <data name="Subsidiary" xml:space="preserve">
+    <value>Cabang</value>
+  </data>
+  <data name="SubsidiarySearch" xml:space="preserve">
+    <value>Pencarian Cabang</value>
+  </data>
+  <data name="Username" xml:space="preserve">
+    <value>Nama Pengguna</value>
+  </data>
+  <data name="WhiteLabel" xml:space="preserve">
+    <value>WhiteLabel</value>
+  </data>
+  <data name="PromotionDetails" xml:space="preserve">
+    <value>Rincian Promosi</value>
+  </data>
+  <data name="RefNo" xml:space="preserve">
+    <value>No. Ref</value>
+  </data>
+  <data name="TotalTransaction" xml:space="preserve">
+    <value>Total Transaksi</value>
+  </data>
+  <data name="CustomerAmount" xml:space="preserve">
+    <value>Jumlah Pelanggan</value>
+  </data>
+  <data name="LicSharingAmount" xml:space="preserve">
+    <value>Jumlah Bagi Hasil Lisensi</value>
+  </data>
+  <data name="Main" xml:space="preserve">
+    <value>Utama</value>
+  </data>
+  <data name="Customer" xml:space="preserve">
+    <value>Pelanggan</value>
+  </data>
+  <data name="TotalIn" xml:space="preserve">
+    <value>Total dalam</value>
+  </data>
+  <data name="BetId" xml:space="preserve">
+    <value>ID Taruhan</value>
+  </data>
+  <data name="LicenseeW_L" xml:space="preserve">
+    <value>Keuntungan/Kerugian Lisensi</value>
   </data>
 </root>

@@ -396,4 +396,70 @@
   <data name="SupportTask" xml:space="preserve">
     <value>Nhiệm vụ hỗ trợ</value>
   </data>
+  <data name="BaseCurrency" xml:space="preserve">
+    <value>Tiền tệ cơ sở</value>
+  </data>
+  <data name="ConvertAllFiguresToBaseCurrency" xml:space="preserve">
+    <value>Chuyển đổi tất cả số liệu theo tiền tệ cơ sở</value>
+  </data>
+  <data name="Daily" xml:space="preserve">
+    <value>Hàng ngày</value>
+  </data>
+  <data name="ExternalIdOrSystemId" xml:space="preserve">
+    <value>ID Ngoại Vi hoặc ID Hệ thống</value>
+  </data>
+  <data name="Monthly" xml:space="preserve">
+    <value>Hàng tháng</value>
+  </data>
+  <data name="Product" xml:space="preserve">
+    <value>Sản phẩm</value>
+  </data>
+  <data name="PromotionType" xml:space="preserve">
+    <value>Loại Khuyến mãi</value>
+  </data>
+  <data name="ReportBy" xml:space="preserve">
+    <value>Báo cáo theo</value>
+  </data>
+  <data name="Subsidiary" xml:space="preserve">
+    <value>Chi nhánh</value>
+  </data>
+  <data name="SubsidiarySearch" xml:space="preserve">
+    <value>Tìm kiếm chi nhánh</value>
+  </data>
+  <data name="Username" xml:space="preserve">
+    <value>Tên người dùng</value>
+  </data>
+  <data name="WhiteLabel" xml:space="preserve">
+    <value>Nhóm Chi Nhánh</value>
+  </data>
+  <data name="PromotionDetails" xml:space="preserve">
+    <value>Chi Tiết Khuyến Mãi</value>
+  </data>
+  <data name="RefNo" xml:space="preserve">
+    <value>Số tham chiếu</value>
+  </data>
+  <data name="TotalTransaction" xml:space="preserve">
+    <value>Tổng giao dịch</value>
+  </data>
+  <data name="CustomerAmount" xml:space="preserve">
+    <value>Số tiền khách hàng</value>
+  </data>
+  <data name="LicSharingAmount" xml:space="preserve">
+    <value>Tiền Chia Sẻ của Nhà Cái</value>
+  </data>
+  <data name="Main" xml:space="preserve">
+    <value>Chính</value>
+  </data>
+  <data name="Customer" xml:space="preserve">
+    <value>Khách hàng</value>
+  </data>
+  <data name="TotalIn" xml:space="preserve">
+    <value>Tổng cộng</value>
+  </data>
+  <data name="BetId" xml:space="preserve">
+    <value>ID Cược</value>
+  </data>
+  <data name="LicenseeW_L" xml:space="preserve">
+    <value>Thắng Thua Nhà Cái</value>
+  </data>
 </root>

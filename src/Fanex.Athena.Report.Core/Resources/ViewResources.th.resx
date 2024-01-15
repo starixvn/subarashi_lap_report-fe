@@ -399,4 +399,70 @@
   <data name="Yesterday" xml:space="preserve">
     <value>เมื่อวาน</value>
   </data>
+  <data name="BaseCurrency" xml:space="preserve">
+    <value>สกุลเงินหลัก</value>
+  </data>
+  <data name="ConvertAllFiguresToBaseCurrency" xml:space="preserve">
+    <value>แปลงตัวเลขทั้งหมดเป็นสกุลเงินหลัก</value>
+  </data>
+  <data name="Daily" xml:space="preserve">
+    <value>รายวัน</value>
+  </data>
+  <data name="ExternalIdOrSystemId" xml:space="preserve">
+    <value>รหัสภายนอก หรือ รหัสระบบ</value>
+  </data>
+  <data name="Monthly" xml:space="preserve">
+    <value>รายเดือน</value>
+  </data>
+  <data name="Product" xml:space="preserve">
+    <value>ผลิตภัณฑ์</value>
+  </data>
+  <data name="PromotionType" xml:space="preserve">
+    <value>ประเภทโปรโมชั่น</value>
+  </data>
+  <data name="ReportBy" xml:space="preserve">
+    <value>รายงานโดย</value>
+  </data>
+  <data name="Subsidiary" xml:space="preserve">
+    <value>บริษัทย่อย</value>
+  </data>
+  <data name="SubsidiarySearch" xml:space="preserve">
+    <value>ค้นหาบริษัทย่อย</value>
+  </data>
+  <data name="Username" xml:space="preserve">
+    <value>ชื่อผู้ใช้</value>
+  </data>
+  <data name="WhiteLabel" xml:space="preserve">
+    <value>ป้ายขาว</value>
+  </data>
+  <data name="PromotionDetails" xml:space="preserve">
+    <value>รายละเอียดโปรโมชั่น</value>
+  </data>
+  <data name="RefNo" xml:space="preserve">
+    <value>หมายเลขอ้างอิง</value>
+  </data>
+  <data name="TotalTransaction" xml:space="preserve">
+    <value>ธุรกรรมทั้งหมด</value>
+  </data>
+  <data name="CustomerAmount" xml:space="preserve">
+    <value>จำนวนลูกค้า</value>
+  </data>
+  <data name="LicSharingAmount" xml:space="preserve">
+    <value>จำนวนเงินที่แบ่งปันของผู้ได้รับอนุญาต</value>
+  </data>
+  <data name="Main" xml:space="preserve">
+    <value>หลัก</value>
+  </data>
+  <data name="Customer" xml:space="preserve">
+    <value>ลูกค้า</value>
+  </data>
+  <data name="TotalIn" xml:space="preserve">
+    <value>รวมใน</value>
+  </data>
+  <data name="BetId" xml:space="preserve">
+    <value>รหัสเดิมพัน</value>
+  </data>
+  <data name="LicenseeW_L" xml:space="preserve">
+    <value>ผู้ได้รับอนุญาต แพ้ชนะ</value>
+  </data>
 </root>

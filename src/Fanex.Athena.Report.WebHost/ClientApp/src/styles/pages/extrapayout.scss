@@ -1,0 +1,11 @@
+.table {
+    line-height: 1.15;
+}
+
+.footer-content {
+    .table>tbody>tr {
+        &.light-footer>td {
+            background: #ffffff;
+        }
+    }
+}
