@@ -6,7 +6,7 @@ import reducer from './reducers';
 import Constants from './constants';
 
 // import styles
-import '@srcRoot/styles/pages/_weeklylivematch.scss';
+import '@srcRoot/styles/pages/weeklylivematch.scss';
 
 const WeeklyLiveMatch = (props) => {
     const defaultState = Object.assign({}, { dateRange: Constants.DateRange });

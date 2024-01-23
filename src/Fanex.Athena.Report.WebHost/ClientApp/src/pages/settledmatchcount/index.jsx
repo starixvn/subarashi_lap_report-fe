@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import Store from '@srcRoot/lib/store';
 import reducer from './reducers';
 // import styles
-import '@srcRoot/styles/pages/_settledmatchcount.scss';
+import '@srcRoot/styles/pages/settledmatchcount.scss';
 
 const SettledMatchCount = (props) => {
     const store = Store.createStore(reducer, {});
