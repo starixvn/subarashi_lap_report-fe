@@ -470,4 +470,28 @@
   <data name="LicenseeW_L" xml:space="preserve">
     <value>Licensee W/L</value>
   </data>
+    <data name="League" xml:space="preserve">
+    <value>League</value>
+  </data>
+  <data name="BetCount" xml:space="preserve">
+    <value>Bet Count</value>
+  </data>
+  <data name="BACommission" xml:space="preserve">
+    <value>BA Commission</value>
+  </data>
+  <data name="Match" xml:space="preserve">
+    <value>Match</value>
+  </data>
+  <data name="BetType" xml:space="preserve">
+    <value>Bet type</value>
+  </data>
+  <data name="LeagueWinLoss" xml:space="preserve">
+    <value>Win Loss By League</value>
+  </data>
+  <data name="LeagueName" xml:space="preserve">
+    <value>League name</value>
+  </data>
+  <data name="IsGroupInOriginalCurrency" xml:space="preserve">
+    <value>Display group breakdown in original currency</value>
+  </data>
 </root>

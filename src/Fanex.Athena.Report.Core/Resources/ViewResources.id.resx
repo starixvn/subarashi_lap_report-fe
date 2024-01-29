@@ -465,4 +465,28 @@
   <data name="LicenseeW_L" xml:space="preserve">
     <value>Keuntungan/Kerugian Lisensi</value>
   </data>
+  <data name="League" xml:space="preserve">
+    <value>Liga</value>
+  </data>
+  <data name="BetCount" xml:space="preserve">
+    <value>Jumlah Taruhan</value>
+  </data>
+  <data name="BACommission" xml:space="preserve">
+    <value>Komisi BA</value>
+  </data>
+  <data name="Match" xml:space="preserve">
+    <value>Pertandingan</value>
+  </data>
+  <data name="BetType" xml:space="preserve">
+    <value>Jenis Taruhan</value>
+  </data>
+  <data name="LeagueWinLoss" xml:space="preserve">
+    <value>Keuntungan/Kerugian Berdasarkan Liga</value>
+  </data>
+  <data name="LeagueName" xml:space="preserve">
+    <value>Nama Liga</value>
+  </data>
+  <data name="IsGroupInOriginalCurrency" xml:space="preserve">
+    <value>Tampilkan pembagian grup dalam mata uang asli</value>
+  </data>
 </root>

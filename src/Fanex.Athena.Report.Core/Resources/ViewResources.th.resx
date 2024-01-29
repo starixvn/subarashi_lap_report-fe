@@ -465,4 +465,28 @@
   <data name="LicenseeW_L" xml:space="preserve">
     <value>ผู้ได้รับอนุญาต แพ้ชนะ</value>
   </data>
+  <data name="League" xml:space="preserve">
+    <value>ลีก</value>
+  </data>
+  <data name="BetCount" xml:space="preserve">
+    <value>จำนวนเดิมพัน</value>
+  </data>
+  <data name="BACommission" xml:space="preserve">
+    <value>ค่าคอมมิชชั่นBA</value>
+  </data>
+  <data name="Match" xml:space="preserve">
+    <value>การแข่งขัน</value>
+  </data>
+  <data name="BetType" xml:space="preserve">
+    <value>ประเภทการเดิมพัน</value>
+  </data>
+  <data name="LeagueWinLoss" xml:space="preserve">
+    <value>แพ้ชนะตามลีก</value>
+  </data>
+  <data name="LeagueName" xml:space="preserve">
+    <value>ชื่อลีก</value>
+  </data>
+  <data name="IsGroupInOriginalCurrency" xml:space="preserve">
+    <value>แสดงการแบ่งกลุ่มในสกุลเงินเดิม</value>
+  </data>
 </root>

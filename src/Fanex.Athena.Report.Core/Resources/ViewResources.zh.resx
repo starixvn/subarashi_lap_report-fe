@@ -444,4 +444,28 @@
   <data name="LicenseeW_L" xml:space="preserve">
     <value>承租公司输赢</value>
   </data>
+    <data name="League" xml:space="preserve">
+    <value>联赛</value>
+  </data>
+  <data name="BetCount" xml:space="preserve">
+    <value>投注数</value>
+  </data>
+  <data name="BACommission" xml:space="preserve">
+    <value>BA佣金</value>
+  </data>
+  <data name="Match" xml:space="preserve">
+    <value>赛事</value>
+  </data>
+  <data name="BetType" xml:space="preserve">
+    <value>投注类别</value>
+  </data>
+  <data name="LeagueWinLoss" xml:space="preserve">
+    <value>联赛输赢</value>
+  </data>
+  <data name="LeagueName" xml:space="preserve">
+    <value>联赛名称</value>
+  </data>
+  <data name="IsGroupInOriginalCurrency" xml:space="preserve">
+    <value>以原始货币显示</value>
+  </data>
 </root>

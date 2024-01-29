@@ -462,4 +462,28 @@
   <data name="LicenseeW_L" xml:space="preserve">
     <value>Thắng Thua Nhà Cái</value>
   </data>
+    <data name="League" xml:space="preserve">
+    <value>Giải đấu</value>
+  </data>
+  <data name="BetCount" xml:space="preserve">
+    <value>Số lượng cược</value>
+  </data>
+  <data name="BACommission" xml:space="preserve">
+    <value>Hoa hồng BA</value>
+  </data>
+  <data name="Match" xml:space="preserve">
+    <value>Trận đấu</value>
+  </data>
+  <data name="BetType" xml:space="preserve">
+    <value>Loại cược</value>
+  </data>
+  <data name="LeagueWinLoss" xml:space="preserve">
+    <value>Thắng Thua Theo Giải Đấu</value>
+  </data>
+  <data name="LeagueName" xml:space="preserve">
+    <value>Tên Giải đấu</value>
+  </data>
+  <data name="IsGroupInOriginalCurrency" xml:space="preserve">
+    <value>Nhóm theo đơn vị tiền tệ gốc</value>
+  </data>
 </root>

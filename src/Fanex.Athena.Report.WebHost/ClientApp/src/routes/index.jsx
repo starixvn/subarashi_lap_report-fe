@@ -6,6 +6,7 @@ import ExtraPayoutRoute from './ExtraPayoutRoute';
 
 import * as permission from '../constants/permission';
 import * as pages from '../constants/pages';
+import LeagueWinLossRoute from './LeagueWinLoss';
 
 export default [
     {
@@ -37,5 +38,11 @@ export default [
         Path: 'ExtraPayoutReport/*',
         Permissions: [permission.EXTRA_PAYOUT],
         Component: ExtraPayoutRoute,
+    },
+    {
+        Id: pages.LEAGUE_WL,
+        Path: 'LeagueWinLossReport/*',
+        Permissions: [permission.LEAGUE_WL],
+        Component: LeagueWinLossRoute,
     },
 ];
