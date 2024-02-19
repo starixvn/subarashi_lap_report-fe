@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
 const CollapsiblePanel = (props) => {
-    const [isCollapsed, setIsCollapsed] = useState(false);
+    const [isCollapsed, setIsCollapsed] = useState(props.isInitCollapsed);
 
     const _onClick = () => {
         const newState = !isCollapsed;
@@ -21,13 +21,15 @@ const CollapsiblePanel = (props) => {
         }
     };
 
-    const { className, children, isCollapseMode, stickyFooter, iconToggle } = props;
+    const { className, children, isCollapseMode, isCustomCollapse, stickyFooter, iconToggle } = props;
 
     const containerClassnames = classNames('page-filter', className || '', children ? '' : 'min');
 
     return (
         <div className={containerClassnames}>
-            <div style={{ display: isCollapsed ? 'none' : 'block' }}>{children ? children : <div style={{ opacity: 0 }}>Extend Row</div>}</div>
+            <div style={{ display: isCustomCollapse ? 'block' : isCollapsed ? 'none' : 'block' }}>
+                {children ? children : <div style={{ opacity: 0 }}>Extend Row</div>}
+            </div>
             <div className={`caret-block ${children ? `` : `min`}`}>{stickyFooter}</div>
             {!!isCollapseMode &&
                 (iconToggle ?? (
@@ -45,10 +47,14 @@ const propTypes = {
     onExpand: PropTypes.func,
     iconToggle: PropTypes.element,
     isCollapseMode: PropTypes.bool,
+    isCustomCollapse: PropTypes.bool,
+    isInitCollapsed: PropTypes.bool,
 };
 const defaultProps = {
     iconToggle: null,
     isCollapseMode: true,
+    isCustomCollapse: false,
+    isInitCollapsed: false,
 };
 
 CollapsiblePanel.propTypes = propTypes;

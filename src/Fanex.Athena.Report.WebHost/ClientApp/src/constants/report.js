@@ -17,10 +17,10 @@ export const SubsidiaryViewType = {
 };
 
 export const TreeViewOption = {
-    childrenField: 'Children',
-    keyField: 'Value',
-    valueField: 'Name',
-    statusField: 'Checked',
+    childrenField: 'children',
+    keyField: 'value',
+    valueField: 'name',
+    statusField: 'checked',
     indent: 30,
     includeSelectedParentKey: false,
     useOriginalDataSource: false,
