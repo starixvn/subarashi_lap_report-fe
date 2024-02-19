@@ -1,12 +1,13 @@
+import * as permission from '../constants/permission';
+import * as pages from '../constants/pages';
+
 import SettledMatchCountRoute from './SettledMatchCountRoute';
 import WeeklyLiveMatchRoute from './WeeklyLiveMatchRoute';
 import CustomerBalanceRoute from './CustomerBalanceRoute';
 import CustomerSupportTaskRoute from './CustomerSupportTasksRoute';
 import ExtraPayoutRoute from './ExtraPayoutRoute';
-
-import * as permission from '../constants/permission';
-import * as pages from '../constants/pages';
 import LeagueWinLossRoute from './LeagueWinLoss';
+import WinLossAnalysisRoute from './WinLossAnalysis';
 
 export default [
     {
@@ -44,5 +45,12 @@ export default [
         Path: 'LeagueWinLossReport/*',
         Permissions: [permission.LEAGUE_WL],
         Component: LeagueWinLossRoute,
+    },
+    {
+        Id: pages.WL_ANALYSIS,
+        Path: 'WinlossAnalysisReport/*',
+        Permissions: [permission.WL_ANALYSIS],
+        HaveCustomLayout: true,
+        Component: WinLossAnalysisRoute,
     },
 ];

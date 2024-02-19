@@ -486,4 +486,94 @@
   <data name="IsGroupInOriginalCurrency" xml:space="preserve">
     <value>Nhóm theo đơn vị tiền tệ gốc</value>
   </data>
+  <data name="Platform" xml:space="preserve">
+    <value>Nền tảng</value>
+  </data>
+  <data name="EffectiveBettingValue" xml:space="preserve">
+    <value>Giá trị cược hiệu quả</value>
+  </data>
+  <data name="PlayerWL" xml:space="preserve">
+    <value>Thắng Thua Người Chơi</value>
+  </data>
+  <data name="PlayerComm" xml:space="preserve">
+    <value>Hoa hồng người chơi</value>
+  </data>
+  <data name="LicenseeComm" xml:space="preserve">
+    <value>Hoa hồng Nhà Cái</value>
+  </data>
+  <data name="AmountDueToBA" xml:space="preserve">
+    <value>Tiền BA</value>
+  </data>
+  <data name="Margin" xml:space="preserve">
+    <value>Lợi nhuận</value>
+  </data>
+  <data name="Player" xml:space="preserve">
+    <value>Người chơi</value>
+  </data>
+  <data name="BothGroupByAndBreakdownLevelOption" xml:space="preserve">
+    <value>Dữ liệu sẽ được nhóm lại &amp; phân loại theo từng cấp độ</value>
+  </data>
+  <data name="GroupByLevelOnlyOption" xml:space="preserve">
+    <value>Chỉ Nhóm theo cấp độ</value>
+  </data>
+  <data name="Confirmation" xml:space="preserve">
+    <value>Xác nhận</value>
+  </data>
+  <data name="ChooseDataDisplayInExcelMsg" xml:space="preserve">
+    <value>Vui lòng chọn dữ liệu sẽ hiển thị trong tệp excel:</value>
+  </data>
+  <data name="ClearAllFilters" xml:space="preserve">
+    <value>Xóa tất cả bộ lọc</value>
+  </data>
+  <data name="N_A" xml:space="preserve">
+    <value>N/A</value>
+  </data>
+  <data name="BreakdownBy" xml:space="preserve">
+    <value>Phân loại theo</value>
+  </data>
+  <data name="OddsGroup" xml:space="preserve">
+    <value>Nhóm tỷ lệ cược</value>
+  </data>
+  <data name="RiskLevel" xml:space="preserve">
+    <value>Mức Độ Rủi Ro</value>
+  </data>
+  <data name="MatchPrecise" xml:space="preserve">
+    <value>Khớp chính xác</value>
+  </data>
+  <data name="MatchPrefix" xml:space="preserve">
+    <value>Khớp chữ đầu, ví dụ</value>
+  </data>
+  <data name="MatchCase" xml:space="preserve">
+    <value>Khớp chữ, ví dụ</value>
+  </data>
+  <data name="WinlossAnalysis" xml:space="preserve">
+    <value>Phân Tích Thắng Thua</value>
+  </data>
+  <data name="ViewCashOutOnly" xml:space="preserve">
+    <value>Chỉ xem vé cược đã bán</value>
+  </data>
+  <data name="VIPPlayerTooltipMsg" xml:space="preserve">
+    <value>Người chơi VIP được đánh dấu trong Phân khúc người chơi</value>
+  </data>
+  <data name="VIPPlayerOnly" xml:space="preserve">
+    <value>Chỉ người chơi VIP</value>
+  </data>
+  <data name="LiveStatus" xml:space="preserve">
+    <value>Trạng thái trực tiếp</value>
+  </data>
+  <data name="GroupBy" xml:space="preserve">
+    <value>Nhóm theo</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Trạng thái</value>
+  </data>
+  <data name="SelectedItemCount" xml:space="preserve">
+    <value># đã chọn</value>
+  </data>
+  <data name="SelectOptions" xml:space="preserve">
+    <value>Lựa chọn tùy chọn</value>
+  </data>
+  <data name="SearchData" xml:space="preserve">
+    <value>Tìm dữ liệu</value>
+  </data>
 </root>

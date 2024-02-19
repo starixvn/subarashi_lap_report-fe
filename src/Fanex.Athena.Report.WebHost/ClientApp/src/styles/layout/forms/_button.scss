@@ -1,5 +1,6 @@
 ﻿$button-height: 32px;
 $btnSubmit-background: #f05b1f;
+$btnCancelBackground: #757985;
 
 %buttonDisabled {
     background-color: #DFDFDF !important;
@@ -39,6 +40,11 @@ $btnSubmit-background: #f05b1f;
 .btn-submit {
     color: $white;
     background-color: rgb(240, 91, 31);
+}
+
+.btn-cancel {
+    color: $white;
+    background-color: $btnCancelBackground;
 }
 
 button {

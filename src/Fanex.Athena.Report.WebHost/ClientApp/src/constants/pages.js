@@ -10,4 +10,6 @@ export const EXTRA_PAYOUT = 'ExtraPayout';
 
 export const LEAGUE_WL = 'LeagueWinloss';
 
+export const WL_ANALYSIS = 'WinLossAnalysis';
+
 export const USER_GUIDE = 'UserGuide';

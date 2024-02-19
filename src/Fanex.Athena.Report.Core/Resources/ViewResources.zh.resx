@@ -444,7 +444,7 @@
   <data name="LicenseeW_L" xml:space="preserve">
     <value>承租公司输赢</value>
   </data>
-    <data name="League" xml:space="preserve">
+  <data name="League" xml:space="preserve">
     <value>联赛</value>
   </data>
   <data name="BetCount" xml:space="preserve">
@@ -467,5 +467,92 @@
   </data>
   <data name="IsGroupInOriginalCurrency" xml:space="preserve">
     <value>以原始货币显示</value>
+  </data>
+  <data name="Platform" xml:space="preserve">
+    <value>平台</value>
+  </data>
+  <data name="EffectiveBettingValue" xml:space="preserve">
+    <value>有效投注额</value>
+  </data>
+  <data name="PlayerWL" xml:space="preserve">
+    <value>玩家输赢</value>
+  </data>
+  <data name="PlayerComm" xml:space="preserve">
+    <value>玩家佣金</value>
+  </data>
+  <data name="LicenseeComm" xml:space="preserve">
+    <value>承租公司佣金</value>
+  </data>
+  <data name="AmountDueToBA" xml:space="preserve">
+    <value>BA金额</value>
+  </data>
+  <data name="Margin" xml:space="preserve">
+      <value>殺數</value>
+  </data>
+  <data name="Player" xml:space="preserve">
+    <value>玩家</value>
+  </data>
+  <data name="BothGroupByAndBreakdownLevelOption" xml:space="preserve">
+    <value>同时以所选组别以及细项显示</value>
+  </data>
+  <data name="GroupByLevelOnlyOption" xml:space="preserve">
+    <value>仅以所选组别显示</value>
+  </data>
+  <data name="Confirmation" xml:space="preserve">
+    <value>确认</value>
+  </data>
+  <data name="ChooseDataDisplayInExcelMsg" xml:space="preserve">
+    <value>请选择要在excel档案中显示的数据：</value>
+  </data>
+  <data name="ClearAllFilters" xml:space="preserve">
+    <value>清除所有筛选</value>
+  </data>
+  <data name="N_A" xml:space="preserve">
+    <value>无法使用</value>
+  </data>
+  <data name="BreakdownBy" xml:space="preserve">
+    <value>依项目细分</value>
+  </data>
+  <data name="OddsGroup" xml:space="preserve">
+    <value>水位组别</value>
+  </data>
+  <data name="RiskLevel" xml:space="preserve">
+    <value>风险等级</value>
+  </data>
+  <data name="MatchPrecise" xml:space="preserve">
+    <value>精准匹配</value>
+  </data>
+  <data name="MatchPrefix" xml:space="preserve">
+    <value>前缀查询 范例</value>
+  </data>
+  <data name="MatchCase" xml:space="preserve">
+    <value>模糊查询 范例</value>
+  </data>
+  <data name="WinlossAnalysis" xml:space="preserve">
+    <value>输赢分析</value>
+  </data>
+  <data name="ViewCashOutOnly" xml:space="preserve">
+    <value>只查看实时兑现</value>
+  </data>
+  <data name="VIPPlayerTooltipMsg" xml:space="preserve">
+    <value>被標示在玩家管理報告中的VIP玩家</value>
+  </data>
+  <data name="VIPPlayerOnly" xml:space="preserve">
+    <value>只显示VIP玩家</value>
+  </data>
+  <data name="LiveStatus" xml:space="preserve">
+    <value>滚球状态</value>
+  </data>
+  <data name="GroupBy" xml:space="preserve">
+    <value>分组方式</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>状态</value>
+  </data>
+  <data name="SelectedItemCount" xml:space="preserve">
+    <value>已选  # 个项目</value>
+  </data>
+  <data name="SelectOptions" xml:space="preserve">
+    <value>选择一个选项</value>
   </data>
 </root>

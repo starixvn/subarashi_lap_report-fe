@@ -489,4 +489,91 @@
   <data name="IsGroupInOriginalCurrency" xml:space="preserve">
     <value>Tampilkan pembagian grup dalam mata uang asli</value>
   </data>
+  <data name="Platform" xml:space="preserve">
+    <value>Platform</value>
+  </data>
+  <data name="EffectiveBettingValue" xml:space="preserve">
+    <value>Nilai Taruhan Efektif</value>
+  </data>
+  <data name="PlayerWL" xml:space="preserve">
+    <value>Kemenangan dan kekalahan pemain</value>
+  </data>
+  <data name="PlayerComm" xml:space="preserve">
+    <value>Komisi pemain</value>
+  </data>
+  <data name="LicenseeComm" xml:space="preserve">
+    <value>Komisi perusahaan sewa-menyewa</value>
+  </data>
+  <data name="AmountDueToBA" xml:space="preserve">
+    <value>Jumlah yang Harus Dibayarkan ke BA</value>
+  </data>
+  <data name="Margin" xml:space="preserve">
+    <value>Margin</value>
+  </data>
+  <data name="Player" xml:space="preserve">
+    <value>Pemain</value>
+  </data>
+  <data name="BothGroupByAndBreakdownLevelOption" xml:space="preserve">
+    <value>Pengelompokan dan pemisahan berdasarkan level</value>
+  </data>
+  <data name="GroupByLevelOnlyOption" xml:space="preserve">
+    <value>Hanya tingkat Pengelompokan</value>
+  </data>
+  <data name="Confirmation" xml:space="preserve">
+    <value>Konfirmasi</value>
+  </data>
+  <data name="ChooseDataDisplayInExcelMsg" xml:space="preserve">
+    <value>Silakan pilih data yang akan ditampilkan dalam file excel:</value>
+  </data>
+  <data name="ClearAllFilters" xml:space="preserve">
+    <value>Hapus semua filter</value>
+  </data>
+  <data name="BreakdownBy" xml:space="preserve">
+    <value>Tampilkan berdasarkan</value>
+  </data>
+  <data name="OddsGroup" xml:space="preserve">
+      <value>Kelompok Ganjil</value>
+  </data>
+  <data name="RiskLevel" xml:space="preserve">
+    <value>Tingkat Risiko</value>
+  </data>
+  <data name="MatchPrecise" xml:space="preserve">
+    <value>Tepat Cocok</value>
+  </data>
+  <data name="MatchPrefix" xml:space="preserve">
+    <value>Cocokkan Awalan, contohnya</value>
+  </data>
+  <data name="MatchCase" xml:space="preserve">
+    <value>Cocokkan Kapitalisasi, contohnya</value>
+  </data>
+  <data name="WinlossAnalysis" xml:space="preserve">
+    <value>Analisis Menang Kalah</value>
+  </data>
+  <data name="ViewCashOutOnly" xml:space="preserve">
+    <value>Hanya Lihat Cash Out</value>
+  </data>
+  <data name="VIPPlayerTooltipMsg" xml:space="preserve">
+    <value>Pemain VIP ditandai dalam Segmentasi Pemain</value>
+  </data>
+  <data name="VIPPlayerOnly" xml:space="preserve">
+    <value>Hanya Pemain VIP</value>
+  </data>
+  <data name="LiveStatus" xml:space="preserve">
+    <value>Status Langsung</value>
+  </data>
+  <data name="GroupBy" xml:space="preserve">
+    <value>Kelompok Berdasarkan</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="SelectedItemCount" xml:space="preserve">
+    <value># terpilih</value>
+  </data>
+  <data name="SelectOptions" xml:space="preserve">
+    <value>Pilih opsi</value>
+  </data>
+  <data name="SearchData" xml:space="preserve">
+    <value>Cari data</value>
+  </data>
 </root>

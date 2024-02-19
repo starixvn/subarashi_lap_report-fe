@@ -470,7 +470,7 @@
   <data name="LicenseeW_L" xml:space="preserve">
     <value>Licensee W/L</value>
   </data>
-    <data name="League" xml:space="preserve">
+  <data name="League" xml:space="preserve">
     <value>League</value>
   </data>
   <data name="BetCount" xml:space="preserve">
@@ -493,5 +493,95 @@
   </data>
   <data name="IsGroupInOriginalCurrency" xml:space="preserve">
     <value>Display group breakdown in original currency</value>
+  </data>
+  <data name="AmountDueToBA" xml:space="preserve">
+    <value>Amount Due To BA</value>
+  </data>
+  <data name="EffectiveBettingValue" xml:space="preserve">
+    <value>Effective Betting Value</value>
+  </data>
+  <data name="LicenseeComm" xml:space="preserve">
+    <value>Licensee Comm</value>
+  </data>
+  <data name="Margin" xml:space="preserve">
+    <value>Margin</value>
+  </data>
+  <data name="Platform" xml:space="preserve">
+    <value>Platform</value>
+  </data>
+  <data name="Player" xml:space="preserve">
+    <value>Player</value>
+  </data>
+  <data name="PlayerComm" xml:space="preserve">
+    <value>Player Comm</value>
+  </data>
+  <data name="PlayerWL" xml:space="preserve">
+    <value>Player W/L</value>
+  </data>
+  <data name="BothGroupByAndBreakdownLevelOption" xml:space="preserve">
+    <value>Both Group By and Breakdown By levels</value>
+  </data>
+  <data name="BreakdownBy" xml:space="preserve">
+    <value>Breakdown By</value>
+  </data>
+  <data name="ChooseDataDisplayInExcelMsg" xml:space="preserve">
+    <value>Please choose the data shall display in the excel file:</value>
+  </data>
+  <data name="ClearAllFilters" xml:space="preserve">
+    <value>Clear All Filters</value>
+  </data>
+  <data name="Confirmation" xml:space="preserve">
+    <value>Confirmation</value>
+  </data>
+  <data name="GroupByLevelOnlyOption" xml:space="preserve">
+    <value>Group By level only</value>
+  </data>
+  <data name="MatchCase" xml:space="preserve">
+    <value>Match Case e.g</value>
+  </data>
+  <data name="MatchPrecise" xml:space="preserve">
+    <value>Match Precise</value>
+  </data>
+  <data name="MatchPrefix" xml:space="preserve">
+    <value>Match Prefix e.g</value>
+  </data>
+  <data name="N_A" xml:space="preserve">
+    <value>N/A</value>
+  </data>
+  <data name="OddsGroup" xml:space="preserve">
+    <value>Odds Group</value>
+  </data>
+  <data name="RiskLevel" xml:space="preserve">
+    <value>Risk Level</value>
+  </data>
+  <data name="ViewCashOutOnly" xml:space="preserve">
+    <value>View Cash Out Only</value>
+  </data>
+  <data name="VIPPlayerOnly" xml:space="preserve">
+    <value>VIP Player Only</value>
+  </data>
+  <data name="VIPPlayerTooltipMsg" xml:space="preserve">
+    <value>VIP Players are marked in Player Segmentation</value>
+  </data>
+  <data name="WinlossAnalysis" xml:space="preserve">
+    <value>Win Loss Analysis</value>
+  </data>
+  <data name="GroupBy" xml:space="preserve">
+    <value>Group By</value>
+  </data>
+  <data name="LiveStatus" xml:space="preserve">
+    <value>Live Status</value>
+  </data>
+  <data name="SearchData" xml:space="preserve">
+    <value>Search data</value>
+  </data>
+  <data name="SelectedItemCount" xml:space="preserve">
+    <value># selected</value>
+  </data>
+  <data name="SelectOptions" xml:space="preserve">
+    <value>Select options</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Status</value>
   </data>
 </root>

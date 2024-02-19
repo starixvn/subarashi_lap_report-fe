@@ -9,3 +9,5 @@ export const CUSTOMER_SUPPORT_TASK = 'CustomerSupportTask';
 export const EXTRA_PAYOUT = 'ExtraPayout';
 
 export const LEAGUE_WL = 'LeagueWinLoss';
+
+export const WL_ANALYSIS = 'WinlossAnalysis';

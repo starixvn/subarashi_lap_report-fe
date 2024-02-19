@@ -489,4 +489,91 @@
   <data name="IsGroupInOriginalCurrency" xml:space="preserve">
     <value>แสดงการแบ่งกลุ่มในสกุลเงินเดิม</value>
   </data>
+  <data name="Platform" xml:space="preserve">
+    <value>แพลตฟอร์ม</value>
+  </data>
+  <data name="EffectiveBettingValue" xml:space="preserve">
+    <value>มูลค่าการเดิมพันที่มีประสิทธิภาพ</value>
+  </data>
+  <data name="PlayerWL" xml:space="preserve">
+    <value>ผู้เล่น ชนะ/แพ้</value>
+  </data>
+  <data name="PlayerComm" xml:space="preserve">
+    <value>ค่าคอมมิชชั่นผู้เล่น</value>
+  </data>
+  <data name="LicenseeComm" xml:space="preserve">
+    <value>ผู้รับอนุญาตสื่อสาร</value>
+  </data>
+  <data name="AmountDueToBA" xml:space="preserve">
+    <value>จำนวนเงินจาก BA</value>
+  </data>
+  <data name="Margin" xml:space="preserve">
+    <value>Margin</value>
+  </data>
+  <data name="Player" xml:space="preserve">
+    <value>ผู้เล่น</value>
+  </data>
+  <data name="BothGroupByAndBreakdownLevelOption" xml:space="preserve">
+    <value>ทั้งจัดกลุ่มและแบ่งตามระดับ</value>
+  </data>
+    <data name="GroupByLevelOnlyOption" xml:space="preserve">
+      <value>จัดกลุ่มตามระดับเท่านั้น</value>
+  </data>
+    <data name="Confirmation" xml:space="preserve">
+      <value>การยืนยัน</value>
+  </data>
+    <data name="ChooseDataDisplayInExcelMsg" xml:space="preserve">
+      <value>โปรดเลือกข้อมูลที่จะแสดงในไฟล์ excel:</value>
+  </data>
+    <data name="ClearAllFilters" xml:space="preserve">
+      <value>ล้างตัวกรองทั้งหมด</value>
+  </data>
+    <data name="BreakdownBy" xml:space="preserve">
+      <value>แบ่งตาม</value>
+  </data>
+    <data name="OddsGroup" xml:space="preserve">
+      <value>อัตราต่อรองกลุ่ม</value>
+  </data>
+    <data name="RiskLevel" xml:space="preserve">
+      <value>ระดับความเสี่ยง</value>
+  </data>
+    <data name="MatchPrecise" xml:space="preserve">
+      <value>การแข่งขัน แม่นยำ</value>
+  </data>
+    <data name="MatchPrefix" xml:space="preserve">
+      <value>คำนำหน้าการแข่งขัน เช่น</value>
+  </data>
+    <data name="MatchCase" xml:space="preserve">
+      <value>การแข่งขัน กรณีเช่น</value>
+  </data>
+    <data name="WinlossAnalysis" xml:space="preserve">
+      <value>วิเคราะห์ผลแพ้ชนะ</value>
+  </data>
+    <data name="ViewCashOutOnly" xml:space="preserve">
+      <value>ดูเงินออกเท่านั้น</value>
+  </data>
+    <data name="VIPPlayerTooltipMsg" xml:space="preserve">
+      <value>ผู้เล่นวีไอพีจะถูกทำเครื่องหมายในการแบ่งส่วนผู้เล่น</value>
+  </data>
+    <data name="VIPPlayerOnly" xml:space="preserve">
+      <value>ผู้เล่นวีไอพีเท่านั้น</value>
+  </data>
+  <data name="LiveStatus" xml:space="preserve">
+    <value>สถานะแทงบอลสด</value>
+  </data>
+  <data name="GroupBy" xml:space="preserve">
+    <value>จัดกลุ่มตาม</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>สถานะ</value>
+  </data>
+  <data name="SelectedItemCount" xml:space="preserve">
+    <value># ลือกแล้ว</value>
+  </data>
+  <data name="SelectOptions" xml:space="preserve">
+    <value>เลือกตัวเลือก</value>
+  </data>
+  <data name="SearchData" xml:space="preserve">
+    <value>ค้นหาข้อมูล</value>
+  </data>
 </root>
