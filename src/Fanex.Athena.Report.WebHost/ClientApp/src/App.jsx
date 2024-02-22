@@ -11,7 +11,7 @@ const App = () => {
         createRoutesFromElements(
             <Route path="/" element={<AppLayout />}>
                 {RouteConfig.map(({ Id, Path, Permissions, Component }) => (
-                    <Route Id={Id} key={Id} path={Path} element={<Component />} loader={() => AuthorizeRequestInfo({ permissions: Permissions })} />
+                    <Route id={Id} key={Id} path={Path} element={<Component />} loader={() => AuthorizeRequestInfo({ permissions: Permissions })} />
                 ))}
                 <Route path="*" element={<NotFound />} />
             </Route>

@@ -1,9 +1,12 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Table, Row, Cell, HeaderRow } from '@legion-lib/react-grid';
+
 import LangHelper from '@srcRoot/helpers/langHelper';
 import { MAX_WIDTH_PAGE, MIN_WIDTH_PAGE } from '@srcRoot/constants/config';
-import { Table, Row, Cell, HeaderRow } from '@legion-lib/react-grid';
 import NoDataTitle from '@srcRoot/components/NoDataTitle';
+import NumberFormat from '@srcRoot/lib/numberFormat';
+
 import { ActionCreators } from '../actions';
 import Constants from '../constants';
 import HeaderCell from '../customGrid/HeaderCell';
@@ -16,11 +19,11 @@ const DataGrid = (props) => {
     const { setRequestParam, setGridData } = ActionCreators;
     const { GridSettings } = Constants;
 
-    if (JSON.stringify(gridData) === JSON.stringify({})) {
+    if (!gridData) {
         return null;
     }
 
-    if (!gridData) {
+    if (!gridData.data.length) {
         return <NoDataTitle />;
     }
 
@@ -57,7 +60,7 @@ const DataGrid = (props) => {
                     </Cell>
                     {item.cell.slice(GridSettings.COL_START_WEEK).map((cell, index) => (
                         <Cell className={'right-align'} key={`col-${index}`}>
-                            {cell}
+                            {NumberFormat.formatInteger(cell)}
                         </Cell>
                     ))}
                 </Row>
@@ -73,7 +76,7 @@ const DataGrid = (props) => {
                 </Cell>
                 {totalData.map((total, index) => (
                     <Cell className="right-align" key={`footer-${index}`}>
-                        {total}
+                        {NumberFormat.formatInteger(total)}
                     </Cell>
                 ))}
             </Row>

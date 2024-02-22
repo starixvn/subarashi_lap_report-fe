@@ -8,11 +8,12 @@ import NoDataTitle from '@srcRoot/components/NoDataTitle';
 
 const DataGrid = (props) => {
     const gridData = useSelector((state) => state.gridData);
-    if (JSON.stringify(gridData) === JSON.stringify({})) {
+
+    if (!gridData) {
         return null;
     }
 
-    if (!gridData) {
+    if (!gridData.length) {
         return <NoDataTitle />;
     }
 
