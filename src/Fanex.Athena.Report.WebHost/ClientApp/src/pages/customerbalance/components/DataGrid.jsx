@@ -13,7 +13,7 @@ import { ActionCreators } from '../actions/index';
 import Service, { constants } from '../common';
 
 const DataGrid = (props) => {
-    const { ApiUrl } = constants;
+    const { ApiUrl, TableSettings } = constants;
     const { setRequestParam, setGridData } = ActionCreators;
 
     const dispatch = useDispatch();
@@ -72,7 +72,7 @@ const DataGrid = (props) => {
         <>
             <ReportTitle content={GenerateReportTitle(requestParam.FromDate, requestParam.ToDate, requestParam.CurrencyName)} />
             <Table
-                minWidth={constants.TABLE_MIN_WIDTH}
+                minWidth={TableSettings.MinWidth}
                 autoWidth={true}
                 autoHeight={true}
                 isPaging={true}

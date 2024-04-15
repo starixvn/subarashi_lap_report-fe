@@ -85,7 +85,7 @@ const FormFilter = (props) => {
         const params = {
             FromDate: Site.convertDateToString(dateRange.fromDate),
             ToDate: Site.convertDateToString(dateRange.toDate),
-            OrderItem: Service.getOrderItem(constants.SortKeys.Deposit),
+            OrderItem: requestParam?.OrderItem ? requestParam.OrderItem : Service.getOrderItem(constants.SortKeys.Deposit),
             ProductOptions: selectedProducts,
             TopCount: selectTop.value,
             IsExcludedTestData: excludeTestData == 'true',
@@ -95,10 +95,6 @@ const FormFilter = (props) => {
             PageIndex: DefaultPagingOption.PageIndex,
             PageSize: DefaultPagingOption.PageSize,
         };
-
-        if (requestParam?.OrderItem) {
-            params.OrderItem = requestParam.OrderItem;
-        }
 
         return params;
     };

@@ -1,1 +1,3 @@
-export const TABLE_MIN_WIDTH = 1386;
+export const TableSettings = {
+    MinWidth: 1920,
+};
