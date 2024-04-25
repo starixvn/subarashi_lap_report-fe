@@ -2,6 +2,14 @@
     line-height: normal;
 }
 
+.table-container {
+    overflow-x: hidden;
+}
+
+.body-content {
+    overflow-x: hidden;
+}
+
 .header-content {
     .table>thead>tr>th {
         vertical-align: middle;

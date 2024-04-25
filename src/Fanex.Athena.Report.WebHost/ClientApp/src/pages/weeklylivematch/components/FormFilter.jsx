@@ -123,7 +123,7 @@ const FormFilter = (props) => {
                     <div className="form-group">
                         <div className="button-group">
                             <button type="button" className="btn btn-submit" onClick={onSubmit}>
-                                {LangHelper.getSingleResource('Submit')}
+                                {LangHelper.getSingleResource('Submit').toUpperCase()}
                             </button>
                         </div>
                     </div>

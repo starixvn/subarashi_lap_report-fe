@@ -13,7 +13,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@legion-lib/react-daterangepicker": "^1.0.1",
+    "@legion-lib/react-daterangepicker": "^2.0.2",
     "@legion-lib/react-grid": "^1.0.1",
     "@legion-lib/react-multiselect": "^2.0.1",
     "axios": "^1.6.0",

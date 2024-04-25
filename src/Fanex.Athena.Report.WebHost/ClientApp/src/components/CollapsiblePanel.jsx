@@ -1,4 +1,5 @@
 ﻿import React, { useState } from 'react';
+import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
 const CollapsiblePanel = (props) => {
@@ -22,8 +23,10 @@ const CollapsiblePanel = (props) => {
 
     const { className, children, isCollapseMode, stickyFooter, iconToggle } = props;
 
+    const containerClassnames = classNames('page-filter', className || '', children ? '' : 'min');
+
     return (
-        <div className={`page-filter ${className} ${children ? `` : `min`}`}>
+        <div className={containerClassnames}>
             <div style={{ display: isCollapsed ? 'none' : 'block' }}>{children ? children : <div style={{ opacity: 0 }}>Extend Row</div>}</div>
             <div className={`caret-block ${children ? `` : `min`}`}>{stickyFooter}</div>
             {!!isCollapseMode &&

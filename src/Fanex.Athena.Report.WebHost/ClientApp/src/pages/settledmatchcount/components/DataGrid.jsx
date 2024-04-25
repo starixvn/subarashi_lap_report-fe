@@ -1,9 +1,10 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
-import LangHelper from '@srcRoot/helpers/langHelper';
 import moment from 'moment';
-import { MAX_WIDTH_PAGE, MIN_WIDTH_PAGE } from '@srcRoot/constants/config';
+import { useSelector } from 'react-redux';
 import { Table, Row, Cell, HeaderRow, HeaderCell } from '@legion-lib/react-grid';
+
+import LangHelper from '@srcRoot/helpers/langHelper';
+import { MAX_WIDTH_PAGE } from '@srcRoot/constants/config';
 import NoDataTitle from '@srcRoot/components/NoDataTitle';
 
 const DataGrid = (props) => {
@@ -18,26 +19,27 @@ const DataGrid = (props) => {
     }
 
     const _buildHeader = () => {
-        const now = moment();
+        const now = moment.utc().add(-4, 'h');
+
         const today = now.format('MM/DD/yyyy');
-        const lastDay = now.clone().add(-1, 'd').format('MM/DD/yyyy');
+        const yesterday = now.clone().add(-1, 'd').format('MM/DD/yyyy');
 
         return [
             <HeaderRow style={{ height: 23 }} key="header1">
-                <HeaderCell colWidth={310}>{LangHelper.getSingleResource('Date')}</HeaderCell>
-                <HeaderCell colWidth={620} colSpan={2}>
-                    {lastDay}
+                <HeaderCell colWidth={100}>{LangHelper.getSingleResource('Date')}</HeaderCell>
+                <HeaderCell colWidth={200} colSpan={2}>
+                    {yesterday}
                 </HeaderCell>
-                <HeaderCell colWidth={620} colSpan={2}>
+                <HeaderCell colWidth={200} colSpan={2}>
                     {today}
                 </HeaderCell>
             </HeaderRow>,
             <HeaderRow style={{ height: 23 }} key="header2">
-                <HeaderCell colWidth={310}>{LangHelper.getSingleResource('Results')}</HeaderCell>
-                <HeaderCell colWidth={310}>{LangHelper.getSingleResource('Entered')}</HeaderCell>
-                <HeaderCell colWidth={310}>{LangHelper.getSingleResource('NonEntered')}</HeaderCell>
-                <HeaderCell colWidth={310}>{LangHelper.getSingleResource('Entered')}</HeaderCell>
-                <HeaderCell colWidth={310}>{LangHelper.getSingleResource('NonEntered')}</HeaderCell>
+                <HeaderCell colWidth={100}>{LangHelper.getSingleResource('Results')}</HeaderCell>
+                <HeaderCell colWidth={100}>{LangHelper.getSingleResource('Entered')}</HeaderCell>
+                <HeaderCell colWidth={100}>{LangHelper.getSingleResource('NonEntered')}</HeaderCell>
+                <HeaderCell colWidth={100}>{LangHelper.getSingleResource('Entered')}</HeaderCell>
+                <HeaderCell colWidth={100}>{LangHelper.getSingleResource('NonEntered')}</HeaderCell>
             </HeaderRow>,
         ];
     };
@@ -59,10 +61,11 @@ const DataGrid = (props) => {
     return (
         <React.Fragment>
             <Table
-                minWidth={MIN_WIDTH_PAGE}
-                autoWidth={true}
                 maxWidth={MAX_WIDTH_PAGE}
-                autoHeight={true}
+                autoWidth={true}
+                autoHeight={false}
+                bodyHeight="100%"
+                isIncludeScrollWidth={false}
                 header={_buildHeader()}
                 body={_buildBody(gridData)}
                 containerPadding={30}
