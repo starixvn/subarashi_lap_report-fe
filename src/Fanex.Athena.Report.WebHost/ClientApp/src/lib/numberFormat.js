@@ -3,6 +3,10 @@ export default class NumberFormat {
         return this.format(value, 2);
     }
 
+    static formatDecimalHalfDown(value) {
+        return this.formatHalfDown(value, 2);
+    }
+
     static formatInteger(value) {
         if (typeof value !== 'number' || isNaN(value)) {
             return '';
@@ -55,17 +59,14 @@ export default class NumberFormat {
         return sign * rounded;
     }
 
-    static formatDecimalInObjectNumbers = (obj, digits = 0) => {
-        const result = { ...obj };
-        for (const key in result) {
-            if (Object.hasOwnProperty.call(result, key)) {
-                if (typeof obj[key] !== 'number' || isNaN(obj[key])) {
-                    continue;
-                }
-                result[key] = NumberFormat.formatDecimal(NumberFormat.round(result[key], digits));
-            }
+    static formatHalfDown(value, digits = 0) {
+        if (typeof value !== 'number' || isNaN(value)) {
+            return '';
         }
 
-        return result;
-    };
+        const power = Math.pow(10, digits || 0);
+        const roundedValue = Math.round(value * power) / power;
+
+        return roundedValue.toFixed(digits).replace(/^[+-]?\d+/, (int) => int.replace(/(\d)(?=(\d{3})+$)/g, '$1,'));
+    }
 }

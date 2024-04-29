@@ -20,7 +20,7 @@ export const BuildHeaders = (isEnableSingleWallet, hasCustomerComm, isAllowBA) =
 
 const BuildFirstRow = (isEnableSingleWallet, hasCustomerComm, isAllowBA) => (
     <HeaderRow style={{ height: 23 }} key="header1" defaultSelectedHeaderKey={constants.SortKeys.Deposit}>
-        <HeaderCell rowSpan="2" colWidth={70} key="Index">
+        <HeaderCell rowSpan="2" colWidth={80} key="Index">
             #
         </HeaderCell>
         <HeaderCell rowSpan="2" colWidth={240} key="ExternalID">
@@ -30,7 +30,7 @@ const BuildFirstRow = (isEnableSingleWallet, hasCustomerComm, isAllowBA) => (
             {LangHelper.getSingleResource('SystemId')}
         </HeaderCell>
         {!isEnableSingleWallet && (
-            <HeaderCell rowSpan="2" colWidth={180} key="OpeningBalance" lockArrow="desc" sortBy={constants.SortKeys.OpeningBalance}>
+            <HeaderCell rowSpan="2" colWidth={240} key="OpeningBalance" lockArrow="desc" sortBy={constants.SortKeys.OpeningBalance}>
                 {LangHelper.getSingleResource('OpeningBalance')}
             </HeaderCell>
         )}
@@ -74,7 +74,7 @@ const BuildFirstRow = (isEnableSingleWallet, hasCustomerComm, isAllowBA) => (
             {LangHelper.getSingleResource('CustomerW_L')}
         </HeaderCell>
         {!isEnableSingleWallet && (
-            <HeaderCell rowSpan="2" colWidth={180} lockArrow="desc" key="ClosingBalance" sortBy={constants.SortKeys.ClosingBalance}>
+            <HeaderCell rowSpan="2" colWidth={240} lockArrow="desc" key="ClosingBalance" sortBy={constants.SortKeys.ClosingBalance}>
                 {LangHelper.getSingleResource('ClosingBalance')}
             </HeaderCell>
         )}

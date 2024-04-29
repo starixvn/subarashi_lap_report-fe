@@ -142,7 +142,7 @@ const FormFilter = (props) => {
                 {constants.PopUpSetting.Message}
             </Popup>
             <div className="row">
-                <div className="col-12 col-lg-3 col-md-4 col-sm-12">
+                <div className="col-12 col-lg-2 col-md-3 col-sm-12">
                     <div className="form-group">
                         <label className="label-text">{LangHelper.getSingleResource('Date')}</label>
                         <DateRange
@@ -173,7 +173,7 @@ const FormFilter = (props) => {
             </div>
 
             <div className="row">
-                <div className="col-12 col-lg-3 col-md-4 col-sm-12">
+                <div className="col-12 col-lg-2 col-md-3 col-sm-12">
                     <div className="form-group">
                         <label className="label-text">{LangHelper.getSingleResource('Product')} *</label>
                         <MultipleSelect

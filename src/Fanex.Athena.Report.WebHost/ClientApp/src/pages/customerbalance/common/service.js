@@ -1,3 +1,4 @@
+import NumberFormat from '@srcRoot/lib/numberFormat';
 import { SortKeys } from './filter';
 
 export default class Service {
@@ -19,4 +20,19 @@ export default class Service {
                 return 0;
         }
     }
+
+    static formatDecimalInObjectNumbers = (obj) => {
+        const result = {};
+        for (const key in obj) {
+            if (Object.hasOwnProperty.call(obj, key)) {
+                if (typeof obj[key] !== 'number' || isNaN(obj[key])) {
+                    continue;
+                }
+
+                result[key] = NumberFormat.formatHalfDown(obj[key], 2);
+            }
+        }
+
+        return result;
+    };
 }

@@ -1,3 +1,3 @@
 export const TableSettings = {
-    MinWidth: 1630,
+    MinWidth: 1920,
 };

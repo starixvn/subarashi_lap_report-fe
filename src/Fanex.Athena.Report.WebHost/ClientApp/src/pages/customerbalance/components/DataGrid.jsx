@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Table } from '@legion-lib/react-grid';
 
 import NoDataTitle from '@srcRoot/components/NoDataTitle';
 import ReportTitle from '@srcRoot/components/ReportTitle';
-import NumberFormat from '@srcRoot/lib/numberFormat';
 import DataService from '@srcRoot/lib/dataService';
 import useToggleRequest from '@srcRoot/hooks/useToggleRequest';
 
@@ -39,8 +38,6 @@ const DataGrid = (props) => {
     const { isAllowedCustomerCommission, isEnableBA, isEnableSingleWallet } = formData;
 
     const totalSpan = gridData.data[0].systemId ? 3 : 2;
-    const data = gridData.data.map((item) => NumberFormat.formatDecimalInObjectNumbers(item, 2));
-    const totalData = NumberFormat.formatDecimalInObjectNumbers(gridData.total, 2);
 
     const onPaging = (index, pageSize) => {
         const params = { ...requestParam, PageIndex: index };
@@ -78,10 +75,10 @@ const DataGrid = (props) => {
                 isPaging={true}
                 onSort={onSort}
                 onPaging={onPaging}
-                pageOption={GetDefaultPagingOptions(gridData.totalRows)}
+                pageOption={GetDefaultPagingOptions(requestParam.PageIndex, gridData.totalRows)}
                 header={BuildHeaders(isEnableSingleWallet, isAllowedCustomerCommission, isEnableBA)}
-                body={BuildBody(data, isEnableSingleWallet, isAllowedCustomerCommission, isEnableBA)}
-                footer={BuildFooter(totalData, totalSpan, isEnableSingleWallet, isAllowedCustomerCommission, isEnableBA)}
+                body={BuildBody(gridData.data, isEnableSingleWallet, isAllowedCustomerCommission, isEnableBA)}
+                footer={BuildFooter(gridData.total, totalSpan, isEnableSingleWallet, isAllowedCustomerCommission, isEnableBA)}
                 containerPadding={30}
                 shouldResetScrollPosition={true}
             />
