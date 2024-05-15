@@ -549,7 +549,7 @@
   <data name="WinlossAnalysis" xml:space="preserve">
     <value>Phân Tích Thắng Thua</value>
   </data>
-  <data name="ViewCashOutOnly" xml:space="preserve">
+  <data name="ViewCOOnly" xml:space="preserve">
     <value>Chỉ xem vé cược đã bán</value>
   </data>
   <data name="VIPPlayerTooltipMsg" xml:space="preserve">
@@ -629,5 +629,14 @@
   </data>
   <data name="ByBetType" xml:space="preserve">
     <value>Theo Loại Cược</value>     
+  </data>
+  <data name="CashOut" xml:space="preserve">
+    <value>Bán vé cược</value>
+  </data>
+  <data name="ExcludeCOFromSB" xml:space="preserve">
+    <value>Trừ cược đã bán khỏi Sportsbook</value>
+  </data>
+  <data name="IncludeCOFromSB" xml:space="preserve">
+    <value>Gộp cược đã bán vào Sportsbook</value>
   </data>
 </root>

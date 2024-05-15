@@ -554,8 +554,8 @@
   <data name="RiskLevel" xml:space="preserve">
     <value>Risk Level</value>
   </data>
-  <data name="ViewCashOutOnly" xml:space="preserve">
-    <value>View Cash Out Only</value>
+  <data name="ViewCOOnly" xml:space="preserve">
+    <value>View CO only</value>
   </data>
   <data name="VIPPlayerOnly" xml:space="preserve">
     <value>VIP Player Only</value>
@@ -640,5 +640,14 @@
   </data>
   <data name="Summary" xml:space="preserve">
     <value>Summary</value>
+  </data>
+  <data name="CashOut" xml:space="preserve">
+    <value>Cash Out</value>
+  </data>
+  <data name="IncludeCOFromSB" xml:space="preserve">
+    <value>Include CO into Sportsbook</value>
+  </data>
+  <data name="ExcludeCOFromSB" xml:space="preserve">
+    <value>Exclude CO from Sportsbook</value>
   </data>
 </root>

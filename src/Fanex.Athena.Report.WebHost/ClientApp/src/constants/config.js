@@ -15,6 +15,10 @@ export const UM_URL = 'Utility/UnderMaintenance';
 
 export const SIGN_OUT_URL = 'Authorization/InternalSignOut';
 
+export const LRF_SAVED_PAGE_SESSION_KEY = '_Lrf_Saved_Page';
+
+export const LRF_SAVED_PAGE_HASH_KEY = '#/Index';
+
 export const FULL_WIDTH_PAGE = 1920;
 
 export const MAX_WIDTH_PAGE = Math.min(document.body.clientWidth, 1920);

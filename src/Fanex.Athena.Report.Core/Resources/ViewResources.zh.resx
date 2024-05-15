@@ -531,7 +531,7 @@
   <data name="WinlossAnalysis" xml:space="preserve">
     <value>输赢分析</value>
   </data>
-  <data name="ViewCashOutOnly" xml:space="preserve">
+  <data name="ViewCOOnly" xml:space="preserve">
     <value>只查看实时兑现</value>
   </data>
   <data name="VIPPlayerTooltipMsg" xml:space="preserve">
@@ -605,5 +605,14 @@
   </data>
   <data name="ByBetType" xml:space="preserve">
     <value>根据投注类型</value>       
+  </data>
+  <data name="CashOut" xml:space="preserve">
+    <value>实时兑现</value>
+  </data>
+  <data name="ExcludeCOFromSB" xml:space="preserve">
+    <value>体育博彩排除实时兑现</value>
+  </data>
+  <data name="IncludeCOFromSB" xml:space="preserve">
+    <value>体育博彩包含实时兑现</value>
   </data>
 </root>

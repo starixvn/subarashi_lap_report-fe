@@ -33,6 +33,18 @@
     margin-top: 3px;
 }
 
+.icon-back {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 10px;
+
+    &.right {
+        float: right;
+    }
+}
+
 .icon-book {
     font-size: 18px;
     color: #066CC0;

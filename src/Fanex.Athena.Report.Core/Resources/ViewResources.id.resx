@@ -549,8 +549,8 @@
   <data name="WinlossAnalysis" xml:space="preserve">
     <value>Analisis Menang Kalah</value>
   </data>
-  <data name="ViewCashOutOnly" xml:space="preserve">
-    <value>Hanya Lihat Cash Out</value>
+  <data name="ViewCOOnly" xml:space="preserve">
+    <value>Hanya melihat CashOut secara langsung</value>
   </data>
   <data name="VIPPlayerTooltipMsg" xml:space="preserve">
     <value>Pemain VIP ditandai dalam Segmentasi Pemain</value>
@@ -632,5 +632,14 @@
   </data>
   <data name="ByBetType" xml:space="preserve">
     <value>Berdasarkan Jenis Taruhan</value>
+  </data>
+  <data name="CashOut" xml:space="preserve">
+    <value>Penukaran Instan</value>
+  </data>
+  <data name="ExcludeCOFromSB" xml:space="preserve">
+    <value>Mengecualikan Tunai Keluar dari Sportsbook</value>
+  </data>
+  <data name="IncludeCOFromSB" xml:space="preserve">
+    <value>Memasukkan Tunai Keluar ke dalam Sportsbook</value>
   </data>
 </root>

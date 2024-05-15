@@ -1,5 +1,8 @@
+import betListLoader from '../helpers/betlistValidatorHelper';
+
 import * as permission from '../constants/permission';
 import * as pages from '../constants/pages';
+import * as paths from '../constants/path';
 
 import SettledMatchCountRoute from './SettledMatchCountRoute';
 import WeeklyLiveMatchRoute from './WeeklyLiveMatchRoute';
@@ -8,6 +11,9 @@ import CustomerSupportTaskRoute from './CustomerSupportTasksRoute';
 import ExtraPayoutRoute from './ExtraPayoutRoute';
 import LeagueWinLossRoute from './LeagueWinLoss';
 import WinLossAnalysisRoute from './WinLossAnalysis';
+import MatchWinLossRoute from './MatchWinLossRoute';
+import BetListRoute from './BetListRoute';
+import LiveReportRoute from './LiveReportRoute';
 
 export default [
     {
@@ -52,5 +58,23 @@ export default [
         Permissions: [permission.WL_ANALYSIS],
         HaveCustomLayout: true,
         Component: WinLossAnalysisRoute,
+    },
+    {
+        Id: pages.MATCH_WL,
+        Path: 'MatchWinLossReport/*',
+        Permissions: [permission.MATCH_WL],
+        Component: MatchWinLossRoute,
+    },
+    {
+        Id: pages.LIVE_REPORT,
+        Path: 'LiveReport/*',
+        Permissions: [permission.LIVE_REPORT],
+        Component: LiveReportRoute,
+    },
+    {
+        Id: pages.BETLIST,
+        Path: `${paths.BETLIST}/:controller/*`,
+        Component: BetListRoute,
+        Loader: betListLoader,
     },
 ];

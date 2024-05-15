@@ -3,6 +3,8 @@ import { legacy_createStore as createStore, applyMiddleware, compose } from 'red
 import thunkMiddleware from 'redux-thunk';
 
 import Logger from './logger';
+import { LRF_SAVED_PAGE_HASH_KEY, LRF_SAVED_PAGE_SESSION_KEY } from '@srcRoot/constants/config';
+import Site from './site';
 
 export default class Store {
     static createStore(reducer, initialState) {
@@ -19,29 +21,25 @@ export default class Store {
     }
 
     static createSessionStore(reducer, initialState, resetState) {
-        const pathName = window.location.pathname;
-        window.addEventListener('beforeunload', function () {
-            if (window.history.state.idx == 0) {
-                sessionStorage.clear();
-                return;
-            }
+        try {
+            const pathName = window.location.pathname;
 
-            if (window.location.pathname == pathName) {
-                sessionStorage.removeItem(pathName);
-            }
-        });
+            this.registerPageToSession(pathName);
+            const state = this.getCurrentSessionState(pathName, initialState, resetState);
 
-        const state = this.getCurrentSessionState(pathName, initialState, resetState);
+            const store = this.createStore(reducer, state);
 
-        const store = this.createStore(reducer, state);
-        store.subscribe(() => sessionStorage.setItem(pathName, JSON.stringify(store.getState())));
+            store.subscribe(() => sessionStorage.setItem(Site.getLrfSavedSessionKey(pathName), JSON.stringify(store.getState())));
 
-        return store;
+            return store;
+        } catch {
+            return this.createStore(reducer, initialState);
+        }
     }
 
-    static getCurrentSessionState(key, defaultState, resetState) {
+    static getCurrentSessionState(pathName, defaultState, resetState) {
         try {
-            const createdState = JSON.parse(sessionStorage.getItem(key));
+            const createdState = JSON.parse(sessionStorage.getItem(Site.getLrfSavedSessionKey(pathName)));
             if (Object.keys(createdState).length === 0) {
                 return defaultState;
             }
@@ -55,8 +53,41 @@ export default class Store {
             }
 
             return { ...createdState, ...resetState };
-        } catch {
+        } catch (error) {
             return defaultState;
         }
+    }
+
+    static registerPageToSession(pathName) {
+        this.tryAddPageToSession(Site.getLrfSavedSessionKey(pathName));
+
+        window.addEventListener('pagehide', function () {
+            if (window.location.pathname == pathName && window.location.hash == LRF_SAVED_PAGE_HASH_KEY) {
+                sessionStorage.removeItem(LRF_SAVED_PAGE_SESSION_KEY);
+                sessionStorage.removeItem(Site.getLrfSavedSessionKey(pathName));
+            }
+        });
+    }
+
+    static tryAddPageToSession(pathName) {
+        if (window.location.hash == LRF_SAVED_PAGE_HASH_KEY) {
+            sessionStorage.setItem(LRF_SAVED_PAGE_SESSION_KEY, JSON.stringify({ [pathName]: true }));
+            return;
+        }
+
+        const savedPages = { ...JSON.parse(sessionStorage.getItem(LRF_SAVED_PAGE_SESSION_KEY)) };
+
+        if (!savedPages[pathName]) {
+            savedPages[pathName] = true;
+        }
+
+        for (let key in savedPages) {
+            if (savedPages.hasOwnProperty(key) && savedPages[key]) {
+                sessionStorage.removeItem(key);
+            }
+        }
+
+        history.replaceState('', '', `${window.location.href}${LRF_SAVED_PAGE_HASH_KEY}`);
+        sessionStorage.setItem(LRF_SAVED_PAGE_SESSION_KEY, JSON.stringify({ [pathName]: true }));
     }
 }

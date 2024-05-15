@@ -1,4 +1,6 @@
 export const SET_DATE_RANGE = 'SET_DATE_RANGE';
+export const SET_DATE = 'SET_DATE';
+
 export const TOGGLE_LOADER = 'TOGGLE_LOADER';
 
 export const SET_REQUEST_PARAM = 'SET_REQUEST_PARAM';

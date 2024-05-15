@@ -1,3 +1,5 @@
+import { LRF_SAVED_PAGE_SESSION_KEY } from '../constants/config';
+
 const _rootUrl = window.rootUrl || '/';
 export default class Site {
     static resolveClientUrl(relativeUrl) {
@@ -52,6 +54,10 @@ export default class Site {
             callback && callback(JSON.parse(reader.result));
         };
         reader.readAsText(blob);
+    }
+
+    static getLrfSavedSessionKey(pathName) {
+        return LRF_SAVED_PAGE_SESSION_KEY + pathName;
     }
 
     static getRootUrl() {

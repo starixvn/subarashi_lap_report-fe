@@ -19,7 +19,7 @@ namespace Fanex.Athena.Report.Core.Resources {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class ViewResources {
@@ -273,6 +273,15 @@ namespace Fanex.Athena.Report.Core.Resources {
         public static string BySportsType {
             get {
                 return ResourceManager.GetString("BySportsType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cash Out.
+        /// </summary>
+        public static string CashOut {
+            get {
+                return ResourceManager.GetString("CashOut", resourceCulture);
             }
         }
         
@@ -556,6 +565,15 @@ namespace Fanex.Athena.Report.Core.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Exclude CO from Sportsbook.
+        /// </summary>
+        public static string ExcludeCOFromSB {
+            get {
+                return ResourceManager.GetString("ExcludeCOFromSB", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Exclude Test Data.
         /// </summary>
         public static string ExcludeTestData {
@@ -696,6 +714,15 @@ namespace Fanex.Athena.Report.Core.Resources {
         public static string GroupByLevelOnlyOption {
             get {
                 return ResourceManager.GetString("GroupByLevelOnlyOption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Include CO into Sportsbook.
+        /// </summary>
+        public static string IncludeCOFromSB {
+            get {
+                return ResourceManager.GetString("IncludeCOFromSB", resourceCulture);
             }
         }
         
@@ -1510,11 +1537,11 @@ namespace Fanex.Athena.Report.Core.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to View Cash Out Only.
+        ///   Looks up a localized string similar to View CO only.
         /// </summary>
-        public static string ViewCashOutOnly {
+        public static string ViewCOOnly {
             get {
-                return ResourceManager.GetString("ViewCashOutOnly", resourceCulture);
+                return ResourceManager.GetString("ViewCOOnly", resourceCulture);
             }
         }
         

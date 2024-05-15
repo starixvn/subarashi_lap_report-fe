@@ -15,7 +15,7 @@ const BetListTable = (props) => {
         if (props.getTotalCellClassNameFunc) {
             return props.getTotalCellClassNameFunc(column, value);
         }
-        return column === 'LicenseeWL' && value && value.substring(0, 1) === '-' ? 'negative' : '';
+        return column === 'LicenseeWL' && value && value.startsWith('-') ? 'negative' : '';
     };
 
     const getHeaderName = (column) => {

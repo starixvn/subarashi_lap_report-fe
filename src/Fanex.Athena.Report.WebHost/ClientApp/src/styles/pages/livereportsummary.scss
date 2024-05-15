@@ -1,0 +1,64 @@
+$black: black;
+
+.livereport-summary { 
+    .panel-body {
+        padding-bottom: 1.5rem;
+    }
+
+    .table-title {
+        background: #8aa4b8;
+        padding: 4px 15px;
+        color: #fff;
+        text-transform: uppercase;
+    } 
+       
+    .table-container {
+        overflow-x: hidden;
+    }
+    
+    .body-content {
+        overflow-x: hidden;
+    }
+
+    .header-content {
+        .table>thead>tr>th {
+            vertical-align: middle;
+            text-align: center;
+            font-weight: 500;
+            padding: 2px 5px;
+            background: #d1dae1;
+            color: #314453;
+
+            &.first-header-cell {
+                border-left: inherit;
+            }
+        }
+    }
+
+    .footer-content {
+        .table>tbody>tr {
+            &.footer-summary>td {
+                font-weight: lighter;
+            }
+        }
+    }
+
+    .table {
+        table-layout: fixed;
+        line-height: 1.15;
+        
+        tr {
+            >th:first-child {
+                width: 200px;
+            }
+    
+            >td {
+                overflow: hidden;
+            }
+    
+            .header-small {
+                width: 8%;
+            }
+        }
+    }
+}

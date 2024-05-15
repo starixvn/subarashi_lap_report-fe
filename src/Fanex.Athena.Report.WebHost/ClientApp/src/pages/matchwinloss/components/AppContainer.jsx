@@ -11,6 +11,7 @@ import { ActionCreators } from '../actions/index';
 import { constants } from '../common';
 import DataGrid from './DataGrid';
 import FormFilter from './FormFilter';
+import Site from '@srcRoot/lib/site';
 
 export const AppContainer = (props) => {
     const dispatch = useDispatch();
@@ -56,7 +57,7 @@ export const AppContainer = (props) => {
     };
 
     useEffect(() => {
-        if (!sessionStorage.getItem(window.location.pathname)) {
+        if (!sessionStorage.getItem(Site.getLrfSavedSessionKey(window.location.pathname))) {
             sendRequest(() => DataService.getReportData(constants.ApiUrl.INIT_FORM_URL), setInitFormData);
             return;
         }

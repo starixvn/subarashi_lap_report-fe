@@ -47,6 +47,23 @@ $btnCancelBackground: #757985;
     background-color: $btnCancelBackground;
 }
 
+.btn-back {
+    background: #4c6375;
+    color: #fff;
+    margin-bottom: 5px;
+
+    &:hover {
+        background: lighten(#4c6375, 10%);
+    }
+
+    .icon-arrow {
+        font-size: 12px;
+        margin-right: 10px;
+        transform: rotate(90deg);
+        color: inherit;
+    }
+}
+
 button {
     &:focus {
         outline: none;
