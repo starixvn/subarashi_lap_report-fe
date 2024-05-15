@@ -27,16 +27,16 @@ function FooterSpecialBetTypeRows(props) {
 
     const getParams = (match) => {
         const params = {
-            currencyId: requestParam.currencyId,
-            baseCurrency: requestParam.baseCurrency,
-            currencyName: requestParam.currencyName,
-            fromDate: requestParam.date,
-            todate: requestParam.date,
-            betType: match.betType,
-            productCodeList: requestParam.productOptions.slice(1).reduce((acc, cur) => acc + ',' + cur.code, requestParam.productOptions[0].code),
-            rows: 50,
-            page: 1,
-            sord: 'asc',
+            CurrencyId: requestParam.CurrencyId,
+            BaseCurrency: requestParam.BaseCurrency,
+            CurrencyName: requestParam.CurrencyName,
+            FromDate: requestParam.Date,
+            ToDate: requestParam.Date,
+            BetType: match.betType,
+            ProductCodeList: requestParam.ProductOptions.slice(1).reduce((acc, cur) => acc + ',' + cur.code, requestParam.ProductOptions[0].code),
+            Rows: 50,
+            Page: 1,
+            SortOrder: 'asc',
         };
 
         if (requestParam.SubsidiaryList) {

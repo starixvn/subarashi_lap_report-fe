@@ -100,11 +100,11 @@ const FormFilter = (props) => {
 
     const getParams = () => {
         return {
-            date: currentDate.toString(),
-            productOptions: currentProduct,
-            currencyName: currentCurrency.label,
-            currencyId: currentCurrency.value,
-            baseCurrency: currentBaseCurrency.isEmpty ? null : currentBaseCurrency.label,
+            Date: currentDate.toString(),
+            ProductOptions: currentProduct,
+            CurrencyName: currentCurrency.label,
+            CurrencyId: currentCurrency.value,
+            BaseCurrency: currentBaseCurrency.isEmpty ? null : currentBaseCurrency.label,
             ...Site.getLrfSubsidiary(formData.isSelfMode),
         };
     };

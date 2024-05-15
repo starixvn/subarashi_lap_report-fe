@@ -1,0 +1,21 @@
+export default {
+    PageSize: 50,
+    DefaultPageSize: 50,
+    PageList: [50, 100, 200, 300, 400, 500, 1000, 2000],
+    SortableColumns: ['ExternalId', 'SystemId', 'Stake', 'WinLoss', 'LicenseeWL'],
+    TotalColumns: ['WinLoss', 'LicenseeWL'],
+    Columns: ['Index', 'ExternalId', 'SystemId', 'TransTime', 'Choice', 'Odds', 'Stake', 'WinLoss', 'LicenseeWL', 'Status'],
+    ColumnWidths: [40, 120, 120, 160, 370, 70, 120, 120, 120, 120],
+    ColumnAlignments: [
+        'center-align',
+        'left-align tooltip',
+        'left-align tooltip',
+        'center-align',
+        'right-align',
+        'right-align',
+        'right-align',
+        'right-align',
+        'right-align',
+        'center-align',
+    ],
+};

@@ -21,6 +21,11 @@ export default class Store {
     static createSessionStore(reducer, initialState, resetState) {
         const pathName = window.location.pathname;
         window.addEventListener('beforeunload', function () {
+            if (window.history.state.idx == 0) {
+                sessionStorage.clear();
+                return;
+            }
+
             if (window.location.pathname == pathName) {
                 sessionStorage.removeItem(pathName);
             }

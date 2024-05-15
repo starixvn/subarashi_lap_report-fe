@@ -70,16 +70,16 @@ function BodyContentRow(props) {
         }
 
         return {
-            currencyId: requestParam.currencyId,
-            baseCurrency: requestParam.baseCurrency,
-            currencyName: requestParam.currencyName,
-            date: requestParam.date,
-            leagueId: matchData.leagueId,
-            matchId: matchData.matchId,
-            productCode: matchData.productName,
-            productCodeList: Service.getMatchProductCodeList(
+            CurrencyId: requestParam.CurrencyId,
+            BaseCurrency: requestParam.BaseCurrency,
+            CurrencyName: requestParam.CurrencyName,
+            Date: requestParam.Date,
+            LeagueId: matchData.leagueId,
+            MatchId: matchData.matchId,
+            ProductCode: matchData.productName,
+            ProductCodeList: Service.getMatchProductCodeList(
                 matchData.productName,
-                requestParam.productOptions.filter((item) => item.status)
+                requestParam.ProductOptions.filter((item) => item.status)
             ),
         };
     };
@@ -88,23 +88,22 @@ function BodyContentRow(props) {
         e.preventDefault();
 
         const params = {
-            currencyId: requestParam.currencyId,
-            baseCurrency: requestParam.baseCurrency,
-            currencyName: requestParam.currencyName,
-            fromDate: requestParam.date,
-            toDate: requestParam.date,
-            matchId: match.matchId,
-            leagueId: match.leagueId,
-            raceno: match.raceNo,
-            bettype: isNaN(match.bettype) ? 0 : match.bettype,
-            liveIndicator: match.bettype === 85 || match.bettype === 86 ? match.isLive : '',
-            homeId: match.homeId,
-            awayId: match.awayId,
-            productCode: match.productName,
-            productCodeList: Service.getMatchProductCodeList(match.productName, requestParam.productOptions),
-            rows: 50,
-            page: 1,
-            sord: 'asc',
+            CurrencyId: requestParam.CurrencyId,
+            BaseCurrency: requestParam.BaseCurrency,
+            CurrencyName: requestParam.CurrencyName,
+            FromDate: requestParam.Date,
+            ToDate: requestParam.Date,
+            MatchId: match.matchId,
+            LeagueId: match.leagueId,
+            RaceNo: match.raceNo,
+            BetType: isNaN(match.betType) ? 0 : match.betType,
+            LiveIndicator: match.betType === 85 || match.betType === 86 ? match.isLive : '',
+            HomeId: match.homeId,
+            AwayId: match.awayId,
+            ProductCodeList: Service.getMatchProductCodeList(matchData.productName, requestParam.ProductOptions),
+            Rows: 50,
+            Page: 1,
+            SortOrder: 'asc',
         };
 
         if (requestParam.SubsidiaryList) {
@@ -150,7 +149,7 @@ function BodyContentRow(props) {
             detailData.map((match, matchIndex) => (
                 <Row key={`x-submatch-${matchIndex}`}>
                     <Cell key={`col-matchName`}>
-                        <a href="#" onClick={(e) => onClickMatchHandler(e, matchData)}>
+                        <a href="#" onClick={(e) => onClickMatchHandler(e, match)}>
                             <span>{match.bettypeName}</span>
                         </a>
                     </Cell>

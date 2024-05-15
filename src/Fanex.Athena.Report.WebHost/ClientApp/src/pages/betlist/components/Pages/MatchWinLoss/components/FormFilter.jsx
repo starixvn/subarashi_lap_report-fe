@@ -1,0 +1,31 @@
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useSelector, shallowEqual } from 'react-redux';
+
+import LangHelper from '@srcRoot/helpers/langHelper';
+import { ApiUrl } from '../constant/apiSettings';
+
+const MatchWinLossFormFilter = (props) => {
+    const navigate = useNavigate();
+    const [formData, requestParam] = useSelector((state) => [state.formData, state.requestParam], shallowEqual);
+
+    const { isValidExcel, processExcel } = props;
+    const exportExcel = () => {
+        if (!isValidExcel) {
+            return;
+        }
+
+        processExcel(ApiUrl.EXPORT_EXCEL_URL, requestParam, 'MatchWinLossBetList');
+    };
+
+    return (
+        <p className="content-title">
+            {`${formData.title} - ${formData.fromDate} - `}
+            <span className="base-currency">{LangHelper.getSingleResource('Viewin').replace('{0}', formData.baseCurrency)}</span>
+            <i className="icon-excel right" onClick={exportExcel} title={LangHelper.getSingleResource('ExportToExcel')}></i>
+            <i className="icon-back right" onClick={() => navigate(-1)}></i>
+        </p>
+    );
+};
+
+export default React.memo(MatchWinLossFormFilter);

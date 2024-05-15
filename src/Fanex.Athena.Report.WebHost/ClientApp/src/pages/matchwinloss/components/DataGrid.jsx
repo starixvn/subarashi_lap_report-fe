@@ -20,7 +20,7 @@ const DataGrid = (props) => {
     if (!gridData.data.length && !gridData.specialBetTypeResult.length) {
         return (
             <>
-                <ReportTitle content={Service.generateReportTitle(requestParam.date, requestParam.baseCurrency, requestParam.productOptions)} />
+                <ReportTitle content={Service.generateReportTitle(requestParam.Date, requestParam.BaseCurrency, requestParam.ProductOptions)} />
                 <NoDataTitle />
             </>
         );
@@ -39,7 +39,7 @@ const DataGrid = (props) => {
 
     return (
         <>
-            <ReportTitle content={Service.generateReportTitle(requestParam.date, requestParam.baseCurrency, requestParam.productOptions)} />
+            <ReportTitle content={Service.generateReportTitle(requestParam.Date, requestParam.BaseCurrency, requestParam.ProductOptions)} />
             <Table
                 autoWidth={true}
                 autoHeight={true}

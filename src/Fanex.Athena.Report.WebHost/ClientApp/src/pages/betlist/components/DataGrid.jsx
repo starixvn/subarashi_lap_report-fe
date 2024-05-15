@@ -1,0 +1,126 @@
+import React from 'react';
+import { useDispatch, useSelector, shallowEqual } from 'react-redux';
+
+import BetListHelper from '@srcRoot/helpers/betlistHelper';
+import LangHelper from '@srcRoot/helpers/langHelper';
+import DataService from '@srcRoot/lib/dataService';
+import useToggleRequest from '@srcRoot/hooks/useToggleRequest';
+
+import { ActionCreators } from '../actions';
+import { getBetListPageWithPageName } from './Pages';
+import { HeaderCell, FooterRow } from '../customGrid';
+import { TableSettings } from '../common/constants';
+
+const DataGrid = (props) => {
+    const dispatch = useDispatch();
+    const [formData, gridData, requestParam] = useSelector((state) => [state.formData, state.gridData, state.requestParam], shallowEqual);
+
+    const { sendRequest } = useToggleRequest();
+
+    const { setRequestParam, setGridData } = ActionCreators;
+
+    const getStartIndex = () => (requestParam.PageIndex - 1) * requestParam.PageSize;
+    const getEndIndex = () => getStartIndex() + requestParam.PageSize;
+    const data = formData.isServerPaging ? gridData.rows : gridData.rows?.slice(getStartIndex(), getEndIndex());
+
+    const onPaging = (index, size) => {
+        if (formData.isServerPaging) {
+            getData({ ...requestParam, PageIndex: index, PageSize: size });
+            return;
+        }
+
+        dispatch(setRequestParam({ ...requestParam, PageIndex: index, PageSize: size }));
+    };
+
+    const onSort = (sortBy, sortOrder) => {
+        getData({
+            ...requestParam,
+            SortBy: getSortParam(sortBy),
+            SortOrder: sortOrder,
+            PageIndex: TableSettings.PageIndex,
+            PageSize: TableSettings.PageSize,
+        });
+    };
+
+    const getSortParam = (sortBy) => {
+        switch (sortBy) {
+            case 'WinLoss':
+                return 'Winlost';
+            case 'ExternalId':
+                return 'nickname';
+            case 'SystemId':
+                return 'UserName';
+            default:
+                return sortBy;
+        }
+    };
+
+    const getData = (params) => {
+        sendRequest(() => fetchBetListGridData(formData.url, params), updateGridData);
+    };
+
+    const fetchBetListGridData = async (url, params) => {
+        const response = await DataService.getReportData(url, params);
+        const data = BetListHelper.loadBetListDataGrid(response.data, formData.isServerPaging);
+
+        dispatch(setRequestParam(params));
+
+        return data;
+    };
+
+    const updateGridData = (data) => {
+        dispatch(setGridData(data));
+    };
+
+    const getHeaderName = (column) => {
+        if (column === 'LicenseeWL') {
+            return `${LangHelper.getSingleResource('LicenseeW_L')}/${LangHelper.getSingleResource('Comm')}`;
+        }
+
+        if (column === 'WinLoss' && formData.isAllowedCustomerCommission) {
+            return `${LangHelper.getSingleResource('WinLoss')}/${LangHelper.getSingleResource('Comm')}`;
+        }
+
+        if (column === 'Index') {
+            return '#';
+        }
+
+        if (column === '') {
+            return '';
+        }
+
+        return LangHelper.getSingleResource(column);
+    };
+
+    const noDataCondition = (total) => {
+        if (parseFloat(total.WinLoss) || parseFloat(total.LicenseeWL) || parseFloat(total.BetEffective) || parseFloat(total.Stake)) {
+            return false;
+        }
+
+        return true;
+    };
+
+    // Use page table with lazy load
+    const Table = getBetListPageWithPageName(formData.pageName).Table;
+
+    return (
+        <div className="betlist-container">
+            <Table
+                onPaging={onPaging}
+                getHeaderNameFunc={getHeaderName}
+                data={data}
+                total={gridData.userData}
+                totalRows={gridData.totalRows}
+                totalText={LangHelper.getSingleResource('GrandTotal')}
+                onSort={onSort}
+                getResourceFunc={(key) => LangHelper.getSingleResource(key)}
+                adjustedHeight={-20}
+                customHeaderCell={HeaderCell}
+                customFooterRow={FooterRow}
+                noDataCondition={() => noDataCondition(gridData.userData)}
+            />
+        </div>
+    );
+};
+
+export default React.memo(DataGrid);
