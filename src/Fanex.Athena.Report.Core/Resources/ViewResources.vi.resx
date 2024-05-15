@@ -184,10 +184,10 @@
     <value>Tháng Ba</value>
   </data>
   <data name="May2" xml:space="preserve">
-    <value>Tháng Năm</value>
+    <value>Tháng 5</value>
   </data>
   <data name="May" xml:space="preserve">
-    <value>Tháng 5</value>
+    <value>Tháng Năm</value>
   </data>
   <data name="Mo" xml:space="preserve">
     <value>T2</value>
@@ -462,7 +462,7 @@
   <data name="LicenseeW_L" xml:space="preserve">
     <value>Thắng Thua Nhà Cái</value>
   </data>
-    <data name="League" xml:space="preserve">
+  <data name="League" xml:space="preserve">
     <value>Giải đấu</value>
   </data>
   <data name="BetCount" xml:space="preserve">
@@ -575,5 +575,59 @@
   </data>
   <data name="SearchData" xml:space="preserve">
     <value>Tìm dữ liệu</value>
+  </data>
+  <data name="AmtDueToBA" xml:space="preserve">
+    <value>Tiền BA</value>
+  </data>
+  <data name="Commission" xml:space="preserve">
+    <value>Hoa hồng</value>
+  </data>
+  <data name="GrandTotal" xml:space="preserve">
+    <value>Tổng cộng</value>
+  </data>
+  <data name="MatchWinLoss" xml:space="preserve">
+    <value>Thắng Thua Theo Trận</value>
+  </data>
+  <data name="BetList" xml:space="preserve">
+    <value>Danh sách cược</value>
+  </data>
+  <data name="TransTime" xml:space="preserve">
+    <value>Thời gian giao dịch</value>
+  </data>
+  <data name="Choice" xml:space="preserve">
+    <value>Lựa chọn</value>
+  </data>
+  <data name="Odds" xml:space="preserve">
+    <value>Tỷ lệ cược</value>
+  </data>
+  <data name="Stake" xml:space="preserve">
+    <value>Tiền cược</value>
+  </data>
+  <data name="Outright" xml:space="preserve">
+    <value>Cược thắng</value>
+  </data>
+  <data name="Live" xml:space="preserve">
+    <value>Trực tiếp</value>
+  </data>
+  <data name="NoneLive" xml:space="preserve">
+    <value>Không Trực tiếp</value>
+  </data>
+  <data name="Data" xml:space="preserve">
+    <value>dữ liệu</value>
+  </data>
+  <data name="LiveReport" xml:space="preserve">
+    <value>Báo Cáo Trực Tiếp</value>  
+  </data>
+  <data name="Summary" xml:space="preserve">
+    <value>Tóm tắt</value>
+  </data>
+  <data name="BySportsType" xml:space="preserve">
+    <value>Theo Loại Thể Thao</value> 
+  </data>
+  <data name="ByCurrency" xml:space="preserve">
+    <value>Theo Đơn vị tiền tệ</value>
+  </data>
+  <data name="ByBetType" xml:space="preserve">
+    <value>Theo Loại Cược</value>     
   </data>
 </root>

@@ -388,7 +388,7 @@
     <value>Pertandingan Langsung Mingguan</value>
   </data>
   <data name="WinLoss" xml:space="preserve">
-    <value>Menang atau kalah</value>
+    <value>Menang-Kalah</value>
   </data>
   <data name="Withdrawal" xml:space="preserve">
     <value>Penarikan</value>
@@ -433,7 +433,7 @@
     <value>Nama Pengguna</value>
   </data>
   <data name="WhiteLabel" xml:space="preserve">
-    <value>WhiteLabel</value>
+    <value>Whitelabel</value>
   </data>
   <data name="PromotionDetails" xml:space="preserve">
     <value>Rincian Promosi</value>
@@ -532,7 +532,7 @@
     <value>Tampilkan berdasarkan</value>
   </data>
   <data name="OddsGroup" xml:space="preserve">
-      <value>Kelompok Ganjil</value>
+    <value>Kelompok Ganjil</value>
   </data>
   <data name="RiskLevel" xml:space="preserve">
     <value>Tingkat Risiko</value>
@@ -575,5 +575,62 @@
   </data>
   <data name="SearchData" xml:space="preserve">
     <value>Cari data</value>
+  </data>
+  <data name="AmtDueToBA" xml:space="preserve">
+    <value>Jumlah yang Harus Dibayarkan ke BA</value>
+  </data>
+  <data name="Commission" xml:space="preserve">
+    <value>Komisi</value>
+  </data>
+  <data name="GrandTotal" xml:space="preserve">
+    <value>Total Keseluruhan</value>
+  </data>
+  <data name="MatchWinLoss" xml:space="preserve">
+    <value>Match Win Loss</value>
+  </data>
+  <data name="BetList" xml:space="preserve">
+    <value>Daftar Taruhan</value>
+  </data>
+  <data name="TransTime" xml:space="preserve">
+    <value>Waktu Transaksi</value>
+  </data>
+  <data name="Choice" xml:space="preserve">
+    <value>Pilihan</value>
+  </data>
+  <data name="Odds" xml:space="preserve">
+    <value>Odds</value>
+  </data>
+  <data name="Stake" xml:space="preserve">
+    <value>Taruhan</value>
+  </data>
+  <data name="Outright" xml:space="preserve">
+    <value>Pemenang Keseluruhan</value>
+  </data>
+  <data name="ExcelExceedRowsMsg" xml:space="preserve">
+    <value>File ini melebihi 65535 entri. Harap hubungi administrator untuk lebih detailnya.</value>
+  </data>
+  <data name="Live" xml:space="preserve">
+    <value>Langsung</value>
+  </data>
+  <data name="NoneLive" xml:space="preserve">
+    <value>Non-Live</value>
+  </data>
+  <data name="Data" xml:space="preserve">
+    <value>data</value>
+  </data>
+  <data name="LiveReport" xml:space="preserve">
+    <value>Laporan Langsung</value>
+  </data>
+  <data name="Summary" xml:space="preserve">
+    <value>Ringkasan</value>
+  </data>
+  <data name="BySportsType" xml:space="preserve">
+    <value>Berdasarkan Jenis Olahraga</value>
+  </data>
+  <data name="ByCurrency" xml:space="preserve">
+    <value>Menurut Mata Uang</value>  
+  </data>
+  <data name="ByBetType" xml:space="preserve">
+    <value>Berdasarkan Jenis Taruhan</value>
   </data>
 </root>

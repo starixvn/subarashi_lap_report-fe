@@ -83,4 +83,8 @@ export default class Site {
     static redirectToUrl(url) {
         window.location.replace(this.resolveClientUrl(url));
     }
+
+    static assignToUrl(url) {
+        window.location.assign(this.resolveClientUrl(url));
+    }
 }

@@ -13,3 +13,9 @@ export const LEAGUE_WL = 'LeagueWinloss';
 export const WL_ANALYSIS = 'WinLossAnalysis';
 
 export const USER_GUIDE = 'UserGuide';
+
+export const MATCH_WL = 'MatchWinLoss';
+
+export const LIVE_REPORT = 'LiveReport';
+
+export const BETLIST = 'BetList';

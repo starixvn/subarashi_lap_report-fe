@@ -432,7 +432,7 @@
     <value>Username</value>
   </data>
   <data name="WhiteLabel" xml:space="preserve">
-    <value>WhiteLabel</value>
+    <value>Whitelabel</value>
   </data>
   <data name="Customer" xml:space="preserve">
     <value>Customer</value>
@@ -583,5 +583,62 @@
   </data>
   <data name="Status" xml:space="preserve">
     <value>Status</value>
+  </data>
+  <data name="AmtDueToBA" xml:space="preserve">
+    <value>Amt Due To BA</value>
+  </data>
+  <data name="Commission" xml:space="preserve">
+    <value>Commission</value>
+  </data>
+  <data name="GrandTotal" xml:space="preserve">
+    <value>Grand Total</value>
+  </data>
+  <data name="MatchWinLoss" xml:space="preserve">
+    <value>Match Win Loss</value>
+  </data>
+  <data name="BetList" xml:space="preserve">
+    <value>Bet List</value>
+  </data>
+  <data name="Choice" xml:space="preserve">
+    <value>Choice</value>
+  </data>
+  <data name="Odds" xml:space="preserve">
+    <value>Odds</value>
+  </data>
+  <data name="Stake" xml:space="preserve">
+    <value>Stake</value>
+  </data>
+  <data name="TransTime" xml:space="preserve">
+    <value>Trans.Time</value>
+  </data>
+  <data name="Outright" xml:space="preserve">
+    <value>Outright</value>
+  </data>
+  <data name="ExcelExceedRowsMsg" xml:space="preserve">
+    <value>This file exceeded 65535 entries. Please contact administrator for more details.</value>
+  </data>
+  <data name="LiveReport" xml:space="preserve">
+    <value>Live Report</value>
+  </data>
+  <data name="Live" xml:space="preserve">
+    <value>Live</value>
+  </data>
+  <data name="NoneLive" xml:space="preserve">
+    <value>Non-Live</value>
+  </data>
+  <data name="Data" xml:space="preserve">
+    <value>data</value>
+  </data>
+  <data name="ByBetType" xml:space="preserve">
+    <value>By Bet Type</value>
+  </data>
+  <data name="ByCurrency" xml:space="preserve">
+    <value>By Currency</value>
+  </data>
+  <data name="BySportsType" xml:space="preserve">
+    <value>By Sports Type</value>
+  </data>
+  <data name="Summary" xml:space="preserve">
+    <value>Summary</value>
   </data>
 </root>

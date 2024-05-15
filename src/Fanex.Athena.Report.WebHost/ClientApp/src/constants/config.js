@@ -3,6 +3,12 @@ export const debuggingConfig = {
     env: 'local',
 };
 
+export const isDebugging = process.env.NODE_ENV === 'development' || window[debuggingConfig.name]?.env === debuggingConfig.env;
+
+export const INVALID_REQUEST_URL = 'Utility/Error?err=400';
+
+export const NOT_FOUND_URL = 'Utility/Error?err=404';
+
 export const ACCESS_DENIED_URL = 'Utility/AccessDenied';
 
 export const UM_URL = 'Utility/UnderMaintenance';

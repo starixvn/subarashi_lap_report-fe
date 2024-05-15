@@ -397,7 +397,7 @@
     <value>产品</value>
   </data>
   <data name="PromotionType" xml:space="preserve">
-    <value>基础货币</value>
+    <value>活动类型</value>
   </data>
   <data name="ReportBy" xml:space="preserve">
     <value>报告由</value>
@@ -487,7 +487,7 @@
     <value>BA金额</value>
   </data>
   <data name="Margin" xml:space="preserve">
-      <value>殺數</value>
+    <value>殺數</value>
   </data>
   <data name="Player" xml:space="preserve">
     <value>玩家</value>
@@ -554,5 +554,56 @@
   </data>
   <data name="SelectOptions" xml:space="preserve">
     <value>选择一个选项</value>
+  </data>
+  <data name="AmtDueToBA" xml:space="preserve">
+    <value>BA金额</value>
+  </data>
+  <data name="Commission" xml:space="preserve">
+    <value>佣金</value>
+  </data>
+  <data name="GrandTotal" xml:space="preserve">
+    <value>累计</value>
+  </data>
+  <data name="MatchWinLoss" xml:space="preserve">
+    <value>球赛输赢</value>
+  </data>
+  <data name="BetList" xml:space="preserve">
+    <value>投注历史</value>
+  </data>
+  <data name="TransTime" xml:space="preserve">
+    <value>交易时间</value>
+  </data>
+  <data name="Choice" xml:space="preserve">
+    <value>选择</value>
+  </data>
+  <data name="Odds" xml:space="preserve">
+    <value>赔率</value>
+  </data>
+  <data name="Stake" xml:space="preserve">
+    <value>投注额</value>
+  </data>
+  <data name="Outright" xml:space="preserve">
+    <value>优胜冠军</value>
+  </data>
+  <data name="Live" xml:space="preserve">
+    <value>滚球(不含混合)</value>
+  </data>
+  <data name="NoneLive" xml:space="preserve">
+    <value>非滚球(不含混合)</value>
+  </data>
+  <data name="LiveReport" xml:space="preserve">
+    <value>滚球报告</value>
+  </data>
+  <data name="Summary" xml:space="preserve">
+    <value>总结</value>
+  </data>
+  <data name="BySportsType" xml:space="preserve">
+    <value>根据运动类型</value>       
+  </data>
+  <data name="ByCurrency" xml:space="preserve">
+    <value>根据货币</value>
+  </data>
+  <data name="ByBetType" xml:space="preserve">
+    <value>根据投注类型</value>       
   </data>
 </root>

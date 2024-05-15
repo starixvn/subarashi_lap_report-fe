@@ -4,6 +4,8 @@ const pathConfig = require("../configs/path");
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const RemoveEmptyScriptsPlugin = require('webpack-remove-empty-scripts');
+const webpack = require('webpack');
+const appSetting = require("../configs/config");
 
 module.exports = {
     entry: {
@@ -53,6 +55,9 @@ module.exports = {
         }),
         new CleanWebpackPlugin(),
         new RemoveEmptyScriptsPlugin(),
+        new webpack.DefinePlugin({
+            'process.env.APP_SETTING': JSON.stringify(appSetting)
+        })
     ],
     optimization: {
         splitChunks: {
