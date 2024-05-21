@@ -3,27 +3,26 @@ import { useDispatch, useSelector } from 'react-redux';
 import { DateRange } from '@legion-lib/react-daterangepicker';
 
 import UserGuide from '@srcRoot/components/UserGuide';
-import GetGuideWithCurrentLang from '../../guideContent';
 import DataService from '@srcRoot/lib/dataService';
 import useToggleRequest from '@srcRoot/hooks/useToggleRequest';
 import Site from '@srcRoot/lib/site';
 import CollapsiblePanel from '@srcRoot/components/CollapsiblePanel';
 import LangHelper from '@srcRoot/helpers/langHelper';
+import { USER_GUIDE, WEEKLY_LIVE_MATCHES } from '@srcRoot/constants/pages';
 
 import Constants from '../constants/index';
 import { ActionCreators } from '../actions';
 
 const FormFilter = (props) => {
     const dispatch = useDispatch();
-    const { ApiUrl, DateConstraint, FirstDayOfWeek } = Constants;
-    const { setDateRange, setGridData } = ActionCreators;
     const { sendRequest } = useToggleRequest();
-    const dateRange = useSelector((state) => state.dateRange);
 
-    const isValidModel = () => {
-        const result = true;
-        return result;
-    };
+    const userGuideContent = useSelector((state) => state.userGuideContent);
+    const dateRange = useSelector((state) => state.dateRange);
+    const requestParam = useSelector((state) => state.requestParam);
+
+    const { ApiUrl, DateConstraint, FirstDayOfWeek } = Constants;
+    const { setDateRange, setGridData, setRequestParam, getUserGuideContent } = ActionCreators;
 
     const _onChangeDateRange = (range, isValid = true) => {
         if (isValid) {
@@ -37,11 +36,11 @@ const FormFilter = (props) => {
     const _renderDateFilter = () => {
         return (
             <DateRange
-                startDate={dateRange.fromDate}
-                endDate={dateRange.toDate}
+                startDate={Constants.DateRange.fromDate}
+                endDate={Constants.DateRange.toDate}
                 minDate={DateConstraint.minDate}
                 maxDate={DateConstraint.maxDate}
-                today={DateConstraint.toDay}
+                today={DateConstraint.today}
                 limitedMonthRange={DateConstraint.limitedMonthRange}
                 firstDayOfWeek={FirstDayOfWeek}
                 onChange={_onChangeDateRange}
@@ -50,14 +49,21 @@ const FormFilter = (props) => {
         );
     };
 
+    const fetchUserGuide = () => {
+        if (!userGuideContent) {
+            sendRequest(() => dispatch(getUserGuideContent(WEEKLY_LIVE_MATCHES)));
+        }
+    };
+
     const _renderSupportButton = () => {
         return (
             <>
                 <i className="icon-excel right" onClick={onExportExcel} title={LangHelper.getSingleResource('ExportToExcel')} />
                 <UserGuide
-                    title={LangHelper.getSingleResource('UserGuide')}
-                    contentTitle={LangHelper.getSingleResource('WeeklyLiveMatches')}
-                    content={GetGuideWithCurrentLang('WeeklyLiveMatches')}
+                    title={LangHelper.getSingleResource(USER_GUIDE)}
+                    contentTitle={LangHelper.getSingleResource(WEEKLY_LIVE_MATCHES)}
+                    onClick={fetchUserGuide}
+                    content={userGuideContent}
                 />
             </>
         );
@@ -72,11 +78,14 @@ const FormFilter = (props) => {
     };
 
     const _getParams = () => {
-        const { fromDate, toDate } = dateRange;
-        return {
-            FromDate: Site.convertDateToString(fromDate),
-            ToDate: Site.convertDateToString(toDate),
+        const params = {
+            ...requestParam,
+            FromDate: Site.convertDateToString(dateRange.fromDate),
+            ToDate: Site.convertDateToString(dateRange.toDate),
         };
+
+        dispatch(setRequestParam(params));
+        return params;
     };
 
     const onSubmit = (event) => {
@@ -102,7 +111,7 @@ const FormFilter = (props) => {
     };
 
     return (
-        <CollapsiblePanel className="page-filter" stickyFooter={_renderSupportButton()} isCollapseMode={false}>
+        <CollapsiblePanel stickyFooter={_renderSupportButton()} isCollapseMode={false}>
             <div className="row">
                 <div className="col-12 col-md-3 col-sm-6 col-lg-4 col-xl-2">
                     <div className="form-group">
@@ -113,8 +122,8 @@ const FormFilter = (props) => {
                 <div className="col-12 col-md-2 col-sm-2 col-lg-2 col-xl-1">
                     <div className="form-group">
                         <div className="button-group">
-                            <button type="button" disabled={!isValidModel()} className="btn btn-submit" onClick={onSubmit}>
-                                {LangHelper.getSingleResource('Submit')}
+                            <button type="button" className="btn btn-submit" onClick={onSubmit}>
+                                {LangHelper.getSingleResource('Submit').toUpperCase()}
                             </button>
                         </div>
                     </div>

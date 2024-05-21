@@ -1,0 +1,13 @@
+.user-guide {
+    height: fit-content !important;
+    width: 640px !important;
+
+    .guide-content {
+        max-height: 400px !important;
+
+        @media (min-height: 768px) {
+            max-height: 480px !important;
+        }
+    }
+}
+

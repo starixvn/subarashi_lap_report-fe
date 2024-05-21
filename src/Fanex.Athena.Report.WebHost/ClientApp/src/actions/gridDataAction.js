@@ -1,20 +1,4 @@
-import DataService from '../reducers/dataService';
 import * as types from './types';
-import { toggleLoader } from './loaderAction';
-
-export function getGridData(url, params) {
-    return (dispatch) => {
-        DataService.postData(url, params)
-            .then((response) => {
-                response.data.timestamp = new Date().getTime();
-                dispatch(setGridData(response.data));
-            })
-            .catch((error) => {
-                alert('Sorry, an error occurred while processing your request.');
-                dispatch(toggleLoader(false));
-            });
-    };
-}
 
 export function setGridData(data) {
     return {

@@ -1,22 +1,12 @@
 const _rootUrl = window.rootUrl || '/';
-const _isSelfMode = !!window.isSelfMode;
-let _xsrfToken = null;
 export default class Site {
-    static getXsrfToken() {
-        if (!_xsrfToken) {
-            _xsrfToken = document.querySelector('input[name=__RequestVerificationToken]').value;
-        }
-
-        return _xsrfToken;
-    }
-
     static resolveClientUrl(relativeUrl) {
         return _rootUrl + relativeUrl;
     }
 
-    static getLrfSubsidiary() {
+    static getLrfSubsidiary(isSelfMode) {
         try {
-            return (_isSelfMode && top.getLrfSubsidiarySearch && top.getLrfSubsidiarySearch()) || {};
+            return (isSelfMode && top.getLrfSubsidiarySearch && top.getLrfSubsidiarySearch()) || {};
         } catch (e) {
             return {};
         }
@@ -88,13 +78,5 @@ export default class Site {
 
     static redirectToUrl(url) {
         window.location.replace(this.resolveClientUrl(url));
-    }
-
-    static getFunctionKeys() {
-        return Object.values(window.functionKeys);
-    }
-
-    static isAdmin() {
-        return window.isAdmin == 'True';
     }
 }

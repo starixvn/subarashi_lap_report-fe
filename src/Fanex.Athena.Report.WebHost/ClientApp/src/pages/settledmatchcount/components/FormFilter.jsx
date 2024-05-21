@@ -1,22 +1,26 @@
 import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import UserGuide from '@srcRoot/components/UserGuide';
 import LangHelper from '@srcRoot/helpers/langHelper';
 import CollapsiblePanel from '@srcRoot/components/CollapsiblePanel';
-import GetGuideWithCurrentLang from '../../guideContent';
 import useToggleRequest from '@srcRoot/hooks/useToggleRequest';
 import DataService from '@srcRoot/lib/dataService';
 
 import { ActionCreators } from '../actions/index';
+import Constants from '../constants';
+import { SETTLED_MATCH_COUNT, USER_GUIDE } from '@srcRoot/constants/pages';
 
 const FormFilter = (props) => {
     const dispatch = useDispatch();
-    const { setGridData } = ActionCreators;
+    const userGuideContent = useSelector((state) => state.userGuideContent);
     const { sendRequest } = useToggleRequest();
 
+    const { setGridData, getUserGuideContent } = ActionCreators;
+    const { ApiUrl } = Constants;
+
     useEffect(() => {
-        sendRequest(() => DataService.getReportData('SettledMatchCount/Index'), _updateData);
+        sendRequest(() => DataService.getReportData(ApiUrl.REPORT_DATA_URL), _updateData);
     }, []);
 
     const _updateData = (result) => {
@@ -28,15 +32,22 @@ const FormFilter = (props) => {
         dispatch(setGridData(null));
     };
 
+    const fetchUserGuide = () => {
+        if (!userGuideContent) {
+            sendRequest(() => dispatch(getUserGuideContent(SETTLED_MATCH_COUNT)));
+        }
+    };
+
     const SupportButton = (
         <UserGuide
-            title={LangHelper.getSingleResource('UserGuide')}
-            contentTitle={LangHelper.getSingleResource('SettledMatchCount')}
-            content={GetGuideWithCurrentLang('SettledMatchCount')}
+            title={LangHelper.getSingleResource(USER_GUIDE)}
+            contentTitle={LangHelper.getSingleResource(SETTLED_MATCH_COUNT)}
+            onClick={fetchUserGuide}
+            content={userGuideContent}
         />
     );
 
-    return <CollapsiblePanel className="page-filter" stickyFooter={SupportButton} isCollapseMode={false} />;
+    return <CollapsiblePanel stickyFooter={SupportButton} isCollapseMode={false} />;
 };
 
 export default React.memo(FormFilter);

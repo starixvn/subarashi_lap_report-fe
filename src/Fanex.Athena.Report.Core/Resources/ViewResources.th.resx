@@ -1,0 +1,402 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AccessDeniedMsg" xml:space="preserve">
+    <value>ขออภัย คุณไม่ได้รับอนุญาตให้เข้าถึงหน้านี้</value>
+  </data>
+  <data name="Adjustment" xml:space="preserve">
+    <value>การปรับ</value>
+  </data>
+  <data name="AffiliateTransfer" xml:space="preserve">
+    <value>โอนให้พันธมิตร</value>
+  </data>
+  <data name="All" xml:space="preserve">
+    <value>ทั้งหมด</value>
+  </data>
+  <data name="AmountDueTo" xml:space="preserve">
+    <value>จำนวนเงินจาก</value>
+  </data>
+  <data name="Apr" xml:space="preserve">
+    <value>เมษายน</value>
+  </data>
+  <data name="April" xml:space="preserve">
+    <value>เมษายน</value>
+  </data>
+  <data name="Aug" xml:space="preserve">
+    <value>สิงหาคม</value>
+  </data>
+  <data name="August" xml:space="preserve">
+    <value>สิงหาคม</value>
+  </data>
+  <data name="BA" xml:space="preserve">
+    <value>BA</value>
+  </data>
+  <data name="Bonus" xml:space="preserve">
+    <value>โบนัส</value>
+  </data>
+  <data name="ClosingBalance" xml:space="preserve">
+    <value>ยอดปิดบัญชี</value>
+  </data>
+  <data name="Comm" xml:space="preserve">
+    <value>ค่าคอมมิชชั่น</value>
+  </data>
+  <data name="Currency" xml:space="preserve">
+    <value>สกุลเงิน</value>
+  </data>
+  <data name="Currentmonth" xml:space="preserve">
+    <value>เดือนนี้</value>
+  </data>
+  <data name="Currentweek" xml:space="preserve">
+    <value>สัปดาห์ปัจจุบัน</value>
+  </data>
+  <data name="CustomerBalance" xml:space="preserve">
+    <value>ยอดคงเหลือลูกค้า</value>
+  </data>
+  <data name="CustomerSupportTask" xml:space="preserve">
+    <value>งานสนับสนุนลูกค้า</value>
+  </data>
+  <data name="CustomerW_L" xml:space="preserve">
+    <value>ลูกค้าแพ้ชนะ</value>
+  </data>
+  <data name="CustomerWinLoss" xml:space="preserve">
+    <value>ลูกค้าแพ้ชนะ</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>วันที่</value>
+  </data>
+  <data name="DateRange" xml:space="preserve">
+    <value>ช่วงวันที่</value>
+  </data>
+  <data name="DateRangeExceedMsg" xml:space="preserve">
+    <value>ช่วงวันที่เกิน {0} เดือน กรุณาลองอีกครั้ง!</value>
+  </data>
+  <data name="Day" xml:space="preserve">
+    <value>วัน</value>
+  </data>
+  <data name="Dec" xml:space="preserve">
+    <value>ธันวาคม</value>
+  </data>
+  <data name="December" xml:space="preserve">
+    <value>ธันวาคม</value>
+  </data>
+  <data name="Deposit" xml:space="preserve">
+    <value>ฝากเงิน</value>
+  </data>
+  <data name="DrawGame" xml:space="preserve">
+    <value>เกมเสมอ</value>
+  </data>
+  <data name="Entered" xml:space="preserve">
+    <value>ป้อน</value>
+  </data>
+  <data name="ErrorProcessingMsg" xml:space="preserve">
+    <value>ขออภัย เกิดข้อผิดพลาดขณะดำเนินการตามคำขอของคุณ</value>
+  </data>
+  <data name="ExcludeTestData" xml:space="preserve">
+    <value>ไม่รวมข้อมูลการทดสอบ</value>
+  </data>
+  <data name="ExportToExcel" xml:space="preserve">
+    <value>ส่งไปที่Excel</value>
+  </data>
+  <data name="ExternalId" xml:space="preserve">
+    <value>รหัสภายนอก</value>
+  </data>
+  <data name="ExtraPayout" xml:space="preserve">
+    <value>การจ่ายเงินพิเศษ</value>
+  </data>
+  <data name="Feb" xml:space="preserve">
+    <value>กุมภาพันธ์</value>
+  </data>
+  <data name="February" xml:space="preserve">
+    <value>กุมภาพันธ์</value>
+  </data>
+  <data name="Fr" xml:space="preserve">
+    <value>ศ.</value>
+  </data>
+  <data name="Friday" xml:space="preserve">
+    <value>วันศุกร์</value>
+  </data>
+  <data name="GetAllCustomersHavingPositiveClosingBalance" xml:space="preserve">
+    <value>แสดงเฉพาะลูกค้าที่มียอดปิด &gt; 0</value>
+  </data>
+  <data name="GetAllCustomersHavingRunningTickets" xml:space="preserve">
+    <value>รับตั๋วแข่งขันทั้งหมดของลูกค้า</value>
+  </data>
+  <data name="GetAllRunningTickets" xml:space="preserve">
+    <value>รับตั๋วแข่งขันทั้งหมด</value>
+  </data>
+  <data name="Jan" xml:space="preserve">
+    <value>มกราคม</value>
+  </data>
+  <data name="January" xml:space="preserve">
+    <value>มกราคม</value>
+  </data>
+  <data name="Jul" xml:space="preserve">
+    <value>กรกฎาคม</value>
+  </data>
+  <data name="July" xml:space="preserve">
+    <value>กรกฎาคม</value>
+  </data>
+  <data name="Jun" xml:space="preserve">
+    <value>มิถุนายน</value>
+  </data>
+  <data name="June" xml:space="preserve">
+    <value>มิถุนายน</value>
+  </data>
+  <data name="Lastmonth" xml:space="preserve">
+    <value>เดือนที่แล้ว</value>
+  </data>
+  <data name="Lastweek" xml:space="preserve">
+    <value>อาทิตย์ที่แล้ว</value>
+  </data>
+  <data name="Mar" xml:space="preserve">
+    <value>มีนาคม</value>
+  </data>
+  <data name="March" xml:space="preserve">
+    <value>มีนาคม</value>
+  </data>
+  <data name="May" xml:space="preserve">
+    <value>พฤษภาคม</value>
+  </data>
+  <data name="May2" xml:space="preserve">
+    <value>พฤษภาคม</value>
+  </data>
+  <data name="Mo" xml:space="preserve">
+    <value>จ.</value>
+  </data>
+  <data name="Monday" xml:space="preserve">
+    <value>วันจันทร์</value>
+  </data>
+  <data name="Month" xml:space="preserve">
+    <value>เดือน</value>
+  </data>
+  <data name="NetTurnOver" xml:space="preserve">
+    <value>Net Turnover</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>เลขที่</value>
+  </data>
+  <data name="NoInfo" xml:space="preserve">
+    <value>ไม่มีข้อมูล</value>
+  </data>
+  <data name="NonEntered" xml:space="preserve">
+    <value>ไม่ป้อน</value>
+  </data>
+  <data name="Nov" xml:space="preserve">
+    <value>พฤศจิกายน</value>
+  </data>
+  <data name="November" xml:space="preserve">
+    <value>พฤศจิกายน</value>
+  </data>
+  <data name="Oct" xml:space="preserve">
+    <value>ตุลาคม</value>
+  </data>
+  <data name="October" xml:space="preserve">
+    <value>ตุลาคม</value>
+  </data>
+  <data name="OpeningBalance" xml:space="preserve">
+    <value>ยอดคงเหลือตอนเปิดบัญชี</value>
+  </data>
+  <data name="PendingFunds" xml:space="preserve">
+    <value>เงินรอดำเนินการ</value>
+  </data>
+  <data name="Results" xml:space="preserve">
+    <value>ผลลัพธ์</value>
+  </data>
+  <data name="Sa" xml:space="preserve">
+    <value>ส.</value>
+  </data>
+  <data name="Saturday" xml:space="preserve">
+    <value>วันเสาร์</value>
+  </data>
+  <data name="SelectTop" xml:space="preserve">
+    <value>เลือกด้านบน</value>
+  </data>
+  <data name="Sep" xml:space="preserve">
+    <value>กันยายน</value>
+  </data>
+  <data name="September" xml:space="preserve">
+    <value>กันยายน</value>
+  </data>
+  <data name="SettledMatchCount" xml:space="preserve">
+    <value>นับการตัดสินการแข่งขัน</value>
+  </data>
+  <data name="Sincelastmonth" xml:space="preserve">
+    <value>ตั้งแต่เดือนที่แล้ว</value>
+  </data>
+  <data name="Sport" xml:space="preserve">
+    <value>กีฬา</value>
+  </data>
+  <data name="Su" xml:space="preserve">
+    <value>อา.</value>
+  </data>
+  <data name="Submit" xml:space="preserve">
+    <value>ยอม</value>
+  </data>
+  <data name="SupportTask" xml:space="preserve">
+    <value>งานสนับสนุน</value>
+  </data>
+  <data name="SystemId" xml:space="preserve">
+    <value>รหัสระบบ</value>
+  </data>
+  <data name="Th" xml:space="preserve">
+    <value>พฤ.</value>
+  </data>
+  <data name="Today" xml:space="preserve">
+    <value>วันนี้</value>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>ทั้งหมด</value>
+  </data>
+  <data name="Tu" xml:space="preserve">
+    <value>อ.</value>
+  </data>
+  <data name="Tuesday" xml:space="preserve">
+    <value>วันอังคาร</value>
+  </data>
+  <data name="Turnover" xml:space="preserve">
+    <value>เทิร์นโอเวอร์</value>
+  </data>
+  <data name="UserGuide" xml:space="preserve">
+    <value>คู่มือผู้ใช้</value>
+  </data>
+  <data name="Viewin" xml:space="preserve">
+    <value>ดูใน {0}</value>
+  </data>
+  <data name="We" xml:space="preserve">
+    <value>พ.</value>
+  </data>
+  <data name="Wednesday" xml:space="preserve">
+    <value>วันพุธ</value>
+  </data>
+  <data name="WeeklyLiveMatches" xml:space="preserve">
+    <value>การแข่งขันแทงบอลสดประจำสัปดาห์</value>
+  </data>
+  <data name="WinLoss" xml:space="preserve">
+    <value>แพ้ชนะ</value>
+  </data>
+  <data name="Withdrawal" xml:space="preserve">
+    <value>ถอนเงิน</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>ใช่</value>
+  </data>
+  <data name="Yesterday" xml:space="preserve">
+    <value>เมื่อวาน</value>
+  </data>
+</root>

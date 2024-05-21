@@ -296,4 +296,109 @@
   <data name="Currentmonth" xml:space="preserve">
     <value>Current month</value>
   </data>
+  <data name="All" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="Currency" xml:space="preserve">
+    <value>Currency</value>
+  </data>
+  <data name="CustomerBalance" xml:space="preserve">
+    <value>Customer Balance</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="SelectTop" xml:space="preserve">
+    <value>Select Top</value>
+  </data>
+  <data name="Viewin" xml:space="preserve">
+    <value>View in {0}</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="Adjustment" xml:space="preserve">
+    <value>Adjustment</value>
+  </data>
+  <data name="AffiliateTransfer" xml:space="preserve">
+    <value>Affiliate Transfer</value>
+  </data>
+  <data name="AmountDueTo" xml:space="preserve">
+    <value>Amount Due To</value>
+  </data>
+  <data name="BA" xml:space="preserve">
+    <value>BA</value>
+  </data>
+  <data name="Bonus" xml:space="preserve">
+    <value>Bonus</value>
+  </data>
+  <data name="ClosingBalance" xml:space="preserve">
+    <value>Closing Balance</value>
+  </data>
+  <data name="Comm" xml:space="preserve">
+    <value>Comm</value>
+  </data>
+  <data name="CustomerWinLoss" xml:space="preserve">
+    <value>Customer Win Loss</value>
+  </data>
+  <data name="Deposit" xml:space="preserve">
+    <value>Deposit</value>
+  </data>
+  <data name="DrawGame" xml:space="preserve">
+    <value>Draw Game</value>
+  </data>
+  <data name="ExternalId" xml:space="preserve">
+    <value>External ID</value>
+  </data>
+  <data name="ExtraPayout" xml:space="preserve">
+    <value>Extra Payout</value>
+  </data>
+  <data name="NetTurnOver" xml:space="preserve">
+    <value>Net Turnover</value>
+  </data>
+  <data name="OpeningBalance" xml:space="preserve">
+    <value>Opening Balance</value>
+  </data>
+  <data name="PendingFunds" xml:space="preserve">
+    <value>Pending Funds</value>
+  </data>
+  <data name="SystemId" xml:space="preserve">
+    <value>System ID</value>
+  </data>
+  <data name="Turnover" xml:space="preserve">
+    <value>Turnover</value>
+  </data>
+  <data name="WinLoss" xml:space="preserve">
+    <value>Win Loss</value>
+  </data>
+  <data name="Withdrawal" xml:space="preserve">
+    <value>Withdrawal</value>
+  </data>
+  <data name="CustomerW_L" xml:space="preserve">
+    <value>Customer W/L</value>
+  </data>
+  <data name="Today" xml:space="preserve">
+    <value>Today</value>
+  </data>
+  <data name="ExcludeTestData" xml:space="preserve">
+    <value>Exclude Test Data</value>
+  </data>
+  <data name="CustomerSupportTask" xml:space="preserve">
+    <value>Customer Support Task</value>
+  </data>
+  <data name="ErrorProcessingMsg" xml:space="preserve">
+    <value>Sorry, an error occurred while processing your request.</value>
+  </data>
+  <data name="GetAllCustomersHavingPositiveClosingBalance" xml:space="preserve">
+    <value>Only show customers having closing balance &gt; 0</value>
+  </data>
+  <data name="GetAllCustomersHavingRunningTickets" xml:space="preserve">
+    <value>Get all customers having running tickets</value>
+  </data>
+  <data name="GetAllRunningTickets" xml:space="preserve">
+    <value>Get all running tickets</value>
+  </data>
+  <data name="SupportTask" xml:space="preserve">
+    <value>Support Task</value>
+  </data>
 </root>

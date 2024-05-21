@@ -1,30 +1,42 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { Table, Row, Cell, HeaderRow } from '@legion-lib/react-grid';
+
 import LangHelper from '@srcRoot/helpers/langHelper';
 import { MAX_WIDTH_PAGE, MIN_WIDTH_PAGE } from '@srcRoot/constants/config';
-import { Table, Row, Cell, HeaderRow, HeaderCell } from '@9softstudio/react-grid';
 import NoDataTitle from '@srcRoot/components/NoDataTitle';
+import NumberFormat from '@srcRoot/lib/numberFormat';
+
+import { ActionCreators } from '../actions';
+import Constants from '../constants';
+import HeaderCell from '../customGrid/HeaderCell';
 
 const DataGrid = (props) => {
+    const dispatch = useDispatch();
+    const requestParam = useSelector((state) => state.requestParam);
     const gridData = useSelector((state) => state.gridData);
-    if (JSON.stringify(gridData) === JSON.stringify({})) {
+
+    const { setRequestParam, setGridData } = ActionCreators;
+    const { GridSettings } = Constants;
+
+    if (!gridData) {
         return null;
     }
 
-    if (!gridData) {
+    if (!gridData.data.length) {
         return <NoDataTitle />;
     }
 
     const _buildHeader = (headers) => {
-        var headerCells = [
+        const headerCells = [
             <HeaderCell colWidth={40} key="header-index">
                 #
             </HeaderCell>,
-            <HeaderCell colWidth={180} key="header-sport">
+            <HeaderCell colWidth={180} key="header-sport" sortBy={GridSettings.SPORT_NAME}>
                 {LangHelper.getSingleResource('Sport')}
             </HeaderCell>,
-            ...headers.map((header) => (
-                <HeaderCell colWidth={90} key={`header-${header}`}>
+            ...headers.map((header, index) => (
+                <HeaderCell colWidth={90} key={`header-${header}`} sortBy={`${GridSettings.PREFIX_WEEK}${index}`}>
                     {header}
                 </HeaderCell>
             )),
@@ -39,15 +51,18 @@ const DataGrid = (props) => {
     const _buildBody = (data) => {
         return data.map((item, indexCell) => {
             return (
-                <Row key={`row-${item[indexCell]}`}>
-                    {item.Cell.map((cell, index) => {
-                        const className = index === 0 ? 'center-align' : index === 1 ? 'left-align' : 'right-align';
-                        return (
-                            <Cell className={className} key={`col-${index}`}>
-                                {cell}
-                            </Cell>
-                        );
-                    })}
+                <Row key={`row-${item.cell[GridSettings.COL_INDEX]}`}>
+                    <Cell className={'center-align'} key={`col-${GridSettings.COL_INDEX}`}>
+                        {indexCell + 1}
+                    </Cell>
+                    <Cell className={'left-align'} key={`col-${GridSettings.COL_SPORT_NAME}`}>
+                        {item.cell[GridSettings.COL_SPORT_NAME]}
+                    </Cell>
+                    {item.cell.slice(GridSettings.COL_START_WEEK).map((cell, index) => (
+                        <Cell className={'right-align'} key={`col-${index}`}>
+                            {NumberFormat.formatInteger(cell)}
+                        </Cell>
+                    ))}
                 </Row>
             );
         });
@@ -61,11 +76,36 @@ const DataGrid = (props) => {
                 </Cell>
                 {totalData.map((total, index) => (
                     <Cell className="right-align" key={`footer-${index}`}>
-                        {total}
+                        {NumberFormat.formatInteger(total)}
                     </Cell>
                 ))}
             </Row>
         );
+    };
+
+    const objectComparator = (objA, objB, sortOrderBy, getValue = (obj) => obj) => {
+        if (getValue(objA) == getValue(objB)) {
+            return 0;
+        }
+
+        if (sortOrderBy == 'asc') {
+            return getValue(objA) > getValue(objB) ? 1 : -1;
+        }
+
+        return getValue(objA) < getValue(objB) ? 1 : -1;
+    };
+
+    const _onSort = (sortBy, sortOrderBy) => {
+        let columnIndex = GridSettings.COL_SPORT_NAME;
+        if (sortBy.includes(GridSettings.PREFIX_WEEK)) {
+            columnIndex = Number(sortBy.replace(GridSettings.PREFIX_WEEK, '')) + GridSettings.COL_START_WEEK;
+        }
+
+        const getValue = (match) => match.cell[columnIndex];
+        gridData.data.sort((matchA, matchB) => objectComparator(matchA, matchB, sortOrderBy, getValue));
+
+        dispatch(setGridData(gridData));
+        dispatch(setRequestParam({ ...requestParam, SortColumn: sortBy, SortDirection: sortOrderBy }));
     };
 
     return (
@@ -75,10 +115,11 @@ const DataGrid = (props) => {
                 autoWidth={true}
                 maxWidth={MAX_WIDTH_PAGE}
                 autoHeight={true}
-                header={_buildHeader(gridData.WeekHeaders)}
-                body={_buildBody(gridData.Data)}
-                footer={_buildFooter(gridData.TotalData)}
+                header={_buildHeader(gridData.weekHeaders)}
+                body={_buildBody(gridData.data)}
+                footer={_buildFooter(gridData.weeksTotalData)}
                 containerPadding={30}
+                onSort={_onSort}
                 shouldResetScrollPosition={true}
             />
         </React.Fragment>

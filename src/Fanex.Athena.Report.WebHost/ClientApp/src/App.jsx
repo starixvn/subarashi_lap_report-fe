@@ -3,15 +3,15 @@ import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } 
 import RouteConfig from './routes';
 import AppLayout from './layouts/AppLayout';
 import NotFound from './pages/NotFound';
-import { AuthorizedFunc } from './helpers/validatorHelper';
+import { AuthorizeRequestInfo } from './helpers/validatorHelper';
 
 const App = () => {
     const _rootUrl = window.rootUrl || '/';
     const router = createBrowserRouter(
         createRoutesFromElements(
             <Route path="/" element={<AppLayout />}>
-                {RouteConfig.map(({ Path, Permissions, Component }) => (
-                    <Route key={Path} path={Path} element={<Component />} loader={() => AuthorizedFunc(Permissions)} />
+                {RouteConfig.map(({ Id, Path, Permissions, Component }) => (
+                    <Route id={Id} key={Id} path={Path} element={<Component />} loader={() => AuthorizeRequestInfo({ permissions: Permissions })} />
                 ))}
                 <Route path="*" element={<NotFound />} />
             </Route>

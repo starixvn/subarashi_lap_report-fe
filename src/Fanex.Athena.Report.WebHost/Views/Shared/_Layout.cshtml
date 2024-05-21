@@ -1,14 +1,11 @@
-﻿
-@{
-    var isProduction = string.Equals(WebHostEnviroment.EnvironmentName, "PROD", StringComparison.OrdinalIgnoreCase);
-    var isSelfMode = contextService.AppMode == AppMode.LRF;
-    var identityName = contextService.IdentityName;
-    var langCode = System.Globalization.CultureInfo.CurrentUICulture.IetfLanguageTag;
-    var rootUrl = string.Concat(HttpContextAccessor?.HttpContext?.Request.Headers["RootUrl"].ToString().TrimEnd('/'), "/");
+﻿@{
+    var context = HttpContextAccessor?.HttpContext;
+    var isProduction = WebHostEnvironment.IsEnvironment("PROD");
+    var langCode = context?.Request.Headers["Language"].ToString();
+    var rootUrl = string.Concat(context?.Request.Headers["RootUrl"].ToString().TrimEnd('/'), "/");
+    var appBaseUrl = $"{context?.Request.Scheme}://{context?.Request.Host}{context?.Request.PathBase}";
     var cdnDomain = appSettings.StaticDomain;
-    var webRootPath = WebHostEnviroment.WebRootPath;
-    var functionKeys = contextService.GetFunctionKeys();
-    var isAdmin = contextService.IsAdministrator;
+    var webRootPath = WebHostEnvironment.WebRootPath;
 }
 <!DOCTYPE html>
 
@@ -17,60 +14,57 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <title>@ViewBag.Title</title>
-    <meta name="description" content="The Risk & Forecast System" />
-    <base href="@rootUrl" />
-    <link href="@UrlHelper.ContentLink("/css/index.css", rootUrl, webRootPath, cdnDomain)" rel="stylesheet">
+    <meta name="description" content="The Risk & Forecast System"/>
+    <base href="@rootUrl"/>
+    <link href="@UrlHelper.ContentLink("/css/index.css", appBaseUrl, webRootPath, cdnDomain)" rel="stylesheet">
 </head>
 <body>
-    @Html.AntiForgeryToken()
-    <div class="wrapper">
-        @RenderBody()
-    </div>
-    <script defer src="@UrlHelper.ContentLink("/js/vendor.chunk.js", rootUrl, webRootPath, cdnDomain)"></script>
-    <script defer src="@UrlHelper.ContentLink("/js/common.chunk.js", rootUrl, webRootPath, cdnDomain)"></script>
-    <script defer src="@UrlHelper.ContentLink("/js/index.js", rootUrl, webRootPath, cdnDomain)"></script>
-    <script type="text/javascript">
-        var PageLanguage = "@langCode";
-        window.rootUrl = "@rootUrl";
-        window.functionKeys = @Html.Raw(Json.Serialize(functionKeys));
-        window.isAdmin = "@isAdmin";
-    </script>
+<div class="wrapper">
+    @RenderBody()
+</div>
 
-    <script src="@UrlHelper.ContentLink("/js/languages/lang-en-US.js", rootUrl, webRootPath, cdnDomain)"></script>
-    @if (langCode != "en-US")
-    {
-        <script src="@UrlHelper.ContentLink("/js/languages/lang-" + langCode + ".js", rootUrl, webRootPath, cdnDomain)"></script>
-    }
+<script type="text/javascript">
+    window.pageLanguage = "@langCode";
+    window.rootUrl = "@rootUrl";
+</script>
 
-    @if (!isSelfMode)
-    {
-        <partial name="~/Views/Shared/_SessionScript.cshtml" model="(identityName, rootUrl)" />
-    }
+<script defer src="@UrlHelper.ContentLink("/js/vendor.chunk.js", appBaseUrl, webRootPath, cdnDomain)"></script>
+<script defer src="@UrlHelper.ContentLink("/js/common.chunk.js", appBaseUrl, webRootPath, cdnDomain)"></script>
+<script defer src="@UrlHelper.ContentLink("/js/index.js", appBaseUrl, webRootPath, cdnDomain)"></script>
+<script src="@UrlHelper.ContentLink("/js/languages/lang-en-US.js", appBaseUrl, webRootPath, cdnDomain)"></script>
+@if (!string.IsNullOrEmpty(langCode) && langCode != "en-US")
+{
+    <script src="@UrlHelper.ContentLink("/js/languages/lang-" + langCode + ".js", appBaseUrl, webRootPath, cdnDomain)"></script>
+}
 
-    @if (isProduction)
-    {
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-M09N5LNEH1"></script>
-        <script>
-                window.dataLayer = window.dataLayer || [];
-            function gtag() { dataLayer.push(arguments); }
-            gtag('js', new Date());
+@if (isProduction)
+{
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M09N5LNEH1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
-            gtag('config', 'G-M09N5LNEH1');
-            gtag('config', 'UA-93927620-1');
+        function gtag() {
+            dataLayer.push(arguments);
+        }
 
-            window.logOpenBetlistEvent = function (eventLabel) {
-                try {
-                    window.gtag('event', 'view_bet_list', {
+        gtag('js', new Date());
+
+        gtag('config', 'G-M09N5LNEH1');
+        gtag('config', 'UA-93927620-1');
+
+        window.logOpenBetlistEvent = function(eventLabel) {
+            try {
+                window.gtag('event',
+                    'view_bet_list',
+                    {
                         'event_label': eventLabel || 'Bet List Promotion',
                         'event_category': 'bet_list',
                         'non_interaction': true
                     });
-                }
-                catch (err) {
-                }
-            };
-        </script>
-    }
+            } catch (err) {}
+        };
+    </script>
+}
 </body>
 </html>

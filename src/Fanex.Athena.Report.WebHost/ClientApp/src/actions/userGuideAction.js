@@ -1,8 +1,20 @@
-﻿import { USER_GUIDE_PARAMS } from './types';
+﻿import * as types from './types';
+import DataService from '../lib/dataService';
 
-export const setUserGuideParams = (data) => {
+const fetchData = async (resourceName) => {
+    return DataService.getReportData('Api/UserGuide/Index?resourcename=' + resourceName + '&_=' + new Date().getTime());
+};
+
+export function getUserGuideContent(params) {
+    return async (dispatch) =>
+        fetchData(params).then((response) => {
+            dispatch(setUserGuideContent(response.data));
+        });
+}
+
+export const setUserGuideContent = (data) => {
     return {
-        type: USER_GUIDE_PARAMS,
+        type: types.USER_GUIDE_CONTENT,
         data: data,
     };
 };

@@ -291,4 +291,91 @@
   <data name="Currentmonth" xml:space="preserve">
     <value>本月</value>
   </data>
+  <data name="All" xml:space="preserve">
+    <value>全部</value>
+  </data>
+  <data name="Currency" xml:space="preserve">
+    <value>货币</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>不是</value>
+  </data>
+  <data name="SelectTop" xml:space="preserve">
+    <value>选择最大</value>
+  </data>
+  <data name="Viewin" xml:space="preserve">
+    <value>以{0}查看</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>是</value>
+  </data>
+  <data name="Adjustment" xml:space="preserve">
+    <value>调整</value>
+  </data>
+  <data name="AffiliateTransfer" xml:space="preserve">
+    <value>合作伙伴转账</value>
+  </data>
+  <data name="AmountDueTo" xml:space="preserve">
+    <value>应付金额</value>
+  </data>
+  <data name="BA" xml:space="preserve">
+    <value>BA</value>
+  </data>
+  <data name="Bonus" xml:space="preserve">
+    <value>红利</value>
+  </data>
+  <data name="ClosingBalance" xml:space="preserve">
+    <value>期末余额</value>
+  </data>
+  <data name="Comm" xml:space="preserve">
+    <value>佣金</value>
+  </data>
+  <data name="CustomerWinLoss" xml:space="preserve">
+    <value>会员輸贏</value>
+  </data>
+  <data name="Deposit" xml:space="preserve">
+    <value>存款</value>
+  </data>
+  <data name="DrawGame" xml:space="preserve">
+    <value>和局</value>
+  </data>
+  <data name="ExternalId" xml:space="preserve">
+    <value>用户名</value>
+  </data>
+  <data name="ExtraPayout" xml:space="preserve">
+    <value>额外派彩</value>
+  </data>
+  <data name="NetTurnOver" xml:space="preserve">
+    <value>净交易额</value>
+  </data>
+  <data name="OpeningBalance" xml:space="preserve">
+    <value>前期余额</value>
+  </data>
+  <data name="PendingFunds" xml:space="preserve">
+    <value>待定资金</value>
+  </data>
+  <data name="SystemId" xml:space="preserve">
+    <value>系统账号</value>
+  </data>
+  <data name="Turnover" xml:space="preserve">
+    <value>交易额</value>
+  </data>
+  <data name="WinLoss" xml:space="preserve">
+    <value>输赢</value>
+  </data>
+  <data name="Withdrawal" xml:space="preserve">
+    <value>提款</value>
+  </data>
+  <data name="CustomerW_L" xml:space="preserve">
+    <value>会员输赢</value>
+  </data>
+  <data name="Today" xml:space="preserve">
+    <value>今日</value>
+  </data>
+  <data name="ExcludeTestData" xml:space="preserve">
+    <value>排除测试数据</value>
+  </data>
+  <data name="ErrorProcessingMsg" xml:space="preserve">
+    <value>对不起, 处理您的请求时有错误发生。</value>
+  </data>
 </root>

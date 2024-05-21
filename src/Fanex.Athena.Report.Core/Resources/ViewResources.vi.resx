@@ -294,4 +294,106 @@
   <data name="Currentmonth" xml:space="preserve">
     <value>Tháng này</value>
   </data>
+  <data name="All" xml:space="preserve">
+    <value>Tất cả</value>
+  </data>
+  <data name="Currency" xml:space="preserve">
+    <value>Tiền tệ</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>Không</value>
+  </data>
+  <data name="SelectTop" xml:space="preserve">
+    <value>Chọn Hàng đầu</value>
+  </data>
+  <data name="Viewin" xml:space="preserve">
+    <value>Xem theo {0}</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Có</value>
+  </data>
+  <data name="Adjustment" xml:space="preserve">
+    <value>Điều chỉnh</value>
+  </data>
+  <data name="AffiliateTransfer" xml:space="preserve">
+    <value>Chuyển khoản Đối Tác Liên Kết</value>
+  </data>
+  <data name="AmountDueTo" xml:space="preserve">
+    <value>Số tiền từ</value>
+  </data>
+  <data name="BA" xml:space="preserve">
+    <value>BA</value>
+  </data>
+  <data name="Bonus" xml:space="preserve">
+    <value>Thưởng</value>
+  </data>
+  <data name="ClosingBalance" xml:space="preserve">
+    <value>Số dư cuối kỳ</value>
+  </data>
+  <data name="Comm" xml:space="preserve">
+    <value>Hoa hồng</value>
+  </data>
+  <data name="CustomerWinLoss" xml:space="preserve">
+    <value>Thắng Thua Khách Hàng</value>
+  </data>
+  <data name="Deposit" xml:space="preserve">
+    <value>Nạp tiền</value>
+  </data>
+  <data name="DrawGame" xml:space="preserve">
+    <value>Trận hòa</value>
+  </data>
+  <data name="ExternalId" xml:space="preserve">
+    <value>ID Ngoại Vi</value>
+  </data>
+  <data name="ExtraPayout" xml:space="preserve">
+    <value>Thanh Toán Thêm</value>
+  </data>
+  <data name="NetTurnOver" xml:space="preserve">
+    <value>Doanh Thu Thực</value>
+  </data>
+  <data name="OpeningBalance" xml:space="preserve">
+    <value>Số dư đầu kỳ</value>
+  </data>
+  <data name="PendingFunds" xml:space="preserve">
+    <value>Tiền đang chờ xử lý</value>
+  </data>
+  <data name="SystemId" xml:space="preserve">
+    <value>ID hệ thống</value>
+  </data>
+  <data name="Turnover" xml:space="preserve">
+    <value>Doanh Thu</value>
+  </data>
+  <data name="WinLoss" xml:space="preserve">
+    <value>Thắng Thua</value>
+  </data>
+  <data name="Withdrawal" xml:space="preserve">
+    <value>Rút Tiền</value>
+  </data>
+  <data name="CustomerW_L" xml:space="preserve">
+    <value>Thắng Thua Khách Hàng</value>
+  </data>
+  <data name="Today" xml:space="preserve">
+    <value>Hôm nay</value>
+  </data>
+  <data name="ExcludeTestData" xml:space="preserve">
+    <value>Loại trừ Dữ liệu Kiểm Thử</value>
+  </data>
+  <data name="CustomerSupportTask" xml:space="preserve">
+    <value>Nhiệm Vụ Hỗ Trợ Khách Hàng</value>
+  </data>
+  <data name="ErrorProcessingMsg" xml:space="preserve">
+    <value>Xin lỗi, đã xảy ra lỗi trong quá trình thực hiện yêu cầu của bạn.</value>
+  </data>
+  <data name="GetAllCustomersHavingPositiveClosingBalance" xml:space="preserve">
+    <value>Chỉ hiển thị khách hàng có số dư cuối kỳ &gt; 0</value>
+  </data>
+  <data name="GetAllCustomersHavingRunningTickets" xml:space="preserve">
+    <value>Xem tất cả các khách hàng có vé cược đang diễn ra</value>
+  </data>
+  <data name="GetAllRunningTickets" xml:space="preserve">
+    <value>Xem tất cả các vé đang diễn ra</value>
+  </data>
+  <data name="SupportTask" xml:space="preserve">
+    <value>Nhiệm vụ hỗ trợ</value>
+  </data>
 </root>

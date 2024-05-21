@@ -6,21 +6,21 @@
 	</PropertyGroup>
 	
 	<ItemGroup>
-	  <Compile Remove="ClientApp\**" />
-	  <Content Remove="ClientApp\**" />
-	  <EmbeddedResource Remove="ClientApp\**" />
-	  <!--<None Remove="ClientApp\**" />-->
+		<Compile Remove="ClientApp\**" />
+		<Content Remove="ClientApp\**" />
+		<EmbeddedResource Remove="ClientApp\**" />
+		<!--<None Remove="ClientApp\**" />-->
 	</ItemGroup>
 	
 	<ItemGroup>
-		<PackageReference Include="IdentityModel.AspNetCore.OAuth2Introspection" Version="6.2.0" />
+		<PackageReference Include="Sentry.AspNetCore" Version="2.1.6" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\Fanex.Athena.Report.Core\Fanex.Athena.Report.Core.csproj" />
+		<ProjectReference Include="..\Fanex.Athena.Report.Core\Fanex.Athena.Report.Core.csproj" />
 	</ItemGroup>
-	
+
 	<ItemGroup>
-	  <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+		<Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
 	</ItemGroup>
 </Project>

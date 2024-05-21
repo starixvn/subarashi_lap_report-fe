@@ -1,0 +1,22 @@
+.header-content {
+    .table>thead>tr>th {
+        vertical-align: middle;
+        text-align: center;
+        border: 1px solid #ffffff;
+        border-top: 1px solid #d1dae1;
+        border-radius: 0;
+        font-weight: bold;
+        padding: 4px 5px;
+        background: #4C6375;
+        color: #fff;
+    }
+}
+
+.header-title {
+    &.selected {
+        text-decoration: underline;
+    }
+}
+
+
+
