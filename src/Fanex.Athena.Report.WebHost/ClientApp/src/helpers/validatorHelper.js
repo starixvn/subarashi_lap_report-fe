@@ -37,9 +37,9 @@ const checkAliveInterval = (identityName) => {
             const data = response.data;
 
             if (data.IsUM) {
-                document.location.href = UM_URL;
+                Site.redirectToUrl(UM_URL);
             } else if (!data.IsAuthenticated) {
-                document.location.href = SIGN_OUT_URL;
+                Site.redirectToUrl(SIGN_OUT_URL);
             }
         });
     }, 30000);

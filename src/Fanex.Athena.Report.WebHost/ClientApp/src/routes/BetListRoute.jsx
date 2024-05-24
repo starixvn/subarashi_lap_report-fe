@@ -1,13 +1,16 @@
-import React, { lazy } from 'react';
+import Loader from '@srcRoot/components/Loader';
+import React, { lazy, Suspense } from 'react';
 import { Route, Routes, useLoaderData } from 'react-router-dom';
 
 const BetList = lazy(() => import(/* webpackChunkName: "betlist" */ '../pages/betlist'));
 
 const BetListRoute = () => {
     return (
-        <Routes>
-            <Route path=":action" element={<BetList />} />
-        </Routes>
+        <Suspense fallback={<Loader isLoading={true}></Loader>}>
+            <Routes>
+                <Route path=":action" element={<BetList />} />
+            </Routes>
+        </Suspense>
     );
 };
 

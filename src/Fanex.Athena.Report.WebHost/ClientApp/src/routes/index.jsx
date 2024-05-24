@@ -1,5 +1,3 @@
-import betListLoader from '../helpers/betlistValidatorHelper';
-
 import * as permission from '../constants/permission';
 import * as pages from '../constants/pages';
 import * as paths from '../constants/path';
@@ -75,6 +73,6 @@ export default [
         Id: pages.BETLIST,
         Path: `${paths.BETLIST}/:controller/*`,
         Component: BetListRoute,
-        Loader: betListLoader,
+        Loader: () => null,
     },
 ];

@@ -15,6 +15,8 @@ export const UM_URL = 'Utility/UnderMaintenance';
 
 export const SIGN_OUT_URL = 'Authorization/InternalSignOut';
 
+export const SIGN_IN_URL = 'Authorization/SignIn';
+
 export const LRF_SAVED_PAGE_SESSION_KEY = '_Lrf_Saved_Page';
 
 export const LRF_SAVED_PAGE_HASH_KEY = '#/Index';

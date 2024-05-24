@@ -1,8 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useLocation, useParams, useRouteLoaderData } from 'react-router-dom/dist';
+import { useLocation, useParams } from 'react-router-dom/dist';
 
-import { BETLIST } from '@srcRoot/constants/pages';
 import Loader from '@srcRoot/components/Loader';
 import BetListLayout from '@srcRoot/layouts/BetListLayout';
 import useToggleRequest from '@srcRoot/hooks/useToggleRequest';
@@ -18,7 +17,6 @@ import BetListFormFilter from './FormFilter';
 export const AppContainer = (props) => {
     const location = useLocation();
     const { controller, action } = useParams();
-    const loadedData = useRouteLoaderData(BETLIST);
 
     const dispatch = useDispatch();
     const formData = useSelector((state) => state.formData);
@@ -40,7 +38,6 @@ export const AppContainer = (props) => {
         dispatch(setGridData(BetListHelper.loadBetListDataGrid(data.data, data.settings.isServerPaging)));
 
         data.settings.url = `api/${Service.convertToBetListController(controller)}/${action}`;
-        data.settings.isSelfMode = loadedData.IsSelfMode;
         data.settings.pageName = controller;
 
         dispatch(setFormData(data.settings));
