@@ -5,6 +5,8 @@ import { DateRange } from '@legion-lib/react-daterangepicker';
 import MultipleSelect from '@legion-lib/react-multiselect';
 import { TreeViewSelect } from '@legion-lib/react-multiselect';
 
+import { DEFAULT_BASE_CURRENCY_VALUE } from '@srcRoot/constants/config';
+import { SubsidiaryViewType, TreeViewOption } from '@srcRoot/constants/report';
 import CollapsiblePanel from '@srcRoot/components/CollapsiblePanel';
 import LangHelper from '@srcRoot/helpers/langHelper';
 import Site from '@srcRoot/lib/site';
@@ -12,7 +14,6 @@ import CheckBox from '@srcRoot/components/CheckBox';
 import UserGuide from '@srcRoot/components/UserGuide';
 import DataService from '@srcRoot/lib/dataService';
 import ReportSelect from '@srcRoot/components/ReportSelect';
-import { SubsidiaryViewType, TreeViewOption } from '@srcRoot/constants/report';
 
 import ActionCreators from '../actions';
 import { ApiUrl, ReportLevel } from '../common/constants';
@@ -58,7 +59,7 @@ export const FormFilter = (props) => {
         return baseCurrencyList && baseCurrencyList.length ? (
             <ReportSelect
                 instanceId="baseCurrency"
-                value={props.selectedBaseCurrency}
+                value={props.selectedBaseCurrency.value !== DEFAULT_BASE_CURRENCY_VALUE ? props.selectedBaseCurrency : null}
                 options={baseCurrencyList}
                 onChange={(item) => props.setSelectedBaseCurrency(item)}
             />

@@ -27,6 +27,8 @@ export const MAX_WIDTH_PAGE = Math.min(document.body.clientWidth, 1920);
 
 export const MIN_WIDTH_PAGE = 650;
 
+export const DEFAULT_BASE_CURRENCY_VALUE = 1;
+
 export const WeekDays = {
     Sunday: 0,
     Monday: 1,

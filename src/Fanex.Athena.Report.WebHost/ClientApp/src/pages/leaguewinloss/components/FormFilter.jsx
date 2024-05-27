@@ -5,6 +5,7 @@ import moment from 'moment';
 import { DateRange } from '@legion-lib/react-daterangepicker';
 import MultipleSelect from '@legion-lib/react-multiselect';
 
+import { DEFAULT_BASE_CURRENCY_VALUE } from '@srcRoot/constants/config';
 import ReportSelect from '@srcRoot//components/ReportSelect';
 import CollapsiblePanel from '@srcRoot/components/CollapsiblePanel';
 import LangHelper from '@srcRoot/helpers/langHelper';
@@ -65,7 +66,7 @@ export const FormFilter = (props) => {
             baseCurrencyList.length && (
                 <ReportSelect
                     instanceId="baseCurrency"
-                    value={props.selectedBaseCurrency}
+                    value={props.selectedBaseCurrency.value !== DEFAULT_BASE_CURRENCY_VALUE ? props.selectedBaseCurrency : null}
                     options={baseCurrencyList}
                     onChange={(item) => props.setSelectedBaseCurrency(item)}
                 />

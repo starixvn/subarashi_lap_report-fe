@@ -33,7 +33,7 @@ function FooterSpecialBetTypeRows(props) {
             FromDate: requestParam.Date,
             ToDate: requestParam.Date,
             BetType: match.betType,
-            ProductCodeList: requestParam.ProductOptions.slice(1).reduce((acc, cur) => acc + ',' + cur.code, requestParam.ProductOptions[0].code),
+            ProductCodeList: requestParam.ProductOptions.map((item) => item.code).join(','),
             Rows: 50,
             Page: 1,
             SortOrder: 'asc',

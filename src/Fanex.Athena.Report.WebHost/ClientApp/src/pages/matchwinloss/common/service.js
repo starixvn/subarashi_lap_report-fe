@@ -7,13 +7,13 @@ class Service {
             return `${matchWinLossTitle}, ${date}`;
         }
 
-        const productCodes = products.slice(1).reduce((acc, cur) => acc + ', ' + cur.code, products[0].code);
+        const productCodes = products.map((item) => item.code).join(',');
         const currencyView = `View in ${currencyName}, ${LangHelper.getSingleResource('LicenseeW_L')} (${productCodes})`;
         return `${matchWinLossTitle}, ${date} - ${currencyView}`;
     }
 
     static getProductCodeList(productOptions) {
-        return productOptions.slice(1).reduce((acc, cur) => acc + ',' + cur.code, productOptions[0].code);
+        return productOptions.map((item) => item.code).join(',');
     }
 
     static getMatchProductCodeList(matchProductCode, productOptions) {
@@ -33,7 +33,7 @@ class Service {
             }
         });
 
-        return productCodeList.slice(1).reduce((acc, cur) => acc + ',' + cur, productCodeList[0]);
+        return productCodeList.map((item) => item).join(',');
     }
 
     static convertToReportData(gridData) {

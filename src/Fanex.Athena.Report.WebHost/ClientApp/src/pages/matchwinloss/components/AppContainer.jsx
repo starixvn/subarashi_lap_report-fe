@@ -36,7 +36,8 @@ export const AppContainer = (props) => {
         }));
         dispatch(setBaseCurrencyList(data.baseCurrencies));
 
-        data.baseCurrency = data.baseCurrencies.find((x) => x.label == data.baseCurrency);
+        const defaultBaseCurrency = data.baseCurrencies.find((x) => x.label == data.baseCurrency);
+        data.baseCurrency = defaultBaseCurrency ? defaultBaseCurrency : data.baseCurrencies[0];
         dispatch(setSelectedBaseCurrency(data.baseCurrency));
 
         data.currencies = [

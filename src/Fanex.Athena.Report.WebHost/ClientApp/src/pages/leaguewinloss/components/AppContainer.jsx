@@ -1,6 +1,7 @@
 import React, { useLayoutEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
+import { DEFAULT_BASE_CURRENCY_VALUE } from '@srcRoot/constants/config';
 import Loader from '@srcRoot/components/Loader';
 import useToggleRequest from '@srcRoot/hooks/useToggleRequest';
 import DataService from '@srcRoot/lib/dataService';
@@ -30,16 +31,17 @@ export const AppContainer = (props) => {
         data.currencyList = data.currencyList.map((item) => ({ ...item, status: true }));
 
         data.baseCurrencyList = data.baseCurrencyList.map((item) => ({ value: item.key, label: item.value }));
-        data.defaultBaseCurrency = data.baseCurrencyList.find((x) => x.label == data.defaultBaseCurrency);
+        const defaultBaseCurrency = data.baseCurrencyList.find((x) => x.label == data.defaultBaseCurrency);
+        data.defaultBaseCurrency = defaultBaseCurrency ? defaultBaseCurrency : { value: DEFAULT_BASE_CURRENCY_VALUE, label: data.defaultBaseCurrency };
         dispatch(setSelectedBaseCurrency(data.defaultBaseCurrency));
 
-        const defaultSelectedCurrency = data.currencyList.slice(1).reduce((acc, cur) => acc + ',' + cur.key, data.currencyList[0].key);
+        const defaultSelectedCurrency = data.currencyList.map((item) => item.key).join(',');
         dispatch(setSelectedCurrency(defaultSelectedCurrency));
 
-        const defaultSelectedProduct = data.productOptions.slice(1).reduce((acc, cur) => acc + ',' + cur.code, data.productOptions[0].code);
+        const defaultSelectedProduct = data.productOptions.map((item) => item.code).join(',');
         dispatch(setSelectedProducts(defaultSelectedProduct));
 
-        const defaultSelectedstatus = data.statusList.slice(1).reduce((acc, cur) => acc + ',' + cur.value, data.statusList[0].value);
+        const defaultSelectedstatus = data.statusList.map((item) => item.value).join(',');
         dispatch(setSelectedStatus(defaultSelectedstatus));
 
         dispatch(setFormData(data));

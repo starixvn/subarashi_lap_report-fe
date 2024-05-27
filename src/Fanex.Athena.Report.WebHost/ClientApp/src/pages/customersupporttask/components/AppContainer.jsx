@@ -27,7 +27,7 @@ export const AppContainer = (props) => {
 
         if (result.data.currencies.length) {
             result.data.currencies = result.data.currencies.map((item) => ({ ...item, status: true }));
-            const defaultSelectedCurrency = result.data.currencies.slice(1).reduce((acc, cur) => acc + ',' + cur.key, result.data.currencies[0].key);
+            const defaultSelectedCurrency = result.data.currencies.map((item) => item.key).join(',');
             dispatch(setSelectedCurrency(defaultSelectedCurrency));
         }
 
