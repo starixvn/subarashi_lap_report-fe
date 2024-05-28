@@ -6,7 +6,7 @@ class Service {
         const liveReportTitle = `${LangHelper.getSingleResource('LiveReport')}`;
         const liveIndicatorTitle = `${LiveStatuses.find((status) => status.value == liveIndicator).label} ${LangHelper.getSingleResource('Data')}`;
         const dateTitle = `${fromDate} → ${toDate}`;
-        const currencyTitle = `View in ${currencyName}`;
+        const currencyTitle = LangHelper.getSingleResource('Viewin').replace('{0}', currencyName);
         return `${liveReportTitle} - ${liveIndicatorTitle}, ${dateTitle} - ${currencyTitle}`;
     }
 

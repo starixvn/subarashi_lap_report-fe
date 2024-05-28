@@ -639,4 +639,7 @@
   <data name="IncludeCOFromSB" xml:space="preserve">
     <value>Gộp cược đã bán vào Sportsbook</value>
   </data>
+  <data name="Back" xml:space="preserve">
+    <value>Quay lại</value>
+  </data>
 </root>

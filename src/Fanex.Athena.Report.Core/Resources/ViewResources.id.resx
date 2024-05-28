@@ -642,4 +642,7 @@
   <data name="IncludeCOFromSB" xml:space="preserve">
     <value>Memasukkan Tunai Keluar ke dalam Sportsbook</value>
   </data>
+  <data name="Back" xml:space="preserve">
+    <value>Kembali</value>
+  </data>
 </root>

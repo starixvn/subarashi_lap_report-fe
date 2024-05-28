@@ -8,8 +8,9 @@ class Service {
         }
 
         const productCodes = products.map((item) => item.code).join(',');
-        const currencyView = `View in ${currencyName}, ${LangHelper.getSingleResource('LicenseeW_L')} (${productCodes})`;
-        return `${matchWinLossTitle}, ${date} - ${currencyView}`;
+        const currencyView = LangHelper.getSingleResource('Viewin').replace('{0}', currencyName);
+        const productCodeView = `${LangHelper.getSingleResource('LicenseeW_L')} (${productCodes})`;
+        return `${matchWinLossTitle}, ${date} - ${currencyView}, ${productCodeView}`;
     }
 
     static getProductCodeList(productOptions) {
