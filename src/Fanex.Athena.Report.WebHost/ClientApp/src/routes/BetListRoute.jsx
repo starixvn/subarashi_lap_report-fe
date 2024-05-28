@@ -1,6 +1,6 @@
 import Loader from '@srcRoot/components/Loader';
 import React, { lazy, Suspense } from 'react';
-import { Route, Routes, useLoaderData } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 
 const BetList = lazy(() => import(/* webpackChunkName: "betlist" */ '../pages/betlist'));
 

@@ -13,8 +13,8 @@ class Service {
 
     static loadInitParams(query) {
         const params = Object.fromEntries(new URLSearchParams(query));
-        params.PageIndex = TableSettings.PageIndex;
-        params.PageSize = TableSettings.PageSize;
+        params.Page = isNaN(params?.Page) ? TableSettings.PageIndex : Number(params.Page);
+        params.Rows = isNaN(params?.Rows) ? TableSettings.PageSize : Number(params.Rows);
 
         return params;
     }

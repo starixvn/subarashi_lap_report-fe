@@ -9,8 +9,8 @@ const MatchWinLossTable = ({ totalRows, ...rest }) => {
     const requestParam = useSelector((state) => state.requestParam);
 
     const pageOption = {
-        PageIndex: requestParam.PageIndex,
-        PageSize: requestParam.PageSize,
+        PageIndex: requestParam.Page,
+        PageSize: requestParam.Rows,
         TotalItem: totalRows ? totalRows : tableSettings.DefaultPageSize,
         PageList: tableSettings.PageList,
     };

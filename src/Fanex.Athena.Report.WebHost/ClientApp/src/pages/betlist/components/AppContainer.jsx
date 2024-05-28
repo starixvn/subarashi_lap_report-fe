@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation, useParams } from 'react-router-dom/dist';
 
@@ -29,6 +29,7 @@ export const AppContainer = (props) => {
     const setInitData = (result) => {
         if (!result || !result.data) {
             dispatch(setFormData(null));
+
             return;
         }
         const data = result.data;
@@ -59,8 +60,8 @@ export const AppContainer = (props) => {
         return `${month < 10 ? '0' + month : month}/${day < 10 ? '0' + day : day}/${date.getFullYear()}`;
     };
 
-    if (!formData) {
-        return null;
+    if (!formData && isLoading) {
+        return <Loader isLoading={true} />;
     }
 
     return (

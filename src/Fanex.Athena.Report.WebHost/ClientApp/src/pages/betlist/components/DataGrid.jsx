@@ -19,17 +19,18 @@ const DataGrid = (props) => {
 
     const { setRequestParam, setGridData } = ActionCreators;
 
-    const getStartIndex = () => (requestParam.PageIndex - 1) * requestParam.PageSize;
-    const getEndIndex = () => getStartIndex() + requestParam.PageSize;
+    const getStartIndex = () => (requestParam.Page - 1) * requestParam.Rows;
+    const getEndIndex = () => getStartIndex() + requestParam.Rows;
+
     const data = formData.isServerPaging ? gridData.rows : gridData.rows?.slice(getStartIndex(), getEndIndex());
 
     const onPaging = (index, size) => {
         if (formData.isServerPaging) {
-            getData({ ...requestParam, PageIndex: index, PageSize: size });
+            getData({ ...requestParam, Page: index, Rows: size });
             return;
         }
 
-        dispatch(setRequestParam({ ...requestParam, PageIndex: index, PageSize: size }));
+        dispatch(setRequestParam({ ...requestParam, Page: index, Rows: size }));
     };
 
     const onSort = (sortBy, sortOrder) => {
@@ -37,8 +38,8 @@ const DataGrid = (props) => {
             ...requestParam,
             SortBy: getSortParam(sortBy),
             SortOrder: sortOrder,
-            PageIndex: TableSettings.PageIndex,
-            PageSize: TableSettings.PageSize,
+            Page: TableSettings.PageIndex,
+            Rows: TableSettings.PageSize,
         });
     };
 

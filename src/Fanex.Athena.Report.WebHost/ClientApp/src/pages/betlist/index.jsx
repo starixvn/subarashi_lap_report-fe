@@ -23,7 +23,7 @@ const BetList = (props) => {
         };
     }, []);
 
-    const store = Store.createStore(reducer, {});
+    const store = Store.createStore(reducer, { isLoading: true });
     return (
         <Provider store={store}>
             <AppContainer />
