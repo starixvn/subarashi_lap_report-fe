@@ -618,4 +618,130 @@
   <data name="Report" xml:space="preserve">
     <value>报告</value>
   </data>
+  <data name="SLTDateRangeNote" xml:space="preserve">
+    <value>体育时时彩仅提供11/22/2021之后的数据</value>
+  </data>
+  <data name="TotalTurnover" xml:space="preserve">
+    <value>总交易额</value>
+  </data>
+  <data name="MinimumOdds" xml:space="preserve">
+    <value>最低赔率</value>
+  </data>
+  <data name="DecimalOdds" xml:space="preserve">
+    <value>欧洲盘赔率</value>
+  </data>
+  <data name="TicketFilter" xml:space="preserve">
+    <value>注单筛选</value>
+  </data>
+  <data name="Won" xml:space="preserve">
+    <value>赢</value>
+  </data>
+  <data name="Lost" xml:space="preserve">
+    <value>输</value>
+  </data>
+  <data name="Draw" xml:space="preserve">
+    <value>和局</value>
+  </data>
+  <data name="CustomerTurnover" xml:space="preserve">
+    <value>会员交易额</value>
+  </data>
+  <data name="Product" xml:space="preserve">
+    <value>产品</value>
+  </data>
+  <data name="ProductAB" xml:space="preserve">
+    <value>欧博</value>
+  </data>
+  <data name="ProductBGG" xml:space="preserve">
+    <value>大遊真人</value>
+  </data>
+  <data name="ProductBTC" xml:space="preserve">
+    <value>比特币</value>
+  </data>
+  <data name="ProductCC" xml:space="preserve">
+    <value>乐卡迪亚</value>
+  </data>
+  <data name="ProductCG" xml:space="preserve">
+    <value>CG电子</value>
+  </data>
+  <data name="ProductCO" xml:space="preserve">
+    <value>实时兑现</value>
+  </data>
+  <data name="ProductCS" xml:space="preserve">
+    <value>娱乐城</value>
+  </data>
+  <data name="ProductHB" xml:space="preserve">
+    <value>HB电子</value>
+  </data>
+  <data name="ProductJIG" xml:space="preserve">
+    <value>吉利电子</value>
+  </data>
+  <data name="ProductKN" xml:space="preserve">
+    <value>快乐彩</value>
+  </data>
+  <data name="ProductLG" xml:space="preserve">
+    <value>虚拟运动3</value>
+  </data>
+  <data name="ProductLT" xml:space="preserve">
+    <value>彩票</value>
+  </data>
+  <data name="ProductNG" xml:space="preserve">
+    <value>百练赛</value>
+  </data>
+  <data name="ProductParlay" xml:space="preserve">
+    <value>体育串关</value>
+  </data>
+  <data name="ProductPP" xml:space="preserve">
+    <value>PP王者电子</value>
+  </data>
+  <data name="ProductSAG" xml:space="preserve">
+    <value>SA真人娱乐场</value>
+  </data>
+  <data name="ProductSB" xml:space="preserve">
+    <value>体育博彩</value>
+  </data>
+  <data name="ProductSBVS" xml:space="preserve">
+    <value>沙巴虚拟赛事</value>
+  </data>
+  <data name="ProductSG" xml:space="preserve">
+    <value>新霸电子</value>
+  </data>
+  <data name="ProductSLT" xml:space="preserve">
+    <value>体育时时彩</value>
+  </data>
+  <data name="ProductSXG" xml:space="preserve">
+    <value>AE性感真人</value>
+  </data>
+  <data name="ProductTG" xml:space="preserve">
+    <value>桌面游戏</value>
+  </data>
+  <data name="ProductTIP" xml:space="preserve">
+    <value>玩家打赏</value>
+  </data>
+  <data name="ProductUUSL" xml:space="preserve">
+    <value>UU 老虎机</value>
+  </data>
+  <data name="ProductVB" xml:space="preserve">
+    <value>澳门电子娱乐城</value>
+  </data>
+  <data name="ProductVGA" xml:space="preserve">
+    <value>Vgaming</value>
+  </data>
+  <data name="ProductVRG" xml:space="preserve">
+    <value>虚拟娱乐城</value>
+  </data>
+  <data name="ProductVS" xml:space="preserve">
+    <value>虚拟运动</value>
+  </data>
+  <data name="ProductVS2" xml:space="preserve">
+    <value>虚拟运动2</value>
+  </data>
+  <data name="ProductWE" xml:space="preserve">
+    <value>WE世界娱乐</value>
+  </data>
+  <data name="ProductWM" xml:space="preserve">
+    <value>完美真人</value>
+  </data>
+  <data name="ProductYB" xml:space="preserve">
+    <value>亿博</value>
+  </data>
 </root>

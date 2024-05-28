@@ -1,0 +1,44 @@
+.header-content {
+    .table>thead>tr>th {
+        &.first-header-cell {
+            border-left: inherit;
+        }
+    }
+}
+
+.form-group {
+    .checkbox-group {
+        margin-top: 0px;
+        margin-left: 5px;
+    }
+}
+
+.decimal-odds {
+    color: red;
+}
+
+.result-note {
+    padding-top: 0;
+}
+
+ul {
+    &.list {
+        list-style-type: none;
+        margin-bottom: 10px;
+    
+        li {
+            line-height: 2rem;
+    
+            &:before {
+                content: "";
+                width: 0.6rem;
+                height: 0.6rem;
+                background-color: #F9494D;
+                float: left;
+                margin-right: 1rem;
+                margin-top: 0.7rem;
+                border-radius: 50%;
+            }
+        }
+    }
+}

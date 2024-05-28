@@ -18,4 +18,6 @@ export const MATCH_WL = 'MatchWinLoss';
 
 export const LIVE_REPORT = 'LiveReport';
 
+export const CUSTOMER_TURNOVER = 'CustomerTurnover';
+
 export const BETLIST = 'BetList';

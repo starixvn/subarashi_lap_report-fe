@@ -68,4 +68,12 @@ input[type="checkbox"].checkbox {
             border: 1px solid $red;
         }
     }
+
+    &.bold {
+        input[type="checkbox"] + label {
+            &:after {
+                border-width: 2px;
+            }
+        }
+    }
 }

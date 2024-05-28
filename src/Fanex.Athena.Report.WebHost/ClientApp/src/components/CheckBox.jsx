@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 
 const CheckBox = React.forwardRef((props, ref) => {
     return (
-        <div className="checkbox-group" ref={ref}>
+        <div className={classNames('checkbox-group', props.className)} ref={ref}>
             <input
                 type="checkbox"
                 className="checkbox"
@@ -25,10 +26,12 @@ CheckBox.propTypes = {
     checked: PropTypes.bool,
     disabled: PropTypes.bool,
     onChange: PropTypes.func,
+    className: PropTypes.string,
 };
 
 CheckBox.defaultProps = {
     label: '',
+    className: '',
     checked: true,
     disabled: false,
     onChange: function () {},

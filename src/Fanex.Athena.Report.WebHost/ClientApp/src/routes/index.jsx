@@ -14,6 +14,7 @@ import WinLossAnalysisRoute from './WinLossAnalysis';
 import MatchWinLossRoute from './MatchWinLossRoute';
 import BetListRoute from './BetListRoute';
 import LiveReportRoute from './LiveReportRoute';
+import CustomerTurnoverRoute from './CustomerTurnoverRoute';
 
 export default [
     {
@@ -78,6 +79,13 @@ export default [
         Permissions: [permission.LIVE_REPORT],
         Layout: AppLayout,
         Component: LiveReportRoute,
+    },
+    {
+        Id: pages.CUSTOMER_TURNOVER,
+        Path: 'CustomerTurnoverReport/*',
+        Permissions: [permission.CUSTOMER_TURNOVER],
+        Layout: AppLayout,
+        Component: CustomerTurnoverRoute,
     },
     {
         Id: pages.BETLIST,
