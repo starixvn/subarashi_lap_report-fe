@@ -18,7 +18,7 @@ export const setSportList = (list) => {
 
 export function getSportList(productCodes) {
     return async (dispatch) => {
-        const response = await DataService.getReportData('api/CommonData/GetSportsForTreeView', { productCodes: productCodes, applyHideSaba: true });
+        const response = await DataService.getReportData('api/CommonData/GetSportsForTreeView', { productCodes: productCodes });
         const data = response.data;
         const selectedSports = Service.getSelectedItemFromTreeListItem(data);
         dispatch(setSportList(data));

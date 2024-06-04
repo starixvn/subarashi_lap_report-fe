@@ -15,9 +15,11 @@ export default class LangHelper {
         return langCode;
     }
 
-    static getSingleResource(key) {
+    static getSingleResource(key, hideSaba = false) {
         var langHandler = window[resourceName];
-        return (langHandler && langHandler[key]) || (window[DEFAULT_RESOURCE_NAME] && window[DEFAULT_RESOURCE_NAME][key]) || key;
+        var newKey = hideSaba ? key + '_HideSaba' : key;
+
+        return (langHandler && langHandler[newKey]) || (window[DEFAULT_RESOURCE_NAME] && window[DEFAULT_RESOURCE_NAME][newKey]) || newKey;
     }
 
     static getResources(keys) {

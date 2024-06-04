@@ -28,7 +28,9 @@ const BetListTable = (props) => {
 
     const buildHeader = () => {
         let rows = [];
+        const timestamp = new Date().getTime();
         const { columns, columnWidths, sortableColumns, customHeaderCell } = props;
+
         const CustomHeaderCell = customHeaderCell ?? HeaderCell;
 
         for (let i = 0; i < columns.length; i++) {
@@ -37,7 +39,7 @@ const BetListTable = (props) => {
             const headerName = getHeaderName(column);
 
             rows.push(
-                <CustomHeaderCell key={column} colWidth={columnWidths[i]} sortBy={isSortable ? column : null}>
+                <CustomHeaderCell key={column + timestamp} colWidth={columnWidths[i]} sortBy={isSortable ? column : null}>
                     {headerName}
                 </CustomHeaderCell>
             );
@@ -49,6 +51,7 @@ const BetListTable = (props) => {
     const buildBody = () => {
         const { columns, columnAlignments, data } = props;
         let rows = [];
+        const timestamp = new Date().getTime();
 
         for (let i = 0; i < data.length; i++) {
             const item = mapData(data[i]);
@@ -60,14 +63,14 @@ const BetListTable = (props) => {
 
                 cells.push(
                     <Cell
-                        key={`${column}-${i}`}
+                        key={`${column}-${i}-${timestamp}`}
                         className={columnAlignments[j]}
                         {...(hasTooltip ? { title: item[column] } : {})}
                         dangerouslySetInnerHTML={{ __html: item[column] }}></Cell>
                 );
             }
 
-            rows.push(<Row key={i}>{cells}</Row>);
+            rows.push(<Row key={`${i}-${timestamp}`}>{cells}</Row>);
         }
 
         return rows;
@@ -77,6 +80,8 @@ const BetListTable = (props) => {
         if (!props.totalColumns || !props.totalColumns.length) {
             return false;
         }
+
+        const timestamp = new Date().getTime();
 
         const { columns, totalColumns, total, totalText, columnAlignments, customFooterRow } = props;
         const startTotalIndex = columns.indexOf(totalColumns[0]);
@@ -98,7 +103,7 @@ const BetListTable = (props) => {
 
             cells.push(
                 <Cell
-                    key={`Sum${column}`}
+                    key={`Sum-${column}-${timestamp}`}
                     className={`${columnAlignments[columnIndex]} ${className}`}
                     dangerouslySetInnerHTML={{ __html: item[column] }}></Cell>
             );
@@ -106,13 +111,13 @@ const BetListTable = (props) => {
 
         const blankRows = columns.length - totalColumns.length - startTotalIndex;
         if (blankRows) {
-            cells.push(<Cell key="blank" colSpan={blankRows}></Cell>);
+            cells.push(<Cell key={`blank-${timestamp}`} colSpan={blankRows}></Cell>);
         }
 
         const CustomFooterRow = customFooterRow ?? Row;
 
         rows.push(
-            <CustomFooterRow className="fixed-table-grant-total" key="totalRow">
+            <CustomFooterRow className="fixed-table-grant-total" key={`totalRow-${timestamp}`}>
                 {cells}
             </CustomFooterRow>
         );
@@ -155,7 +160,7 @@ const BetListTable = (props) => {
     const { isPaging, pageOption, adjustedHeight } = props;
 
     return (
-        <div className="betlist-container result-content">
+        <div key="BetListDataGrid" className="betlist-container result-content">
             <Table
                 onSort={onSort}
                 minWidth={980}
