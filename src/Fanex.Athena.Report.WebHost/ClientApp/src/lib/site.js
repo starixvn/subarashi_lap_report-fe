@@ -32,7 +32,11 @@ export default class Site {
     }
 
     static downloadFile(data, fileName) {
-        const url = window.URL.createObjectURL(new Blob([data]));
+        let binaryData = new Blob([data]);
+        if (fileName.indexOf('.csv') !== -1) {
+            binaryData = new Blob(['\ufeff', binaryData]);
+        }
+        const url = window.URL.createObjectURL(binaryData);
         const link = document.createElement('a');
         link.href = url;
         link.setAttribute('download', fileName);
