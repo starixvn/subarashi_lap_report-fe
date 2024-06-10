@@ -1,21 +1,7 @@
-.header-title {
-    &.selected {
-        text-decoration: underline;
-    }
-}
-
-.popup-container {
-    .popup-notification {
-        &.flat-popup {
-            height: 150px;
-            width: 380px;
-        
-            .popup-content {
-                font-size: 14px;
-                text-align: center;
-                padding: 20px;
-        
-            }
+.header-content {
+    .table>thead>tr>th {
+        &.first-header-cell {
+            border-left: inherit;
         }
     }
 }

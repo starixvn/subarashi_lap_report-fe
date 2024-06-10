@@ -645,9 +645,6 @@
   <data name="CustomerTurnover" xml:space="preserve">
     <value>会员交易额</value>
   </data>
-  <data name="Product" xml:space="preserve">
-    <value>产品</value>
-  </data>
   <data name="ProductAB" xml:space="preserve">
     <value>欧博</value>
   </data>
@@ -743,5 +740,20 @@
   </data>
   <data name="ProductYB" xml:space="preserve">
     <value>亿博</value>
+  </data>
+  <data name="Viewin2" xml:space="preserve">
+    <value>查看</value>
+  </data>
+  <data name="ViewDataInMonth" xml:space="preserve">
+    <value>检阅每月数据</value>
+  </data>
+  <data name="From" xml:space="preserve">
+    <value>从</value>
+  </data>
+  <data name="To" xml:space="preserve">
+    <value>至</value>
+  </data>
+  <data name="CasinoTransfer" xml:space="preserve">
+    <value>娱乐城的总转账额</value>
   </data>
 </root>

@@ -20,4 +20,6 @@ export const LIVE_REPORT = 'LiveReport';
 
 export const CUSTOMER_TURNOVER = 'CustomerTurnover';
 
+export const TURNOVER = 'Turnover';
+
 export const BETLIST = 'BetList';

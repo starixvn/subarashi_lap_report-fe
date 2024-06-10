@@ -17,3 +17,5 @@ export const MATCH_WL = 'MatchWinLoss31';
 export const LIVE_REPORT = 'LiveReport38';
 
 export const CUSTOMER_TURNOVER = 'CustomerTurnover51';
+
+export const TURNOVER = 'Turnover39';

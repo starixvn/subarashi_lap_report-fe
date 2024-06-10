@@ -675,9 +675,6 @@
   <data name="CustomerTurnover" xml:space="preserve">
     <value>Omset Pelanggan</value>
   </data>
-  <data name="Product" xml:space="preserve">
-    <value>Produk</value>
-  </data>
   <data name="ProductAB" xml:space="preserve">
     <value>AllBet</value>
   </data>
@@ -806,5 +803,20 @@
   </data>
   <data name="ProductWM" xml:space="preserve">
     <value>WM</value>
+  </data>
+  <data name="Viewin2" xml:space="preserve">
+    <value>Lihat</value>
+  </data>
+  <data name="ViewDataInMonth" xml:space="preserve">
+    <value>Lihat data dalam bulan</value>
+  </data>
+  <data name="From" xml:space="preserve">
+    <value>Dari</value>
+  </data>
+  <data name="To" xml:space="preserve">
+    <value>Ke</value>
+  </data>
+  <data name="CasinoTransfer" xml:space="preserve">
+    <value>Transfer Casino</value>
   </data>
 </root>

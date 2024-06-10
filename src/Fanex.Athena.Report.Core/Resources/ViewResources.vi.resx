@@ -672,9 +672,6 @@
   <data name="CustomerTurnover" xml:space="preserve">
     <value>Doanh Thu Khách Hàng</value>
   </data>
-  <data name="Product" xml:space="preserve">
-    <value>Sản phẩm</value>
-  </data>
   <data name="ProductAB" xml:space="preserve">
     <value>AllBet</value>
   </data>
@@ -821,5 +818,20 @@
   </data>
   <data name="ProductYB" xml:space="preserve">
     <value>YeeBet</value>
+  </data>
+  <data name="Viewin2" xml:space="preserve">
+    <value>Xem theo</value>
+  </data>
+  <data name="ViewDataInMonth" xml:space="preserve">
+    <value>Xem dữ liệu trong tháng</value>
+  </data>
+  <data name="From" xml:space="preserve">
+    <value>Từ</value>
+  </data>
+  <data name="To" xml:space="preserve">
+    <value>Đến</value>
+  </data>
+  <data name="CasinoTransfer" xml:space="preserve">
+    <value>Chuyển khoản Casino</value>
   </data>
 </root>

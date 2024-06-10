@@ -675,9 +675,6 @@
   <data name="CustomerTurnover" xml:space="preserve">
     <value>เทิร์นโอเวอร์ของลูกค้า</value>
   </data>
-  <data name="Product" xml:space="preserve">
-    <value>ผลิตภัณฑ์</value>
-  </data>
   <data name="ProductAB" xml:space="preserve">
     <value>เดิมพันทั้งหมด</value>
   </data>
@@ -815,5 +812,20 @@
   </data>
   <data name="ProductWM" xml:space="preserve">
     <value>WM</value>
+  </data>
+  <data name="Viewin2" xml:space="preserve">
+    <value>ดูใน</value>
+  </data>
+  <data name="ViewDataInMonth" xml:space="preserve">
+    <value>ดูข้อมูลในเดือน</value>
+  </data>
+  <data name="From" xml:space="preserve">
+    <value>จาก</value>
+  </data>
+  <data name="To" xml:space="preserve">
+    <value>ถึง</value>
+  </data>
+  <data name="CasinoTransfer" xml:space="preserve">
+    <value>การโอนย้ายคาสิโน</value>
   </data>
 </root>
