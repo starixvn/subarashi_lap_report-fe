@@ -56,6 +56,10 @@ export default class Site {
         reader.readAsText(blob);
     }
 
+    static getLrfSavedSessionStorage() {
+        return sessionStorage.getItem(this.getLrfSavedSessionKey(window.location.pathname));
+    }
+
     static getLrfSavedSessionKey(pathName) {
         return LRF_SAVED_PAGE_SESSION_KEY + pathName;
     }

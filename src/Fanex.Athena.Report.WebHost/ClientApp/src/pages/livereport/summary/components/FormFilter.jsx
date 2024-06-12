@@ -19,7 +19,7 @@ import SubsidiaryDropdown from './Filter/SubsidiaryDropdown';
 import SubsidiaryCheckBox from './Filter/SubsidiaryCheckBox';
 
 const FormFilter = (props) => {
-    const { DateConstraint, DefaultDateRange, ApiUrl } = constants;
+    const { DateConstraint, ApiUrl } = constants;
 
     const dispatch = useDispatch();
 

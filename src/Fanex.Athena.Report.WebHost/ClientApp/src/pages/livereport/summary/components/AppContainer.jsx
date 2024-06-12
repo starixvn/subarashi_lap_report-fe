@@ -71,9 +71,8 @@ export const AppContainer = (props) => {
     };
 
     useEffect(() => {
-        if (!sessionStorage.getItem(Site.getLrfSavedSessionKey(window.location.pathname))) {
+        if (!Site.getLrfSavedSessionStorage()) {
             sendRequest(() => DataService.getReportData(constants.ApiUrl.INIT_FORM_URL), setInitFormData);
-            return;
         }
     }, []);
 
