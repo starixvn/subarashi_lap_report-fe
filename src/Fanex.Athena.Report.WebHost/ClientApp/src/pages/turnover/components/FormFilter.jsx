@@ -16,6 +16,7 @@ import { ActionCreators } from '../actions';
 import { constants } from '../common';
 import AutoComplete from '@srcRoot/components/auto-complete';
 import MonthPicker from '@srcRoot/components/month-picker';
+import SubmitButton from '@srcRoot/components/SubmitButton';
 
 const FormFilter = (props) => {
     const { DateConstraint, ApiUrl, ExcludeTestDataOptions } = constants;
@@ -230,9 +231,9 @@ const FormFilter = (props) => {
                 <div className="col-12 col-lg-2 col-md-3 col-sm-12">
                     <div className="form-group">
                         <div className="button-group">
-                            <button disabled={isFormValid} type="button" className="btn btn-submit" onClick={onSubmit}>
+                            <SubmitButton disabled={isFormValid} onClick={onSubmit} label={TURNOVER}>
                                 {LangHelper.getSingleResource('Submit').toUpperCase()}
-                            </button>
+                            </SubmitButton>
                         </div>
                     </div>
                 </div>

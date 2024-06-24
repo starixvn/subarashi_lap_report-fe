@@ -7,7 +7,9 @@ import { DateRange } from '@legion-lib/react-daterangepicker';
 import { CUSTOMER_TURNOVER, USER_GUIDE } from '@srcRoot/constants/pages';
 import CollapsiblePanel from '@srcRoot/components/CollapsiblePanel';
 import useToggleRequest from '@srcRoot/hooks/useToggleRequest';
-
+import CheckBox from '@srcRoot/components/CheckBox';
+import AutoComplete from '@srcRoot/components/auto-complete';
+import SubmitButton from '@srcRoot/components/SubmitButton';
 import ReportSelect from '@srcRoot/components/ReportSelect';
 import UserGuide from '@srcRoot/components/UserGuide';
 import LangHelper from '@srcRoot/helpers/langHelper';
@@ -16,9 +18,7 @@ import Site from '@srcRoot/lib/site';
 
 import ActionCreators from '../actions';
 import Service, { constants } from '../common';
-import CheckBox from '@srcRoot/components/CheckBox';
 import { TicketFilterOptions, TicketFilterValue } from '../common/filterSettings';
-import AutoComplete from '@srcRoot/components/auto-complete';
 
 const FormFilter = (props) => {
     const { DateConstraint, ApiUrl, TreeViewOption, ReportByValue, DefaultPagingOption, MAX_ODDS_DIGITS, CHILD_ID_PREFIX } = constants;
@@ -347,9 +347,9 @@ const FormFilter = (props) => {
                 <div className="col-12 col-lg-2 col-md-3 col-sm-12">
                     <div className="form-group">
                         <div className="button-group">
-                            <button disabled={isFormValid} type="button" className="btn btn-submit" onClick={onSubmit}>
+                            <SubmitButton disabled={isFormValid} onClick={onSubmit} label={CUSTOMER_TURNOVER}>
                                 {LangHelper.getSingleResource('Submit').toUpperCase()}
-                            </button>
+                            </SubmitButton>
                         </div>
                     </div>
                 </div>
