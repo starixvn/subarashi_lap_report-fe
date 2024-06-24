@@ -1,6 +1,10 @@
 ﻿import React, { memo } from 'react';
+
 import CollapsiblePanel from '@srcRoot/components/CollapsiblePanel';
 import LangHelper from '@srcRoot/helpers/langHelper';
+import SubmitButton from '@srcRoot/components/SubmitButton';
+import { WL_ANALYSIS } from '@srcRoot/constants/pages';
+
 import { useValidParam } from '../hooks/useValidParam';
 import useFilterAction from '../hooks/useFilterAction';
 import { GroupByOptionFilter } from '../filters/GroupByOptionsFilter.jsx';
@@ -29,9 +33,9 @@ export const MobileGroupByFilter = (props) => {
                 <div className="flex flex-center w100 flex-wrap">
                     <div className="form-group flex-auto">
                         <div className="button-group">
-                            <button type="button" disabled={!isValidModel} className="btn btn-submit" onClick={submit}>
+                            <SubmitButton disabled={!isValidModel} onClick={submit} label={WL_ANALYSIS}>
                                 {LangHelper.getSingleResource('Submit')}
-                            </button>
+                            </SubmitButton>
                             <button type="button" className="btn btn-outline-secondary" onClick={onClickClearFilter}>
                                 {LangHelper.getSingleResource('ClearAllFilters')}
                             </button>

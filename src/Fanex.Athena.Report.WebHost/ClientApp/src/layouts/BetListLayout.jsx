@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+
 import Popup from '../components/Popup';
+import GtagHelper from '../helpers/gtagHelper';
 
 const BetListLayout = (props) => {
     const [isShowPopup, setIsShowPopup] = useState(false);
@@ -8,7 +10,7 @@ const BetListLayout = (props) => {
     const [popupTitle, setPopupTitle] = useState(null);
 
     useEffect(() => {
-        window.logOpenBetlistEvent && window.logOpenBetlistEvent(props.pageName);
+        GtagHelper.logOpenBetlist(props.pageName);
         window.openPopup = openPopup;
         window.getResource = null; //use resource from BetTicket site
         window.formatDateString = formatDateString;

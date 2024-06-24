@@ -2,6 +2,8 @@
 
 import CollapsiblePanel from '@srcRoot/components/CollapsiblePanel';
 import LangHelper from '@srcRoot/helpers/langHelper';
+import SubmitButton from '@srcRoot/components/SubmitButton.jsx';
+import { WL_ANALYSIS } from '@srcRoot/constants/pages.js';
 
 import { useValidParam } from '../hooks/useValidParam.jsx';
 import useFilterAction from '../hooks/useFilterAction.jsx';
@@ -28,9 +30,9 @@ export const GroupByFilter = () => {
                 <div className="">
                     <div className="form-group">
                         <div className="button-group">
-                            <button type="button" disabled={!isValidModel} className="btn btn-submit" onClick={submit}>
+                            <SubmitButton disabled={!isValidModel} onClick={submit} label={WL_ANALYSIS}>
                                 {LangHelper.getSingleResource('Submit')}
-                            </button>
+                            </SubmitButton>
                             <button type="button" className="btn btn-outline-secondary" onClick={onClickClearFilter}>
                                 {LangHelper.getSingleResource('ClearAllFilters')}
                             </button>

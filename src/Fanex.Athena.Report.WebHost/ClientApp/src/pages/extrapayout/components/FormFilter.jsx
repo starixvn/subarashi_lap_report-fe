@@ -7,7 +7,9 @@ import { TreeViewSelect } from '@legion-lib/react-multiselect';
 
 import { DEFAULT_BASE_CURRENCY_VALUE } from '@srcRoot/constants/config';
 import { SubsidiaryViewType, TreeViewOption } from '@srcRoot/constants/report';
+import { EXTRA_PAYOUT } from '@srcRoot/constants/pages';
 import CollapsiblePanel from '@srcRoot/components/CollapsiblePanel';
+import SubmitButton from '@srcRoot/components/SubmitButton';
 import LangHelper from '@srcRoot/helpers/langHelper';
 import Site from '@srcRoot/lib/site';
 import CheckBox from '@srcRoot/components/CheckBox';
@@ -259,6 +261,7 @@ export const FormFilter = (props) => {
             (!props.subsidiarySearch || !!props.selectedSubsidiary) &&
             !!props.selectedProduct &&
             !!props.selectedCurrency &&
+            !!props.promotionTypeList &&
             !!props.selectedPromotionTypes &&
             !!props.selectedBaseCurrency;
 
@@ -404,9 +407,9 @@ export const FormFilter = (props) => {
                             <div className="col-12 col-md-4 col-sm-5 col-lg-4 col-xl-5">
                                 <div className="form-group">
                                     <div className="button-group">
-                                        <button type="button" disabled={!isValidModel()} className="btn btn-submit" onClick={onSubmit}>
+                                        <SubmitButton disabled={!isValidModel()} onClick={onSubmit} label={EXTRA_PAYOUT}>
                                             {LangHelper.getSingleResource('Submit')}
-                                        </button>
+                                        </SubmitButton>
                                     </div>
                                 </div>
                             </div>

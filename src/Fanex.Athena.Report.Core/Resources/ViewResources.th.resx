@@ -645,4 +645,7 @@
   <data name="Back" xml:space="preserve">
     <value>กลับ</value>
   </data>
+  <data name="Report" xml:space="preserve">
+    <value>รายงาน</value>
+  </data>
 </root>

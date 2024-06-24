@@ -6,6 +6,7 @@ import { DatePicker } from '@legion-lib/react-daterangepicker';
 import { MATCH_WL, USER_GUIDE } from '@srcRoot/constants/pages';
 import CollapsiblePanel from '@srcRoot/components/CollapsiblePanel';
 import useToggleRequest from '@srcRoot/hooks/useToggleRequest';
+import SubmitButton from '@srcRoot/components/SubmitButton';
 import ReportSelect from '@srcRoot/components/ReportSelect';
 import UserGuide from '@srcRoot/components/UserGuide';
 import LangHelper from '@srcRoot/helpers/langHelper';
@@ -205,9 +206,9 @@ const FormFilter = (props) => {
                 <div className="col-12 col-lg-1 col-md-2 col-sm-12">
                     <div className="form-group">
                         <div className="button-group">
-                            <button disabled={!currentProduct.length || !currentCurrency} type="button" className="btn btn-submit" onClick={onSubmit}>
+                            <SubmitButton disabled={!currentProduct.length || !currentCurrency} onClick={onSubmit} label={MATCH_WL}>
                                 {LangHelper.getSingleResource('Submit')}
-                            </button>
+                            </SubmitButton>
                         </div>
                     </div>
                 </div>

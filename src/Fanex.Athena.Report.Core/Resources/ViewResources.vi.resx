@@ -642,4 +642,7 @@
   <data name="Back" xml:space="preserve">
     <value>Quay lại</value>
   </data>
+  <data name="Report" xml:space="preserve">
+    <value>Báo cáo</value>
+  </data>
 </root>

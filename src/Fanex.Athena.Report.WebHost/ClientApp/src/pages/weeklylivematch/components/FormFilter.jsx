@@ -6,6 +6,7 @@ import UserGuide from '@srcRoot/components/UserGuide';
 import DataService from '@srcRoot/lib/dataService';
 import useToggleRequest from '@srcRoot/hooks/useToggleRequest';
 import Site from '@srcRoot/lib/site';
+import SubmitButton from '@srcRoot/components/SubmitButton';
 import CollapsiblePanel from '@srcRoot/components/CollapsiblePanel';
 import LangHelper from '@srcRoot/helpers/langHelper';
 import { USER_GUIDE, WEEKLY_LIVE_MATCHES } from '@srcRoot/constants/pages';
@@ -122,9 +123,9 @@ const FormFilter = (props) => {
                 <div className="col-12 col-md-2 col-sm-2 col-lg-2 col-xl-1">
                     <div className="form-group">
                         <div className="button-group">
-                            <button type="button" className="btn btn-submit" onClick={onSubmit}>
+                            <SubmitButton onClick={onSubmit} label={WEEKLY_LIVE_MATCHES}>
                                 {LangHelper.getSingleResource('Submit').toUpperCase()}
-                            </button>
+                            </SubmitButton>
                         </div>
                     </div>
                 </div>

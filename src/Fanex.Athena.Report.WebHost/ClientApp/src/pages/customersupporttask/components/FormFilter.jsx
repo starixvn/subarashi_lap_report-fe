@@ -13,6 +13,7 @@ import { ActionCreators } from '../actions';
 
 import { SupportTaskOptions, ExportUrl, ExportFileName } from '../lib/constants';
 import CollapsiblePanel from '../../../components/CollapsiblePanel';
+import SubmitButton from '@srcRoot/components/SubmitButton';
 
 const FormFilter = ({ formData, selectedCurrency, selectedSupportTask, setSelectedSupportTask, setSelectedCurrency, toggleLoader }) => {
     const currencies = formData.currencies;
@@ -76,9 +77,9 @@ const FormFilter = ({ formData, selectedCurrency, selectedSupportTask, setSelect
                 <div className="col-12 col-md-3 col-sm-3 col-lg-2 col-xl-2">
                     <div className="form-group">
                         <div className="button-group">
-                            <button type="button" className="btn btn-submit" disabled={!selectedCurrency} onClick={exportExcel}>
+                            <SubmitButton disabled={!selectedCurrency} onClick={exportExcel} label={pages.CUSTOMER_SUPPORT_TASK}>
                                 {LangHelper.getSingleResource('ExportToExcel')}
-                            </button>
+                            </SubmitButton>
                         </div>
                     </div>
                 </div>

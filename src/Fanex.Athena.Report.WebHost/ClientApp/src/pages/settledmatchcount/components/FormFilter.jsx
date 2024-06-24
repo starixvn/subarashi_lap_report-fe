@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import UserGuide from '@srcRoot/components/UserGuide';
 import LangHelper from '@srcRoot/helpers/langHelper';
+import GtagHelper from '@srcRoot/helpers/gtagHelper';
 import CollapsiblePanel from '@srcRoot/components/CollapsiblePanel';
 import useToggleRequest from '@srcRoot/hooks/useToggleRequest';
 import DataService from '@srcRoot/lib/dataService';
@@ -14,6 +15,7 @@ import { SETTLED_MATCH_COUNT, USER_GUIDE } from '@srcRoot/constants/pages';
 const FormFilter = (props) => {
     const dispatch = useDispatch();
     const userGuideContent = useSelector((state) => state.userGuideContent);
+
     const { sendRequest } = useToggleRequest();
 
     const { setGridData, getUserGuideContent } = ActionCreators;
@@ -24,6 +26,8 @@ const FormFilter = (props) => {
     }, []);
 
     const _updateData = (result) => {
+        GtagHelper.logViewReportData(SETTLED_MATCH_COUNT);
+
         if (result && result.data !== null) {
             dispatch(setGridData(result.data));
             return;

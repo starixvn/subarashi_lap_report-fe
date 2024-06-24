@@ -10,14 +10,11 @@ const selectedPromotionTypes = createReducer(
     }
 );
 
-const promotionTypeList = createReducer(
-    {},
-    {
-        [types.SET_PROMOTION_TYPE_LIST](state, action) {
-            return action.data;
-        },
-    }
-);
+const promotionTypeList = createReducer(null, {
+    [types.SET_PROMOTION_TYPE_LIST](state, action) {
+        return action.data;
+    },
+});
 
 export default {
     promotionTypeList,

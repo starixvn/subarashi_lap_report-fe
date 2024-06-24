@@ -6,11 +6,13 @@ import { DateRange } from '@legion-lib/react-daterangepicker';
 import MultipleSelect from '@legion-lib/react-multiselect';
 
 import { DEFAULT_BASE_CURRENCY_VALUE } from '@srcRoot/constants/config';
+import { LEAGUE_WL } from '@srcRoot/constants/pages';
 import ReportSelect from '@srcRoot//components/ReportSelect';
 import CollapsiblePanel from '@srcRoot/components/CollapsiblePanel';
 import LangHelper from '@srcRoot/helpers/langHelper';
 import Site from '@srcRoot/lib/site';
 import CheckBox from '@srcRoot/components/CheckBox';
+import SubmitButton from '@srcRoot/components/SubmitButton';
 import AutoComplete from '@srcRoot/components/auto-complete';
 import DataService from '@srcRoot/lib/dataService';
 
@@ -415,9 +417,9 @@ export const FormFilter = (props) => {
                     <div className="col-12 col-md-2 col-sm-2 col-lg-2 col-xl-1">
                         <div className="form-group">
                             <div className="button-group">
-                                <button type="button" disabled={!isValidModel()} className="btn btn-submit" onClick={onSubmit}>
+                                <SubmitButton disabled={!isValidModel()} onClick={onSubmit} label={LEAGUE_WL}>
                                     {LangHelper.getSingleResource('Submit')}
-                                </button>
+                                </SubmitButton>
                             </div>
                         </div>
                     </div>

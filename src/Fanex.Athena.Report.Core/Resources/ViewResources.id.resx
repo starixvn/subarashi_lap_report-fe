@@ -645,4 +645,7 @@
   <data name="Back" xml:space="preserve">
     <value>Kembali</value>
   </data>
+  <data name="Report" xml:space="preserve">
+    <value>Laporan</value>
+  </data>
 </root>

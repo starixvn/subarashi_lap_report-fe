@@ -19,7 +19,7 @@ const App = () => {
                         id={Id}
                         key={Id}
                         path={Path}
-                        element={<RouteLayout layout={Layout} component={Component} />}
+                        element={<RouteLayout pageName={Id} layout={Layout} component={Component} />}
                         loader={async () => await AuthorizeRequestInfo({ permissions: Permissions })}
                         errorElement={errorBoundary()}
                     />
