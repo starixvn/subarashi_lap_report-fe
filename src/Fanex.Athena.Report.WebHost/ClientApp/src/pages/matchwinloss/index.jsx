@@ -8,9 +8,10 @@ import reducers from './reducers';
 
 // import styles
 import '@srcRoot/styles/pages/matchwinloss.scss';
+import useSessionStore from '@srcRoot/hooks/useSessionStore';
 
 const MatchWinLoss = (props) => {
-    const store = Store.createSessionStore(reducers, {});
+    const store = useSessionStore(reducers, {});
 
     return (
         <Provider store={store}>

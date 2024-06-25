@@ -6,13 +6,14 @@ import reducers from './reducers';
 
 // import styles
 import '@srcRoot/styles/pages/livereportsummary.scss';
-import Store from '@srcRoot/lib/store';
 import { constants } from './common';
+import useSessionStore from '@srcRoot/hooks/useSessionStore';
+
+const defaultState = { dateRange: constants.DefaultDateRange, selectedSubsidiary: '' };
+const resetState = { selectedProductCode: null, isLoading: false };
 
 const LiveReportSummary = (props) => {
-    const defaultState = { dateRange: constants.DefaultDateRange, selectedSubsidiary: '' };
-    const resetState = { selectedProductCode: null, isLoading: false };
-    const store = Store.createSessionStore(reducers, defaultState, resetState);
+    const store = useSessionStore(reducers, defaultState, resetState);
 
     return (
         <Provider store={store}>

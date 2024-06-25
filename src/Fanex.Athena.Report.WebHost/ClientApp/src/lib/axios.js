@@ -17,9 +17,6 @@ axios.interceptors.response.use(
             case HttpStatusCode.ServiceUnavailable:
                 Site.redirectToUrl(UM_URL);
                 break;
-            case HttpStatusCode.BadRequest:
-                Site.assignToUrl(INVALID_REQUEST_URL);
-                break;
         }
 
         return Promise.reject(error);
