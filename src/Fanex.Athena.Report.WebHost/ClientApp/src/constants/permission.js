@@ -10,6 +10,8 @@ export const EXTRA_PAYOUT = 'ExtraPayout';
 
 export const LEAGUE_WL = 'LeagueWinLoss';
 
+export const WL_BY_TIME_ZONE = 'LicenseeWinLossByTimeZone76';
+
 export const WL_ANALYSIS = 'WinlossAnalysis';
 
 export const MATCH_WL = 'MatchWinLoss31';

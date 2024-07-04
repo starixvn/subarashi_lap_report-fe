@@ -1,8 +1,35 @@
+import LangHelper from '@srcRoot/helpers/langHelper';
 import * as types from './types';
 
 export const toggleLoader = (show) => {
     return {
         type: types.TOGGLE_LOADER,
         data: show,
+    };
+};
+
+export const toggleLoaderAction = (requestFunc, callbackFunc) => {
+    return (dispatch) => {
+        dispatch(toggleLoader(true));
+        requestFunc()
+            .then((response) => {
+                if (callbackFunc) {
+                    callbackFunc(response);
+                }
+
+                dispatch(toggleLoader(false));
+            })
+            .catch((error) => {
+                alert(LangHelper.getSingleResource('ErrorProcessingMsg'));
+
+                console.error(error);
+
+                dispatch(toggleLoader(false));
+            });
+
+        return {
+            type: types.TOGGLE_LOADER,
+            data: show,
+        };
     };
 };
