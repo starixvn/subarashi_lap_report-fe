@@ -792,7 +792,7 @@
   <data name="LicenseeWL" xml:space="preserve">
     <value>承租公司輸贏</value>
   </data>
-    <data name="WinLossByTimeZone" xml:space="preserve">
+  <data name="WinLossByTimeZone" xml:space="preserve">
     <value>投注时区输赢</value>
   </data>
   <data name="LicenseeWinLoss" xml:space="preserve">
@@ -806,6 +806,15 @@
   </data>
   <data name="Cancel" xml:space="preserve">
     <value>取消</value>
+  </data>
+  <data name="BetCounts" xml:space="preserve">
+    <value>票数</value>
+  </data>
+  <data name="Running" xml:space="preserve">
+    <value>进行中</value>
+  </data>
+  <data name="CustomerPendingFunds" xml:space="preserve">
+    <value>会员待定资金</value>
   </data>
   <data name="OK" xml:space="preserve">
     <value>OK</value>

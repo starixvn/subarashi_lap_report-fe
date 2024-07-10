@@ -3,13 +3,13 @@ import React, { useEffect } from 'react';
 import LangHelper from '@srcRoot/helpers/langHelper';
 import GtagHelper from '@srcRoot/helpers/gtagHelper';
 
-const usePageViewEvent = (pageName) => {
+const usePageViewEvent = (id, pageName) => {
     useEffect(() => {
-        const title = `LAP - ${LangHelper.getSingleResource('Report')} - ${LangHelper.getSingleResource(pageName)}`;
+        const title = `LAP - ${LangHelper.getSingleResource('Report')} - ${pageName ?? LangHelper.getSingleResource(id)}`;
         document.title = title;
 
         GtagHelper.logPageView(title);
-    }, [pageName]);
+    }, [id]);
 };
 
 export default usePageViewEvent;

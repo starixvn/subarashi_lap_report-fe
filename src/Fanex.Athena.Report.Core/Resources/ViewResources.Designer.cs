@@ -214,6 +214,15 @@ namespace Fanex.Athena.Report.Core.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Bet Counts.
+        /// </summary>
+        public static string BetCounts {
+            get {
+                return ResourceManager.GetString("BetCounts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Bet ID.
         /// </summary>
         public static string BetId {
@@ -453,6 +462,15 @@ namespace Fanex.Athena.Report.Core.Resources {
         public static string CustomerComm {
             get {
                 return ResourceManager.GetString("CustomerComm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Customer Pending Funds.
+        /// </summary>
+        public static string CustomerPendingFunds {
+            get {
+                return ResourceManager.GetString("CustomerPendingFunds", resourceCulture);
             }
         }
         
@@ -1987,6 +2005,15 @@ namespace Fanex.Athena.Report.Core.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Running.
+        /// </summary>
+        public static string Running {
+            get {
+                return ResourceManager.GetString("Running", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Sa.
         /// </summary>
         public static string Sa {
@@ -2437,20 +2464,20 @@ namespace Fanex.Athena.Report.Core.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Win Loss By Time Zone.
-        /// </summary>
-        public static string WinLossByTimeZone {
-            get {
-                return ResourceManager.GetString("WinLossByTimeZone", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Settlement Time mode supports data from 10/01/2024..
         /// </summary>
         public static string WinlossAnalysis_SettlementTimeModeNote2 {
             get {
                 return ResourceManager.GetString("WinlossAnalysis_SettlementTimeModeNote2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Win Loss By Time Zone.
+        /// </summary>
+        public static string WinLossByTimeZone {
+            get {
+                return ResourceManager.GetString("WinLossByTimeZone", resourceCulture);
             }
         }
         

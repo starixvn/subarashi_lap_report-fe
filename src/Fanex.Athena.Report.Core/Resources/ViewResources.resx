@@ -929,4 +929,13 @@
   <data name="Note" xml:space="preserve">
     <value>Note</value>
   </data>
+  <data name="BetCounts" xml:space="preserve">
+    <value>Bet Counts</value>
+  </data>
+  <data name="Running" xml:space="preserve">
+    <value>Running</value>
+  </data>
+  <data name="CustomerPendingFunds" xml:space="preserve">
+    <value>Customer Pending Funds</value>
+  </data>
 </root>

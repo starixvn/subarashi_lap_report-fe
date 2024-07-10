@@ -873,10 +873,19 @@
   <data name="LicenseeWL" xml:space="preserve">
     <value>ผู้ได้รับอนุญาต แพ้ชนะ</value>
   </data>
-    <data name="WinLossByTimeZone" xml:space="preserve">
+  <data name="WinLossByTimeZone" xml:space="preserve">
     <value>แพ้ชนะตามเขตเวลา</value>
   </data>
   <data name="LicenseeWinLoss" xml:space="preserve">
     <value>ผู้ได้รับอนุญาต แพ้ชนะ</value>
+  </data>
+  <data name="BetCounts" xml:space="preserve">
+    <value>นับการเดิมพัน</value>
+  </data>
+  <data name="Running" xml:space="preserve">
+    <value>แข่งขัน</value>
+  </data>
+  <data name="CustomerPendingFunds" xml:space="preserve">
+    <value>เงินรอดำเนินการของลูกค้า</value>
   </data>
 </root>
