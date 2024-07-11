@@ -138,7 +138,7 @@ const FormFilter = (props) => {
     );
 
     return (
-        <CollapsiblePanel stickyFooter={SupportButtons} isCollapseMode={false}>
+        <CollapsiblePanel className="light-shadow" stickyFooter={SupportButtons} isCollapseMode={false}>
             <Popup className="popup-notification" isShow={isShowErrorPopUp} title={constants.PopUpSetting.Title} onClose={() => setIsShowErrorPopUp(false)}>
                 {constants.PopUpSetting.Message}
             </Popup>

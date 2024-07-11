@@ -309,7 +309,7 @@ export const FormFilter = (props) => {
 
     return (
         <React.Fragment>
-            <CollapsiblePanel className="page-filter" stickyFooter={excelButton}>
+            <CollapsiblePanel stickyFooter={excelButton}>
                 <div className="row">
                     {showSubsidiarySearch && props.subsidiarySearch && (
                         <div className="col-12 col-sm-3 col-md-3 col-lg-4 col-xl-2">

@@ -209,7 +209,7 @@ const FormFilter = (props) => {
     const isValidParam = (!currentSubsidiarySearch || !!currentSubsidiaryList) && !!currentCurrency;
 
     return (
-        <CollapsiblePanel stickyFooter={SupportButtons} isCollapseMode={false}>
+        <CollapsiblePanel className="light-shadow" stickyFooter={SupportButtons} isCollapseMode={false}>
             <div className="row">
                 {isShowSubsidiaryDropdown && currentSubsidiarySearch && (
                     <div className="col-12 col-lg-2 col-md-3 col-sm-12">

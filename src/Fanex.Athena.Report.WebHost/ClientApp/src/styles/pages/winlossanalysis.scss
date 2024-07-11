@@ -197,6 +197,7 @@ input[type="checkbox"].checkbox:disabled {
   position: relative;
   padding: 0px;
   margin: 15px 0px;
+  border: 0.5px;
 
   .page-filter {
     margin: 0px;
@@ -209,6 +210,7 @@ input[type="checkbox"].checkbox:disabled {
 
     &.page-filter {
       padding: 0px;
+      margin: 15px 0px;
     }
   }
 

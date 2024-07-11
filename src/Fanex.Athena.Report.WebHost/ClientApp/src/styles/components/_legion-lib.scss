@@ -57,8 +57,8 @@
 .mobile-table {
     .header-content, .footer-content,  .page-wrapper-container{
         display: block;
-        position: sticky;
         position: -webkit-sticky;
+        position: sticky;
         z-index: 10;
     }
 

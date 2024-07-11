@@ -112,7 +112,7 @@ const FormFilter = (props) => {
     };
 
     return (
-        <CollapsiblePanel stickyFooter={_renderSupportButton()} isCollapseMode={false}>
+        <CollapsiblePanel className="light-shadow" stickyFooter={_renderSupportButton()} isCollapseMode={false}>
             <div className="row">
                 <div className="col-12 col-md-3 col-sm-6 col-lg-4 col-xl-2">
                     <div className="form-group">
