@@ -10,7 +10,7 @@ import UserGuide from '@srcRoot/components/UserGuide';
 import ReportSelect from '@srcRoot/components/ReportSelect.jsx';
 import CollapsiblePanel from '@srcRoot/components/CollapsiblePanel.jsx';
 import useToggleRequest from '@srcRoot/hooks/useToggleRequest.js';
-import DataService from '@srcRoot/lib/dataService.js';
+import DataService from '@srcRoot/lib/dataService';
 import { USER_GUIDE, WL_BY_TIME_ZONE } from '@srcRoot/constants/pages.js';
 
 import { ReportBy, SettingConst, TimeZones, ApiUrl, DateConstraint } from '../constants';

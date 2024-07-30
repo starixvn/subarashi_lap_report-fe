@@ -16,6 +16,8 @@ export const WL_ANALYSIS = 'WinlossAnalysis';
 
 export const WL_BY_TIME_ZONE = 'WinLossByTimeZone';
 
+export const SAPA_VIRTUAL_SPORTS_WL = 'SabaVirtualSportsWinLoss';
+
 export const USER_GUIDE = 'UserGuide';
 
 export const MATCH_WL = 'MatchWinLoss';

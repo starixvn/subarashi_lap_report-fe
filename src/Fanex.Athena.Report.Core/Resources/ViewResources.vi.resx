@@ -894,4 +894,31 @@
   <data name="CustomerPendingFunds" xml:space="preserve">
     <value>Tiền Chờ Xử Lý Của Khách Hàng</value>
   </data>
+  <data name="SabaVirtualSportsNote" xml:space="preserve">
+    <value>Thể Thao Ảo Saba không hỗ trợ cho Cược Tổng Hợp.</value>
+  </data>
+  <data name="Normal" xml:space="preserve">
+    <value>Bình thường</value>
+  </data>
+  <data name="NoDraws" xml:space="preserve">
+    <value>Không Hòa</value>
+  </data>
+  <data name="NoDrawsForTurnoverOnly" xml:space="preserve">
+    <value>Không Tính Doanh Thu Vé Cược Hòa</value>
+  </data>
+  <data name="SabaVirtualSportsWinLoss" xml:space="preserve">
+    <value>Thắng Thua Thể Thao Ảo Saba</value>
+  </data>
+  <data name="SabaVirtualSport" xml:space="preserve">
+    <value>Thể Thao Ảo Saba</value>
+  </data>
+  <data name="CashOutCommission" xml:space="preserve">
+    <value>Hoa hồng vé cược đã bán</value>
+  </data>
+  <data name="AllCurrencies" xml:space="preserve">
+    <value>Tất cả các loại tiền tệ</value>
+  </data>
+  <data name="CustomerBetList" xml:space="preserve">
+    <value>Danh sách cược của Khách Hàng</value>
+  </data>
 </root>

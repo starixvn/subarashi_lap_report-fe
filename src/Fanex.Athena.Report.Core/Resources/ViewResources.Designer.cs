@@ -106,6 +106,15 @@ namespace Fanex.Athena.Report.Core.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to All Currencies.
+        /// </summary>
+        public static string AllCurrencies {
+            get {
+                return ResourceManager.GetString("AllCurrencies", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Amount Due To.
         /// </summary>
         public static string AmountDueTo {
@@ -322,6 +331,15 @@ namespace Fanex.Athena.Report.Core.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cash Out Commission.
+        /// </summary>
+        public static string CashOutCommission {
+            get {
+                return ResourceManager.GetString("CashOutCommission", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Casino Transfer.
         /// </summary>
         public static string CasinoTransfer {
@@ -453,6 +471,15 @@ namespace Fanex.Athena.Report.Core.Resources {
         public static string CustomerBalance {
             get {
                 return ResourceManager.GetString("CustomerBalance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Customer Bet List.
+        /// </summary>
+        public static string CustomerBetList {
+            get {
+                return ResourceManager.GetString("CustomerBetList", resourceCulture);
             }
         }
         
@@ -1231,6 +1258,24 @@ namespace Fanex.Athena.Report.Core.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to No Draws.
+        /// </summary>
+        public static string NoDraws {
+            get {
+                return ResourceManager.GetString("NoDraws", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No Draws For Turnover Only.
+        /// </summary>
+        public static string NoDrawsForTurnoverOnly {
+            get {
+                return ResourceManager.GetString("NoDrawsForTurnoverOnly", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to No information is available.
         /// </summary>
         public static string NoInfo {
@@ -1254,6 +1299,15 @@ namespace Fanex.Athena.Report.Core.Resources {
         public static string NonEntered {
             get {
                 return ResourceManager.GetString("NonEntered", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Normal.
+        /// </summary>
+        public static string Normal {
+            get {
+                return ResourceManager.GetString("Normal", resourceCulture);
             }
         }
         
@@ -2019,6 +2073,33 @@ namespace Fanex.Athena.Report.Core.Resources {
         public static string Sa {
             get {
                 return ResourceManager.GetString("Sa", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Saba Virtual Sport.
+        /// </summary>
+        public static string SabaVirtualSport {
+            get {
+                return ResourceManager.GetString("SabaVirtualSport", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Saba Virtual Sports does not support System Parlay bet type..
+        /// </summary>
+        public static string SabaVirtualSportsNote {
+            get {
+                return ResourceManager.GetString("SabaVirtualSportsNote", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Saba Virtual Sports Win Loss.
+        /// </summary>
+        public static string SabaVirtualSportsWinLoss {
+            get {
+                return ResourceManager.GetString("SabaVirtualSportsWinLoss", resourceCulture);
             }
         }
         
