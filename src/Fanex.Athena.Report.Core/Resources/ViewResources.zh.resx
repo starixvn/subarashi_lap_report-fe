@@ -849,4 +849,10 @@
   <data name="CustomerBetList" xml:space="preserve">
     <value>会员注单</value>
   </data>
+  <data name="SubsidiaryWL" xml:space="preserve">
+    <value>子网站输赢</value>
+  </data>
+  <data name="SubsidiaryPerformance" xml:space="preserve">   
+    <value>子网站综合报表</value>
+  </data>
 </root>

@@ -906,4 +906,13 @@
   <data name="CustomerBetList" xml:space="preserve">
     <value>Daftar Taruhan Pelanggan</value>
   </data>
+  <data name="SeparateSabaWinLoss" xml:space="preserve">     
+    <value>Pisahkan Saba Virtual Sports dari Sportsbook</value>
+  </data>
+  <data name="SubsidiaryWL" xml:space="preserve">
+    <value>Kemenangan/Kerugian Anak Perusahaan</value>       
+  </data>
+  <data name="SubsidiaryPerformance" xml:space="preserve">   
+    <value>Performa Cabang</value>
+  </data>
 </root>

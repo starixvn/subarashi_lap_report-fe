@@ -27,8 +27,6 @@ export const BreadcrumbItems = [
     },
 ];
 
-export const GridDataCacheKeyPrefix = 'SabaVirtualSportsWinLossGridCache';
-
 export const TableSettings = {
     MinWidth: 1480,
 };

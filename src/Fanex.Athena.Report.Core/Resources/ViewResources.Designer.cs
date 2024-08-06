@@ -2158,6 +2158,15 @@ namespace Fanex.Athena.Report.Core.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Separate Saba Virtual Sports from Sportsbook.
+        /// </summary>
+        public static string SeparateSabaWinLoss {
+            get {
+                return ResourceManager.GetString("SeparateSabaWinLoss", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to September.
         /// </summary>
         public static string September {
@@ -2257,11 +2266,29 @@ namespace Fanex.Athena.Report.Core.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Subsidiary Performance.
+        /// </summary>
+        public static string SubsidiaryPerformance {
+            get {
+                return ResourceManager.GetString("SubsidiaryPerformance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Subsidiary Search.
         /// </summary>
         public static string SubsidiarySearch {
             get {
                 return ResourceManager.GetString("SubsidiarySearch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Subsidiary W/L.
+        /// </summary>
+        public static string SubsidiaryWL {
+            get {
+                return ResourceManager.GetString("SubsidiaryWL", resourceCulture);
             }
         }
         

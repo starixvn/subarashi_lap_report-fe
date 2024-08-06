@@ -921,4 +921,13 @@
   <data name="CustomerBetList" xml:space="preserve">
     <value>Danh sách cược của Khách Hàng</value>
   </data>
+  <data name="SeparateSabaWinLoss" xml:space="preserve">     
+    <value>Tách Saba Thể Thao Ảo ra khỏi Sportsbook</value>  
+  </data>
+  <data name="SubsidiaryWL" xml:space="preserve">
+    <value>Thắng Thua Chi nhánh</value>
+  </data>
+  <data name="SubsidiaryPerformance" xml:space="preserve">   
+    <value>Hiệu suất Chi Nhánh</value>
+  </data>
 </root>
