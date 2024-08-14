@@ -97,6 +97,15 @@ namespace Fanex.Athena.Report.Core.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to AG Casino Balance.
+        /// </summary>
+        public static string AGCasinoBalance {
+            get {
+                return ResourceManager.GetString("AGCasinoBalance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Promotion, Contribution, and Jackpot Prize Data are available from 01/03/2024..
         /// </summary>
         public static string AGCasinoCutOffDateNote {
@@ -111,6 +120,24 @@ namespace Fanex.Athena.Report.Core.Resources {
         public static string AGCasinoWinLoss {
             get {
                 return ResourceManager.GetString("AGCasinoWinLoss", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to AG Closing Balance.
+        /// </summary>
+        public static string AGClosingBalance {
+            get {
+                return ResourceManager.GetString("AGClosingBalance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to AG Opening Balance.
+        /// </summary>
+        public static string AGOpeningBalance {
+            get {
+                return ResourceManager.GetString("AGOpeningBalance", resourceCulture);
             }
         }
         
@@ -2212,6 +2239,15 @@ namespace Fanex.Athena.Report.Core.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Separate Virtual Sports from Sportsbook.
+        /// </summary>
+        public static string SeparateSabaWinLoss_HideSaba {
+            get {
+                return ResourceManager.GetString("SeparateSabaWinLoss_HideSaba", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to September.
         /// </summary>
         public static string September {
@@ -2442,6 +2478,24 @@ namespace Fanex.Athena.Report.Core.Resources {
         public static string TotalTurnover {
             get {
                 return ResourceManager.GetString("TotalTurnover", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Transfer In.
+        /// </summary>
+        public static string TransferIn {
+            get {
+                return ResourceManager.GetString("TransferIn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Transfer Out.
+        /// </summary>
+        public static string TransferOut {
+            get {
+                return ResourceManager.GetString("TransferOut", resourceCulture);
             }
         }
         

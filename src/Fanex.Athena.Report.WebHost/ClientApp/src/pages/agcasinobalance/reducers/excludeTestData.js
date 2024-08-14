@@ -1,0 +1,8 @@
+import * as types from '../actions/types';
+import createReducer from '@srcRoot/lib/createReducer.js';
+
+export const excludeTestData = createReducer(true, {
+    [types.SET_EXCLUDE_TEST_DATA](state, action) {
+        return action.data;
+    },
+});

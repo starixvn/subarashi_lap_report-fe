@@ -18,6 +18,8 @@ export const WL_ANALYSIS = 'WinlossAnalysis';
 
 export const AG_CASINO_WL = 'AGCasinoWinLoss62';
 
+export const AG_CASINO_BALANCE = 'AGCasinoBalance63';
+
 export const SABA_VIRTUAL_WL = 'SabaVirtualSportsWinLoss';
 
 export const SUBSIDIARY_PERFORMANCE = 'SubsidiaryPerformance73';

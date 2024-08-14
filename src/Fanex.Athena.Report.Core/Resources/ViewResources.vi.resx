@@ -948,4 +948,22 @@
   <data name="JackpotPrize" xml:space="preserve">
     <value>Giải Thưởng Jackpot</value>
   </data>
+  <data name="TransferIn" xml:space="preserve">
+    <value>Chuyển vào</value>
+  </data>
+  <data name="TransferOut" xml:space="preserve">
+    <value>Chuyển ra</value>
+  </data>
+  <data name="AGCasinoBalance" xml:space="preserve">
+    <value>Số Dư AG Casino</value>
+  </data>
+  <data name="SeparateSabaWinLoss_HideSaba" xml:space="preserve">
+    <value>Tách Thể Thao Ảo khỏi Sportsbook</value>
+  </data>
+  <data name="AGOpeningBalance" xml:space="preserve"> 
+    <value>Số dư đầu kỳ AG</value>
+  </data>
+  <data name="AGClosingBalance" xml:space="preserve"> 
+    <value>Số dư cuối kỳ AG</value>
+  </data>
 </root>

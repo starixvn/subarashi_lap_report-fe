@@ -942,4 +942,22 @@
   <data name="JackpotPrize" xml:space="preserve">
     <value>เงินรางวัลแจ็คพอต</value>
   </data>
+  <data name="TransferIn" xml:space="preserve">
+    <value>โอนเข้า</value>
+  </data>
+  <data name="TransferOut" xml:space="preserve">
+    <value>โอนออก</value>
+  </data>
+  <data name="AGCasinoBalance" xml:space="preserve">
+    <value>ยอดคงเหลือ AGคาสิโน</value>
+  </data>
+  <data name="SeparateSabaWinLoss_HideSaba" xml:space="preserve">
+    <value>แยกกีฬาเสมือนออกจาก Sportsbook</value>
+  </data>
+  <data name="AGOpeningBalance" xml:space="preserve"> 
+    <value>ยอดคงเหลือตอนเปิด AG</value>
+  </data>
+  <data name="AGClosingBalance" xml:space="preserve"> 
+    <value>ยอดปิดบัญชี AG</value>
+  </data>
 </root>

@@ -933,4 +933,22 @@
   <data name="JackpotPrize" xml:space="preserve">
     <value>Hadiah Jackpot</value>
   </data>
+  <data name="TransferIn" xml:space="preserve">
+    <value>Transfer Masuk</value>
+  </data>
+  <data name="TransferOut" xml:space="preserve">
+    <value>Transfer Keluar</value>
+  </data>
+  <data name="AGCasinoBalance" xml:space="preserve">
+    <value>Saldo AG Casino</value>
+  </data>
+  <data name="SeparateSabaWinLoss_HideSaba" xml:space="preserve">
+    <value>Pisahkan Olahraga Virtual dari Sportsbook</value>
+  </data>
+  <data name="AGOpeningBalance" xml:space="preserve"> 
+    <value>Saldo Pembukaan AG</value>
+  </data>
+  <data name="AGClosingBalance" xml:space="preserve"> 
+    <value>Saldo Penutupan AG</value>
+  </data>
 </root>

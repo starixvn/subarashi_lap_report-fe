@@ -73,4 +73,3 @@ export const BuildBody = (data, { isAllowedCustomerCommission, reportBy }) => {
         );
     });
 };
-

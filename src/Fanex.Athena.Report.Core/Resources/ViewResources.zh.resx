@@ -870,4 +870,16 @@
   <data name="JackpotPrize" xml:space="preserve">
     <value>积宝奖金</value>
   </data>
+  <data name="TransferIn" xml:space="preserve">
+    <value>Transfer In</value>
+  </data>
+  <data name="TransferOut" xml:space="preserve">
+    <value>Transfer Out</value>
+  </data>
+  <data name="AGCasinoBalance" xml:space="preserve">
+    <value>AG Casino Balance</value>
+  </data>
+  <data name="SeparateSabaWinLoss_HideSaba" xml:space="preserve">
+    <value>将虚拟体育与体育博彩分开</value>
+  </data>
 </root>

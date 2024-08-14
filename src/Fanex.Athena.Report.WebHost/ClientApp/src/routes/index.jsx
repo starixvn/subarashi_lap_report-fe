@@ -22,6 +22,7 @@ import CustomerPendingFundsRoute from './CustomerPendingFundsRoute';
 import SabaVirtualSportsWinLossRoute from './SabaVirtualSportsWinLossRoute';
 import SubsidiaryPerformanceRoute from './SubsidiaryPerformanceRoute';
 import AgCasinoWinLossRoute from './AgCasinoWinLossRoute';
+import AgCasinoWBalanceRoute from './AgCasinoBalanceRoute';
 
 export default [
     {
@@ -88,6 +89,13 @@ export default [
         Permissions: [permission.WL_ANALYSIS],
         Layout: null,
         Component: WinLossAnalysisRoute,
+    },
+    {
+        Id: pages.AG_CASINO_BALANCE,
+        Path: 'AgCasinoBalanceReport/*',
+        Permissions: [permission.AG_CASINO_BALANCE],
+        Layout: AppLayout,
+        Component: AgCasinoWBalanceRoute,
     },
     {
         Id: pages.AG_CASINO_WL,

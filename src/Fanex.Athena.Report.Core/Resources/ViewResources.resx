@@ -992,4 +992,22 @@
   <data name="W_L" xml:space="preserve">
     <value>W/L</value>
   </data>
+  <data name="AGCasinoBalance" xml:space="preserve">
+    <value>AG Casino Balance</value>
+  </data>
+  <data name="SeparateSabaWinLoss_HideSaba" xml:space="preserve">
+    <value>Separate Virtual Sports from Sportsbook</value>
+  </data>
+  <data name="TransferIn" xml:space="preserve">
+    <value>Transfer In</value>
+  </data>
+  <data name="TransferOut" xml:space="preserve">
+    <value>Transfer Out</value>
+  </data>
+  <data name="AGClosingBalance" xml:space="preserve">
+    <value>AG Closing Balance</value>
+  </data>
+  <data name="AGOpeningBalance" xml:space="preserve">
+    <value>AG Opening Balance</value>
+  </data>
 </root>
