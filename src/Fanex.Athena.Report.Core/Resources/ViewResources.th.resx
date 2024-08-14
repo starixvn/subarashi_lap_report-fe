@@ -924,4 +924,22 @@
   <data name="SubsidiaryPerformance" xml:space="preserve">   
     <value>ผลการดำเนินงานของบริษัทย่อย</value>
   </data>
+  <data name="AGCasinoWinLoss" xml:space="preserve">
+    <value>AGคาสิโน แพ้ชนะ</value>
+  </data>
+  <data name="AGCasinoCutOffDateNote" xml:space="preserve">
+    <value>ควบคุมข้อมูลของรายงาน 01/03/2024.</value>
+  </data>
+  <data name="Licensee" xml:space="preserve">
+    <value>ผู้ได้รับอนุญาต</value>
+  </data>
+  <data name="W_L" xml:space="preserve">
+    <value>W/L</value>
+  </data>
+  <data name="Contribution" xml:space="preserve">
+    <value>ส่วนร่วม</value>
+  </data>
+  <data name="JackpotPrize" xml:space="preserve">
+    <value>เงินรางวัลแจ็คพอต</value>
+  </data>
 </root>

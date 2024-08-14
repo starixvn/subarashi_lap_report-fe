@@ -974,4 +974,22 @@
   <data name="SubsidiaryWL" xml:space="preserve">
     <value>Subsidiary W/L</value>
   </data>
+  <data name="AGCasinoCutOffDateNote" xml:space="preserve">
+    <value>Promotion, Contribution, and Jackpot Prize Data are available from 01/03/2024.</value>
+  </data>
+  <data name="AGCasinoWinLoss" xml:space="preserve">
+    <value>AG Casino Win Loss</value>
+  </data>
+  <data name="Contribution" xml:space="preserve">
+    <value>Contribution</value>
+  </data>
+  <data name="JackpotPrize" xml:space="preserve">
+    <value>Jackpot Prize</value>
+  </data>
+  <data name="Licensee" xml:space="preserve">
+    <value>Licensee</value>
+  </data>
+  <data name="W_L" xml:space="preserve">
+    <value>W/L</value>
+  </data>
 </root>

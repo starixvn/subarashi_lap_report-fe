@@ -97,6 +97,24 @@ namespace Fanex.Athena.Report.Core.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Promotion, Contribution, and Jackpot Prize Data are available from 01/03/2024..
+        /// </summary>
+        public static string AGCasinoCutOffDateNote {
+            get {
+                return ResourceManager.GetString("AGCasinoCutOffDateNote", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to AG Casino Win Loss.
+        /// </summary>
+        public static string AGCasinoWinLoss {
+            get {
+                return ResourceManager.GetString("AGCasinoWinLoss", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to All.
         /// </summary>
         public static string All {
@@ -408,6 +426,15 @@ namespace Fanex.Athena.Report.Core.Resources {
         public static string Confirmation {
             get {
                 return ResourceManager.GetString("Confirmation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Contribution.
+        /// </summary>
+        public static string Contribution {
+            get {
+                return ResourceManager.GetString("Contribution", resourceCulture);
             }
         }
         
@@ -889,6 +916,15 @@ namespace Fanex.Athena.Report.Core.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Jackpot Prize.
+        /// </summary>
+        public static string JackpotPrize {
+            get {
+                return ResourceManager.GetString("JackpotPrize", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Jan.
         /// </summary>
         public static string Jan {
@@ -984,6 +1020,15 @@ namespace Fanex.Athena.Report.Core.Resources {
         public static string LeagueWinLoss {
             get {
                 return ResourceManager.GetString("LeagueWinLoss", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Licensee.
+        /// </summary>
+        public static string Licensee {
+            get {
+                return ResourceManager.GetString("Licensee", resourceCulture);
             }
         }
         
@@ -2505,6 +2550,15 @@ namespace Fanex.Athena.Report.Core.Resources {
         public static string VIPPlayerTooltipMsg {
             get {
                 return ResourceManager.GetString("VIPPlayerTooltipMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to W/L.
+        /// </summary>
+        public static string W_L {
+            get {
+                return ResourceManager.GetString("W_L", resourceCulture);
             }
         }
         

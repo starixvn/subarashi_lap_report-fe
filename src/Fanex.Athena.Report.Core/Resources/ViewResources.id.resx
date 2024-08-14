@@ -915,4 +915,22 @@
   <data name="SubsidiaryPerformance" xml:space="preserve">   
     <value>Performa Cabang</value>
   </data>
+  <data name="AGCasinoWinLoss" xml:space="preserve">
+    <value>AG Casino Win Loss</value>
+  </data>
+  <data name="AGCasinoCutOffDateNote" xml:space="preserve">
+    <value>Kontrol Data Laporan 01/03/2024.</value>
+  </data>
+  <data name="Licensee" xml:space="preserve">
+    <value>Pemegang Lisensi</value>
+  </data>
+  <data name="W_L" xml:space="preserve">
+    <value>W/L</value>
+  </data>
+  <data name="Contribution" xml:space="preserve">
+    <value>Kontribusi</value>
+  </data>
+  <data name="JackpotPrize" xml:space="preserve">
+    <value>Hadiah Jackpot</value>
+  </data>
 </root>

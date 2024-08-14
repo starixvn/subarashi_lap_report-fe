@@ -930,4 +930,22 @@
   <data name="SubsidiaryPerformance" xml:space="preserve">   
     <value>Hiệu suất Chi Nhánh</value>
   </data>
+  <data name="AGCasinoWinLoss" xml:space="preserve">
+    <value>Thắng Thua AG Casino</value>
+  </data>
+  <data name="AGCasinoCutOffDateNote" xml:space="preserve">
+    <value>Khuyến Mãi, Tích Lũy, và Dữ Liệu Giải Thưởng Jackpot có hiệu lực từ 01/03/2024.</value>
+  </data>
+  <data name="Licensee" xml:space="preserve">
+    <value>Nhà Cái</value>
+  </data>
+  <data name="W_L" xml:space="preserve">
+    <value>Thắng Thua</value>
+  </data>
+  <data name="Contribution" xml:space="preserve">
+    <value>Tích Lũy</value>
+  </data>
+  <data name="JackpotPrize" xml:space="preserve">
+    <value>Giải Thưởng Jackpot</value>
+  </data>
 </root>

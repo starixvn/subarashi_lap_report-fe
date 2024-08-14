@@ -21,6 +21,7 @@ import LicenseeWinLossByTimeZoneRoute from './WinLossByTimeZone';
 import CustomerPendingFundsRoute from './CustomerPendingFundsRoute';
 import SabaVirtualSportsWinLossRoute from './SabaVirtualSportsWinLossRoute';
 import SubsidiaryPerformanceRoute from './SubsidiaryPerformanceRoute';
+import AgCasinoWinLossRoute from './AgCasinoWinLossRoute';
 
 export default [
     {
@@ -87,6 +88,13 @@ export default [
         Permissions: [permission.WL_ANALYSIS],
         Layout: null,
         Component: WinLossAnalysisRoute,
+    },
+    {
+        Id: pages.AG_CASINO_WL,
+        Path: 'AgCasinoWinLossReport/*',
+        Permissions: [permission.AG_CASINO_WL],
+        Layout: AppLayout,
+        Component: AgCasinoWinLossRoute,
     },
     {
         Id: pages.SAPA_VIRTUAL_SPORTS_WL,
