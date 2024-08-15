@@ -34,7 +34,7 @@ const validatePermission = (permissions, functionKeys) => {
 };
 
 const checkAliveInterval = (identityName) => {
-    const internalSessionUrl = `Utility/SessionIsAlive?identityName=${identityName}`;
+    const internalSessionUrl = Site.resolveClientUrl(`Utility/SessionIsAlive?identityName=${identityName}`);
 
     return setInterval(function () {
         DataService.getData(internalSessionUrl).then((response) => {
