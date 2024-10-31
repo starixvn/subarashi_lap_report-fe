@@ -42,3 +42,7 @@ export const DefaultPagingOption = {
     TotalItem: 0,
     PageList: [50, 100, 200, 300, 400, 500, 1000, 2000],
 };
+
+export const PayoutPromotionType = {
+    OddsBoostAdjustment: 101
+}

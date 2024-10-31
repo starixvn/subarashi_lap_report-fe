@@ -5,7 +5,7 @@ import { Row, Cell, HeaderRow, HeaderCell } from '@legion-lib/react-grid';
 import NumberFormat from '@srcRoot/lib/numberFormat';
 import LangHelper from '@srcRoot/helpers/langHelper';
 
-import { headerText } from './constants';
+import { headerText, PayoutPromotionType } from './constants';
 
 const ProductTIP = 'TIP';
 
@@ -98,6 +98,7 @@ const buildDataRow = (dataItem, drilldownLevel, handleDrilldown, handleDrilldown
         currency,
         currencyName,
         productCode,
+        promotionType
     } = dataItem;
 
     return (
@@ -112,20 +113,8 @@ const buildDataRow = (dataItem, drilldownLevel, handleDrilldown, handleDrilldown
                     {dateString}
                 </Cell>
             )}
-            {indexRowSpan > 0 && drilldownLevel === 1 && (
-                <Cell className="center-align" rowSpan={indexRowSpan}>
-                    <a href="#" onClick={(e) => handleDrilldownBetlist(e, custId, nickname, username)}>
-                        {nickname}
-                    </a>
-                </Cell>
-            )}
-            {indexRowSpan > 0 && drilldownLevel === 1 && (
-                <Cell className="center-align" rowSpan={indexRowSpan}>
-                    <a href="#" onClick={(e) => handleDrilldownBetlist(e, custId, nickname, username)}>
-                        {username}
-                    </a>
-                </Cell>
-            )}
+            {indexRowSpan > 0  && drilldownLevel === 1 && buildAccountText(promotionType, nickname, indexRowSpan, (e)=> handleDrilldownBetlist(e, custId, nickname, username))}
+            {indexRowSpan > 0  && drilldownLevel === 1 && buildAccountText(promotionType, username, indexRowSpan, (e)=> handleDrilldownBetlist(e, custId, nickname, username))}
             {curencyRowSpan > 0 && drilldownLevel === 0 && (
                 <Cell className="center-align" rowSpan={curencyRowSpan}>
                     <a href="#" onClick={(e) => handleDrilldown(e, currency, currencyName, date)}>
@@ -148,6 +137,17 @@ const buildDataRow = (dataItem, drilldownLevel, handleDrilldown, handleDrilldown
         </Row>
     );
 };
+
+const buildAccountText = (promotionType, textValue, indexRowSpan, onClickFunc) =>
+    promotionType === PayoutPromotionType.OddsBoostAdjustment 
+        && <Cell className="center-align" rowSpan={indexRowSpan}>
+                {textValue}
+            </Cell> 
+        || <Cell className="center-align" rowSpan={indexRowSpan}>
+                <a href="#" onClick={onClickFunc}>
+                    {textValue}
+                </a>
+            </Cell>
 
 const buildCommonRow = (turnover, betCount, amount, sharingAmount, productCode) => {
     return (
