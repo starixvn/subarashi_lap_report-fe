@@ -76,6 +76,7 @@ function BodyContentRow(props) {
             Date: requestParam.Date,
             LeagueId: matchData.leagueId,
             MatchId: matchData.matchId,
+            EventType: matchData.eventType,
             ProductCode: matchData.productName,
             ProductCodeList: Service.getMatchProductCodeList(
                 matchData.productName,
@@ -118,7 +119,8 @@ function BodyContentRow(props) {
     };
 
     const getIndexRowSpan = () => (detailData.length && expanded ? detailData.length + 1 : null);
-    const isLiveData = (match) => match.productName === 'SB';
+    const isLinkData = (match) => match.productName === 'SB';
+    const matchName = Service.getMatchName(matchData);
 
     const rows = [
         <Row key={matchData.matchId} className="title-row bet-list-row">
@@ -128,12 +130,10 @@ function BodyContentRow(props) {
             <Cell key={`col-matchName`}>
                 <div className="match-container">
                     <a
-                        className={`text-bold cell ${isLiveData(matchData) ? 'bet-list-link' : ''}`}
-                        href={isLiveData(matchData) ? '#' : null}
-                        onClick={(e) => isLiveData(matchData) && onClickMatchHandler(e, matchData)}>
-                        {matchData.homeName}
-                        <br />
-                        {matchData.awayName}
+                        className={`text-bold cell ${isLinkData(matchData) ? 'bet-list-link' : ''}`}
+                        href={isLinkData(matchData) ? '#' : null}
+                        onClick={(e) => isLinkData(matchData) && onClickMatchHandler(e, matchData)}
+                        dangerouslySetInnerHTML={{ __html: matchName }}>
                     </a>
                     <a className={`icon-wrapper cell ${expanded ? 'expanded' : ''}`} href="#" onClick={onClickExpandHandler}>
                         <i className={`icon-arrow`}></i>

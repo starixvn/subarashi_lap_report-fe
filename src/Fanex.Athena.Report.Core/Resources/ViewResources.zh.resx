@@ -756,4 +756,13 @@
   <data name="CasinoTransfer" xml:space="preserve">
     <value>娱乐城的总转账额</value>
   </data>
+  <data name="ProductFS" xml:space="preserve">
+    <value>FS电子</value>
+  </data>
+  <data name="ProductFAC" xml:space="preserve">
+    <value>发财电子</value>
+  </data>
+  <data name="ProductNS" xml:space="preserve">
+    <value>虎游</value>
+  </data>
 </root>

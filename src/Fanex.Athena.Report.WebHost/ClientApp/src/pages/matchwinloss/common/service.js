@@ -1,4 +1,5 @@
 import LangHelper from '@srcRoot/helpers/langHelper';
+import { SpecialProducts, MaxLength, VsSportTypes } from './apiSettings';
 
 class Service {
     static generateReportTitle(date, currencyName, products) {
@@ -53,6 +54,30 @@ class Service {
         gridData.data = matches;
 
         return gridData;
+    }
+
+    static getMatchName(match){
+        let matchName = match.matchName;
+        let homeName = match.homeName;
+        let awayName = match.awayName;
+        if(SpecialProducts.includes(match.productName)){
+            if(matchName.length >  MaxLength){
+                matchName =  `<span title='${matchName.replace(",", "&#39;")}'>${matchName.subString(0, MaxLength - 3)}...</span>`
+            }
+        }
+        else if(!VsSportTypes.includes(match.sportType)){
+            if(homeName.length > MaxLength){
+                homeName = `<span title='${homeName.replace(",", "&#39;")}'>>${homeName.subString(0, MaxLength - 3)}...</span>`
+            }
+            
+            if(awayName.length > MaxLength){
+                awayName = `<span title='${awayName.replace(",", "&#39;")}'>>${awayName.subString(0, MaxLength - 3)}...</span>`
+            }
+
+            matchName = `${homeName}<br />${awayName}`
+        }
+
+        return matchName;
     }
 }
 

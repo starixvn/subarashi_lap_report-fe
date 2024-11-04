@@ -14,3 +14,9 @@ export const ApiUrl = {
     DETAIL_DATA_URL: 'Api/MatchWinLoss/GetDetailData',
     EXPORT_EXCEL_URL: 'Api/MatchWinLoss/ExportExcel',
 };
+
+export const SpecialProducts = ["NG"];
+
+export const VsSportTypes = [181, 182, 183, 185, 198, 177];
+
+export const MaxLength = 36;
