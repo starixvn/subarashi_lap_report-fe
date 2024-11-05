@@ -29,6 +29,7 @@ function MatchCell({ data, ...rest }) {
             ProductCodeList: requestParam.ProductCodeList,
             SubsidiarySearch: requestParam.SubsidiarySearch,
             MatchId: data.matchId,
+            SportType: data.sportType,
             HomeId: data.homeId,
             AwayId: data.awayId,
             BetType: data.betType,
@@ -40,7 +41,11 @@ function MatchCell({ data, ...rest }) {
             params.SubsidiaryList = requestParam.SubsidiaryList;
         }
 
-        navigate(BetListPageUrl.MATCH, params);
+        const url = data.sportId === 177 || data.sportId === 198 
+            ? BetListPageUrl.BETRADAR 
+            : BetListPageUrl.MATCH ;
+
+        navigate(url, params);
     };
 
     return (

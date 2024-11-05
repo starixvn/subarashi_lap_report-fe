@@ -21,7 +21,10 @@ class Service {
                 newSportId === 104 ||
                 (newSportId >= 190 && newSportId <= 197) ||
                 newSportId === 178 ||
-                newSportId === 179
+                newSportId === 179 || 
+                newSportId === 188 || 
+                newSportId === 177 || 
+                newSportId === 198
             ) {
                 productOptions.push('VS');
             } else if (newSportId === 162) {
