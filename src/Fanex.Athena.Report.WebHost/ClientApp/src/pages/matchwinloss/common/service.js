@@ -1,5 +1,5 @@
 import LangHelper from '@srcRoot/helpers/langHelper';
-import { SpecialProducts, MaxLength, VsSportTypes } from './apiSettings';
+import { SpecialProducts, MaxLength, VsSportTypes, SupportDrillDownProducts } from './apiSettings';
 
 class Service {
     static generateReportTitle(date, currencyName, products) {
@@ -78,6 +78,10 @@ class Service {
         }
 
         return matchName;
+    }
+
+    static includeDrilldownProduct(product) {
+        return SupportDrillDownProducts.includes(product);
     }
 }
 

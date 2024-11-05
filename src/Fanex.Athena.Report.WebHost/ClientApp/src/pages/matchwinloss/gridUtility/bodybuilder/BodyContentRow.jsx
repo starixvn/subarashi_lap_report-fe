@@ -102,6 +102,12 @@ function BodyContentRow(props) {
             HomeId: match.homeId,
             AwayId: match.awayId,
             ProductCodeList: Service.getMatchProductCodeList(matchData.productName, requestParam.ProductOptions),
+            VendorMatchId: match.vendorMatchId,
+            Distance: match.distance,
+            IsNeutral: match.isNeutral,
+            KickOffTime: match.kickOffTime,
+            SportType: match.sportType,
+            MatchCode: match.productName === "NG" ? match.matchCode : "" ,
             Rows: 50,
             Page: 1,
             SortOrder: 'asc',
@@ -119,7 +125,7 @@ function BodyContentRow(props) {
     };
 
     const getIndexRowSpan = () => (detailData.length && expanded ? detailData.length + 1 : null);
-    const isLinkData = (match) => match.productName === 'SB';
+    const isLinkData = (match) => Service.includeDrilldownProduct(match.productName);
     const matchName = Service.getMatchName(matchData);
 
     const rows = [
