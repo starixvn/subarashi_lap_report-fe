@@ -1582,6 +1582,15 @@ namespace Fanex.Athena.Report.Core.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Playtech.
+        /// </summary>
+        public static string ProductPTRNG {
+            get {
+                return ResourceManager.GetString("ProductPTRNG", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to SA Gaming.
         /// </summary>
         public static string ProductSAG {
