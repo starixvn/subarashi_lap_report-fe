@@ -131,25 +131,27 @@ export const useFilterHandler = () => {
 
         const value = +event.target.value;
 
-        if (value == ViewInTimeMode.Settlement) {
-            const productList = settlementTimeProductList;
-            const selectedProduct = productList.map(product => product.id).join(',');
+        batch(() => {
+            if (value == ViewInTimeMode.Settlement) {
+                const productList = settlementTimeProductList;
+                const selectedProduct = productList.map(product => product.id).join(',');
 
-            onProductChangeHandler(null, selectedProduct);
-            dispatch(setProductList(productList));
-        }
-        else {
-            onProductChangeHandler(null, defaultState.selectedProduct);
-            dispatch(setProductList(orgProductList));
-        }
+                onProductChangeHandler(null, selectedProduct);
+                dispatch(setProductList(productList));
+            }
+            else {
+                onProductChangeHandler(null, defaultState.selectedProduct);
+                dispatch(setProductList(orgProductList));
+            }
 
-        dispatch(setGroupInOriginalCurrency(defaultState.isGroupInOriginalCurrency));
-        dispatch(setSelectedGroupByOption(defaultState.selectedGroupByOption));
-        dispatch(setSelectedBreakDownByOption(defaultState.selectedBreakDownByOption));
-        dispatch(setDateRange({ startDate: defaultState.dateRange.fromDate, endDate: defaultState.dateRange.toDate }));
-        dispatch(setSelectedCashOutMode(defaultState.selectedCashOutMode));
-        dispatch(setHour(defaultState.selectedHour));
-        dispatch(setSelectedViewInTime(value));
+            dispatch(setGroupInOriginalCurrency(defaultState.isGroupInOriginalCurrency));
+            dispatch(setSelectedGroupByOption(defaultState.selectedGroupByOption));
+            dispatch(setSelectedBreakDownByOption(defaultState.selectedBreakDownByOption));
+            dispatch(setDateRange({ startDate: defaultState.dateRange.fromDate, endDate: defaultState.dateRange.toDate }));
+            dispatch(setSelectedCashOutMode(defaultState.selectedCashOutMode));
+            dispatch(setHour(defaultState.selectedHour));
+            dispatch(setSelectedViewInTime(value));
+        });
     }, []);
 
     const onHourChangeHandler = useCallback((currentItem, selectedItemsKey) => dispatch(setHour(selectedItemsKey)), []);
