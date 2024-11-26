@@ -1,6 +1,6 @@
 import * as types from '../actions/types';
 import createReducer from '@srcRoot/lib/createReducer.js';
-import { BreakdownByMode, GroupByMode, SearchMode } from '../common/constants';
+import { BreakdownByMode, GroupByMode, SearchMode, ViewInTimeMode } from '../common/constants';
 
 export const selectedVipOnly = createReducer(
     {},
@@ -60,4 +60,16 @@ export const searchMode = createReducer(SearchMode.MatchPrecise, {
     [types.SET_SEARCH_MODE](state, action) {
         return action.data;
     },
+});
+
+export const selectedViewInTime = createReducer(ViewInTimeMode.Financial, {
+    [types.SET_SELECTED_VIEW_IN_TIME](state, action) {
+        return action.data
+    }
+});
+
+export const selectedHour = createReducer('', {
+    [types.SET_SELECTED_HOUR](state, action) {
+        return action.data
+    }
 });

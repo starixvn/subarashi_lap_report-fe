@@ -765,4 +765,19 @@
   <data name="ProductNS" xml:space="preserve">
     <value>虎游</value>
   </data>
+  <data name="Hour" xml:space="preserve">
+    <value>小时</value>
+  </data>
+  <data name="FinancialDate" xml:space="preserve">
+    <value>依财务日期时间搜寻</value>
+  </data>
+  <data name="SettlementTime" xml:space="preserve">
+    <value>依注单结算时间搜寻</value>
+  </data>
+  <data name="WinlossAnalysis_SettlementTimeModeNote" xml:space="preserve">
+    <value>结算时间模式的资料使用票券结算时之汇率换算，资料可能与原报表根据赛事结束日期之汇率计算有些许落差。</value>
+  </data>
+  <data name="WinlossAnalysis_SettlementTimeModeNote2" xml:space="preserve">
+    <value>结算模式仅支援查询10/01/2024后的资料。</value>
+  </data>
 </root>

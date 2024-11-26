@@ -828,4 +828,19 @@
   <data name="CasinoTransfer" xml:space="preserve">
     <value>การโอนย้ายคาสิโน</value>
   </data>
+  <data name="Hour" xml:space="preserve">
+    <value>ชั่วโมง</value>
+  </data>
+  <data name="FinancialDate" xml:space="preserve">
+    <value>วันที่การเงิน</value>
+  </data>
+  <data name="SettlementTime" xml:space="preserve">
+    <value>เวลาการชำระเงิน</value>
+  </data>
+  <data name="WinlossAnalysis_SettlementTimeModeNote" xml:space="preserve">
+    <value>อัตราแลกเปลี่ยนในโหมดเวลาการชำระเงินจะอิงตามวันที่ตั๋วถูกชำระ และอาจแตกต่างจากรายงานปัจจุบันที่อิงตามวันที่การแข่งขันสิ้นสุด.</value>
+  </data>
+  <data name="WinlossAnalysis_SettlementTimeModeNote2" xml:space="preserve">
+    <value>โหมดการชำระบัญชีรองรับข้อมูลตั้งแต่วันที่ 10/01/2024 เป็นต้นไป.</value>
+  </data>
 </root>

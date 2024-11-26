@@ -27,6 +27,10 @@ import SubsidiaryCheckBoxFilter from '../filters/SubsidiaryCheckBoxFilter.jsx';
 import StickyIcon from '../filters/StickyIcon.jsx';
 import CurrencyFilter from '../filters/CurrencyFilter.jsx';
 import CashOutModeFilter from '../filters/CashOutModeFilter.jsx';
+import ViewInTimeFilter from '../filters/ViewInTimeFilter.jsx';
+import HourFilter from '../filters/HourFilter.jsx';
+import Note from '../filters/Note.jsx';
+import { ViewInTimeMode } from '../../common/constants'
 
 export const MainFilter = () => {
     const [
@@ -48,6 +52,9 @@ export const MainFilter = () => {
         isExcludeTestData,
         selectedCashOutMode,
         selectedCurrency,
+        selectedViewInTime,
+        selectedHour,
+        selectedSubsidiary,
         formData,
     ] = useSelector(
         (state) => [
@@ -69,6 +76,9 @@ export const MainFilter = () => {
             state.isExcludeTestData,
             state.selectedCashOutMode,
             state.selectedCurrency,
+            state.selectedViewInTime,
+            state.selectedHour,
+            state.selectedSubsidiary,
             state.formData,
         ],
         shallowEqual
@@ -95,6 +105,8 @@ export const MainFilter = () => {
         onCashOutModeChangeHandler,
         onSubsidiaryCheckBoxChangeHandler,
         onCurrencyChangeHandler,
+        onViewInTimeChangeHandler,
+        onHourChangeHandler
     } = useFilterHandler();
     const { isOfferCashOutProduct, isHasPermissionViewVip } = formData;
     const isEnableCashOutFilter = Service.isContainProductSportBookOrBa(selectedProduct);
@@ -113,15 +125,24 @@ export const MainFilter = () => {
     return (
         <CollapsiblePanel isCollapseMode={false} stickyFooter={<StickyIcon />}>
             <div className="row">
+                <div className="col-md-12">
+                    <ViewInTimeFilter onChange={onViewInTimeChangeHandler} value={selectedViewInTime} />
+                </div>
+            </div>
+            <div className="row">
                 {isShowSubsidiaryDropdown && isSubsidiarySearch && (
                     <div className="col-12 col-md-3 col-sm-4 col-lg-3 col-xl-2">
-                        <SubsidiaryDropDownFilter key={`subsidiary-${appUuid}`} onChange={onSubsidiaryDropDownChangeHandler} />
+                        <SubsidiaryDropDownFilter key={`subsidiary-${appUuid}`} isValid={!!selectedSubsidiary} onChange={onSubsidiaryDropDownChangeHandler} />
                     </div>
                 )}
 
                 <div className="col-12 col-md-3 col-sm-6 col-lg-4 col-xl-2">
-                    <DateRangeFilter key={`date-${appUuid}`} onChange={onDateRangeChangeHandler} />
+                    <DateRangeFilter key={`date-${appUuid}-${selectedViewInTime}`} onChange={onDateRangeChangeHandler} viewInTime={selectedViewInTime}/>
                 </div>
+
+                {selectedViewInTime == ViewInTimeMode.Settlement && <div className="col-12 col-md-3 col-sm-6 col-lg-4 col-xl-2">
+                    <HourFilter onChange={onHourChangeHandler} isValid={!!selectedHour}/>
+                </div>}
 
                 <div className="col-12 col-md-3 col-sm-6 col-lg-4 col-xl-2">
                     <ProductFilter key={`product-${appUuid}`} onChange={onProductChangeHandler} isValid={!!selectedProduct} value={selectedProduct} />
@@ -185,7 +206,7 @@ export const MainFilter = () => {
 
                 {isOfferCashOutProduct && (
                     <div className="col-12 col-md-3 col-sm-6 col-lg-4 col-xl-2">
-                        <CashOutModeFilter onChange={onCashOutModeChangeHandler} disabled={!isEnableCashOutFilter} value={selectedCashOutMode} />
+                        <CashOutModeFilter onChange={onCashOutModeChangeHandler} disabled={!isEnableCashOutFilter} value={selectedCashOutMode} viewInTime={selectedViewInTime}/>
                     </div>
                 )}
                 <div className="col-12 col-md-3 col-sm-6 col-lg-4 col-xl-2">
@@ -206,6 +227,9 @@ export const MainFilter = () => {
                     </div>
                 )}
             </div>
+            {selectedViewInTime == ViewInTimeMode.Settlement && <div className="row">
+                <Note/>
+            </div>}
         </CollapsiblePanel>
     );
 };

@@ -1,5 +1,5 @@
 import React, { useMemo, memo } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, shallowEqual } from 'react-redux';
 
 import LangHelper from '@srcRoot/helpers/langHelper';
 import Service from '../../common/Service.js';
@@ -7,8 +7,8 @@ import useGroupFilterHandler from '../hooks/useGroupFilterHandler.jsx';
 
 export const GroupByOptionFilter = () => {
     const formData = useSelector((state) => state.formData);
-    const selectedGroupByOption = useSelector((state) => state.selectedGroupByOption);
-    const groupByList = useMemo(() => Service.buildGroupByOption(formData.licenseeName), [formData.licenseeName]);
+    const [selectedGroupByOption, selectedViewInTime] = useSelector(state => [state.selectedGroupByOption, state.selectedViewInTime], shallowEqual);
+    const groupByList = useMemo(() => Service.buildGroupByOption(selectedViewInTime, formData.licenseeName), [formData.licenseeName, selectedViewInTime])
     const { onChangeGroupByOption } = useGroupFilterHandler();
 
     return (

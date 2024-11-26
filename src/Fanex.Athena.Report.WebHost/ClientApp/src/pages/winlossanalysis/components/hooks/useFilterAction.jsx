@@ -11,7 +11,7 @@ import * as pages from '@srcRoot/constants/pages';
 import { ActionCreators } from '../../actions/index.js';
 import Service from '../../common/Service.js';
 import { useValidParam } from './useValidParam';
-import { ALL_SELECTED_TEXT, SortBy, SortOrder, SearchMode } from '../../common/constants.js';
+import { ALL_SELECTED_TEXT, SortBy, SortOrder, SearchMode, ViewInTimeMode } from '../../common/constants.js';
 
 export const useFilterAction = () => {
     const isValidModel = useValidParam();
@@ -34,7 +34,6 @@ export const useFilterAction = () => {
         selectedCustomerClass,
         searchMode,
         sportList,
-        bettypeList,
         selectedVipOnly,
         isGroupInOriginalCurrency,
         isExcludeTestData,
@@ -42,7 +41,9 @@ export const useFilterAction = () => {
         selectedGroupByOption,
         selectedBreakDownByOption,
         formData,
-        defaultState,
+        selectedViewInTime,
+        selectedHour,
+        defaultState
     ] = useSelector(
         (state) => [
             state.requestParam,
@@ -61,7 +62,6 @@ export const useFilterAction = () => {
             state.selectedCustomerClass,
             state.searchMode,
             state.sportList,
-            state.bettypeList,
             state.selectedVipOnly,
             state.isGroupInOriginalCurrency,
             state.isExcludeTestData,
@@ -69,6 +69,8 @@ export const useFilterAction = () => {
             state.selectedGroupByOption,
             state.selectedBreakDownByOption,
             state.formData,
+            state.selectedViewInTime,
+            state.selectedHour,
             state.defaultState,
         ],
         shallowEqual
@@ -103,18 +105,21 @@ export const useFilterAction = () => {
         setSubsidiaryList,
         setAppUuid,
         setProductList,
+        setSelectedViewInTime,
+        setHour
     } = ActionCreators;
 
     const _buildTitle = (params) => {
-        const { FromDate, ToDate, ProductCodes, SearchUserName, CurrencyCodes, BaseCurrencyName } = params;
+        const { FromDate, ToDate, ProductCodes, SearchUserName, CurrencyCodes, BaseCurrencyName, ViewInTime } = params;
         const dateRangeText = `, ${Site.convertDateToString(FromDate)} → ${Site.convertDateToString(ToDate)}`;
         const currencyText = `, ${LangHelper.getSingleResource('Currency')}: ${CurrencyCodes}, ${LangHelper.getSingleResource(
             'BaseCurrency'
         )}: ${BaseCurrencyName}`;
         const productText = `, ${LangHelper.getSingleResource('LicenseeW_L')} (${ProductCodes})`;
         const userText = !!SearchUserName ? `, ${LangHelper.getSingleResource('Username')}: ${SearchUserName}` : '';
+        const viewinTimeText = ` - ${ViewInTime == ViewInTimeMode.Settlement ? LangHelper.getSingleResource("SettlementTime") : LangHelper.getSingleResource("FinancialDate")}`;
 
-        return LangHelper.getSingleResource('WinlossAnalysis') + dateRangeText + currencyText + productText + userText;
+        return LangHelper.getSingleResource("WinlossAnalysis") + viewinTimeText + dateRangeText + currencyText + productText + userText;
     };
     const _getParams = () => {
         if (!isValidModel) {
@@ -141,6 +146,8 @@ export const useFilterAction = () => {
             PageIndex: 1,
             FromDate: Site.convertDateToString(fromDate),
             ToDate: Site.convertDateToString(toDate),
+            ViewInTime: selectedViewInTime,
+            HourParts: selectedHour,
             ProductCodes: selectedProduct,
             SearchUserName: username,
             SearchMode: searchMode,
@@ -189,6 +196,8 @@ export const useFilterAction = () => {
     const onClickClearFilter = useCallback(() => {
         batch(() => {
             dispatch(setDateRange({ startDate: defaultState.dateRange.fromDate, endDate: defaultState.dateRange.toDate }));
+            dispatch(setSelectedViewInTime(defaultState.selectedViewInTime));
+            dispatch(setHour(defaultState.selectedHour));
             dispatch(setProductList(formData.productOptions));
             dispatch(setSelectedProducts(defaultState.selectedProduct));
             dispatch(setSelectedCurrency(defaultState.selectedCurrency));

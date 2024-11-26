@@ -872,4 +872,19 @@
   <data name="ProductPTRNG" xml:space="preserve">
     <value>Playtech</value>
   </data>
+  <data name="Hour" xml:space="preserve">
+    <value>Hour</value>
+  </data>
+  <data name="FinancialDate" xml:space="preserve">
+    <value>Financial Date</value>
+  </data>
+  <data name="SettlementTime" xml:space="preserve">
+    <value>Settlement Time</value>
+  </data>
+  <data name="WinlossAnalysis_SettlementTimeModeNote" xml:space="preserve">
+    <value>Exchange Rate in Settlement Time mode is based on the date which ticket is settled, and it may differ from current reports that are based on the event completion date.</value>
+  </data>
+  <data name="WinlossAnalysis_SettlementTimeModeNote2" xml:space="preserve">
+    <value>Settlement Time mode supports data from 10/01/2024.</value>
+  </data>
 </root>

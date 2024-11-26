@@ -1,5 +1,5 @@
 ﻿import React, { useLayoutEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { batch, useDispatch, useSelector } from 'react-redux';
 
 import { DEFAULT_BASE_CURRENCY_VALUE } from '@srcRoot/constants/config';
 import Loader from '@srcRoot/components/Loader';
@@ -9,7 +9,7 @@ import DataService from '@srcRoot/lib/dataService';
 import AppLayout from '@srcRoot/layouts/AppLayout';
 
 import { ActionCreators } from '../actions/index';
-import { ApiUrl, VipOnlyList } from '../common/constants';
+import { ApiUrl, ViewInTimeMode, VipOnlyList, SettlementTimeSupportProductList, DefaultState } from '../common/constants';
 import DataGrid from './desktop/DataGrid';
 import FormFilter from './desktop/FormFilter';
 import MobileDataGrid from './mobile/MobileDataGrid';
@@ -45,40 +45,33 @@ export const AppContainer = () => {
         }
         const data = result.data;
 
-        data.productOptions = data.productOptions.map((item) => ({ id: item.code, value: item.name, status: true }));
+        const orgProductOptions = data.productOptions;
+        data.productOptions = orgProductOptions.map((item) => ({ id: item.code, value: item.name, status: true }));
         defaultState.selectedProduct = data.productOptions.map((item) => item.id).join(',');
-        dispatch(setSelectedProducts(defaultState.selectedProduct));
 
         data.currencyList = data.currencyList.map((item) => ({ id: item.key, value: item.value, status: true }));
         defaultState.selectedCurrency = data.currencyList.map((item) => item.id).join(',');
-        dispatch(setSelectedCurrency(defaultState.selectedCurrency));
 
         data.baseCurrencyList = data.baseCurrencyList.map((item) => ({ value: item.key, label: item.value }));
 
         const defaultBaseCurrency = data.baseCurrencyList.find((x) => x.label == data.defaultBaseCurrency);
         data.defaultBaseCurrency = defaultBaseCurrency ? defaultBaseCurrency : { value: DEFAULT_BASE_CURRENCY_VALUE, label: data.defaultBaseCurrency };
         defaultState.selectedBaseCurrency = data.defaultBaseCurrency;
-        dispatch(setSelectedBaseCurrency(defaultState.selectedBaseCurrency));
 
         defaultState.selectedStatus = data.statusList.map((item) => item.id).join(',');
-        dispatch(setSelectedStatus(defaultState.selectedStatus));
 
         data.statusList = data.statusList.map((item) => ({ id: item.id, value: item.name, status: true }));
         data.liveStatusList = data.liveStatusList.map((item) => ({ id: item.key, value: item.value, status: true }));
         defaultState.selectedLiveStatus = data.liveStatusList.map((item) => item.id).join(',');
-        dispatch(setSelectedLiveStatus(defaultState.selectedLiveStatus));
 
         data.platformList = data.platformList.map((item) => ({ id: item.key, value: item.value, status: true }));
         defaultState.selectedPlatform = data.platformList.map((item) => item.id).join(',');
-        dispatch(setSelectedPlatform(defaultState.selectedPlatform));
 
         data.oddsGroupList = data.oddsGroupList.map((item) => ({ id: item, value: item, status: true }));
         defaultState.selectedOddsGroup = data.oddsGroupList.map((item) => item.id).join(',');
-        dispatch(setSelectedOddsGroup(defaultState.selectedOddsGroup));
 
         const defaultSelectedCustomerClass = data.riskLevel.map((item) => item.customerClassList.map((item) => item).join(','));
         defaultState.selectedCustomerClass = defaultSelectedCustomerClass.map((item) => item).join(',');
-        dispatch(setSelectedCustomerClass(defaultState.selectedCustomerClass));
 
         data.riskLevelList = data.riskLevel.map((item) => ({
             id: item.id,
@@ -91,9 +84,27 @@ export const AppContainer = () => {
         defaultState.selectedVipOnly = VipOnlyList[0];
         defaultState.subsidiaryList = data.subsidiaryList;
 
-        dispatch(setDefaultState(defaultState));
-        dispatch(setProductList(data.productOptions));
-        dispatch(setFormData(data));
+        defaultState.selectedViewInTime = ViewInTimeMode.Financial;
+
+        data.hourList = data.hourList.map((item) => ({ id: item.key, value: item.value, status: true }));
+        data.settlementTimeProductList = orgProductOptions.filter((item) => SettlementTimeSupportProductList.includes(item.code))
+            .map((item) => ({ id: item.code, value: item.name, status: true }));
+        defaultState.selectedHour = 'All';
+
+        batch(() => {
+            dispatch(setSelectedProducts(defaultState.selectedProduct));
+            dispatch(setSelectedCurrency(defaultState.selectedCurrency));
+            dispatch(setSelectedBaseCurrency(defaultState.selectedBaseCurrency));
+            dispatch(setSelectedStatus(defaultState.selectedStatus));
+            dispatch(setSelectedLiveStatus(defaultState.selectedLiveStatus));
+            dispatch(setSelectedPlatform(defaultState.selectedPlatform));
+            dispatch(setSelectedOddsGroup(defaultState.selectedOddsGroup));
+            dispatch(setSelectedCustomerClass(defaultState.selectedCustomerClass));
+
+            dispatch(setDefaultState({...DefaultState, ...defaultState}));
+            dispatch(setProductList(data.productOptions));
+            dispatch(setFormData(data));
+        });
     };
 
     useLayoutEffect(() => {

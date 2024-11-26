@@ -691,6 +691,15 @@ namespace Fanex.Athena.Report.Core.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Financial Date.
+        /// </summary>
+        public static string FinancialDate {
+            get {
+                return ResourceManager.GetString("FinancialDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Fr.
         /// </summary>
         public static string Fr {
@@ -768,6 +777,15 @@ namespace Fanex.Athena.Report.Core.Resources {
         public static string GroupByLevelOnlyOption {
             get {
                 return ResourceManager.GetString("GroupByLevelOnlyOption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hour.
+        /// </summary>
+        public static string Hour {
+            get {
+                return ResourceManager.GetString("Hour", resourceCulture);
             }
         }
         
@@ -1942,6 +1960,15 @@ namespace Fanex.Athena.Report.Core.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Settlement Time.
+        /// </summary>
+        public static string SettlementTime {
+            get {
+                return ResourceManager.GetString("SettlementTime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Since last month.
         /// </summary>
         public static string Sincelastmonth {
@@ -2280,6 +2307,24 @@ namespace Fanex.Athena.Report.Core.Resources {
         public static string WinlossAnalysis {
             get {
                 return ResourceManager.GetString("WinlossAnalysis", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Exchange Rate in Settlement Time mode is based on the date which ticket is settled, and it may differ from current reports that are based on the event completion date..
+        /// </summary>
+        public static string WinlossAnalysis_SettlementTimeModeNote {
+            get {
+                return ResourceManager.GetString("WinlossAnalysis_SettlementTimeModeNote", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Settlement Time mode supports data from 10/01/2024..
+        /// </summary>
+        public static string WinlossAnalysis_SettlementTimeModeNote2 {
+            get {
+                return ResourceManager.GetString("WinlossAnalysis_SettlementTimeModeNote2", resourceCulture);
             }
         }
         

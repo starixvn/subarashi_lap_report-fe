@@ -4,12 +4,14 @@ import LangHelper from '@srcRoot/helpers/langHelper';
 import useSubsidiarySearch from '@srcRoot/hooks/useSubsidiarySearch';
 import Service from '../../common/Service';
 import { useCallback } from 'react';
-import { ProductCode, CashOutMode } from '../../common/constants.js';
+import { ProductCode, CashOutMode, ViewInTimeMode } from '../../common/constants.js';
 
 export const useFilterHandler = () => {
     const dispatch = useDispatch();
     const formData = useSelector((state) => state.formData);
+    const orgProductList = useSelector((state) => state.productList);
     const { defaultSelectedSubsidiary } = useSubsidiarySearch();
+    const defaultState = useSelector((state) => state.defaultState);
 
     const {
         setUsername,
@@ -35,17 +37,21 @@ export const useFilterHandler = () => {
         setGroupInOriginalCurrency,
         setExcludeTestData,
         setProductList,
+        setSelectedViewInTime, 
+        setHour, 
+        setSelectedGroupByOption, 
+        setSelectedBreakDownByOption
     } = ActionCreators;
 
     const onUserNameInputHandler = useCallback((value) => dispatch(setUsername(value)), []);
 
     const onSubsidiaryDropDownChangeHandler = useCallback((currentItem, selectedItemsKey) => dispatch(setSubsidiaryList(selectedItemsKey)), []);
 
-    const onDateRangeChangeHandler = useCallback((date, isValidMonthRange = true) => {
+    const onDateRangeChangeHandler = useCallback((date, isValidMonthRange = true, limitedMonthRange) => {
         if (isValidMonthRange) {
             dispatch(setDateRange(date));
         } else {
-            const message = LangHelper.getSingleResource('DateRangeExceedMsg').replace('{0}', formData.dateConstraint.limitedMonthRange);
+            const message = LangHelper.getSingleResource("DateRangeExceedMsg").replace("{0}", limitedMonthRange);
             alert(message);
         }
     }, []);
@@ -93,15 +99,17 @@ export const useFilterHandler = () => {
 
     const onExcludeTextDataChangeHandler = useCallback((checked) => dispatch(setExcludeTestData(checked)), []);
 
-    const onCashOutModeChangeHandler = useCallback((item) => {
+    const onCashOutModeChangeHandler = useCallback((item, viewInTime) => {
+        const { settlementTimeProductList } = formData;
         if (item.value === CashOutMode.ViewCOOnly) {
-            const selectedProduct = formData.productOptions
+            var productListOrg = viewInTime == ViewInTimeMode.Settlement ? settlementTimeProductList : orgProductList;
+
+            const selectedProduct = productListOrg.filter(product => product.id == ProductCode.BA || product.id == ProductCode.SportsBook)
                 .filter((product) => product.id == ProductCode.BA || product.id == ProductCode.SportsBook)
                 .map((item) => item.id)
                 .join(',');
-            const productList = formData.productOptions.map((item) =>
-                item.id == ProductCode.SportsBook || item.id == ProductCode.BA ? item : { ...item, status: false }
-            );
+
+            const productList = productListOrg.map(product => product.id == ProductCode.SportsBook || product.id == ProductCode.BA ? product : { ...product, status: false });
             onProductChangeHandler(null, selectedProduct);
             dispatch(setProductList(productList));
         }
@@ -117,6 +125,35 @@ export const useFilterHandler = () => {
         dispatch(setSubsidiarySearch(checked));
         checked && dispatch(setSubsidiaryList(defaultSelectedSubsidiary));
     }, []);
+
+    const onViewInTimeChangeHandler = useCallback((event) => {
+        const { settlementTimeProductList } = formData;
+
+        const value = +event.target.value;
+
+        if (value == ViewInTimeMode.Settlement) {
+            const productList = settlementTimeProductList;
+            const selectedProduct = productList.map(product => product.id).join(',');
+
+            onProductChangeHandler(null, selectedProduct);
+            dispatch(setProductList(productList));
+        }
+        else {
+            onProductChangeHandler(null, defaultState.selectedProduct);
+            dispatch(setProductList(orgProductList));
+        }
+
+        dispatch(setGroupInOriginalCurrency(defaultState.isGroupInOriginalCurrency));
+        dispatch(setSelectedGroupByOption(defaultState.selectedGroupByOption));
+        dispatch(setSelectedBreakDownByOption(defaultState.selectedBreakDownByOption));
+        dispatch(setDateRange({ startDate: defaultState.dateRange.fromDate, endDate: defaultState.dateRange.toDate }));
+        dispatch(setSelectedCashOutMode(defaultState.selectedCashOutMode));
+        dispatch(setHour(defaultState.selectedHour));
+        dispatch(setSelectedViewInTime(value));
+    }, []);
+
+    const onHourChangeHandler = useCallback((currentItem, selectedItemsKey) => dispatch(setHour(selectedItemsKey)), []);
+
 
     return {
         onUserNameInputHandler,
@@ -139,5 +176,7 @@ export const useFilterHandler = () => {
         onGroupInOriginalCurrencyChangeHandler,
         onExcludeTextDataChangeHandler,
         onCashOutModeChangeHandler,
+        onViewInTimeChangeHandler,
+        onHourChangeHandler
     };
 };

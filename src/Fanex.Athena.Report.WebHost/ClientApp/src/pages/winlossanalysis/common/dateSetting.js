@@ -7,8 +7,10 @@ export const DateConstraint = {
     minDate: now.clone().add(-3, 'y'),
     maxDate: now.format('MM/DD/yyyy'),
     today: now.format('MM/DD/yyyy'),
-    limitedMonthRange: 12,
+    limitedMonthRange: 3,
     firstDayOfWeek: WeekDays.Sunday,
+    settlementTimeMinDate: "2024/10/01",
+    settlementTimeLimitedMonthRange: 1
 };
 
 export const DateRange = {

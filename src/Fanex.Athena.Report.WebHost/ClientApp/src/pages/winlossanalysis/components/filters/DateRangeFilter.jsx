@@ -4,21 +4,26 @@ import { DateRange } from '@legion-lib/react-daterangepicker';
 
 import LangHelper from '@srcRoot/helpers/langHelper';
 import { DateConstraint } from '../../common/dateSetting';
-import { DefaultState } from '../../common/constants';
+import { DefaultState, ViewInTimeMode } from '../../common/constants';
 
 export const DateRangeFilter = (props) => {
-    const { onChange, isMobile } = props;
+    const {onChange, isMobile, viewInTime} = props;
+
+    const { limitedMonthRange, minDate } = viewInTime == ViewInTimeMode.Settlement
+    ? { limitedMonthRange: DateConstraint.settlementTimeLimitedMonthRange, minDate: DateConstraint.settlementTimeMinDate }
+    : { limitedMonthRange: DateConstraint.limitedMonthRange, minDate: DateConstraint.minDate };
+
     const _renderDateRange = () => {
         return (
             <DateRange
                 startDate={DefaultState.dateRange.fromDate}
                 endDate={DefaultState.dateRange.toDate}
-                minDate={DateConstraint.minDate}
+                minDate={minDate}
                 maxDate={DateConstraint.maxDate}
                 today={DateConstraint.maxDate}
-                limitedMonthRange={DateConstraint.limitedMonthRange}
+                limitedMonthRange={limitedMonthRange}
                 firstDayOfWeek={DateConstraint.firstDayOfWeek}
-                onChange={onChange}
+                onChange={(date, isValid) => onChange(date, isValid, limitedMonthRange)} 
                 isMobile={isMobile}
                 langHandler={(key) => LangHelper.getSingleResource(key)}
             />

@@ -834,4 +834,19 @@
   <data name="CasinoTransfer" xml:space="preserve">
     <value>Chuyển khoản Casino</value>
   </data>
+  <data name="Hour" xml:space="preserve">
+    <value>Giờ</value>
+  </data>
+  <data name="FinancialDate" xml:space="preserve">
+    <value>Ngày Tài Chính</value>
+  </data>
+  <data name="SettlementTime" xml:space="preserve">
+    <value>Thời Gian Tất Toán</value>
+  </data>
+  <data name="WinlossAnalysis_SettlementTimeModeNote" xml:space="preserve">
+    <value>Tỷ Giá Hối Đoái trong chế độ Theo Ngày Tất Toán sẽ tính theo ngày mà vé cược được tất toán, và có thể khác với các báo cáo hiện tại đang tính theo ngày kết thúc sự kiện.</value>
+  </data>
+  <data name="WinlossAnalysis_SettlementTimeModeNote2" xml:space="preserve">
+    <value>Chế độ Theo Ngày Tất Toán hỗ trợ dữ liệu từ 01/10/2024.</value>
+  </data>
 </root>

@@ -7,12 +7,17 @@ import LangHelper from '@srcRoot/helpers/langHelper';
 import { CashOutModeList } from '../../common/constants';
 
 export const CashOutModeFilter = (props) => {
-    const { onChange, value, disabled } = props;
+    const { onChange, value, viewInTime, disabled } = props;
 
     return (
         <div className="form-group">
             <label className="label-text">{LangHelper.getSingleResource('CashOut')}</label>
-            <ReportSelect instanceId="CashOutMode" value={value} options={CashOutModeList} isDisabled={disabled} onChange={onChange} />
+            <ReportSelect instanceId="CashOutMode" 
+                value={value} 
+                options={CashOutModeList} 
+                isDisabled={disabled}  
+                onChange={(e)=>{onChange(e,viewInTime);}}
+            />
         </div>
     );
 };
