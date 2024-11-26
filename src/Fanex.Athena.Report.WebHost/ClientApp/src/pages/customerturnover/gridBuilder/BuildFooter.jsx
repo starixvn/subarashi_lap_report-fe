@@ -8,7 +8,7 @@ export const BuildFooter = (data, { isAllowedCustomerCommission }) => {
     const effectiveBettingValue = NumberFormat.formatDecimalHalfDown(data.effectiveBettingValue);
     const totalTransactions = NumberFormat.formatInteger(data.totalTransactions);
     const turnOver = NumberFormat.formatDecimalHalfDown(data.turnover);
-    const totalTurnover = NumberFormat.formatInteger(data.totalTurnover);
+    const totalTurnover = NumberFormat.formatDecimalHalfDown(data.totalTurnover);
     const customerWinLoss = NumberFormat.formatDecimalHalfDown(data.customerWinLoss);
     const customerComm = NumberFormat.formatDecimalHalfDown(data.customerComm);
     const customerTotal = NumberFormat.formatDecimalHalfDown(data.customerTotal);

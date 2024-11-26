@@ -25,7 +25,7 @@ export const DefaultPagingOption = {
     PageIndex: 1,
     PageSize: 25,
     TotalItem: 25,
-    PageList: [25],
+    PageList: [25, 50, 100, 200],
 };
 
 export const TreeViewOption = {

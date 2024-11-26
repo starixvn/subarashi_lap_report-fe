@@ -71,17 +71,16 @@ const FormFilter = (props) => {
             const defaultCurrency = formData.baseCurrencies.find((x) => x.value === -1);
             dispatch(setSelectedBaseCurrency({ ...defaultCurrency }));
             dispatch(setSelectedCurrency(currency));
+            dispatch(setBaseCurrencyList([...formData.baseCurrencies]));
             return;
         }
 
         let newSelectedBaseCurrency = currency;
         if (!formData.baseCurrencies.find((x) => x.label === currency.label)) {
             const newBaseCurrencyList = formData.baseCurrencies.slice(0);
-            newBaseCurrencyList.push(currency);
-            dispatch(setBaseCurrencyList(newBaseCurrencyList));
-
-            // Not exist base currency => set flag to send request with empty base currency in getParams()
             newSelectedBaseCurrency = { ...currency, isEmpty: true };
+            newBaseCurrencyList.push(newSelectedBaseCurrency);
+            dispatch(setBaseCurrencyList(newBaseCurrencyList));
         }
 
         dispatch(setSelectedCurrency(currency));
@@ -115,7 +114,8 @@ const FormFilter = (props) => {
             UserName: username,
             ProductOptions: selectedProducts,
             IsExcludedTestData: excludeTestData == 'true',
-            BaseCurrency: selectedBaseCurrency.isEmpty ? null : selectedBaseCurrency.label,
+            BaseCurrency: selectedBaseCurrency.isEmpty ? '' : selectedBaseCurrency.label,
+            BaseCurrencyName: selectedBaseCurrency.label,
             CurrencyName: selectedCurrency.label,
             CurrencyId: selectedCurrency.value,
         };
@@ -194,7 +194,7 @@ const FormFilter = (props) => {
                         />
                     </div>
                 </div>
-                <div className="col-12 col-lg-2 col-md-2 col-sm-12">
+                <div className="col-12 col-lg-2 col-md-4 col-sm-12">
                     <div className="form-group">
                         <label className="label-text">{LangHelper.getSingleResource('Username')}</label>
                         <AutoComplete

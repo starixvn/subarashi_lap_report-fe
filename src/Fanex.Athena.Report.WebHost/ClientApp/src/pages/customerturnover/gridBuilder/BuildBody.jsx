@@ -4,10 +4,14 @@ import { Cell, Row } from '@legion-lib/react-grid';
 import NumberFormat from '@srcRoot/lib/numberFormat';
 import moment from 'moment';
 import CellSpan from './CellSpan';
+import { ReportByValue } from '../common/filterSettings';
 
-export const BuildBody = (data, { isAllowedCustomerCommission }) => {
+export const BuildBody = (data, { isAllowedCustomerCommission, reportBy }) => {
+    const dateFormat = 'MM/DD/YYYY';
+    const monthFormat = 'MM/YYYY';
+    const dateFieldFormat = reportBy === ReportByValue.Monthly ? monthFormat : dateFormat;
     return data.map((row, index) => {
-        const date = moment(row.reportBy).format('MM/DD/YYYY');
+        const date = moment(row.reportBy).format(dateFieldFormat);
 
         const effectiveBettingValue = NumberFormat.formatDecimalHalfDown(row.effectiveBettingValue);
         const totalTransactions = NumberFormat.formatInteger(row.totalTransactions);

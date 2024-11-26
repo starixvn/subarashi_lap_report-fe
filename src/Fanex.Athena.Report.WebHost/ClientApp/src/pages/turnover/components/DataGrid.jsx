@@ -20,12 +20,12 @@ const DataGrid = (props) => {
     }
 
     const { isAllowedCustomerCommission, isAllowedCasinoTransfer, isAllowBa, isEnableSingleWallet, isHidePlayerWL } = formData;
-    const { FromDate, ToDate, CurrencyName, BaseCurrency, UserName } = requestParam;
+    const { FromDate, ToDate, CurrencyName, BaseCurrencyName, UserName } = requestParam;
 
     if (!gridData.data.length) {
         return (
             <>
-                <ReportTitle content={Service.generateReportTitle(FromDate, ToDate, CurrencyName, BaseCurrency, UserName)} />
+                <ReportTitle content={Service.generateReportTitle(FromDate, ToDate, CurrencyName, BaseCurrencyName, UserName)} />
                 <NoDataTitle />
             </>
         );
@@ -43,7 +43,7 @@ const DataGrid = (props) => {
 
     return (
         <>
-            <ReportTitle content={Service.generateReportTitle(FromDate, ToDate, CurrencyName, BaseCurrency, UserName)} />
+            <ReportTitle content={Service.generateReportTitle(FromDate, ToDate, CurrencyName, BaseCurrencyName, UserName)} />
             <Table
                 minWidth={minWidth}
                 autoWidth={true}

@@ -50,6 +50,7 @@ const FormFilter = (props) => {
     const minimumOdds = useSelector((state) => state.minimumOdds);
     const selectedTickets = useSelector((state) => state.selectedTickets);
     const selectedBettype = useSelector((state) => state.selectedBettype);
+    const requestParam = useSelector((state) => state.requestParam);
 
     const [allSelected, setAllSelected] = useState(true);
 
@@ -139,14 +140,12 @@ const FormFilter = (props) => {
     };
 
     const updateData = (result) => {
+        let gridData = null;
         if (result && result.data !== null) {
-            const gridData = result.data;
-
-            dispatch(setGridData(gridData));
-            return;
+            gridData = result.data;
         }
 
-        dispatch(setGridData(null));
+        dispatch(setGridData(gridData));
     };
 
     const getParams = () => {
@@ -169,7 +168,7 @@ const FormFilter = (props) => {
             CurrencyName: selectedCurrency.label,
             CurrencyId: selectedCurrency.value,
             PageIndex: DefaultPagingOption.PageIndex,
-            PageSize: DefaultPagingOption.PageSize,
+            PageSize: requestParam?.PageSize || DefaultPagingOption.PageSize,
         };
 
         return params;

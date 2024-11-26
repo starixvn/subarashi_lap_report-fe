@@ -4,12 +4,13 @@ import DataService from '@srcRoot/lib/dataService';
 import { CHILD_ID_PREFIX } from './filterSettings';
 
 class Service {
-    static generateReportTitle(fromDate, toDate, currencyName, minimumOdds) {
+    static generateReportTitle(fromDate, toDate, currencyName, minimumOdds, userName) {
         const title = LangHelper.getSingleResource('CustomerTurnover');
         const dateTitle = `${fromDate} → ${toDate}`;
         const currencyTitle = `${LangHelper.getSingleResource('Currency')}: ${currencyName}`;
         const minimumOddsTitle = `${LangHelper.getSingleResource('MinimumOdds')}: ${minimumOdds}`;
-        return `${title}, ${dateTitle} - ${currencyTitle} - ${minimumOddsTitle}`;
+        const userNameTitle = !!userName ? ` - ${LangHelper.getSingleResource('Username')}: ${userName}` : '';
+        return `${title}, ${dateTitle} - ${currencyTitle} - ${minimumOddsTitle}${userNameTitle}`;
     }
 
     static convertToCheckedItem(item, allItems) {

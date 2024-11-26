@@ -64,17 +64,16 @@ const FormFilter = (props) => {
             const defaultCurrency = formData.baseCurrencies.find((x) => x.value === -1);
             setCurrentBaseCurrency({ ...defaultCurrency });
             setCurrentCurrency(selectedCurrency);
-            return;
+            dispatch(setBaseCurrencyList([...formData.baseCurrencies]));
+            return;r
         }
 
         let newSelectedBaseCurrency = selectedCurrency;
         if (!formData.baseCurrencies.find((x) => x.label === selectedCurrency.label)) {
             const newBaseCurrencyList = formData.baseCurrencies.slice(0);
-            newBaseCurrencyList.push(selectedCurrency);
-            dispatch(setBaseCurrencyList(newBaseCurrencyList));
-
-            // Not exist base currency => set flag to send request with empty base currency in getParams()
             newSelectedBaseCurrency = { ...selectedCurrency, isEmpty: true };
+            newBaseCurrencyList.push(newSelectedBaseCurrency);
+            dispatch(setBaseCurrencyList(newBaseCurrencyList));
         }
 
         setCurrentCurrency(selectedCurrency);
@@ -105,7 +104,8 @@ const FormFilter = (props) => {
             ProductOptions: currentProduct,
             CurrencyName: currentCurrency.label,
             CurrencyId: currentCurrency.value,
-            BaseCurrency: currentBaseCurrency.isEmpty ? null : currentBaseCurrency.label,
+            BaseCurrency: currentBaseCurrency.isEmpty ? '' : currentBaseCurrency.label,
+            BaseCurrencyText: currentBaseCurrency.isEmpty ? currentCurrency.label : currentBaseCurrency.label,
             ...Site.getLrfSubsidiary(formData.isSelfMode),
         };
     };
