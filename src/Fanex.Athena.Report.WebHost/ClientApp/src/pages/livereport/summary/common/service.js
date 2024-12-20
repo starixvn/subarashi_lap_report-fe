@@ -24,7 +24,8 @@ class Service {
                 newSportId === 179 || 
                 newSportId === 188 || 
                 newSportId === 177 || 
-                newSportId === 198
+                newSportId === 198 ||
+                newSportId === 134
             ) {
                 productOptions.push('VS');
             } else if (newSportId === 162) {

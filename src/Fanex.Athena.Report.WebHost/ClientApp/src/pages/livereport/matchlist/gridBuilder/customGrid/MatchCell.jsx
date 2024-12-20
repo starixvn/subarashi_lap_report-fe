@@ -33,6 +33,7 @@ function MatchCell({ data, ...rest }) {
             HomeId: data.homeId,
             AwayId: data.awayId,
             BetType: data.betType,
+            EventType: data.eventType,
             Rows: 50,
             Page: 1,
         };

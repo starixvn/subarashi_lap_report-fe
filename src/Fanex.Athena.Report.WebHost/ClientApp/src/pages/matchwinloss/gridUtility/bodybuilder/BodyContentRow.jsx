@@ -108,6 +108,7 @@ function BodyContentRow(props) {
             KickOffTime: match.kickOffTime,
             SportType: match.sportType,
             MatchCode: match.productName === "NG" ? match.matchCode : "" ,
+            EventType: match.eventType,
             Rows: 50,
             Page: 1,
             SortOrder: 'asc',
