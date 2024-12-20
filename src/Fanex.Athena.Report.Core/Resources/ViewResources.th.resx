@@ -286,7 +286,7 @@
     <value>เดือน</value>
   </data>
   <data name="NetTurnOver" xml:space="preserve">
-    <value>Net Turnover</value>
+    <value>เทิร์นโอเวอร์สุทธิ</value>
   </data>
   <data name="No" xml:space="preserve">
     <value>เลขที่</value>
@@ -842,5 +842,20 @@
   </data>
   <data name="WinlossAnalysis_SettlementTimeModeNote2" xml:space="preserve">
     <value>โหมดการชำระบัญชีรองรับข้อมูลตั้งแต่วันที่ 10/01/2024 เป็นต้นไป.</value>
+  </data>
+  <data name="Agent" xml:space="preserve">
+    <value>ตัวแทน</value>
+  </data>
+  <data name="LiveAndNonLive" xml:space="preserve">
+    <value>แทงบอลสดและไม่แทงบอลสด</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>ยกเลิก</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="Note" xml:space="preserve">
+    <value>หมายเหตุ</value>
   </data>
 </root>

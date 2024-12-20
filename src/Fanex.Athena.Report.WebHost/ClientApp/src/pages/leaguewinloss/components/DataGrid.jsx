@@ -28,14 +28,16 @@ export const DataGrid = (props) => {
 
         // Level 1
         item.detail = item.detail.map((rows) => {
+            let currency = AppData.currencyList.find((x) => x.key === rows.currency);
+            currency && (rows.currencyName = currency.value);
             if (!rows.detail || !rows.detail.data) {
                 return rows;
             }
 
             // Level 2
             rows.detail.data = rows.detail.data.map((cells) => {
-                const currency = AppData.currencyList.find((x) => x.key === cells.currency);
-                currency && (cells.currency = currency.value);
+                currency = AppData.currencyList.find((x) => x.key === cells.currency);
+                currency && (cells.currencyName = currency.value);
                 return cells;
             });
 

@@ -13,13 +13,13 @@ export const BuildBody = (data, { isAllowedCustomerCommission, reportBy }) => {
     return data.map((row, index) => {
         const date = moment(row.reportBy).format(dateFieldFormat);
 
-        const effectiveBettingValue = NumberFormat.formatDecimalHalfDown(row.effectiveBettingValue);
+        const effectiveBettingValue = NumberFormat.formatDecimal(row.effectiveBettingValue);
         const totalTransactions = NumberFormat.formatInteger(row.totalTransactions);
-        const turnOver = NumberFormat.formatDecimalHalfDown(row.turnover);
-        const totalTurnover = NumberFormat.formatDecimalHalfDown(row.totalTurnover);
-        const customerWinLoss = NumberFormat.formatDecimalHalfDown(row.customerWinLoss);
-        const customerComm = NumberFormat.formatDecimalHalfDown(row.customerComm);
-        const customerTotal = NumberFormat.formatDecimalHalfDown(row.customerTotal);
+        const turnOver = NumberFormat.formatDecimal(row.turnover);
+        const totalTurnover = NumberFormat.formatDecimal(row.totalTurnover);
+        const customerWinLoss = NumberFormat.formatDecimal(row.customerWinLoss);
+        const customerComm = NumberFormat.formatDecimal(row.customerComm);
+        const customerTotal = NumberFormat.formatDecimal(row.customerTotal);
 
         return (
             <Row key={`row-index-${row.index}-${index}`}>

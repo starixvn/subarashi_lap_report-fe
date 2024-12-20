@@ -1,6 +1,7 @@
 import DataService from '@srcRoot/lib/dataService';
 import Service from '../common/Service';
 import * as types from './types';
+import ObjectHelper from '@srcRoot/lib/objectHelper';
 
 export const setSelectedSport = (sportId) => {
     return {
@@ -18,10 +19,11 @@ export const setSportList = (list) => {
 
 export function getSportList(productCodes) {
     return async (dispatch) => {
-        const response = await DataService.getReportData('api/CommonData/GetSportsForTreeView', { productCodes: productCodes });
+        const response = await DataService.getData('api/CommonDataApi/GetSportsForTreeView', { productCodes: productCodes });
         const data = response.data;
-        const selectedSports = Service.getSelectedItemFromTreeListItem(data);
-        dispatch(setSportList(data));
+        const camelData = ObjectHelper.toCamel(data);
+        const selectedSports = Service.getSelectedItemFromTreeListItem(camelData);
+        dispatch(setSportList(camelData));
         dispatch(setSelectedSport(selectedSports));
     };
 }

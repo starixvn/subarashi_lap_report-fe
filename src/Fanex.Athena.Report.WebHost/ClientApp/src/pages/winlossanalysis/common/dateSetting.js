@@ -9,7 +9,7 @@ export const DateConstraint = {
     today: now.format('MM/DD/yyyy'),
     limitedMonthRange: 3,
     firstDayOfWeek: WeekDays.Sunday,
-    settlementTimeMinDate: "2024/10/01",
+    settlementTimeMinDate: "10/01/2024",
     settlementTimeLimitedMonthRange: 1
 };
 

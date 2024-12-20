@@ -5,13 +5,13 @@ import LangHelper from '@srcRoot/helpers/langHelper';
 import NumberFormat from '@srcRoot/lib/numberFormat';
 
 export const BuildFooter = (data, { isAllowedCustomerCommission }) => {
-    const effectiveBettingValue = NumberFormat.formatDecimalHalfDown(data.effectiveBettingValue);
+    const effectiveBettingValue = NumberFormat.formatDecimal(data.effectiveBettingValue);
     const totalTransactions = NumberFormat.formatInteger(data.totalTransactions);
-    const turnOver = NumberFormat.formatDecimalHalfDown(data.turnover);
-    const totalTurnover = NumberFormat.formatDecimalHalfDown(data.totalTurnover);
-    const customerWinLoss = NumberFormat.formatDecimalHalfDown(data.customerWinLoss);
-    const customerComm = NumberFormat.formatDecimalHalfDown(data.customerComm);
-    const customerTotal = NumberFormat.formatDecimalHalfDown(data.customerTotal);
+    const turnOver = NumberFormat.formatDecimal(data.turnover);
+    const totalTurnover = NumberFormat.formatDecimal(data.totalTurnover);
+    const customerWinLoss = NumberFormat.formatDecimal(data.customerWinLoss);
+    const customerComm = NumberFormat.formatDecimal(data.customerComm);
+    const customerTotal = NumberFormat.formatDecimal(data.customerTotal);
 
     return (
         <Row key={'footer'}>

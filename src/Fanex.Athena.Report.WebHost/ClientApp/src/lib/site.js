@@ -97,4 +97,8 @@ export default class Site {
     static assignToUrl(url) {
         window.location.assign(this.resolveClientUrl(url));
     }
+
+    static getSentrySetting = () => {
+        return window.sentrySettings || {};
+    };
 }

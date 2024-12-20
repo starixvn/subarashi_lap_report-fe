@@ -98,6 +98,9 @@ const FormFilter = (props) => {
             newBaseCurrencyList.push(newSelectedBaseCurrency);
             dispatch(setBaseCurrencyList(newBaseCurrencyList));
         }
+        else {
+            dispatch(setBaseCurrencyList([...formData.baseCurrencies]));
+        }
 
         setCurrentCurrency(selectedCurrency);
         setCurrentBaseCurrency({ ...newSelectedBaseCurrency });
@@ -203,6 +206,8 @@ const FormFilter = (props) => {
         </>
     );
 
+    const isValidParam = (!currentSubsidiarySearch || !!currentSubsidiaryList) && !!currentCurrency;
+
     return (
         <CollapsiblePanel stickyFooter={SupportButtons} isCollapseMode={false}>
             <div className="row">
@@ -259,7 +264,7 @@ const FormFilter = (props) => {
                 <div className="col-12 col-lg-2 col-md-2 col-sm-12">
                     <div className="form-group">
                         <div className="button-group">
-                            <SubmitButton disabled={!currentCurrency} onClick={onSubmit} label={LIVE_REPORT}>
+                            <SubmitButton disabled={!isValidParam} onClick={onSubmit} label={LIVE_REPORT}>
                                 {LangHelper.getSingleResource('Submit').toUpperCase()}
                             </SubmitButton>
                         </div>

@@ -286,7 +286,7 @@
     <value>Bulan</value>
   </data>
   <data name="NetTurnOver" xml:space="preserve">
-    <value>Net Turnover</value>
+    <value>Omset Bersih</value>
   </data>
   <data name="No" xml:space="preserve">
     <value>Tidak</value>
@@ -833,5 +833,20 @@
   </data>
   <data name="WinlossAnalysis_SettlementTimeModeNote2" xml:space="preserve">
     <value>Mode Waktu Penyelesaian hanya mendukung data dari 10/01/2024.</value>
+  </data>
+  <data name="Agent" xml:space="preserve">
+    <value>Agen</value>
+  </data>
+  <data name="LiveAndNonLive" xml:space="preserve">
+    <value>Live dan Non-live</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Batal</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="Note" xml:space="preserve">
+    <value>Catatan</value>
   </data>
 </root>

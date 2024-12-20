@@ -1,6 +1,7 @@
 import DataService from '@srcRoot/lib/dataService';
 import Cache from '@srcRoot/lib/cache';
 import * as types from './types';
+import ObjectHelper from '@srcRoot/lib/objectHelper';
 
 const BETTYPE_CACHE_KEY = 'BETTYPE_CACHE_KEY';
 
@@ -37,10 +38,11 @@ const getBettypeList = (productCode) => {
             return;
         }
 
-        DataService.getReportData('api/CommonData/GetBettypes', { productCode: productCode }).then((response) => {
-            var data = response.data;
-            Cache.set(cacheKey, data);
-            dispatchBettypeList(dispatch, data);
+        DataService.getData('api/CommonDataApi/GetBettypes', { productCode: productCode }).then((response) => {
+            let data = response.data;
+            let camelData = ObjectHelper.toCamel(data); 
+            Cache.set(cacheKey, camelData);
+            dispatchBettypeList(dispatch, camelData);
         });
     };
 };

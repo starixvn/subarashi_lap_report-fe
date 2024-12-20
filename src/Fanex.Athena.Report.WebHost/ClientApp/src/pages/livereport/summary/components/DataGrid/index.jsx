@@ -17,6 +17,8 @@ const DataGrid = (props) => {
         return;
     }
 
+    const currencyText = requestParam.CurrencyId != 0 && !requestParam.BaseCurrency ? requestParam.CurrencyName : requestParam.BaseCurrency ;
+
     if (!gridData.summary.length) {
         return (
             <>
@@ -25,7 +27,7 @@ const DataGrid = (props) => {
                         requestParam.LiveIndicator,
                         requestParam.FromDate,
                         requestParam.ToDate,
-                        requestParam.CurrencyName == 'ALL' ? requestParam.BaseCurrency : requestParam.CurrencyName
+                        currencyText
                     )}
                 />
                 <NoDataTitle />
@@ -40,7 +42,7 @@ const DataGrid = (props) => {
                     requestParam.LiveIndicator,
                     requestParam.FromDate,
                     requestParam.ToDate,
-                    requestParam.CurrencyName == 'ALL' ? requestParam.BaseCurrency : requestParam.CurrencyName
+                    currencyText
                 )}
             />
             <SummaryDataGrid />

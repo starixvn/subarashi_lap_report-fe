@@ -62,16 +62,16 @@ class Service {
         let awayName = match.awayName;
         if(SpecialProducts.includes(match.productName)){
             if(matchName.length >  MaxLength){
-                matchName =  `<span title='${matchName.replace(",", "&#39;")}'>${matchName.subString(0, MaxLength - 3)}...</span>`
+                matchName =  `<span title='${matchName.replace(",", "&#39;")}'>${matchName.substring(0, MaxLength - 3)}...</span>`
             }
         }
         else if(!VsSportTypes.includes(match.sportType)){
             if(homeName.length > MaxLength){
-                homeName = `<span title='${homeName.replace(",", "&#39;")}'>>${homeName.subString(0, MaxLength - 3)}...</span>`
+                homeName = `<span title='${homeName.replace(",", "&#39;")}'>${homeName.substring(0, MaxLength - 3)}...</span>`
             }
             
             if(awayName.length > MaxLength){
-                awayName = `<span title='${awayName.replace(",", "&#39;")}'>>${awayName.subString(0, MaxLength - 3)}...</span>`
+                awayName = `<span title='${awayName.replace(",", "&#39;")}'>${awayName.substring(0, MaxLength - 3)}...</span>`
             }
 
             matchName = `${homeName}<br />${awayName}`

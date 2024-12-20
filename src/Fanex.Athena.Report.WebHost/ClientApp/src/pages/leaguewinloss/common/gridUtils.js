@@ -98,12 +98,12 @@ const buildDetailDataRow = (dataItem, index, drilldownLevel, showBA) => {
 };
 
 const buildCurrencyDataRow = (dataItem, drilldownLevel, showBA) => {
-    const { currency, betCount, turnOver, licenseeWL, customerWL, baComm } = dataItem;
+    const { currencyName, betCount, turnOver, licenseeWL, customerWL, baComm } = dataItem;
 
     return (
         <Row className="currency-row" key={`currency-row-${uuidv4()}-${drilldownLevel}`}>
             <Cell className="center-align"></Cell>
-            <Cell className="left-align">{currency}</Cell>
+            <Cell className="left-align">{currencyName}</Cell>
             <Cell className="right-align">{NumberFormat.format(betCount)}</Cell>
             <Cell className="right-align">{NumberFormat.formatDecimal(turnOver)}</Cell>
             <Cell className="right-align">{NumberFormat.formatDecimal(customerWL)}</Cell>

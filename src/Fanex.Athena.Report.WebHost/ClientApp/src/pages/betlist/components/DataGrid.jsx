@@ -93,14 +93,6 @@ const DataGrid = (props) => {
         return LangHelper.getSingleResource(column);
     };
 
-    const noDataCondition = (total) => {
-        if (parseFloat(total.WinLoss) || parseFloat(total.LicenseeWL) || parseFloat(total.BetEffective) || parseFloat(total.Stake)) {
-            return false;
-        }
-
-        return true;
-    };
-
     // Use page table with lazy load
     const Table = getBetListPageWithPageName(formData.pageName).Table;
 
@@ -118,7 +110,6 @@ const DataGrid = (props) => {
                 adjustedHeight={-20}
                 customHeaderCell={HeaderCell}
                 customFooterRow={FooterRow}
-                noDataCondition={() => noDataCondition(gridData.userData)}
             />
         </div>
     );

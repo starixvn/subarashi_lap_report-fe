@@ -27,10 +27,12 @@ function DataGrid() {
         return null;
     }
 
+    const baseCurrencyText = !!searchParams.get('BaseCurrency') ? searchParams.get('BaseCurrency') : searchParams.get('CurrencyName');
+
     if (!gridData.length) {
         return (
             <>
-                <ReportTitle content={Service.generateReportTitle(searchParams.get('ProductName'), searchParams.get('BaseCurrency'))} />
+                <ReportTitle content={Service.generateReportTitle(searchParams.get('ProductName'), baseCurrencyText)} />
                 <NoDataTitle />
             </>
         );
@@ -60,7 +62,7 @@ function DataGrid() {
 
     return (
         <>
-            <ReportTitle content={Service.generateReportTitle(searchParams.get('ProductName'), searchParams.get('BaseCurrency'))} />
+            <ReportTitle content={Service.generateReportTitle(searchParams.get('ProductName'), baseCurrencyText)} />
             <Table
                 autoWidth={true}
                 autoHeight={false}

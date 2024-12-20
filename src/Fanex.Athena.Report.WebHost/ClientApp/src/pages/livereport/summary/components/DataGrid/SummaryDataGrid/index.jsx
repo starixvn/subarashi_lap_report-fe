@@ -7,6 +7,7 @@ import useToggleRequest from '@srcRoot/hooks/useToggleRequest';
 import DataService from '@srcRoot/lib/dataService';
 import { constants } from '../../../common';
 import { ActionCreators } from '../../../actions';
+import currency from 'currency.js';
 
 function SummaryDataGrid(props) {
     const dispatch = useDispatch();
@@ -61,29 +62,42 @@ function SummaryDataGrid(props) {
         dispatch(setGridData({ ...gridData, ...data }));
     };
 
-    const footerData = summaryGridData.reduce(
+    const currencyOption = { fromCents: false, precision: 4 }
+
+    const totalData = summaryGridData.reduce(
         (total, item) => {
-            total.turnOver += item.turnOver;
+            total.turnOver = total.turnOver.add(item.turnOver);
             total.betCount += item.betCount;
-            total.licenseeWinLoss += item.licenseeWinLoss;
-            total.licenseeComm += item.licenseeComm;
-            total.amountDue += item.amountDue;
-            total.customerWinLoss += item.customerWinLoss;
-            total.customerComm += item.customerComm;
-            total.customerTotal += item.customerTotal;
+            total.licenseeWinLoss = total.licenseeWinLoss.add(item.licenseeWinLoss);
+            total.licenseeComm = total.licenseeComm.add(item.licenseeComm);
+            total.amountDue = total.amountDue.add(item.amountDue);
+            total.customerWinLoss = total.customerWinLoss.add(item.customerWinLoss);
+            total.customerComm = total.customerComm.add(item.customerComm);
+            total.customerTotal = total.customerTotal.add(item.customerTotal);
             return total;
         },
         {
-            turnOver: 0,
+            turnOver: currency(0, currencyOption),
             betCount: 0,
-            licenseeWinLoss: 0,
-            licenseeComm: 0,
-            amountDue: 0,
-            customerWinLoss: 0,
-            customerComm: 0,
-            customerTotal: 0,
+            licenseeWinLoss: currency(0, currencyOption),
+            licenseeComm: currency(0, currencyOption),
+            amountDue: currency(0, currencyOption),
+            customerWinLoss: currency(0, currencyOption),
+            customerComm: currency(0 , currencyOption),
+            customerTotal: currency(0, currencyOption),
         }
     );
+
+    const footerData = {
+        turnOver: totalData.turnOver.value,
+        betCount: totalData.betCount,
+        licenseeWinLoss: totalData.licenseeWinLoss.value,
+        licenseeComm: totalData.licenseeComm.value,
+        amountDue: totalData.amountDue.value,
+        customerWinLoss: totalData.customerWinLoss.value,
+        customerComm: totalData.customerComm.value,
+        customerTotal: totalData.customerTotal.value,
+    }
 
     return (
         <LiveReportTable

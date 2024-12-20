@@ -29,7 +29,6 @@ function MatchCell({ data, ...rest }) {
             ProductCodeList: requestParam.ProductCodeList,
             SubsidiarySearch: requestParam.SubsidiarySearch,
             MatchId: data.matchId,
-            SportType: data.sportType,
             HomeId: data.homeId,
             AwayId: data.awayId,
             BetType: data.betType,

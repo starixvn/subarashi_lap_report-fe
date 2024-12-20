@@ -849,4 +849,19 @@
   <data name="WinlossAnalysis_SettlementTimeModeNote2" xml:space="preserve">
     <value>Chế độ Theo Ngày Tất Toán hỗ trợ dữ liệu từ 01/10/2024.</value>
   </data>
+  <data name="LiveAndNonLive" xml:space="preserve">
+    <value>Trực tiếp và không trực tiếp</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Hủy</value>
+  </data>
+  <data name="Agent" xml:space="preserve">
+    <value>Agent</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>Đồng ý</value>
+  </data>
+  <data name="Note" xml:space="preserve">
+    <value>Ghi chú</value>
+  </data>
 </root>

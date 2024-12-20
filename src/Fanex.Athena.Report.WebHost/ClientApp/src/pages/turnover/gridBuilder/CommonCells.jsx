@@ -6,37 +6,37 @@ function CommonCells({ data, options, hideClosingBalance, hideOpeningBalance }) 
     const { hasCustomerComm, hasCasinoTransfer, isAllowBa, isEnableSingleWallet, isHidePlayerWL } = options;
 
     // isEnableSingleWallet
-    const openingBalance = hideOpeningBalance ? '-' : NumberFormat.formatDecimalHalfDown(data.openingBalance);
-    const deposit = NumberFormat.formatDecimalHalfDown(data.deposit);
-    const withdrawal = NumberFormat.formatDecimalHalfDown(data.withdrawal);
+    const openingBalance = hideOpeningBalance ? '-' : NumberFormat.formatDecimal(data.openingBalance);
+    const deposit = NumberFormat.formatDecimal(data.deposit);
+    const withdrawal = NumberFormat.formatDecimal(data.withdrawal);
 
     // default column
-    const bonus = NumberFormat.formatDecimalHalfDown(data.bonus);
-    const adjustment = NumberFormat.formatDecimalHalfDown(data.adjustment);
-    const promotion = NumberFormat.formatDecimalHalfDown(data.promotion);
-    const turnover = NumberFormat.formatDecimalHalfDown(data.turnover);
-    const drawGame = NumberFormat.formatDecimalHalfDown(data.drawGame);
-    const netTurnover = NumberFormat.formatDecimalHalfDown(data.netTurnover);
-    const pendingFunds = NumberFormat.formatDecimalHalfDown(data.pendingFunds);
+    const bonus = NumberFormat.formatDecimal(data.bonus);
+    const adjustment = NumberFormat.formatDecimal(data.adjustment);
+    const promotion = NumberFormat.formatDecimal(data.promotion);
+    const turnover = NumberFormat.formatDecimal(data.turnover);
+    const drawGame = NumberFormat.formatDecimal(data.drawGame);
+    const netTurnover = NumberFormat.formatDecimal(data.netTurnover);
+    const pendingFunds = NumberFormat.formatDecimal(data.pendingFunds);
 
     // hasCustomerComm, isHidePlayerWL
-    const winLoss = NumberFormat.formatDecimalHalfDown(data.winLoss);
-    const winLossComm = NumberFormat.formatDecimalHalfDown(data.winLossComm);
-    const playerComm = NumberFormat.formatDecimalHalfDown(data.playerComm);
+    const winLoss = NumberFormat.formatDecimal(data.winLoss);
+    const winLossComm = NumberFormat.formatDecimal(data.winLossComm);
+    const playerComm = NumberFormat.formatDecimal(data.playerComm);
 
     // default column
-    const closingBalance = hideClosingBalance ? '-' : NumberFormat.formatDecimalHalfDown(data.closingBalance);
+    const closingBalance = hideClosingBalance ? '-' : NumberFormat.formatDecimal(data.closingBalance);
 
     // hasCasinoTransfer
-    const affiliateTransfer = NumberFormat.formatDecimalHalfDown(data.affiliateTransfer);
+    const affiliateTransfer = NumberFormat.formatDecimal(data.affiliateTransfer);
 
     // Casino Transfer column
-    const transfer3rd = NumberFormat.formatDecimalHalfDown(data.transfer3rd);
+    const transfer3rd = NumberFormat.formatDecimal(data.transfer3rd);
 
     // isAllowBa
-    const turnoverBA = NumberFormat.formatDecimalHalfDown(data.turnoverBA);
-    const commBA = NumberFormat.formatDecimalHalfDown(data.commBA);
-    const amountDueToBA = NumberFormat.formatDecimalHalfDown(data.amountDueToBA);
+    const turnoverBA = NumberFormat.formatDecimal(data.turnoverBA);
+    const commBA = NumberFormat.formatDecimal(data.commBA);
+    const amountDueToBA = NumberFormat.formatDecimal(data.amountDueToBA);
 
     const hideDataClassName = (hide) => (hide ? 'center-align' : 'right-align');
 

@@ -2,6 +2,7 @@ import DataService from '@srcRoot/lib/dataService';
 import Service from '../common/Service';
 import * as types from './types';
 import Cache from '@srcRoot/lib/cache';
+import ObjectHelper from '@srcRoot/lib/objectHelper';
 
 const BETTYPE_CACHE_KEY = 'WINLOSSANALYSIS_BETTYPE_CACHE_KEY';
 
@@ -40,15 +41,16 @@ export const getBetTypeList = (productCodes, licenseeName) => {
         }
         currentCancellationTokenSource = DataService.genCancellationToken();
         try {
-            const response = await DataService.getReportData(
-                'api/CommonData/GetBetTypeInTreeList',
+            const response = await DataService.getData(
+                'api/CommonDataApi/GetBetTypeInTreeList',
                 { productCodes: productCodes },
                 currentCancellationTokenSource
             );
             currentCancellationTokenSource = null;
             const data = response.data;
-            Cache.set(cacheKey, data, 10);
-            dispatchBettypeList(dispatch, data);
+            const camelData = ObjectHelper.toCamel(data);
+            Cache.set(cacheKey, camelData, 10);
+            dispatchBettypeList(dispatch, camelData);
         } catch (e) {
             if (DataService.isCancel(e)) {
                 return;

@@ -8,14 +8,14 @@ const CommonCells = ({ data }) => {
     const formData = useSelector((state) => state.formData);
     const { isAllowedCustomerCommission, isAllowBa, hasAmountDueToColumn } = formData;
 
-    const customerWinLoss = NumberFormat.formatDecimalHalfDown(data.customerWinLoss);
-    const customerComm = NumberFormat.formatDecimalHalfDown(data.customerComm);
-    const customerTotal = NumberFormat.formatDecimalHalfDown(data.customerTotal);
-    const turnOver = NumberFormat.formatDecimalHalfDown(data.turnOver);
+    const customerWinLoss = NumberFormat.formatDecimal(data.customerWinLoss);
+    const customerComm = NumberFormat.formatDecimal(data.customerComm);
+    const customerTotal = NumberFormat.formatDecimal(data.customerTotal);
+    const turnOver = NumberFormat.formatDecimal(data.turnOver);
     const betCount = NumberFormat.formatInteger(data.betCount);
-    const licenseeWinLoss = NumberFormat.formatDecimalHalfDown(data.licenseeWinLoss);
-    const licenseeComm = NumberFormat.formatDecimalHalfDown(data.licenseeComm);
-    const amountDue = NumberFormat.formatDecimalHalfDown(data.amountDue);
+    const licenseeWinLoss = NumberFormat.formatDecimal(data.licenseeWinLoss);
+    const licenseeComm = NumberFormat.formatDecimal(data.licenseeComm);
+    const amountDue = NumberFormat.formatDecimal(data.amountDue);
 
     return (
         <>

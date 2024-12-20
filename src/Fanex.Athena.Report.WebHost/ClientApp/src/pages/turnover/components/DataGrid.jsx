@@ -19,7 +19,7 @@ const DataGrid = (props) => {
         return null;
     }
 
-    const { isAllowedCustomerCommission, isAllowedCasinoTransfer, isAllowBa, isEnableSingleWallet, isHidePlayerWL } = formData;
+    const { isAllowedCustomerCommission, isAllowedCasinoTransfer, isAllowBa, isEnableSingleWallet, isHidePlayerWl } = formData;
     const { FromDate, ToDate, CurrencyName, BaseCurrencyName, UserName } = requestParam;
 
     if (!gridData.data.length) {
@@ -36,7 +36,7 @@ const DataGrid = (props) => {
         hasCasinoTransfer: isAllowedCasinoTransfer,
         isAllowBa: isAllowBa,
         isEnableSingleWallet: isEnableSingleWallet,
-        isHidePlayerWL: isHidePlayerWL,
+        isHidePlayerWL: isHidePlayerWl,
     };
 
     const minWidth = options.isEnableSingleWallet ? TableSettings.MinWidthSingleWallet : TableSettings.MinWidthNormal;

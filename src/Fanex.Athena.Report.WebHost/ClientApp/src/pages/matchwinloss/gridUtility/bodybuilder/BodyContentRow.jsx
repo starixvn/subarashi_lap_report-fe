@@ -9,7 +9,6 @@ import DataService from '@srcRoot/lib/dataService';
 import Service, { constants } from '../../common';
 import { ActionCreators } from '../../actions';
 import CommonCells from '../CommonCells';
-import Site from '@srcRoot/lib/site';
 
 function BodyContentRow(props) {
     const navigate = useNavigateParams();

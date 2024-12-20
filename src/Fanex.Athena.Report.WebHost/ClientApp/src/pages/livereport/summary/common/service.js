@@ -1,10 +1,10 @@
 import LangHelper from '@srcRoot/helpers/langHelper';
-import { LiveStatuses } from './filterSettings';
+import { LiveStatusesReportTitle } from './filterSettings';
 
 class Service {
     static generateReportTitle(liveIndicator, fromDate, toDate, currencyName) {
         const liveReportTitle = `${LangHelper.getSingleResource('LiveReport')}`;
-        const liveIndicatorTitle = `${LiveStatuses.find((status) => status.value == liveIndicator).label} ${LangHelper.getSingleResource('Data')}`;
+        const liveIndicatorTitle = `${LiveStatusesReportTitle.find((status) => status.value == liveIndicator).label} ${LangHelper.getSingleResource('Data')}`;
         const dateTitle = `${fromDate} → ${toDate}`;
         const currencyTitle = LangHelper.getSingleResource('Viewin').replace('{0}', currencyName);
         return `${liveReportTitle} - ${liveIndicatorTitle}, ${dateTitle} - ${currencyTitle}`;

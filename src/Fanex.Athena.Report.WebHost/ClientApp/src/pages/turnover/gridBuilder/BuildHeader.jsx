@@ -14,7 +14,7 @@ export const BuildHeader = (options) => {
     return result;
 };
 
-const BuildFirstRow = ({ hasCasinoTransfer, isAllowBa, isEnableSingleWallet, isHidePlayerWL }) => (
+const BuildFirstRow = ({ hasCasinoTransfer, isAllowBa, isEnableSingleWallet, isHidePlayerWL, hasCustomerComm }) => (
     <HeaderRow style={{ height: 23 }} key="header1">
         <HeaderCell rowSpan="2" colWidth={200} className="first-header-cell" key="#">
             #
@@ -58,9 +58,11 @@ const BuildFirstRow = ({ hasCasinoTransfer, isAllowBa, isEnableSingleWallet, isH
         <HeaderCell rowSpan="2" colWidth={500} key="PendingFunds">
             {LangHelper.getSingleResource('PendingFunds')}
         </HeaderCell>
-        <HeaderCell rowSpan={!isHidePlayerWL ? 1 : 2} colWidth={400} colSpan={!isHidePlayerWL ? 3 : 1} key="CusWinLoss">
-            {LangHelper.getSingleResource('CustomerW_L')}
-        </HeaderCell>
+        {!isHidePlayerWL && (
+            <HeaderCell rowSpan={hasCustomerComm ? 1 : 2} colWidth={400} colSpan={hasCustomerComm ? 3 : 1} key="CusWinLoss">
+                {hasCustomerComm ? LangHelper.getSingleResource('CustomerW_L') : LangHelper.getSingleResource('WinLoss')}
+            </HeaderCell>)
+        }
         {!isEnableSingleWallet && (
             <HeaderCell rowSpan="2" colWidth={500} key="ClosingBalance">
                 {LangHelper.getSingleResource('ClosingBalance')}
@@ -83,7 +85,7 @@ const BuildFirstRow = ({ hasCasinoTransfer, isAllowBa, isEnableSingleWallet, isH
 );
 
 const BuildSecondRow = ({ hasCustomerComm, isAllowBa, isHidePlayerWL }) => {
-    const showCustomerWL = hasCustomerComm || !isHidePlayerWL;
+    const showCustomerWL = hasCustomerComm && !isHidePlayerWL;
     if (!showCustomerWL && !isAllowBa) {
         return null;
     }

@@ -38,6 +38,16 @@
         }
     }
 
+    .checkbox-group:nth-child(n+2):not(:first-child) {
+        margin-left: 20px;
+    }
+    .filter-note{
+        padding-bottom: 10px;
+    }
+    .note{
+        flex: 0 0 5%
+    }
+
     .icon-toggle {
         color: #fff;
         text-align: center;
