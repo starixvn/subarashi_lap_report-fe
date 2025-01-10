@@ -181,3 +181,7 @@ export const DefaultState = {
 };
 
 export const SettlementTimeSupportProductList = [ ProductCode.SportsBook, ProductCode.VS, ProductCode.NG ];
+
+export const MAX_PAGE_EXPORT_PAGE_SIZE = 100000;
+
+export const NUMBER_OF_CUNCURRENT_DOWNLOAD_REQUEST = 2;

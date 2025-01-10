@@ -36,7 +36,7 @@ export const ExcelPopUp = () => {
 
     const _onExportExcelHandler = (event) => {
         event.preventDefault();
-        const params = { ...requestParam, ExportExcelMode: exportExcelMode, PageSize: 0, PageIndex: 0 };
+        const params = { ...requestParam, ExportExcelMode: exportExcelMode };
         dispatch(toggleLoader(true));
         Service.getFile(params).then(() => {
             _onCloseHandler();
