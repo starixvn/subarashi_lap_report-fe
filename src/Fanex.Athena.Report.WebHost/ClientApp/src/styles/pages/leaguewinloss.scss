@@ -1,0 +1,47 @@
+.body-content .table .total-row td {
+    background: #bfcdd7;
+    font-weight: bold;
+}
+
+.footer-content .table .grant-total-row td {
+    background: #9eb4c3;
+}
+
+.body-content .table .currency-row td {
+    background: #daeef3;
+}
+
+.icon-strong-arrow:before {
+    content: "\E90E";
+}
+
+.icon-strong-arrow {
+    cursor: pointer;
+    transition-property: transform;
+    transition-duration: 0.3s;
+}
+
+.right {
+    float: right;
+}
+
+.left {
+    float: left;
+    display: flex;
+}
+
+.arrow-down {
+    transform: rotate(0deg);
+}
+
+.arrow-right {
+    transform: rotate(-90deg);
+}
+
+.right-align .icon-arrow {
+    margin-left: 5px;
+}
+
+.rdr-DateRange-index {
+    z-index: 200;
+}

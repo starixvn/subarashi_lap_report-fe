@@ -1,10 +1,9 @@
 import React from 'react';
-import { Outlet } from 'react-router-dom';
 
-const AppLayout = () => {
+const AppLayout = (props) => {
     return (
         <div id="container" className="container-fluid">
-            <Outlet />
+            {props.children}
         </div>
     );
 };

@@ -9,8 +9,9 @@
 /* Grid System Mixin */
 $columnList: 12 !default;
 $grid-gutter-width: 30px !default;
+$grid-mobile-gutter-width: 8px !default;
 
-$breakpointList: ( xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px ) !default;
+$breakpointList: ( xxs: 0, xs: 375px, sm: 576px, md: 768px, lg: 992px, xl: 1200px ) !default;
 
 @mixin make-container() {
     width: 100%;
@@ -20,11 +21,11 @@ $breakpointList: ( xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px ) !default
     padding-left: ($grid-gutter-width / 2);
 }
 
-@mixin make-row() {
+@mixin make-row($margin: $grid-gutter-width) {
     display: flex;
     flex-wrap: wrap;
-    margin-right: ($grid-gutter-width / -2);
-    margin-left: ($grid-gutter-width / -2);
+    margin-right: ($margin/ -2);
+    margin-left: ($margin/ -2);
 }
 
 // Minimum breakpoint width. Null for the smallest (first) breakpoint.

@@ -6,6 +6,7 @@ import { DateRange } from '@legion-lib/react-daterangepicker';
 import { CUSTOMER_BALANCE, USER_GUIDE } from '@srcRoot/constants/pages';
 import CollapsiblePanel from '@srcRoot/components/CollapsiblePanel';
 import useToggleRequest from '@srcRoot/hooks/useToggleRequest';
+import SubmitButton from '@srcRoot/components/SubmitButton';
 import ReportSelect from '@srcRoot/components/ReportSelect';
 import RadioGroup from '@srcRoot/components/RadioGroup';
 import UserGuide from '@srcRoot/components/UserGuide';
@@ -196,9 +197,9 @@ const FormFilter = (props) => {
                 <div className="col-12 col-lg-2 col-md-3 col-sm-12">
                     <div className="form-group">
                         <div className="button-group">
-                            <button disabled={!selectedProducts.length || !selectedCurrency} type="button" className="btn btn-submit" onClick={onSubmit}>
+                            <SubmitButton disabled={!selectedProducts.length || !selectedCurrency} onClick={onSubmit} label={CUSTOMER_BALANCE}>
                                 {LangHelper.getSingleResource('Submit').toUpperCase()}
-                            </button>
+                            </SubmitButton>
                         </div>
                     </div>
                 </div>

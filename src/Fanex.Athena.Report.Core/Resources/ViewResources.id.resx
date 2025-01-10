@@ -117,7 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-<data name="AccessDeniedMsg" xml:space="preserve">
+  <data name="AccessDeniedMsg" xml:space="preserve">
     <value>Maaf, Anda tidak memiliki izin untuk mengakses halaman ini.</value>
   </data>
   <data name="Adjustment" xml:space="preserve">
@@ -286,7 +286,7 @@
     <value>Bulan</value>
   </data>
   <data name="NetTurnOver" xml:space="preserve">
-    <value>Net Turnover</value>
+    <value>Omset Bersih</value>
   </data>
   <data name="No" xml:space="preserve">
     <value>Tidak</value>
@@ -388,7 +388,7 @@
     <value>Pertandingan Langsung Mingguan</value>
   </data>
   <data name="WinLoss" xml:space="preserve">
-    <value>Menang atau kalah</value>
+    <value>Menang-Kalah</value>
   </data>
   <data name="Withdrawal" xml:space="preserve">
     <value>Penarikan</value>
@@ -398,5 +398,455 @@
   </data>
   <data name="Yesterday" xml:space="preserve">
     <value>Kemarin</value>
+  </data>
+  <data name="BaseCurrency" xml:space="preserve">
+    <value>Mata Uang Dasar</value>
+  </data>
+  <data name="ConvertAllFiguresToBaseCurrency" xml:space="preserve">
+    <value>Konversi semua angka ke Mata Uang Dasar</value>
+  </data>
+  <data name="Daily" xml:space="preserve">
+    <value>Harian</value>
+  </data>
+  <data name="ExternalIdOrSystemId" xml:space="preserve">
+    <value>ID Eksternal atau ID Sistem</value>
+  </data>
+  <data name="Monthly" xml:space="preserve">
+    <value>Bulanan</value>
+  </data>
+  <data name="Product" xml:space="preserve">
+    <value>Produk</value>
+  </data>
+  <data name="PromotionType" xml:space="preserve">
+    <value>Jenis Promosi</value>
+  </data>
+  <data name="ReportBy" xml:space="preserve">
+    <value>Laporan Berdasarkan</value>
+  </data>
+  <data name="Subsidiary" xml:space="preserve">
+    <value>Cabang</value>
+  </data>
+  <data name="SubsidiarySearch" xml:space="preserve">
+    <value>Pencarian Cabang</value>
+  </data>
+  <data name="Username" xml:space="preserve">
+    <value>Nama Pengguna</value>
+  </data>
+  <data name="WhiteLabel" xml:space="preserve">
+    <value>Whitelabel</value>
+  </data>
+  <data name="PromotionDetails" xml:space="preserve">
+    <value>Rincian Promosi</value>
+  </data>
+  <data name="RefNo" xml:space="preserve">
+    <value>No. Ref</value>
+  </data>
+  <data name="TotalTransaction" xml:space="preserve">
+    <value>Total Transaksi</value>
+  </data>
+  <data name="CustomerAmount" xml:space="preserve">
+    <value>Jumlah Pelanggan</value>
+  </data>
+  <data name="LicSharingAmount" xml:space="preserve">
+    <value>Jumlah Bagi Hasil Lisensi</value>
+  </data>
+  <data name="Main" xml:space="preserve">
+    <value>Utama</value>
+  </data>
+  <data name="Customer" xml:space="preserve">
+    <value>Pelanggan</value>
+  </data>
+  <data name="TotalIn" xml:space="preserve">
+    <value>Total dalam</value>
+  </data>
+  <data name="BetId" xml:space="preserve">
+    <value>ID Taruhan</value>
+  </data>
+  <data name="LicenseeW_L" xml:space="preserve">
+    <value>Keuntungan/Kerugian Lisensi</value>
+  </data>
+  <data name="League" xml:space="preserve">
+    <value>Liga</value>
+  </data>
+  <data name="BetCount" xml:space="preserve">
+    <value>Jumlah Taruhan</value>
+  </data>
+  <data name="BACommission" xml:space="preserve">
+    <value>Komisi BA</value>
+  </data>
+  <data name="Match" xml:space="preserve">
+    <value>Pertandingan</value>
+  </data>
+  <data name="BetType" xml:space="preserve">
+    <value>Jenis Taruhan</value>
+  </data>
+  <data name="LeagueWinLoss" xml:space="preserve">
+    <value>Keuntungan/Kerugian Berdasarkan Liga</value>
+  </data>
+  <data name="LeagueName" xml:space="preserve">
+    <value>Nama Liga</value>
+  </data>
+  <data name="IsGroupInOriginalCurrency" xml:space="preserve">
+    <value>Tampilkan pembagian grup dalam mata uang asli</value>
+  </data>
+  <data name="Platform" xml:space="preserve">
+    <value>Platform</value>
+  </data>
+  <data name="EffectiveBettingValue" xml:space="preserve">
+    <value>Nilai Taruhan Efektif</value>
+  </data>
+  <data name="PlayerWL" xml:space="preserve">
+    <value>Kemenangan dan kekalahan pemain</value>
+  </data>
+  <data name="PlayerComm" xml:space="preserve">
+    <value>Komisi pemain</value>
+  </data>
+  <data name="LicenseeComm" xml:space="preserve">
+    <value>Komisi perusahaan sewa-menyewa</value>
+  </data>
+  <data name="AmountDueToBA" xml:space="preserve">
+    <value>Jumlah yang Harus Dibayarkan ke BA</value>
+  </data>
+  <data name="Margin" xml:space="preserve">
+    <value>Margin</value>
+  </data>
+  <data name="Player" xml:space="preserve">
+    <value>Pemain</value>
+  </data>
+  <data name="BothGroupByAndBreakdownLevelOption" xml:space="preserve">
+    <value>Pengelompokan dan pemisahan berdasarkan level</value>
+  </data>
+  <data name="GroupByLevelOnlyOption" xml:space="preserve">
+    <value>Hanya tingkat Pengelompokan</value>
+  </data>
+  <data name="Confirmation" xml:space="preserve">
+    <value>Konfirmasi</value>
+  </data>
+  <data name="ChooseDataDisplayInExcelMsg" xml:space="preserve">
+    <value>Silakan pilih data yang akan ditampilkan dalam file excel:</value>
+  </data>
+  <data name="ClearAllFilters" xml:space="preserve">
+    <value>Hapus semua filter</value>
+  </data>
+  <data name="BreakdownBy" xml:space="preserve">
+    <value>Tampilkan berdasarkan</value>
+  </data>
+  <data name="OddsGroup" xml:space="preserve">
+    <value>Kelompok Ganjil</value>
+  </data>
+  <data name="RiskLevel" xml:space="preserve">
+    <value>Tingkat Risiko</value>
+  </data>
+  <data name="MatchPrecise" xml:space="preserve">
+    <value>Tepat Cocok</value>
+  </data>
+  <data name="MatchPrefix" xml:space="preserve">
+    <value>Cocokkan Awalan, contohnya</value>
+  </data>
+  <data name="MatchCase" xml:space="preserve">
+    <value>Cocokkan Kapitalisasi, contohnya</value>
+  </data>
+  <data name="WinlossAnalysis" xml:space="preserve">
+    <value>Analisis Menang Kalah</value>
+  </data>
+  <data name="ViewCOOnly" xml:space="preserve">
+    <value>Hanya melihat CashOut secara langsung</value>
+  </data>
+  <data name="VIPPlayerTooltipMsg" xml:space="preserve">
+    <value>Pemain VIP ditandai dalam Segmentasi Pemain</value>
+  </data>
+  <data name="VIPPlayerOnly" xml:space="preserve">
+    <value>Hanya Pemain VIP</value>
+  </data>
+  <data name="LiveStatus" xml:space="preserve">
+    <value>Status Langsung</value>
+  </data>
+  <data name="GroupBy" xml:space="preserve">
+    <value>Kelompok Berdasarkan</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="SelectedItemCount" xml:space="preserve">
+    <value># terpilih</value>
+  </data>
+  <data name="SelectOptions" xml:space="preserve">
+    <value>Pilih opsi</value>
+  </data>
+  <data name="SearchData" xml:space="preserve">
+    <value>Cari data</value>
+  </data>
+  <data name="AmtDueToBA" xml:space="preserve">
+    <value>Jumlah yang Harus Dibayarkan ke BA</value>
+  </data>
+  <data name="Commission" xml:space="preserve">
+    <value>Komisi</value>
+  </data>
+  <data name="GrandTotal" xml:space="preserve">
+    <value>Total Keseluruhan</value>
+  </data>
+  <data name="MatchWinLoss" xml:space="preserve">
+    <value>Match Win Loss</value>
+  </data>
+  <data name="BetList" xml:space="preserve">
+    <value>Daftar Taruhan</value>
+  </data>
+  <data name="TransTime" xml:space="preserve">
+    <value>Waktu Transaksi</value>
+  </data>
+  <data name="Choice" xml:space="preserve">
+    <value>Pilihan</value>
+  </data>
+  <data name="Odds" xml:space="preserve">
+    <value>Odds</value>
+  </data>
+  <data name="Stake" xml:space="preserve">
+    <value>Taruhan</value>
+  </data>
+  <data name="Outright" xml:space="preserve">
+    <value>Pemenang Keseluruhan</value>
+  </data>
+  <data name="ExcelExceedRowsMsg" xml:space="preserve">
+    <value>File ini melebihi 65535 entri. Harap hubungi administrator untuk lebih detailnya.</value>
+  </data>
+  <data name="Live" xml:space="preserve">
+    <value>Langsung</value>
+  </data>
+  <data name="NoneLive" xml:space="preserve">
+    <value>Non-Live</value>
+  </data>
+  <data name="Data" xml:space="preserve">
+    <value>data</value>
+  </data>
+  <data name="LiveReport" xml:space="preserve">
+    <value>Laporan Langsung</value>
+  </data>
+  <data name="Summary" xml:space="preserve">
+    <value>Ringkasan</value>
+  </data>
+  <data name="BySportsType" xml:space="preserve">
+    <value>Berdasarkan Jenis Olahraga</value>
+  </data>
+  <data name="ByCurrency" xml:space="preserve">
+    <value>Menurut Mata Uang</value>  
+  </data>
+  <data name="ByBetType" xml:space="preserve">
+    <value>Berdasarkan Jenis Taruhan</value>
+  </data>
+  <data name="CashOut" xml:space="preserve">
+    <value>Penukaran Instan</value>
+  </data>
+  <data name="ExcludeCOFromSB" xml:space="preserve">
+    <value>Mengecualikan Tunai Keluar dari Sportsbook</value>
+  </data>
+  <data name="IncludeCOFromSB" xml:space="preserve">
+    <value>Memasukkan Tunai Keluar ke dalam Sportsbook</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Kembali</value>
+  </data>
+  <data name="Report" xml:space="preserve">
+    <value>Laporan</value>
+  </data>
+  <data name="SLTDateRangeNote" xml:space="preserve">
+    <value>Data Lotere Olahraga tersedia mulai 22/11/2021</value>
+  </data>
+  <data name="TotalTurnover" xml:space="preserve">
+    <value>Total Omset</value>
+  </data>
+  <data name="MinimumOdds" xml:space="preserve">
+    <value>Minimum odds</value>
+  </data>
+  <data name="DecimalOdds" xml:space="preserve">
+    <value>odds desimal</value>
+  </data>
+  <data name="TicketFilter" xml:space="preserve">
+    <value>Filter Tiket</value>
+  </data>
+  <data name="Won" xml:space="preserve">
+    <value>Menang</value>
+  </data>
+  <data name="Lost" xml:space="preserve">
+    <value>Kalah</value>
+  </data>
+  <data name="Draw" xml:space="preserve">
+    <value>Seri</value>
+  </data>
+  <data name="CustomerTurnover" xml:space="preserve">
+    <value>Omset Pelanggan</value>
+  </data>
+  <data name="ProductAB" xml:space="preserve">
+    <value>AllBet</value>
+  </data>
+  <data name="ProductAGC" xml:space="preserve">
+    <value>AG Casino</value>
+  </data>
+  <data name="ProductAP" xml:space="preserve">
+    <value>AdvantPlay</value>
+  </data>
+  <data name="ProductAPM" xml:space="preserve">
+    <value>AdvantPlay Mini</value>
+  </data>
+  <data name="ProductBA" xml:space="preserve">
+    <value>BA</value>
+  </data>
+  <data name="ProductBT" xml:space="preserve">
+    <value>Perdagangan Taruhan</value>
+  </data>
+  <data name="ProductBTC" xml:space="preserve">
+    <value>Bitcoin</value>
+  </data>
+  <data name="ProductBX" xml:space="preserve">
+    <value>Pertukaran</value>
+  </data>
+  <data name="ProductCC" xml:space="preserve">
+    <value>Permainan Arcadia</value>
+  </data>
+  <data name="ProductCO" xml:space="preserve">
+    <value>Penukaran Instan</value>
+  </data>
+  <data name="ProductCS" xml:space="preserve">
+    <value>Casino Saba</value>
+  </data>
+  <data name="ProductHB" xml:space="preserve">
+    <value>Habanero</value>
+  </data>
+  <data name="ProductI4D" xml:space="preserve">
+    <value>Togel 4D</value>
+  </data>
+  <data name="ProductJIG" xml:space="preserve">
+    <value>Jili</value>
+  </data>
+  <data name="ProductJK" xml:space="preserve">
+    <value>Joker</value>
+  </data>
+  <data name="ProductKN" xml:space="preserve">
+    <value>Permainan Angka Keno</value>
+  </data>
+  <data name="ProductLC" xml:space="preserve">
+    <value>Kasino Langsung</value>
+  </data>
+  <data name="ProductLG" xml:space="preserve">
+    <value>Olahraga Virtual 3</value>
+  </data>
+  <data name="ProductLT" xml:space="preserve">
+    <value>Togel</value>
+  </data>
+  <data name="ProductMXG" xml:space="preserve">
+    <value>MaxGame</value>
+  </data>
+  <data name="ProductNG" xml:space="preserve">
+    <value>Number Game</value>
+  </data>
+  <data name="ProductParlay" xml:space="preserve">
+    <value>Parlay Sportsbook</value>
+  </data>
+  <data name="ProductPGS" xml:space="preserve">
+    <value>PG Soft</value>
+  </data>
+  <data name="ProductPP" xml:space="preserve">
+    <value>PP</value>
+  </data>
+  <data name="ProductPTCS" xml:space="preserve">
+    <value>Kasino Playtech</value>
+  </data>
+  <data name="ProductSAG" xml:space="preserve">
+    <value>Permainan SA</value>
+  </data>
+  <data name="ProductSB" xml:space="preserve">
+    <value>Sportsbook</value>
+  </data>
+  <data name="ProductSB_BA" xml:space="preserve">
+    <value>Sportsbook &amp; BA</value>
+  </data>
+  <data name="ProductSBC" xml:space="preserve">
+    <value>Saba.club</value>
+  </data>
+  <data name="ProductSBVS" xml:space="preserve">
+    <value>Saba Virtual Sports</value>
+  </data>
+  <data name="ProductSLT" xml:space="preserve">
+    <value>Lotre Olahraga</value>
+  </data>
+  <data name="ProductSPR" xml:space="preserve">
+    <value>Promosi Saba</value>
+  </data>
+  <data name="ProductSXG" xml:space="preserve">
+    <value>AE Sexy</value>
+  </data>
+  <data name="ProductTG" xml:space="preserve">
+    <value>Permainan Meja</value>
+  </data>
+  <data name="ProductTIP" xml:space="preserve">
+    <value>Tips Pemain</value>
+  </data>
+  <data name="ProductVB" xml:space="preserve">
+    <value>Permainan Macau</value>
+  </data>
+  <data name="ProductVG" xml:space="preserve">
+    <value>Macau</value>
+  </data>
+  <data name="ProductVGA" xml:space="preserve">
+    <value>Vgaming</value>
+  </data>
+  <data name="ProductVRG" xml:space="preserve">
+    <value>Permainan Virtual</value>
+  </data>
+  <data name="ProductVS" xml:space="preserve">
+    <value>Olahraga Virtual</value>
+  </data>
+  <data name="ProductVS2" xml:space="preserve">
+    <value>Olahraga Virtual 2</value>
+  </data>
+  <data name="ProductVS3" xml:space="preserve">
+    <value>Olahraga Virtual 3 (old)</value>
+  </data>
+  <data name="ProductWM" xml:space="preserve">
+    <value>WM</value>
+  </data>
+  <data name="Viewin2" xml:space="preserve">
+    <value>Lihat</value>
+  </data>
+  <data name="ViewDataInMonth" xml:space="preserve">
+    <value>Lihat data dalam bulan</value>
+  </data>
+  <data name="From" xml:space="preserve">
+    <value>Dari</value>
+  </data>
+  <data name="To" xml:space="preserve">
+    <value>Ke</value>
+  </data>
+  <data name="CasinoTransfer" xml:space="preserve">
+    <value>Transfer Casino</value>
+  </data>
+  <data name="Hour" xml:space="preserve">
+    <value>Jam</value>
+  </data>
+  <data name="FinancialDate" xml:space="preserve">
+    <value>Tanggal Keuangan</value>
+  </data>
+  <data name="SettlementTime" xml:space="preserve">
+    <value>Waktu Penyelesaian</value>
+  </data>
+  <data name="WinlossAnalysis_SettlementTimeModeNote" xml:space="preserve">
+    <value>Kurs dalam mode Waktu Penyelesaian didasarkan pada tanggal tiket diselesaikan, dan mungkin berbeda dari laporan saat ini yang didasarkan pada tanggal penyelesaian acara.</value>
+  </data>
+  <data name="WinlossAnalysis_SettlementTimeModeNote2" xml:space="preserve">
+    <value>Mode Waktu Penyelesaian hanya mendukung data dari 10/01/2024.</value>
+  </data>
+  <data name="Agent" xml:space="preserve">
+    <value>Agen</value>
+  </data>
+  <data name="LiveAndNonLive" xml:space="preserve">
+    <value>Live dan Non-live</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Batal</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="Note" xml:space="preserve">
+    <value>Catatan</value>
   </data>
 </root>

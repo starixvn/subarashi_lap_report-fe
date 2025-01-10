@@ -13,10 +13,14 @@ const useToggleRequest = () => {
                 if (callbackFunc) {
                     callbackFunc(response);
                 }
+
                 dispatch(toggleLoader(false));
             })
             .catch((error) => {
                 alert(LangHelper.getSingleResource('ErrorProcessingMsg'));
+
+                console.error(error);
+
                 dispatch(toggleLoader(false));
             });
     }, []);

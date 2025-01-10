@@ -7,16 +7,19 @@ export default class LangHelper {
         eng: 'en-US',
         zhCN: 'zh-CN',
         viVN: 'vi-VN',
+        idID: 'id-ID',
+        thTH: 'th-TH',
     };
 
     static get currentLanguage() {
         return langCode;
     }
 
-    static getSingleResource(key) {
+    static getSingleResource(key, hideSaba = false) {
         var langHandler = window[resourceName];
+        var newKey = hideSaba ? key + '_HideSaba' : key;
 
-        return (langHandler && langHandler[key]) || (window[DEFAULT_RESOURCE_NAME] && window[DEFAULT_RESOURCE_NAME][key]) || key;
+        return (langHandler && langHandler[newKey]) || (window[DEFAULT_RESOURCE_NAME] && window[DEFAULT_RESOURCE_NAME][newKey]) || newKey;
     }
 
     static getResources(keys) {

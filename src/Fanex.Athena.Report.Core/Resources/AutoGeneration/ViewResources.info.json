@@ -1,0 +1,34 @@
+{
+  "FilesToGenerate": [
+    {
+      "Filename": "D:\\LAP\\LAP.Report\\src\\Fanex.Athena.Report.WebHost\\ClientApp\\src\\languages\\ViewResources.id-ID.js",
+      "Project": "",
+      "Path": "",
+      "Properties": {}
+    },
+    {
+      "Filename": "D:\\LAP\\LAP.Report\\src\\Fanex.Athena.Report.WebHost\\ClientApp\\src\\languages\\ViewResources.js",
+      "Project": "",
+      "Path": "",
+      "Properties": {}
+    },
+    {
+      "Filename": "D:\\LAP\\LAP.Report\\src\\Fanex.Athena.Report.WebHost\\ClientApp\\src\\languages\\ViewResources.th-TH.js",
+      "Project": "",
+      "Path": "",
+      "Properties": {}
+    },
+    {
+      "Filename": "D:\\LAP\\LAP.Report\\src\\Fanex.Athena.Report.WebHost\\ClientApp\\src\\languages\\ViewResources.vi-VN.js",
+      "Project": "",
+      "Path": "",
+      "Properties": {}
+    },
+    {
+      "Filename": "D:\\LAP\\LAP.Report\\src\\Fanex.Athena.Report.WebHost\\ClientApp\\src\\languages\\ViewResources.zh-CN.js",
+      "Project": "",
+      "Path": "",
+      "Properties": {}
+    }
+  ]
+}

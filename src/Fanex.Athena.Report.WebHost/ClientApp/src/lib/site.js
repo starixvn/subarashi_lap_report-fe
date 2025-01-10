@@ -1,3 +1,5 @@
+import { LRF_SAVED_PAGE_SESSION_KEY } from '../constants/config';
+
 const _rootUrl = window.rootUrl || '/';
 export default class Site {
     static resolveClientUrl(relativeUrl) {
@@ -54,6 +56,14 @@ export default class Site {
         reader.readAsText(blob);
     }
 
+    static getLrfSavedSessionStorage() {
+        return sessionStorage.getItem(this.getLrfSavedSessionKey(window.location.pathname));
+    }
+
+    static getLrfSavedSessionKey(pathName) {
+        return LRF_SAVED_PAGE_SESSION_KEY + pathName;
+    }
+
     static getRootUrl() {
         return _rootUrl;
     }
@@ -83,4 +93,12 @@ export default class Site {
     static redirectToUrl(url) {
         window.location.replace(this.resolveClientUrl(url));
     }
+
+    static assignToUrl(url) {
+        window.location.assign(this.resolveClientUrl(url));
+    }
+
+    static getSentrySetting = () => {
+        return window.sentrySettings || {};
+    };
 }

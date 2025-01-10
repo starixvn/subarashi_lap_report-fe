@@ -1,0 +1,15 @@
+﻿import React, { memo } from 'react';
+import CollapsiblePanel from '@srcRoot/components/CollapsiblePanel';
+import MainFilter from './MainFilter.jsx';
+import GroupByFilter from './GroupByFilter.jsx';
+
+export const FormFilter = () => {
+    return (
+        <CollapsiblePanel className="aggregate-filter">
+            <MainFilter />
+            <GroupByFilter />
+        </CollapsiblePanel>
+    );
+};
+
+export default memo(FormFilter);

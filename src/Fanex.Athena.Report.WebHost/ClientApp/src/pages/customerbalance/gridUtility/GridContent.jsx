@@ -10,7 +10,7 @@ export const GetDefaultPagingOptions = (pageIndex, totalItem) => ({ ...constants
 export const GenerateReportTitle = (fromDate, toDate, currencyName) => {
     const customerBalanceTitle = LangHelper.getSingleResource('CustomerBalance');
     const dateRange = `${fromDate} → ${toDate}`;
-    const currencyView = `View in ${currencyName}`;
+    const currencyView = LangHelper.getSingleResource('Viewin').replace('{0}', currencyName);
 
     return `${customerBalanceTitle}, ${dateRange}, ${currencyView}`;
 };

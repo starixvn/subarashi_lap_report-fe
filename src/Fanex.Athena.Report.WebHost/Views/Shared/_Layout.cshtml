@@ -50,13 +50,40 @@
 
         gtag('js', new Date());
 
-        gtag('config', 'G-M09N5LNEH1');
-        gtag('config', 'UA-93927620-1');
+        gtag('config', 'G-M09N5LNEH1', {
+            send_page_view: false
+        });
+
+        gtag('config', 'UA-93927620-1', {
+            send_page_view: false
+        });
+
+        window.logPageViewEvent = function (pageTitle, pageLocation, pagePath) {
+            try {
+                window.gtag('event', 'page_view', {
+                    'page_title': pageTitle,
+                    'page_location': pageLocation,
+                    'page_path': pagePath
+                });
+            }
+            catch (err) {
+            }
+        };
+
+        window.logViewReportDataEvent = function (eventLabel) {
+            try {
+                    window.gtag('event', 'view_report_data', {
+                    'event_label': eventLabel || 'Report Page',
+                    'event_category': 'report'
+                });
+            }
+            catch (err) {
+            }
+        };
 
         window.logOpenBetlistEvent = function(eventLabel) {
             try {
-                window.gtag('event',
-                    'view_bet_list',
+                window.gtag('event', 'view_bet_list',
                     {
                         'event_label': eventLabel || 'Bet List Promotion',
                         'event_category': 'bet_list',

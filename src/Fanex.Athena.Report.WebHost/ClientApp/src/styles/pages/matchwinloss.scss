@@ -1,0 +1,81 @@
+
+$bgHeaderTableLevel3: #d1dae1;
+$black: #2c2c2c;
+$colorText: #484848;
+$colorTitle: #147ccc;
+$colorHover: #0056b3;
+
+.matchwinloss {
+    .footer-content {
+        .table>tbody>tr {
+            &.light-footer>td {
+                background: #ffffff;
+            }
+        }
+    }
+
+    .body-content .table {
+        tr.league-row {   
+            td {
+            background: $bgHeaderTableLevel3;
+            font-weight: bold;
+            }
+
+            &:hover td { 
+                background: #FCF4DF; 
+            }
+        }
+
+        a {
+            color: $colorTitle;
+
+            &.icon-wrapper {
+                color: $colorText;
+            }
+        }
+
+        tr {
+            &.bet-list-row {
+                font-weight: bold;
+                
+                .index-cell {
+                    font-weight: lighter;
+                }
+
+                a:hover {
+                    color: $colorHover;
+                }
+            }
+        }
+
+    }
+
+    .match-container {
+        display: table;
+        width: 100%;
+
+        .cell {
+            display: table-cell;
+        }
+
+        .bet-list-link {
+            cursor: pointer;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        .icon-wrapper {
+            text-align: center;
+            font-weight: 900;
+            vertical-align: middle;
+            color: $colorText;
+            width: 20px;
+
+            &.expanded {
+                transform: rotate(180deg);
+            }
+        }
+    }
+}

@@ -4,6 +4,15 @@
 
 .row {
     @include make-row();
+    &.mobile-mode{
+        @include make-row($grid-mobile-gutter-width)
+    }
+}
+
+.mobile-mode{
+    .row{
+        @include make-row($grid-mobile-gutter-width)
+    }
 }
 
 %grid-column {
@@ -27,6 +36,13 @@
         @for $i from 1 through $columnList {
             .col#{$infix}-#{$i} {
                 @include make-col($i, $columnList);
+            }
+
+            .mobile-mode{
+                .col#{$infix}-#{$i}{
+                    padding-right: ($grid-mobile-gutter-width / 2);
+                    padding-left: ($grid-mobile-gutter-width / 2);
+                }
             }
         }
     }

@@ -6,6 +6,10 @@ const hasPermission = 'HasPermission';
 let currentInterval = null;
 
 export const AuthorizeRequestInfo = async (params) => {
+    if (!params.permissions) {
+        return null;
+    }
+
     const response = await DataService.postData('Utility/RequestAuthorizedInfo', params);
     const data = response.data;
 
@@ -20,7 +24,7 @@ export const AuthorizeRequestInfo = async (params) => {
 };
 
 const validatePermission = (permissions, functionKeys) => {
-    if (!permissions || !permissions.length) {
+    if (!permissions.length) {
         return;
     }
 
@@ -37,9 +41,9 @@ const checkAliveInterval = (identityName) => {
             const data = response.data;
 
             if (data.IsUM) {
-                document.location.href = UM_URL;
+                Site.redirectToUrl(UM_URL);
             } else if (!data.IsAuthenticated) {
-                document.location.href = SIGN_OUT_URL;
+                Site.redirectToUrl(SIGN_OUT_URL);
             }
         });
     }, 30000);

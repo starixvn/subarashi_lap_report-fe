@@ -1,0 +1,5 @@
+export const SET_MINIMUM_ODDS = 'SET_MINIMUM_ODDS';
+
+export const SET_SELECTED_TICKET = 'SET_SELECTED_TICKET';
+
+export const SET_REPORT_BY = 'SET_REPORT_BY';

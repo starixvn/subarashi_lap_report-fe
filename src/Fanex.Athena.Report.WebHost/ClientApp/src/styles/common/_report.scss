@@ -18,6 +18,31 @@
     cursor: pointer;
     display: inline-block;
     margin-top: 3px;
+
+    &.right {
+        float: right;
+    }
+}
+
+.icon-excel-white {
+    background: url(../assets/images/excel-white-icon.svg) no-repeat;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 3px;
+}
+
+.icon-back {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 10px;
+
+    &.right {
+        float: right;
+    }
 }
 
 .icon-book {

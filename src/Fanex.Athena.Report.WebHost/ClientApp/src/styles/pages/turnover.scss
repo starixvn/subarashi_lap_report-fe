@@ -1,0 +1,7 @@
+.header-content {
+    .table>thead>tr>th {
+        &.first-header-cell {
+            border-left: inherit;
+        }
+    }
+}

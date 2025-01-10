@@ -1,0 +1,57 @@
+$black: black;
+
+.livereport-matchlist {
+    .form-filter {
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .table-container {
+        overflow-x: hidden;
+    }
+    
+    .body-content {
+        overflow-x: hidden;
+    }
+
+    .icon-arrow {
+        display: inline-block;
+    }
+
+    .icon-excel  {
+        &.right {
+            margin-top: 1.5rem;
+            margin-right: 1rem;
+        }
+    }
+
+    .btn {
+        padding: 0 1.5rem;
+    }
+
+    .report-title {
+        font-size: 13px;
+    }
+
+    .table {
+        line-height: 1.15;
+    }
+
+    .header-content {
+        .table>thead>tr>th {
+            vertical-align: middle;
+            text-align: center;
+            border: 1px solid #ffffff;
+            border-top: 1px solid #d1dae1;
+            border-radius: 0;
+            font-weight: bold;
+            padding: 2px 5px;
+            background: #d1dae1;
+            color: #2c2c2c;
+
+            &.first-header-cell {
+                border-left: inherit;
+            }
+        }
+    }
+}

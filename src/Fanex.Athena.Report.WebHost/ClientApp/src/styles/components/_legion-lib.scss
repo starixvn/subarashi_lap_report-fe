@@ -1,7 +1,13 @@
 @import '@legion-lib/react-grid/dist/style.css';
 @import '@legion-lib/react-daterangepicker/dist/style.css';
 @import '@legion-lib/react-multiselect/dist/style.css';
+@import '@legion-lib/react-breadcrumb/dist/style.css';
 
+/* Daterangepicker */
+
+.rdr-DateRange {
+    z-index: 2;
+}
 /* React Grid */
 .table {
     line-height: 1.5;
@@ -44,6 +50,51 @@
     .page-last {
         &:before {
             content: "\ea22";
+        }
+    }
+}
+
+.mobile-table {
+    .header-content, .footer-content,  .page-wrapper-container{
+        display: block;
+        position: sticky;
+        position: -webkit-sticky;
+        z-index: 10;
+    }
+
+    .header-content{
+        z-index: 11;
+        top: 0px;
+        tr th:first-child{
+            border-left: 0px;
+        }
+    }
+
+    .body-content{
+        overflow-x: initial;
+        overflow-y: initial;
+    }
+
+    .page-wrapper-container{       
+        bottom: 0px;
+    }
+
+    .table-container{
+        overflow-x: visible;
+    }
+
+    .row-active{
+        td{
+            background: #FCF4DF;
+        }
+    }
+    
+    .table > tbody{
+        tr:hover td{
+            background-color: unset;
+        }
+        tr.row-active:hover td{
+            background: #FCF4DF;
         }
     }
 }

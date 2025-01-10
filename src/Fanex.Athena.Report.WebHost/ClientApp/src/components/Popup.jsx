@@ -15,7 +15,7 @@ const Popup = (props) => {
     }
 
     return (
-        <div className={`popup-container ${containerClassName ?? ''} ${isShow ? 'show' : 'hide'}`} onClick={props.onClick}>
+        <div className={`popup-container ${containerClassName} ${isShow ? 'show' : 'hide'}`} onClick={props.onClick}>
             <div className="popup-block-body"></div>
             <div className={`flat-popup ${className ?? ''}`}>
                 <div className="popup-title">
@@ -41,6 +41,7 @@ Popup.propTypes = {
     isHtml: PropTypes.bool,
     iframeUrl: PropTypes.string,
     contentClassName: PropTypes.string,
+    containerClassName: PropTypes.string,
     onClick: PropTypes.func,
 };
 
@@ -50,6 +51,7 @@ Popup.defaultProps = {
     iframeUrl: null,
     className: '',
     contentClassName: '',
+    containerClassName: '',
 };
 
 export default Popup;

@@ -1,0 +1,32 @@
+import React from 'react';
+import { useSelector } from 'react-redux';
+
+import { LiveReportTable } from '../../../gridUltility';
+import LangHelper from '@srcRoot/helpers/langHelper';
+import { BuildByBetTypeBody, BuildByBetTypeHeaders } from './GridBuilder';
+
+function ByBetTypeDataGrid() {
+    const gridData = useSelector((state) => state.gridData?.dataByBetType);
+    const formData = useSelector((state) => state.formData);
+    const selectedProductCode = useSelector((state) => state.selectedProductCode);
+
+    const options = {
+        isAllowedCustomerCommission: formData.isAllowedCustomerCommission,
+        isAllowBa: formData.isAllowBa,
+        hasAmountDueToColumn: formData.hasAmountDueToColumn,
+    };
+
+    if (!selectedProductCode || !gridData || !gridData.length) {
+        return;
+    }
+
+    return (
+        <LiveReportTable
+            tableTitle={LangHelper.getSingleResource('ByBetType')}
+            header={BuildByBetTypeHeaders(options)}
+            body={BuildByBetTypeBody(gridData, options)}
+        />
+    );
+}
+
+export default ByBetTypeDataGrid;

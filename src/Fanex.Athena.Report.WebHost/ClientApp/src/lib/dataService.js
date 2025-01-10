@@ -1,4 +1,5 @@
-import axios from 'axios';
+import axios from './axios';
+
 export default class DataService {
     static apiKeys = {
         report: 'Report',

@@ -1,0 +1,1 @@
+export const SET_PRODUCT_CODE = 'SET_PRODUCT_CODE';
