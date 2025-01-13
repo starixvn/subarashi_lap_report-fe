@@ -8,7 +8,7 @@ WORKDIR /src/Fanex.Athena.Report.WebHost/ClientApp
 COPY src/Fanex.Athena.Report.WebHost/ClientApp/package.json ./
 COPY src/Fanex.Athena.Report.WebHost/ClientApp/package-lock.json ./
 
-RUN npm ci
+RUN npm install
 
 WORKDIR /src
 
