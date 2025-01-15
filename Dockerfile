@@ -1,5 +1,7 @@
 FROM hub.nexdev.net/base/dotnet/core/sdk:8.0-nodejs-v20 AS builder
 
+ARG TRANSFORM_CONFIG
+
 RUN node -v
 RUN npm -v
 
@@ -25,20 +27,18 @@ COPY src .
 
 WORKDIR /src/Fanex.Athena.Report.WebHost/ClientApp
 
-ARG TRANSFORM_CONFIG
-
-#build front-end
-RUN if [ "$TRANSFORM_CONFIG" = "LOCAL" ]; then \
-        npm run build-dev ; \
-    elif [ "$TRANSFORM_CONFIG" = "SIT" ]; then \
-        npm run build-dev ; \
-    else \
-        npm run build-prod; \
-    fi
+# Build front-end
+RUN case "$TRANSFORM_CONFIG" in \
+    (LOCAL|SIT) npm run build-dev;; \
+    (*) npm run build-prod;; \
+    esac
+#
 
 WORKDIR /src/Fanex.Athena.Report.WebHost
 
 RUN dotnet publish "Fanex.Athena.Report.WebHost.csproj" -c Release -o /publish
+    --use-current-runtime \
+    --self-contained false
 
 FROM hub.nexdev.net/base/dotnet/core/aspnet:8.0-alpine-25h1 AS final
 
