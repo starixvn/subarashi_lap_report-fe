@@ -1,23 +1,24 @@
+import { DateRange } from '@legion-lib/react-daterangepicker';
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { DateRange } from '@legion-lib/react-daterangepicker';
 
-import { SAPA_VIRTUAL_SPORTS_WL, USER_GUIDE } from '@srcRoot/constants/pages';
 import CollapsiblePanel from '@srcRoot/components/CollapsiblePanel';
-import useToggleRequest from '@srcRoot/hooks/useToggleRequest';
-import ReportSelect from '@srcRoot/components/ReportSelect';
 import RadioGroup from '@srcRoot/components/RadioGroup';
+import ReportSelect from '@srcRoot/components/ReportSelect';
+import SubmitButton from '@srcRoot/components/SubmitButton';
 import UserGuide from '@srcRoot/components/UserGuide';
+import { SAPA_VIRTUAL_SPORTS_WL, USER_GUIDE } from '@srcRoot/constants/pages';
 import LangHelper from '@srcRoot/helpers/langHelper';
+import useToggleRequest from '@srcRoot/hooks/useToggleRequest';
 import DataService from '@srcRoot/lib/dataService';
 import Site from '@srcRoot/lib/site';
-import SubmitButton from '@srcRoot/components/SubmitButton';
 
-import actions from '../actions';
-import { constants } from '../common';
 import AutoComplete from '@srcRoot/components/auto-complete';
 import CheckBox from '@srcRoot/components/CheckBox';
 import Popup from '@srcRoot/components/Popup';
+import { ReportLevel } from '@srcRoot/constants/report';
+import actions from '../actions';
+import { constants } from '../common';
 
 const FormFilter = (props) => {
     const dispatch = useDispatch();
