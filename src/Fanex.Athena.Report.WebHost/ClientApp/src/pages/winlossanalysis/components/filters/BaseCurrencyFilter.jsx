@@ -11,7 +11,13 @@ export const BaseCurrencyFilter = (props) => {
         const baseCurrencyList = options;
         return (
             baseCurrencyList?.length && (
-                <ReportSelect instanceId="ddlBased" value={value.value !== DEFAULT_BASE_CURRENCY_VALUE ? value : null} options={options} onChange={onChange} />
+                <ReportSelect
+                    id="select-list-BaseCurrency"
+                    instanceId="ddlBased"
+                    value={value.value !== DEFAULT_BASE_CURRENCY_VALUE ? value : null}
+                    options={options}
+                    onChange={onChange}
+                />
             )
         );
     };

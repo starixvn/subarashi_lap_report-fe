@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useSelector, shallowEqual } from 'react-redux';
 
 import LangHelper from '@srcRoot/helpers/langHelper';
+import ExportExcel from '@srcRoot/components/ExportExcel';
 
 const LiveReportFormFilter = (props) => {
     const navigate = useNavigate();
@@ -39,7 +40,7 @@ const LiveReportFormFilter = (props) => {
         <p className="content-title">
             {getReportTitle(formData.title, formData.fromDate, formData.toDate)}
             <span className="base-currency">{LangHelper.getSingleResource('Viewin').replace('{0}', formData.baseCurrency.toUpperCase())}</span>
-            <i className="icon-excel right" onClick={exportExcel} title={LangHelper.getSingleResource('ExportToExcel')}></i>
+            <ExportExcel onClick={exportExcel} />
             <i className="icon-back right" onClick={() => navigate(-1)}></i>
         </p>
     );

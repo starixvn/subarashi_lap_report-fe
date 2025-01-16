@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector, shallowEqual } from 'react-redux';
 
+import ExportExcel from '@srcRoot/components/ExportExcel';
 import LangHelper from '@srcRoot/helpers/langHelper';
 
 const FormFilter = (props) => {
@@ -19,7 +20,7 @@ const FormFilter = (props) => {
         <p className="content-title">
             {`${formData.title} - `}
             <span className="base-currency">{LangHelper.getSingleResource('Viewin').replace('{0}', formData.baseCurrency)}</span>
-            <i className="icon-excel right" onClick={exportExcel} title={LangHelper.getSingleResource('ExportToExcel')}></i>
+            <ExportExcel onClick={exportExcel} />
         </p>
     );
 };

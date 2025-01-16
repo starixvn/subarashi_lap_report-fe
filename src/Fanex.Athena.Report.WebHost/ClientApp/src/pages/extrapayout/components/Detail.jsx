@@ -4,15 +4,16 @@ import { bindActionCreators } from 'redux';
 
 import { Table } from '@legion-lib/react-grid';
 
+import { toggleLoader } from '@srcRoot/actions/loaderAction';
+import BetListPopupLayout from '@srcRoot/components/BetListPopupLayout';
+import NoDataTitle from '@srcRoot/components/NoDataTitle';
+import LangHelper from '@srcRoot/helpers/langHelper';
 import DataService from '@srcRoot/lib/dataService';
 import Site from '@srcRoot/lib/site';
-import LangHelper from '@srcRoot/helpers/langHelper';
-import NoDataTitle from '@srcRoot/components/NoDataTitle';
-import BetListPopupLayout from '@srcRoot/components/BetListPopupLayout';
-import { toggleLoader } from '@srcRoot/actions/loaderAction';
 
-import { renderDetailHeader, renderDetailDataSection, renderDetailFooter } from '../common/gridUtils';
+import ExportExcel from '@srcRoot/components/ExportExcel';
 import { ApiUrl } from '../common/constants';
+import { renderDetailDataSection, renderDetailFooter, renderDetailHeader } from '../common/gridUtils';
 
 export const Detail = (props) => {
     const { title, data, param, toggleLoader } = props;
@@ -46,16 +47,16 @@ export const Detail = (props) => {
             });
     };
 
-    const betlistTitle = (
+    const betListTitle = (
         <p>
             {title}
-            <i className="icon-excel right" onClick={exportDetailExcel} title={LangHelper.getSingleResource('ExportToExcel')}></i>
+            <ExportExcel onClick={exportDetailExcel} />
         </p>
     );
 
     return (
         <div>
-            <BetListPopupLayout title={betlistTitle}>
+            <BetListPopupLayout title={betListTitle}>
                 {data && data.data.length ? (
                     <Table
                         autoWidth={false}

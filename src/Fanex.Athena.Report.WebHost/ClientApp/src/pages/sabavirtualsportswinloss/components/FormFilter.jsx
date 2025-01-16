@@ -15,6 +15,7 @@ import Site from '@srcRoot/lib/site';
 
 import AutoComplete from '@srcRoot/components/auto-complete';
 import CheckBox from '@srcRoot/components/CheckBox';
+import ExportExcel from '@srcRoot/components/ExportExcel';
 import Popup from '@srcRoot/components/Popup';
 import { ReportLevel } from '@srcRoot/constants/report';
 import actions from '../actions';
@@ -126,7 +127,7 @@ const FormFilter = (props) => {
 
     const SupportButtons = (
         <>
-            <i className="icon-excel right" onClick={onExportExcel} title={LangHelper.getSingleResource('ExportToExcel')} />
+            <ExportExcel onClick={onExportExcel} />
             {!formData.isFakeLicensee && (
                 <UserGuide
                     title={LangHelper.getSingleResource(USER_GUIDE)}
@@ -169,19 +170,30 @@ const FormFilter = (props) => {
                 <div className="col-12 col-lg-2 col-md-3 col-sm-12">
                     <div className="form-group">
                         <label className="label-text">{LangHelper.getSingleResource('Currency')}</label>
-                        <ReportSelect onChange={(value) => dispatch(setSelectedCurrency(value))} value={selectedCurrency} options={formData.currencies} />
+                        <ReportSelect
+                            id="select-list-CurrencyId"
+                            onChange={(value) => dispatch(setSelectedCurrency(value))}
+                            value={selectedCurrency}
+                            options={formData.currencies}
+                        />
                     </div>
                 </div>
                 <div className="col-12 col-lg-2 col-md-3 col-sm-12">
                     <div className="form-group">
                         <label className="label-text">{LangHelper.getSingleResource('Sport')}</label>
-                        <ReportSelect onChange={(value) => dispatch(setSelectedSport(value))} value={selectedSport} options={formData.sports} />
+                        <ReportSelect
+                            id="select-list-Sport"
+                            onChange={(value) => dispatch(setSelectedSport(value))}
+                            value={selectedSport}
+                            options={formData.sports}
+                        />
                     </div>
                 </div>
                 <div className="col-12 col-lg-2 col-md-4 col-sm-12">
                     <div className="form-group">
                         <label className="label-text">{LangHelper.getSingleResource('League')}</label>
                         <ReportSelect
+                            id="select-list-League"
                             isDisabled={!leagues?.length}
                             onChange={(value) => dispatch(setSelectedLeague(value))}
                             value={selectedLeague}
@@ -196,7 +208,7 @@ const FormFilter = (props) => {
                             url={ApiUrl.CUSTOMER_SEARCH_URL}
                             onSelect={(value) => dispatch(setUsername(value))}
                             onInput={(value) => dispatch(setUsername(value))}
-                            htmlAttributes={{ placeholder: LangHelper.getSingleResource('ExternalIdOrSystemId') }}
+                            htmlAttributes={{ placeholder: LangHelper.getSingleResource('ExternalIdOrSystemId'), id: 'Username', name: 'Username' }}
                         />
                     </div>
                 </div>

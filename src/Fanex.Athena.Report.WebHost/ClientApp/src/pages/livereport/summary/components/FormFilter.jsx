@@ -1,23 +1,24 @@
-import React, { useEffect, useState } from 'react';
-import classNames from 'classnames';
-import { useDispatch, useSelector } from 'react-redux';
 import { DateRange } from '@legion-lib/react-daterangepicker';
+import classNames from 'classnames';
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
-import { LIVE_REPORT, USER_GUIDE } from '@srcRoot/constants/pages';
-import SubmitButton from '@srcRoot/components/SubmitButton';
 import CollapsiblePanel from '@srcRoot/components/CollapsiblePanel';
-import useToggleRequest from '@srcRoot/hooks/useToggleRequest';
 import ReportSelect from '@srcRoot/components/ReportSelect';
+import SubmitButton from '@srcRoot/components/SubmitButton';
 import UserGuide from '@srcRoot/components/UserGuide';
-import useSubsidiarySearch from '@srcRoot/hooks/useSubsidiarySearch';
+import { LIVE_REPORT, USER_GUIDE } from '@srcRoot/constants/pages';
 import LangHelper from '@srcRoot/helpers/langHelper';
+import useSubsidiarySearch from '@srcRoot/hooks/useSubsidiarySearch';
+import useToggleRequest from '@srcRoot/hooks/useToggleRequest';
 import DataService from '@srcRoot/lib/dataService';
 import Site from '@srcRoot/lib/site';
 
+import ExportExcel from '@srcRoot/components/ExportExcel';
 import { ActionCreators } from '../actions';
 import Service, { constants } from '../common';
-import SubsidiaryDropdown from './Filter/SubsidiaryDropdown';
 import SubsidiaryCheckBox from './Filter/SubsidiaryCheckBox';
+import SubsidiaryDropdown from './Filter/SubsidiaryDropdown';
 
 const FormFilter = (props) => {
     const { DateConstraint, ApiUrl } = constants;
@@ -97,8 +98,7 @@ const FormFilter = (props) => {
             newSelectedBaseCurrency = { ...selectedCurrency, isEmpty: true };
             newBaseCurrencyList.push(newSelectedBaseCurrency);
             dispatch(setBaseCurrencyList(newBaseCurrencyList));
-        }
-        else {
+        } else {
             dispatch(setBaseCurrencyList([...formData.baseCurrencies]));
         }
 
@@ -194,7 +194,7 @@ const FormFilter = (props) => {
 
     const SupportButtons = (
         <>
-            <i className="icon-excel right" onClick={onExportExcel} title={LangHelper.getSingleResource('ExportToExcel')} />
+            <ExportExcel onClick={onExportExcel} />
             {!formData.isFakeLicensee && (
                 <UserGuide
                     title={LangHelper.getSingleResource(USER_GUIDE)}
@@ -243,6 +243,7 @@ const FormFilter = (props) => {
                     <div className="form-group">
                         <label className="label-text">{LangHelper.getSingleResource('BaseCurrency')}</label>
                         <ReportSelect
+                            id="select-list-BaseCurrency"
                             onChange={onChangeSelectBaseCurrency}
                             value={currentBaseCurrency}
                             defaultValue={currentBaseCurrency}

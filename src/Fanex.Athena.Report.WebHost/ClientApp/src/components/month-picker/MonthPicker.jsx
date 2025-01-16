@@ -79,10 +79,28 @@ const MonthPicker = (props) => {
 
     return (
         <div className={`month-picker ${props.showDate ? '' : 'month-only'}`}>
-            <Month min={min} max={max} value={month} {...props.monthOption} onChange={onMonthChange} />
+            <Month id="DateControl" min={min} max={max} value={month} {...props.monthOption} onChange={onMonthChange} />
 
-            {props.showDate && <Day min={startDate} max={endDate > to ? to : endDate} value={from} {...props.fromDateOption} onChange={onFromDateChange} />}
-            {props.showDate && <Day min={startDate < from ? from : startDate} max={endDate} value={to} {...props.toDateOption} onChange={onToDateChange} />}
+            {props.showDate && (
+                <Day
+                    id="MonthPickerFromDay"
+                    min={startDate}
+                    max={endDate > to ? to : endDate}
+                    value={from}
+                    {...props.fromDateOption}
+                    onChange={onFromDateChange}
+                />
+            )}
+            {props.showDate && (
+                <Day
+                    id="MonthPickerToDay"
+                    min={startDate < from ? from : startDate}
+                    max={endDate}
+                    value={to}
+                    {...props.toDateOption}
+                    onChange={onToDateChange}
+                />
+            )}
         </div>
     );
 };

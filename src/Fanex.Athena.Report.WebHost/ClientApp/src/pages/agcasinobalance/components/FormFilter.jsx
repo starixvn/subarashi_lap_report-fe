@@ -13,6 +13,7 @@ import SubmitButton from '@srcRoot/components/SubmitButton';
 import { ReportLevel } from '@srcRoot/constants/report';
 import MonthPicker from '@srcRoot/components/month-picker';
 import CheckBox from '@srcRoot/components/CheckBox';
+import ExportExcel from '@srcRoot/components/ExportExcel';
 
 import actions from '../actions';
 import { constants } from '../common';
@@ -84,7 +85,7 @@ const FormFilter = (props) => {
         }
     };
 
-    const SupportButtons = <i className="icon-excel right" onClick={onExportExcel} title={LangHelper.getSingleResource('ExportToExcel')} />;
+    const SupportButtons = <ExportExcel onClick={onExportExcel} />;
 
     return (
         <CollapsiblePanel className="light-shadow" stickyFooter={SupportButtons} isCollapseMode={false}>
@@ -107,6 +108,7 @@ const FormFilter = (props) => {
                     <div className="form-group">
                         <label className="label-text">{LangHelper.getSingleResource('Currency')}</label>
                         <ReportSelect
+                            id="CurrencyId"
                             onChange={onChangeSelectedCurrency}
                             value={selectedCurrency}
                             defaultValue={selectedCurrency}

@@ -1,20 +1,20 @@
-﻿import React from 'react';
-import { bindActionCreators } from 'redux';
-import { connect, useDispatch, useSelector } from 'react-redux';
+﻿import { DateRange } from '@legion-lib/react-daterangepicker';
 import MultipleSelect from '@legion-lib/react-multiselect';
-import { DateRange } from '@legion-lib/react-daterangepicker';
+import { useDispatch, useSelector } from 'react-redux';
 
-import Site from '@srcRoot/lib/site';
-import LangHelper from '@srcRoot/helpers/langHelper';
-import UserGuide from '@srcRoot/components/UserGuide';
-import ReportSelect from '@srcRoot/components/ReportSelect.jsx';
 import CollapsiblePanel from '@srcRoot/components/CollapsiblePanel.jsx';
+import ReportSelect from '@srcRoot/components/ReportSelect.jsx';
+import UserGuide from '@srcRoot/components/UserGuide';
+import { USER_GUIDE, WL_BY_TIME_ZONE } from '@srcRoot/constants/pages.js';
+import LangHelper from '@srcRoot/helpers/langHelper';
 import useToggleRequest from '@srcRoot/hooks/useToggleRequest.js';
 import DataService from '@srcRoot/lib/dataService';
-import { USER_GUIDE, WL_BY_TIME_ZONE } from '@srcRoot/constants/pages.js';
+import Site from '@srcRoot/lib/site';
 
-import { ReportBy, SettingConst, TimeZones, ApiUrl, DateConstraint } from '../constants';
+import ExportExcel from '@srcRoot/components/ExportExcel';
+import React from 'react';
 import { ActionCreators } from '../actions/index';
+import { ApiUrl, DateConstraint, ReportBy, SettingConst, TimeZones } from '../constants';
 
 const FormFilter = (props) => {
     const dispatch = useDispatch();
@@ -178,7 +178,7 @@ const FormFilter = (props) => {
 
     const SupportButtons = (
         <>
-            <i className="icon-excel right" onClick={onExportExcel} title={LangHelper.getSingleResource('ExportToExcel')} />
+            <ExportExcel onClick={onExportExcel} />
             <UserGuide
                 title={LangHelper.getSingleResource(USER_GUIDE)}
                 contentTitle={LangHelper.getSingleResource(WL_BY_TIME_ZONE)}
@@ -209,7 +209,13 @@ const FormFilter = (props) => {
                 <div className="col-12 col-md-2 col-sm-3 col-lg-2 col-xl-2">
                     <div className="form-group">
                         <label className="label-text">{LangHelper.getSingleResource('TimeZone')}</label>
-                        <ReportSelect instanceId="ddlTimeZone" defaultValue={selectedTimeZone} options={TimeZones} onChange={onChangeTimeZone} />
+                        <ReportSelect
+                            id="select-TimeZone"
+                            instanceId="ddlTimeZone"
+                            defaultValue={selectedTimeZone}
+                            options={TimeZones}
+                            onChange={onChangeTimeZone}
+                        />
                     </div>
                 </div>
 
@@ -231,7 +237,13 @@ const FormFilter = (props) => {
                 <div className="col-12 col-md-2 col-sm-3 col-lg-2 col-xl-2">
                     <div className="form-group">
                         <label className="label-text">{LangHelper.getSingleResource('Currency')}</label>
-                        <ReportSelect instanceId="ddlCurrency" defaultValue={selectedCurrency} options={formData.currencies} onChange={onChangeCurrency} />
+                        <ReportSelect
+                            id="CurrencyId"
+                            instanceId="ddlCurrency"
+                            defaultValue={selectedCurrency}
+                            options={formData.currencies}
+                            onChange={onChangeCurrency}
+                        />
                     </div>
                 </div>
 
@@ -239,6 +251,7 @@ const FormFilter = (props) => {
                     <div className="form-group">
                         <label className="label-text">{LangHelper.getSingleResource('BaseCurrency')}</label>
                         <ReportSelect
+                            id="select-list-BaseCurrency"
                             instanceId="ddlBased"
                             value={selectedBaseCurrency}
                             defaultValue={selectedBaseCurrency}

@@ -9,6 +9,7 @@ import useToggleRequest from '@srcRoot/hooks/useToggleRequest';
 import ReportSelect from '@srcRoot/components/ReportSelect';
 import RadioGroup from '@srcRoot/components/RadioGroup';
 import UserGuide from '@srcRoot/components/UserGuide';
+import ExportExcel from '@srcRoot/components/ExportExcel';
 import LangHelper from '@srcRoot/helpers/langHelper';
 import DataService from '@srcRoot/lib/dataService';
 import Site from '@srcRoot/lib/site';
@@ -96,7 +97,7 @@ const FormFilter = (props) => {
 
     const SupportButtons = (
         <>
-            <i className="icon-excel right" onClick={onExportExcel} title={LangHelper.getSingleResource('ExportToExcel')} />
+            <ExportExcel onClick={onExportExcel} />
             {!formData.isFakeLicensee && (
                 <UserGuide
                     title={LangHelper.getSingleResource(USER_GUIDE)}
@@ -139,7 +140,12 @@ const FormFilter = (props) => {
                 <div className="col-12 col-lg-2 col-md-2 col-sm-12">
                     <div className="form-group">
                         <label className="label-text">{LangHelper.getSingleResource('Currency')}</label>
-                        <ReportSelect onChange={(value) => dispatch(setSelectedCurrency(value))} value={selectedCurrency} options={formData.currencies} />
+                        <ReportSelect
+                            id="select-list-CurrencyId"
+                            onChange={(value) => dispatch(setSelectedCurrency(value))}
+                            value={selectedCurrency}
+                            options={formData.currencies}
+                        />
                     </div>
                 </div>
                 <div className="col-12 col-lg-2 col-md-2 col-sm-12">

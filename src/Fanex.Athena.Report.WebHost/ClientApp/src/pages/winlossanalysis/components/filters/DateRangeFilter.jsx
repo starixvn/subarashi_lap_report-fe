@@ -7,11 +7,12 @@ import { DateConstraint } from '../../common/dateSetting';
 import { DefaultState, ViewInTimeMode } from '../../common/constants';
 
 export const DateRangeFilter = (props) => {
-    const {onChange, isMobile, viewInTime} = props;
+    const { onChange, isMobile, viewInTime } = props;
 
-    const { limitedMonthRange, minDate } = viewInTime == ViewInTimeMode.Settlement
-    ? { limitedMonthRange: DateConstraint.settlementTimeLimitedMonthRange, minDate: DateConstraint.settlementTimeMinDate }
-    : { limitedMonthRange: DateConstraint.limitedMonthRange, minDate: DateConstraint.minDate };
+    const { limitedMonthRange, minDate } =
+        viewInTime == ViewInTimeMode.Settlement
+            ? { limitedMonthRange: DateConstraint.settlementTimeLimitedMonthRange, minDate: DateConstraint.settlementTimeMinDate }
+            : { limitedMonthRange: DateConstraint.limitedMonthRange, minDate: DateConstraint.minDate };
 
     const _renderDateRange = () => {
         return (
@@ -23,7 +24,7 @@ export const DateRangeFilter = (props) => {
                 today={DateConstraint.maxDate}
                 limitedMonthRange={limitedMonthRange}
                 firstDayOfWeek={DateConstraint.firstDayOfWeek}
-                onChange={(date, isValid) => onChange(date, isValid, limitedMonthRange)} 
+                onChange={(date, isValid) => onChange(date, isValid, limitedMonthRange)}
                 isMobile={isMobile}
                 langHandler={(key) => LangHelper.getSingleResource(key)}
             />

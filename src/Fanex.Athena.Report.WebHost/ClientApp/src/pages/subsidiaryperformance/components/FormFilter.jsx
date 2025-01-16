@@ -1,18 +1,19 @@
-﻿import React from 'react';
-import classNames from 'classnames';
-import { useDispatch, useSelector } from 'react-redux';
+﻿import { DateRange } from '@legion-lib/react-daterangepicker';
 import MultipleSelect, { TreeViewSelect } from '@legion-lib/react-multiselect';
-import { DateRange } from '@legion-lib/react-daterangepicker';
+import classNames from 'classnames';
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
-import Site from '@srcRoot/lib/site';
-import DataService from '@srcRoot/lib/dataService';
-import LangHelper from '@srcRoot/helpers/langHelper';
 import CheckBox from '@srcRoot/components/CheckBox';
-import ReportSelect from '@srcRoot/components/ReportSelect.jsx';
 import CollapsiblePanel from '@srcRoot/components/CollapsiblePanel.jsx';
+import ReportSelect from '@srcRoot/components/ReportSelect.jsx';
 import { ReportLevel, SubsidiaryViewType } from '@srcRoot/constants/report';
+import LangHelper from '@srcRoot/helpers/langHelper';
 import useToggleRequest from '@srcRoot/hooks/useToggleRequest.js';
+import DataService from '@srcRoot/lib/dataService';
+import Site from '@srcRoot/lib/site';
 
+import ExportExcel from '@srcRoot/components/ExportExcel';
 import actions from '../actions/index';
 import { constants } from '../common';
 
@@ -145,7 +146,7 @@ const FormFilter = (props) => {
 
     const isShowSubsidiaryDropDown = formData.viewType !== SubsidiaryViewType.NOT_MANAGEMENT;
 
-    const SupportButtons = <i className="icon-excel right" onClick={onExportExcel} title={LangHelper.getSingleResource('ExportToExcel')} />;
+    const SupportButtons = <ExportExcel onClick={onExportExcel} />;
 
     return (
         <CollapsiblePanel stickyFooter={SupportButtons} isCollapseMode={false}>
@@ -206,6 +207,7 @@ const FormFilter = (props) => {
                     <div className="form-group">
                         <label className="label-text">{LangHelper.getSingleResource('BaseCurrency')}</label>
                         <ReportSelect
+                            id="select-list-BaseCurrency"
                             instanceId="ddlBased"
                             value={selectedBaseCurrency}
                             defaultValue={selectedBaseCurrency}

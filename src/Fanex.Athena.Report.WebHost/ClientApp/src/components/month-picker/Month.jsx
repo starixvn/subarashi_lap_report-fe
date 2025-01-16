@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Overlay from '../Overlay';
 import LangHelper from '@srcRoot/helpers/langHelper';
 
-const Month = ({ label, value, min, max, onChange }) => {
+const Month = ({ id, label, value, min, max, onChange }) => {
     const shortMonths = LangHelper.getResources(['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']);
     const fullMonths = LangHelper.getResources([
         'January',
@@ -114,7 +114,7 @@ const Month = ({ label, value, min, max, onChange }) => {
     const validPrevMonth = checkValidMonth(prevMonth.month, prevMonth.year);
 
     return (
-        <div className="month">
+        <div id={id} className="month">
             <label className="label-text">{label}</label>
             <div className="month-content">
                 <div className="month-container">
@@ -143,6 +143,7 @@ const Month = ({ label, value, min, max, onChange }) => {
 };
 
 Month.propTypes = {
+    id: PropTypes.string,
     label: PropTypes.string,
     value: PropTypes.object.isRequired,
     min: PropTypes.object.isRequired,
