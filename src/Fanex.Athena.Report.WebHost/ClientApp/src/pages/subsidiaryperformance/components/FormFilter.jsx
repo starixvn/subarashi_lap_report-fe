@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import CheckBox from '@srcRoot/components/CheckBox';
 import CollapsiblePanel from '@srcRoot/components/CollapsiblePanel.jsx';
 import ReportSelect from '@srcRoot/components/ReportSelect.jsx';
-import { ReportLevel, SubsidiaryViewType } from '@srcRoot/constants/report';
+import { ReportLevel, SubsidiaryViewType, TreeViewOption } from '@srcRoot/constants/report';
 import LangHelper from '@srcRoot/helpers/langHelper';
 import useToggleRequest from '@srcRoot/hooks/useToggleRequest.js';
 import DataService from '@srcRoot/lib/dataService';
@@ -46,7 +46,7 @@ const FormFilter = (props) => {
         changeConvertAll,
     } = actions;
 
-    const { TreeViewOption, ApiUrl, DateConstraint } = constants;
+    const { ApiUrl, DateConstraint } = constants;
 
     const isValidModel =
         selectedSubsidiary && selectedProduct && selectedBaseCurrency && formData.baseCurrencies.find((x) => x.value == selectedBaseCurrency.value);
@@ -123,9 +123,7 @@ const FormFilter = (props) => {
         }
     };
 
-    const onExportExcel = (event) => {
-        event.preventDefault();
-
+    const onExportExcel = () => {
         const params = requestParam ?? getParams();
         if (params?.DrillDownLevel == ReportLevel.CUSTOMER) {
             return sendRequest(() => DataService.getReportFile(ApiUrl.EXPORT_DETAIL_EXCEL_URL, params), downLoadExcel);
@@ -186,6 +184,7 @@ const FormFilter = (props) => {
                             today={DateConstraint.today}
                             limitedMonthRange={DateConstraint.limitedMonthRange}
                             onChange={applyDateRangeHandler}
+                            langHandler={(key) => LangHelper.getDateRangeResource(key)}
                         />
                     </div>
                 </div>

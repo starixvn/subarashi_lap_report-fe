@@ -220,7 +220,7 @@ const FormFilter = (props) => {
                             startDate={dateRange.fromDate}
                             endDate={dateRange.toDate}
                             onChange={onChangeDateRange}
-                            langHandler={(key) => LangHelper.getSingleResource(key)}
+                            langHandler={(key) => LangHelper.getDateRangeResource(key)}
                         />
                     </div>
                 </div>

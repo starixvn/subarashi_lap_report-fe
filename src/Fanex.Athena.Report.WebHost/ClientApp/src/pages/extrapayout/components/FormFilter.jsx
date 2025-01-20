@@ -52,7 +52,7 @@ export const FormFilter = (props) => {
                 today={DateSettings.DateRange.toDate}
                 firstDayOfWeek={DateSettings.FirstDayOfWeek}
                 onChange={_onChangeDateRange}
-                langHandler={(key) => LangHelper.getSingleResource(key)}
+                langHandler={(key) => LangHelper.getDateRangeResource(key)}
             />
         );
     };

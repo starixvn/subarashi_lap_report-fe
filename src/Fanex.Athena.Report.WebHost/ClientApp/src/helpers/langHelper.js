@@ -22,6 +22,11 @@ export default class LangHelper {
         return (langHandler && langHandler[newKey]) || (window[DEFAULT_RESOURCE_NAME] && window[DEFAULT_RESOURCE_NAME][newKey]) || newKey;
     }
 
+    static getDateRangeResource(key) {
+        if (key === 'May') return this.getSingleResource('May2');
+        return this.getSingleResource(key);
+    }
+
     static getResources(keys) {
         var langHandler = window[resourceName];
 

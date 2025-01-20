@@ -153,9 +153,7 @@ const FormFilter = (props) => {
         }
     };
 
-    const onExportExcel = (event) => {
-        event.preventDefault();
-
+    const onExportExcel = () => {
         const params = getParams();
         if (!params) {
             return;
@@ -202,6 +200,7 @@ const FormFilter = (props) => {
                             today={DateConstraint.today}
                             limitedMonthRange={DateConstraint.limitedMonthRange}
                             onChange={applyDateRangeHandler}
+                            langHandler={(key) => LangHelper.getDateRangeResource(key)}
                         />
                     </div>
                 </div>

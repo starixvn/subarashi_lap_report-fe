@@ -228,7 +228,7 @@ const FormFilter = (props) => {
                             limitedMonthRange={DateConstraint.limitedMonthRange}
                             firstDayOfWeek={DateConstraint.firstDayOfWeek}
                             format={'MM/DD/yyyy'}
-                            langHandler={(key) => (key === 'May' ? LangHelper.getSingleResource('May2') : LangHelper.getSingleResource(key))}
+                            langHandler={(key) => LangHelper.getDateRangeResource(key)}
                             onChange={onChangeDateRange}
                         />
                     </div>

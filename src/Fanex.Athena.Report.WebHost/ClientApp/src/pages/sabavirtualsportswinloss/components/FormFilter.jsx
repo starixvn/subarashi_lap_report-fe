@@ -163,7 +163,7 @@ const FormFilter = (props) => {
                             today={DateConstraint.today}
                             firstDayOfWeek={DateConstraint.firstDayOfWeek}
                             onChange={onChangeDateRange}
-                            langHandler={(key) => LangHelper.getSingleResource(key)}
+                            langHandler={(key) => LangHelper.getDateRangeResource(key)}
                         />
                     </div>
                 </div>
