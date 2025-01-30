@@ -33,6 +33,7 @@ function MatchCell({ data, ...rest }) {
             AwayId: data.awayId,
             BetType: data.betType,
             EventType: data.eventType,
+            SportType: data.sportId,
             Rows: 50,
             Page: 1,
         };
@@ -41,8 +42,8 @@ function MatchCell({ data, ...rest }) {
             params.SubsidiaryList = requestParam.SubsidiaryList;
         }
 
-        const url = data.sportId === 177 || data.sportId === 198 
-            ? BetListPageUrl.BETRADAR 
+        const url = data.sportId === 177 || data.sportId === 198
+            ? BetListPageUrl.BETRADAR
             : BetListPageUrl.MATCH ;
 
         navigate(url, params);
