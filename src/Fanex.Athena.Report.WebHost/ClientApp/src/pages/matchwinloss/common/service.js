@@ -22,11 +22,8 @@ class Service {
         const codeList = ['NG', 'LC', 'VS'];
         const productCodeList = [];
 
-        if ((matchProductCode === 'SB' || matchProductCode === 'BA') && productOptions.some((option) => option.code === 'SB')) {
+        if (matchProductCode === 'SB' && productOptions.some((option) => option.code === 'SB')) {
             productCodeList.push('SB');
-        }
-        if ((matchProductCode === 'SB' || matchProductCode === 'BA') && productOptions.some((option) => option.code === 'BA')) {
-            productCodeList.push('BA');
         }
 
         codeList.forEach((item) => {
@@ -69,7 +66,7 @@ class Service {
             if(homeName.length > MaxLength){
                 homeName = `<span title='${homeName.replace(",", "&#39;")}'>${homeName.substring(0, MaxLength - 3)}...</span>`
             }
-            
+
             if(awayName.length > MaxLength){
                 awayName = `<span title='${awayName.replace(",", "&#39;")}'>${awayName.substring(0, MaxLength - 3)}...</span>`
             }

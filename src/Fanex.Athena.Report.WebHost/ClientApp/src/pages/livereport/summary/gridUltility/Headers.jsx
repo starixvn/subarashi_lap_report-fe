@@ -12,7 +12,7 @@ export const BuildHeaders = (tableTitle, options) => {
     return result;
 };
 
-const BuildFirstRow = (firstColumnHeader, { isAllowedCustomerCommission, isAllowBa, hasAmountDueToColumn }) => (
+const BuildFirstRow = (firstColumnHeader, { isAllowedCustomerCommission, hasAmountDueToColumn }) => (
     <HeaderRow style={{ height: 23 }} key="header1">
         <HeaderCell className="first-header-cell" rowSpan="2" colWidth={200} key="FirstColumn">
             {firstColumnHeader}
@@ -33,11 +33,6 @@ const BuildFirstRow = (firstColumnHeader, { isAllowedCustomerCommission, isAllow
         <HeaderCell rowSpan="2" colWidth={300} key="LicenseeW_L">
             {LangHelper.getSingleResource('LicenseeW_L')}
         </HeaderCell>
-        {isAllowBa && (
-            <HeaderCell rowSpan="2" colWidth={200} key="BACommission">
-                {LangHelper.getSingleResource('Comm')}
-            </HeaderCell>
-        )}
         {hasAmountDueToColumn && (
             <HeaderCell rowSpan="2" colWidth={200} key="BACommission">
                 {LangHelper.getSingleResource('AmountDueTo')}

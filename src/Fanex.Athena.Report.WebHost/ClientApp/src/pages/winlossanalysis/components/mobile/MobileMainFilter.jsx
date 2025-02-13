@@ -74,7 +74,7 @@ export const MobileMainFilter = (props) => {
         onCurrencyChangeHandler,
     } = useFilterHandler();
     const { isOfferCashOutProduct, isHasPermissionViewVip } = formData;
-    const isEnableCashOutFilter = Service.isContainProductSportBookOrBa(selectedProduct);
+    const isEnableCashOutFilter = Service.isContainProductSportBook(selectedProduct);
     const isDisabledGroupInOriginalCurrency = useDisabledGroupInOriginalCurrency();
 
     useEffect(() => {

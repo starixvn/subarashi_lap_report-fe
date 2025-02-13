@@ -3,8 +3,8 @@ import { HeaderRow, HeaderCell } from '@legion-lib/react-grid';
 
 import LangHelper from '@srcRoot/helpers/langHelper';
 
-export const BuildHeaders = (hasCustomerComm, isAllowBA) => {
-    const result = [BuildFirstRow(hasCustomerComm, isAllowBA)];
+export const BuildHeaders = (hasCustomerComm) => {
+    const result = [BuildFirstRow(hasCustomerComm)];
     if (hasCustomerComm) {
         result.push(BuildSecondRow());
     }
@@ -12,7 +12,7 @@ export const BuildHeaders = (hasCustomerComm, isAllowBA) => {
     return result;
 };
 
-const BuildFirstRow = (hasCustomerComm, isAllowBA) => (
+const BuildFirstRow = (hasCustomerComm) => (
     <HeaderRow style={{ height: 23 }} key="header1">
         <HeaderCell rowSpan="2" colWidth={100} key="Index1">
             #
@@ -32,16 +32,6 @@ const BuildFirstRow = (hasCustomerComm, isAllowBA) => (
         <HeaderCell rowSpan="2" colWidth={200} key="LicenseeW_L">
             {LangHelper.getSingleResource('LicenseeW_L')}
         </HeaderCell>
-        {isAllowBA && (
-            <HeaderCell rowSpan="2" colWidth={200} key="BACommission">
-                {LangHelper.getSingleResource('BACommission')}
-            </HeaderCell>
-        )}
-        {isAllowBA && (
-            <HeaderCell rowSpan="2" colWidth={200} key="AmtDueToBA">
-                {LangHelper.getSingleResource('AmtDueToBA')}
-            </HeaderCell>
-        )}
     </HeaderRow>
 );
 

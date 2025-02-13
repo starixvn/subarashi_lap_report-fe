@@ -14,9 +14,9 @@ export default class Service {
         return licenseeName.toLowerCase() === OneTwoBetLicenseeName.toLowerCase();
     };
 
-    static isContainProductSportBookOrBa = (selectedItemsKey) => {
+    static isContainProductSportBook = (selectedItemsKey) => {
         var listSelectedProduct = selectedItemsKey.split(',');
-        return listSelectedProduct.indexOf(ProductCode.SportsBook) >= 0 || listSelectedProduct.indexOf(ProductCode.BA) >= 0;
+        return listSelectedProduct.indexOf(ProductCode.SportsBook) >= 0;
     };
 
     static getSelectedItemFromTreeListItem(items) {
@@ -104,12 +104,6 @@ export default class Service {
         const allSelected = this.getSelectedItemFromTreeListItem(dataList);
         return selectedValue === allSelected ? ALL_SELECTED_TEXT : selectedValue;
     }
-
-    static isContainBAProduct = (selectedProductCodes) => {
-        const baProductCode = 'BA';
-        const listSelectedProductCodes = selectedProductCodes.split(',');
-        return listSelectedProductCodes.includes(baProductCode);
-    };
 
     static getCurrencyCodes = (currencyListIds, currencyList) => {
         const normalizeText = this.getNormalizedSelectedParamValueForMultiSelectFilter(currencyListIds, currencyList);

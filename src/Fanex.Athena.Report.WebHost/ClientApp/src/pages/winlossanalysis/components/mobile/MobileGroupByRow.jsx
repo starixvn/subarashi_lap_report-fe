@@ -10,7 +10,7 @@ import MobileBreakdownRow from './MobileBreakdownRow';
 
 export const MobileGroupByRow = (props) => {
     const { data, selectedDisplayTypeId } = props;
-    const { isShowBAField, isShowBetEffectiveField, isGroupByPlayerMode } = useRenderRowOption();
+    const { isShowBetEffectiveField, isGroupByPlayerMode } = useRenderRowOption();
     const [isBreakdown, setIsBreakdown] = useState(false);
     const [collapseRef, setCollapseRef] = useState(null);
     const parentData = data.keyItem;
@@ -25,7 +25,6 @@ export const MobileGroupByRow = (props) => {
         betEffective,
         licWinloss,
         licComm,
-        amtDueToBA,
         margin,
         externalId,
         systemId,
@@ -51,16 +50,13 @@ export const MobileGroupByRow = (props) => {
             <MobileExpandRowContent text={HeaderText.LicenseeWL} value={NumberFormat.formatDecimal(licWinloss)} valueClass={licWinloss < 0 ? 'negative' : ''} />
         );
         detailRows.push(<MobileExpandRowContent text={HeaderText.LicenseeComm} value={NumberFormat.formatDecimal(licComm)} />);
-        {
-            isShowBAField && detailRows.push(<MobileExpandRowContent text={HeaderText.AmountDueToBA} value={NumberFormat.formatDecimal(amtDueToBA)} />);
-        }
         detailRows.push(
             <MobileExpandRowContent text={HeaderText.Margin} value={`${NumberFormat.formatDecimal(margin * 100)}%`} valueClass={margin < 0 ? 'negative' : ''} />
         );
         return detailRows;
     };
 
-    const detailRows = useMemo(() => _getDetailRows(), [parentData, isShowBetEffectiveField, isShowBAField]);
+    const detailRows = useMemo(() => _getDetailRows(), [parentData, isShowBetEffectiveField]);
     const breakDownRowList = useMemo(
         () => children.map((item) => <MobileBreakdownRow key={`${item.groupBy}-${item.breakBy}`} data={item} selectedDisplayTypeId={selectedDisplayTypeId} />),
         [children, selectedDisplayTypeId]

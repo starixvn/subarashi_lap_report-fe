@@ -30,16 +30,6 @@ const CommonCells = (props) => {
             <Cell className={`right-align ${matchData.licenseeWL - 0 < 0 ? 'negative' : ''}`} key={`col-licenseeWL`}>
                 {NumberFormat.formatDecimal(NumberFormat.round(matchData.licenseeWL, 2))}
             </Cell>
-            {formData.isEnableBA && (
-                <>
-                    <Cell className="right-align" key={`col-baCommission`}>
-                        {NumberFormat.formatDecimal(NumberFormat.round(matchData.baCommission, 2))}
-                    </Cell>
-                    <Cell className="right-align" key={`col-amtDueToBA`}>
-                        {NumberFormat.formatDecimal(NumberFormat.round(matchData.amtDueToBA, 2))}
-                    </Cell>
-                </>
-            )}
         </>
     );
 };

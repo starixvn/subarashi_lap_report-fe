@@ -11,9 +11,8 @@ function ByBetTypeDataGrid() {
     const selectedProductCode = useSelector((state) => state.selectedProductCode);
 
     const options = {
-        isAllowedCustomerCommission: formData.isAllowedCustomerCommission,
-        isAllowBa: formData.isAllowBa,
         hasAmountDueToColumn: formData.hasAmountDueToColumn,
+        isAllowedCustomerCommission: formData.isAllowedCustomerCommission
     };
 
     if (!selectedProductCode || !gridData || !gridData.length) {

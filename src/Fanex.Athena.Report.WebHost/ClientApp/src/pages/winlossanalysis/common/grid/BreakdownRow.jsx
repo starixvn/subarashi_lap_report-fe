@@ -13,14 +13,13 @@ export const BreakdownRow = (props) => {
         betEffective,
         licWinloss,
         licComm,
-        amtDueToBA,
         margin,
         breakBy,
         groupBy,
         breakDownFieldText,
         externalId,
     } = data;
-    const { isGroupByPlayerMode, isShowBAField, isBreakDownPlayerMode } = option;
+    const { isGroupByPlayerMode, isBreakDownPlayerMode } = option;
     const colSpan = isGroupByPlayerMode ? 2 : 1;
     return (
         <Row className="detail-row" key={`detail-row-${groupBy}-${breakBy}`}>
@@ -37,7 +36,6 @@ export const BreakdownRow = (props) => {
             <Cell className="right-align">{NumberFormat.formatDecimal(playerComm)}</Cell>
             <Cell className={`right-align ${licWinloss < 0 ? 'negative' : ''}`}>{NumberFormat.formatDecimal(licWinloss)}</Cell>
             <Cell className="right-align">{NumberFormat.formatDecimal(licComm)}</Cell>
-            {isShowBAField && <Cell className="right-align">{NumberFormat.formatDecimal(amtDueToBA)}</Cell>}
             <Cell className={`right-align ${margin < 0 ? 'negative' : ''}`}>{NumberFormat.formatDecimal(margin * 100)}%</Cell>
         </Row>
     );

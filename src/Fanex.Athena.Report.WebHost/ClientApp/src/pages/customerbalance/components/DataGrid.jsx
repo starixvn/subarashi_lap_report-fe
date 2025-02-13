@@ -35,7 +35,7 @@ const DataGrid = (props) => {
         );
     }
 
-    const { isAllowedCustomerCommission, isEnableBA, isEnableSingleWallet } = formData;
+    const { isAllowedCustomerCommission, isEnableSingleWallet } = formData;
 
     const totalSpan = gridData.data[0].systemId ? 3 : 2;
 
@@ -76,9 +76,9 @@ const DataGrid = (props) => {
                 onSort={onSort}
                 onPaging={onPaging}
                 pageOption={GetDefaultPagingOptions(requestParam.PageIndex, gridData.totalRows)}
-                header={BuildHeaders(isEnableSingleWallet, isAllowedCustomerCommission, isEnableBA)}
-                body={BuildBody(gridData.data, isEnableSingleWallet, isAllowedCustomerCommission, isEnableBA)}
-                footer={BuildFooter(gridData.total, totalSpan, isEnableSingleWallet, isAllowedCustomerCommission, isEnableBA)}
+                header={BuildHeaders(isEnableSingleWallet, isAllowedCustomerCommission)}
+                body={BuildBody(gridData.data, isEnableSingleWallet, isAllowedCustomerCommission)}
+                footer={BuildFooter(gridData.total, totalSpan, isEnableSingleWallet, isAllowedCustomerCommission)}
                 containerPadding={30}
                 shouldResetScrollPosition={true}
             />

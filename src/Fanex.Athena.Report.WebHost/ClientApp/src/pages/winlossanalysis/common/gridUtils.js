@@ -6,7 +6,7 @@ import TreeViewGridRowNode from './grid/TreeViewGridRowNode';
 import LangHelper from '@srcRoot/helpers/langHelper';
 
 export const renderHeader = (option) => {
-    const { isGroupByPlayerMode, isShowBAField, isBreakDownPlayerMode } = option;
+    const { isGroupByPlayerMode, isBreakDownPlayerMode } = option;
 
     const _renderDefaultHeader = () => {
         const prefixKey = 'hearder-default';
@@ -71,11 +71,6 @@ export const renderHeader = (option) => {
             <HeaderCell key={`${prefixKey}-${HeaderText.LicenseeComm}`} sortBy={SortBy.LicComm} rowSpan={rowSpan} colWidth={110}>
                 {HeaderText.LicenseeComm}
             </HeaderCell>,
-            isShowBAField && (
-                <HeaderCell key={`${prefixKey}-${HeaderText.AmountDueToBA}`} sortBy={SortBy.AmtDueToBA} rowSpan={rowSpan} colWidth={110}>
-                    {HeaderText.AmountDueToBA}
-                </HeaderCell>
-            ),
             <HeaderCell key={`${prefixKey}-${HeaderText.Margin}`} sortBy={SortBy.Margin} rowSpan={rowSpan} colWidth={110}>
                 {HeaderText.Margin}
             </HeaderCell>,
@@ -104,8 +99,8 @@ export const renderFooter = (dataItem, option) => {
     if (!dataItem) {
         return null;
     }
-    const { isGroupByPlayerMode, isShowBAField, isBreakDownPlayerMode } = option;
-    const { betCount, turnover, netTurnover, playerWinloss, playerComm, betEffective, licWinloss, licComm, amtDueToBA, margin } = dataItem;
+    const { isGroupByPlayerMode, isBreakDownPlayerMode } = option;
+    const { betCount, turnover, netTurnover, playerWinloss, playerComm, betEffective, licWinloss, licComm, margin } = dataItem;
     const totalCellColSpan = isGroupByPlayerMode || isBreakDownPlayerMode ? 3 : 2;
     return (
         <Row className="grant-total-row" key="grantTotal-row">
@@ -120,7 +115,6 @@ export const renderFooter = (dataItem, option) => {
             <Cell className="right-align">{NumberFormat.formatDecimal(playerComm)}</Cell>
             <Cell className={`right-align ${licWinloss < 0 ? 'negative' : ''}`}>{NumberFormat.formatDecimal(licWinloss)}</Cell>
             <Cell className="right-align">{NumberFormat.formatDecimal(licComm)}</Cell>
-            {isShowBAField && <Cell className="right-align">{NumberFormat.formatDecimal(amtDueToBA)}</Cell>}
             <Cell className={`right-align ${margin < 0 ? 'negative' : ''}`}>{NumberFormat.formatDecimal(margin * 100)}%</Cell>
         </Row>
     );

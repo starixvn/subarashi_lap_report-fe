@@ -9,9 +9,6 @@ export const BuildByBetTypeHeaders = (options) => BuildHeaders(LangHelper.getSin
 
 export const BuildByBetTypeBody = (data, options) => {
     let columnCount = options.isAllowedCustomerCommission ? 7 : 5;
-    if (options.isAllowBa) {
-        columnCount++;
-    }
 
     if (options.hasAmountDueToColumn) {
         columnCount++;

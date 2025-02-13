@@ -8,7 +8,7 @@ const CommonCells = (props) => {
     const formData = useSelector((state) => state.formData);
     const data = { ...props.data };
 
-    const { isAllowedCustomerCommission, isAllowBa, hasAmountDueToColumn } = formData;
+    const { isAllowedCustomerCommission, hasAmountDueToColumn } = formData;
 
     data.customerWinLoss = NumberFormat.formatDecimal(data.customerWinLoss);
     data.customerComm = NumberFormat.formatDecimal(data.customerComm);
@@ -43,11 +43,6 @@ const CommonCells = (props) => {
             <Cell title={data.licenseeWinLoss} className={`right-align ${data.licenseeWinLoss.startsWith('-') ? 'negative' : ''}`} key={`cell-licenseeWinLoss`}>
                 {data.licenseeWinLoss}
             </Cell>
-            {isAllowBa && (
-                <Cell title={data.licenseeComm} className="right-align" key={`cell-licenseeComm`}>
-                    {data.licenseeComm}
-                </Cell>
-            )}
             {hasAmountDueToColumn && (
                 <Cell title={data.turnOver} className="right-align" key={`cell-turnover`}>
                     {data.amountDue}

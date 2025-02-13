@@ -37,9 +37,9 @@ export const useFilterHandler = () => {
         setGroupInOriginalCurrency,
         setExcludeTestData,
         setProductList,
-        setSelectedViewInTime, 
-        setHour, 
-        setSelectedGroupByOption, 
+        setSelectedViewInTime,
+        setHour,
+        setSelectedGroupByOption,
         setSelectedBreakDownByOption
     } = ActionCreators;
 
@@ -63,7 +63,7 @@ export const useFilterHandler = () => {
     const onProductChangeHandler = useCallback((currentItem, selectedItemsKey) => {
         batch(() => {
             dispatch(setSelectedProducts(selectedItemsKey));
-            if (!Service.isContainProductSportBookOrBa(selectedItemsKey)) {
+            if (!Service.isContainProductSportBook(selectedItemsKey)) {
                 dispatch(setSelectedCashOutMode(Service.getCashoutMode(CashOutMode.IncludeCOFromSB)));
             }
             dispatch(getSportList(selectedItemsKey));
@@ -104,12 +104,11 @@ export const useFilterHandler = () => {
         if (item.value === CashOutMode.ViewCOOnly) {
             var productListOrg = viewInTime == ViewInTimeMode.Settlement ? settlementTimeProductList : orgProductList;
 
-            const selectedProduct = productListOrg.filter(product => product.id == ProductCode.BA || product.id == ProductCode.SportsBook)
-                .filter((product) => product.id == ProductCode.BA || product.id == ProductCode.SportsBook)
+            const selectedProduct = productListOrg.filter(product => product.id == ProductCode.SportsBook)
                 .map((item) => item.id)
                 .join(',');
 
-            const productList = productListOrg.map(product => product.id == ProductCode.SportsBook || product.id == ProductCode.BA ? product : { ...product, status: false });
+            const productList = productListOrg.map(product => product.id == ProductCode.SportsBook ? product : { ...product, status: false });
             onProductChangeHandler(null, selectedProduct);
             dispatch(setProductList(productList));
         }

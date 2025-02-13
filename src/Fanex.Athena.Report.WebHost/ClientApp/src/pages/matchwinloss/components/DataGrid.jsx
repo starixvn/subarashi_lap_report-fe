@@ -26,7 +26,7 @@ const DataGrid = (props) => {
         );
     }
 
-    const { isAllowedCustomerCommission, isEnableBA } = formData;
+    const { isAllowedCustomerCommission } = formData;
 
     const footerData = {
         isShowTotal: gridData.data.length > 0,
@@ -44,9 +44,9 @@ const DataGrid = (props) => {
                 autoWidth={true}
                 autoHeight={true}
                 isPaging={true}
-                header={BuildHeaders(isAllowedCustomerCommission, isEnableBA)}
-                body={BuildBody(gridData.data, gridData.columnCount, isAllowedCustomerCommission, isEnableBA)}
-                footer={BuildFooter(footerData, isAllowedCustomerCommission, isEnableBA)}
+                header={BuildHeaders(isAllowedCustomerCommission)}
+                body={BuildBody(gridData.data, gridData.columnCount, isAllowedCustomerCommission)}
+                footer={BuildFooter(footerData, isAllowedCustomerCommission)}
                 shouldResetScrollPosition={true}
             />
         </>

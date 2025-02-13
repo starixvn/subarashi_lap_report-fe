@@ -23,9 +23,8 @@ function SummaryDataGrid(props) {
     const { ApiUrl } = constants;
     const { setGridData, setRequestParam, setSelectedProductCode } = ActionCreators;
     const options = {
-        isAllowedCustomerCommission: formData.isAllowedCustomerCommission,
-        isAllowBa: formData.isAllowBa,
         hasAmountDueToColumn: formData.hasAmountDueToColumn,
+        isAllowedCustomerCommission: formData.isAllowedCustomerCommission
     };
 
     if (!summaryGridData) {

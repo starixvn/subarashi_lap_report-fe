@@ -14,7 +14,7 @@ export const BuildHeader = (options) => {
     return result;
 };
 
-const BuildFirstRow = ({ hasCasinoTransfer, isAllowBa, isEnableSingleWallet, isHidePlayerWL, hasCustomerComm }) => (
+const BuildFirstRow = ({ hasCasinoTransfer, isEnableSingleWallet, isHidePlayerWL, hasCustomerComm }) => (
     <HeaderRow style={{ height: 23 }} key="header1">
         <HeaderCell rowSpan="2" colWidth={200} className="first-header-cell" key="#">
             #
@@ -76,17 +76,12 @@ const BuildFirstRow = ({ hasCasinoTransfer, isAllowBa, isEnableSingleWallet, isH
                 {LangHelper.getSingleResource('CasinoTransfer')}
             </HeaderCell>
         )}
-        {isAllowBa && (
-            <HeaderCell colSpan={3} colWidth={500} key="BA">
-                {LangHelper.getSingleResource('BA')}
-            </HeaderCell>
-        )}
     </HeaderRow>
 );
 
-const BuildSecondRow = ({ hasCustomerComm, isAllowBa, isHidePlayerWL }) => {
+const BuildSecondRow = ({ hasCustomerComm, isHidePlayerWL }) => {
     const showCustomerWL = hasCustomerComm && !isHidePlayerWL;
-    if (!showCustomerWL && !isAllowBa) {
+    if (!showCustomerWL) {
         return null;
     }
 
@@ -105,21 +100,6 @@ const BuildSecondRow = ({ hasCustomerComm, isAllowBa, isHidePlayerWL }) => {
             {showCustomerWL && (
                 <HeaderCell colWidth={450} key="CusTotal">
                     {LangHelper.getSingleResource('Total')}
-                </HeaderCell>
-            )}
-            {isAllowBa && (
-                <HeaderCell colWidth={500} key="TurnoverBa">
-                    {LangHelper.getSingleResource('Turnover')}
-                </HeaderCell>
-            )}
-            {isAllowBa && (
-                <HeaderCell colWidth={500} key="CommBa">
-                    {LangHelper.getSingleResource('Comm')}
-                </HeaderCell>
-            )}
-            {isAllowBa && (
-                <HeaderCell colWidth={500} key="AmountDueToBA">
-                    {LangHelper.getSingleResource('AmountDueTo')}
                 </HeaderCell>
             )}
         </HeaderRow>

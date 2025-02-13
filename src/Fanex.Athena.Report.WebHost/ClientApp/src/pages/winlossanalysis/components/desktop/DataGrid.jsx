@@ -21,7 +21,6 @@ export const DataGrid = () => {
     const dispatch = useDispatch();
     const { data, sumTotal, totalRow } = reportData;
     const renderOption = {
-        isShowBAField: Service.isContainBAProduct(selectedProduct),
         isGroupByPlayerMode: requestParam.GroupMode == GroupByMode.Player,
         isBreakDownPlayerMode: requestParam.BreakdownMode == BreakdownByMode.Player,
     };

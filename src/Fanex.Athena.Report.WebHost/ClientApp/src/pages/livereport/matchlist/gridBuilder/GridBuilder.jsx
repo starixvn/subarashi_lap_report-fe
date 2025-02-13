@@ -27,7 +27,7 @@ export const BuildHeaders = (options) => {
     return result;
 };
 
-const BuildFirstRow = ({ isAllowedCustomerCommission, isAllowBa, hasAmountDueToColumn }) => (
+const BuildFirstRow = ({ isAllowedCustomerCommission, hasAmountDueToColumn }) => (
     <HeaderRow style={{ height: 23 }} key="header1">
         <HeaderCell className="first-header-cell" rowSpan="2" colWidth={600} key="FirstColumn">
             {LangHelper.getSingleResource('Match')}
@@ -49,11 +49,6 @@ const BuildFirstRow = ({ isAllowedCustomerCommission, isAllowBa, hasAmountDueToC
         <HeaderCell rowSpan="2" colWidth={300} key="LicenseeW_L" sortBy="LicenseeWinLoss">
             {LangHelper.getSingleResource('LicenseeW_L')}
         </HeaderCell>
-        {isAllowBa && (
-            <HeaderCell rowSpan="2" colWidth={200} key="BACommission" sortBy="LicenseeComm">
-                {LangHelper.getSingleResource('Comm')}
-            </HeaderCell>
-        )}
         {hasAmountDueToColumn && (
             <HeaderCell rowSpan="2" colWidth={200} key="BACommission" sortBy="AmountDue">
                 {LangHelper.getSingleResource('AmountDueTo')}

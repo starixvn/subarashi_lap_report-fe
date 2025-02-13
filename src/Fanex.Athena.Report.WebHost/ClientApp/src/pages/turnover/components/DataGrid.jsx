@@ -19,7 +19,7 @@ const DataGrid = (props) => {
         return null;
     }
 
-    const { isAllowedCustomerCommission, isAllowedCasinoTransfer, isAllowBa, isEnableSingleWallet, isHidePlayerWl } = formData;
+    const { isAllowedCustomerCommission, isAllowedCasinoTransfer, isEnableSingleWallet, isHidePlayerWl } = formData;
     const { FromDate, ToDate, CurrencyName, BaseCurrencyName, UserName } = requestParam;
 
     if (!gridData.data.length) {
@@ -34,7 +34,6 @@ const DataGrid = (props) => {
     const options = {
         hasCustomerComm: isAllowedCustomerCommission,
         hasCasinoTransfer: isAllowedCasinoTransfer,
-        isAllowBa: isAllowBa,
         isEnableSingleWallet: isEnableSingleWallet,
         isHidePlayerWL: isHidePlayerWl,
     };
