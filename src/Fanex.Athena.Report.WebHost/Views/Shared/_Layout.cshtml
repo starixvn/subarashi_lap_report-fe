@@ -4,7 +4,7 @@
     var langCode = context?.Request.Headers["Language"].ToString();
     var rootUrl = string.Concat(context?.Request.Headers["RootUrl"].ToString().TrimEnd('/'), "/");
     var appBaseUrl = $"{context?.Request.Scheme}://{context?.Request.Host}{context?.Request.PathBase}";
-    var cdnDomain = appSettings.StaticDomain;
+    var cdnDomain = appSettings.Value.StaticDomain;
     var webRootPath = WebHostEnvironment.WebRootPath;
 }
 <!DOCTYPE html>
@@ -26,6 +26,8 @@
 <script type="text/javascript">
     window.pageLanguage = "@langCode";
     window.rootUrl = "@rootUrl";
+    window.appSettings = @Html.Raw(JsonConvert.SerializeObject(appSettings.Value));
+    window.sentrySettings = @Html.Raw(JsonConvert.SerializeObject(sentrySettings.Value));
 </script>
 
 <script defer src="@UrlHelper.ContentLink("/js/vendor.chunk.js", appBaseUrl, webRootPath, cdnDomain)"></script>

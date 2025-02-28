@@ -1,12 +1,10 @@
 import * as Sentry from '@sentry/react';
-import Site from '@/lib/site';
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import App from './App';
+import { SentrySetting } from '@/lib/settings';
 
-const sentrySettings = Site.getSentrySetting();
-
-Sentry.init(sentrySettings);
+Sentry.init(SentrySetting);
 
 const root = createRoot(document.getElementById('root'));
 root.render(

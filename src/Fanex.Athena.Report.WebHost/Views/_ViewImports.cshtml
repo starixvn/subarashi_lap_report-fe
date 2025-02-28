@@ -1,6 +1,9 @@
 ﻿@using Microsoft.AspNetCore.Hosting;
 @using Fanex.Athena.Report.Core.Helpers;
+@using Microsoft.Extensions.Options
+@using Newtonsoft.Json;
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @inject IWebHostEnvironment WebHostEnvironment
 @inject IHttpContextAccessor HttpContextAccessor
-@inject AppSettings appSettings
+@inject IOptions<AppSettings> appSettings
+@inject IOptions<SentrySettings> sentrySettings

@@ -1,15 +1,24 @@
 var builder = WebApplication.CreateBuilder(args);
-
-builder.WebHost.UseSentry();
-
 var services = builder.Services;
 var configuration = builder.Configuration;
 
-services.AddControllersWithViews();
+var sentrySettings = configuration.GetSection(SentrySettings.SettingName).Get<SentrySettings>();
+var appSettings = configuration.GetSection(AppSettings.SettingName).Get<AppSettings>();
 
+builder.WebHost.UseSentry(config =>
+{
+    config.Dsn = sentrySettings.Dsn;
+    config.Environment = sentrySettings.Environment;
+    config.MinimumBreadcrumbLevel = sentrySettings.MinimumBreadcrumbLevel;
+    config.MinimumEventLevel = sentrySettings.MinimumEventLevel;
+    config.MaxBreadcrumbs = sentrySettings.MaxBreadcrumbs;
+    config.SendDefaultPii = sentrySettings.SendDefaultPii;
+    config.MaxRequestBodySize = sentrySettings.MaxRequestBodySize;
+});
+
+services.AddControllersWithViews();
 services.AddHttpContextAccessor();
 services.AddHealthCheck();
-
 services.AddSettings(configuration);
 
 var app = builder.Build();
@@ -17,7 +26,7 @@ var app = builder.Build();
 app.UseForwardedHeaders();
 app.UseForwardedHttpScheme();
 
-if (app.Environment.IsProduction() || string.Equals(configuration["UseErrorHandler"], "1"))
+if (app.Environment.IsProduction() || appSettings.UseErrorHandler)
 {
     app.UseErrorHandler();
 }
@@ -35,17 +44,14 @@ app.UseHttpsRedirection();
 
 app.UseStaticFiles(app.Environment.IsDevelopment());
 
-app.UseWhoAmICheck(configuration["Env"]);
+app.UseWhoAmICheck(appSettings);
 
 app.UseRouting();
 app.UseCors();
 
 app.MapGet("/", () => "LAP Report Client App is Running ...");
 
-app.UseEndpoints(endpoints =>
-{
-    endpoints.MapControllerRoute("Default", "{controller=Home}/{action=Index}");
-    endpoints.MapFallbackToController("Index", "Home");
-});
+app.MapControllerRoute("Default", "{controller=Home}/{action=Index}");
+app.MapFallbackToController("Index", "Home");
 
 app.Run();

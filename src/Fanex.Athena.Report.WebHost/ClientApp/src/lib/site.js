@@ -97,11 +97,4 @@ export default class Site {
     static assignToUrl(url) {
         window.location.assign(this.resolveClientUrl(url));
     }
-
-    static getSentrySetting = () => ({
-        dsn: process.env.APP_SETTING.SentryFEDsn,
-        environment: process.env.APP_SETTING.Environment,
-        attachStacktrace: true,
-        integrations: [],
-    });
 }

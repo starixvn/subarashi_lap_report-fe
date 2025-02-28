@@ -3,7 +3,7 @@ import { Provider } from 'react-redux';
 
 import Store from '@/lib/store';
 import useScriptLink from '@/hooks/useScriptLink';
-import { BetTicketEventBuilderUrl, TokenScriptLink } from '@/helpers/settingHelper';
+import { AppSetting } from '@/lib/settings';
 
 import AppContainer from './components/AppContainer';
 import reducer from './reducers';
@@ -14,8 +14,8 @@ const BetList = (props) => {
     const scriptLink = useScriptLink();
 
     useLayoutEffect(() => {
-        const betTicketScript = scriptLink.append(BetTicketEventBuilderUrl, 'event-builder-script');
-        const tokenScript = scriptLink.append(TokenScriptLink);
+        const betTicketScript = scriptLink.append(AppSetting.BetTicketEventBuilderUrl, 'event-builder-script');
+        const tokenScript = scriptLink.append(AppSetting.TokenScriptLink);
 
         return () => {
             scriptLink.remove(tokenScript);

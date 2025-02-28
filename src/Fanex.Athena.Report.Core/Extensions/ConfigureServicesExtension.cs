@@ -9,7 +9,9 @@ public static class ConfigureServicesExtension
 {
     public static IServiceCollection AddSettings(this IServiceCollection services, IConfiguration configuration)
     {
-        services.AddSingleton(configuration.GetSection("AppSettings").Get<AppSettings>());
+        services.Configure<AppSettings>(configuration.GetSection(AppSettings.SettingName));
+        services.Configure<SentrySettings>(configuration.GetSection(SentrySettings.SettingName));
+
         return services;
     }
 

@@ -8,10 +8,11 @@ using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.Net.Http.Headers;
 using Middleware;
 using Newtonsoft.Json;
+using Settings;
 
 public static class MiddleWareExtensions
 {
-    public static IApplicationBuilder UseWhoAmICheck(this IApplicationBuilder app, string environment)
+    public static IApplicationBuilder UseWhoAmICheck(this IApplicationBuilder app, AppSettings appSetting)
     {
         return app.UseHealthChecks("/whoami", new HealthCheckOptions
         {
@@ -25,7 +26,7 @@ public static class MiddleWareExtensions
                     monitors = report.Entries.Select(e =>
                     {
                         var data = e.Value.Data.ToDictionary(_ => _.Key, _ => _.Value);
-                        data["Env"] = environment;
+                        data["Env"] = appSetting.Environment;
 
                         return new
                         {
