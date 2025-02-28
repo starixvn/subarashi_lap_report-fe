@@ -3,9 +3,9 @@ import moment from 'moment';
 import { useSelector } from 'react-redux';
 import { Table, Row, Cell, HeaderRow, HeaderCell } from '@legion-lib/react-grid';
 
-import LangHelper from '@srcRoot/helpers/langHelper';
-import { MAX_WIDTH_PAGE } from '@srcRoot/constants/config';
-import NoDataTitle from '@srcRoot/components/NoDataTitle';
+import LangHelper from '@/helpers/langHelper';
+import { MAX_WIDTH_PAGE } from '@/constants/config';
+import NoDataTitle from '@/components/NoDataTitle';
 
 const DataGrid = (props) => {
     const gridData = useSelector((state) => state.gridData);

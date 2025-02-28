@@ -1,4 +1,4 @@
-import { LRF_SAVED_PAGE_SESSION_KEY } from '../constants/config';
+import { LRF_SAVED_PAGE_SESSION_KEY } from '@/constants/config';
 
 const _rootUrl = window.rootUrl || '/';
 export default class Site {

@@ -1,4 +1,4 @@
-import LangHelper from '@srcRoot/helpers/langHelper';
+import LangHelper from '@/helpers/langHelper';
 import { LiveStatusesReportTitle } from './filterSettings';
 
 class Service {
@@ -21,9 +21,9 @@ class Service {
                 newSportId === 104 ||
                 (newSportId >= 190 && newSportId <= 197) ||
                 newSportId === 178 ||
-                newSportId === 179 || 
-                newSportId === 188 || 
-                newSportId === 177 || 
+                newSportId === 179 ||
+                newSportId === 188 ||
+                newSportId === 177 ||
                 newSportId === 198 ||
                 newSportId === 134
             ) {

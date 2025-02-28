@@ -1,5 +1,5 @@
-import { ReportLevel } from '@srcRoot/constants/report';
-import LangHelper from '@srcRoot/helpers/langHelper';
+import { ReportLevel } from '@/constants/report';
+import LangHelper from '@/helpers/langHelper';
 
 export const BreadcrumbText = {
     Main: LangHelper.getSingleResource('Main'),

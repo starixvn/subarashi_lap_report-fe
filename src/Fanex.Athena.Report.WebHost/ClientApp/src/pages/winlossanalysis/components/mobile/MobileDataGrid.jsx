@@ -1,18 +1,18 @@
 ﻿import React, { memo, useMemo, useRef, useEffect, useState, useCallback } from 'react';
 import { shallowEqual, useDispatch, useSelector } from 'react-redux';
 import { ActionCreators } from '../../actions/index.js';
-import NoDataTitle from '@srcRoot/components/NoDataTitle';
-import ReportTitle from '@srcRoot/components/ReportTitle';
+import NoDataTitle from '@/components/NoDataTitle';
+import ReportTitle from '@/components/ReportTitle';
 import { DefaultPagingOption, MobileGroupByHeaderDisplayType, SortOrder, HeaderText, SortBy } from '../../common/constants.js';
 
-import { RefPager } from '@srcRoot/components/mobile-component/RefPager';
+import { RefPager } from '@/components/mobile-component/RefPager';
 import { useElementSize, useWindowSize } from 'usehooks-ts';
 import { v4 as uuidv4 } from 'uuid';
 import { Table, Cell, Row, HeaderRow, HeaderCell } from '@legion-lib/react-grid';
-import { DrowdownRadioList } from '@srcRoot/components/dropdown';
+import { DrowdownRadioList } from '@/components/dropdown';
 import MobileGroupByRowList from './MobileGroupByRowList';
-import NumberFormat from '@srcRoot/lib/numberFormat';
-import LangHelper from '@srcRoot/helpers/langHelper';
+import NumberFormat from '@/lib/numberFormat';
+import LangHelper from '@/helpers/langHelper';
 import useRenderRowOption from '../hooks/useRenderRowOption.jsx';
 import ReportTitleContent from './ReportTitleContent.jsx';
 

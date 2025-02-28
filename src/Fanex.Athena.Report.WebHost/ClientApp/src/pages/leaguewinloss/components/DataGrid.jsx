@@ -5,9 +5,9 @@ import ActionCreators from '../actions';
 import { Breadcrumb } from '@legion-lib/react-breadcrumb';
 import { Table } from '@legion-lib/react-grid';
 import { renderHeader, renderDataSection } from '../common/gridUtils';
-import NoDataTitle from '@srcRoot/components/NoDataTitle';
+import NoDataTitle from '@/components/NoDataTitle';
 import { BreadcrumbItems, ReportLevel, ApiUrl } from '../common/constants';
-import ReportTitle from '@srcRoot/components/ReportTitle';
+import ReportTitle from '@/components/ReportTitle';
 
 export const DataGrid = (props) => {
     const { data, total } = props.reportData;

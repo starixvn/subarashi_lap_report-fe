@@ -1,6 +1,6 @@
 ﻿import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import Overlay from '../Overlay';
+import Overlay from '@/components/Overlay';
 
 const Day = ({ id, label, value, min, max, onChange }) => {
     const [showDateDrop, setShowDateDrop] = useState(false);

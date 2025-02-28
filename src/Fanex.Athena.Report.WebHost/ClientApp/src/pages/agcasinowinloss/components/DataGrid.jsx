@@ -2,8 +2,8 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { Table } from '@legion-lib/react-grid';
 
-import ReportTitle from '@srcRoot/components/ReportTitle';
-import NoDataTitle from '@srcRoot/components/NoDataTitle';
+import ReportTitle from '@/components/ReportTitle';
+import NoDataTitle from '@/components/NoDataTitle';
 
 import { BuildBody, BuildFooter, BuildHeaders } from '../gridBuilder';
 import Service, { constants } from '../common';

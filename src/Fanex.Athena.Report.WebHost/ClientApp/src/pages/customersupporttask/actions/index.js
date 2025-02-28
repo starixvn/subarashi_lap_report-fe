@@ -1,5 +1,5 @@
-import * as loaderAction from '@srcRoot/actions/loaderAction';
+import * as loaderAction from '@/actions/loaderAction';
 import * as filterAction from './filterAction';
-import * as formDataAction from '@srcRoot/actions/formDataAction';
-import * as currencyAction from '@srcRoot/actions/currencyAction';
+import * as formDataAction from '@/actions/formDataAction';
+import * as currencyAction from '@/actions/currencyAction';
 export const ActionCreators = Object.assign({}, formDataAction, currencyAction, loaderAction, filterAction);

@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 
 import { LiveReportTable } from '../../../gridUltility';
-import LangHelper from '@srcRoot/helpers/langHelper';
+import LangHelper from '@/helpers/langHelper';
 import { BuildByBetTypeBody, BuildByBetTypeHeaders } from './GridBuilder';
 
 function ByBetTypeDataGrid() {

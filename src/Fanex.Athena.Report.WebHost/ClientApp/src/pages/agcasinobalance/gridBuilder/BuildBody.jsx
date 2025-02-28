@@ -1,11 +1,11 @@
-import React from 'react';
-import moment from 'moment';
 import { Cell, Row } from '@legion-lib/react-grid';
+import moment from 'moment';
+import React from 'react';
 
-import CommonCells from './CommonCells';
 import { DrillDownLevel } from '../common/tableSetting';
-import ReportLink from '../customGrid/ReportLink';
 import CellSpan from '../customGrid/CellSpan';
+import ReportLink from '../customGrid/ReportLink';
+import CommonCells from './CommonCells';
 
 export const BuildBody = (data, options) => {
     const { drillDownLevel } = options;

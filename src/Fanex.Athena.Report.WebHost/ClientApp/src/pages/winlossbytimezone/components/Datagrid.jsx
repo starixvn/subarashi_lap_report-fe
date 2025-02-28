@@ -1,7 +1,7 @@
 ﻿import React from 'react';
 import { Table } from '@legion-lib/react-grid';
-import NoDataTitle from '@srcRoot/components/NoDataTitle';
-import ReportTitle from '@srcRoot/components/ReportTitle';
+import NoDataTitle from '@/components/NoDataTitle';
+import ReportTitle from '@/components/ReportTitle';
 import Service from '../lib/service';
 import { useSelector } from 'react-redux';
 import { BuildBody, BuildFooter, BuildHeader } from '../gridBuilder';

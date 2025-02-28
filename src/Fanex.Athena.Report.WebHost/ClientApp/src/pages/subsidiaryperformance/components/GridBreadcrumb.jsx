@@ -2,8 +2,8 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Breadcrumb } from '@legion-lib/react-breadcrumb';
 
-import { ReportLevel } from '@srcRoot/constants/report';
-import useToggleRequest from '@srcRoot/hooks/useToggleRequest';
+import { ReportLevel } from '@/constants/report';
+import useToggleRequest from '@/hooks/useToggleRequest';
 
 import actions from '../actions';
 import { constants } from '../common';

@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 import { Cell } from '@legion-lib/react-grid';
 import ActionCreators from '../../actions';
 import { ApiUrl, ReportLevel } from '../../common/constants';
-import DataService from '@srcRoot/lib/dataService';
+import DataService from '@/lib/dataService';
 
 export const GroupCell = (props) => {
     const { rowData, level, reportData, requestParam, setReportData, toggleLoader, isDirectToCurrency, setReloadReport, setRequestParam, getReportData } =

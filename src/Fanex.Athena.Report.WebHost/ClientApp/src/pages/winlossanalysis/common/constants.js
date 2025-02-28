@@ -1,5 +1,5 @@
-﻿import LangHelper from '@srcRoot/helpers/langHelper';
-import DataService from '@srcRoot/lib/dataService';
+﻿import LangHelper from '@/helpers/langHelper';
+import DataService from '@/lib/dataService';
 import { DefaultDateRange } from './dateSetting';
 
 export const ApiUrl = {
@@ -180,7 +180,7 @@ export const DefaultState = {
     selectedHour: "All"
 };
 
-export const SettlementTimeSupportProductList = [ ProductCode.SportsBook, ProductCode.VS, ProductCode.NG ];
+export const SettlementTimeSupportProductList = [ProductCode.SportsBook, ProductCode.VS, ProductCode.NG];
 
 export const MAX_PAGE_EXPORT_PAGE_SIZE = 100000;
 

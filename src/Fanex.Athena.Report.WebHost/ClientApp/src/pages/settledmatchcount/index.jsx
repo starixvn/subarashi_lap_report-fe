@@ -1,10 +1,10 @@
 import React from 'react';
 import AppContainer from './components/AppContainer';
 import { Provider } from 'react-redux';
-import Store from '@srcRoot/lib/store';
+import Store from '@/lib/store';
 import reducer from './reducers';
 // import styles
-import '@srcRoot/styles/pages/settledmatchcount.scss';
+import '@/styles/pages/settledmatchcount.scss';
 
 const SettledMatchCount = (props) => {
     const store = Store.createStore(reducer, {});

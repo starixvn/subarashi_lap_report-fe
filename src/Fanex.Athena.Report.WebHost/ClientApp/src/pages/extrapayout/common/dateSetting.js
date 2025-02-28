@@ -1,4 +1,4 @@
-import { WeekDays } from '@srcRoot/constants/config';
+import { WeekDays } from '@/constants/config';
 import moment from 'moment';
 
 export const FirstDayOfWeek = WeekDays.Sunday;

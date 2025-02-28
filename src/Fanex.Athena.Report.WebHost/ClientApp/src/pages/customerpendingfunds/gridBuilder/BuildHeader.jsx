@@ -1,5 +1,5 @@
 import React from 'react';
-import LangHelper from '@srcRoot/helpers/langHelper';
+import LangHelper from '@/helpers/langHelper';
 
 import HeaderRow from '../customGrid/HeaderRow';
 import HeaderCell from '../customGrid/HeaderCell';

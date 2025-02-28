@@ -1,5 +1,5 @@
-import NumberFormat from '@srcRoot/lib/numberFormat';
-import Site from '@srcRoot/lib/site';
+import NumberFormat from '@/lib/numberFormat';
+import Site from '@/lib/site';
 import { TableSettings } from './constants';
 
 class Service {

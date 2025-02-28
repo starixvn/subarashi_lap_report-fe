@@ -1,7 +1,7 @@
 import React from 'react';
 import { HeaderRow, HeaderCell } from '@legion-lib/react-grid';
 
-import { ReportLevel, SubsidiaryViewType } from '@srcRoot/constants/report';
+import { ReportLevel, SubsidiaryViewType } from '@/constants/report';
 import { HeaderText } from '../common/tableSetting';
 
 export const BuildHeaders = ({ drillDownLevel, viewType }) => {

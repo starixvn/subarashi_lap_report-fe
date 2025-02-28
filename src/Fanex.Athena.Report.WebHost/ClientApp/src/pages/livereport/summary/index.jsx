@@ -5,9 +5,9 @@ import AppContainer from './components/AppContainer';
 import reducers from './reducers';
 
 // import styles
-import '@srcRoot/styles/pages/livereportsummary.scss';
+import '@/styles/pages/livereportsummary.scss';
 import { constants } from './common';
-import useSessionStore from '@srcRoot/hooks/useSessionStore';
+import useSessionStore from '@/hooks/useSessionStore';
 
 const defaultState = { dateRange: constants.DefaultDateRange, selectedSubsidiary: '' };
 const resetState = { selectedProductCode: null, isLoading: false };

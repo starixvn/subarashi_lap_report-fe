@@ -1,7 +1,7 @@
 import React from 'react';
 import { Cell, Row } from '@legion-lib/react-grid';
 
-import LangHelper from '@srcRoot/helpers/langHelper';
+import LangHelper from '@/helpers/langHelper';
 import CommonCells from './CommonCells';
 import { DrillDownLevel } from '../common/tableSetting';
 

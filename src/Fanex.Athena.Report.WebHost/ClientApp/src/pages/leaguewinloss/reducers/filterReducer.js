@@ -1,5 +1,5 @@
 import * as types from '../actions/types';
-import createReducer from '@srcRoot/lib/createReducer.js';
+import createReducer from '@/lib/createReducer.js';
 
 const reportFilter = createReducer(null, {
     [types.SET_REPORT_FILTER](state, action) {

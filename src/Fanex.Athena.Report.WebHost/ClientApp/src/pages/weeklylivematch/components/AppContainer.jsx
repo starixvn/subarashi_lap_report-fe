@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import Loader from '@srcRoot/components/Loader';
+import Loader from '@/components/Loader';
 import FormFilter from './FormFilter';
 import DataGrid from './DataGrid';
 

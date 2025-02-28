@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import CheckBox from '@srcRoot/components/CheckBox';
-import LangHelper from '@srcRoot/helpers/langHelper';
+import CheckBox from '@/components/CheckBox';
+import LangHelper from '@/helpers/langHelper';
 
 function SubsidiaryCheckBox(props) {
     const { value, onChange } = props;

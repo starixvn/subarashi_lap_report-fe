@@ -1,5 +1,5 @@
-import * as paths from '@srcRoot/constants/path';
-import * as pages from '@srcRoot/constants/pages';
+import * as paths from '@/constants/path';
+import * as pages from '@/constants/pages';
 
 export const BetListPageUrl = {
     MATCH: `/${paths.BETLIST}/${pages.LIVE_REPORT}/Match`,

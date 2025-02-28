@@ -1,4 +1,4 @@
-import LangHelper from '@srcRoot/helpers/langHelper';
+import LangHelper from '@/helpers/langHelper';
 
 export default class Service {
     static generateReportTitle(fromDate, toDate, currencyName, baseCurrency, username) {

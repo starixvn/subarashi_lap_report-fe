@@ -4,16 +4,16 @@ import classNames from 'classnames';
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import CheckBox from '@srcRoot/components/CheckBox';
-import CollapsiblePanel from '@srcRoot/components/CollapsiblePanel.jsx';
-import ReportSelect from '@srcRoot/components/ReportSelect.jsx';
-import { ReportLevel, SubsidiaryViewType, TreeViewOption } from '@srcRoot/constants/report';
-import LangHelper from '@srcRoot/helpers/langHelper';
-import useToggleRequest from '@srcRoot/hooks/useToggleRequest.js';
-import DataService from '@srcRoot/lib/dataService';
-import Site from '@srcRoot/lib/site';
+import CheckBox from '@/components/CheckBox';
+import CollapsiblePanel from '@/components/CollapsiblePanel.jsx';
+import ReportSelect from '@/components/ReportSelect.jsx';
+import { ReportLevel, SubsidiaryViewType, TreeViewOption } from '@/constants/report';
+import LangHelper from '@/helpers/langHelper';
+import useToggleRequest from '@/hooks/useToggleRequest.js';
+import DataService from '@/lib/dataService';
+import Site from '@/lib/site';
 
-import ExportExcel from '@srcRoot/components/ExportExcel';
+import ExportExcel from '@/components/ExportExcel';
 import actions from '../actions/index';
 import { constants } from '../common';
 

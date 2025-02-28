@@ -1,6 +1,6 @@
 import moment from 'moment';
 
-import { WeekDays } from '@srcRoot/constants/config';
+import { WeekDays } from '@/constants/config';
 
 const now = moment().utc().add(-4, 'h');
 

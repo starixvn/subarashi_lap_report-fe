@@ -1,12 +1,12 @@
 import React from 'react';
 import AppContainer from './components/AppContainer';
 import { Provider } from 'react-redux';
-import Store from '@srcRoot/lib/store';
+import Store from '@/lib/store';
 import reducer from './reducers';
 import { DefaultPageSize } from './common/constants';
 import { DefaultDateRange } from './common/dateSetting';
 // import styles
-import '@srcRoot/styles/pages/leaguewinloss.scss';
+import '@/styles/pages/leaguewinloss.scss';
 
 const LeagueWinLoss = (props) => {
     const store = Store.createStore(reducer, {

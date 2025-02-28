@@ -3,8 +3,8 @@ import { shallowEqual, useDispatch, useSelector } from 'react-redux';
 
 import { Table } from '@legion-lib/react-grid';
 
-import NoDataTitle from '@srcRoot/components/NoDataTitle';
-import ReportTitle from '@srcRoot/components/ReportTitle';
+import NoDataTitle from '@/components/NoDataTitle';
+import ReportTitle from '@/components/ReportTitle';
 import Service from '../../common/Service.js';
 import { renderHeader, renderDataSection, renderFooter } from '../../common/gridUtils';
 import { BreakdownByMode, DefaultPagingOption, GroupByMode, SortOrder } from '../../common/constants.js';

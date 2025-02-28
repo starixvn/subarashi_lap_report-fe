@@ -1,5 +1,5 @@
 import React from 'react';
-import LangHelper from '@srcRoot/helpers/langHelper';
+import LangHelper from '@/helpers/langHelper';
 import PropTypes from 'prop-types';
 
 const ExportExcel = (props) => {

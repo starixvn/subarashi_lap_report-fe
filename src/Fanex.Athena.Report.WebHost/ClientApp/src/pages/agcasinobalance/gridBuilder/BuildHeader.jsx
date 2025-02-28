@@ -1,6 +1,6 @@
-import React from 'react';
+import LangHelper from '@/helpers/langHelper';
 import { HeaderCell, HeaderRow } from '@legion-lib/react-grid';
-import LangHelper from '@srcRoot/helpers/langHelper';
+import React from 'react';
 import { DrillDownLevel } from '../common/tableSetting';
 
 export const BuildHeaders = (options) => {

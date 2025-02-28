@@ -2,11 +2,11 @@ import React from 'react';
 import moment from 'moment';
 import { useDispatch, useSelector } from 'react-redux';
 
-import useToggleRequest from '@srcRoot/hooks/useToggleRequest';
+import useToggleRequest from '@/hooks/useToggleRequest';
 
 import actions from '../actions';
-import Site from '@srcRoot/lib/site';
-import { ReportLevel } from '@srcRoot/constants/report';
+import Site from '@/lib/site';
+import { ReportLevel } from '@/constants/report';
 
 const ReportLink = ({ data, content, drillDownLevel }) => {
     const dispatch = useDispatch();

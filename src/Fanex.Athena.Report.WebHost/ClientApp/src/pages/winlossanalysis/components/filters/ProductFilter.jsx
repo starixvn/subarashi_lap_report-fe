@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 import MultipleSelect from '@legion-lib/react-multiselect';
 
-import LangHelper from '@srcRoot/helpers/langHelper';
+import LangHelper from '@/helpers/langHelper';
 
 export const ProductFilter = (props) => {
     const { value, onChange, isValid, disabled } = props;

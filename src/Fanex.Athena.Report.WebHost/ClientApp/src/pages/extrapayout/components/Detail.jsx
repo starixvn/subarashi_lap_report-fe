@@ -4,14 +4,14 @@ import { bindActionCreators } from 'redux';
 
 import { Table } from '@legion-lib/react-grid';
 
-import { toggleLoader } from '@srcRoot/actions/loaderAction';
-import BetListPopupLayout from '@srcRoot/components/BetListPopupLayout';
-import NoDataTitle from '@srcRoot/components/NoDataTitle';
-import LangHelper from '@srcRoot/helpers/langHelper';
-import DataService from '@srcRoot/lib/dataService';
-import Site from '@srcRoot/lib/site';
+import { toggleLoader } from '@/actions/loaderAction';
+import BetListPopupLayout from '@/components/BetListPopupLayout';
+import NoDataTitle from '@/components/NoDataTitle';
+import LangHelper from '@/helpers/langHelper';
+import DataService from '@/lib/dataService';
+import Site from '@/lib/site';
 
-import ExportExcel from '@srcRoot/components/ExportExcel';
+import ExportExcel from '@/components/ExportExcel';
 import { ApiUrl } from '../common/constants';
 import { renderDetailDataSection, renderDetailFooter, renderDetailHeader } from '../common/gridUtils';
 

@@ -1,7 +1,7 @@
-import DataService from '@srcRoot/lib/dataService';
-import Cache from '@srcRoot/lib/cache';
+import DataService from '@/lib/dataService';
+import Cache from '@/lib/cache';
 import * as types from './types';
-import ObjectHelper from '@srcRoot/lib/objectHelper';
+import ObjectHelper from '@/lib/objectHelper';
 
 const BETTYPE_CACHE_KEY = 'BETTYPE_CACHE_KEY';
 
@@ -40,7 +40,7 @@ const getBettypeList = (productCode) => {
 
         DataService.getData('api/CommonDataApi/GetBettypes', { productCode: productCode }).then((response) => {
             let data = response.data;
-            let camelData = ObjectHelper.toCamel(data); 
+            let camelData = ObjectHelper.toCamel(data);
             Cache.set(cacheKey, camelData);
             dispatchBettypeList(dispatch, camelData);
         });

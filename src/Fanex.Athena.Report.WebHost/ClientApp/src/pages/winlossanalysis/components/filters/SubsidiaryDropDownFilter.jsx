@@ -2,10 +2,10 @@ import React, { memo } from 'react';
 import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import LangHelper from '@srcRoot/helpers/langHelper';
-import { TreeViewOption } from '@srcRoot/constants/report';
+import LangHelper from '@/helpers/langHelper';
+import { TreeViewOption } from '@/constants/report';
 import { TreeViewSelect } from '@legion-lib/react-multiselect';
-import useSubsidiarySearch from '@srcRoot/hooks/useSubsidiarySearch';
+import useSubsidiarySearch from '@/hooks/useSubsidiarySearch';
 
 const SubsidiaryDropDownFilter = (props) => {
     const formData = useSelector((state) => state.formData);

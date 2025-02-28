@@ -1,5 +1,5 @@
-import * as paths from '@srcRoot/constants/path';
-import * as pages from '@srcRoot/constants/pages';
+import * as paths from '@/constants/path';
+import * as pages from '@/constants/pages';
 
 export const ApiUrl = {
     INIT_FORM_URL: 'Api/CustomerPendingFunds/Index',

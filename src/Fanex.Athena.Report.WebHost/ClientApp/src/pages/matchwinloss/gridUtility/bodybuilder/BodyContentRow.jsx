@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Row, Cell } from '@legion-lib/react-grid';
 
-import useNavigateParams from '@srcRoot/hooks/useNavigateParams';
-import useToggleRequest from '@srcRoot/hooks/useToggleRequest';
-import DataService from '@srcRoot/lib/dataService';
+import useNavigateParams from '@/hooks/useNavigateParams';
+import useToggleRequest from '@/hooks/useToggleRequest';
+import DataService from '@/lib/dataService';
 
 import Service, { constants } from '../../common';
 import { ActionCreators } from '../../actions';

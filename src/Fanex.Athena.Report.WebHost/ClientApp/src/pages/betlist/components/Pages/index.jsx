@@ -1,7 +1,7 @@
-import * as pages from '@srcRoot/constants/pages';
+import * as pages from '@/constants/pages';
 
-import { NOT_FOUND_URL } from '@srcRoot/constants/config';
-import Site from '@srcRoot/lib/site';
+import { NOT_FOUND_URL } from '@/constants/config';
+import Site from '@/lib/site';
 import MatchWinLoss from './MatchWinLoss';
 import LiveReport from './LiveReport';
 import CustomerPendingFunds from './CustomerPendingFunds';

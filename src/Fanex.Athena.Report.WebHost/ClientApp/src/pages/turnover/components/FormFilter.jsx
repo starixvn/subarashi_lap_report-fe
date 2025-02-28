@@ -2,20 +2,20 @@ import MultipleSelect from '@legion-lib/react-multiselect';
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import CollapsiblePanel from '@srcRoot/components/CollapsiblePanel';
-import RadioGroup from '@srcRoot/components/RadioGroup';
-import ReportSelect from '@srcRoot/components/ReportSelect';
-import UserGuide from '@srcRoot/components/UserGuide';
-import { TURNOVER, USER_GUIDE } from '@srcRoot/constants/pages';
-import LangHelper from '@srcRoot/helpers/langHelper';
-import useToggleRequest from '@srcRoot/hooks/useToggleRequest';
-import DataService from '@srcRoot/lib/dataService';
-import Site from '@srcRoot/lib/site';
+import CollapsiblePanel from '@/components/CollapsiblePanel';
+import RadioGroup from '@/components/RadioGroup';
+import ReportSelect from '@/components/ReportSelect';
+import UserGuide from '@/components/UserGuide';
+import { TURNOVER, USER_GUIDE } from '@/constants/pages';
+import LangHelper from '@/helpers/langHelper';
+import useToggleRequest from '@/hooks/useToggleRequest';
+import DataService from '@/lib/dataService';
+import Site from '@/lib/site';
 
-import AutoComplete from '@srcRoot/components/auto-complete';
-import ExportExcel from '@srcRoot/components/ExportExcel';
-import MonthPicker from '@srcRoot/components/month-picker';
-import SubmitButton from '@srcRoot/components/SubmitButton';
+import AutoComplete from '@/components/auto-complete';
+import ExportExcel from '@/components/ExportExcel';
+import MonthPicker from '@/components/month-picker';
+import SubmitButton from '@/components/SubmitButton';
 import { ActionCreators } from '../actions';
 import { constants } from '../common';
 

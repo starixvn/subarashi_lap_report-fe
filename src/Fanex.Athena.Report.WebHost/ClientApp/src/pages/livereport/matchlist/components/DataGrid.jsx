@@ -3,10 +3,10 @@ import { useSearchParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { Table } from '@legion-lib/react-grid';
 
-import useToggleRequest from '@srcRoot/hooks/useToggleRequest';
-import ReportTitle from '@srcRoot/components/ReportTitle';
-import NoDataTitle from '@srcRoot/components/NoDataTitle';
-import DataService from '@srcRoot/lib/dataService';
+import useToggleRequest from '@/hooks/useToggleRequest';
+import ReportTitle from '@/components/ReportTitle';
+import NoDataTitle from '@/components/NoDataTitle';
+import DataService from '@/lib/dataService';
 
 import Service, { constants } from '../common';
 import { BuildBody, BuildHeaders } from '../gridBuilder';

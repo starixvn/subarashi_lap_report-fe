@@ -1,19 +1,19 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { AG_CASINO_BALANCE } from '@srcRoot/constants/pages';
-import CollapsiblePanel from '@srcRoot/components/CollapsiblePanel';
-import useToggleRequest from '@srcRoot/hooks/useToggleRequest';
-import ReportSelect from '@srcRoot/components/ReportSelect';
-import LangHelper from '@srcRoot/helpers/langHelper';
-import DataService from '@srcRoot/lib/dataService';
-import Site from '@srcRoot/lib/site';
-import SubmitButton from '@srcRoot/components/SubmitButton';
+import CollapsiblePanel from '@/components/CollapsiblePanel';
+import ReportSelect from '@/components/ReportSelect';
+import SubmitButton from '@/components/SubmitButton';
+import { AG_CASINO_BALANCE } from '@/constants/pages';
+import LangHelper from '@/helpers/langHelper';
+import useToggleRequest from '@/hooks/useToggleRequest';
+import DataService from '@/lib/dataService';
+import Site from '@/lib/site';
 
-import { ReportLevel } from '@srcRoot/constants/report';
-import MonthPicker from '@srcRoot/components/month-picker';
-import CheckBox from '@srcRoot/components/CheckBox';
-import ExportExcel from '@srcRoot/components/ExportExcel';
+import CheckBox from '@/components/CheckBox';
+import ExportExcel from '@/components/ExportExcel';
+import MonthPicker from '@/components/month-picker';
+import { ReportLevel } from '@/constants/report';
 
 import actions from '../actions';
 import { constants } from '../common';

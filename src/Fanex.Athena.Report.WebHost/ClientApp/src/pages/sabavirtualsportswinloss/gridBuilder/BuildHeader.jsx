@@ -1,6 +1,6 @@
 import React from 'react';
 import { HeaderRow } from '@legion-lib/react-grid';
-import LangHelper from '@srcRoot/helpers/langHelper';
+import LangHelper from '@/helpers/langHelper';
 import { DrillDownLevel } from '../common/tableSetting';
 import HeaderCell from '../customGrid/HeaderCell';
 

@@ -2,16 +2,16 @@ import { DateRange } from '@legion-lib/react-daterangepicker';
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import CollapsiblePanel from '@srcRoot/components/CollapsiblePanel';
-import SubmitButton from '@srcRoot/components/SubmitButton';
-import UserGuide from '@srcRoot/components/UserGuide';
-import { USER_GUIDE, WEEKLY_LIVE_MATCHES } from '@srcRoot/constants/pages';
-import LangHelper from '@srcRoot/helpers/langHelper';
-import useToggleRequest from '@srcRoot/hooks/useToggleRequest';
-import DataService from '@srcRoot/lib/dataService';
-import Site from '@srcRoot/lib/site';
+import CollapsiblePanel from '@/components/CollapsiblePanel';
+import SubmitButton from '@/components/SubmitButton';
+import UserGuide from '@/components/UserGuide';
+import { USER_GUIDE, WEEKLY_LIVE_MATCHES } from '@/constants/pages';
+import LangHelper from '@/helpers/langHelper';
+import useToggleRequest from '@/hooks/useToggleRequest';
+import DataService from '@/lib/dataService';
+import Site from '@/lib/site';
 
-import ExportExcel from '@srcRoot/components/ExportExcel';
+import ExportExcel from '@/components/ExportExcel';
 import { ActionCreators } from '../actions';
 import Constants from '../constants/index';
 

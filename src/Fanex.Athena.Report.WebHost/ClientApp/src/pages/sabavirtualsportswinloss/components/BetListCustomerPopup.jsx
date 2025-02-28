@@ -1,8 +1,8 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import Popup from '@srcRoot/components/Popup';
-import LangHelper from '@srcRoot/helpers/langHelper';
+import Popup from '@/components/Popup';
+import LangHelper from '@/helpers/langHelper';
 
 import actions from '../actions';
 

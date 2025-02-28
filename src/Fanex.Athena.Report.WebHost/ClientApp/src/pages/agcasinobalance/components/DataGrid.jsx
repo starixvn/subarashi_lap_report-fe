@@ -1,15 +1,15 @@
+import { Table } from '@legion-lib/react-grid';
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Table } from '@legion-lib/react-grid';
 
-import ReportTitle from '@srcRoot/components/ReportTitle';
-import NoDataTitle from '@srcRoot/components/NoDataTitle';
+import NoDataTitle from '@/components/NoDataTitle';
+import ReportTitle from '@/components/ReportTitle';
 
-import { BuildBody, BuildFooter, BuildHeaders } from '../gridBuilder';
-import Service, { constants } from '../common';
-import { ReportLevel } from '@srcRoot/constants/report';
-import useToggleRequest from '@srcRoot/hooks/useToggleRequest';
+import { ReportLevel } from '@/constants/report';
+import useToggleRequest from '@/hooks/useToggleRequest';
 import actions from '../actions';
+import Service, { constants } from '../common';
+import { BuildBody, BuildFooter, BuildHeaders } from '../gridBuilder';
 
 const DataGrid = () => {
     const requestParam = useSelector((state) => state.requestParam);

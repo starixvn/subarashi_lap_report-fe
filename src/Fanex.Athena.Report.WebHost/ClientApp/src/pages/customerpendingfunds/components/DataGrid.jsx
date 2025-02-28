@@ -2,15 +2,15 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Table } from '@legion-lib/react-grid';
 
-import NoDataTitle from '@srcRoot/components/NoDataTitle';
+import NoDataTitle from '@/components/NoDataTitle';
 
 import Service, { constants } from '../common';
 import { BuildBody, BuildFooter, BuildHeader } from '../gridBuilder';
 import { DefaultPageOption } from '../common/tableSetting';
-import DataService from '@srcRoot/lib/dataService';
+import DataService from '@/lib/dataService';
 
 import { ActionCreators } from '../actions';
-import useToggleRequest from '@srcRoot/hooks/useToggleRequest';
+import useToggleRequest from '@/hooks/useToggleRequest';
 
 const DataGrid = (props) => {
     const dispatch = useDispatch();

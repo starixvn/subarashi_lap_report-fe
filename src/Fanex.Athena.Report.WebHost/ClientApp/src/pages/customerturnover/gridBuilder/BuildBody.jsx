@@ -1,7 +1,7 @@
 import React from 'react';
 import { Cell, Row } from '@legion-lib/react-grid';
 
-import NumberFormat from '@srcRoot/lib/numberFormat';
+import NumberFormat from '@/lib/numberFormat';
 import moment from 'moment';
 import CellSpan from './CellSpan';
 import { ReportByValue } from '../common/filterSettings';

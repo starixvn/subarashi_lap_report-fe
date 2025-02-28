@@ -1,7 +1,7 @@
 import React from 'react';
 import { Cell } from '@legion-lib/react-grid';
 
-import NumberFormat from '@srcRoot/lib/numberFormat';
+import NumberFormat from '@/lib/numberFormat';
 function CommonCells({ data }) {
     const betCounts = NumberFormat.formatInteger(data.betCounts);
     const pendingFunds = NumberFormat.formatDecimalHalfDown(data.pendingFunds);

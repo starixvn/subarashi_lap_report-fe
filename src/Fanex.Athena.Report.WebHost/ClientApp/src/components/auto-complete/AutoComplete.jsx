@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import axios from 'axios';
 
 import SuggestionList from './SuggestionList';
-import Timer from '../../helpers/timer';
-import Overlay from '../Overlay';
+import Timer from '@/helpers/timer';
+import Overlay from '@/components/Overlay';
 
 const DELAY_TIME_MILLISECOND = 300;
 

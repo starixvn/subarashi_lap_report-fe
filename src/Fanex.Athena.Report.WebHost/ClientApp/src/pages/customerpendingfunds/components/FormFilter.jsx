@@ -2,16 +2,16 @@ import MultipleSelect from '@legion-lib/react-multiselect';
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import CollapsiblePanel from '@srcRoot/components/CollapsiblePanel';
-import ExportExcel from '@srcRoot/components/ExportExcel';
-import ReportSelect from '@srcRoot/components/ReportSelect';
-import SubmitButton from '@srcRoot/components/SubmitButton';
-import UserGuide from '@srcRoot/components/UserGuide';
-import { CUSTOMER_PENDING_FUNDS, USER_GUIDE } from '@srcRoot/constants/pages';
-import LangHelper from '@srcRoot/helpers/langHelper';
-import useToggleRequest from '@srcRoot/hooks/useToggleRequest';
-import DataService from '@srcRoot/lib/dataService';
-import Site from '@srcRoot/lib/site';
+import CollapsiblePanel from '@/components/CollapsiblePanel';
+import ExportExcel from '@/components/ExportExcel';
+import ReportSelect from '@/components/ReportSelect';
+import SubmitButton from '@/components/SubmitButton';
+import UserGuide from '@/components/UserGuide';
+import { CUSTOMER_PENDING_FUNDS, USER_GUIDE } from '@/constants/pages';
+import LangHelper from '@/helpers/langHelper';
+import useToggleRequest from '@/hooks/useToggleRequest';
+import DataService from '@/lib/dataService';
+import Site from '@/lib/site';
 
 import { ActionCreators } from '../actions';
 import Service, { constants } from '../common';

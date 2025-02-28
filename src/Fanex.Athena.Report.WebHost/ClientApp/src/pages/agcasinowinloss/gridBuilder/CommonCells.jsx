@@ -1,7 +1,7 @@
 import React from 'react';
 import { Cell } from '@legion-lib/react-grid';
 
-import NumberFormat from '@srcRoot/lib/numberFormat';
+import NumberFormat from '@/lib/numberFormat';
 function CommonCells({ data }) {
     const turnOver = NumberFormat.formatDecimalHalfDown(data.turnOver);
     const totalTransaction = NumberFormat.formatInteger(data.totalTransaction);

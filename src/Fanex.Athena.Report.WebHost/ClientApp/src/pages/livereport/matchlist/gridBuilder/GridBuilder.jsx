@@ -1,7 +1,7 @@
 import React from 'react';
 import { Row, HeaderRow } from '@legion-lib/react-grid';
 
-import LangHelper from '@srcRoot/helpers/langHelper';
+import LangHelper from '@/helpers/langHelper';
 
 import MatchCell from './customGrid/MatchCell';
 import HeaderCell from './customGrid/HeaderCell';

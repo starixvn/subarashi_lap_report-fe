@@ -3,8 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 import { Table } from '@legion-lib/react-grid';
 
-import ReportTitle from '@srcRoot/components/ReportTitle';
-import NoDataTitle from '@srcRoot/components/NoDataTitle';
+import ReportTitle from '@/components/ReportTitle';
+import NoDataTitle from '@/components/NoDataTitle';
 
 import { BuildBody, BuildFooter, BuildHeaders } from '../gridBuilder';
 import actions from '../actions';

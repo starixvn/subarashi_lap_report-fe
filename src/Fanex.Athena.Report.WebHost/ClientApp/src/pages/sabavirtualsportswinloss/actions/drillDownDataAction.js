@@ -1,6 +1,6 @@
-import DataService from '@srcRoot/lib/dataService';
-import { setRequestParam } from '@srcRoot/actions/requestParamAction';
-import { setGridData } from '@srcRoot/actions/gridDataAction';
+import DataService from '@/lib/dataService';
+import { setRequestParam } from '@/actions/requestParamAction';
+import { setGridData } from '@/actions/gridDataAction';
 
 import { setDrillDownCache } from './cacheAction';
 import { setGridSettings, updateGridSettings } from './gridSettingAction';

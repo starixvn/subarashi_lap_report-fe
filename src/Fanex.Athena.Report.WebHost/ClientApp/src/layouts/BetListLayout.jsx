@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
-import Popup from '../components/Popup';
-import GtagHelper from '../helpers/gtagHelper';
+import Popup from '@/components/Popup';
+import GtagHelper from '@/helpers/gtagHelper';
 
 const BetListLayout = (props) => {
     const [isShowPopup, setIsShowPopup] = useState(false);

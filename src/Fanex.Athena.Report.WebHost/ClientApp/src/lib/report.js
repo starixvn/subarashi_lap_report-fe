@@ -1,4 +1,4 @@
-import { ReportBy } from '../constants/report';
+import { ReportBy } from '@/constants/report';
 import Site from './site';
 import axios from 'axios';
 

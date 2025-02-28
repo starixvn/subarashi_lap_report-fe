@@ -1,10 +1,10 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import Popup from '@srcRoot/components/Popup';
+import Popup from '@/components/Popup';
 
 import { ActionCreators } from '../actions';
-import LangHelper from '@srcRoot/helpers/langHelper';
+import LangHelper from '@/helpers/langHelper';
 
 const BetListRunningPopup = () => {
     const dispatch = useDispatch();

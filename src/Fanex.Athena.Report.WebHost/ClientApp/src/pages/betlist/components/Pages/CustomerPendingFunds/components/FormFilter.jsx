@@ -1,8 +1,8 @@
 import React from 'react';
 import { useSelector, shallowEqual } from 'react-redux';
 
-import ExportExcel from '@srcRoot/components/ExportExcel';
-import LangHelper from '@srcRoot/helpers/langHelper';
+import ExportExcel from '@/components/ExportExcel';
+import LangHelper from '@/helpers/langHelper';
 
 const FormFilter = (props) => {
     const [formData, requestParam] = useSelector((state) => [state.formData, state.requestParam], shallowEqual);

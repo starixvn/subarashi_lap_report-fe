@@ -1,6 +1,6 @@
-import DataService from '@srcRoot/lib/dataService';
-import { setRequestParam } from '@srcRoot/actions/requestParamAction';
-import { setGridData } from '@srcRoot/actions/gridDataAction';
+import DataService from '@/lib/dataService';
+import { setRequestParam } from '@/actions/requestParamAction';
+import { setGridData } from '@/actions/gridDataAction';
 
 export const fetchGridData = (url, params) => {
     return async (dispatch) => {

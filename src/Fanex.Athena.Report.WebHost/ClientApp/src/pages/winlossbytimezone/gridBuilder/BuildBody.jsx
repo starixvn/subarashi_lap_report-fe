@@ -2,7 +2,7 @@ import React from 'react';
 import moment from 'moment';
 import { Cell, Row } from '@legion-lib/react-grid';
 
-import NumberFormat from '@srcRoot/lib/numberFormat';
+import NumberFormat from '@/lib/numberFormat';
 import { SettingConst } from '../constants/settingConst';
 
 export const BuildBody = (data, { reportBy: selectedReportBy, groupBy }) => {

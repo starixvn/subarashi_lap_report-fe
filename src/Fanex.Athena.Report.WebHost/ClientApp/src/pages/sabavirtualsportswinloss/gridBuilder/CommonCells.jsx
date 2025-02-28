@@ -1,7 +1,7 @@
 import React from 'react';
 import { Cell } from '@legion-lib/react-grid';
 
-import NumberFormat from '@srcRoot/lib/numberFormat';
+import NumberFormat from '@/lib/numberFormat';
 import classNames from 'classnames';
 function CommonCells({ data, options }) {
     const { hasCustomerComm } = options;

@@ -2,9 +2,9 @@ import React from 'react';
 import { getBetListPageWithPageName } from './Pages';
 import { useSelector } from 'react-redux';
 
-import useToggleRequest from '@srcRoot/hooks/useToggleRequest';
-import LangHelper from '@srcRoot/helpers/langHelper';
-import DataService from '@srcRoot/lib/dataService';
+import useToggleRequest from '@/hooks/useToggleRequest';
+import LangHelper from '@/helpers/langHelper';
+import DataService from '@/lib/dataService';
 
 import Service, { constants } from '../common';
 

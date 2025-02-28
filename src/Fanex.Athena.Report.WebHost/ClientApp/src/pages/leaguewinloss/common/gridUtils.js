@@ -1,8 +1,8 @@
 import React from 'react';
 import { Row, Cell, HeaderRow, HeaderCell } from '@legion-lib/react-grid';
 import { headerText } from './constants';
-import NumberFormat from '@srcRoot/lib/numberFormat';
-import LangHelper from '@srcRoot/helpers/langHelper';
+import NumberFormat from '@/lib/numberFormat';
+import LangHelper from '@/helpers/langHelper';
 import GroupCell from '../components/grid/GroupCell';
 import TotalCell from '../components/grid/TotalCell';
 import { v4 as uuidv4 } from 'uuid';

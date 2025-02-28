@@ -1,7 +1,7 @@
 import React from 'react';
 import { Cell, Row } from '@legion-lib/react-grid';
 
-import NumberFormat from '@srcRoot/lib/numberFormat';
+import NumberFormat from '@/lib/numberFormat';
 
 const CommonCells = ({ data, index }) => {
     const betcount = NumberFormat.format(data.betCount);

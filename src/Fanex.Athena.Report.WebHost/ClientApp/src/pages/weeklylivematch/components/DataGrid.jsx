@@ -2,10 +2,10 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Table, Row, Cell, HeaderRow } from '@legion-lib/react-grid';
 
-import LangHelper from '@srcRoot/helpers/langHelper';
-import { MAX_WIDTH_PAGE, MIN_WIDTH_PAGE } from '@srcRoot/constants/config';
-import NoDataTitle from '@srcRoot/components/NoDataTitle';
-import NumberFormat from '@srcRoot/lib/numberFormat';
+import LangHelper from '@/helpers/langHelper';
+import { MAX_WIDTH_PAGE, MIN_WIDTH_PAGE } from '@/constants/config';
+import NoDataTitle from '@/components/NoDataTitle';
+import NumberFormat from '@/lib/numberFormat';
 
 import { ActionCreators } from '../actions';
 import Constants from '../constants';

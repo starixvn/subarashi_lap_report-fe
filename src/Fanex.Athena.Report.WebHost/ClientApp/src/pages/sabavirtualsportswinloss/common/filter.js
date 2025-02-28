@@ -1,4 +1,4 @@
-import LangHelper from '@srcRoot/helpers/langHelper';
+import LangHelper from '@/helpers/langHelper';
 
 export const SelectAllOption = { value: 0, label: LangHelper.getSingleResource('All') };
 

@@ -1,6 +1,6 @@
-import * as paths from '@srcRoot/constants/path';
-import * as pages from '@srcRoot/constants/pages';
-import DataService from '@srcRoot/lib/dataService';
+import * as paths from '@/constants/path';
+import * as pages from '@/constants/pages';
+import DataService from '@/lib/dataService';
 
 export const ApiUrl = {
     INIT_FORM_URL: 'Api/SabaVirtualSportsWinLoss/Index',

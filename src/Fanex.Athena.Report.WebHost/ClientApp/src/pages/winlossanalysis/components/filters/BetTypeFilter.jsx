@@ -2,8 +2,8 @@ import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import { TreeViewSelect } from '@legion-lib/react-multiselect';
 
-import { TreeViewOption } from '@srcRoot/constants/report';
-import LangHelper from '@srcRoot/helpers/langHelper';
+import { TreeViewOption } from '@/constants/report';
+import LangHelper from '@/helpers/langHelper';
 
 export const BetTypeFilter = (props) => {
     const { dataSource, onChange, isValid } = props;

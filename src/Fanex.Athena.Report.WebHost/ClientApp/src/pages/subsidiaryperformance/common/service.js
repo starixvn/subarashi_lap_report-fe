@@ -1,4 +1,4 @@
-import LangHelper from '@srcRoot/helpers/langHelper';
+import LangHelper from '@/helpers/langHelper';
 
 class Service {
     static generateReportTitle(fromDate, toDate, selectedBaseCurrency) {

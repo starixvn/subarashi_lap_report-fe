@@ -3,8 +3,8 @@ import { createSearchParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import moment from 'moment';
 
-import Site from '@srcRoot/lib/site';
-import useToggleRequest from '@srcRoot/hooks/useToggleRequest';
+import Site from '@/lib/site';
+import useToggleRequest from '@/hooks/useToggleRequest';
 
 import actions from '../actions';
 import Service, { constants } from '../common';

@@ -1,6 +1,6 @@
-import LangHelper from '@srcRoot/helpers/langHelper';
-import cache from '@srcRoot/lib/cache';
-import DataService from '@srcRoot/lib/dataService';
+import LangHelper from '@/helpers/langHelper';
+import cache from '@/lib/cache';
+import DataService from '@/lib/dataService';
 import { CHILD_ID_PREFIX } from './filterSettings';
 
 class Service {

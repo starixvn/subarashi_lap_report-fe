@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import Loader from '@srcRoot/components/Loader';
-import useToggleRequest from '@srcRoot/hooks/useToggleRequest';
-import DataService from '@srcRoot/lib/dataService';
-import LangHelper from '@srcRoot/helpers/langHelper';
+import Loader from '@/components/Loader';
+import useToggleRequest from '@/hooks/useToggleRequest';
+import DataService from '@/lib/dataService';
+import LangHelper from '@/helpers/langHelper';
 
 import actions from '../actions';
 import { constants } from '../common';

@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 
 import { TreeViewSelect } from '@legion-lib/react-multiselect';
 
-import LangHelper from '@srcRoot/helpers/langHelper';
-import { TreeViewOption } from '@srcRoot/constants/report';
+import LangHelper from '@/helpers/langHelper';
+import { TreeViewOption } from '@/constants/report';
 
 export const SportFilter = (props) => {
     const { dataSource, onChange, isValid } = props;

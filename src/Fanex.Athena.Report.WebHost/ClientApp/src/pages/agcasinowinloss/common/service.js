@@ -1,5 +1,5 @@
-import LangHelper from '@srcRoot/helpers/langHelper';
-import Site from '@srcRoot/lib/site';
+import LangHelper from '@/helpers/langHelper';
+import Site from '@/lib/site';
 import { SelectAllOption } from './filter';
 
 export default class Service {

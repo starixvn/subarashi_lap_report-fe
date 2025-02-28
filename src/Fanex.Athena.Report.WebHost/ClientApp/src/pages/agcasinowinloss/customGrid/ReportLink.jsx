@@ -2,7 +2,7 @@ import React from 'react';
 import moment from 'moment';
 import { useDispatch, useSelector } from 'react-redux';
 
-import useToggleRequest from '@srcRoot/hooks/useToggleRequest';
+import useToggleRequest from '@/hooks/useToggleRequest';
 
 import actions from '../actions';
 import Service, { constants } from '../common';

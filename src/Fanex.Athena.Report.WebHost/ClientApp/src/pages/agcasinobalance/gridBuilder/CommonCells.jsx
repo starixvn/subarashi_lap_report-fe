@@ -1,7 +1,7 @@
 import React from 'react';
 import { Cell } from '@legion-lib/react-grid';
 
-import NumberFormat from '@srcRoot/lib/numberFormat';
+import NumberFormat from '@/lib/numberFormat';
 
 function CommonCells({ data, isHideOpeningBalance, isHideClosingBalance }) {
     const agOpeningBalance = isHideOpeningBalance ? '-' : NumberFormat.formatDecimalHalfDown(data.openingBalance);

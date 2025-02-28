@@ -2,7 +2,7 @@ import React from 'react';
 import { Cell, Row } from '@legion-lib/react-grid';
 
 import ReportLink from '../customGrid/ReportLink';
-import { ReportLevel } from '@srcRoot/constants/report';
+import { ReportLevel } from '@/constants/report';
 import CommonCells from './CommonCells';
 
 export const BuildBody = (data, { drillDownLevel, ...options }) => {

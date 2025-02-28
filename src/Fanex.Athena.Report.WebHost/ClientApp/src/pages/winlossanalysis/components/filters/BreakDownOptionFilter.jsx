@@ -1,7 +1,7 @@
 import React, { useMemo, memo } from 'react';
 import { shallowEqual, useSelector } from 'react-redux';
 
-import LangHelper from '@srcRoot/helpers/langHelper';
+import LangHelper from '@/helpers/langHelper';
 
 import useGroupFilterHandler from '../hooks/useGroupFilterHandler.jsx';
 import Service from '../../common/Service.js';

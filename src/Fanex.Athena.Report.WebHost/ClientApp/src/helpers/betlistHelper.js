@@ -1,4 +1,4 @@
-import NumberFormat from '@srcRoot/lib/numberFormat';
+import NumberFormat from '@/lib/numberFormat';
 
 class BetListHelper {
     static loadBetListDataGrid(data, isServerPaging) {

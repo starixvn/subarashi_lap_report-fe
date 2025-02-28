@@ -2,16 +2,16 @@
 import MultipleSelect from '@legion-lib/react-multiselect';
 import { useDispatch, useSelector } from 'react-redux';
 
-import CollapsiblePanel from '@srcRoot/components/CollapsiblePanel.jsx';
-import ReportSelect from '@srcRoot/components/ReportSelect.jsx';
-import UserGuide from '@srcRoot/components/UserGuide';
-import { USER_GUIDE, WL_BY_TIME_ZONE } from '@srcRoot/constants/pages.js';
-import LangHelper from '@srcRoot/helpers/langHelper';
-import useToggleRequest from '@srcRoot/hooks/useToggleRequest.js';
-import DataService from '@srcRoot/lib/dataService';
-import Site from '@srcRoot/lib/site';
+import CollapsiblePanel from '@/components/CollapsiblePanel.jsx';
+import ReportSelect from '@/components/ReportSelect.jsx';
+import UserGuide from '@/components/UserGuide';
+import { USER_GUIDE, WL_BY_TIME_ZONE } from '@/constants/pages.js';
+import LangHelper from '@/helpers/langHelper';
+import useToggleRequest from '@/hooks/useToggleRequest.js';
+import DataService from '@/lib/dataService';
+import Site from '@/lib/site';
 
-import ExportExcel from '@srcRoot/components/ExportExcel';
+import ExportExcel from '@/components/ExportExcel';
 import React from 'react';
 import { ActionCreators } from '../actions/index';
 import { ApiUrl, DateConstraint, ReportBy, SettingConst, TimeZones } from '../constants';

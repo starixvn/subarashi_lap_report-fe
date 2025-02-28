@@ -2,8 +2,8 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSelector, shallowEqual } from 'react-redux';
 
-import LangHelper from '@srcRoot/helpers/langHelper';
-import ExportExcel from '@srcRoot/components/ExportExcel';
+import LangHelper from '@/helpers/langHelper';
+import ExportExcel from '@/components/ExportExcel';
 import { ApiUrl } from '../constant/apiSettings';
 
 const MatchWinLossFormFilter = (props) => {

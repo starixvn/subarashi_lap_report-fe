@@ -2,7 +2,7 @@ import React from 'react';
 import { Cell, Row } from '@legion-lib/react-grid';
 
 import CommonCells from './CommonCells';
-import { ReportLevel, SubsidiaryViewType } from '@srcRoot/constants/report';
+import { ReportLevel, SubsidiaryViewType } from '@/constants/report';
 import { TotalText } from '../common/tableSetting';
 
 export const BuildFooter = (data, { drillDownLevel, ...options }) => {

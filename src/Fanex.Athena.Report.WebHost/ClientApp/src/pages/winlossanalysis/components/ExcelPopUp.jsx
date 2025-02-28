@@ -3,10 +3,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { ActionCreators } from '../actions/index.js';
 import { ExportExcelMode } from '../common/constants';
 import Service from '../common/Service';
-import Popup from '@srcRoot/components/Popup';
-import RadioGroup from '@srcRoot/components/RadioGroup';
-import LangHelper from '@srcRoot/helpers/langHelper';
-import { decode } from '@srcRoot/lib/htmlHelper';
+import Popup from '@/components/Popup';
+import RadioGroup from '@/components/RadioGroup';
+import LangHelper from '@/helpers/langHelper';
+import { decode } from '@/lib/htmlHelper';
 import { v4 as uuidv4 } from 'uuid';
 import { memo } from 'react';
 

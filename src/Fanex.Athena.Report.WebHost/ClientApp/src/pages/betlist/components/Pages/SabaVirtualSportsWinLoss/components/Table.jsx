@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector, shallowEqual } from 'react-redux';
 
-import BetListTable from '@srcRoot/components/BetListTable';
+import BetListTable from '@/components/BetListTable';
 import tableSettings from '../common/tableSettings';
 
 const Table = ({ totalRows, ...rest }) => {

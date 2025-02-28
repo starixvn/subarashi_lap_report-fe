@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { BetListPageUrl } from '../common/apiUrl';
 import { createSearchParams } from 'react-router-dom';
 import { ActionCreators } from '../actions';
-import Site from '@srcRoot/lib/site';
+import Site from '@/lib/site';
 
 const BetListLink = ({ data }) => {
     const dispatch = useDispatch();

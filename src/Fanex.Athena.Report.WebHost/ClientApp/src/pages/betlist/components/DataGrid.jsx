@@ -1,10 +1,10 @@
 import React from 'react';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 
-import BetListHelper from '@srcRoot/helpers/betlistHelper';
-import LangHelper from '@srcRoot/helpers/langHelper';
-import DataService from '@srcRoot/lib/dataService';
-import useToggleRequest from '@srcRoot/hooks/useToggleRequest';
+import BetListHelper from '@/helpers/betlistHelper';
+import LangHelper from '@/helpers/langHelper';
+import DataService from '@/lib/dataService';
+import useToggleRequest from '@/hooks/useToggleRequest';
 
 import { ActionCreators } from '../actions';
 import { getBetListPageWithPageName } from './Pages';

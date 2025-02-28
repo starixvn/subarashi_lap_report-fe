@@ -1,13 +1,13 @@
 ﻿import * as filterHandlerAction from './filterHandlerAction.js';
-import * as gridDataAction from '@srcRoot/actions/gridDataAction';
-import * as productAction from '@srcRoot/actions/productAction';
-import * as currencyAction from '@srcRoot/actions/currencyAction';
-import * as baseCurrencyAction from '@srcRoot/actions/baseCurrencyAction';
-import * as loaderAction from '@srcRoot/actions/loaderAction';
-import * as excludeTestAction from '@srcRoot/actions/excludeTestAction';
-import * as userGuideAction from '@srcRoot/actions/userGuideAction';
-import * as formDataAction from '@srcRoot/actions/formDataAction';
-import * as requestParamAction from '@srcRoot/actions/requestParamAction';
+import * as gridDataAction from '@/actions/gridDataAction';
+import * as productAction from '@/actions/productAction';
+import * as currencyAction from '@/actions/currencyAction';
+import * as baseCurrencyAction from '@/actions/baseCurrencyAction';
+import * as loaderAction from '@/actions/loaderAction';
+import * as excludeTestAction from '@/actions/excludeTestAction';
+import * as userGuideAction from '@/actions/userGuideAction';
+import * as formDataAction from '@/actions/formDataAction';
+import * as requestParamAction from '@/actions/requestParamAction';
 
 export const ActionCreators = {
     ...gridDataAction,

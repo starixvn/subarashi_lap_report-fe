@@ -1,6 +1,6 @@
-import DataService from '@srcRoot/lib/dataService';
+import DataService from '@/lib/dataService';
 import * as types from './types.js';
-import ObjectHelper from '@srcRoot/lib/objectHelper.js';
+import ObjectHelper from '@/lib/objectHelper.js';
 
 const setSelectedSport = (sportId) => {
     return {

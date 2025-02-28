@@ -2,14 +2,14 @@
 import { Provider } from 'react-redux';
 
 // import styles
-import '@srcRoot/styles/pages/sabavirtualsportswinloss.scss';
+import '@/styles/pages/sabavirtualsportswinloss.scss';
 
-import Store from '@srcRoot/lib/store';
+import Store from '@/lib/store';
 import AppContainer from './components/AppContainer';
 
 import reducer from './reducers';
 import { constants } from './common';
-import { ReportLevel } from '@srcRoot/constants/report';
+import { ReportLevel } from '@/constants/report';
 
 const SubsidiaryPerformance = (props) => {
     const store = Store.createStore(reducer, {

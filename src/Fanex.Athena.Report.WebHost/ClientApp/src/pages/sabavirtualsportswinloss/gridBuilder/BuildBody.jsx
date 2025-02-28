@@ -2,7 +2,7 @@ import React from 'react';
 import moment from 'moment';
 import { Cell, Row } from '@legion-lib/react-grid';
 
-import ArrayHelper from '@srcRoot/helpers/arrayHelper';
+import ArrayHelper from '@/helpers/arrayHelper';
 
 import CommonCells from './CommonCells';
 import { DrillDownLevel } from '../common/tableSetting';

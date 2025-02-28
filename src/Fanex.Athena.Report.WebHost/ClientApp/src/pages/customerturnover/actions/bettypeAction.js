@@ -1,9 +1,9 @@
-import * as bettypeAction from '@srcRoot/actions/bettypeAction';
+import * as bettypeAction from '@/actions/bettypeAction';
 
 import { ApiUrl } from '../common/apiSettings';
 import Service from '../common';
-import LangHelper from '@srcRoot/helpers/langHelper';
-import { toggleLoader } from '@srcRoot/actions/loaderAction';
+import LangHelper from '@/helpers/langHelper';
+import { toggleLoader } from '@/actions/loaderAction';
 
 const BETTYPE_CACHE_KEY = 'CUSTOMER_TURNOVER_BETTYPE_CACHE_KEY';
 

@@ -1,5 +1,5 @@
 import * as Sentry from '@sentry/react';
-import Site from '@srcRoot/lib/site';
+import Site from '@/lib/site';
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import App from './App';

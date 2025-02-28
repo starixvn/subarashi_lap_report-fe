@@ -1,11 +1,11 @@
 ﻿import React, { useEffect, memo } from 'react';
 import { shallowEqual, useSelector } from 'react-redux';
-import CollapsiblePanel from '@srcRoot/components/CollapsiblePanel';
-import useBaseCurrencyForMultiSelectCurrency from '@srcRoot/hooks/useBaseCurrencyForMultiSelectCurrency';
+import CollapsiblePanel from '@/components/CollapsiblePanel';
+import useBaseCurrencyForMultiSelectCurrency from '@/hooks/useBaseCurrencyForMultiSelectCurrency';
 import { useFilterHandler } from '../hooks/useFilterHandler.jsx';
 import useDisabledGroupInOriginalCurrency from '../hooks/useIsDisabledGroupInOriginalCurrency.jsx';
 import SubsidiaryDropDownFilter from '../filters/SubsidiaryDropDownFilter.jsx';
-import useSubsidiarySearch from '@srcRoot/hooks/useSubsidiarySearch';
+import useSubsidiarySearch from '@/hooks/useSubsidiarySearch';
 import DateRangeFilter from '../filters/DateRangeFilter.jsx';
 import Service from '../../common/Service.js';
 import ProductFilter from '../filters/ProductFilter.jsx';
