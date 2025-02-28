@@ -42,9 +42,7 @@ function MatchCell({ data, ...rest }) {
             params.SubsidiaryList = requestParam.SubsidiaryList;
         }
 
-        const url = data.sportId === 177 || data.sportId === 198
-            ? BetListPageUrl.BETRADAR
-            : BetListPageUrl.MATCH ;
+        const url = data.sportId === 177 || data.sportId === 198 ? BetListPageUrl.BETRADAR : BetListPageUrl.MATCH;
 
         navigate(url, params);
     };

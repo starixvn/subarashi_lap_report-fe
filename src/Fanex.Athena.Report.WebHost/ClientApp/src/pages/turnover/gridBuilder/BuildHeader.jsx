@@ -61,8 +61,8 @@ const BuildFirstRow = ({ hasCasinoTransfer, isAllowBa, isEnableSingleWallet, isH
         {!isHidePlayerWL && (
             <HeaderCell rowSpan={hasCustomerComm ? 1 : 2} colWidth={400} colSpan={hasCustomerComm ? 3 : 1} key="CusWinLoss">
                 {hasCustomerComm ? LangHelper.getSingleResource('CustomerW_L') : LangHelper.getSingleResource('WinLoss')}
-            </HeaderCell>)
-        }
+            </HeaderCell>
+        )}
         {!isEnableSingleWallet && (
             <HeaderCell rowSpan="2" colWidth={500} key="ClosingBalance">
                 {LangHelper.getSingleResource('ClosingBalance')}

@@ -7,7 +7,7 @@ const selectedBettype = createReducer(
         [types.SET_SELECTED_BETTYPE](state, action) {
             return action.data;
         },
-    }
+    },
 );
 
 const bettypeList = createReducer(
@@ -16,7 +16,7 @@ const bettypeList = createReducer(
         [types.SET_BETTYPE_LIST](state, action) {
             return action.data;
         },
-    }
+    },
 );
 
 export default {

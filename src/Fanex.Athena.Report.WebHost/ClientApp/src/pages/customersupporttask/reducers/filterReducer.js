@@ -8,7 +8,7 @@ export const selectedSupportTask = createReducer(
         [SET_SELECTED_SUPPORT_TASK](state, action) {
             return action.data;
         },
-    }
+    },
 );
 
 export const selectedCurrency = currencyReducer.selectedCurrency;

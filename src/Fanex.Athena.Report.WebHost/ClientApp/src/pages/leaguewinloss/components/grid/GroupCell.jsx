@@ -118,7 +118,13 @@ export const GroupCell = (props) => {
     };
 
     const _fetchBreakDownCurrencyData = async () => {
-        const params = { ...requestParam, leagueId: rowData.leagueId, eventType: rowData.eventType, betTypeId: rowData.betTypeId, matchId: rowData.matchId };
+        const params = {
+            ...requestParam,
+            leagueId: rowData.leagueId,
+            eventType: rowData.eventType,
+            betTypeId: rowData.betTypeId,
+            matchId: rowData.matchId,
+        };
 
         try {
             const response = await DataService.postReportData(ApiUrl.REPORT_CURRENCY_DATA_URL, params);

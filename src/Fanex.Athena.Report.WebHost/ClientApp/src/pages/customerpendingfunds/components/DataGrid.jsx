@@ -44,7 +44,11 @@ const DataGrid = (props) => {
 
     const onSort = (sortBy, sortOrderBy) => {
         const orderItem = Service.getOrderItem(sortBy);
-        const params = { ...requestParam, OrderItem: orderItem, IsAscSort: Service.isAscSort(sortOrderBy) };
+        const params = {
+            ...requestParam,
+            OrderItem: orderItem,
+            IsAscSort: Service.isAscSort(sortOrderBy),
+        };
 
         sendRequest(() => DataService.postReportData(ApiUrl.DATA_URL, params), updateGridData);
         dispatch(setRequestParam(params));

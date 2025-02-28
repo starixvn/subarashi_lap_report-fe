@@ -5,7 +5,11 @@ import LangHelper from '@/helpers/langHelper';
 
 import Service, { constants } from '../common';
 
-export const GetDefaultPagingOptions = (pageIndex, totalItem) => ({ ...constants.DefaultPagingOption, PageIndex: pageIndex, TotalItem: totalItem });
+export const GetDefaultPagingOptions = (pageIndex, totalItem) => ({
+    ...constants.DefaultPagingOption,
+    PageIndex: pageIndex,
+    TotalItem: totalItem,
+});
 
 export const GenerateReportTitle = (fromDate, toDate, currencyName) => {
     const customerBalanceTitle = LangHelper.getSingleResource('CustomerBalance');

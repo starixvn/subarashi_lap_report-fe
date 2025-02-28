@@ -12,11 +12,14 @@ export const CashOutModeFilter = (props) => {
     return (
         <div className="form-group">
             <label className="label-text">{LangHelper.getSingleResource('CashOut')}</label>
-            <ReportSelect instanceId="CashOutMode" 
-                value={value} 
-                options={CashOutModeList} 
-                isDisabled={disabled}  
-                onChange={(e)=>{onChange(e,viewInTime);}}
+            <ReportSelect
+                instanceId="CashOutMode"
+                value={value}
+                options={CashOutModeList}
+                isDisabled={disabled}
+                onChange={(e) => {
+                    onChange(e, viewInTime);
+                }}
             />
         </div>
     );

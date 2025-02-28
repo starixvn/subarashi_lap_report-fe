@@ -10,8 +10,14 @@ const SearchOption = (props) => {
     const { value, onChange } = props;
     const dataSource = [
         { id: SearchMode.MatchPrecise, text: LangHelper.getSingleResource('MatchPrecise') },
-        { id: SearchMode.MatchPrefix, text: `${LangHelper.getSingleResource('MatchPrefix')} "<span class='keyword'>test</span>"ABCD` },
-        { id: SearchMode.MatchCase, text: `${LangHelper.getSingleResource('MatchCase')} AB"<span class='keyword'>test</span>"CD` },
+        {
+            id: SearchMode.MatchPrefix,
+            text: `${LangHelper.getSingleResource('MatchPrefix')} "<span class='keyword'>test</span>"ABCD`,
+        },
+        {
+            id: SearchMode.MatchCase,
+            text: `${LangHelper.getSingleResource('MatchCase')} AB"<span class='keyword'>test</span>"CD`,
+        },
     ];
     return (
         <DrowdownRadioList

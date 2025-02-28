@@ -28,7 +28,10 @@ export const AppContainer = (props) => {
 
         const data = result.data;
 
-        data.baseCurrencies = data.baseCurrencies.map((item) => ({ value: item.key, label: item.value }));
+        data.baseCurrencies = data.baseCurrencies.map((item) => ({
+            value: item.key,
+            label: item.value,
+        }));
         dispatch(setBaseCurrencyList(data.baseCurrencies));
 
         data.baseCurrency = data.baseCurrencies.find((x) => x.label == data.baseCurrency);

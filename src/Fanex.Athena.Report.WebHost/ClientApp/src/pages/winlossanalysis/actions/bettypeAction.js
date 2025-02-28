@@ -44,7 +44,7 @@ export const getBetTypeList = (productCodes, licenseeName) => {
             const response = await DataService.getData(
                 'api/CommonDataApi/GetBetTypeInTreeList',
                 { productCodes: productCodes },
-                currentCancellationTokenSource
+                currentCancellationTokenSource,
             );
             currentCancellationTokenSource = null;
             const data = response.data;

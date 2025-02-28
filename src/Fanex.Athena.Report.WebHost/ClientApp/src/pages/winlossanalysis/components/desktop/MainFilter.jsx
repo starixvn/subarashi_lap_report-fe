@@ -81,7 +81,7 @@ export const MainFilter = () => {
             state.selectedSubsidiary,
             state.formData,
         ],
-        shallowEqual
+        shallowEqual,
     );
     const { isShowSubsidiaryDropdown, isSubsidiarySearch, isShowSubsidiarySearchCheckBox } = useSubsidiarySearch();
     const { baseCurrencyList, selectedBaseCurrency: newBaseCurrency } = useBaseCurrencyForMultiSelectCurrency(selectedBaseCurrency, formData);

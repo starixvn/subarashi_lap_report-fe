@@ -43,7 +43,7 @@ export const useFilterAction = () => {
         formData,
         selectedViewInTime,
         selectedHour,
-        defaultState
+        defaultState,
     ] = useSelector(
         (state) => [
             state.requestParam,
@@ -73,7 +73,7 @@ export const useFilterAction = () => {
             state.selectedHour,
             state.defaultState,
         ],
-        shallowEqual
+        shallowEqual,
     );
 
     const { baseCurrencyList } = useBaseCurrencyForMultiSelectCurrency(selectedBaseCurrency, formData);
@@ -106,20 +106,20 @@ export const useFilterAction = () => {
         setAppUuid,
         setProductList,
         setSelectedViewInTime,
-        setHour
+        setHour,
     } = ActionCreators;
 
     const _buildTitle = (params) => {
         const { FromDate, ToDate, ProductCodes, SearchUserName, CurrencyCodes, BaseCurrencyName, ViewInTime } = params;
         const dateRangeText = `, ${Site.convertDateToString(FromDate)} → ${Site.convertDateToString(ToDate)}`;
         const currencyText = `, ${LangHelper.getSingleResource('Currency')}: ${CurrencyCodes}, ${LangHelper.getSingleResource(
-            'BaseCurrency'
+            'BaseCurrency',
         )}: ${BaseCurrencyName}`;
         const productText = `, ${LangHelper.getSingleResource('LicenseeW_L')} (${ProductCodes})`;
         const userText = !!SearchUserName ? `, ${LangHelper.getSingleResource('Username')}: ${SearchUserName}` : '';
-        const viewinTimeText = ` - ${ViewInTime == ViewInTimeMode.Settlement ? LangHelper.getSingleResource("SettlementTime") : LangHelper.getSingleResource("FinancialDate")}`;
+        const viewinTimeText = ` - ${ViewInTime == ViewInTimeMode.Settlement ? LangHelper.getSingleResource('SettlementTime') : LangHelper.getSingleResource('FinancialDate')}`;
 
-        return LangHelper.getSingleResource("WinlossAnalysis") + viewinTimeText + dateRangeText + currencyText + productText + userText;
+        return LangHelper.getSingleResource('WinlossAnalysis') + viewinTimeText + dateRangeText + currencyText + productText + userText;
     };
     const _getParams = () => {
         if (!isValidModel) {
@@ -195,7 +195,12 @@ export const useFilterAction = () => {
 
     const onClickClearFilter = useCallback(() => {
         batch(() => {
-            dispatch(setDateRange({ startDate: defaultState.dateRange.fromDate, endDate: defaultState.dateRange.toDate }));
+            dispatch(
+                setDateRange({
+                    startDate: defaultState.dateRange.fromDate,
+                    endDate: defaultState.dateRange.toDate,
+                }),
+            );
             dispatch(setSelectedViewInTime(defaultState.selectedViewInTime));
             dispatch(setHour(defaultState.selectedHour));
             dispatch(setProductList(formData.productOptions));

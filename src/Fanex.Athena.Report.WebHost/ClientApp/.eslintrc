@@ -29,7 +29,7 @@
             "warn",
             {
                 "endOfLine": "auto",
-                "trailingComma": "es5",
+                "trailingComma": "all",
                 "semi": true,
                 "singleQuote": true,
                 "tabWidth": 4,

@@ -34,7 +34,7 @@ export const useGroupFilterHandler = () => {
             dispatch(setSelectedBreakDownByOption(mode));
             _setValueForIsDisplayInOriginalCurrencyFilter(selectedGroupByOption, mode);
         },
-        [selectedGroupByOption]
+        [selectedGroupByOption],
     );
 
     return { onChangeGroupByOption, onChangeBreakByOption };

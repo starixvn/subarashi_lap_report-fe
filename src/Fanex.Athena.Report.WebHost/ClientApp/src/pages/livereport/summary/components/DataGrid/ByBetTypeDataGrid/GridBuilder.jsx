@@ -25,7 +25,7 @@ export const BuildByBetTypeBody = (data, options) => {
                 <Cell className={'left-align'} key={`col-${report.productName}`} colSpan={columnCount}>
                     {report.productName}
                 </Cell>
-            </Row>
+            </Row>,
         );
 
         for (let j = 0; j < report.liveReports.length; ++j) {
@@ -36,7 +36,7 @@ export const BuildByBetTypeBody = (data, options) => {
                         {liveReport.productName}
                     </Cell>
                     <CommonCells data={liveReport} />
-                </Row>
+                </Row>,
             );
         }
     }

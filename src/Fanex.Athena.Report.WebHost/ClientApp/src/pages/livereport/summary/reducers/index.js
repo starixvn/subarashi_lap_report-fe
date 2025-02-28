@@ -26,6 +26,6 @@ export default combineReducers(
         baseCurrencyReducer,
         currencyReducer,
         subsidiaryReducer,
-        filterReducer
-    )
+        filterReducer,
+    ),
 );

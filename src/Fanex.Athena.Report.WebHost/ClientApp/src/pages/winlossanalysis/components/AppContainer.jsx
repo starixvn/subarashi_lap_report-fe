@@ -46,13 +46,24 @@ export const AppContainer = () => {
         const data = result.data;
 
         const orgProductOptions = data.productOptions;
-        data.productOptions = orgProductOptions.map((item) => ({ id: item.code, value: item.name, status: true }));
+        data.productOptions = orgProductOptions.map((item) => ({
+            id: item.code,
+            value: item.name,
+            status: true,
+        }));
         defaultState.selectedProduct = data.productOptions.map((item) => item.id).join(',');
 
-        data.currencyList = data.currencyList.map((item) => ({ id: item.key, value: item.value, status: true }));
+        data.currencyList = data.currencyList.map((item) => ({
+            id: item.key,
+            value: item.value,
+            status: true,
+        }));
         defaultState.selectedCurrency = data.currencyList.map((item) => item.id).join(',');
 
-        data.baseCurrencyList = data.baseCurrencyList.map((item) => ({ value: item.key, label: item.value }));
+        data.baseCurrencyList = data.baseCurrencyList.map((item) => ({
+            value: item.key,
+            label: item.value,
+        }));
 
         const defaultBaseCurrency = data.baseCurrencyList.find((x) => x.label == data.defaultBaseCurrency);
         data.defaultBaseCurrency = defaultBaseCurrency ? defaultBaseCurrency : { value: DEFAULT_BASE_CURRENCY_VALUE, label: data.defaultBaseCurrency };
@@ -60,14 +71,30 @@ export const AppContainer = () => {
 
         defaultState.selectedStatus = data.statusList.map((item) => item.id).join(',');
 
-        data.statusList = data.statusList.map((item) => ({ id: item.id, value: item.name, status: true }));
-        data.liveStatusList = data.liveStatusList.map((item) => ({ id: item.key, value: item.value, status: true }));
+        data.statusList = data.statusList.map((item) => ({
+            id: item.id,
+            value: item.name,
+            status: true,
+        }));
+        data.liveStatusList = data.liveStatusList.map((item) => ({
+            id: item.key,
+            value: item.value,
+            status: true,
+        }));
         defaultState.selectedLiveStatus = data.liveStatusList.map((item) => item.id).join(',');
 
-        data.platformList = data.platformList.map((item) => ({ id: item.key, value: item.value, status: true }));
+        data.platformList = data.platformList.map((item) => ({
+            id: item.key,
+            value: item.value,
+            status: true,
+        }));
         defaultState.selectedPlatform = data.platformList.map((item) => item.id).join(',');
 
-        data.oddsGroupList = data.oddsGroupList.map((item) => ({ id: item, value: item, status: true }));
+        data.oddsGroupList = data.oddsGroupList.map((item) => ({
+            id: item,
+            value: item,
+            status: true,
+        }));
         defaultState.selectedOddsGroup = data.oddsGroupList.map((item) => item.id).join(',');
 
         const defaultSelectedCustomerClass = data.riskLevel.map((item) => item.customerClassList.map((item) => item).join(','));
@@ -86,8 +113,13 @@ export const AppContainer = () => {
 
         defaultState.selectedViewInTime = ViewInTimeMode.Financial;
 
-        data.hourList = data.hourList.map((item) => ({ id: item.key, value: item.value, status: true }));
-        data.settlementTimeProductList = orgProductOptions.filter((item) => SettlementTimeSupportProductList.includes(item.code))
+        data.hourList = data.hourList.map((item) => ({
+            id: item.key,
+            value: item.value,
+            status: true,
+        }));
+        data.settlementTimeProductList = orgProductOptions
+            .filter((item) => SettlementTimeSupportProductList.includes(item.code))
             .map((item) => ({ id: item.code, value: item.name, status: true }));
         defaultState.selectedHour = 'All';
 
@@ -101,7 +133,7 @@ export const AppContainer = () => {
             dispatch(setSelectedOddsGroup(defaultState.selectedOddsGroup));
             dispatch(setSelectedCustomerClass(defaultState.selectedCustomerClass));
 
-            dispatch(setDefaultState({...DefaultState, ...defaultState}));
+            dispatch(setDefaultState({ ...DefaultState, ...defaultState }));
             dispatch(setProductList(data.productOptions));
             dispatch(setFormData(data));
         });

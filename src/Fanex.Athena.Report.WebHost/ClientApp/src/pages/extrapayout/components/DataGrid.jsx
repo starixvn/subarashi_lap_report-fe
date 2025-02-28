@@ -71,7 +71,7 @@ export const DataGrid = (props) => {
             newRequestParam.BaseCurrencyName,
             newRequestParam.ProductCodeList,
             newRequestParam.Username,
-            props.isConvertAllToBaseCurrency
+            props.isConvertAllToBaseCurrency,
         );
 
         props.setReportTitle(title);
@@ -95,7 +95,7 @@ export const DataGrid = (props) => {
 
         const viewIn = LangHelper.getSingleResource('Viewin').replace(
             '{0}',
-            requestParam.currencyName ? requestParam.currencyName : requestParam.BaseCurrencyName
+            requestParam.currencyName ? requestParam.currencyName : requestParam.BaseCurrencyName,
         );
 
         const fromDate = new Date(requestParam.DrillDownFromDate);
@@ -176,7 +176,7 @@ export const DataGrid = (props) => {
             newRequestParam.BaseCurrencyName,
             newRequestParam.ProductCodeList,
             newRequestParam.Username,
-            props.isConvertAllToBaseCurrency
+            props.isConvertAllToBaseCurrency,
         );
         props.setReportTitle(title);
         props.setRequestParam(newRequestParam);
@@ -246,7 +246,18 @@ function mapDispatchToProps(dispatch) {
 
 function mapStateToProps(state) {
     const { requestParam, reportData, reportTitle, reloadReport, detailParams, selectedCurrency, isConvertAllToBaseCurrency } = state;
-    return Object.assign({}, { requestParam, reportData, reportTitle, reloadReport, detailParams, selectedCurrency, isConvertAllToBaseCurrency });
+    return Object.assign(
+        {},
+        {
+            requestParam,
+            reportData,
+            reportTitle,
+            reloadReport,
+            detailParams,
+            selectedCurrency,
+            isConvertAllToBaseCurrency,
+        },
+    );
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(DataGrid);

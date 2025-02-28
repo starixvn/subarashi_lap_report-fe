@@ -79,7 +79,7 @@ function BodyContentRow(props) {
             ProductCode: matchData.productName,
             ProductCodeList: Service.getMatchProductCodeList(
                 matchData.productName,
-                requestParam.ProductOptions.filter((item) => item.status)
+                requestParam.ProductOptions.filter((item) => item.status),
             ),
         };
     };
@@ -164,7 +164,7 @@ function BodyContentRow(props) {
                     </Cell>
                     <CommonCells data={match} />
                 </Row>
-            ))
+            )),
         );
     }
 

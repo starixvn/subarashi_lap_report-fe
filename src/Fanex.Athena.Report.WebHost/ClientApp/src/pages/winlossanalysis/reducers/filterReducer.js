@@ -8,7 +8,7 @@ export const selectedVipOnly = createReducer(
         [types.SET_SELECTED_VIPONLY](state, action) {
             return action.data;
         },
-    }
+    },
 );
 
 export const isGroupInOriginalCurrency = createReducer(true, {
@@ -47,7 +47,7 @@ export const selectedOddsGroup = createReducer(
         [types.SET_SELECTED_ODDSGROUP](state, action) {
             return action.data;
         },
-    }
+    },
 );
 
 export const appUuid = createReducer('', {
@@ -64,12 +64,12 @@ export const searchMode = createReducer(SearchMode.MatchPrecise, {
 
 export const selectedViewInTime = createReducer(ViewInTimeMode.Financial, {
     [types.SET_SELECTED_VIEW_IN_TIME](state, action) {
-        return action.data
-    }
+        return action.data;
+    },
 });
 
 export const selectedHour = createReducer('', {
     [types.SET_SELECTED_HOUR](state, action) {
-        return action.data
-    }
+        return action.data;
+    },
 });

@@ -23,7 +23,7 @@ const LargeColumnWidths = ['31%', '31%', '31%', '7%'];
 export const MobileDataGrid = () => {
     const [requestParam, reportData, reloadReport] = useSelector(
         (state) => [state.requestParam, state.reportData, state.reportTitle, state.reloadReport, state.selectedProduct],
-        shallowEqual
+        shallowEqual,
     );
     const ref = useRef(null);
     const [pagerRef, pagerSize] = useElementSize();
@@ -56,7 +56,7 @@ export const MobileDataGrid = () => {
             { id: MobileGroupByHeaderDisplayType.ExternalId, text: HeaderText.ExternalId },
             { id: MobileGroupByHeaderDisplayType.SystemId, text: HeaderText.SystemId },
         ],
-        []
+        [],
     );
 
     const onChangeIdDisplayType = useCallback(
@@ -64,7 +64,7 @@ export const MobileDataGrid = () => {
             const { value } = event.target;
             setHeaderDisplayType(value);
         },
-        [setHeaderDisplayType]
+        [setHeaderDisplayType],
     );
 
     const collumnWidths = width > 500 ? LargeColumnWidths : width > 370 ? SmallColumnWidths : VerySmallColumnWidths;

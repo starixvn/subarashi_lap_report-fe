@@ -14,7 +14,7 @@ const Day = ({ id, label, value, min, max, onChange }) => {
                     <a href="#" onClick={(event) => event.preventDefault()}>
                         {i}
                     </a>
-                </li>
+                </li>,
             );
         }
 

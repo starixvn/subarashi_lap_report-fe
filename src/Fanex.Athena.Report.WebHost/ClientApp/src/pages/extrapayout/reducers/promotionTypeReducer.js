@@ -7,7 +7,7 @@ const selectedPromotionTypes = createReducer(
         [types.SET_SELECTED_PROMOTION_TYPES](state, action) {
             return action.data;
         },
-    }
+    },
 );
 
 const promotionTypeList = createReducer(null, {

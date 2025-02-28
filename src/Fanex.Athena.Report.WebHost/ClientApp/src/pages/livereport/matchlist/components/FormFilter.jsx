@@ -20,7 +20,7 @@ const FormFilter = (props) => {
     const onExportExcel = () => {
         handler.sendRequest(
             () => DataService.getReportFile(ApiUrl.EXPORT_EXCEL_URL, requestParam),
-            (response) => Site.downloadFile(response.data, 'LiveReport.xls')
+            (response) => Site.downloadFile(response.data, 'LiveReport.xls'),
         );
     };
 

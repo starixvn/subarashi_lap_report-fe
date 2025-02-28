@@ -21,6 +21,6 @@ export default combineReducers(
         userGuideReducer,
         formDataReducer,
         gridDataReducer,
-        requestParamReducer
-    )
+        requestParamReducer,
+    ),
 );

@@ -23,7 +23,7 @@ export const BuildBody = (data, columnCount) => {
                 <Cell className={'left-align'} key={`col-${matches.leagueId}-${index}`} colSpan={columnCount}>
                     {matches.leagueName}
                 </Cell>
-            </Row>
+            </Row>,
         );
 
         for (let j = 0; j < matches.data.length; ++j) {

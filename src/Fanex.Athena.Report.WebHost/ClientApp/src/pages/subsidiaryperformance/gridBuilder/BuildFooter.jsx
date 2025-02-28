@@ -29,7 +29,7 @@ const buildDetailFooter = ({ totalData, grandTotalData }, { baseCurrency }) => {
                     {item.currencyName}
                 </Cell>
                 <CommonCells data={item} index={`total${i}`} />
-            </Row>
+            </Row>,
         );
     }
 
@@ -70,7 +70,7 @@ const buildMainFooter = ({ totalData, grandTotalData }, { viewType }) => {
                 <Cell colSpan={colSpan} title={`${TotalText.Total} ${totalName}`}>{`${TotalText.Total} ${totalName}`}</Cell>
                 <Cell title={`${TotalText.Based} ${item.currencyName}`} className="center-align" colSpan="2">{`${TotalText.Based} ${item.currencyName}`}</Cell>
                 <CommonCells data={item} index={`total${i}`} />
-            </Row>
+            </Row>,
         );
     }
 

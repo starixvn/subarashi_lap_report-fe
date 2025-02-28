@@ -71,7 +71,7 @@ const FormFilter = (props) => {
         const params = requestParam?.DrillDownLevel == ReportLevel.MAIN ? getParams() : requestParam;
         sendRequest(
             () => DataService.getReportFile(ApiUrl.EXPORT_EXCEL_URL, params),
-            (res) => downLoadExcel(res, params)
+            (res) => downLoadExcel(res, params),
         );
     };
 

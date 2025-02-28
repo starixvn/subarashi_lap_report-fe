@@ -39,7 +39,10 @@ function DataGrid() {
 
     const { TableSettings } = constants;
 
-    const options = { isAllowedCustomerCommission: formData.isAllowedCustomerCommission, reportBy: requestParam.ReportBy };
+    const options = {
+        isAllowedCustomerCommission: formData.isAllowedCustomerCommission,
+        reportBy: requestParam.ReportBy,
+    };
 
     const currenPagingOption = {
         PageIndex: requestParam.PageIndex,
@@ -62,7 +65,6 @@ function DataGrid() {
 
         dispatch(setGridData(gridData));
     };
-
 
     return (
         <>

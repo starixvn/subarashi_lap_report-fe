@@ -52,7 +52,7 @@ RadioGroup.propTypes = {
         PropTypes.shape({
             label: PropTypes.string,
             value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-        })
+        }),
     ).isRequired,
     onChange: PropTypes.func,
     value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),

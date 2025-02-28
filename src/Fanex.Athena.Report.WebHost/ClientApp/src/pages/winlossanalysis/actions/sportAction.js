@@ -19,7 +19,9 @@ export const setSportList = (list) => {
 
 export function getSportList(productCodes) {
     return async (dispatch) => {
-        const response = await DataService.getData('api/CommonDataApi/GetSportsForTreeView', { productCodes: productCodes });
+        const response = await DataService.getData('api/CommonDataApi/GetSportsForTreeView', {
+            productCodes: productCodes,
+        });
         const data = response.data;
         const camelData = ObjectHelper.toCamel(data);
         const selectedSports = Service.getSelectedItemFromTreeListItem(camelData);

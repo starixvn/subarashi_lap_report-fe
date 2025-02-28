@@ -183,7 +183,11 @@ export const FormFilter = (props) => {
                 keyField="value"
                 valueField="name"
                 statusField="checked"
-                texts={{ SelectOptions: 'Please select', All: 'All', SelectedItemCount: '# selected' }}
+                texts={{
+                    SelectOptions: 'Please select',
+                    All: 'All',
+                    SelectedItemCount: '# selected',
+                }}
                 isAllTextShown={false}
                 hasSearchBox={false}
                 treeViewOption={TreeViewOption}
@@ -206,7 +210,7 @@ export const FormFilter = (props) => {
             params.BaseCurrencyName,
             params.ProductCodeList,
             params.Username,
-            isConvertAllToBaseCurrency
+            isConvertAllToBaseCurrency,
         );
         props.setReportTitle(title);
         props.setRequestParam(params);
@@ -470,7 +474,7 @@ function mapStateToProps(state) {
             subsidiarySearch,
             selectedSubsidiary,
             isConvertAllToBaseCurrency,
-        }
+        },
     );
 }
 

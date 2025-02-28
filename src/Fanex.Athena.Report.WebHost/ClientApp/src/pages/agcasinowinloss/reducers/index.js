@@ -22,6 +22,6 @@ export default combineReducers(
         dateRangeReducer,
         excludeTestData,
         reportByReducer,
-        drillDownCacheReducer
-    )
+        drillDownCacheReducer,
+    ),
 );

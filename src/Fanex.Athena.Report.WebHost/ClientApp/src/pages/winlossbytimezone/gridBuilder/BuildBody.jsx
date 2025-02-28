@@ -54,7 +54,7 @@ export const BuildBody = (data, { reportBy: selectedReportBy, groupBy }) => {
                 <Cell title={margin} className="right-align">
                     {margin}
                 </Cell>
-            </Row>
+            </Row>,
         );
     }
 

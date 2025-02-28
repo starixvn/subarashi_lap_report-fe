@@ -21,7 +21,9 @@ const UserNameFilter = (props) => {
                 url={ApiUrl.CUSTOMER_SEARCH_URL}
                 onSelect={onChangeUserName}
                 onInput={onChangeUserName}
-                htmlAttributes={{ placeholder: LangHelper.getSingleResource('ExternalIdOrSystemId') }}
+                htmlAttributes={{
+                    placeholder: LangHelper.getSingleResource('ExternalIdOrSystemId'),
+                }}
             />
         </div>
     );

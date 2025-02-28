@@ -384,7 +384,9 @@ export const FormFilter = (props) => {
                                 url={ApiUrl.CUSTOMER_SEARCH_URL}
                                 onSelect={(value) => props.setUsername(value)}
                                 onInput={(value) => props.setUsername(value)}
-                                htmlAttributes={{ placeholder: LangHelper.getSingleResource('ExternalIdOrSystemId') }}
+                                htmlAttributes={{
+                                    placeholder: LangHelper.getSingleResource('ExternalIdOrSystemId'),
+                                }}
                             />
                         </div>
                     </div>
@@ -463,7 +465,7 @@ function mapStateToProps(state) {
             selectedStatus,
             userGuideContent,
             username,
-        }
+        },
     );
 }
 

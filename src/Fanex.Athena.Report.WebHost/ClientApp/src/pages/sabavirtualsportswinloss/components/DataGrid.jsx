@@ -44,7 +44,7 @@ const DataGrid = () => {
         requestParam.ToDate,
         requestParam.CurrencyId,
         requestParam.CurrencyName,
-        requestParam.Username
+        requestParam.Username,
     );
 
     if (!gridData?.data.length) {
@@ -79,7 +79,13 @@ const DataGrid = () => {
     };
 
     const onSort = (sortBy, sortOrder) => {
-        dispatch(setGridSettings({ ...gridSettings, selectedSortKey: sortBy, selectedOrderBy: sortOrder }));
+        dispatch(
+            setGridSettings({
+                ...gridSettings,
+                selectedSortKey: sortBy,
+                selectedOrderBy: sortOrder,
+            }),
+        );
         dispatch(toggleLoader(false));
     };
 

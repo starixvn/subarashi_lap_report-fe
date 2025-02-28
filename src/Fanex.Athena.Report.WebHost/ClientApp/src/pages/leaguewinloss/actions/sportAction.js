@@ -18,7 +18,10 @@ const setSportList = (list) => {
 
 const getSportList = (productCode, date) => {
     return (dispatch) => {
-        DataService.getData('api/CommonDataApi/GetSports', { productCode: productCode, includeSabaSport: true }).then((response) => {
+        DataService.getData('api/CommonDataApi/GetSports', {
+            productCode: productCode,
+            includeSabaSport: true,
+        }).then((response) => {
             let data = response.data;
             let camelData = ObjectHelper.toCamel(data);
             var sportList = camelData.map((item) => item.value).join(',');

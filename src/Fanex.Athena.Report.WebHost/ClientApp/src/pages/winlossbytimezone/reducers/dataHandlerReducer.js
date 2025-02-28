@@ -7,5 +7,5 @@ export const gridData = createReducer(
         [types.SET_GRID_DATA](state, action) {
             return action.data;
         },
-    }
+    },
 );

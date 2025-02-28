@@ -7,5 +7,5 @@ export const isExcludeTest = createReducer(
         [types.CHANGE_IS_EXCLUDE_TEST](state, action) {
             return action.data;
         },
-    }
+    },
 );

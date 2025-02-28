@@ -27,6 +27,6 @@ export default combineReducers(
         requestParamReducer,
         reportTitleReducer,
         subsidiaryReducer,
-        formDataReducer
-    )
+        formDataReducer,
+    ),
 );

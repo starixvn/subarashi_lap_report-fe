@@ -8,7 +8,13 @@ export const useSubsidiarySearch = () => {
     const isShowSubsidiaryDropdown = formData.subsidiaryViewType !== SubsidiaryViewType.NOT_MANAGEMENT && formData.subsidiaryList.length > 0;
     const isShowSubsidiarySearchCheckBox = isShowSubsidiaryDropdown && formData.subsidiaryViewType === SubsidiaryViewType.MASTER_MANAGEMENT;
     const isWhiteLabelView = formData.subsidiaryViewType === SubsidiaryViewType.MASTER_MANAGEMENT && !formData.isOneworksMaster;
-    return { isSubsidiarySearch, isShowSubsidiaryDropdown, isShowSubsidiarySearchCheckBox, isWhiteLabelView, defaultSelectedSubsidiary };
+    return {
+        isSubsidiarySearch,
+        isShowSubsidiaryDropdown,
+        isShowSubsidiarySearchCheckBox,
+        isWhiteLabelView,
+        defaultSelectedSubsidiary,
+    };
 };
 
 export default useSubsidiarySearch;

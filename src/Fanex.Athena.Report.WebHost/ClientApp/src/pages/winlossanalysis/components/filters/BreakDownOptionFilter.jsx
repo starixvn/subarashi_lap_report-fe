@@ -9,7 +9,7 @@ import Service from '../../common/Service.js';
 export const BreakDownOptionFilter = () => {
     const [selectedGroupByOption, selectedBreakDownByOption, formData] = useSelector(
         (state) => [state.selectedGroupByOption, state.selectedBreakDownByOption, state.formData],
-        shallowEqual
+        shallowEqual,
     );
     const { onChangeBreakByOption } = useGroupFilterHandler();
     const breakDownList = useMemo(() => Service.buildBreakDownOptionFromGroupByMode(selectedGroupByOption, formData.licenseeName), [selectedGroupByOption]);

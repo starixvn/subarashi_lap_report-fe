@@ -17,7 +17,7 @@ function BetListFormFilter() {
     const processExcel = (url, params, fileName) =>
         sendRequest(
             () => DataService.getBetListFile(url, params),
-            (res) => Service.downloadExcelFile(res, fileName)
+            (res) => Service.downloadExcelFile(res, fileName),
         );
 
     const isValidExcel = () => {

@@ -13,5 +13,5 @@ export const selectedRiskLevel = createReducer(
         [types.SET_SELECTED_RISKLEVEL](state, action) {
             return action.data;
         },
-    }
+    },
 );

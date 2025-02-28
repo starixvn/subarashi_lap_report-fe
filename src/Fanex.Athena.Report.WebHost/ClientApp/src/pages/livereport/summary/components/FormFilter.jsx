@@ -141,7 +141,7 @@ const FormFilter = (props) => {
             setDateRange({
                 startDate: currentDateRange.fromDate,
                 endDate: currentDateRange.toDate,
-            })
+            }),
         );
         dispatch(setSelectedStatus(currentStatus));
         dispatch(setSelectedBaseCurrency(currentBaseCurrency));
@@ -188,7 +188,7 @@ const FormFilter = (props) => {
 
         sendRequest(
             () => DataService.getReportFile(ApiUrl.EXPORT_EXCEL_URL, params),
-            (response) => Site.downloadFile(response.data, `${LIVE_REPORT}.xls`)
+            (response) => Site.downloadFile(response.data, `${LIVE_REPORT}.xls`),
         );
     };
 

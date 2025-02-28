@@ -47,6 +47,6 @@ export default combineReducers(
         dataReducer,
         appDataReducer,
         formDataReducer,
-        defaultStateReducer
-    )
+        defaultStateReducer,
+    ),
 );

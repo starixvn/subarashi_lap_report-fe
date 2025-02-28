@@ -7,7 +7,7 @@ const selectedSport = createReducer(
         [types.SET_SELECTED_SPORT](state, action) {
             return action.data;
         },
-    }
+    },
 );
 
 const sportList = createReducer(
@@ -16,7 +16,7 @@ const sportList = createReducer(
         [types.SET_SPORT_LIST](state, action) {
             return action.data;
         },
-    }
+    },
 );
 
 export default {

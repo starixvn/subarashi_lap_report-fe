@@ -22,6 +22,6 @@ export default combineReducers(
         currencyReducer,
         baseCurrencyReducer,
         dateRangeReducer,
-        filterReducer
-    )
+        filterReducer,
+    ),
 );

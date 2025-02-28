@@ -152,7 +152,7 @@ const FormFilter = (props) => {
     const getParams = () => {
         const bettypes = Service.getSelectedBettypeXML(
             selectedBettype.split(','),
-            bettypeList.map((item) => item.id)
+            bettypeList.map((item) => item.id),
         );
 
         const params = {
@@ -231,7 +231,10 @@ const FormFilter = (props) => {
                             url={ApiUrl.SEARCH_CUSTOMER}
                             onSelect={(value) => dispatch(setUsername(value))}
                             onInput={(value) => dispatch(setUsername(value))}
-                            htmlAttributes={{ placeholder: LangHelper.getSingleResource('All'), id: 'Username' }}
+                            htmlAttributes={{
+                                placeholder: LangHelper.getSingleResource('All'),
+                                id: 'Username',
+                            }}
                         />
                     </div>
                 </div>

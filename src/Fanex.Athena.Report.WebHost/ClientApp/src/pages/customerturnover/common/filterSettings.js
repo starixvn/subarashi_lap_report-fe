@@ -13,7 +13,10 @@ export const TicketFilterValue = {
     Draw: 3,
 };
 
-export const TicketFilterOptionAll = { value: TicketFilterValue.All, label: LangHelper.getSingleResource('All') };
+export const TicketFilterOptionAll = {
+    value: TicketFilterValue.All,
+    label: LangHelper.getSingleResource('All'),
+};
 
 export const TicketFilterOptions = [
     { value: TicketFilterValue.Won, label: LangHelper.getSingleResource('Won') },

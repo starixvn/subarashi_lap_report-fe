@@ -29,7 +29,10 @@ export const AppContainer = (props) => {
 
         data.currencyList = data.currencyList.map((item) => ({ ...item, status: true }));
 
-        data.baseCurrencyList = data.baseCurrencyList.map((item) => ({ value: item.key, label: item.value }));
+        data.baseCurrencyList = data.baseCurrencyList.map((item) => ({
+            value: item.key,
+            label: item.value,
+        }));
         const defaultBaseCurrency = data.baseCurrencyList.find((x) => x.label == data.defaultBaseCurrency);
         data.defaultBaseCurrency = defaultBaseCurrency ? defaultBaseCurrency : { value: DEFAULT_BASE_CURRENCY_VALUE, label: data.defaultBaseCurrency };
         dispatch(setSelectedBaseCurrency(data.defaultBaseCurrency));

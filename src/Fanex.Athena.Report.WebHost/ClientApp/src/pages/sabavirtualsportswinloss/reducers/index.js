@@ -38,6 +38,6 @@ export default combineReducers(
         leagueReducer,
         reportByReducer,
         sportReducer,
-        drillDownCacheReducer
-    )
+        drillDownCacheReducer,
+    ),
 );

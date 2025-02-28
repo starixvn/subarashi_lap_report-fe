@@ -17,7 +17,9 @@ const setPromotionTypeList = (list) => {
 
 const getPromotionTypeList = (productCode) => {
     return (dispatch) => {
-        DataService.getReportData('api/ExtraPayout/GetPromotionTypes', { productCode: productCode }).then((response) => {
+        DataService.getReportData('api/ExtraPayout/GetPromotionTypes', {
+            productCode: productCode,
+        }).then((response) => {
             let data = response.data;
 
             const promotionTypeList = data.map((item) => item.value).join(',');

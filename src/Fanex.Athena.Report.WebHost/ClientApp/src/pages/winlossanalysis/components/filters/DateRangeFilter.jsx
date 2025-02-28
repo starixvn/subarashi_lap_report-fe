@@ -11,8 +11,14 @@ export const DateRangeFilter = (props) => {
 
     const { limitedMonthRange, minDate } =
         viewInTime == ViewInTimeMode.Settlement
-            ? { limitedMonthRange: DateConstraint.settlementTimeLimitedMonthRange, minDate: DateConstraint.settlementTimeMinDate }
-            : { limitedMonthRange: DateConstraint.limitedMonthRange, minDate: DateConstraint.minDate };
+            ? {
+                  limitedMonthRange: DateConstraint.settlementTimeLimitedMonthRange,
+                  minDate: DateConstraint.settlementTimeMinDate,
+              }
+            : {
+                  limitedMonthRange: DateConstraint.limitedMonthRange,
+                  minDate: DateConstraint.minDate,
+              };
 
     const _renderDateRange = () => {
         return (

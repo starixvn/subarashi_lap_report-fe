@@ -23,7 +23,7 @@ const MonthPicker = (props) => {
             ? toDate.date()
             : toDate.year() === max.year && toDate.month() === max.month
               ? max.date
-              : moment({ year: toDate.year(), month: toDate.month() }).daysInMonth()
+              : moment({ year: toDate.year(), month: toDate.month() }).daysInMonth(),
     );
 
     useEffect(() => {
@@ -53,7 +53,7 @@ const MonthPicker = (props) => {
                 toDate: formatDate(maxDate, value.month, value.year),
             });
         },
-        [min, max, props]
+        [min, max, props],
     );
 
     const onFromDateChange = (value) => {

@@ -208,7 +208,11 @@ const FormFilter = (props) => {
                             url={ApiUrl.CUSTOMER_SEARCH_URL}
                             onSelect={(value) => dispatch(setUsername(value))}
                             onInput={(value) => dispatch(setUsername(value))}
-                            htmlAttributes={{ placeholder: LangHelper.getSingleResource('ExternalIdOrSystemId'), id: 'Username', name: 'Username' }}
+                            htmlAttributes={{
+                                placeholder: LangHelper.getSingleResource('ExternalIdOrSystemId'),
+                                id: 'Username',
+                                name: 'Username',
+                            }}
                         />
                     </div>
                 </div>

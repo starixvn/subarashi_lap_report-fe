@@ -164,7 +164,11 @@ const FormFilter = (props) => {
                                 keyField="value"
                                 valueField="name"
                                 statusField="checked"
-                                texts={{ SelectOptions: 'Please select', All: 'All', SelectedItemCount: '# selected' }}
+                                texts={{
+                                    SelectOptions: 'Please select',
+                                    All: 'All',
+                                    SelectedItemCount: '# selected',
+                                }}
                                 isAllTextShown={false}
                                 hasSearchBox={false}
                                 treeViewOption={TreeViewOption}

@@ -7,5 +7,5 @@ export const requestParam = createReducer(
         [types.SET_REQUEST_PARAM](state, action) {
             return { ...action.data };
         },
-    }
+    },
 );

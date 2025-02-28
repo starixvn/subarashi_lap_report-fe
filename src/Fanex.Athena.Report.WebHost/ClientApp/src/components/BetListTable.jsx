@@ -41,7 +41,7 @@ const BetListTable = (props) => {
             rows.push(
                 <CustomHeaderCell key={column + timestamp} colWidth={columnWidths[i]} sortBy={isSortable ? column : null}>
                     {headerName}
-                </CustomHeaderCell>
+                </CustomHeaderCell>,
             );
         }
 
@@ -66,7 +66,7 @@ const BetListTable = (props) => {
                         key={`${column}-${i}-${timestamp}`}
                         className={columnAlignments[j]}
                         {...(hasTooltip ? { title: item[column] } : {})}
-                        dangerouslySetInnerHTML={{ __html: item[column] }}></Cell>
+                        dangerouslySetInnerHTML={{ __html: item[column] }}></Cell>,
                 );
             }
 
@@ -91,7 +91,7 @@ const BetListTable = (props) => {
         cells.push(
             <Cell key="total" className="right-align" colSpan={startTotalIndex}>
                 {totalText}
-            </Cell>
+            </Cell>,
         );
 
         const item = mapData(total);
@@ -105,7 +105,7 @@ const BetListTable = (props) => {
                 <Cell
                     key={`Sum-${column}-${timestamp}`}
                     className={`${columnAlignments[columnIndex]} ${className}`}
-                    dangerouslySetInnerHTML={{ __html: item[column] }}></Cell>
+                    dangerouslySetInnerHTML={{ __html: item[column] }}></Cell>,
             );
         }
 
@@ -119,7 +119,7 @@ const BetListTable = (props) => {
         rows.push(
             <CustomFooterRow className="fixed-table-grant-total" key={`totalRow-${timestamp}`}>
                 {cells}
-            </CustomFooterRow>
+            </CustomFooterRow>,
         );
 
         return rows;

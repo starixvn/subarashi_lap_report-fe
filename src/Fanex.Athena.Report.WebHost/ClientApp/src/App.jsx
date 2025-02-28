@@ -25,9 +25,9 @@ const App = () => {
                     />
                 ))}
                 <Route path="*" element={<NotFound />} />
-            </Route>
+            </Route>,
         ),
-        { basename: _rootUrl }
+        { basename: _rootUrl },
     );
 
     return <RouterProvider router={router} />;

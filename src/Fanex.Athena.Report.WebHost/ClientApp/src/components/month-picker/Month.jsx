@@ -29,7 +29,7 @@ const Month = ({ id, label, value, min, max, onChange }) => {
             onChange(newValue);
             setShowMonthDrop(false);
         },
-        [onChange]
+        [onChange],
     );
 
     const formatString = (month, year) => {
@@ -43,7 +43,7 @@ const Month = ({ id, label, value, min, max, onChange }) => {
                 options.push(
                     <li key={i} className="year" style={{ fontWeight: 'bold' }}>
                         <a href="javascript:;">{i}</a>
-                    </li>
+                    </li>,
                 );
 
                 const minMonth = i === min.year ? min.month : 0;
@@ -58,14 +58,14 @@ const Month = ({ id, label, value, min, max, onChange }) => {
                             <a href="javascript:;" className={`${isSelected ? 'selected' : ''}`}>
                                 {fullMonths[j]}
                             </a>
-                        </li>
+                        </li>,
                     );
                 }
             } else {
                 options.push(
                     <li key={i} className="year" onClick={() => setExpandYear(i)}>
                         <a href="javascript:;">{i}</a>
-                    </li>
+                    </li>,
                 );
             }
         }

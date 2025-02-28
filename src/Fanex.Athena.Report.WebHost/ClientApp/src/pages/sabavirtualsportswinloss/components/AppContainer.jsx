@@ -33,7 +33,12 @@ export const AppContainer = (props) => {
         currencySelectAllOption.label = currencySelectAllOption.label.toUpperCase();
         data.currencies = [
             currencySelectAllOption,
-            ...data.baseCurrencies.map((item) => ({ value: item.key, label: `${LangHelper.getSingleResource('Based')} ${item.value}` })).reverse(),
+            ...data.baseCurrencies
+                .map((item) => ({
+                    value: item.key,
+                    label: `${LangHelper.getSingleResource('Based')} ${item.value}`,
+                }))
+                .reverse(),
             ...data.currencies.map((item) => ({
                 value: item.key,
                 label: item.value,

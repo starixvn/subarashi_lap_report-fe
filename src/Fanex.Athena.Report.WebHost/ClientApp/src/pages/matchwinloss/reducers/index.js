@@ -22,6 +22,6 @@ export default combineReducers(
         formDataReducer,
         requestParamReducer,
         baseCurrencyReducer,
-        currencyReducer
-    )
+        currencyReducer,
+    ),
 );

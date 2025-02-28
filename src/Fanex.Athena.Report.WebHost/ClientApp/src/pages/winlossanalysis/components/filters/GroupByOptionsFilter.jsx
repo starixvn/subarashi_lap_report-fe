@@ -7,8 +7,8 @@ import useGroupFilterHandler from '../hooks/useGroupFilterHandler.jsx';
 
 export const GroupByOptionFilter = () => {
     const formData = useSelector((state) => state.formData);
-    const [selectedGroupByOption, selectedViewInTime] = useSelector(state => [state.selectedGroupByOption, state.selectedViewInTime], shallowEqual);
-    const groupByList = useMemo(() => Service.buildGroupByOption(selectedViewInTime, formData.licenseeName), [formData.licenseeName, selectedViewInTime])
+    const [selectedGroupByOption, selectedViewInTime] = useSelector((state) => [state.selectedGroupByOption, state.selectedViewInTime], shallowEqual);
+    const groupByList = useMemo(() => Service.buildGroupByOption(selectedViewInTime, formData.licenseeName), [formData.licenseeName, selectedViewInTime]);
     const { onChangeGroupByOption } = useGroupFilterHandler();
 
     return (

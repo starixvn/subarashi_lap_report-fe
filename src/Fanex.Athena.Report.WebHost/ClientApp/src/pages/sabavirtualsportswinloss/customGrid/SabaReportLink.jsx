@@ -53,7 +53,7 @@ const SabaReportLink = ({ data, content, drillDownLevel }) => {
             moment(requestParam.FromDate),
             moment(requestParam.ToDate),
             moment(data.date),
-            requestParam.ReportBy == ReportByValue.Daily
+            requestParam.ReportBy == ReportByValue.Daily,
         );
 
         return {

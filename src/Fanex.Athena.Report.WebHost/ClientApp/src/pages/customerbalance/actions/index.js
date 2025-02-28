@@ -14,5 +14,5 @@ export const ActionCreators = Object.assign(
     gridDataAction,
     userGuideAction,
     requestParamAction,
-    formDataAction
+    formDataAction,
 );

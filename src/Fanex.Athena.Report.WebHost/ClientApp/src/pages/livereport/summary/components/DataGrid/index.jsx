@@ -17,19 +17,12 @@ const DataGrid = (props) => {
         return;
     }
 
-    const currencyText = requestParam.CurrencyId != 0 && !requestParam.BaseCurrency ? requestParam.CurrencyName : requestParam.BaseCurrency ;
+    const currencyText = requestParam.CurrencyId != 0 && !requestParam.BaseCurrency ? requestParam.CurrencyName : requestParam.BaseCurrency;
 
     if (!gridData.summary.length) {
         return (
             <>
-                <ReportTitle
-                    content={Service.generateReportTitle(
-                        requestParam.LiveIndicator,
-                        requestParam.FromDate,
-                        requestParam.ToDate,
-                        currencyText
-                    )}
-                />
+                <ReportTitle content={Service.generateReportTitle(requestParam.LiveIndicator, requestParam.FromDate, requestParam.ToDate, currencyText)} />
                 <NoDataTitle />
             </>
         );
@@ -37,14 +30,7 @@ const DataGrid = (props) => {
 
     return (
         <>
-            <ReportTitle
-                content={Service.generateReportTitle(
-                    requestParam.LiveIndicator,
-                    requestParam.FromDate,
-                    requestParam.ToDate,
-                    currencyText
-                )}
-            />
+            <ReportTitle content={Service.generateReportTitle(requestParam.LiveIndicator, requestParam.FromDate, requestParam.ToDate, currencyText)} />
             <SummaryDataGrid />
             <BySportDataGrid />
             <ByCurrencyDataGrid />

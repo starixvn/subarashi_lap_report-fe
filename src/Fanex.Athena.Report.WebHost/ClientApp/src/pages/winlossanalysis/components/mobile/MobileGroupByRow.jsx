@@ -48,14 +48,22 @@ export const MobileGroupByRow = (props) => {
         }
         detailRows.push(<MobileExpandRowContent text={HeaderText.PlayerComm} value={NumberFormat.formatDecimal(playerComm)} />);
         detailRows.push(
-            <MobileExpandRowContent text={HeaderText.LicenseeWL} value={NumberFormat.formatDecimal(licWinloss)} valueClass={licWinloss < 0 ? 'negative' : ''} />
+            <MobileExpandRowContent
+                text={HeaderText.LicenseeWL}
+                value={NumberFormat.formatDecimal(licWinloss)}
+                valueClass={licWinloss < 0 ? 'negative' : ''}
+            />,
         );
         detailRows.push(<MobileExpandRowContent text={HeaderText.LicenseeComm} value={NumberFormat.formatDecimal(licComm)} />);
         {
             isShowBAField && detailRows.push(<MobileExpandRowContent text={HeaderText.AmountDueToBA} value={NumberFormat.formatDecimal(amtDueToBA)} />);
         }
         detailRows.push(
-            <MobileExpandRowContent text={HeaderText.Margin} value={`${NumberFormat.formatDecimal(margin * 100)}%`} valueClass={margin < 0 ? 'negative' : ''} />
+            <MobileExpandRowContent
+                text={HeaderText.Margin}
+                value={`${NumberFormat.formatDecimal(margin * 100)}%`}
+                valueClass={margin < 0 ? 'negative' : ''}
+            />,
         );
         return detailRows;
     };
@@ -63,7 +71,7 @@ export const MobileGroupByRow = (props) => {
     const detailRows = useMemo(() => _getDetailRows(), [parentData, isShowBetEffectiveField, isShowBAField]);
     const breakDownRowList = useMemo(
         () => children.map((item) => <MobileBreakdownRow key={`${item.groupBy}-${item.breakBy}`} data={item} selectedDisplayTypeId={selectedDisplayTypeId} />),
-        [children, selectedDisplayTypeId]
+        [children, selectedDisplayTypeId],
     );
     const idColumnText = selectedDisplayTypeId == MobileGroupByHeaderDisplayType.ExternalId ? externalId : systemId;
     const displayColumnName = isGroupByPlayerMode ? idColumnText : groupByFieldText;

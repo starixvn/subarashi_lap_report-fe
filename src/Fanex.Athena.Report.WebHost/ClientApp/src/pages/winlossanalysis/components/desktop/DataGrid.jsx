@@ -14,7 +14,7 @@ import ExcelPopUp from '../ExcelPopUp.jsx';
 export const DataGrid = () => {
     const [requestParam, reportData, reportTitle, reloadReport, selectedProduct] = useSelector(
         (state) => [state.requestParam, state.reportData, state.reportTitle, state.reloadReport, state.selectedProduct],
-        shallowEqual
+        shallowEqual,
     );
 
     const { setRequestParam, toggleLoader, getReportData } = ActionCreators;

@@ -44,5 +44,5 @@ export const DefaultPagingOption = {
 };
 
 export const PayoutPromotionType = {
-    OddsBoostAdjustment: 101
-}
+    OddsBoostAdjustment: 101,
+};

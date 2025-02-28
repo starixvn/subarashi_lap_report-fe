@@ -5,4 +5,9 @@ import * as gridDataReducer from '@/reducers/gridDataReducer';
 import * as requestParamReducer from '@/reducers/requestParamReducer';
 import * as formDataReducer from '@/reducers/formDataReducer';
 
-export default combineReducers({ ...loaderReducer, ...gridDataReducer, ...formDataReducer, ...requestParamReducer });
+export default combineReducers({
+    ...loaderReducer,
+    ...gridDataReducer,
+    ...formDataReducer,
+    ...requestParamReducer,
+});

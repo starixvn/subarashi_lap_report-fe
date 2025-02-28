@@ -142,7 +142,7 @@ const FormFilter = (props) => {
     const onExportExcel = () => {
         sendRequest(
             () => DataService.getReportFile(ApiUrl.EXPORT_EXCEL_URL, getParams()),
-            (response) => Site.downloadFile(response.data, 'MatchWinLoss.xls')
+            (response) => Site.downloadFile(response.data, 'MatchWinLoss.xls'),
         );
     };
 

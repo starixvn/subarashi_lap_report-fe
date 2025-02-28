@@ -9,5 +9,5 @@ import * as productReducer from '@/reducers/productReducer';
 import * as formDataReducer from '@/reducers/formDataReducer';
 
 export default combineReducers(
-    Object.assign(dateRangeReducer, productReducer, loaderReducer, gridDataReducer, userGuideReducer, formDataReducer, requestParamReducer)
+    Object.assign(dateRangeReducer, productReducer, loaderReducer, gridDataReducer, userGuideReducer, formDataReducer, requestParamReducer),
 );

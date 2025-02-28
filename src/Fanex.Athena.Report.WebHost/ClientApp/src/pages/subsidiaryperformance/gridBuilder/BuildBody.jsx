@@ -67,7 +67,7 @@ const BuildMainBody = (data, { isMasterView }) => {
                             )}
                             <Cell title={product.product}>{product.product}</Cell>
                             <CommonCells data={product} index={key} />
-                        </Row>
+                        </Row>,
                     );
 
                     key++;

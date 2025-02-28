@@ -38,14 +38,14 @@ export const MobileBreakdownRow = (props) => {
     }
     expandRows.push(<MobileExpandRowContent text={HeaderText.PlayerComm} value={NumberFormat.formatDecimal(playerComm)} />);
     expandRows.push(
-        <MobileExpandRowContent text={HeaderText.LicenseeWL} value={NumberFormat.formatDecimal(licWinloss)} valueClass={licWinloss < 0 ? 'negative' : ''} />
+        <MobileExpandRowContent text={HeaderText.LicenseeWL} value={NumberFormat.formatDecimal(licWinloss)} valueClass={licWinloss < 0 ? 'negative' : ''} />,
     );
     expandRows.push(<MobileExpandRowContent text={HeaderText.LicenseeComm} value={NumberFormat.formatDecimal(licComm)} />);
     {
         isShowBAField && expandRows.push(<MobileExpandRowContent text={HeaderText.AmountDueToBA} value={NumberFormat.formatDecimal(amtDueToBA)} />);
     }
     expandRows.push(
-        <MobileExpandRowContent text={HeaderText.Margin} value={`${NumberFormat.formatDecimal(margin * 100)}%`} valueClass={margin < 0 ? 'negative' : ''} />
+        <MobileExpandRowContent text={HeaderText.Margin} value={`${NumberFormat.formatDecimal(margin * 100)}%`} valueClass={margin < 0 ? 'negative' : ''} />,
     );
 
     const idColumnText = selectedDisplayTypeId == MobileGroupByHeaderDisplayType.ExternalId ? externalId : systemId;
