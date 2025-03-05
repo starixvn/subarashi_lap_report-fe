@@ -882,4 +882,7 @@
   <data name="SeparateSabaWinLoss_HideSaba" xml:space="preserve">
     <value>将虚拟体育与体育博彩分开</value>
   </data>
+  <data name="Based" xml:space="preserve">
+    <value>基于</value>
+  </data>
 </root>

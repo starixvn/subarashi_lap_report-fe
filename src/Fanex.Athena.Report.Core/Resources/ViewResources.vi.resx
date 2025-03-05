@@ -966,4 +966,7 @@
   <data name="AGClosingBalance" xml:space="preserve"> 
     <value>Số dư cuối kỳ AG</value>
   </data>
+  <data name="Based" xml:space="preserve">
+    <value>Dựa trên</value>
+  </data>
 </root>

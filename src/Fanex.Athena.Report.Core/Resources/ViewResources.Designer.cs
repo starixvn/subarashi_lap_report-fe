@@ -88,15 +88,6 @@ namespace Fanex.Athena.Report.Core.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Agent.
-        /// </summary>
-        public static string Agent {
-            get {
-                return ResourceManager.GetString("Agent", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to AG Casino Balance.
         /// </summary>
         public static string AGCasinoBalance {
@@ -129,6 +120,15 @@ namespace Fanex.Athena.Report.Core.Resources {
         public static string AGClosingBalance {
             get {
                 return ResourceManager.GetString("AGClosingBalance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Agent.
+        /// </summary>
+        public static string Agent {
+            get {
+                return ResourceManager.GetString("Agent", resourceCulture);
             }
         }
         
@@ -255,6 +255,15 @@ namespace Fanex.Athena.Report.Core.Resources {
         public static string BaseCurrency {
             get {
                 return ResourceManager.GetString("BaseCurrency", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Based.
+        /// </summary>
+        public static string Based {
+            get {
+                return ResourceManager.GetString("Based", resourceCulture);
             }
         }
         

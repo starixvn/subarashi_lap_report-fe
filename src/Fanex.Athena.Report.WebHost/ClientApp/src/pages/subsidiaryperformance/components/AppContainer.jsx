@@ -18,7 +18,7 @@ export const AppContainer = (props) => {
 
     const { sendRequest } = useToggleRequest();
 
-    const { setFormData, setSelectedProducts, setSelectedBaseCurrency, setSelectedSubsidiary } = actions;
+    const { setFormData, setSelectedProducts, setSelectedBaseCurrency, setSelectedSubsidiary, setSelectedWhiteLabel } = actions;
 
     const setInitFormData = (result) => {
         if (!result || !result.data) {
@@ -37,14 +37,18 @@ export const AppContainer = (props) => {
         dispatch(setSelectedBaseCurrency(data.baseCurrency));
 
         let selectedSubsidiary;
+        let selectedWhiteLabel;
 
         if (data.viewType === SubsidiaryViewType.MASTER_MANAGEMENT) {
             selectedSubsidiary = Array.from(new Set(data.subsidiaryList.flatMap((x) => x.children?.map((y) => y.value)))).join(',');
+            selectedWhiteLabel = data.subsidiaryList.map((x) => x.value).join(',');
         } else {
             selectedSubsidiary = data.subsidiaryList.map((x) => x.value).join(',');
+            selectedWhiteLabel = '';
         }
 
         dispatch(setSelectedSubsidiary(selectedSubsidiary));
+        dispatch(setSelectedWhiteLabel(selectedWhiteLabel));
 
         dispatch(setSelectedProducts(data.products.map((item) => item.code).join(',')));
         dispatch(setFormData(data));

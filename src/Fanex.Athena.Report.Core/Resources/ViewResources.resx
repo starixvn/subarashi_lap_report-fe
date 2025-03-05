@@ -1010,4 +1010,7 @@
   <data name="AGOpeningBalance" xml:space="preserve">
     <value>AG Opening Balance</value>
   </data>
+  <data name="Based" xml:space="preserve">
+    <value>Based</value>
+  </data>
 </root>

@@ -951,4 +951,7 @@
   <data name="AGClosingBalance" xml:space="preserve"> 
     <value>Saldo Penutupan AG</value>
   </data>
+  <data name="Based" xml:space="preserve">
+    <value>Berdasarkan</value>
+  </data>
 </root>

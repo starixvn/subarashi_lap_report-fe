@@ -960,4 +960,7 @@
   <data name="AGClosingBalance" xml:space="preserve"> 
     <value>ยอดปิดบัญชี AG</value>
   </data>
+  <data name="Based" xml:space="preserve">
+    <value>หลัก</value>
+  </data>
 </root>
