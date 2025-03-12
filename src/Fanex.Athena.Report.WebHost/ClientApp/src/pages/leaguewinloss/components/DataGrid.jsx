@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import ActionCreators from '../actions';
@@ -11,6 +11,7 @@ import ReportTitle from '@srcRoot/components/ReportTitle';
 
 export const DataGrid = (props) => {
     const { data, total } = props.reportData;
+
     if (!data) {
         return null;
     }
@@ -55,13 +56,12 @@ export const DataGrid = (props) => {
         }
 
         props.toggleLoader(true);
-        const newRequestParam = {
-            ...requestParam,
-            DrillDownLevel: level,
-        };
+        const newRequestParam = props.breadcrumbParams[level];
+        const newBreadcrumbs = props.breadcrumbParams.slice(0, level + 1);
 
         props.setRequestParam(newRequestParam);
         props.getReportData(ApiUrl.REPORT_DATA_URL, newRequestParam);
+        props.setBreadcrumbParams(newBreadcrumbs);
     };
 
     return (
@@ -73,9 +73,9 @@ export const DataGrid = (props) => {
                 minWidth={650}
                 autoWidth={true}
                 autoHeight={true}
-                header={renderHeader(requestParam.DrillDownLevel, requestParam.ShowBA)}
-                body={renderDataSection(contentData, requestParam.DrillDownLevel, false, requestParam.ShowBA)}
-                footer={renderDataSection([total], requestParam.DrillDownLevel, true, requestParam.ShowBA)}
+                header={renderHeader(requestParam.DrillDownLevel)}
+                body={renderDataSection(contentData, requestParam.DrillDownLevel, false)}
+                footer={renderDataSection([total], requestParam.DrillDownLevel, true)}
                 containerPadding={30}
                 onSort={(sortBy, sortOrder) => props.setRequestParam({ ...requestParam, sortBy, sortOrder })}
                 isPaging={true}
@@ -88,12 +88,12 @@ export const DataGrid = (props) => {
 };
 
 function mapDispatchToProps(dispatch) {
-    const { setRequestParam, toggleLoader, getReportData, setReportTitle } = ActionCreators;
-    return bindActionCreators({ setRequestParam, toggleLoader, getReportData, setReportTitle }, dispatch);
+    const { setRequestParam, toggleLoader, getReportData, setReportTitle, setBreadcrumbParams } = ActionCreators;
+    return bindActionCreators({ setRequestParam, toggleLoader, getReportData, setReportTitle, setBreadcrumbParams }, dispatch);
 }
 function mapStateToProps(state) {
-    const { formData, requestParam, pagingOption, reportData, reportTitle, reloadReport } = state;
-    return Object.assign({}, { AppData: formData, requestParam, pagingOption, reportData, reportTitle, reloadReport });
+    const { formData, requestParam, pagingOption, reportData, reportTitle, reloadReport, breadcrumbParams } = state;
+    return Object.assign({}, { AppData: formData, requestParam, pagingOption, reportData, reportTitle, reloadReport, breadcrumbParams });
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(DataGrid);

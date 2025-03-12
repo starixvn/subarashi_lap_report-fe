@@ -7,16 +7,17 @@ import { ApiUrl, ReportLevel } from '../../common/constants';
 import DataService from '@srcRoot/lib/dataService';
 
 export const GroupCell = (props) => {
-    const { rowData, level, reportData, requestParam, setReportData, toggleLoader, isDirectToCurrency, setReloadReport, setRequestParam, getReportData } =
+    const { rowData, level, reportData, requestParam, setReportData, toggleLoader, setReloadReport, setRequestParam, getReportData, setBreadcrumbParams, breadcrumbParams } =
         props;
     const _isDrillDown = !!rowData.isBreakdown;
+    const _isDirectToCurrency = !!rowData.isDirectToCurrency;
 
     let textValue, key, property;
     switch (level) {
         case ReportLevel.MAIN:
-            textValue = isDirectToCurrency ? rowData.sportName : rowData.leagueName;
-            key = isDirectToCurrency ? rowData.sportType : rowData.leagueId;
-            property = isDirectToCurrency ? 'sportType' : 'leagueId';
+            textValue = _isDirectToCurrency ? rowData.sportName : rowData.leagueName;
+            key = _isDirectToCurrency && rowData.sportType !== 0 ? rowData.sportType : rowData.leagueId;
+            property = _isDirectToCurrency && rowData.sportType !== 0 ? 'sportType' : 'leagueId';
             break;
         case ReportLevel.MATCH:
             textValue = rowData.matchName;
@@ -118,7 +119,7 @@ export const GroupCell = (props) => {
     };
 
     const _fetchBreakDownCurrencyData = async () => {
-        const params = { ...requestParam, leagueId: rowData.leagueId, eventType: rowData.eventType, betTypeId: rowData.betTypeId, matchId: rowData.matchId };
+        const params = { ...requestParam, leagueId: rowData.leagueId, eventType: rowData.eventType, betTypeId: rowData.betTypeId, matchId: rowData.matchId, ProductCodeList: rowData.productGroup };
 
         try {
             const response = await DataService.postReportData(ApiUrl.REPORT_CURRENCY_DATA_URL, params);
@@ -147,7 +148,7 @@ export const GroupCell = (props) => {
     const _drilldownReportClick = async (e) => {
         e.preventDefault();
 
-        if (isDirectToCurrency) {
+        if (_isDirectToCurrency) {
             await _handleDirectBreakDownCurrency();
             return;
         }
@@ -158,6 +159,7 @@ export const GroupCell = (props) => {
             ...requestParam,
             DrillDownLevel: newLevel,
             matchId: rowData.matchId,
+            sportType: rowData.sportType,
             eventType: rowData.eventType,
             matchName: rowData.matchName,
         };
@@ -170,6 +172,7 @@ export const GroupCell = (props) => {
         toggleLoader(true);
         setReloadReport(false);
         getReportData(ApiUrl.REPORT_DATA_URL, newRequestParam);
+        setBreadcrumbParams([...breadcrumbParams, newRequestParam]);
     };
 
     const text = () => {
@@ -183,7 +186,7 @@ export const GroupCell = (props) => {
     };
 
     const drilldown = (
-        <Cell key={`group-cell-${key}`} className="left-align">
+        <Cell key={`group-cell-${key}-${rowData.leagueId}`} className="left-align">
             {text()}
             <i className={`icon-arrow right ${_isDrillDown ? 'arrow-down' : 'arrow-right'}`} onClick={_handleBreakDownCurrency}></i>
         </Cell>
@@ -191,7 +194,7 @@ export const GroupCell = (props) => {
 
     const directDrilldown = (
         <>
-            <Cell colSpan="2" className="left-align" style={{ whiteSpace: 'pre-wrap' }}>
+            <Cell key={`group-cell-${key}-${rowData.leagueId}-direct-currency`} colSpan="2" className="left-align" style={{ whiteSpace: 'pre-wrap' }}>
                 <i className={`icon-strong-arrow left ${_isDrillDown ? 'arrow-down' : 'arrow-right'}`} onClick={_handleDirectBreakDownCurrency}>
                     {' '}
                 </i>{' '}
@@ -200,17 +203,17 @@ export const GroupCell = (props) => {
         </>
     );
 
-    return (isDirectToCurrency && directDrilldown) || drilldown;
+    return (_isDirectToCurrency && directDrilldown) || drilldown;
 };
 
 function mapDispatchToProps(dispatch) {
-    const { getReportData, toggleLoader, setRequestParam, setReportData, setReloadReport } = ActionCreators;
-    return bindActionCreators(Object.assign({}, { getReportData, toggleLoader, setRequestParam, setReportData, setReloadReport }), dispatch);
+    const { getReportData, toggleLoader, setRequestParam, setReportData, setReloadReport, setBreadcrumbParams } = ActionCreators;
+    return bindActionCreators(Object.assign({}, { getReportData, toggleLoader, setRequestParam, setReportData, setReloadReport, setBreadcrumbParams }), dispatch);
 }
 
 function mapStateToProps(state) {
-    const { reportData, requestParam } = state;
-    return Object.assign({}, { reportData, requestParam });
+    const { reportData, requestParam, breadcrumbParams } = state;
+    return Object.assign({}, { reportData, requestParam, breadcrumbParams });
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(React.memo(GroupCell));

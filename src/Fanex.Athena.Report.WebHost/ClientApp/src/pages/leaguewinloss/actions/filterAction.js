@@ -7,6 +7,14 @@ const setReportFilter = (data) => {
     };
 };
 
+const setBreadcrumbParams = (data) => {
+    return {
+        type: types.SET_BREADCRUMB_PARAMS,
+        data: data,
+    };
+};
+
 export default {
     setReportFilter,
+    setBreadcrumbParams
 };
