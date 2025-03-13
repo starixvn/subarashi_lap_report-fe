@@ -1,81 +1,78 @@
-﻿using System.Net.Mime;
-using Fanex.Athena.Report.Core.Middleware;
+﻿namespace Fanex.Athena.Report.Core.Extensions;
+
+using System.Net.Mime;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.Net.Http.Headers;
+using Middleware;
 using Newtonsoft.Json;
 
-namespace Fanex.Athena.Report.Core.Extensions
+public static class MiddleWareExtensions
 {
-    public static class MiddleWareExtensions
+    public static IApplicationBuilder UseWhoAmICheck(this IApplicationBuilder app, string environment)
     {
-        public static IApplicationBuilder UseWhoAmICheck(this IApplicationBuilder app, string environment)
+        return app.UseHealthChecks("/whoami", new HealthCheckOptions
         {
-            return app.UseHealthChecks("/whoami", new HealthCheckOptions
+            AllowCachingResponses = false,
+            Predicate = _ => true,
+            ResponseWriter = async (context, report) =>
             {
-                AllowCachingResponses = false,
-                Predicate = _ => true,
-                ResponseWriter = async (context, report) =>
+                var result = JsonConvert.SerializeObject(new
                 {
-                    var result = JsonConvert.SerializeObject(new
+                    status = report.Status.ToString(),
+                    monitors = report.Entries.Select(e =>
                     {
-                        status = report.Status.ToString(),
-                        monitors = report.Entries.Select(e =>
+                        var data = e.Value.Data.ToDictionary(_ => _.Key, _ => _.Value);
+                        data["Env"] = environment;
+
+                        return new
                         {
-                            var data = e.Value.Data.ToDictionary(_ => _.Key, _ => _.Value);
-                            data["Env"] = environment;
-
-                            return new
-                            {
-                                name = e.Key,
-                                status = Enum.GetName(typeof(HealthStatus), e.Value.Status),
-                                values = data
-                            };
-                        })
-                    }, Formatting.Indented);
+                            name = e.Key,
+                            status = Enum.GetName(typeof(HealthStatus), e.Value.Status),
+                            values = data
+                        };
+                    })
+                }, Formatting.Indented);
 
 
-                    context.Response.ContentType = MediaTypeNames.Application.Json;
-                    await context.Response.WriteAsync(result);
-                }
-            });
-        }
+                context.Response.ContentType = MediaTypeNames.Application.Json;
+                await context.Response.WriteAsync(result);
+            }
+        });
+    }
 
-        public static void UseErrorHandler(this IApplicationBuilder app)
+    public static void UseErrorHandler(this IApplicationBuilder app)
+    {
+        app.UseMiddleware<ErrorHandler>();
+    }
+
+    public static void UseStaticFiles(this IApplicationBuilder app, bool isDev)
+    {
+        app.UseStaticFiles(new StaticFileOptions
         {
-            app.UseMiddleware<ErrorHandler>();
-        }
-
-        public static void UseStaticFiles(this IApplicationBuilder app, bool isDev)
-        {
-            app.UseStaticFiles(new StaticFileOptions
+            OnPrepareResponse = ctx =>
             {
-                OnPrepareResponse = ctx =>
-                {
-                    const int OneYear = 60 * 60 * 24 * 365;
-                    ctx.Context.Response.Headers[HeaderNames.CacheControl] = isDev ?
-                        "no-cache" :
-                        "public,max-age=" + OneYear;
-                    ctx.Context.Response.Headers[HeaderNames.AccessControlAllowOrigin] = "*";
-                }
-            });
-        }
+                const int OneYear = 60 * 60 * 24 * 365;
+                ctx.Context.Response.Headers[HeaderNames.CacheControl] = isDev ? "no-cache" : "public,max-age=" + OneYear;
+                ctx.Context.Response.Headers[HeaderNames.AccessControlAllowOrigin] = "*";
+            }
+        });
+    }
 
-        public static void UseForwardedHttpScheme(this IApplicationBuilder app)
+    public static void UseForwardedHttpScheme(this IApplicationBuilder app)
+    {
+        app.Use((ctx, next) =>
         {
-            app.Use((ctx, next) =>
+            var scheme = ctx.Request.Headers["X-Forwarded-Proto"].ToString();
+
+            if (!string.IsNullOrEmpty(scheme))
             {
-                var scheme = ctx.Request.Headers["X-Forwarded-Proto"].ToString();
+                ctx.Request.Scheme = scheme;
+            }
 
-                if (!string.IsNullOrEmpty(scheme))
-                {
-                    ctx.Request.Scheme = scheme;
-                }
-
-                return next(ctx);
-            });
-        }
+            return next(ctx);
+        });
     }
 }

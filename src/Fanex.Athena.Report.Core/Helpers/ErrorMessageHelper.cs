@@ -1,66 +1,65 @@
-﻿using System.Text;
+﻿namespace Fanex.Athena.Report.Core.Helpers;
+
+using System.Text;
 using Microsoft.AspNetCore.Http;
 
-namespace Fanex.Athena.Report.Core.Helpers
+public static class ErrorMessageHelper
 {
-    public static class ErrorMessageHelper
+    public static string GenerateMessage(Exception exception, HttpContext context = null)
     {
-        public static string GenerateMessage(Exception exception, HttpContext context = null)
+        var messageBuilder = new StringBuilder();
+
+        messageBuilder.AppendLine($"ErrMsg: {exception.Message}");
+
+        if (context != null)
         {
-            var messageBuilder = new StringBuilder();
+            AddRequestInfo(context, messageBuilder);
+        }
 
-            messageBuilder.AppendLine($"ErrMsg: {exception.Message}");
+        const int limitedNumOfInnerException = 3;
+        AddExceptionInfo(messageBuilder, exception, limitedNumOfInnerException);
 
-            if (context != null)
+        return messageBuilder.ToString();
+    }
+
+    private static void AddRequestInfo(HttpContext context, StringBuilder builder)
+    {
+        builder.AppendLine();
+        builder.AppendLine("REQUEST INFO");
+
+        var webInfo = GetRequestInfo(context);
+
+        foreach (var item in webInfo)
+        {
+            builder.AppendLine($"{item.Key}: {item.Value}");
+        }
+    }
+
+    private static void AddExceptionInfo(StringBuilder builder, Exception exception, int limitedInnerException)
+    {
+        builder.AppendLine();
+        builder.AppendLine("EXCEPTION INFO");
+        builder.AppendLine($"Message: {exception.Message}");
+        builder.AppendLine($"Source: {exception.Source}");
+        builder.AppendLine($"TargetSite: {exception.TargetSite}");
+        builder.AppendLine($"StackTrace: {exception.StackTrace}");
+
+        if (exception.InnerException != null && limitedInnerException > 0)
+        {
+            AddExceptionInfo(builder, exception.InnerException, limitedInnerException - 1);
+        }
+    }
+
+    private static IDictionary<string, object> GetRequestInfo(HttpContext context)
+    {
+        var request = context.Request;
+        return request == null
+            ? new Dictionary<string, object>()
+            : new Dictionary<string, object>
             {
-                AddRequestInfo(context, messageBuilder);
-            }
-
-            const int limitedNumOfInnerException = 3;
-            AddExceptionInfo(messageBuilder, exception, limitedNumOfInnerException);
-
-            return messageBuilder.ToString();
-        }
-
-        private static void AddRequestInfo(HttpContext context, StringBuilder builder)
-        {
-            builder.AppendLine();
-            builder.AppendLine("REQUEST INFO");
-
-            var webInfo = GetRequestInfo(context);
-
-            foreach (var item in webInfo)
-            {
-                builder.AppendLine($"{item.Key}: {item.Value}");
-            }
-        }
-
-        private static void AddExceptionInfo(StringBuilder builder, Exception exception, int limitedInnerException)
-        {
-            builder.AppendLine();
-            builder.AppendLine("EXCEPTION INFO");
-            builder.AppendLine($"Message: {exception.Message}");
-            builder.AppendLine($"Source: {exception.Source}");
-            builder.AppendLine($"TargetSite: {exception.TargetSite}");
-            builder.AppendLine($"StackTrace: {exception.StackTrace}");
-
-            if (exception.InnerException != null && limitedInnerException > 0)
-            {
-                AddExceptionInfo(builder, exception.InnerException, limitedInnerException - 1);
-            }
-        }
-
-        private static IDictionary<string, object> GetRequestInfo(HttpContext context)
-        {
-            var request = context.Request;
-            return request == null ?
-                new Dictionary<string, object>() :
-                new Dictionary<string, object>
-                {
-                    [nameof(request.Host)] = request.Host,
-                    [nameof(request.Path)] = request.Path,
-                    ["Remote IP"] = context.Connection?.RemoteIpAddress
-                };
-        }
+                [nameof(request.Host)] = request.Host,
+                [nameof(request.Path)] = request.Path,
+                ["Remote IP"] = context.Connection?.RemoteIpAddress
+            };
     }
 }

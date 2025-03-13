@@ -1,6 +1,6 @@
 export default class ObjectHelper {
     static toCamel(o) {
-        var newO, origKey, newKey, value
+        let newO, origKey, newKey, value
         if (o instanceof Array) {
             return o.map(function (value) {
                 if (typeof value === "object") {

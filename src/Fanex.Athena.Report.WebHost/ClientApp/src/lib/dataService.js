@@ -3,6 +3,7 @@ import axios from './axios';
 export default class DataService {
     static apiKeys = {
         report: 'Report',
+        betlist: 'BetList'
     };
 
     static buildProxyUrl(apiKey, apiUrl) {
@@ -71,5 +72,17 @@ export default class DataService {
 
     static getReportFile(url, params) {
         return this.getProxyFile(this.apiKeys.report, url, params);
+    }
+
+    static getBetListData(url, params) {
+        return this.getProxyData(this.apiKeys.betlist, url, params);
+    }
+
+    static postBetListData(url, params) {
+        return this.postProxyData(this.apiKeys.betlist, url, params);
+    }
+
+    static getBetListFile(url, params) {
+        return this.getProxyFile(this.apiKeys.betlist, url, params);
     }
 }

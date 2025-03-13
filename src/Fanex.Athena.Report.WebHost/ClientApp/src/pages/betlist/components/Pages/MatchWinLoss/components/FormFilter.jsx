@@ -21,7 +21,7 @@ const MatchWinLossFormFilter = (props) => {
     return (
         <p className="content-title">
             {`${formData.title} - ${formData.fromDate} - `}
-            <span className="base-currency">{LangHelper.getSingleResource('Viewin').replace('{0}', formData.baseCurrency)}</span>
+            <span className="base-currency">{LangHelper.getSingleResource('Viewin').replace('{0}', formData.baseCurrency.toUpperCase())}</span>
             <i className="icon-excel right" onClick={exportExcel} title={LangHelper.getSingleResource('ExportToExcel')}></i>
             <i className="icon-back right" onClick={() => navigate(-1)}></i>
         </p>

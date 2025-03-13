@@ -1,21 +1,20 @@
-﻿using Fanex.Athena.Report.Core.Middleware;
-using Fanex.Athena.Report.Core.Settings;
+﻿namespace Fanex.Athena.Report.Core.Extensions;
+
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Middleware;
+using Settings;
 
-namespace Fanex.Athena.Report.Core.Extensions
+public static class ConfigureServicesExtension
 {
-    public static class ConfigureServicesExtension
+    public static IServiceCollection AddSettings(this IServiceCollection services, IConfiguration configuration)
     {
-        public static IServiceCollection AddSettings(this IServiceCollection services, IConfiguration configuration)
-        {
-            services.AddSingleton(configuration.GetSection("AppSettings").Get<AppSettings>());
-            return services;
-        }
+        services.AddSingleton(configuration.GetSection("AppSettings").Get<AppSettings>());
+        return services;
+    }
 
-        public static void AddHealthCheck(this IServiceCollection services)
-        {
-            services.AddHealthChecks().AddCheck<WhoAmIHealthCheck>("WhoAmIHealthCheck");
-        }
+    public static void AddHealthCheck(this IServiceCollection services)
+    {
+        services.AddHealthChecks().AddCheck<WhoAmIHealthCheck>("WhoAmIHealthCheck");
     }
 }
