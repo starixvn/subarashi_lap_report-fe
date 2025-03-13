@@ -38,7 +38,7 @@ const LiveReportFormFilter = (props) => {
     return (
         <p className="content-title">
             {getReportTitle(formData.title, formData.fromDate, formData.toDate)}
-            <span className="base-currency">{LangHelper.getSingleResource('Viewin').replace('{0}', formData.baseCurrency)}</span>
+            <span className="base-currency">{LangHelper.getSingleResource('Viewin').replace('{0}', formData.baseCurrency.toUpperCase())}</span>
             <i className="icon-excel right" onClick={exportExcel} title={LangHelper.getSingleResource('ExportToExcel')}></i>
             <i className="icon-back right" onClick={() => navigate(-1)}></i>
         </p>

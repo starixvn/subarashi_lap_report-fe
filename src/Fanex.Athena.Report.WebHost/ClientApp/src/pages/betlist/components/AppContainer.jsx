@@ -49,7 +49,7 @@ export const AppContainer = (props) => {
         query += Service.getSettingQuery();
 
         const betListController = Service.convertToBetListController(controller);
-        sendRequest(() => DataService.getReportData(`api/${betListController}/${action}${query}`), setInitData);
+        sendRequest(() => DataService.getBetListData(`api/${betListController}/${action}${query}`), setInitData);
     }, []);
 
     const formatDateString = (dateString) => {

@@ -1,80 +1,79 @@
-﻿using System;
+﻿namespace Fanex.Athena.Report.Core.Tests.Helpers;
+
+using System;
 using System.Net;
-using Fanex.Athena.Report.Core.Helpers;
-using Fanex.Athena.Report.UnitTests.Common;
+using Core.Helpers;
 using Microsoft.AspNetCore.Http;
 using NSubstitute;
+using UnitTests.Common;
 using Xunit;
 
-namespace Fanex.Athena.Report.Core.Tests.Helpers
+public class ErrorMessageHelperTests
 {
-    public class ErrorMessageHelperTests
+    [Fact]
+    public void GenerateMessage_WithAnyException_BuildMessage()
     {
-        [Fact]
-        public void GenerateMessage_WithAnyException_BuildMessage()
+        // Arrange
+        var ctx = Substitute.For<HttpContext>();
+        var request = Substitute.For<HttpRequest>();
+        request.Host.Returns(new HostString("Any", 8080));
+        request.Path.Returns(new PathString("/Any"));
+        ctx.Request.Returns(request);
+
+        var connection = Substitute.For<ConnectionInfo>();
+        connection.RemoteIpAddress.Returns(FakeHelper.Create<IPAddress>());
+        ctx.Connection.Returns(connection);
+
+        var exception = FakeHelper.Create<MockException>();
+
+        // Act
+        ErrorMessageHelper.GenerateMessage(exception, ctx);
+
+        // Assert
+        _ = request.Received().Host;
+        _ = request.Received().Path;
+        _ = connection.Received().RemoteIpAddress;
+
+        Assert.True(exception.IsCallMessage);
+        Assert.True(exception.IsCallSource);
+        Assert.True(exception.IsCallStackTrace);
+    }
+
+    public class MockException : Exception
+    {
+        public bool IsCallMessage;
+
+        public bool IsCallSource;
+
+        public bool IsCallStackTrace;
+
+        public override string Message
         {
-            // Arrange
-            var ctx = Substitute.For<HttpContext>();
-            var request = Substitute.For<HttpRequest>();
-            request.Host.Returns(new HostString("Any", 8080));
-            request.Path.Returns(new PathString("/Any"));
-            ctx.Request.Returns(request);
+            get
+            {
+                IsCallMessage = true;
 
-            var connection = Substitute.For<ConnectionInfo>();
-            connection.RemoteIpAddress.Returns(FakeHelper.Create<IPAddress>());
-            ctx.Connection.Returns(connection);
-
-            var exception = FakeHelper.Create<MockException>();
-
-            // Act
-            ErrorMessageHelper.GenerateMessage(exception, ctx);
-
-            // Assert
-            _ = request.Received().Host;
-            _ = request.Received().Path;
-            _ = connection.Received().RemoteIpAddress;
-
-            Assert.True(exception.IsCallMessage);
-            Assert.True(exception.IsCallSource);
-            Assert.True(exception.IsCallStackTrace);
+                return "Any";
+            }
         }
 
-        public class MockException : Exception
+        public override string Source
         {
-            public bool IsCallMessage;
-
-            public bool IsCallSource;
-
-            public bool IsCallStackTrace;
-
-            public override string Message
+            get
             {
-                get
-                {
-                    IsCallMessage = true;
+                IsCallSource = true;
 
-                    return "Any";
-                }
+                return "Any";
             }
+        }
 
-            public override string Source
+        public override string StackTrace
+        {
+            get
             {
-                get
-                {
-                    IsCallSource = true;
+                IsCallStackTrace = true;
 
-                    return "Any";
-                }
-            }
-
-            public override string StackTrace
-            {
-                get
-                {
-                    IsCallStackTrace = true;
-
-                    return "Any";
-                }
+                return "Any";
             }
         }
     }

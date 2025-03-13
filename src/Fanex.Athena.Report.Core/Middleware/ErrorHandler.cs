@@ -1,40 +1,39 @@
-﻿using System.Net;
-using Fanex.Athena.Report.Core.Helpers;
+﻿namespace Fanex.Athena.Report.Core.Middleware;
+
+using System.Net;
+using Helpers;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 
-namespace Fanex.Athena.Report.Core.Middleware
+public class ErrorHandler
 {
-    public class ErrorHandler
+    private readonly ILogger<ErrorHandler> logger;
+
+    private readonly RequestDelegate next;
+
+    public ErrorHandler(RequestDelegate next, ILogger<ErrorHandler> logger)
     {
-        private readonly ILogger<ErrorHandler> logger;
+        this.next = next;
+        this.logger = logger;
+    }
 
-        private readonly RequestDelegate next;
-
-        public ErrorHandler(RequestDelegate next, ILogger<ErrorHandler> logger)
+    public async Task Invoke(HttpContext context)
+    {
+        try
         {
-            this.next = next;
-            this.logger = logger;
+            await next.Invoke(context);
         }
-
-        public async Task Invoke(HttpContext context)
+        catch (Exception exception)
         {
-            try
-            {
-                await next.Invoke(context);
-            }
-            catch (Exception exception)
-            {
-                HandleError(context, exception);
-            }
+            HandleError(context, exception);
         }
+    }
 
-        private void HandleError(HttpContext context, Exception exception)
-        {
-            var errorMsg = ErrorMessageHelper.GenerateMessage(exception, context);
-            logger.LogCritical(exception, errorMsg);
-            context.Response.Clear();
-            context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
-        }
+    private void HandleError(HttpContext context, Exception exception)
+    {
+        var errorMsg = ErrorMessageHelper.GenerateMessage(exception, context);
+        logger.LogCritical(exception, errorMsg);
+        context.Response.Clear();
+        context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
     }
 }

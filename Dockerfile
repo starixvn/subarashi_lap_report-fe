@@ -1,9 +1,4 @@
-FROM hub.nexdev.net/base/dotnet/core/sdk:6.0 AS builder
-ARG TRANSFORM_CONFIG
-
-RUN apt-get update  \
-    && curl --silent --location https://deb.nodesource.com/setup_20.x | bash -  \
-    && apt-get install -y nodejs
+FROM hub.nexdev.net/base/dotnet/core/sdk:8.0-nodejs-v20 AS builder
 
 RUN node -v
 RUN npm -v
@@ -30,6 +25,8 @@ COPY src .
 
 WORKDIR /src/Fanex.Athena.Report.WebHost/ClientApp
 
+ARG TRANSFORM_CONFIG
+
 #build front-end
 RUN if [ "$TRANSFORM_CONFIG" = "LOCAL" ]; then \
         npm run build-dev ; \
@@ -41,18 +38,24 @@ RUN if [ "$TRANSFORM_CONFIG" = "LOCAL" ]; then \
 
 WORKDIR /src/Fanex.Athena.Report.WebHost
 
-RUN dotnet publish "Fanex.Athena.Report.WebHost.csproj" -c Release -o /publish \
-    --runtime alpine-x64 \
-    --self-contained false
+RUN dotnet publish "Fanex.Athena.Report.WebHost.csproj" -c Release -o /publish
 
-FROM hub.nexdev.net/base/dotnet/core/aspnet:6.0-alpine
+FROM hub.nexdev.net/base/dotnet/core/aspnet:8.0-alpine-25h1 AS final
 
-ENV ASPNETCORE_URLS=http://*:5000
+ENV DOTNET_HOSTBUILDER__RELOADCONFIGONCHANGE=false
+ENV ASPNETCORE_HTTP_PORTS=5000
 EXPOSE 5000
 
+# Dont run as root
+RUN adduser --disabled-password \
+    --home /app \
+    --gecos '' dotnetuser && chown -R dotnetuser /app && chown -R dotnetuser /tmp
+USER dotnetuser
+#
 
 WORKDIR /app
 
 COPY --from=builder /publish .
+ENV TZ="America/La_Paz"
 
 ENTRYPOINT ["dotnet", "Fanex.Athena.Report.WebHost.dll"]

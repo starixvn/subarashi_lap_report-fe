@@ -86,6 +86,10 @@ function BodyContentRow(props) {
 
     const onClickMatchHandler = (e, match) => {
         e.preventDefault();
+        let liveIndicator = '';
+        if (match.betType === 85 || match.betType === 86) {
+            liveIndicator = match.isLive ? '1' : '0';
+        }
 
         const params = {
             CurrencyId: requestParam.CurrencyId,
@@ -97,7 +101,7 @@ function BodyContentRow(props) {
             LeagueId: match.leagueId,
             RaceNo: match.raceNo,
             BetType: isNaN(match.betType) ? 0 : match.betType,
-            LiveIndicator: match.betType === 85 || match.betType === 86 ? match.isLive : '',
+            LiveIndicator: liveIndicator,
             HomeId: match.homeId,
             AwayId: match.awayId,
             ProductCodeList: Service.getMatchProductCodeList(matchData.productName, requestParam.ProductOptions),
@@ -106,7 +110,7 @@ function BodyContentRow(props) {
             IsNeutral: match.isNeutral,
             KickOffTime: match.kickOffTime,
             SportType: match.sportType,
-            MatchCode: match.productName === "NG" ? match.matchCode : "" ,
+            MatchCode: match.productName === 'NG' ? match.matchCode : '',
             EventType: match.eventType,
             Rows: 50,
             Page: 1,
@@ -139,8 +143,7 @@ function BodyContentRow(props) {
                         className={`text-bold cell ${isLinkData(matchData) ? 'bet-list-link' : ''}`}
                         href={isLinkData(matchData) ? '#' : null}
                         onClick={(e) => isLinkData(matchData) && onClickMatchHandler(e, matchData)}
-                        dangerouslySetInnerHTML={{ __html: matchName }}>
-                    </a>
+                        dangerouslySetInnerHTML={{ __html: matchName }}></a>
                     <a className={`icon-wrapper cell ${expanded ? 'expanded' : ''}`} href="#" onClick={onClickExpandHandler}>
                         <i className={`icon-arrow`}></i>
                     </a>

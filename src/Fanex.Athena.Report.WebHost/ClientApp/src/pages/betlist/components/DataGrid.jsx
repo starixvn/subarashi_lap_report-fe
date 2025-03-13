@@ -61,7 +61,7 @@ const DataGrid = (props) => {
     };
 
     const fetchBetListGridData = async (url, params) => {
-        const response = await DataService.getReportData(url, params);
+        const response = await DataService.getBetListData(url, params);
         const data = BetListHelper.loadBetListDataGrid(response.data, formData.isServerPaging);
 
         dispatch(setRequestParam(params));

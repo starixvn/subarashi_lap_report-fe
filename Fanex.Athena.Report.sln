@@ -11,9 +11,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{C2BDF361-C87
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{3E0FC8B7-287C-466D-BE19-2DF41EFC5D6E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fanex.Athena.Report.UnitTests.Common", "test\Fanex.Athena.Report.UnitTests.Common\Fanex.Athena.Report.UnitTests.Common.csproj", "{269BDD41-AA03-410A-8802-0CF050BB9DE5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fanex.Athena.Report.UnitTests.Common", "test\Fanex.Athena.Report.UnitTests.Common\Fanex.Athena.Report.UnitTests.Common.csproj", "{269BDD41-AA03-410A-8802-0CF050BB9DE5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fanex.Athena.Report.Core.Tests", "test\Fanex.Athena.Report.Core.Tests\Fanex.Athena.Report.Core.Tests.csproj", "{E58519D3-9C36-4867-B81D-0A7828A6C0DA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fanex.Athena.Report.Core.Tests", "test\Fanex.Athena.Report.Core.Tests\Fanex.Athena.Report.Core.Tests.csproj", "{E58519D3-9C36-4867-B81D-0A7828A6C0DA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{58C24BB5-C0CE-44AF-B1DE-932F86EB5B35}"
+	ProjectSection(SolutionItems) = preProject
+		Dockerfile = Dockerfile
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

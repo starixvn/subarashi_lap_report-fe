@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿namespace Fanex.Athena.Report.UnitTests.Common.AutoData;
+
+using System.Collections.Generic;
 using AutoFixture;
 using AutoFixture.AutoNSubstitute;
 using AutoFixture.Xunit2;
@@ -6,36 +8,34 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Routing;
 using NSubstitute;
 
-namespace Fanex.Athena.Report.UnitTests.Common.AutoData
+public class AutoContextDataAttribute : AutoDataAttribute
 {
-    public class AutoContextDataAttribute : AutoDataAttribute
-    {
-        public AutoContextDataAttribute() :
-            base(() =>
-            {
-                var fixture = new Fixture();
-
-                RegisterHttpContext(fixture);
-
-                fixture.Customize(new AutoNSubstituteCustomization());
-                return fixture;
-            })
-        { }
-
-        private static void RegisterHttpContext(IFixture fixture)
+    public AutoContextDataAttribute() :
+        base(() =>
         {
-            var context = new DefaultHttpContext
+            var fixture = new Fixture();
+
+            RegisterHttpContext(fixture);
+
+            fixture.Customize(new AutoNSubstituteCustomization());
+            return fixture;
+        })
+    {
+    }
+
+    private static void RegisterHttpContext(IFixture fixture)
+    {
+        var context = new DefaultHttpContext
+        {
+            Request =
             {
-                Request =
+                RouteValues = new RouteValueDictionary(new[]
                 {
-                    RouteValues = new RouteValueDictionary(new[]
-                    {
-                        new KeyValuePair<string, object>("controller", "Any")
-                    })
-                }
-            };
-            fixture.Register<HttpContext>(() => context);
-            fixture.Register(() => Substitute.For<RequestDelegate>());
-        }
+                    new KeyValuePair<string, object>("controller", "Any")
+                })
+            }
+        };
+        fixture.Register<HttpContext>(() => context);
+        fixture.Register(() => Substitute.For<RequestDelegate>());
     }
 }
