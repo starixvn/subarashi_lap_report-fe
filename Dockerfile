@@ -1,7 +1,5 @@
 FROM hub.nexdev.net/base/dotnet/core/sdk:8.0-nodejs-v20 AS builder
 
-ARG TRANSFORM_CONFIG
-
 RUN node -v
 RUN npm -v
 
@@ -28,6 +26,8 @@ COPY src .
 WORKDIR /src/Fanex.Athena.Report.WebHost/ClientApp
 
 # Build front-end
+ARG TRANSFORM_CONFIG
+
 RUN case "$TRANSFORM_CONFIG" in \
     (LOCAL|SIT) npm run build-dev;; \
     (*) npm run build-prod;; \
@@ -36,7 +36,7 @@ RUN case "$TRANSFORM_CONFIG" in \
 
 WORKDIR /src/Fanex.Athena.Report.WebHost
 
-RUN dotnet publish "Fanex.Athena.Report.WebHost.csproj" -c Release -o /publish
+RUN dotnet publish "Fanex.Athena.Report.WebHost.csproj" -c Release -o /publish \
     --use-current-runtime \
     --self-contained false
 
