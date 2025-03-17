@@ -1,18 +1,17 @@
 import DataService from '@srcRoot/lib/dataService';
 import Cache from '@srcRoot/lib/cache';
+import Service from '../common/service';
 import * as types from './types';
 import ObjectHelper from '@srcRoot/lib/objectHelper';
 
 const BETTYPE_CACHE_KEY = 'BETTYPE_CACHE_KEY';
 
-const dispatchBettypeList = (dispatch, data) => {
-    data.length && data[0].value == 0 && data.shift();
+let currentCancellationTokenSource = null;
 
+const dispatchBettypeList = (dispatch, data) => {
+    const selectedSports = Service.getSelectedItemFromTreeListItem(data);
     dispatch(setBettypeList(data));
-    if (data.length > 0) {
-        const bettypeList = data.map((item) => item.value).join(',');
-        dispatch(setSelectedBettype(bettypeList));
-    }
+    dispatch(setSelectedBettype(selectedSports));
 };
 
 const setSelectedBettype = (bettypeId) => {
@@ -29,21 +28,36 @@ const setBettypeList = (list) => {
     };
 };
 
-const getBettypeList = (productCode) => {
-    const cacheKey = BETTYPE_CACHE_KEY + productCode;
-    return (dispatch) => {
+const getBettypeList = (productCodes) => {
+    const cacheKey = BETTYPE_CACHE_KEY + productCodes;
+    return async (dispatch) => {
         var cacheData = Cache.get(cacheKey);
         if (cacheData) {
-            dispatchBettypeList(dispatch, cacheData);
+            dispatchBettypeList(dispatch, [...cacheData]);
             return;
         }
-
-        DataService.getData('api/CommonDataApi/GetBettypes', { productCode: productCode }).then((response) => {
-            let data = response.data;
-            let camelData = ObjectHelper.toCamel(data); 
-            Cache.set(cacheKey, camelData);
+        if (currentCancellationTokenSource) {
+            currentCancellationTokenSource.cancel('Operation canceled by the user.');
+        }
+        currentCancellationTokenSource = DataService.genCancellationToken();
+        try {
+            const response = await DataService.getData(
+                'api/CommonDataApi/GetBetTypeInTreeList',
+                { productCodes: productCodes },
+                currentCancellationTokenSource
+            );
+            currentCancellationTokenSource = null;
+            const data = response.data;
+            const camelData = ObjectHelper.toCamel(data);
+            Cache.set(cacheKey, camelData, 10);
             dispatchBettypeList(dispatch, camelData);
-        });
+        } catch (e) {
+            if (DataService.isCancel(e)) {
+                return;
+            } else {
+                // handle error
+            }
+        }
     };
 };
 

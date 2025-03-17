@@ -1,4 +1,5 @@
 import DataService from '@srcRoot/lib/dataService';
+import Service from '../common/service';
 import * as types from './types.js';
 import ObjectHelper from '@srcRoot/lib/objectHelper.js';
 
@@ -16,15 +17,14 @@ const setSportList = (list) => {
     };
 };
 
-const getSportList = (productCode, date) => {
-    return (dispatch) => {
-        DataService.getData('api/CommonDataApi/GetSports', { productCode: productCode, includeSabaSport: true }).then((response) => {
-            let data = response.data;
-            let camelData = ObjectHelper.toCamel(data);
-            var sportList = camelData.map((item) => item.value).join(',');
-            dispatch(setSportList(camelData));
-            dispatch(setSelectedSport(sportList));
-        });
+const getSportList = (productCodes) => {
+    return async (dispatch) => {
+        const response = await DataService.getData('api/CommonDataApi/GetSportsForTreeView', { productCodes: productCodes });
+        const data = response.data;
+        const camelData = ObjectHelper.toCamel(data);
+        const selectedSports = Service.getSelectedItemFromTreeListItem(camelData);
+        dispatch(setSportList(camelData));
+        dispatch(setSelectedSport(selectedSports));
     };
 };
 

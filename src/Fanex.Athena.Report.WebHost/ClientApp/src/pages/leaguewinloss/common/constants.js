@@ -47,3 +47,5 @@ export const BreadcrumbItems = [
         value: ReportLevel.BETTYPE,
     },
 ];
+
+export const ALL_SELECTED_TEXT = 'ALL';

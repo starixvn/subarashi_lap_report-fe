@@ -7,6 +7,13 @@ const reportFilter = createReducer(null, {
     },
 });
 
+const breadcrumbParams  = createReducer(null, {
+    [types.SET_BREADCRUMB_PARAMS](state, action) {
+        return action.data;
+    },
+});
+
 export default {
     reportFilter,
+    breadcrumbParams
 };

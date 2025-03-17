@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import moment from 'moment';
 import { DateRange } from '@legion-lib/react-daterangepicker';
 import MultipleSelect from '@legion-lib/react-multiselect';
 
@@ -21,10 +20,12 @@ import { ApiUrl, ReportLevel } from '../common/constants';
 import { DateConstraint } from '../common/dateSetting';
 import Service from '../common/service';
 
+import { TreeViewSelect } from '@legion-lib/react-multiselect';
+import { TreeViewOption } from '@srcRoot/constants/report';
+
 export const FormFilter = (props) => {
     const [isGroupInOriginalCurrency, setGroupInOriginalCurrency] = useState(true);
     const [leagueName, setLeagueName] = useState('');
-    const [showBA, setShowBA] = useState(false);
     const [baseCurrencyList, setBaseCurrencyList] = useState(props.AppData.baseCurrencyList);
 
     useEffect(() => {
@@ -32,11 +33,6 @@ export const FormFilter = (props) => {
     }, []);
 
     const { AppData } = props;
-
-    const isSingleDate = (dateRange) => {
-        const { fromDate, toDate } = dateRange || props.dateRange;
-        return moment(fromDate, 'MM/DD/YYYY', true).isSame(moment(toDate, 'MM/DD/YYYY', true), 'day');
-    };
 
     const _onChangeDateRange = (range, isValid = true) => {
         if (isValid) {
@@ -91,67 +87,92 @@ export const FormFilter = (props) => {
                     valueField={'name'}
                     statusField={'status'}
                     onChange={(currentItem, selectedItemsKey) => onChangeProduct(selectedItemsKey)}
+                    isValid={!!props.selectedProduct}
                 />
             )
         );
     };
 
     const _renderSportSelectList = () => {
-        const sportList = props.sportList;
+        const dataSource = props.sportList;
+
+        if (!dataSource || !dataSource.length) {
+            return (
+                <TreeViewSelect
+                    language={LangHelper.currentLanguage}
+                    id="SportList"
+                    dataSource={[]}
+                    keyField="value"
+                    valueField="name"
+                    statusField="checked"
+                    texts={{ All: LangHelper.getSingleResource('N_A') }}
+                    isAllTextShown={true}
+                    hasSearchBox={true}
+                    treeViewOption={TreeViewOption}
+                    isValid={false}
+                />
+            );
+        }
 
         return (
-            sportList &&
-            sportList.length && (
-                <MultipleSelect
-                    id="SportList"
-                    hasSearchBox={true}
-                    language={LangHelper.currentLanguage}
-                    dataSource={sportList}
-                    keyField={'value'}
-                    valueField={'label'}
-                    statusField={'status'}
-                    onChange={(currentItem, selectedItemsKey) => props.setSelectedSport(selectedItemsKey)}
-                />
-            )
+            <TreeViewSelect
+                language={LangHelper.currentLanguage}
+                id="SportList"
+                dataSource={dataSource}
+                keyField="value"
+                valueField="name"
+                statusField="checked"
+                isAllTextShown={true}
+                hasSearchBox={true}
+                treeViewOption={TreeViewOption}
+                onChange={(currentItem, selectedItemsKey) => props.setSelectedSport(selectedItemsKey)}
+                isValid={!!props.selectedSport}
+            />
         );
     };
 
     const _renderBettypeSelectList = () => {
-        const bettypeList = props.bettypeList;
+        const dataSource = props.bettypeList;
+
+        if (!dataSource || !dataSource.length) {
+            return (
+                <TreeViewSelect
+                    language={LangHelper.currentLanguage}
+                    id="BetTypeList"
+                    dataSource={[]}
+                    keyField="value"
+                    valueField="name"
+                    statusField="checked"
+                    texts={{ All: LangHelper.getSingleResource('N_A') }}
+                    isAllTextShown={true}
+                    hasSearchBox={true}
+                    treeViewOption={TreeViewOption}
+                    isValid={false}
+                />
+            );
+        }
 
         return (
-            bettypeList &&
-            bettypeList.length && (
-                <MultipleSelect
-                    id="BettypeList"
-                    hasSearchBox={true}
-                    language={LangHelper.currentLanguage}
-                    dataSource={bettypeList}
-                    keyField={'value'}
-                    valueField={'label'}
-                    statusField={'status'}
-                    onChange={(currentItem, selectedItemsKey) => props.setSelectedBettype(selectedItemsKey)}
-                />
-            )
+            <TreeViewSelect
+                language={LangHelper.currentLanguage}
+                id="BetTypeList"
+                dataSource={dataSource}
+                keyField="value"
+                valueField="name"
+                statusField="checked"
+                isAllTextShown={true}
+                hasSearchBox={true}
+                treeViewOption={TreeViewOption}
+                onChange={(currentItem, selectedItemsKey) => props.setSelectedBettype(selectedItemsKey)}
+                isValid={!!props.selectedBettype}
+            />
         );
     };
 
     const onChangeProduct = (productCode) => {
-        const productArray = productCode.split(',');
-        const BAIndex = productArray.indexOf('BA');
-
-        if (BAIndex !== -1) {
-            productArray.splice(BAIndex, 1);
-            setShowBA(true);
-        } else {
-            setShowBA(false);
-        }
-        let newProductCode = productArray.join(',');
-
-        newProductCode = newProductCode === '' && BAIndex !== -1 ? 'BA' : newProductCode;
-        props.setSelectedProducts(newProductCode);
-        props.getSportList(newProductCode, isSingleDate() && props.dateRange.fromDate);
-        props.getBettypeList(newProductCode, isSingleDate());
+        props.setSelectedProducts(productCode);
+        props.getSportList(productCode);
+        props.getBettypeList(productCode);
     };
 
     const _renderCurrencySelectList = () => {
@@ -168,6 +189,7 @@ export const FormFilter = (props) => {
                     valueField={'value'}
                     statusField={'status'}
                     onChange={(currentItem, selectedItemsKey) => onChangeCurrency(selectedItemsKey)}
+                    isValid={!!props.selectedCurrency}
                 />
             )
         );
@@ -211,6 +233,7 @@ export const FormFilter = (props) => {
                     valueField={'label'}
                     statusField={'status'}
                     onChange={(currentItem, selectedItemsKey) => props.setSelectedStatus(selectedItemsKey)}
+                    isValid={!!props.selectedStatus}
                 />
             )
         );
@@ -228,6 +251,7 @@ export const FormFilter = (props) => {
         props.setRequestParam(params);
         props.toggleLoader(true);
         props.getReportData(ApiUrl.REPORT_DATA_URL, params);
+        props.setBreadcrumbParams([params]);
     };
 
     const getParams = () => {
@@ -239,8 +263,6 @@ export const FormFilter = (props) => {
         const { PageSize, SortBy, SortOrder } = props.requestParam;
 
         const selectedCurrencyArray = props.selectedCurrency.split(',');
-        const selectedSportArray = props.selectedSport.split(',');
-        const selectedBettypeArray = props.selectedBettype.split(',');
 
         const currencyText =
             selectedCurrencyArray.length === AppData.currencyList.length
@@ -260,15 +282,14 @@ export const FormFilter = (props) => {
             CurrencyIdList: props.selectedCurrency,
             BaseCurrency: props.selectedBaseCurrency.label,
             StatusIdList: props.selectedStatus,
-            SportIdList: props.sportList.length === selectedSportArray.length ? 'All' : props.selectedSport,
-            BetTypeIdList: props.bettypeList.length === selectedBettypeArray.length ? 'All' : props.selectedBettype,
+            SportIdList: Service.getNormalizedSelectedParamValueForTreeListFilter(props.selectedSport, props.sportList),
+            BetTypeIdList: Service.getSelectedBettypeXML(props.selectedBettype, props.bettypeList),
             LeagueName: leagueName,
             SortBy: SortBy,
             SortOrder: SortOrder,
             IsGroupInOriginalCurrency: isGroupInOriginalCurrency,
             BaseCurrencyName: baseCurrency ? baseCurrency.label : '',
             CurrencyName: currencyText ? currencyText : '',
-            ShowBA: showBA,
             DrillDownLevel: ReportLevel.MAIN,
             UserName: props.username,
         };
@@ -445,6 +466,7 @@ function mapStateToProps(state) {
         selectedStatus,
         userGuideContent,
         username,
+        breadcrumbParams
     } = state;
 
     return Object.assign(
@@ -464,6 +486,7 @@ function mapStateToProps(state) {
             selectedStatus,
             userGuideContent,
             username,
+            breadcrumbParams
         }
     );
 }
