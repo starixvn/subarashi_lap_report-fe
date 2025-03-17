@@ -18,7 +18,7 @@ export const WL_BY_TIME_ZONE = 'WinLossByTimeZone';
 
 export const AG_CASINO_WL = 'AGCasinoWinLoss';
 
-export const AG_CASINO_BALANCE = 'AGCasinoWBalance';
+export const AG_CASINO_BALANCE = 'AGCasinoBalance';
 
 export const SAPA_VIRTUAL_SPORTS_WL = 'SabaVirtualSportsWinLoss';
 

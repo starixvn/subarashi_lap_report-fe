@@ -9,7 +9,7 @@ function CommonCells({ data, isHideOpeningBalance, isHideClosingBalance }) {
     const transferOut = NumberFormat.formatDecimalHalfDown(data.transferOut);
     const turnOver = NumberFormat.formatDecimalHalfDown(data.turnOver);
     const totalTransaction = NumberFormat.formatInteger(data.totalTransaction);
-    const totalWL = NumberFormat.formatDecimalHalfDown(data.totalWL);
+    const customerWinLoss = NumberFormat.formatDecimalHalfDown(data.customerWinLoss);
     const agClosingBalance = isHideClosingBalance ? '-' : NumberFormat.formatDecimalHalfDown(data.closingBalance);
 
     return (
@@ -29,8 +29,8 @@ function CommonCells({ data, isHideOpeningBalance, isHideClosingBalance }) {
             <Cell title={totalTransaction} className="right-align">
                 {totalTransaction}
             </Cell>
-            <Cell title={totalWL} className="right-align">
-                {totalWL}
+            <Cell title={customerWinLoss} className="right-align">
+                {customerWinLoss}
             </Cell>
             <Cell title={agClosingBalance} className="right-align">
                 {agClosingBalance}

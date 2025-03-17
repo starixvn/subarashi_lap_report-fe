@@ -22,5 +22,5 @@ export const DateConstraint = {
 
 export const DateRange = {
     fromDate: now.clone().startOf('month').format('MM/DD/yyyy'),
-    toDate: now.clone().format('MM/DD/yyyy'),
+    toDate: now.clone().add(-2, 'd').format('MM/DD/yyyy'),
 };

@@ -22,12 +22,13 @@ const ReportLink = ({ data, content, drillDownLevel }) => {
     };
 
     const getParams = () => {
+        const isAllCurrency = requestParam.CurrencyId == 0;
         const params = {
             FromDate: Site.convertDateToString(moment(data.date)),
             ToDate: Site.convertDateToString(moment(data.date)),
             BaseCurrency: requestParam.BaseCurrency,
-            CurrencyName: data.currencyName,
-            CurrencyId: data.currencyId,
+            CurrencyName: isAllCurrency ? data.currencyName : requestParam.CurrencyName,
+            CurrencyId: isAllCurrency ? data.currencyId : requestParam.CurrencyId,
             DrillDownCustomerId: data.customerId,
             ReportBy: requestParam.ReportBy,
             IsExcludedTestData: requestParam.IsExcludedTestData,
