@@ -6,7 +6,7 @@ import NumberFormat from '@srcRoot/lib/numberFormat';
 
 const CommonCells = ({ data }) => {
     const formData = useSelector((state) => state.formData);
-    const { isAllowedCustomerCommission, isAllowBa, hasAmountDueToColumn } = formData;
+    const { isAllowedCustomerCommission, hasAmountDueToColumn } = formData;
 
     const customerWinLoss = NumberFormat.formatDecimal(data.customerWinLoss);
     const customerComm = NumberFormat.formatDecimal(data.customerComm);
@@ -41,11 +41,6 @@ const CommonCells = ({ data }) => {
             <Cell title={licenseeWinLoss} className={`right-align ${licenseeWinLoss.startsWith('-') ? 'negative' : ''}`} key={`cell-licenseeWinLoss`}>
                 {licenseeWinLoss}
             </Cell>
-            {isAllowBa && (
-                <Cell title={licenseeComm} className="right-align" key={`cell-licenseeComm`}>
-                    {licenseeComm}
-                </Cell>
-            )}
             {hasAmountDueToColumn && (
                 <Cell title={turnOver} className="right-align" key={`cell-turnover`}>
                     {amountDue}

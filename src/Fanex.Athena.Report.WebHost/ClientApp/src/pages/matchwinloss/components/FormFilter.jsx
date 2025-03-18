@@ -65,7 +65,7 @@ const FormFilter = (props) => {
             setCurrentBaseCurrency({ ...defaultCurrency });
             setCurrentCurrency(selectedCurrency);
             dispatch(setBaseCurrencyList([...formData.baseCurrencies]));
-            return;r
+            return;
         }
 
         let newSelectedBaseCurrency = selectedCurrency;
@@ -74,8 +74,7 @@ const FormFilter = (props) => {
             newSelectedBaseCurrency = { ...selectedCurrency, isEmpty: true };
             newBaseCurrencyList.push(newSelectedBaseCurrency);
             dispatch(setBaseCurrencyList(newBaseCurrencyList));
-        }
-        else{
+        } else {
             dispatch(setBaseCurrencyList([...formData.baseCurrencies]));
         }
 

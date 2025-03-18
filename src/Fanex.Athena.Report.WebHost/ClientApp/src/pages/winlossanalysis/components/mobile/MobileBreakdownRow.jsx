@@ -11,7 +11,7 @@ import MobileExpandRowContent from './MobileExpandRowContent';
 
 export const MobileBreakdownRow = (props) => {
     const { data, selectedDisplayTypeId } = props;
-    const { isShowBAField, isShowBetEffectiveField, isBreakDownPlayerMode } = useRenderRowOption();
+    const { isShowBetEffectiveField, isBreakDownPlayerMode } = useRenderRowOption();
     const {
         betCount,
         turnover,
@@ -21,7 +21,6 @@ export const MobileBreakdownRow = (props) => {
         betEffective,
         licWinloss,
         licComm,
-        amtDueToBA,
         margin,
         groupBy,
         breakBy,
@@ -40,10 +39,6 @@ export const MobileBreakdownRow = (props) => {
     expandRows.push(
         <MobileExpandRowContent text={HeaderText.LicenseeWL} value={NumberFormat.formatDecimal(licWinloss)} valueClass={licWinloss < 0 ? 'negative' : ''} />
     );
-    expandRows.push(<MobileExpandRowContent text={HeaderText.LicenseeComm} value={NumberFormat.formatDecimal(licComm)} />);
-    {
-        isShowBAField && expandRows.push(<MobileExpandRowContent text={HeaderText.AmountDueToBA} value={NumberFormat.formatDecimal(amtDueToBA)} />);
-    }
     expandRows.push(
         <MobileExpandRowContent text={HeaderText.Margin} value={`${NumberFormat.formatDecimal(margin * 100)}%`} valueClass={margin < 0 ? 'negative' : ''} />
     );

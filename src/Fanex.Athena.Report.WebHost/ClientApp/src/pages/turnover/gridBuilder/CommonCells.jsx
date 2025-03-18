@@ -3,7 +3,7 @@ import { Cell } from '@legion-lib/react-grid';
 
 import NumberFormat from '@srcRoot/lib/numberFormat';
 function CommonCells({ data, options, hideClosingBalance, hideOpeningBalance }) {
-    const { hasCustomerComm, hasCasinoTransfer, isAllowBa, isEnableSingleWallet, isHidePlayerWL } = options;
+    const { hasCustomerComm, hasCasinoTransfer, isEnableSingleWallet, isHidePlayerWL } = options;
 
     // isEnableSingleWallet
     const openingBalance = hideOpeningBalance ? '-' : NumberFormat.formatDecimal(data.openingBalance);
@@ -32,11 +32,6 @@ function CommonCells({ data, options, hideClosingBalance, hideOpeningBalance }) 
 
     // Casino Transfer column
     const transfer3rd = NumberFormat.formatDecimal(data.transfer3rd);
-
-    // isAllowBa
-    const turnoverBA = NumberFormat.formatDecimal(data.turnoverBA);
-    const commBA = NumberFormat.formatDecimal(data.commBA);
-    const amountDueToBA = NumberFormat.formatDecimal(data.amountDueToBA);
 
     const hideDataClassName = (hide) => (hide ? 'center-align' : 'right-align');
 
@@ -105,19 +100,6 @@ function CommonCells({ data, options, hideClosingBalance, hideOpeningBalance }) 
                 <Cell title={transfer3rd} className="right-align">
                     {transfer3rd}
                 </Cell>
-            )}
-            {isAllowBa && (
-                <>
-                    <Cell title={turnoverBA} className="right-align">
-                        {turnoverBA}
-                    </Cell>
-                    <Cell title={commBA} className="right-align">
-                        {commBA}
-                    </Cell>
-                    <Cell title={amountDueToBA} className="right-align">
-                        {amountDueToBA}
-                    </Cell>
-                </>
             )}
         </>
     );

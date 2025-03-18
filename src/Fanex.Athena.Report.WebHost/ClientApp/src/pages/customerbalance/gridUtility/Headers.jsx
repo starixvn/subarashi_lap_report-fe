@@ -6,9 +6,9 @@ import HeaderCell from '../customGrid/HeaderCell';
 import HeaderRow from '../customGrid/HeaderRow';
 import { constants } from '../common';
 
-export const BuildHeaders = (isEnableSingleWallet, hasCustomerComm, isAllowBA) => {
-    const firstRow = BuildFirstRow(isEnableSingleWallet, hasCustomerComm, isAllowBA);
-    const secondRow = BuildSecondRow(hasCustomerComm, isAllowBA);
+export const BuildHeaders = (isEnableSingleWallet, hasCustomerComm) => {
+    const firstRow = BuildFirstRow(isEnableSingleWallet, hasCustomerComm);
+    const secondRow = BuildSecondRow(hasCustomerComm);
 
     const result = [firstRow];
     if (secondRow.props.children && secondRow.props.children.length > 0) {
@@ -18,7 +18,7 @@ export const BuildHeaders = (isEnableSingleWallet, hasCustomerComm, isAllowBA) =
     return result;
 };
 
-const BuildFirstRow = (isEnableSingleWallet, hasCustomerComm, isAllowBA) => (
+const BuildFirstRow = (isEnableSingleWallet, hasCustomerComm) => (
     <HeaderRow style={{ height: 23 }} key="header1" defaultSelectedHeaderKey={constants.SortKeys.Deposit}>
         <HeaderCell rowSpan="2" colWidth={80} key="Index">
             #
@@ -81,14 +81,9 @@ const BuildFirstRow = (isEnableSingleWallet, hasCustomerComm, isAllowBA) => (
         <HeaderCell rowSpan="2" colWidth={200} key="AffiliateTransfer">
             {LangHelper.getSingleResource('AffiliateTransfer')}
         </HeaderCell>
-        {isAllowBA && (
-            <HeaderCell colWidth={180} colSpan="3" key="BA">
-                {LangHelper.getSingleResource('BA')}
-            </HeaderCell>
-        )}
     </HeaderRow>
 );
-const BuildSecondRow = (hasCustomerComm, isAllowBA) => (
+const BuildSecondRow = (hasCustomerComm) => (
     <HeaderRow style={{ height: 23 }} key="header2">
         {hasCustomerComm && (
             <HeaderCell colWidth={180} key="CusWinLoss" sortBy={constants.SortKeys.CustomerWinloss}>
@@ -103,21 +98,6 @@ const BuildSecondRow = (hasCustomerComm, isAllowBA) => (
         {hasCustomerComm && (
             <HeaderCell colWidth={180} key="CusTotal">
                 {LangHelper.getSingleResource('Total')}
-            </HeaderCell>
-        )}
-        {isAllowBA && (
-            <HeaderCell colWidth={180} key="BATurnover">
-                {LangHelper.getSingleResource('Turnover')}
-            </HeaderCell>
-        )}
-        {isAllowBA && (
-            <HeaderCell colWidth={160} key="BAComm">
-                {LangHelper.getSingleResource('Comm')}
-            </HeaderCell>
-        )}
-        {isAllowBA && (
-            <HeaderCell colWidth={200} key="BAAmountDueTo">
-                {LangHelper.getSingleResource('AmountDueTo')}
             </HeaderCell>
         )}
     </HeaderRow>

@@ -18,10 +18,12 @@ const MatchWinLossFormFilter = (props) => {
         processExcel(ApiUrl.EXPORT_EXCEL_URL, requestParam, 'MatchWinLossBetList');
     };
 
+    const baseCurrency = formData.baseCurrency ?? requestParam.CurrencyName;
+
     return (
         <p className="content-title">
             {`${formData.title} - ${formData.fromDate} - `}
-            <span className="base-currency">{LangHelper.getSingleResource('Viewin').replace('{0}', formData.baseCurrency.toUpperCase())}</span>
+            <span className="base-currency">{LangHelper.getSingleResource('Viewin').replace('{0}', baseCurrency.toUpperCase())}</span>
             <i className="icon-excel right" onClick={exportExcel} title={LangHelper.getSingleResource('ExportToExcel')}></i>
             <i className="icon-back right" onClick={() => navigate(-1)}></i>
         </p>

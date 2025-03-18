@@ -21,9 +21,9 @@ class Service {
                 newSportId === 104 ||
                 (newSportId >= 190 && newSportId <= 197) ||
                 newSportId === 178 ||
-                newSportId === 179 || 
-                newSportId === 188 || 
-                newSportId === 177 || 
+                newSportId === 179 ||
+                newSportId === 188 ||
+                newSportId === 177 ||
                 newSportId === 198 ||
                 newSportId === 134
             ) {
@@ -34,13 +34,10 @@ class Service {
                 if (productCode === 'SB' || productCode === 'ALL') {
                     productOptions.push('SB');
                 }
-                if (productCode === 'BA' || productCode === 'ALL') {
-                    productOptions.push('BA');
-                }
             }
         } else {
             if (productCode === 'ALL') {
-                productOptions = ['SB', 'BA', 'NG', 'LC', 'VS', 'CS'];
+                productOptions = ['SB', 'NG', 'LC', 'VS', 'CS'];
             } else {
                 productOptions.push(productCode);
             }

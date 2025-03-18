@@ -20,7 +20,6 @@ export const HeaderText = {
     EffectiveBettingValue: LangHelper.getSingleResource('EffectiveBettingValue'),
     PlayerComm: LangHelper.getSingleResource('PlayerComm'),
     LicenseeComm: LangHelper.getSingleResource('LicenseeComm'),
-    AmountDueToBA: LangHelper.getSingleResource('AmountDueToBA'),
     Margin: LangHelper.getSingleResource('Margin'),
     SystemId: LangHelper.getSingleResource('SystemId'),
     LicenseeWL: LangHelper.getSingleResource('LicenseeW_L'),
@@ -57,7 +56,6 @@ export const ALL_SELECTED_TEXT = 'ALL';
 
 export const ProductCode = {
     SportsBook: 'SB',
-    BA: 'BA',
     VS: 'VS',
     NG: 'NG',
 };
@@ -132,7 +130,6 @@ export const SortBy = {
     MemComm: 5,
     LicWinloss: 6,
     LicComm: 7,
-    AmtDueToBA: 8,
     BetEffective: 9,
     Margin: 10,
 };

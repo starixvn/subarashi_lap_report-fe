@@ -15,7 +15,7 @@ export const GenerateReportTitle = (fromDate, toDate, currencyName) => {
     return `${customerBalanceTitle}, ${dateRange}, ${currencyView}`;
 };
 
-export const BuildBody = (data, isEnableSingleWallet, isAllowedCustomerCommission, isEnableBA) => {
+export const BuildBody = (data, isEnableSingleWallet, isAllowedCustomerCommission) => {
     return data.map((item) => {
         return (
             <Row key={`row-${item.index}`}>
@@ -30,24 +30,24 @@ export const BuildBody = (data, isEnableSingleWallet, isAllowedCustomerCommissio
                         {item.systemId}
                     </Cell>
                 )}
-                {BuildContent(item, isEnableSingleWallet, isAllowedCustomerCommission, isEnableBA)}
+                {BuildContent(item, isEnableSingleWallet, isAllowedCustomerCommission)}
             </Row>
         );
     });
 };
 
-export const BuildFooter = (totalData, totalSpan, isEnableSingleWallet, isAllowedCustomerCommission, isEnableBA) => {
+export const BuildFooter = (totalData, totalSpan, isEnableSingleWallet, isAllowedCustomerCommission) => {
     return (
         <Row key={'footer'}>
             <Cell titlt={LangHelper.getSingleResource('Total')} className="center-align" colSpan={totalSpan}>
                 {LangHelper.getSingleResource('Total')}
             </Cell>
-            {BuildContent(totalData, isEnableSingleWallet, isAllowedCustomerCommission, isEnableBA)}
+            {BuildContent(totalData, isEnableSingleWallet, isAllowedCustomerCommission)}
         </Row>
     );
 };
 
-const BuildContent = (data, isEnableSingleWallet, isAllowedCustomerCommission, isEnableBA) => {
+const BuildContent = (data, isEnableSingleWallet, isAllowedCustomerCommission) => {
     const decimalData = Service.formatDecimalInObjectNumbers(data);
 
     return (
@@ -107,19 +107,6 @@ const BuildContent = (data, isEnableSingleWallet, isAllowedCustomerCommission, i
             <Cell title={decimalData.affiliateTransfer} className="right-align" key={`footer-affiliateTransfer`}>
                 {decimalData.affiliateTransfer}
             </Cell>
-            {isEnableBA && (
-                <>
-                    <Cell title={decimalData.turnoverBA} className="right-align" key={`footer-turnoverBA`}>
-                        {decimalData.turnoverBA}
-                    </Cell>
-                    <Cell title={decimalData.commBA} className="right-align" key={`footer-commBA`}>
-                        {decimalData.commBA}
-                    </Cell>
-                    <Cell title={decimalData.amountDueToBA} className="right-align" key={`footer-amountDueToBA`}>
-                        {decimalData.amountDueToBA}
-                    </Cell>
-                </>
-            )}
         </>
     );
 };
