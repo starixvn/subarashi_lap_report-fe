@@ -19,7 +19,7 @@ const UserGuide = (props) => {
 
     return (
         <div>
-            <i className={className} onClick={_onClickHandler} title={title}></i>
+            <i id="UserGuide" className={className} onClick={_onClickHandler} title={title}></i>
             <Popup className="user-guide" contentClassName="guide-content" isShow={isDisplay} title={contentTitle} onClose={_onCloseHandler} isHtml={isHtml}>
                 {content}
             </Popup>

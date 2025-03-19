@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import GtagHelper from '@srcRoot/helpers/gtagHelper';
 
-const SubmitButton = ({ onClick, disabled, children, className, label, ...rest }) => {
+const SubmitButton = ({ id, onClick, disabled, children, className, label, ...rest }) => {
     const onClickSubmit = (e) => {
         GtagHelper.logViewReportData(label);
 
@@ -11,13 +11,14 @@ const SubmitButton = ({ onClick, disabled, children, className, label, ...rest }
     };
 
     return (
-        <button disabled={disabled} className={className} onClick={onClickSubmit} {...rest}>
+        <button id={id} disabled={disabled} className={className} onClick={onClickSubmit} {...rest}>
             {children}
         </button>
     );
 };
 
 SubmitButton.propTypes = {
+    id: PropTypes.string,
     disabled: PropTypes.bool,
     className: PropTypes.string,
     label: PropTypes.string,
@@ -27,6 +28,7 @@ SubmitButton.propTypes = {
 SubmitButton.defaultProps = {
     className: 'btn btn-submit',
     disabled: false,
+    id: 'SubmitButton',
 };
 
 export default SubmitButton;

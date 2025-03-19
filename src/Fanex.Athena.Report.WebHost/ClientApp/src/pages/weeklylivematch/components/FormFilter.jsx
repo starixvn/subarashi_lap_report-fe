@@ -1,18 +1,19 @@
+import { DateRange } from '@legion-lib/react-daterangepicker';
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { DateRange } from '@legion-lib/react-daterangepicker';
 
-import UserGuide from '@srcRoot/components/UserGuide';
-import DataService from '@srcRoot/lib/dataService';
-import useToggleRequest from '@srcRoot/hooks/useToggleRequest';
-import Site from '@srcRoot/lib/site';
-import SubmitButton from '@srcRoot/components/SubmitButton';
 import CollapsiblePanel from '@srcRoot/components/CollapsiblePanel';
-import LangHelper from '@srcRoot/helpers/langHelper';
+import SubmitButton from '@srcRoot/components/SubmitButton';
+import UserGuide from '@srcRoot/components/UserGuide';
 import { USER_GUIDE, WEEKLY_LIVE_MATCHES } from '@srcRoot/constants/pages';
+import LangHelper from '@srcRoot/helpers/langHelper';
+import useToggleRequest from '@srcRoot/hooks/useToggleRequest';
+import DataService from '@srcRoot/lib/dataService';
+import Site from '@srcRoot/lib/site';
 
-import Constants from '../constants/index';
+import ExportExcel from '@srcRoot/components/ExportExcel';
 import { ActionCreators } from '../actions';
+import Constants from '../constants/index';
 
 const FormFilter = (props) => {
     const dispatch = useDispatch();
@@ -59,7 +60,7 @@ const FormFilter = (props) => {
     const _renderSupportButton = () => {
         return (
             <>
-                <i className="icon-excel right" onClick={onExportExcel} title={LangHelper.getSingleResource('ExportToExcel')} />
+                <ExportExcel onClick={onExportExcel} />
                 <UserGuide
                     title={LangHelper.getSingleResource(USER_GUIDE)}
                     contentTitle={LangHelper.getSingleResource(WEEKLY_LIVE_MATCHES)}

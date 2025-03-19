@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useSelector, shallowEqual } from 'react-redux';
 
 import LangHelper from '@srcRoot/helpers/langHelper';
+import ExportExcel from '@srcRoot/components/ExportExcel';
 import { ApiUrl } from '../constant/apiSettings';
 
 const MatchWinLossFormFilter = (props) => {
@@ -24,7 +25,7 @@ const MatchWinLossFormFilter = (props) => {
         <p className="content-title">
             {`${formData.title} - ${formData.fromDate} - `}
             <span className="base-currency">{LangHelper.getSingleResource('Viewin').replace('{0}', baseCurrency.toUpperCase())}</span>
-            <i className="icon-excel right" onClick={exportExcel} title={LangHelper.getSingleResource('ExportToExcel')}></i>
+            <ExportExcel onClick={exportExcel} />
             <i className="icon-back right" onClick={() => navigate(-1)}></i>
         </p>
     );

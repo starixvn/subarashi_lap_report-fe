@@ -1,18 +1,19 @@
+import { DatePicker } from '@legion-lib/react-daterangepicker';
+import MultipleSelect from '@legion-lib/react-multiselect';
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import MultipleSelect from '@legion-lib/react-multiselect';
-import { DatePicker } from '@legion-lib/react-daterangepicker';
 
-import { MATCH_WL, USER_GUIDE } from '@srcRoot/constants/pages';
 import CollapsiblePanel from '@srcRoot/components/CollapsiblePanel';
-import useToggleRequest from '@srcRoot/hooks/useToggleRequest';
-import SubmitButton from '@srcRoot/components/SubmitButton';
 import ReportSelect from '@srcRoot/components/ReportSelect';
+import SubmitButton from '@srcRoot/components/SubmitButton';
 import UserGuide from '@srcRoot/components/UserGuide';
+import { MATCH_WL, USER_GUIDE } from '@srcRoot/constants/pages';
 import LangHelper from '@srcRoot/helpers/langHelper';
+import useToggleRequest from '@srcRoot/hooks/useToggleRequest';
 import DataService from '@srcRoot/lib/dataService';
 import Site from '@srcRoot/lib/site';
 
+import ExportExcel from '@srcRoot/components/ExportExcel';
 import { ActionCreators } from '../actions';
 import Service, { constants } from '../common';
 
@@ -147,7 +148,7 @@ const FormFilter = (props) => {
 
     const SupportButtons = (
         <>
-            <i className="icon-excel right" onClick={onExportExcel} title={LangHelper.getSingleResource('ExportToExcel')} />
+            <ExportExcel onClick={onExportExcel} />
             <UserGuide
                 title={LangHelper.getSingleResource(USER_GUIDE)}
                 contentTitle={LangHelper.getSingleResource(MATCH_WL)}
@@ -184,6 +185,7 @@ const FormFilter = (props) => {
                     <div className="form-group">
                         <label className="label-text">{LangHelper.getSingleResource('BaseCurrency')}</label>
                         <ReportSelect
+                            id="select-list-BaseCurrency"
                             onChange={onChangeSelectBaseCurrency}
                             value={currentBaseCurrency}
                             defaultValue={currentBaseCurrency}

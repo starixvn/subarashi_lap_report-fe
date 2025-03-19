@@ -1,21 +1,22 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { TreeViewSelect } from '@legion-lib/react-multiselect';
 import { DateRange } from '@legion-lib/react-daterangepicker';
+import { TreeViewSelect } from '@legion-lib/react-multiselect';
 
-import { CUSTOMER_TURNOVER, USER_GUIDE } from '@srcRoot/constants/pages';
-import CollapsiblePanel from '@srcRoot/components/CollapsiblePanel';
-import useToggleRequest from '@srcRoot/hooks/useToggleRequest';
-import CheckBox from '@srcRoot/components/CheckBox';
 import AutoComplete from '@srcRoot/components/auto-complete';
-import SubmitButton from '@srcRoot/components/SubmitButton';
+import CheckBox from '@srcRoot/components/CheckBox';
+import CollapsiblePanel from '@srcRoot/components/CollapsiblePanel';
 import ReportSelect from '@srcRoot/components/ReportSelect';
+import SubmitButton from '@srcRoot/components/SubmitButton';
 import UserGuide from '@srcRoot/components/UserGuide';
+import { CUSTOMER_TURNOVER, USER_GUIDE } from '@srcRoot/constants/pages';
 import LangHelper from '@srcRoot/helpers/langHelper';
+import useToggleRequest from '@srcRoot/hooks/useToggleRequest';
 import DataService from '@srcRoot/lib/dataService';
 import Site from '@srcRoot/lib/site';
 
+import ExportExcel from '@srcRoot/components/ExportExcel';
 import ActionCreators from '../actions';
 import Service, { constants } from '../common';
 import { TicketFilterOptions, TicketFilterValue } from '../common/filterSettings';
@@ -198,7 +199,7 @@ const FormFilter = (props) => {
 
     const SupportButtons = (
         <>
-            <i className="icon-excel right" onClick={onExportExcel} title={LangHelper.getSingleResource('ExportToExcel')} />
+            <ExportExcel onClick={onExportExcel} />
             <UserGuide
                 title={LangHelper.getSingleResource(USER_GUIDE)}
                 contentTitle={LangHelper.getSingleResource(CUSTOMER_TURNOVER)}
@@ -230,7 +231,7 @@ const FormFilter = (props) => {
                             url={ApiUrl.SEARCH_CUSTOMER}
                             onSelect={(value) => dispatch(setUsername(value))}
                             onInput={(value) => dispatch(setUsername(value))}
-                            htmlAttributes={{ placeholder: LangHelper.getSingleResource('All') }}
+                            htmlAttributes={{ placeholder: LangHelper.getSingleResource('All'), id: 'Username' }}
                         />
                     </div>
                 </div>
