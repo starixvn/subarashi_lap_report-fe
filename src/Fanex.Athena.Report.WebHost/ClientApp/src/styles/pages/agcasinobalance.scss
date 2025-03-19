@@ -1,0 +1,34 @@
+.header-content {
+    .table>thead>tr>th {
+        &.first-header-cell {
+            border-left: inherit;
+        }
+    }
+}
+
+.footer-content {
+    .table>tbody>tr {
+        &.light-footer>td {
+            background: #ffffff;
+            
+        }
+    }
+}
+
+.header-title {
+    &.selected {
+        text-decoration: underline;
+    }
+}
+
+.notification-container {
+    .notification {
+        height: 100px;
+        width: 350px;
+        .content {
+            font-size: 14px;
+            text-align: center;
+            padding: 20px;
+        }
+    }
+}
