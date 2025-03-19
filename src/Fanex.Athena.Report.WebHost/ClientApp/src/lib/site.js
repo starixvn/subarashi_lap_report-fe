@@ -98,7 +98,10 @@ export default class Site {
         window.location.assign(this.resolveClientUrl(url));
     }
 
-    static getSentrySetting = () => {
-        return window.sentrySettings || {};
-    };
+    static getSentrySetting = () => ({
+        dsn: process.env.APP_SETTING.SentryFEDsn,
+        environment: process.env.APP_SETTING.Environment,
+        attachStacktrace: true,
+        integrations: [],
+    });
 }
