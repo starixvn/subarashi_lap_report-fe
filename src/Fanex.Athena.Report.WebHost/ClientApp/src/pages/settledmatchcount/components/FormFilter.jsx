@@ -51,7 +51,7 @@ const FormFilter = (props) => {
         />
     );
 
-    return <CollapsiblePanel stickyFooter={SupportButton} isCollapseMode={false} />;
+    return <CollapsiblePanel className="light-shadow" stickyFooter={SupportButton} isCollapseMode={false} />;
 };
 
 export default React.memo(FormFilter);

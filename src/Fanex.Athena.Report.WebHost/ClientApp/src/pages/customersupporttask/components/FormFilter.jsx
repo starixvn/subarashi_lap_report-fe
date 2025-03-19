@@ -46,7 +46,7 @@ const FormFilter = ({ formData, selectedCurrency, selectedSupportTask, setSelect
     };
 
     return (
-        <CollapsiblePanel isCollapseMode={false}>
+        <CollapsiblePanel className="light-shadow" isCollapseMode={false}>
             <div className="row">
                 <div className="col-12 col-md-3 col-sm-3 col-lg-2 col-xl-2">
                     <div className="form-group">
