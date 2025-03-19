@@ -908,4 +908,10 @@
   <data name="Note" xml:space="preserve">
     <value>Note</value>
   </data>
+  <data name="Promotion" xml:space="preserve">
+    <value>Promotion</value>
+  </data>
+  <data name="Based" xml:space="preserve">
+    <value>Based</value>
+  </data>
 </root>

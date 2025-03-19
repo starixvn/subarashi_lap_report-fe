@@ -864,4 +864,10 @@
   <data name="Note" xml:space="preserve">
     <value>Ghi chú</value>
   </data>
+  <data name="Promotion" xml:space="preserve">
+    <value>Khuyến mãi</value>
+  </data>
+  <data name="Based" xml:space="preserve">
+    <value>Dựa trên</value>
+  </data>
 </root>

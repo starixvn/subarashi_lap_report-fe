@@ -849,4 +849,10 @@
   <data name="Note" xml:space="preserve">
     <value>Catatan</value>
   </data>
+  <data name="Promotion" xml:space="preserve">
+    <value>Promosi</value>
+  </data>
+  <data name="Based" xml:space="preserve">
+    <value>Berdasarkan</value>
+  </data>
 </root>
