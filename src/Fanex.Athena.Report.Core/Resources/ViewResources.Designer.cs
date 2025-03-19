@@ -88,15 +88,15 @@ namespace Fanex.Athena.Report.Core.Resources {
         }
         
         /// <summary>
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Agent.
         /// </summary>
         public static string Agent {
             get {
                 return ResourceManager.GetString("Agent", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to All.
         /// </summary>
         public static string All {

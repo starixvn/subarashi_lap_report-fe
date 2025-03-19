@@ -156,7 +156,7 @@ const FormFilter = (props) => {
                             limitedMonthRange={DateConstraint.limitedMonthRange}
                             firstDayOfWeek={FirstDayOfWeek}
                             onChange={onChangeDateRange}
-                            langHandler={(key) => LangHelper.getSingleResource(key)}
+                            langHandler={(key) => LangHelper.getDateRangeResource(key)}
                         />
                     </div>
                 </div>

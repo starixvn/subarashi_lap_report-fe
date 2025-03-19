@@ -3,7 +3,8 @@ import LangHelper from '@srcRoot/helpers/langHelper';
 import PropTypes from 'prop-types';
 
 const ExportExcel = (props) => {
-    const _onClickHandler = () => {
+    const _onClickHandler = (event) => {
+        event.preventDefault();
         props.onClick && props.onClick();
     };
 

@@ -26,7 +26,7 @@ export const DateRangeFilter = (props) => {
                 firstDayOfWeek={DateConstraint.firstDayOfWeek}
                 onChange={(date, isValid) => onChange(date, isValid, limitedMonthRange)}
                 isMobile={isMobile}
-                langHandler={(key) => LangHelper.getSingleResource(key)}
+                langHandler={(key) => LangHelper.getDateRangeResource(key)}
             />
         );
     };
