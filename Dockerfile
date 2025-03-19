@@ -36,7 +36,7 @@ RUN case "$TRANSFORM_CONFIG" in \
 
 WORKDIR /src/Fanex.Athena.Report.WebHost
 
-RUN dotnet publish "Fanex.Athena.Report.WebHost.csproj" -c Release -o /publish
+RUN dotnet publish "Fanex.Athena.Report.WebHost.csproj" -c Release -o /publish \
     --use-current-runtime \
     --self-contained false
 
