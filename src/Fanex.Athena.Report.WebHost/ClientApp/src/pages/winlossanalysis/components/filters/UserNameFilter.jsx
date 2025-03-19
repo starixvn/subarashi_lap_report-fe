@@ -1,8 +1,8 @@
 import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 
-import LangHelper from '@srcRoot/helpers/langHelper';
-import AutoComplete from '@srcRoot/components/auto-complete';
+import LangHelper from '@/helpers/langHelper';
+import AutoComplete from '@/components/auto-complete';
 import SearchOption from './SearchOption';
 import { ApiUrl } from '../../common/constants';
 

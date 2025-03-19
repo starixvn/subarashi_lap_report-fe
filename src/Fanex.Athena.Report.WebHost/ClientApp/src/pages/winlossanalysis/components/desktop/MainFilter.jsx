@@ -1,9 +1,9 @@
 ﻿import React, { useEffect, memo } from 'react';
 import { shallowEqual, useSelector } from 'react-redux';
 
-import CollapsiblePanel from '@srcRoot/components/CollapsiblePanel';
-import useSubsidiarySearch from '@srcRoot/hooks/useSubsidiarySearch';
-import useBaseCurrencyForMultiSelectCurrency from '@srcRoot/hooks/useBaseCurrencyForMultiSelectCurrency';
+import CollapsiblePanel from '@/components/CollapsiblePanel';
+import useSubsidiarySearch from '@/hooks/useSubsidiarySearch';
+import useBaseCurrencyForMultiSelectCurrency from '@/hooks/useBaseCurrencyForMultiSelectCurrency';
 
 import { useFilterHandler } from '../hooks/useFilterHandler.jsx';
 import useDisabledGroupInOriginalCurrency from '../hooks/useIsDisabledGroupInOriginalCurrency';

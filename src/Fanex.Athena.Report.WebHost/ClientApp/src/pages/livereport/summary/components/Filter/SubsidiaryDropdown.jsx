@@ -1,9 +1,9 @@
 import React from 'react';
 import { TreeViewSelect } from '@legion-lib/react-multiselect';
 
-import { TreeViewOption } from '@srcRoot/constants/report';
-import useSubsidiarySearch from '@srcRoot/hooks/useSubsidiarySearch';
-import LangHelper from '@srcRoot/helpers/langHelper';
+import { TreeViewOption } from '@/constants/report';
+import useSubsidiarySearch from '@/hooks/useSubsidiarySearch';
+import LangHelper from '@/helpers/langHelper';
 
 function SubsidiaryDropDown(props) {
     const { isWhiteLabelView } = useSubsidiarySearch();

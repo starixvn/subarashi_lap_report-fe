@@ -1,7 +1,7 @@
 import React from 'react';
 import { Row, Cell } from '@legion-lib/react-grid';
 
-import LangHelper from '@srcRoot/helpers/langHelper';
+import LangHelper from '@/helpers/langHelper';
 import { BuildHeaders, CommonCells } from '../../../gridUltility';
 
 export const BuildSummaryHeaders = (options) => BuildHeaders(LangHelper.getSingleResource('Product'), options);

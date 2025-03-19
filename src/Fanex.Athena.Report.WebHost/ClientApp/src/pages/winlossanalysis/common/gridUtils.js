@@ -1,9 +1,9 @@
 import React from 'react';
 import { Row, Cell, HeaderRow, HeaderCell } from '@legion-lib/react-grid';
 import { HeaderText, SortBy } from './constants';
-import NumberFormat from '@srcRoot/lib/numberFormat';
+import NumberFormat from '@/lib/numberFormat';
 import TreeViewGridRowNode from './grid/TreeViewGridRowNode';
-import LangHelper from '@srcRoot/helpers/langHelper';
+import LangHelper from '@/helpers/langHelper';
 
 export const renderHeader = (option) => {
     const { isGroupByPlayerMode, isBreakDownPlayerMode } = option;

@@ -1,4 +1,4 @@
-import DataService from '@srcRoot/lib/dataService';
+import DataService from '@/lib/dataService';
 import * as types from './types';
 
 const setSelectedPromotionTypes = (data) => {

@@ -1,6 +1,6 @@
-import Site from '@srcRoot/lib/site';
-import { ACCESS_DENIED_URL, SIGN_OUT_URL, UM_URL } from '@srcRoot/constants/config';
-import DataService from '../lib/dataService';
+import Site from '@/lib/site';
+import { ACCESS_DENIED_URL, SIGN_OUT_URL, UM_URL } from '@/constants/config';
+import DataService from '@/lib/dataService';
 
 const hasPermission = 'HasPermission';
 let currentInterval = null;

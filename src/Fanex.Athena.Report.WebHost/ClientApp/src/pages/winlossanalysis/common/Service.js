@@ -1,9 +1,9 @@
-﻿import LangHelper from '@srcRoot/helpers/langHelper';
-import Site from '@srcRoot/lib/site';
+﻿import LangHelper from '@/helpers/langHelper';
+import Site from '@/lib/site';
 import { CashOutModeList, ExportExcelMode, OneTwoBetLicenseeName } from './constants';
 import { BreakdownByMode, GroupByMode, GroupByList, ALL_SELECTED_TEXT, ProductCode } from './constants';
 import { ApiUrl, ViewInTimeMode, MAX_PAGE_EXPORT_PAGE_SIZE, NUMBER_OF_CUNCURRENT_DOWNLOAD_REQUEST } from '../common/constants.js';
-import DataService from '@srcRoot/lib/dataService';
+import DataService from '@/lib/dataService';
 
 export default class Service {
     static getCashoutMode(modeValue) {

@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import { SubsidiaryViewType } from '../constants/report';
+import { SubsidiaryViewType } from '@/constants/report';
 
 export const useSubsidiarySearch = () => {
     const isSubsidiarySearch = useSelector((state) => state.subsidiarySearch);

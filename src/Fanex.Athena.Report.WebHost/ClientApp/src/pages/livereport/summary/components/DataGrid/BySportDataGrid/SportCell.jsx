@@ -2,7 +2,7 @@ import React from 'react';
 import { Cell } from '@legion-lib/react-grid';
 import { useDispatch, useSelector } from 'react-redux';
 import Service, { constants } from '../../../common';
-import useNavigateParams from '@srcRoot/hooks/useNavigateParams';
+import useNavigateParams from '@/hooks/useNavigateParams';
 import { createSearchParams } from 'react-router-dom';
 import { ActionCreators } from '../../../actions';
 

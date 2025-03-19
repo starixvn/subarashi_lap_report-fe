@@ -2,16 +2,16 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useRouteLoaderData } from 'react-router-dom';
 
-import { MATCH_WL } from '@srcRoot/constants/pages';
-import Loader from '@srcRoot/components/Loader';
-import useToggleRequest from '@srcRoot/hooks/useToggleRequest';
-import DataService from '@srcRoot/lib/dataService';
+import { MATCH_WL } from '@/constants/pages';
+import Loader from '@/components/Loader';
+import useToggleRequest from '@/hooks/useToggleRequest';
+import DataService from '@/lib/dataService';
 
 import { ActionCreators } from '../actions/index';
 import { constants } from '../common';
 import DataGrid from './DataGrid';
 import FormFilter from './FormFilter';
-import Site from '@srcRoot/lib/site';
+import Site from '@/lib/site';
 
 export const AppContainer = (props) => {
     const dispatch = useDispatch();

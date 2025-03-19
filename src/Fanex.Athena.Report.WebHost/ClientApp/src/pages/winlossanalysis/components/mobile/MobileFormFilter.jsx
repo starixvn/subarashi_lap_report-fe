@@ -1,5 +1,5 @@
 ﻿import React, { memo, useState } from 'react';
-import CollapsiblePanel from '@srcRoot/components/CollapsiblePanel';
+import CollapsiblePanel from '@/components/CollapsiblePanel';
 import MobileMainFilter from './MobileMainFilter';
 import MobileGroupByFilter from './MobileGroupByFilter';
 

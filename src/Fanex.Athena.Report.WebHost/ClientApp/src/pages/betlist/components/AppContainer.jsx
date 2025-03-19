@@ -2,12 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation, useParams } from 'react-router-dom/dist';
 
-import Loader from '@srcRoot/components/Loader';
-import BetListLayout from '@srcRoot/layouts/BetListLayout';
-import useToggleRequest from '@srcRoot/hooks/useToggleRequest';
-import Site from '@srcRoot/lib/site';
-import DataService from '@srcRoot/lib/dataService';
-import BetListHelper from '@srcRoot/helpers/betlistHelper';
+import Loader from '@/components/Loader';
+import BetListLayout from '@/layouts/BetListLayout';
+import useToggleRequest from '@/hooks/useToggleRequest';
+import Site from '@/lib/site';
+import DataService from '@/lib/dataService';
+import BetListHelper from '@/helpers/betlistHelper';
 
 import { ActionCreators } from '../actions';
 import Service from '../common';

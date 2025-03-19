@@ -1,16 +1,16 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import UserGuide from '@srcRoot/components/UserGuide';
-import LangHelper from '@srcRoot/helpers/langHelper';
-import GtagHelper from '@srcRoot/helpers/gtagHelper';
-import CollapsiblePanel from '@srcRoot/components/CollapsiblePanel';
-import useToggleRequest from '@srcRoot/hooks/useToggleRequest';
-import DataService from '@srcRoot/lib/dataService';
+import UserGuide from '@/components/UserGuide';
+import LangHelper from '@/helpers/langHelper';
+import GtagHelper from '@/helpers/gtagHelper';
+import CollapsiblePanel from '@/components/CollapsiblePanel';
+import useToggleRequest from '@/hooks/useToggleRequest';
+import DataService from '@/lib/dataService';
 
 import { ActionCreators } from '../actions/index';
 import Constants from '../constants';
-import { SETTLED_MATCH_COUNT, USER_GUIDE } from '@srcRoot/constants/pages';
+import { SETTLED_MATCH_COUNT, USER_GUIDE } from '@/constants/pages';
 
 const FormFilter = (props) => {
     const dispatch = useDispatch();

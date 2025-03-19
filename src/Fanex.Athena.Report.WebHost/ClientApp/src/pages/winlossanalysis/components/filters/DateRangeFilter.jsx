@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import { DateRange } from '@legion-lib/react-daterangepicker';
 
-import LangHelper from '@srcRoot/helpers/langHelper';
+import LangHelper from '@/helpers/langHelper';
 import { DateConstraint } from '../../common/dateSetting';
 import { DefaultState, ViewInTimeMode } from '../../common/constants';
 

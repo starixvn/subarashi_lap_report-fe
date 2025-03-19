@@ -2,8 +2,8 @@ import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import { Cell } from '@legion-lib/react-grid';
 
-import NumberFormat from '@srcRoot/lib/numberFormat';
-import CompositeRow from '@srcRoot/components/mobile-component/CompositeRow';
+import NumberFormat from '@/lib/numberFormat';
+import CompositeRow from '@/components/mobile-component/CompositeRow';
 
 import useRenderRowOption from '../hooks/useRenderRowOption';
 import { HeaderText, MobileGroupByHeaderDisplayType } from '../../common/constants';

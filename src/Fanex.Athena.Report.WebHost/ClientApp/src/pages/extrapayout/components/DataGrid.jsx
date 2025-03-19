@@ -5,11 +5,11 @@ import ActionCreators from '../actions';
 import { Table } from '@legion-lib/react-grid';
 import { Breadcrumb } from '@legion-lib/react-breadcrumb';
 
-import NoDataTitle from '@srcRoot/components/NoDataTitle';
-import ReportTitle from '@srcRoot/components/ReportTitle';
-import Popup from '@srcRoot/components/Popup';
-import LangHelper from '@srcRoot/helpers/langHelper';
-import DataService from '@srcRoot/lib/dataService';
+import NoDataTitle from '@/components/NoDataTitle';
+import ReportTitle from '@/components/ReportTitle';
+import Popup from '@/components/Popup';
+import LangHelper from '@/helpers/langHelper';
+import DataService from '@/lib/dataService';
 
 import { renderHeader, renderDataSection, renderFooter } from '../common/gridUtils';
 import { ApiUrl, ReportLevel, BreadcrumbText, DefaultPagingOption } from '../common/constants';

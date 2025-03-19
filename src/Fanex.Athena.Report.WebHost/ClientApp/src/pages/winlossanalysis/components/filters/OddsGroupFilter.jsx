@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
 
 import MultipleSelect from '@legion-lib/react-multiselect';
-import LangHelper from '@srcRoot/helpers/langHelper';
+import LangHelper from '@/helpers/langHelper';
 
 export const OddsGroupFilter = (props) => {
     const formData = useSelector((state) => state.formData);

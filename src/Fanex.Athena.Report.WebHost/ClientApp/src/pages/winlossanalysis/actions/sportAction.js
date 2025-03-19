@@ -1,7 +1,7 @@
-import DataService from '@srcRoot/lib/dataService';
+import DataService from '@/lib/dataService';
 import Service from '../common/Service';
 import * as types from './types';
-import ObjectHelper from '@srcRoot/lib/objectHelper';
+import ObjectHelper from '@/lib/objectHelper';
 
 export const setSelectedSport = (sportId) => {
     return {

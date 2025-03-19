@@ -1,7 +1,7 @@
-﻿import LangHelper from '@srcRoot/helpers/langHelper';
-import Site from '@srcRoot/lib/site';
-import Report from '@srcRoot/lib/report';
-import {ALL_SELECTED_TEXT} from './constants'
+﻿import LangHelper from '@/helpers/langHelper';
+import Site from '@/lib/site';
+import Report from '@/lib/report';
+import { ALL_SELECTED_TEXT } from './constants'
 
 export default class Service {
     static getTitle(fromDate, toDate, currency, baseCurrency, username) {

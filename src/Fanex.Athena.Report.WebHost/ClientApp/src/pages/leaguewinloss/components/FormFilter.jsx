@@ -5,25 +5,25 @@ import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import ReportSelect from '@srcRoot//components/ReportSelect';
-import CheckBox from '@srcRoot/components/CheckBox';
-import CollapsiblePanel from '@srcRoot/components/CollapsiblePanel';
-import SubmitButton from '@srcRoot/components/SubmitButton';
-import AutoComplete from '@srcRoot/components/auto-complete';
-import { DEFAULT_BASE_CURRENCY_VALUE } from '@srcRoot/constants/config';
-import { LEAGUE_WL } from '@srcRoot/constants/pages';
-import LangHelper from '@srcRoot/helpers/langHelper';
-import DataService from '@srcRoot/lib/dataService';
-import Site from '@srcRoot/lib/site';
+import ReportSelect from '@//components/ReportSelect';
+import CheckBox from '@/components/CheckBox';
+import CollapsiblePanel from '@/components/CollapsiblePanel';
+import SubmitButton from '@/components/SubmitButton';
+import AutoComplete from '@/components/auto-complete';
+import { DEFAULT_BASE_CURRENCY_VALUE } from '@/constants/config';
+import { LEAGUE_WL } from '@/constants/pages';
+import LangHelper from '@/helpers/langHelper';
+import DataService from '@/lib/dataService';
+import Site from '@/lib/site';
 
-import ExportExcel from '@srcRoot/components/ExportExcel';
+import ExportExcel from '@/components/ExportExcel';
 import ActionCreators from '../actions';
 import { ApiUrl, ReportLevel } from '../common/constants';
 import { DateConstraint } from '../common/dateSetting';
 import Service from '../common/service';
 
 import { TreeViewSelect } from '@legion-lib/react-multiselect';
-import { TreeViewOption } from '@srcRoot/constants/report';
+import { TreeViewOption } from '@/constants/report';
 
 export const FormFilter = (props) => {
     const [isGroupInOriginalCurrency, setGroupInOriginalCurrency] = useState(true);

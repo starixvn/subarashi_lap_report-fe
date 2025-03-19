@@ -1,7 +1,7 @@
 import * as types from './types';
-import DataService from '@srcRoot/lib/dataService';
-import LangHelper from '@srcRoot/helpers/langHelper';
-import { toggleLoader } from '@srcRoot/actions/loaderAction';
+import DataService from '@/lib/dataService';
+import LangHelper from '@/helpers/langHelper';
+import { toggleLoader } from '@/actions/loaderAction';
 
 const getReportData = (url, params) => {
     return (dispatch) => {

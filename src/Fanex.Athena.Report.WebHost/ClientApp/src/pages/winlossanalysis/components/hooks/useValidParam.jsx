@@ -1,6 +1,6 @@
 import { shallowEqual, useSelector } from 'react-redux';
 import { ViewInTimeMode } from '../../common/constants'
-import useSubsidiarySearch from '@srcRoot/hooks/useSubsidiarySearch'
+import useSubsidiarySearch from '@/hooks/useSubsidiarySearch'
 
 export const useValidParam = () => {
     const [

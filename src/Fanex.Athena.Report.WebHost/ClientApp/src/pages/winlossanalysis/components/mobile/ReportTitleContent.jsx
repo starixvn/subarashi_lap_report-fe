@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import ExcelPopUp from '../ExcelPopUp.jsx';
 import { useElementSize } from 'usehooks-ts';
-import Overlay from '@srcRoot/components/Overlay.jsx';
+import Overlay from '@/components/Overlay.jsx';
 
 export const ReportTitleContent = () => {
     const reportTitle = useSelector((state) => state.reportTitle);

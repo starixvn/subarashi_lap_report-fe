@@ -1,5 +1,5 @@
-import { decode } from '@srcRoot/lib/htmlHelper';
-import LangHelper from '@srcRoot/helpers/langHelper';
+import { decode } from '@/lib/htmlHelper';
+import LangHelper from '@/helpers/langHelper';
 
 export const SupportTaskOptions = [
     { value: 1, label: decode(LangHelper.getSingleResource('GetAllCustomersHavingPositiveClosingBalance')) },

@@ -1,4 +1,4 @@
-import NumberFormat from '@srcRoot/lib/numberFormat';
+import NumberFormat from '@/lib/numberFormat';
 import { SortKeys } from './filter';
 
 export default class Service {

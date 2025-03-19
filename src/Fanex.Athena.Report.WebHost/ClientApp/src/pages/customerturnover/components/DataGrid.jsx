@@ -2,11 +2,11 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Table } from '@legion-lib/react-grid';
 
-import DataService from '@srcRoot/lib/dataService';
-import useToggleRequest from '@srcRoot/hooks/useToggleRequest';
+import DataService from '@/lib/dataService';
+import useToggleRequest from '@/hooks/useToggleRequest';
 
-import ReportTitle from '@srcRoot/components/ReportTitle';
-import NoDataTitle from '@srcRoot/components/NoDataTitle';
+import ReportTitle from '@/components/ReportTitle';
+import NoDataTitle from '@/components/NoDataTitle';
 
 import Service, { constants } from '../common';
 import { BuildBody, BuildFooter, BuildHeaders } from '../gridBuilder';

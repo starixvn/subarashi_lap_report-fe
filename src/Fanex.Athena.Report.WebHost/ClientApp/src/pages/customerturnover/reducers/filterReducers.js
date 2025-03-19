@@ -1,4 +1,4 @@
-import createReducer from '@srcRoot/lib/createReducer';
+import createReducer from '@/lib/createReducer';
 import * as types from '../actions/types';
 
 export const reportBy = createReducer(null, {

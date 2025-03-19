@@ -1,7 +1,7 @@
 import { batch, useDispatch, useSelector } from 'react-redux';
 import { ActionCreators } from '../../actions/index.js';
-import LangHelper from '@srcRoot/helpers/langHelper';
-import useSubsidiarySearch from '@srcRoot/hooks/useSubsidiarySearch';
+import LangHelper from '@/helpers/langHelper';
+import useSubsidiarySearch from '@/hooks/useSubsidiarySearch';
 import Service from '../../common/Service';
 import { useCallback } from 'react';
 import { ProductCode, CashOutMode, ViewInTimeMode } from '../../common/constants.js';

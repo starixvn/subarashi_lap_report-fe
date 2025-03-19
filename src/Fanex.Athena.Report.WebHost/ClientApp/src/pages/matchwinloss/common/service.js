@@ -1,4 +1,4 @@
-import LangHelper from '@srcRoot/helpers/langHelper';
+import LangHelper from '@/helpers/langHelper';
 import { SpecialProducts, MaxLength, VsSportTypes, SupportDrillDownProducts } from './apiSettings';
 
 class Service {
@@ -53,21 +53,21 @@ class Service {
         return gridData;
     }
 
-    static getMatchName(match){
+    static getMatchName(match) {
         let matchName = match.matchName;
         let homeName = match.homeName;
         let awayName = match.awayName;
-        if(SpecialProducts.includes(match.productName)){
-            if(matchName.length >  MaxLength){
-                matchName =  `<span title='${matchName.replace(",", "&#39;")}'>${matchName.substring(0, MaxLength - 3)}...</span>`
+        if (SpecialProducts.includes(match.productName)) {
+            if (matchName.length > MaxLength) {
+                matchName = `<span title='${matchName.replace(",", "&#39;")}'>${matchName.substring(0, MaxLength - 3)}...</span>`
             }
         }
-        else if(!VsSportTypes.includes(match.sportType)){
-            if(homeName.length > MaxLength){
+        else if (!VsSportTypes.includes(match.sportType)) {
+            if (homeName.length > MaxLength) {
                 homeName = `<span title='${homeName.replace(",", "&#39;")}'>${homeName.substring(0, MaxLength - 3)}...</span>`
             }
 
-            if(awayName.length > MaxLength){
+            if (awayName.length > MaxLength) {
                 awayName = `<span title='${awayName.replace(",", "&#39;")}'>${awayName.substring(0, MaxLength - 3)}...</span>`
             }
 

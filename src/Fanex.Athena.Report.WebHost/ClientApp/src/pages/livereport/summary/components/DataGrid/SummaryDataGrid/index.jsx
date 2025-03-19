@@ -1,10 +1,10 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { LiveReportTable } from '../../../gridUltility';
-import LangHelper from '@srcRoot/helpers/langHelper';
+import LangHelper from '@/helpers/langHelper';
 import { BuildSummaryBody, BuildSummaryFooter, BuildSummaryHeaders } from './GridBuilder';
-import useToggleRequest from '@srcRoot/hooks/useToggleRequest';
-import DataService from '@srcRoot/lib/dataService';
+import useToggleRequest from '@/hooks/useToggleRequest';
+import DataService from '@/lib/dataService';
 import { constants } from '../../../common';
 import { ActionCreators } from '../../../actions';
 import currency from 'currency.js';

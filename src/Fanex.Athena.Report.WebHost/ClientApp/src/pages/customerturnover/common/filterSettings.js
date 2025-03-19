@@ -1,5 +1,5 @@
-import LangHelper from '@srcRoot/helpers/langHelper';
-import * as ReportConstant from '@srcRoot/constants/report';
+import LangHelper from '@/helpers/langHelper';
+import * as ReportConstant from '@/constants/report';
 
 export const ReportByValue = {
     Monthly: 2,

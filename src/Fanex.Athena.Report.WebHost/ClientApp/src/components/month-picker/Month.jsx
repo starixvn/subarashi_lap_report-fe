@@ -1,8 +1,8 @@
 ﻿import React, { useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
 
-import Overlay from '../Overlay';
-import LangHelper from '@srcRoot/helpers/langHelper';
+import Overlay from '@/components/Overlay';
+import LangHelper from '@/helpers/langHelper';
 
 const Month = ({ id, label, value, min, max, onChange }) => {
     const shortMonths = LangHelper.getResources(['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']);

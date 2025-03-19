@@ -1,5 +1,5 @@
 import React from 'react';
-import langHelper from '@srcRoot/helpers/langHelper';
+import langHelper from '@/helpers/langHelper';
 
 const NoDataTitle = ({ title }) => {
     return <p className="no-info-row center-align" dangerouslySetInnerHTML={{ __html: title ? title : langHelper.getSingleResource('NoInfo') }}></p>;

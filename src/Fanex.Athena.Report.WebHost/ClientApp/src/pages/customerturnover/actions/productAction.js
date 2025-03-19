@@ -1,4 +1,4 @@
-import * as productAction from '@srcRoot/actions/productAction';
+import * as productAction from '@/actions/productAction';
 import * as bettypeAction from './bettypeAction';
 import { CHILD_ID_PREFIX } from '../common/filterSettings';
 
