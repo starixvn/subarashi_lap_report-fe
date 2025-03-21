@@ -819,4 +819,10 @@
   <data name="Based" xml:space="preserve">
     <value>基于</value>
   </data>
+  <data name="SubsidiaryWL" xml:space="preserve">
+    <value>子网站输赢</value>
+  </data>
+  <data name="SubsidiaryPerformance" xml:space="preserve">   
+    <value>子网站综合报表</value>
+  </data>
 </root>

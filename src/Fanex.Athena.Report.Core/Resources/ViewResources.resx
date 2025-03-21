@@ -935,4 +935,13 @@
   <data name="Based" xml:space="preserve">
     <value>Based</value>
   </data>
+  <data name="SeparateSabaWinLoss" xml:space="preserve">
+    <value>Separate Saba Virtual Sports from Sportsbook</value>
+  </data>
+  <data name="SubsidiaryPerformance" xml:space="preserve">
+    <value>Subsidiary Performance</value>
+  </data>
+  <data name="SubsidiaryWL" xml:space="preserve">
+    <value>Subsidiary W/L</value>
+  </data>
 </root>

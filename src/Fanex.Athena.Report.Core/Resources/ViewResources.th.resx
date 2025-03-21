@@ -885,4 +885,13 @@
   <data name="LicenseeWinLoss" xml:space="preserve">
     <value>ผู้ได้รับอนุญาต แพ้ชนะ</value>
   </data>
+  <data name="SeparateSabaWinLoss" xml:space="preserve">     
+    <value>แยก Sabaกีฬาเสมือนจริงออกจากสปอร์ตบุ๊ค</value>    
+  </data>
+  <data name="SubsidiaryWL" xml:space="preserve">
+    <value>บริษัทย่อย แพ้ชนะ</value>
+  </data>
+  <data name="SubsidiaryPerformance" xml:space="preserve">   
+    <value>ผลการดำเนินงานของบริษัทย่อย</value>
+  </data>
 </root>

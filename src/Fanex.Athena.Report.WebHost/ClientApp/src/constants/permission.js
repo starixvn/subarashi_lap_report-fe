@@ -14,6 +14,8 @@ export const WL_BY_TIME_ZONE = 'LicenseeWinLossByTimeZone76';
 
 export const WL_ANALYSIS = 'WinlossAnalysis';
 
+export const SUBSIDIARY_PERFORMANCE = 'SubsidiaryPerformance73';
+
 export const MATCH_WL = 'MatchWinLoss31';
 
 export const LIVE_REPORT = 'LiveReport38';
