@@ -777,6 +777,27 @@
   <data name="WinlossAnalysis_SettlementTimeModeNote" xml:space="preserve">
     <value>结算时间模式的资料使用票券结算时之汇率换算，资料可能与原报表根据赛事结束日期之汇率计算有些许落差。</value>
   </data>
+  <data name="TimeZone" xml:space="preserve">    
+    <value>时区</value>
+  </data>
+  <data name="IncludeDrawData" xml:space="preserve">
+    <value>包含和局资料</value>
+  </data>
+  <data name="CustomerComm" xml:space="preserve">
+    <value>会员佣金</value>
+  </data>
+  <data name="LicenseeNetWL" xml:space="preserve">
+    <value>承租公司净输赢</value>
+  </data>
+  <data name="LicenseeWL" xml:space="preserve">
+    <value>承租公司輸贏</value>
+  </data>
+    <data name="WinLossByTimeZone" xml:space="preserve">
+    <value>投注时区输赢</value>
+  </data>
+  <data name="LicenseeWinLoss" xml:space="preserve">
+    <value>承租公司輸贏</value>
+  </data>
   <data name="WinlossAnalysis_SettlementTimeModeNote2" xml:space="preserve">
     <value>结算模式仅支援查询10/01/2024后的资料。</value>
   </data>

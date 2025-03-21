@@ -1,5 +1,6 @@
 import * as permission from '../constants/permission';
 import * as pages from '../constants/pages';
+import * as pageName from '../constants/pageName';
 import * as paths from '../constants/path';
 
 import AppLayout from '../layouts/AppLayout';
@@ -16,6 +17,7 @@ import BetListRoute from './BetListRoute';
 import LiveReportRoute from './LiveReportRoute';
 import CustomerTurnoverRoute from './CustomerTurnoverRoute';
 import TurnoverRoute from './TurnoverRoute';
+import LicenseeWinLossByTimeZoneRoute from './WinLossByTimeZone';
 
 export default [
     {
@@ -59,6 +61,14 @@ export default [
         Permissions: [permission.LEAGUE_WL],
         Layout: AppLayout,
         Component: LeagueWinLossRoute,
+    },
+    {
+        Id: pages.WL_BY_TIME_ZONE,
+        PageName: pageName.LICENSEE_WIN_LOSS,
+        Path: 'LicenseeWinLossByTimeZoneReport/*',
+        Permissions: [permission.WL_BY_TIME_ZONE],
+        Layout: AppLayout,
+        Component: LicenseeWinLossByTimeZoneRoute,
     },
     {
         Id: pages.WL_ANALYSIS,

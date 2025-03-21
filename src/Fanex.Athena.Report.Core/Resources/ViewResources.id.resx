@@ -855,4 +855,25 @@
   <data name="Based" xml:space="preserve">
     <value>Berdasarkan</value>
   </data>
+  <data name="TimeZone" xml:space="preserve">    
+    <value>Zona Waktu</value>
+  </data>
+  <data name="IncludeDrawData" xml:space="preserve">
+    <value>Sertakan data Undian</value>
+  </data>
+  <data name="CustomerComm" xml:space="preserve">
+    <value>Komisi Pelanggan</value>
+  </data>
+  <data name="LicenseeNetWL" xml:space="preserve">
+    <value>Pemegang Lisensi Net WL</value>
+  </data>
+  <data name="LicenseeWL" xml:space="preserve">
+    <value>Pemegang Lisensi WL</value>
+  </data>
+  <data name="WinLossByTimeZone" xml:space="preserve">
+    <value>Kemenangan/Kerugian berdasarkan Zona Waktu</value>
+  </data>
+  <data name="LicenseeWinLoss" xml:space="preserve">
+    <value>Kemenangan dan Kerugian Lisensi</value>
+  </data>
 </root>

@@ -864,4 +864,25 @@
   <data name="Based" xml:space="preserve">
     <value>หลัก</value>
   </data>
+  <data name="TimeZone" xml:space="preserve">    
+    <value>เขตเวลา</value>
+  </data>
+  <data name="IncludeDrawData" xml:space="preserve">
+    <value>รวมข้อมูลเสมอ</value>
+  </data>
+  <data name="CustomerComm" xml:space="preserve">
+    <value>ค่าคอมมิชชั่นลูกค้า</value>
+  </data>
+  <data name="LicenseeNetWL" xml:space="preserve">
+    <value>ผู้ได้รับอนุญาต แพ้ชนะสุทธิ</value>
+  </data>
+  <data name="LicenseeWL" xml:space="preserve">
+    <value>ผู้ได้รับอนุญาต แพ้ชนะ</value>
+  </data>
+    <data name="WinLossByTimeZone" xml:space="preserve">
+    <value>แพ้ชนะตามเขตเวลา</value>
+  </data>
+  <data name="LicenseeWinLoss" xml:space="preserve">
+    <value>ผู้ได้รับอนุญาต แพ้ชนะ</value>
+  </data>
 </root>
