@@ -2,7 +2,7 @@ import React from 'react';
 import { Cell, Row } from '@legion-lib/react-grid';
 
 import ReportLink from '../customGrid/ReportLink';
-import { ReportLevel } from '@/constants/report';
+import { ReportLevel, SubsidiaryViewType } from '@/constants/report';
 import CommonCells from './CommonCells';
 
 export const BuildBody = (data, { drillDownLevel, ...options }) => {
@@ -29,7 +29,7 @@ const BuildDetailBody = (data) => {
     return rows;
 };
 
-const BuildMainBody = (data, { isMasterView }) => {
+const BuildMainBody = (data, { viewType }) => {
     let rows = [];
     let key = 0;
 
@@ -50,7 +50,7 @@ const BuildMainBody = (data, { isMasterView }) => {
 
                     rows.push(
                         <Row key={key}>
-                            {isMasterView && cur === 0 && pro === 0 && sub === 0 && (
+                            {viewType === SubsidiaryViewType.MASTER_MANAGEMENT && cur === 0 && pro === 0 && sub === 0 && (
                                 <Cell title={subData.whiteLabel} rowSpan={subData.totalItem}>
                                     {subData.whiteLabel}
                                 </Cell>

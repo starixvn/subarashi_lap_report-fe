@@ -879,7 +879,7 @@
   <data name="LicenseeWL" xml:space="preserve">
     <value>ผู้ได้รับอนุญาต แพ้ชนะ</value>
   </data>
-    <data name="WinLossByTimeZone" xml:space="preserve">
+  <data name="WinLossByTimeZone" xml:space="preserve">
     <value>แพ้ชนะตามเขตเวลา</value>
   </data>
   <data name="LicenseeWinLoss" xml:space="preserve">

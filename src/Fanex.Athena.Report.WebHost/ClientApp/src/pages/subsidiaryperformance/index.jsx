@@ -2,7 +2,7 @@
 import { Provider } from 'react-redux';
 
 // import styles
-import '@/styles/pages/sabavirtualsportswinloss.scss';
+import '@/styles/pages/subsidiaryperformance.scss';
 
 import Store from '@/lib/store';
 import AppContainer from './components/AppContainer';

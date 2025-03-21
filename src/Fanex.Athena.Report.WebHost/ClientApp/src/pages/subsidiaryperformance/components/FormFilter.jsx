@@ -8,10 +8,10 @@ import Site from '@/lib/site';
 import DataService from '@/lib/dataService';
 import LangHelper from '@/helpers/langHelper';
 import { ReportLevel, SubsidiaryViewType, TreeViewOption } from '@/constants/report';
-import ReportSelect from '@/components/ReportSelect.jsx';
-import CollapsiblePanel from '@/components/CollapsiblePanel.jsx';
-import { ReportLevel, SubsidiaryViewType } from '@/constants/report';
-import useToggleRequest from '@/hooks/useToggleRequest.js';
+import ReportSelect from '@/components/ReportSelect';
+import CollapsiblePanel from '@/components/CollapsiblePanel';
+import CheckBox from '@/components/CheckBox';
+import useToggleRequest from '@/hooks/useToggleRequest';
 
 import ExportExcel from '@/components/ExportExcel';
 import actions from '../actions/index';

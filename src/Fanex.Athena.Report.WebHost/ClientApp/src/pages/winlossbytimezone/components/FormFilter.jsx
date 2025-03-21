@@ -1,17 +1,16 @@
 ﻿import React from 'react';
-import { bindActionCreators } from 'redux';
-import { connect, useDispatch, useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import MultipleSelect from '@legion-lib/react-multiselect';
 import { DateRange } from '@legion-lib/react-daterangepicker';
 
 import Site from '@/lib/site';
 import LangHelper from '@/helpers/langHelper';
 import UserGuide from '@/components/UserGuide';
-import ReportSelect from '@/components/ReportSelect.jsx';
-import CollapsiblePanel from '@/components/CollapsiblePanel.jsx';
-import useToggleRequest from '@/hooks/useToggleRequest.js';
-import DataService from '@/lib/dataService.js';
-import { USER_GUIDE, WL_BY_TIME_ZONE } from '@/constants/pages.js';
+import ReportSelect from '@/components/ReportSelect';
+import CollapsiblePanel from '@/components/CollapsiblePanel';
+import useToggleRequest from '@/hooks/useToggleRequest';
+import DataService from '@/lib/dataService';
+import { USER_GUIDE, WL_BY_TIME_ZONE } from '@/constants/pages';
 
 import { ReportBy, SettingConst, TimeZones, ApiUrl, DateConstraint } from '../constants';
 import { ActionCreators } from '../actions/index';
@@ -30,7 +29,7 @@ const FormFilter = (props) => {
     const selectedReportBy = useSelector((state) => state.selectedReportBy);
     const groupBy = useSelector((state) => state.groupBy);
     const isExcludeTest = useSelector((state) => state.isExcludeTest);
-
+    const baseCurrencyList = useSelector((state) => state.baseCurrencyList);
     const formData = useSelector((state) => state.formData);
 
     const {
@@ -133,6 +132,7 @@ const FormFilter = (props) => {
             const defaultCurrency = formData.baseCurrencies.find((x) => x.value === -1);
             dispatch(setSelectedBaseCurrency({ ...defaultCurrency }));
             dispatch(setSelectedCurrency(currency));
+            dispatch(setBaseCurrencyList([...formData.baseCurrencies]));
             return;
         }
 
@@ -141,6 +141,8 @@ const FormFilter = (props) => {
             const newBaseCurrencyList = formData.baseCurrencies.slice(0);
             newBaseCurrencyList.push(currency);
             dispatch(setBaseCurrencyList(newBaseCurrencyList));
+        } else {
+            dispatch(setBaseCurrencyList([...formData.baseCurrencies]));
         }
 
         dispatch(setSelectedCurrency(currency));
@@ -153,9 +155,7 @@ const FormFilter = (props) => {
         }
     };
 
-    const onExportExcel = (event) => {
-        event.preventDefault();
-
+    const onExportExcel = () => {
         const params = getParams();
         if (!params) {
             return;
@@ -202,6 +202,7 @@ const FormFilter = (props) => {
                             today={DateConstraint.today}
                             limitedMonthRange={DateConstraint.limitedMonthRange}
                             onChange={applyDateRangeHandler}
+                            langHandler={(key) => LangHelper.getDateRangeResource(key)}
                         />
                     </div>
                 </div>
@@ -242,7 +243,7 @@ const FormFilter = (props) => {
                             instanceId="ddlBased"
                             value={selectedBaseCurrency}
                             defaultValue={selectedBaseCurrency}
-                            options={formData.baseCurrencies}
+                            options={baseCurrencyList}
                             onChange={onChangeBaseCurrency}
                         />
                     </div>

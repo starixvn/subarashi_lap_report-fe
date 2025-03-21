@@ -19,7 +19,7 @@ export const BreadcrumbItems = [
 
 export const HeaderText = {
     Index: '#',
-    WhiteLabel: LangHelper.getSingleResource('Whitelabel'),
+    WhiteLabel: LangHelper.getSingleResource('WhiteLabel'),
     Subsidiary: LangHelper.getSingleResource('Subsidiary'),
     CurrencyName: LangHelper.getSingleResource('Currency'),
     Product: LangHelper.getSingleResource('Product'),

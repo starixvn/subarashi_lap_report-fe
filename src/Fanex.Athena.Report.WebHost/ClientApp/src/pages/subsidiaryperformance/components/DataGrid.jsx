@@ -36,7 +36,7 @@ const DataGrid = () => {
     const options = {
         drillDownLevel: requestParam.DrillDownLevel,
         baseCurrency: requestParam.BaseCurrency,
-        viewType: formData.ViewType,
+        viewType: formData.viewType,
     };
 
     const footerData = {

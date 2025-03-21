@@ -792,7 +792,7 @@
   <data name="LicenseeWL" xml:space="preserve">
     <value>承租公司輸贏</value>
   </data>
-    <data name="WinLossByTimeZone" xml:space="preserve">
+  <data name="WinLossByTimeZone" xml:space="preserve">
     <value>投注时区输赢</value>
   </data>
   <data name="LicenseeWinLoss" xml:space="preserve">

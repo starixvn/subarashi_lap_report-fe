@@ -79,13 +79,13 @@ export default [
         Component: WinLossAnalysisRoute,
     },
     {
-    },
-    {
         Id: pages.SUBSIDIARY_PERFORMANCE,
         Path: 'SubsidiaryPerformanceReport/*',
         Permissions: [permission.SUBSIDIARY_PERFORMANCE],
         Layout: AppLayout,
         Component: SubsidiaryPerformanceRoute,
+    },
+    {
         Id: pages.MATCH_WL,
         Path: 'MatchWinLossReport/*',
         Permissions: [permission.MATCH_WL],
