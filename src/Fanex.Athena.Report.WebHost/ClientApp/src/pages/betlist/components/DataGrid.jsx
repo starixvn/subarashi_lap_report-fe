@@ -57,20 +57,19 @@ const DataGrid = (props) => {
     };
 
     const getData = (params) => {
-        sendRequest(() => fetchBetListGridData(formData.url, params), updateGridData);
-    };
-
-    const fetchBetListGridData = async (url, params) => {
-        const response = await DataService.getBetListData(url, params);
-        const data = BetListHelper.loadBetListDataGrid(response.data, formData.isServerPaging);
-
         dispatch(setRequestParam(params));
-
-        return data;
+        sendRequest(() => DataService.getBetListData(formData.url, params), updateGridData);
     };
 
-    const updateGridData = (data) => {
-        dispatch(setGridData(data));
+    const updateGridData = (result) => {
+        if (!result || !result.data) {
+            dispatch(setFormData(null));
+
+            return;
+        }
+        let { data } = result.data;
+        if (!data) data = result.data; // use parent data instead of null children
+        dispatch(setGridData(BetListHelper.loadBetListDataGrid(data, formData.isServerPaging)));
     };
 
     const getHeaderName = (column) => {
