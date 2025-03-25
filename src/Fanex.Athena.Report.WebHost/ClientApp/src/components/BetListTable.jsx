@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Table, HeaderCell, HeaderRow, Row, Cell } from '@legion-lib/react-grid';
 import PropTypes from 'prop-types';
-// TODO: Tooltips
+
 const BetListTable = (props) => {
     useEffect(() => {
         props.afterLoad && props.afterLoad();
