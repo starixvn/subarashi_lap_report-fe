@@ -2,7 +2,7 @@ export default {
     PageSize: 50,
     DefaultPageSize: 50,
     PageList: [50, 100, 200, 300, 400, 500, 1000, 2000],
-    SortableColumns: ['ExternalId', 'SystemId', 'Stake', 'WinLoss', 'LicenseeWL'],
+    SortableColumns: ['Stake', 'WinLoss', 'LicenseeWL'],
     TotalColumns: ['WinLoss', 'LicenseeWL'],
     Columns: ['Index', 'ExternalId', 'SystemId', 'TransTime', 'Choice', 'Odds', 'Stake', 'WinLoss', 'LicenseeWL', 'Status'],
     ColumnWidths: [40, 120, 120, 200, 300, 70, 120, 120, 120, 120],
