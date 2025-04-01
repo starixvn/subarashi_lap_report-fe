@@ -118,7 +118,7 @@ const FormFilter = (props) => {
         if (isValidMonthRange) {
             dispatch(setDateRange(date));
         } else {
-            const message = LangHelper.getSingleResource('DateRangeExceedMsg').replace('{0}', RANGE_MONTH_CONSTRAINT);
+            const message = LangHelper.getSingleResource('DateRangeExceedMsg').replace('{0}', DateConstraint.limitedMonthRange);
             alert(message);
         }
     };

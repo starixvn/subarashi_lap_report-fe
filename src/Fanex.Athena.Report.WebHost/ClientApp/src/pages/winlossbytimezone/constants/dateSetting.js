@@ -5,7 +5,7 @@ const now = moment().utc().add(-4, 'h');
 
 export const DateConstraint = {
     minDate: '6/1/2012',
-    maxDate: now.format('MM/DD/yyyy'),
+    maxDate: now.clone().add(1, 'd').format('MM/DD/yyyy'),
     today: now.format('MM/DD/yyyy'),
     limitedMonthRange: 3,
     firstDayOfWeek: WeekDays.Sunday,
