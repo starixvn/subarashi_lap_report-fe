@@ -11,6 +11,9 @@ const getMatchUrl = (sportId) => {
     switch (sportId) {
         case 177:
         case 198:
+        case 125:
+        case 126:
+        case 127:
             return constants.BetListPageUrl.VSNEWRACING;
         default:
             return constants.BetListPageUrl.MATCH;
