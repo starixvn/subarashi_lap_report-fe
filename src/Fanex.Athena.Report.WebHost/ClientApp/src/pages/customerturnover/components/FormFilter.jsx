@@ -354,17 +354,6 @@ const FormFilter = (props) => {
                     </div>
                 </div>
             </div>
-            {formData.isAllowSLT && (
-                <div className="row">
-                    <div className="col-12 col-lg-12 col-md-12 col-sm-12">
-                        <div className="form-group">
-                            <ul className="list result-note">
-                                <li>{LangHelper.getSingleResource('SLTDateRangeNote')}</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            )}
         </CollapsiblePanel>
     );
 };
