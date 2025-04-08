@@ -16,7 +16,7 @@ const MatchWinLossFormFilter = (props) => {
             return;
         }
 
-        processExcel(ApiUrl.EXPORT_EXCEL_URL, requestParam, 'MatchWinLossBetList');
+        processExcel(ApiUrl.EXPORT_EXCEL_URL, requestParam, 'MatchWinLossBetList.xls');
     };
 
     const baseCurrency = formData.baseCurrency ?? requestParam.CurrencyName;

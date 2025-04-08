@@ -1,0 +1,12 @@
+.header-title {
+    &.selected {
+        text-decoration: underline;
+    }
+}
+
+.betlist-popup {
+    .iframe-content {
+        height: 670px;
+        width: 1080px;
+    }
+}

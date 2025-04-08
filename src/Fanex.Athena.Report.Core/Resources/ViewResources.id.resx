@@ -885,4 +885,13 @@
   <data name="SubsidiaryPerformance" xml:space="preserve">   
     <value>Performa Cabang</value>
   </data>
+  <data name="BetCounts" xml:space="preserve">
+    <value>Jumlah Taruhan</value>
+  </data>
+  <data name="Running" xml:space="preserve">
+    <value>Berjalan</value>
+  </data>
+  <data name="CustomerPendingFunds" xml:space="preserve">
+    <value>Dana Tertunda Pelanggan</value>
+  </data>
 </root>

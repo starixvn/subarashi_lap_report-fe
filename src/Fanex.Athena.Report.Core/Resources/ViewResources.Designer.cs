@@ -223,6 +223,15 @@ namespace Fanex.Athena.Report.Core.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Bet Counts.
+        /// </summary>
+        public static string BetCounts {
+            get {
+                return ResourceManager.GetString("BetCounts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Bet ID.
         /// </summary>
         public static string BetId {
@@ -462,6 +471,15 @@ namespace Fanex.Athena.Report.Core.Resources {
         public static string CustomerComm {
             get {
                 return ResourceManager.GetString("CustomerComm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Customer Pending Funds.
+        /// </summary>
+        public static string CustomerPendingFunds {
+            get {
+                return ResourceManager.GetString("CustomerPendingFunds", resourceCulture);
             }
         }
         
@@ -2001,6 +2019,15 @@ namespace Fanex.Athena.Report.Core.Resources {
         public static string RiskLevel {
             get {
                 return ResourceManager.GetString("RiskLevel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Running.
+        /// </summary>
+        public static string Running {
+            get {
+                return ResourceManager.GetString("Running", resourceCulture);
             }
         }
         

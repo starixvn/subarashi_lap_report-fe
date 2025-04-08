@@ -1,8 +1,8 @@
 import React from 'react';
 import { usePageViewEvent } from '@/hooks/gtagEvents';
 
-function RouteLayout({ id, pageName, layout: Layout, component: Component, ...rest }) {
-    usePageViewEvent(pageName ?? id);
+function RouteLayout({ id, layout: Layout, component: Component, ...rest }) {
+    usePageViewEvent(id);
 
     if (!Layout) {
         return <Component />;

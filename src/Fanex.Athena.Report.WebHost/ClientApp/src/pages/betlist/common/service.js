@@ -4,7 +4,7 @@ import { TableSettings } from './constants';
 
 class Service {
     static downloadExcelFile(response, fileName) {
-        Site.downloadFile(response.data, `${fileName}.xls`);
+        Site.downloadFile(response.data, fileName);
     }
 
     static convertToBetListController(controller) {

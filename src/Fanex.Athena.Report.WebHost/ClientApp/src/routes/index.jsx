@@ -1,6 +1,6 @@
+import LangHelper from '../helpers/langHelper';
 import * as permission from '../constants/permission';
 import * as pages from '../constants/pages';
-import * as pageName from '../constants/pageName';
 import * as paths from '../constants/path';
 
 import AppLayout from '../layouts/AppLayout';
@@ -19,6 +19,7 @@ import CustomerTurnoverRoute from './CustomerTurnoverRoute';
 import TurnoverRoute from './TurnoverRoute';
 import LicenseeWinLossByTimeZoneRoute from './WinLossByTimeZone';
 import SubsidiaryPerformanceRoute from './SubsidiaryPerformanceRoute';
+import CustomerPendingFundsRoute from './CustomerPendingFundsRoute';
 
 export default [
     {
@@ -50,6 +51,13 @@ export default [
         Component: CustomerSupportTaskRoute,
     },
     {
+        Id: pages.CUSTOMER_PENDING_FUNDS,
+        Path: 'CustomerPendingFundsReport/*',
+        Permissions: [permission.CUSTOMER_PENDING_FUNDS],
+        Layout: AppLayout,
+        Component: CustomerPendingFundsRoute,
+    },
+    {
         Id: pages.EXTRA_PAYOUT,
         Path: 'ExtraPayoutReport/*',
         Permissions: [permission.EXTRA_PAYOUT],
@@ -65,7 +73,6 @@ export default [
     },
     {
         Id: pages.WL_BY_TIME_ZONE,
-        PageName: pageName.LICENSEE_WIN_LOSS,
         Path: 'LicenseeWinLossByTimeZoneReport/*',
         Permissions: [permission.WL_BY_TIME_ZONE],
         Layout: AppLayout,

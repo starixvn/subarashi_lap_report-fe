@@ -1,0 +1,3 @@
+export const SET_GRID_SETTINGS = 'SET_GRID_SETTINGS';
+
+export const SET_POP_UP_SETTINGS = 'SET_POP_UP_SETTINGS';

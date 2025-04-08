@@ -885,6 +885,15 @@
   <data name="Note" xml:space="preserve">
     <value>Ghi chú</value>
   </data>
+  <data name="BetCounts" xml:space="preserve">
+    <value>Số cược</value>
+  </data>
+  <data name="Running" xml:space="preserve">
+    <value>Đang diễn ra</value>
+  </data>
+  <data name="CustomerPendingFunds" xml:space="preserve">
+    <value>Tiền Chờ Xử Lý Của Khách Hàng</value>
+  </data>
   <data name="Promotion" xml:space="preserve">
     <value>Khuyến mãi</value>
   </data>

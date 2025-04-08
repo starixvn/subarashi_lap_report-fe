@@ -15,7 +15,7 @@ const LiveReportFormFilter = (props) => {
             return;
         }
 
-        processExcel(`${formData.url}ExportExcel`, requestParam, 'LiveReportBetList');
+        processExcel(`${formData.url}ExportExcel`, requestParam, 'LiveReportBetList.xls');
     };
 
     const getReportTitle = (title, fromDate, toDate) => {

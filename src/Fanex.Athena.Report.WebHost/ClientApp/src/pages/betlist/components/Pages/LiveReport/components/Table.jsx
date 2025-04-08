@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector, shallowEqual } from 'react-redux';
 
 import BetListTable from '@/components/BetListTable';
-import tableSettings from '../common/tableSettings';
+import tableSettings from '../constant/tableSettings';
 
 const LiveReportTable = ({ totalRows, ...rest }) => {
     const requestParam = useSelector((state) => state.requestParam);

@@ -14,12 +14,12 @@ const App = () => {
     const router = createBrowserRouter(
         createRoutesFromElements(
             <Route path="/">
-                {RouteConfig.map(({ Id, PageName, Path, Permissions, Layout, Component }) => (
+                {RouteConfig.map(({ Id, PageTitle, Path, Permissions, Layout, Component }) => (
                     <Route
                         id={Id}
                         key={Id}
                         path={Path}
-                        element={<RouteLayout id={Id} pageName={PageName} layout={Layout} component={Component} />}
+                        element={<RouteLayout id={Id} pageName={PageTitle} layout={Layout} component={Component} />}
                         loader={async () => await AuthorizeRequestInfo({ permissions: Permissions })}
                         errorElement={errorBoundary()}
                     />
