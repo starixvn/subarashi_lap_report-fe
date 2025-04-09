@@ -18,6 +18,8 @@ export const WL_ANALYSIS = 'WinlossAnalysis';
 
 export const SUBSIDIARY_PERFORMANCE = 'SubsidiaryPerformance73';
 
+export const SABA_VIRTUAL_WL = 'SabaVirtualSportsWinLoss';
+
 export const MATCH_WL = 'MatchWinLoss31';
 
 export const LIVE_REPORT = 'LiveReport38';

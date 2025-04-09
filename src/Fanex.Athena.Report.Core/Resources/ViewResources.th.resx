@@ -903,4 +903,31 @@
   <data name="CustomerPendingFunds" xml:space="preserve">
     <value>เงินรอดำเนินการของลูกค้า</value>
   </data>
+  <data name="SabaVirtualSportsNote" xml:space="preserve">
+    <value>Saba Virtual Sports ไม่สนับสนุนประเภทการเดิมพัน System Parlay.</value>
+  </data>
+  <data name="Normal" xml:space="preserve">
+    <value>ปกติ</value>
+  </data>
+  <data name="NoDraws" xml:space="preserve">
+    <value>ไม่มีเสมอ</value>
+  </data>
+  <data name="NoDrawsForTurnoverOnly" xml:space="preserve">
+    <value>ไม่มีเสมอ สำหรับเทิร์นโอเวอร์เท่านั้น</value>
+  </data>
+  <data name="SabaVirtualSportsWinLoss" xml:space="preserve">
+    <value>Sabaกีฬาเสมือนจริง แพ้ชนะ</value>
+  </data>
+  <data name="SabaVirtualSport" xml:space="preserve">
+    <value>Sabaกีฬาเสมือนจริง</value>
+  </data>
+  <data name="CashOutCommission" xml:space="preserve">
+    <value>จ่ายค่าคอมมิชชั่น</value>
+  </data>
+  <data name="AllCurrencies" xml:space="preserve">
+    <value>สกุลเงินทั้งหมด</value>
+  </data>
+  <data name="CustomerBetList" xml:space="preserve">
+    <value>รายการเดิมพันของลูกค้า</value>
+  </data>
 </root>

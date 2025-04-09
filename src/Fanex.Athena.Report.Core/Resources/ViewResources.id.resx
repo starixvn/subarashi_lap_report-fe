@@ -894,4 +894,31 @@
   <data name="CustomerPendingFunds" xml:space="preserve">
     <value>Dana Tertunda Pelanggan</value>
   </data>
+  <data name="SabaVirtualSportsNote" xml:space="preserve">
+    <value>Saba Virtual Sports tidak mendukung jenis taruhan System Parlay.</value>
+  </data>
+  <data name="Normal" xml:space="preserve">
+    <value>Normal</value>
+  </data>
+  <data name="NoDraws" xml:space="preserve">
+    <value>Tidak Ada Seri</value>
+  </data>
+  <data name="NoDrawsForTurnoverOnly" xml:space="preserve">
+    <value>Tidak Ada Seri Hanya untuk Omset</value>
+  </data>
+  <data name="SabaVirtualSportsWinLoss" xml:space="preserve">
+    <value>Saba Virtual Sports Win Loss</value>
+  </data>
+  <data name="SabaVirtualSport" xml:space="preserve">
+    <value>Saba Virtual Sports</value>
+  </data>
+  <data name="CashOutCommission" xml:space="preserve">
+    <value>Komisi Penarikan Tunai</value>
+  </data>
+  <data name="AllCurrencies" xml:space="preserve">
+    <value>Semua Mata Uang</value>
+  </data>
+  <data name="CustomerBetList" xml:space="preserve">
+    <value>Daftar Taruhan Pelanggan</value>
+  </data>
 </root>

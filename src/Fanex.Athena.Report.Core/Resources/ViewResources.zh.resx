@@ -834,4 +834,31 @@
   <data name="SubsidiaryPerformance" xml:space="preserve">   
     <value>子网站综合报表</value>
   </data>
+  <data name="SabaVirtualSportsNote" xml:space="preserve">
+    <value>沙巴虚拟体育不支援系统串关。</value>
+  </data>
+  <data name="Normal" xml:space="preserve">
+    <value>正常</value>
+  </data>
+  <data name="NoDraws" xml:space="preserve">
+    <value>没有和局</value>
+  </data>
+  <data name="NoDrawsForTurnoverOnly" xml:space="preserve">
+    <value>只有交易额不包括和局</value>
+  </data>
+  <data name="SabaVirtualSportsWinLoss" xml:space="preserve">
+    <value>沙巴虚拟赛事输赢</value>
+  </data>
+  <data name="SabaVirtualSport" xml:space="preserve">
+    <value>沙巴虚拟赛事</value>
+  </data>
+  <data name="CashOutCommission" xml:space="preserve">
+    <value>即时兑现佣金</value>
+  </data>
+  <data name="AllCurrencies" xml:space="preserve">
+    <value>所有货币</value>
+  </data>
+  <data name="CustomerBetList" xml:space="preserve">
+    <value>会员注单</value>
+  </data>
 </root>

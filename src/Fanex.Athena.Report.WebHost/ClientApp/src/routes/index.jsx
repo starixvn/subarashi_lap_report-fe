@@ -20,6 +20,7 @@ import TurnoverRoute from './TurnoverRoute';
 import LicenseeWinLossByTimeZoneRoute from './WinLossByTimeZone';
 import SubsidiaryPerformanceRoute from './SubsidiaryPerformanceRoute';
 import CustomerPendingFundsRoute from './CustomerPendingFundsRoute';
+import SabaVirtualSportsWinLossRoute from './SabaVirtualSportsWinLossRoute';
 
 export default [
     {
@@ -91,6 +92,13 @@ export default [
         Permissions: [permission.SUBSIDIARY_PERFORMANCE],
         Layout: AppLayout,
         Component: SubsidiaryPerformanceRoute,
+    },
+    {
+        Id: pages.SAPA_VIRTUAL_SPORTS_WL,
+        Path: 'SabaVirtualSportsWinLossReport/*',
+        Permissions: [permission.SABA_VIRTUAL_WL],
+        Layout: AppLayout,
+        Component: SabaVirtualSportsWinLossRoute,
     },
     {
         Id: pages.MATCH_WL,

@@ -953,4 +953,31 @@
   <data name="SubsidiaryWL" xml:space="preserve">
     <value>Subsidiary W/L</value>
   </data>
+  <data name="NoDraws" xml:space="preserve">
+    <value>No Draws</value>
+  </data>
+  <data name="Normal" xml:space="preserve">
+    <value>Normal</value>
+  </data>
+  <data name="SabaVirtualSportsNote" xml:space="preserve">
+    <value>Saba Virtual Sports does not support System Parlay bet type.</value>
+  </data>
+  <data name="SabaVirtualSportsWinLoss" xml:space="preserve">
+    <value>Saba Virtual Sports Win Loss</value>
+  </data>
+  <data name="CashOutCommission" xml:space="preserve">
+    <value>Cash Out Commission</value>
+  </data>
+  <data name="SabaVirtualSport" xml:space="preserve">
+    <value>Saba Virtual Sport</value>
+  </data>
+  <data name="AllCurrencies" xml:space="preserve">
+    <value>All Currencies</value>
+  </data>
+  <data name="CustomerBetList" xml:space="preserve">
+    <value>Customer Bet List</value>
+  </data>
+  <data name="NoDrawsForTurnoverOnly" xml:space="preserve">
+    <value>No Draws For Turnover Only</value>
+  </data>
 </root>

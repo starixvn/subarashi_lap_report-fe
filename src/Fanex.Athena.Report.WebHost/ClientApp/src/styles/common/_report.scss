@@ -55,3 +55,12 @@
     }
 }
 
+.circle {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #f94a4a;
+}
