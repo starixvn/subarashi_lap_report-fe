@@ -311,8 +311,7 @@ export const FormFilter = (props) => {
         return result;
     };
 
-    const exportExcel = (event) => {
-        event.preventDefault();
+    const exportExcel = () => {
         let exportParam = props.requestParam;
 
         if (!exportParam || Site.isEmptyObject(exportParam)) {
@@ -466,7 +465,7 @@ function mapStateToProps(state) {
         selectedStatus,
         userGuideContent,
         username,
-        breadcrumbParams
+        breadcrumbParams,
     } = state;
 
     return Object.assign(
@@ -486,7 +485,7 @@ function mapStateToProps(state) {
             selectedStatus,
             userGuideContent,
             username,
-            breadcrumbParams
+            breadcrumbParams,
         }
     );
 }

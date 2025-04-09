@@ -269,8 +269,7 @@ export const FormFilter = (props) => {
         return result;
     };
 
-    const exportExcel = (event) => {
-        event.preventDefault();
+    const exportExcel = () => {
         let exportParam = props.requestParam;
 
         if (!exportParam || Site.isEmptyObject(exportParam)) {

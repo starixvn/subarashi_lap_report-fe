@@ -18,9 +18,7 @@ import { renderDetailDataSection, renderDetailFooter, renderDetailHeader } from 
 export const Detail = (props) => {
     const { title, data, param, toggleLoader } = props;
 
-    const exportDetailExcel = (event) => {
-        event.preventDefault();
-
+    const exportDetailExcel = () => {
         if (!param) {
             return;
         }
