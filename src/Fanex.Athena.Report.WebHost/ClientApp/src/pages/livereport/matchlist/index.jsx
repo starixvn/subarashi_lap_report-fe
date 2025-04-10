@@ -5,8 +5,8 @@ import AppContainer from './components/AppContainer';
 import reducers from './reducers';
 
 // import styles
-import '@srcRoot/styles/pages/livereportmatchlist.scss';
-import Store from '@srcRoot/lib/store';
+import '@/styles/pages/livereportmatchlist.scss';
+import Store from '@/lib/store';
 
 const LiveReportMatchList = (props) => {
     const store = Store.createStore(reducers, { gridData: null });

@@ -849,4 +849,40 @@
   <data name="Note" xml:space="preserve">
     <value>Catatan</value>
   </data>
+  <data name="Promotion" xml:space="preserve">
+    <value>Promosi</value>
+  </data>
+  <data name="Based" xml:space="preserve">
+    <value>Berdasarkan</value>
+  </data>
+  <data name="TimeZone" xml:space="preserve">    
+    <value>Zona Waktu</value>
+  </data>
+  <data name="IncludeDrawData" xml:space="preserve">
+    <value>Sertakan data Undian</value>
+  </data>
+  <data name="CustomerComm" xml:space="preserve">
+    <value>Komisi Pelanggan</value>
+  </data>
+  <data name="LicenseeNetWL" xml:space="preserve">
+    <value>Pemegang Lisensi Net WL</value>
+  </data>
+  <data name="LicenseeWL" xml:space="preserve">
+    <value>Pemegang Lisensi WL</value>
+  </data>
+  <data name="WinLossByTimeZone" xml:space="preserve">
+    <value>Kemenangan/Kerugian berdasarkan Zona Waktu</value>
+  </data>
+  <data name="LicenseeWinLoss" xml:space="preserve">
+    <value>Kemenangan dan Kerugian Lisensi</value>
+  </data>
+  <data name="SeparateSabaWinLoss" xml:space="preserve">     
+    <value>Pisahkan Saba Virtual Sports dari Sportsbook</value>
+  </data>
+  <data name="SubsidiaryWL" xml:space="preserve">
+    <value>Kemenangan/Kerugian Anak Perusahaan</value>       
+  </data>
+  <data name="SubsidiaryPerformance" xml:space="preserve">   
+    <value>Performa Cabang</value>
+  </data>
 </root>

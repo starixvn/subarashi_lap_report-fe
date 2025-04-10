@@ -205,6 +205,15 @@ namespace Fanex.Athena.Report.Core.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Based.
+        /// </summary>
+        public static string Based {
+            get {
+                return ResourceManager.GetString("Based", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Bet Count.
         /// </summary>
         public static string BetCount {
@@ -444,6 +453,15 @@ namespace Fanex.Athena.Report.Core.Resources {
         public static string CustomerBalance {
             get {
                 return ResourceManager.GetString("CustomerBalance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Customer Comm.
+        /// </summary>
+        public static string CustomerComm {
+            get {
+                return ResourceManager.GetString("CustomerComm", resourceCulture);
             }
         }
         
@@ -817,6 +835,15 @@ namespace Fanex.Athena.Report.Core.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Include Draw Data.
+        /// </summary>
+        public static string IncludeDrawData {
+            get {
+                return ResourceManager.GetString("IncludeDrawData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Display group breakdown in original currency.
         /// </summary>
         public static string IsGroupInOriginalCurrency {
@@ -934,11 +961,38 @@ namespace Fanex.Athena.Report.Core.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Licensee Net WL.
+        /// </summary>
+        public static string LicenseeNetWL {
+            get {
+                return ResourceManager.GetString("LicenseeNetWL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Licensee W/L.
         /// </summary>
         public static string LicenseeW_L {
             get {
                 return ResourceManager.GetString("LicenseeW_L", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Licensee Win Loss.
+        /// </summary>
+        public static string LicenseeWinLoss {
+            get {
+                return ResourceManager.GetString("LicenseeWinLoss", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Licensee WL.
+        /// </summary>
+        public static string LicenseeWL {
+            get {
+                return ResourceManager.GetString("LicenseeWL", resourceCulture);
             }
         }
         
@@ -1879,6 +1933,15 @@ namespace Fanex.Athena.Report.Core.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Promotion.
+        /// </summary>
+        public static string Promotion {
+            get {
+                return ResourceManager.GetString("Promotion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Promotion Details.
         /// </summary>
         public static string PromotionDetails {
@@ -2005,6 +2068,15 @@ namespace Fanex.Athena.Report.Core.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Separate Saba Virtual Sports from Sportsbook.
+        /// </summary>
+        public static string SeparateSabaWinLoss {
+            get {
+                return ResourceManager.GetString("SeparateSabaWinLoss", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to September.
         /// </summary>
         public static string September {
@@ -2104,11 +2176,29 @@ namespace Fanex.Athena.Report.Core.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Subsidiary Performance.
+        /// </summary>
+        public static string SubsidiaryPerformance {
+            get {
+                return ResourceManager.GetString("SubsidiaryPerformance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Subsidiary Search.
         /// </summary>
         public static string SubsidiarySearch {
             get {
                 return ResourceManager.GetString("SubsidiarySearch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Subsidiary W/L.
+        /// </summary>
+        public static string SubsidiaryWL {
+            get {
+                return ResourceManager.GetString("SubsidiaryWL", resourceCulture);
             }
         }
         
@@ -2154,6 +2244,15 @@ namespace Fanex.Athena.Report.Core.Resources {
         public static string TicketFilter {
             get {
                 return ResourceManager.GetString("TicketFilter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Time Zone.
+        /// </summary>
+        public static string TimeZone {
+            get {
+                return ResourceManager.GetString("TimeZone", resourceCulture);
             }
         }
         
@@ -2388,6 +2487,15 @@ namespace Fanex.Athena.Report.Core.Resources {
         public static string WinlossAnalysis_SettlementTimeModeNote2 {
             get {
                 return ResourceManager.GetString("WinlossAnalysis_SettlementTimeModeNote2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Win Loss By Time Zone.
+        /// </summary>
+        public static string WinLossByTimeZone {
+            get {
+                return ResourceManager.GetString("WinLossByTimeZone", resourceCulture);
             }
         }
         

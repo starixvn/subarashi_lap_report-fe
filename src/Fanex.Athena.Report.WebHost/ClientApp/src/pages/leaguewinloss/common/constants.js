@@ -1,5 +1,5 @@
-import LangHelper from '@srcRoot/helpers/langHelper';
-import DataService from '@srcRoot/lib/dataService';
+import LangHelper from '@/helpers/langHelper';
+import DataService from '@/lib/dataService';
 export const DefaultPageSize = 50;
 
 export const ApiUrl = {

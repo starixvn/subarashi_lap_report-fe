@@ -1,5 +1,6 @@
 import * as permission from '../constants/permission';
 import * as pages from '../constants/pages';
+import * as pageName from '../constants/pageName';
 import * as paths from '../constants/path';
 
 import AppLayout from '../layouts/AppLayout';
@@ -16,6 +17,8 @@ import BetListRoute from './BetListRoute';
 import LiveReportRoute from './LiveReportRoute';
 import CustomerTurnoverRoute from './CustomerTurnoverRoute';
 import TurnoverRoute from './TurnoverRoute';
+import LicenseeWinLossByTimeZoneRoute from './WinLossByTimeZone';
+import SubsidiaryPerformanceRoute from './SubsidiaryPerformanceRoute';
 
 export default [
     {
@@ -61,11 +64,26 @@ export default [
         Component: LeagueWinLossRoute,
     },
     {
+        Id: pages.WL_BY_TIME_ZONE,
+        PageName: pageName.LICENSEE_WIN_LOSS,
+        Path: 'LicenseeWinLossByTimeZoneReport/*',
+        Permissions: [permission.WL_BY_TIME_ZONE],
+        Layout: AppLayout,
+        Component: LicenseeWinLossByTimeZoneRoute,
+    },
+    {
         Id: pages.WL_ANALYSIS,
         Path: 'WinlossAnalysisReport/*',
         Permissions: [permission.WL_ANALYSIS],
         Layout: null,
         Component: WinLossAnalysisRoute,
+    },
+    {
+        Id: pages.SUBSIDIARY_PERFORMANCE,
+        Path: 'SubsidiaryPerformanceReport/*',
+        Permissions: [permission.SUBSIDIARY_PERFORMANCE],
+        Layout: AppLayout,
+        Component: SubsidiaryPerformanceRoute,
     },
     {
         Id: pages.MATCH_WL,

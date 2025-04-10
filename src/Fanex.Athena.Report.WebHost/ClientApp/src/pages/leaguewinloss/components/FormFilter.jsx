@@ -1,27 +1,29 @@
+import { DateRange } from '@legion-lib/react-daterangepicker';
+import MultipleSelect from '@legion-lib/react-multiselect';
+import moment from 'moment';
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { DateRange } from '@legion-lib/react-daterangepicker';
-import MultipleSelect from '@legion-lib/react-multiselect';
 
-import { DEFAULT_BASE_CURRENCY_VALUE } from '@srcRoot/constants/config';
-import { LEAGUE_WL } from '@srcRoot/constants/pages';
-import ReportSelect from '@srcRoot//components/ReportSelect';
-import CollapsiblePanel from '@srcRoot/components/CollapsiblePanel';
-import LangHelper from '@srcRoot/helpers/langHelper';
-import Site from '@srcRoot/lib/site';
-import CheckBox from '@srcRoot/components/CheckBox';
-import SubmitButton from '@srcRoot/components/SubmitButton';
-import AutoComplete from '@srcRoot/components/auto-complete';
-import DataService from '@srcRoot/lib/dataService';
+import ReportSelect from '@//components/ReportSelect';
+import CheckBox from '@/components/CheckBox';
+import CollapsiblePanel from '@/components/CollapsiblePanel';
+import SubmitButton from '@/components/SubmitButton';
+import AutoComplete from '@/components/auto-complete';
+import { DEFAULT_BASE_CURRENCY_VALUE } from '@/constants/config';
+import { LEAGUE_WL } from '@/constants/pages';
+import LangHelper from '@/helpers/langHelper';
+import DataService from '@/lib/dataService';
+import Site from '@/lib/site';
 
+import ExportExcel from '@/components/ExportExcel';
 import ActionCreators from '../actions';
 import { ApiUrl, ReportLevel } from '../common/constants';
 import { DateConstraint } from '../common/dateSetting';
 import Service from '../common/service';
 
 import { TreeViewSelect } from '@legion-lib/react-multiselect';
-import { TreeViewOption } from '@srcRoot/constants/report';
+import { TreeViewOption } from '@/constants/report';
 
 export const FormFilter = (props) => {
     const [isGroupInOriginalCurrency, setGroupInOriginalCurrency] = useState(true);
@@ -54,6 +56,7 @@ export const FormFilter = (props) => {
                 limitedMonthRange={DateConstraint.limitedMonthRange}
                 firstDayOfWeek={DateConstraint.firstDayOfWeek}
                 onChange={_onChangeDateRange}
+                langHandler={(key) => LangHelper.getDateRangeResource(key)}
             />
         );
     };
@@ -63,6 +66,7 @@ export const FormFilter = (props) => {
             baseCurrencyList &&
             baseCurrencyList.length && (
                 <ReportSelect
+                    id="select-list-BaseCurrency"
                     instanceId="baseCurrency"
                     value={props.selectedBaseCurrency.value !== DEFAULT_BASE_CURRENCY_VALUE ? props.selectedBaseCurrency : null}
                     options={baseCurrencyList}
@@ -307,8 +311,7 @@ export const FormFilter = (props) => {
         return result;
     };
 
-    const exportExcel = (event) => {
-        event.preventDefault();
+    const exportExcel = () => {
         let exportParam = props.requestParam;
 
         if (!exportParam || Site.isEmptyObject(exportParam)) {
@@ -338,11 +341,7 @@ export const FormFilter = (props) => {
             });
     };
 
-    const excelButton = (
-        <div>
-            <i className="icon-excel right" onClick={exportExcel} title={LangHelper.getSingleResource('ExportToExcel')}></i>
-        </div>
-    );
+    const excelButton = <ExportExcel onClick={exportExcel} disabled={!isValidModel()} />;
 
     return (
         <>
@@ -466,7 +465,7 @@ function mapStateToProps(state) {
         selectedStatus,
         userGuideContent,
         username,
-        breadcrumbParams
+        breadcrumbParams,
     } = state;
 
     return Object.assign(
@@ -486,7 +485,7 @@ function mapStateToProps(state) {
             selectedStatus,
             userGuideContent,
             username,
-            breadcrumbParams
+            breadcrumbParams,
         }
     );
 }

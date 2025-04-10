@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Row, Cell } from '@legion-lib/react-grid';
-import NumberFormat from '@srcRoot/lib/numberFormat';
+import NumberFormat from '@/lib/numberFormat';
 import BreakdownRow from './BreakdownRow';
 
 export const TreeViewGridRowNode = (props) => {

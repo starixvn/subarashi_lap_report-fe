@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import MultipleSelect from '@legion-lib/react-multiselect';
 import PropTypes from 'prop-types';
 
-import LangHelper from '@srcRoot/helpers/langHelper';
+import LangHelper from '@/helpers/langHelper';
 
 export const CurrencyFilter = (props) => {
     const formData = useSelector((state) => state.formData);

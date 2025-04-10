@@ -1,6 +1,6 @@
-﻿import LangHelper from '@srcRoot/helpers/langHelper';
-import Site from '@srcRoot/lib/site';
-import Report from '@srcRoot/lib/report';
+﻿import LangHelper from '@/helpers/langHelper';
+import Site from '@/lib/site';
+import Report from '@/lib/report';
 
 export default class Service {
     static getTitle(fromDate, toDate, currency, baseCurrency, ProductCodeList, username, isConvertAllToBaseCurrency) {

@@ -1,8 +1,8 @@
 import React, { memo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import LangHelper from '@srcRoot/helpers/langHelper';
-import UserGuide from '@srcRoot/components/UserGuide';
+import LangHelper from '@/helpers/langHelper';
+import UserGuide from '@/components/UserGuide';
 import { ActionCreators } from '../../actions/index.js';
 
 const StickyIcon = () => {

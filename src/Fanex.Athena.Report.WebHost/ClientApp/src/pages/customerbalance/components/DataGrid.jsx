@@ -2,10 +2,10 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Table } from '@legion-lib/react-grid';
 
-import NoDataTitle from '@srcRoot/components/NoDataTitle';
-import ReportTitle from '@srcRoot/components/ReportTitle';
-import DataService from '@srcRoot/lib/dataService';
-import useToggleRequest from '@srcRoot/hooks/useToggleRequest';
+import NoDataTitle from '@/components/NoDataTitle';
+import ReportTitle from '@/components/ReportTitle';
+import DataService from '@/lib/dataService';
+import useToggleRequest from '@/hooks/useToggleRequest';
 
 import { BuildBody, BuildFooter, BuildHeaders, GenerateReportTitle, GetDefaultPagingOptions } from '../gridUtility';
 import { ActionCreators } from '../actions/index';

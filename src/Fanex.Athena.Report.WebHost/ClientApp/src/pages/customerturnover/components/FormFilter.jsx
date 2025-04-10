@@ -1,21 +1,22 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { TreeViewSelect } from '@legion-lib/react-multiselect';
 import { DateRange } from '@legion-lib/react-daterangepicker';
+import { TreeViewSelect } from '@legion-lib/react-multiselect';
 
-import { CUSTOMER_TURNOVER, USER_GUIDE } from '@srcRoot/constants/pages';
-import CollapsiblePanel from '@srcRoot/components/CollapsiblePanel';
-import useToggleRequest from '@srcRoot/hooks/useToggleRequest';
-import CheckBox from '@srcRoot/components/CheckBox';
-import AutoComplete from '@srcRoot/components/auto-complete';
-import SubmitButton from '@srcRoot/components/SubmitButton';
-import ReportSelect from '@srcRoot/components/ReportSelect';
-import UserGuide from '@srcRoot/components/UserGuide';
-import LangHelper from '@srcRoot/helpers/langHelper';
-import DataService from '@srcRoot/lib/dataService';
-import Site from '@srcRoot/lib/site';
+import AutoComplete from '@/components/auto-complete';
+import CheckBox from '@/components/CheckBox';
+import CollapsiblePanel from '@/components/CollapsiblePanel';
+import ReportSelect from '@/components/ReportSelect';
+import SubmitButton from '@/components/SubmitButton';
+import UserGuide from '@/components/UserGuide';
+import { CUSTOMER_TURNOVER, USER_GUIDE } from '@/constants/pages';
+import LangHelper from '@/helpers/langHelper';
+import useToggleRequest from '@/hooks/useToggleRequest';
+import DataService from '@/lib/dataService';
+import Site from '@/lib/site';
 
+import ExportExcel from '@/components/ExportExcel';
 import ActionCreators from '../actions';
 import Service, { constants } from '../common';
 import { TicketFilterOptions, TicketFilterValue } from '../common/filterSettings';
@@ -198,7 +199,7 @@ const FormFilter = (props) => {
 
     const SupportButtons = (
         <>
-            <i className="icon-excel right" onClick={onExportExcel} title={LangHelper.getSingleResource('ExportToExcel')} />
+            <ExportExcel onClick={onExportExcel} disabled={isFormValid} />
             <UserGuide
                 title={LangHelper.getSingleResource(USER_GUIDE)}
                 contentTitle={LangHelper.getSingleResource(CUSTOMER_TURNOVER)}
@@ -209,7 +210,7 @@ const FormFilter = (props) => {
     );
 
     return (
-        <CollapsiblePanel stickyFooter={SupportButtons} isCollapseMode={false}>
+        <CollapsiblePanel className="light-shadow" stickyFooter={SupportButtons} isCollapseMode={false}>
             <div className="row">
                 <div className="col-12 col-lg-3 col-md-3 col-sm-12">
                     <div className="form-group">
@@ -219,7 +220,7 @@ const FormFilter = (props) => {
                             startDate={dateRange.fromDate}
                             endDate={dateRange.toDate}
                             onChange={onChangeDateRange}
-                            langHandler={(key) => LangHelper.getSingleResource(key)}
+                            langHandler={(key) => LangHelper.getDateRangeResource(key)}
                         />
                     </div>
                 </div>
@@ -230,7 +231,7 @@ const FormFilter = (props) => {
                             url={ApiUrl.SEARCH_CUSTOMER}
                             onSelect={(value) => dispatch(setUsername(value))}
                             onInput={(value) => dispatch(setUsername(value))}
-                            htmlAttributes={{ placeholder: LangHelper.getSingleResource('All') }}
+                            htmlAttributes={{ placeholder: LangHelper.getSingleResource('All'), id: 'Username' }}
                         />
                     </div>
                 </div>
@@ -353,17 +354,6 @@ const FormFilter = (props) => {
                     </div>
                 </div>
             </div>
-            {formData.isAllowSLT && (
-                <div className="row">
-                    <div className="col-12 col-lg-12 col-md-12 col-sm-12">
-                        <div className="form-group">
-                            <ul className="list result-note">
-                                <li>{LangHelper.getSingleResource('SLTDateRangeNote')}</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            )}
         </CollapsiblePanel>
     );
 };

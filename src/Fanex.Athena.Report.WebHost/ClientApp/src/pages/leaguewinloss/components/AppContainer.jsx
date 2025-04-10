@@ -1,10 +1,10 @@
 import React, { useLayoutEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { DEFAULT_BASE_CURRENCY_VALUE } from '@srcRoot/constants/config';
-import Loader from '@srcRoot/components/Loader';
-import useToggleRequest from '@srcRoot/hooks/useToggleRequest';
-import DataService from '@srcRoot/lib/dataService';
+import { DEFAULT_BASE_CURRENCY_VALUE } from '@/constants/config';
+import Loader from '@/components/Loader';
+import useToggleRequest from '@/hooks/useToggleRequest';
+import DataService from '@/lib/dataService';
 
 import ActionCreators from '../actions/index';
 import DataGrid from './DataGrid';

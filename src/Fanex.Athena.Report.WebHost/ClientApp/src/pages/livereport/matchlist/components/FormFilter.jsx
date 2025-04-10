@@ -2,12 +2,13 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
-import useToggleRequest from '@srcRoot/hooks/useToggleRequest';
-import LangHelper from '@srcRoot/helpers/langHelper';
-import DataService from '@srcRoot/lib/dataService';
-import Site from '@srcRoot/lib/site';
+import LangHelper from '@/helpers/langHelper';
+import useToggleRequest from '@/hooks/useToggleRequest';
+import DataService from '@/lib/dataService';
+import Site from '@/lib/site';
 
-import Service, { constants } from '../common';
+import ExportExcel from '@/components/ExportExcel';
+import { constants } from '../common';
 
 const FormFilter = (props) => {
     const navigate = useNavigate();
@@ -29,7 +30,7 @@ const FormFilter = (props) => {
                 <i className="icon-arrow"></i>
                 {LangHelper.getSingleResource('Back').toUpperCase()}
             </button>
-            <i className="icon-excel right" onClick={onExportExcel} title={LangHelper.getSingleResource('ExportToExcel')} />
+            <ExportExcel onClick={onExportExcel} />
         </div>
     );
 };

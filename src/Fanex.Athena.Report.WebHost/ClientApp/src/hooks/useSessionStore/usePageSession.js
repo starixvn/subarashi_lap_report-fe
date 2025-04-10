@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 
-import { LRF_SAVED_PAGE_HASH_KEY, LRF_SAVED_PAGE_SESSION_KEY } from '@srcRoot/constants/config';
-import Site from '@srcRoot/lib/site';
+import { LRF_SAVED_PAGE_HASH_KEY, LRF_SAVED_PAGE_SESSION_KEY } from '@/constants/config';
+import Site from '@/lib/site';
 
 const usePageSession = () => {
     const pathName = window.location.pathname;

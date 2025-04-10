@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { Row, Cell } from '@legion-lib/react-grid';
 
-import useNavigateParams from '@srcRoot/hooks/useNavigateParams';
+import useNavigateParams from '@/hooks/useNavigateParams';
 
 import CommonCells from '../CommonCells';
 import { constants } from '../../common';

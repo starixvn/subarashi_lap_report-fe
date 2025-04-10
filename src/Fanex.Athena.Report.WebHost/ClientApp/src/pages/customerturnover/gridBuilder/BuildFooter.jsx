@@ -1,8 +1,8 @@
 import React from 'react';
 import { Cell, Row } from '@legion-lib/react-grid';
 
-import LangHelper from '@srcRoot/helpers/langHelper';
-import NumberFormat from '@srcRoot/lib/numberFormat';
+import LangHelper from '@/helpers/langHelper';
+import NumberFormat from '@/lib/numberFormat';
 
 export const BuildFooter = (data, { isAllowedCustomerCommission }) => {
     const effectiveBettingValue = NumberFormat.formatDecimal(data.effectiveBettingValue);

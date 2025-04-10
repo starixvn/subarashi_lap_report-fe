@@ -2,8 +2,8 @@ import React from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { Row, Cell, HeaderRow, HeaderCell } from '@legion-lib/react-grid';
 
-import NumberFormat from '@srcRoot/lib/numberFormat';
-import LangHelper from '@srcRoot/helpers/langHelper';
+import NumberFormat from '@/lib/numberFormat';
+import LangHelper from '@/helpers/langHelper';
 
 import { headerText, PayoutPromotionType } from './constants';
 

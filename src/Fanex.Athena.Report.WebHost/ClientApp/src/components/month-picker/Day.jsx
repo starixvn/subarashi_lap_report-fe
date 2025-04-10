@@ -1,8 +1,8 @@
 ﻿import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import Overlay from '../Overlay';
+import Overlay from '@/components/Overlay';
 
-const Day = ({ label, value, min, max, onChange }) => {
+const Day = ({ id, label, value, min, max, onChange }) => {
     const [showDateDrop, setShowDateDrop] = useState(false);
 
     const renderOption = (min, max, value) => {
@@ -27,7 +27,7 @@ const Day = ({ label, value, min, max, onChange }) => {
     };
 
     return (
-        <div className="date">
+        <div id={id} className="date">
             <label className="label-text">{label}</label>
             <div className="date-content">
                 <div className="date-container">
@@ -51,6 +51,7 @@ const Day = ({ label, value, min, max, onChange }) => {
 };
 
 Day.propTypes = {
+    id: PropTypes.string,
     label: PropTypes.string,
     value: PropTypes.number.isRequired,
     min: PropTypes.number.isRequired,

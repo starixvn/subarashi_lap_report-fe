@@ -1,8 +1,8 @@
 import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 
-import ReportSelect from '@srcRoot/components/ReportSelect';
-import LangHelper from '@srcRoot/helpers/langHelper';
+import ReportSelect from '@/components/ReportSelect';
+import LangHelper from '@/helpers/langHelper';
 
 import { CashOutModeList } from '../../common/constants';
 

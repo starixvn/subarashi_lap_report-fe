@@ -1,6 +1,6 @@
-import * as pages from '@srcRoot/constants/pages';
+import * as pages from '@/constants/pages';
 
-import Site from '@srcRoot/lib/site';
+import Site from '@/lib/site';
 import MatchWinLoss from './MatchWinLoss';
 import LiveReport from './LiveReport';
 

@@ -1,8 +1,8 @@
-import DataService from '@srcRoot/lib/dataService';
-import Cache from '@srcRoot/lib/cache';
+import DataService from '@/lib/dataService';
+import Cache from '@/lib/cache';
 import Service from '../common/service';
 import * as types from './types';
-import ObjectHelper from '@srcRoot/lib/objectHelper';
+import ObjectHelper from '@/lib/objectHelper';
 
 const BETTYPE_CACHE_KEY = 'BETTYPE_CACHE_KEY';
 

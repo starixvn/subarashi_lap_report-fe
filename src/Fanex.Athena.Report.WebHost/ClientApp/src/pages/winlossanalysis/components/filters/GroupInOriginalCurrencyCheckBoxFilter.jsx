@@ -1,8 +1,8 @@
 import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 
-import LangHelper from '@srcRoot/helpers/langHelper';
-import CheckBox from '@srcRoot/components/CheckBox';
+import LangHelper from '@/helpers/langHelper';
+import CheckBox from '@/components/CheckBox';
 
 export const GroupInOriginalCurrencyCheckBoxFilter = (props) => {
     return (

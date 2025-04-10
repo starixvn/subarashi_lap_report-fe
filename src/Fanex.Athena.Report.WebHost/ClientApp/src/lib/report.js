@@ -1,5 +1,5 @@
-import { ReportBy } from '../constants/report';
-import Site from './site';
+import { ReportBy } from '@/constants/report';
+import Site from '@/lib/site';
 import axios from 'axios';
 
 const fetchData = (relativeUrl, params) => {

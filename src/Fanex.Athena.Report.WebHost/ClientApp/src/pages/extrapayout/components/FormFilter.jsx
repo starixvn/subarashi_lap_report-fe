@@ -1,26 +1,26 @@
+import { DateRange } from '@legion-lib/react-daterangepicker';
+import MultipleSelect, { TreeViewSelect } from '@legion-lib/react-multiselect';
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { DateRange } from '@legion-lib/react-daterangepicker';
-import MultipleSelect from '@legion-lib/react-multiselect';
-import { TreeViewSelect } from '@legion-lib/react-multiselect';
 
-import { DEFAULT_BASE_CURRENCY_VALUE } from '@srcRoot/constants/config';
-import { SubsidiaryViewType, TreeViewOption } from '@srcRoot/constants/report';
-import { EXTRA_PAYOUT } from '@srcRoot/constants/pages';
-import CollapsiblePanel from '@srcRoot/components/CollapsiblePanel';
-import SubmitButton from '@srcRoot/components/SubmitButton';
-import LangHelper from '@srcRoot/helpers/langHelper';
-import Site from '@srcRoot/lib/site';
-import CheckBox from '@srcRoot/components/CheckBox';
-import UserGuide from '@srcRoot/components/UserGuide';
-import DataService from '@srcRoot/lib/dataService';
-import ReportSelect from '@srcRoot/components/ReportSelect';
+import CheckBox from '@/components/CheckBox';
+import CollapsiblePanel from '@/components/CollapsiblePanel';
+import ExportExcel from '@/components/ExportExcel';
+import ReportSelect from '@/components/ReportSelect';
+import SubmitButton from '@/components/SubmitButton';
+import UserGuide from '@/components/UserGuide';
+import { DEFAULT_BASE_CURRENCY_VALUE } from '@/constants/config';
+import { EXTRA_PAYOUT } from '@/constants/pages';
+import { SubsidiaryViewType, TreeViewOption } from '@/constants/report';
+import LangHelper from '@/helpers/langHelper';
+import DataService from '@/lib/dataService';
+import Site from '@/lib/site';
 
 import ActionCreators from '../actions';
 import { ApiUrl, ReportLevel } from '../common/constants';
-import Service from '../common/service';
 import * as DateSettings from '../common/dateSetting';
+import Service from '../common/service';
 
 export const FormFilter = (props) => {
     const [isExcludeTest, setExcludeTest] = useState(true);
@@ -52,7 +52,7 @@ export const FormFilter = (props) => {
                 today={DateSettings.DateRange.toDate}
                 firstDayOfWeek={DateSettings.FirstDayOfWeek}
                 onChange={_onChangeDateRange}
-                langHandler={(key) => LangHelper.getSingleResource(key)}
+                langHandler={(key) => LangHelper.getDateRangeResource(key)}
             />
         );
     };
@@ -60,6 +60,7 @@ export const FormFilter = (props) => {
     const _renderBaseCurrencySelectList = () => {
         return baseCurrencyList && baseCurrencyList.length ? (
             <ReportSelect
+                id="select-list-BaseCurrency"
                 instanceId="baseCurrency"
                 value={props.selectedBaseCurrency.value !== DEFAULT_BASE_CURRENCY_VALUE ? props.selectedBaseCurrency : null}
                 options={baseCurrencyList}
@@ -268,8 +269,7 @@ export const FormFilter = (props) => {
         return result;
     };
 
-    const exportExcel = (event) => {
-        event.preventDefault();
+    const exportExcel = () => {
         let exportParam = props.requestParam;
 
         if (!exportParam || Site.isEmptyObject(exportParam)) {
@@ -300,7 +300,7 @@ export const FormFilter = (props) => {
 
     const excelButton = (
         <React.Fragment>
-            <i className="icon-excel right" onClick={exportExcel} title={LangHelper.getSingleResource('ExportToExcel')}></i>
+            <ExportExcel onClick={exportExcel} disabled={!isValidModel()} />
             {_renderUserGuide()}
         </React.Fragment>
     );
@@ -309,7 +309,7 @@ export const FormFilter = (props) => {
 
     return (
         <React.Fragment>
-            <CollapsiblePanel className="page-filter" stickyFooter={excelButton}>
+            <CollapsiblePanel stickyFooter={excelButton}>
                 <div className="row">
                     {showSubsidiarySearch && props.subsidiarySearch && (
                         <div className="col-12 col-sm-3 col-md-3 col-lg-4 col-xl-2">

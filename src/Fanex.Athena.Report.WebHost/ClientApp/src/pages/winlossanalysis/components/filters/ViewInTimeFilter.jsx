@@ -1,6 +1,6 @@
 import React, {memo} from "react";
 import PropTypes from 'prop-types';
-import LangHelper from '@srcRoot/helpers/langHelper'
+import LangHelper from '@/helpers/langHelper'
 import { ViewInTimeMode } from '../../common/constants'
 
 export const ViewInTimeFilter = (props) => {

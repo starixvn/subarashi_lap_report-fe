@@ -1,9 +1,9 @@
 import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 
-import LangHelper from '@srcRoot/helpers/langHelper';
-import ReportSelect from '@srcRoot/components/ReportSelect';
-import { DEFAULT_BASE_CURRENCY_VALUE } from '@srcRoot/constants/config';
+import LangHelper from '@/helpers/langHelper';
+import ReportSelect from '@/components/ReportSelect';
+import { DEFAULT_BASE_CURRENCY_VALUE } from '@/constants/config';
 
 export const BaseCurrencyFilter = (props) => {
     const { onChange, value, options } = props;
@@ -11,7 +11,13 @@ export const BaseCurrencyFilter = (props) => {
         const baseCurrencyList = options;
         return (
             baseCurrencyList?.length && (
-                <ReportSelect instanceId="ddlBased" value={value.value !== DEFAULT_BASE_CURRENCY_VALUE ? value : null} options={options} onChange={onChange} />
+                <ReportSelect
+                    id="select-list-BaseCurrency"
+                    instanceId="ddlBased"
+                    value={value.value !== DEFAULT_BASE_CURRENCY_VALUE ? value : null}
+                    options={options}
+                    onChange={onChange}
+                />
             )
         );
     };

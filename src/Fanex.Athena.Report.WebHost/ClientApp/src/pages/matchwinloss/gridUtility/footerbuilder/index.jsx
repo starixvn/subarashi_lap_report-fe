@@ -1,7 +1,7 @@
 import React from 'react';
 import { Row, Cell } from '@legion-lib/react-grid';
 
-import LangHelper from '@srcRoot/helpers/langHelper';
+import LangHelper from '@/helpers/langHelper';
 
 import CommonCells from '../CommonCells';
 import FooterSpecialBetTypeRows from './FooterSpecialBetTypeRows';

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import Overlay from '../Overlay';
+import Overlay from '@/components/Overlay';
 
 class DropdownMenu extends Component {
     constructor(props) {

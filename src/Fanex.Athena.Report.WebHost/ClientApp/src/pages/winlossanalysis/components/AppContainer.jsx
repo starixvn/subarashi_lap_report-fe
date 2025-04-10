@@ -1,12 +1,12 @@
 ﻿import React, { useLayoutEffect } from 'react';
 import { batch, useDispatch, useSelector } from 'react-redux';
 
-import { DEFAULT_BASE_CURRENCY_VALUE } from '@srcRoot/constants/config';
-import Loader from '@srcRoot/components/Loader';
-import useMobileVersion from '@srcRoot/hooks/useMobileVersion';
-import useToggleRequest from '@srcRoot/hooks/useToggleRequest';
-import DataService from '@srcRoot/lib/dataService';
-import AppLayout from '@srcRoot/layouts/AppLayout';
+import { DEFAULT_BASE_CURRENCY_VALUE } from '@/constants/config';
+import Loader from '@/components/Loader';
+import useMobileVersion from '@/hooks/useMobileVersion';
+import useToggleRequest from '@/hooks/useToggleRequest';
+import DataService from '@/lib/dataService';
+import AppLayout from '@/layouts/AppLayout';
 
 import { ActionCreators } from '../actions/index';
 import { ApiUrl, ViewInTimeMode, VipOnlyList, SettlementTimeSupportProductList, DefaultState } from '../common/constants';

@@ -1,18 +1,19 @@
+import { DateRange } from '@legion-lib/react-daterangepicker';
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { DateRange } from '@legion-lib/react-daterangepicker';
 
-import UserGuide from '@srcRoot/components/UserGuide';
-import DataService from '@srcRoot/lib/dataService';
-import useToggleRequest from '@srcRoot/hooks/useToggleRequest';
-import Site from '@srcRoot/lib/site';
-import SubmitButton from '@srcRoot/components/SubmitButton';
-import CollapsiblePanel from '@srcRoot/components/CollapsiblePanel';
-import LangHelper from '@srcRoot/helpers/langHelper';
-import { USER_GUIDE, WEEKLY_LIVE_MATCHES } from '@srcRoot/constants/pages';
+import CollapsiblePanel from '@/components/CollapsiblePanel';
+import SubmitButton from '@/components/SubmitButton';
+import UserGuide from '@/components/UserGuide';
+import { USER_GUIDE, WEEKLY_LIVE_MATCHES } from '@/constants/pages';
+import LangHelper from '@/helpers/langHelper';
+import useToggleRequest from '@/hooks/useToggleRequest';
+import DataService from '@/lib/dataService';
+import Site from '@/lib/site';
 
-import Constants from '../constants/index';
+import ExportExcel from '@/components/ExportExcel';
 import { ActionCreators } from '../actions';
+import Constants from '../constants/index';
 
 const FormFilter = (props) => {
     const dispatch = useDispatch();
@@ -45,7 +46,7 @@ const FormFilter = (props) => {
                 limitedMonthRange={DateConstraint.limitedMonthRange}
                 firstDayOfWeek={FirstDayOfWeek}
                 onChange={_onChangeDateRange}
-                langHandler={(key) => LangHelper.getSingleResource(key)}
+                langHandler={(key) => LangHelper.getDateRangeResource(key)}
             />
         );
     };
@@ -59,7 +60,7 @@ const FormFilter = (props) => {
     const _renderSupportButton = () => {
         return (
             <>
-                <i className="icon-excel right" onClick={onExportExcel} title={LangHelper.getSingleResource('ExportToExcel')} />
+                <ExportExcel onClick={onExportExcel} />
                 <UserGuide
                     title={LangHelper.getSingleResource(USER_GUIDE)}
                     contentTitle={LangHelper.getSingleResource(WEEKLY_LIVE_MATCHES)}
@@ -112,7 +113,7 @@ const FormFilter = (props) => {
     };
 
     return (
-        <CollapsiblePanel stickyFooter={_renderSupportButton()} isCollapseMode={false}>
+        <CollapsiblePanel className="light-shadow" stickyFooter={_renderSupportButton()} isCollapseMode={false}>
             <div className="row">
                 <div className="col-12 col-md-3 col-sm-6 col-lg-4 col-xl-2">
                     <div className="form-group">

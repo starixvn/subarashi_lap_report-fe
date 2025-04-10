@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Cell } from '@legion-lib/react-grid';
-import NumberFormat from '@srcRoot/lib/numberFormat';
+import NumberFormat from '@/lib/numberFormat';
 
 const CommonCells = (props) => {
     const formData = useSelector((state) => state.formData);

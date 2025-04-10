@@ -1,8 +1,8 @@
-import DataService from '@srcRoot/lib/dataService';
+import DataService from '@/lib/dataService';
 import Service from '../common/Service';
 import * as types from './types';
-import Cache from '@srcRoot/lib/cache';
-import ObjectHelper from '@srcRoot/lib/objectHelper';
+import Cache from '@/lib/cache';
+import ObjectHelper from '@/lib/objectHelper';
 
 const BETTYPE_CACHE_KEY = 'WINLOSSANALYSIS_BETTYPE_CACHE_KEY';
 

@@ -1,4 +1,4 @@
-import * as currencyAction from '@srcRoot/actions/currencyAction';
+import * as currencyAction from '@/actions/currencyAction';
 import { SET_SELECTED_SUPPORT_TASK } from './types';
 
 export const setSelectedSupportTask = (option) => ({

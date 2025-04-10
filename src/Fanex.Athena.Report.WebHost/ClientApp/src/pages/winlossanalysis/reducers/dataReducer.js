@@ -1,5 +1,5 @@
 import * as types from '../actions/types.js';
-import createReducer from '@srcRoot/lib/createReducer.js';
+import createReducer from '@/lib/createReducer.js';
 
 export const reportData = createReducer(
     {},

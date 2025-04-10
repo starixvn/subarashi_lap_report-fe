@@ -1,8 +1,8 @@
 import moment from 'moment';
 
-import { LRF_SAVED_PAGE_HASH_KEY, LRF_SAVED_PAGE_SESSION_KEY } from '@srcRoot/constants/config';
-import Store from '@srcRoot/lib/store';
-import Site from '@srcRoot/lib/site';
+import { LRF_SAVED_PAGE_HASH_KEY, LRF_SAVED_PAGE_SESSION_KEY } from '@/constants/config';
+import Store from '@/lib/store';
+import Site from '@/lib/site';
 
 import usePageSession from './usePageSession';
 

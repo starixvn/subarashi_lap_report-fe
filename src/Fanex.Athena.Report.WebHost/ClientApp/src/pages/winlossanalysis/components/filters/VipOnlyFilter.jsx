@@ -1,8 +1,8 @@
 import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 
-import LangHelper from '@srcRoot/helpers/langHelper';
-import ReportSelect from '@srcRoot/components/ReportSelect';
+import LangHelper from '@/helpers/langHelper';
+import ReportSelect from '@/components/ReportSelect';
 import { VipOnlyList } from '../../common/constants';
 
 export const VipOnlyFilter = (props) => {

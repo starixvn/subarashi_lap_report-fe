@@ -2,7 +2,7 @@ import React, { memo, useMemo, useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import MobileExpandRowContent from './MobileExpandRowContent';
 import { HeaderText, MobileGroupByHeaderDisplayType } from '../../common/constants';
-import NumberFormat from '@srcRoot/lib/numberFormat';
+import NumberFormat from '@/lib/numberFormat';
 import useRenderRowOption from '../hooks/useRenderRowOption';
 import CompositeRow from '../../../../components/mobile-component/CompositeRow';
 import { Cell } from '@legion-lib/react-grid';

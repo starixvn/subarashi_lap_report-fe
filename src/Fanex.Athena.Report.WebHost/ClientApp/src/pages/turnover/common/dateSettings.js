@@ -1,5 +1,5 @@
 import moment from 'moment';
-import LangHelper from '@srcRoot/helpers/langHelper';
+import LangHelper from '@/helpers/langHelper';
 
 const now = moment().utc().add(-4, 'h');
 

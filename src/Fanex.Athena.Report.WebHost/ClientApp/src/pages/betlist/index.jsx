@@ -1,14 +1,14 @@
 import React, { useLayoutEffect } from 'react';
 import { Provider } from 'react-redux';
 
-import Store from '@srcRoot/lib/store';
-import useScriptLink from '@srcRoot/hooks/useScriptLink';
-import { BetTicketEventBuilderUrl, TokenScriptLink } from '@srcRoot/helpers/settingHelper';
+import Store from '@/lib/store';
+import useScriptLink from '@/hooks/useScriptLink';
+import { BetTicketEventBuilderUrl, TokenScriptLink } from '@/helpers/settingHelper';
 
 import AppContainer from './components/AppContainer';
 import reducer from './reducers';
 // import styles
-import '@srcRoot/styles/pages/betlist.scss';
+import '@/styles/pages/betlist.scss';
 
 const BetList = (props) => {
     const scriptLink = useScriptLink();

@@ -1,9 +1,9 @@
 ﻿import React, { memo } from 'react';
 
-import CollapsiblePanel from '@srcRoot/components/CollapsiblePanel';
-import LangHelper from '@srcRoot/helpers/langHelper';
-import SubmitButton from '@srcRoot/components/SubmitButton';
-import { WL_ANALYSIS } from '@srcRoot/constants/pages';
+import CollapsiblePanel from '@/components/CollapsiblePanel';
+import LangHelper from '@/helpers/langHelper';
+import SubmitButton from '@/components/SubmitButton';
+import { WL_ANALYSIS } from '@/constants/pages';
 
 import { useValidParam } from '../hooks/useValidParam';
 import useFilterAction from '../hooks/useFilterAction';

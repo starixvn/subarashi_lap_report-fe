@@ -855,6 +855,27 @@
   <data name="Cancel" xml:space="preserve">
     <value>Hủy</value>
   </data>
+  <data name="TimeZone" xml:space="preserve">    
+    <value>Múi giờ</value>
+  </data>
+  <data name="IncludeDrawData" xml:space="preserve">
+    <value>Bao gồm dữ liệu Hòa</value>
+  </data>
+  <data name="CustomerComm" xml:space="preserve">
+    <value>Hoa hồng Khách hàng</value>
+  </data>
+  <data name="LicenseeNetWL" xml:space="preserve">
+    <value>Thắng Thua Thực của Nhà Cái</value>
+  </data>
+  <data name="LicenseeWL" xml:space="preserve">
+    <value>Thắng Thua Nhà Cái</value>
+  </data>
+  <data name="WinLossByTimeZone" xml:space="preserve">
+    <value>Thắng Thua Theo Múi Giờ</value>       
+  </data>
+  <data name="LicenseeWinLoss" xml:space="preserve">
+    <value>Thắng Thua Nhà Cái</value>
+  </data>
   <data name="Agent" xml:space="preserve">
     <value>Agent</value>
   </data>
@@ -863,5 +884,20 @@
   </data>
   <data name="Note" xml:space="preserve">
     <value>Ghi chú</value>
+  </data>
+  <data name="Promotion" xml:space="preserve">
+    <value>Khuyến mãi</value>
+  </data>
+  <data name="Based" xml:space="preserve">
+    <value>Dựa trên</value>
+  </data>
+  <data name="SeparateSabaWinLoss" xml:space="preserve">     
+    <value>Tách Saba Thể Thao Ảo ra khỏi Sportsbook</value>  
+  </data>
+  <data name="SubsidiaryWL" xml:space="preserve">
+    <value>Thắng Thua Chi nhánh</value>
+  </data>
+  <data name="SubsidiaryPerformance" xml:space="preserve">   
+    <value>Hiệu suất Chi Nhánh</value>
   </data>
 </root>

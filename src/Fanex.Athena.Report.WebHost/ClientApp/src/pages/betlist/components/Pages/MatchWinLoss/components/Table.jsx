@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
-import BetListTable from '@srcRoot/components/BetListTable';
+import BetListTable from '@/components/BetListTable';
 
 import tableSettings from '../constant/tableSettings';
 

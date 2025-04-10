@@ -1,8 +1,8 @@
 ﻿import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 
-import { DrowdownRadioList } from '@srcRoot/components/dropdown';
-import LangHelper from '@srcRoot/helpers/langHelper';
+import { DrowdownRadioList } from '@/components/dropdown';
+import LangHelper from '@/helpers/langHelper';
 
 import { SearchMode } from '../../common/constants';
 

@@ -1,5 +1,5 @@
 ﻿import * as types from './types';
-import DataService from '../lib/dataService';
+import DataService from '@/lib/dataService';
 
 const fetchData = async (resourceName) => {
     return DataService.getReportData('Api/UserGuide/Index?resourcename=' + resourceName + '&_=' + new Date().getTime());

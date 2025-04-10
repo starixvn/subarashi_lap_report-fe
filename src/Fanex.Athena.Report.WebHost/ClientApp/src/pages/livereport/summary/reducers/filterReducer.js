@@ -1,5 +1,5 @@
 import * as types from '../actions/types';
-import createReducer from '@srcRoot/lib/createReducer';
+import createReducer from '@/lib/createReducer';
 
 export const selectedProductCode = createReducer(false, {
     [types.SET_PRODUCT_CODE](state, action) {

@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
-import LangHelper from '@srcRoot/helpers/langHelper';
-import CheckBox from '@srcRoot/components/CheckBox';
+import LangHelper from '@/helpers/langHelper';
+import CheckBox from '@/components/CheckBox';
 import PropTypes from 'prop-types';
 
 export const SubsidiaryCheckBoxFilter = (props) => {

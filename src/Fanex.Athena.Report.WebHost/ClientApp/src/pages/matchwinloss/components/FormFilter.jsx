@@ -1,18 +1,19 @@
+import { DatePicker } from '@legion-lib/react-daterangepicker';
+import MultipleSelect from '@legion-lib/react-multiselect';
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import MultipleSelect from '@legion-lib/react-multiselect';
-import { DatePicker } from '@legion-lib/react-daterangepicker';
 
-import { MATCH_WL, USER_GUIDE } from '@srcRoot/constants/pages';
-import CollapsiblePanel from '@srcRoot/components/CollapsiblePanel';
-import useToggleRequest from '@srcRoot/hooks/useToggleRequest';
-import SubmitButton from '@srcRoot/components/SubmitButton';
-import ReportSelect from '@srcRoot/components/ReportSelect';
-import UserGuide from '@srcRoot/components/UserGuide';
-import LangHelper from '@srcRoot/helpers/langHelper';
-import DataService from '@srcRoot/lib/dataService';
-import Site from '@srcRoot/lib/site';
+import CollapsiblePanel from '@/components/CollapsiblePanel';
+import ReportSelect from '@/components/ReportSelect';
+import SubmitButton from '@/components/SubmitButton';
+import UserGuide from '@/components/UserGuide';
+import { MATCH_WL, USER_GUIDE } from '@/constants/pages';
+import LangHelper from '@/helpers/langHelper';
+import useToggleRequest from '@/hooks/useToggleRequest';
+import DataService from '@/lib/dataService';
+import Site from '@/lib/site';
 
+import ExportExcel from '@/components/ExportExcel';
 import { ActionCreators } from '../actions';
 import Service, { constants } from '../common';
 
@@ -147,7 +148,7 @@ const FormFilter = (props) => {
 
     const SupportButtons = (
         <>
-            <i className="icon-excel right" onClick={onExportExcel} title={LangHelper.getSingleResource('ExportToExcel')} />
+            <ExportExcel onClick={onExportExcel} disabled={!currentProduct.length || !currentCurrency} />
             <UserGuide
                 title={LangHelper.getSingleResource(USER_GUIDE)}
                 contentTitle={LangHelper.getSingleResource(MATCH_WL)}
@@ -158,7 +159,7 @@ const FormFilter = (props) => {
     );
 
     return (
-        <CollapsiblePanel stickyFooter={SupportButtons} isCollapseMode={false}>
+        <CollapsiblePanel className="light-shadow" stickyFooter={SupportButtons} isCollapseMode={false}>
             <div className="row">
                 <div className="col-12 col-lg-2 col-md-3 col-sm-12">
                     <div className="form-group">
@@ -184,6 +185,7 @@ const FormFilter = (props) => {
                     <div className="form-group">
                         <label className="label-text">{LangHelper.getSingleResource('BaseCurrency')}</label>
                         <ReportSelect
+                            id="select-list-BaseCurrency"
                             onChange={onChangeSelectBaseCurrency}
                             value={currentBaseCurrency}
                             defaultValue={currentBaseCurrency}

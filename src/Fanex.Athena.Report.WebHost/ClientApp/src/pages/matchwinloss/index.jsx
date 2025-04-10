@@ -1,14 +1,14 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 
-import Store from '@srcRoot/lib/store';
+import Store from '@/lib/store';
 
 import AppContainer from './components/AppContainer';
 import reducers from './reducers';
 
 // import styles
-import '@srcRoot/styles/pages/matchwinloss.scss';
-import useSessionStore from '@srcRoot/hooks/useSessionStore';
+import '@/styles/pages/matchwinloss.scss';
+import useSessionStore from '@/hooks/useSessionStore';
 
 const MatchWinLoss = (props) => {
     const store = useSessionStore(reducers, {});

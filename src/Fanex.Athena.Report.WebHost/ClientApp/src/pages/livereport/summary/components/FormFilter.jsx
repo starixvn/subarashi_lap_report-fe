@@ -1,23 +1,24 @@
-import React, { useEffect, useState } from 'react';
-import classNames from 'classnames';
-import { useDispatch, useSelector } from 'react-redux';
 import { DateRange } from '@legion-lib/react-daterangepicker';
+import classNames from 'classnames';
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
-import { LIVE_REPORT, USER_GUIDE } from '@srcRoot/constants/pages';
-import SubmitButton from '@srcRoot/components/SubmitButton';
-import CollapsiblePanel from '@srcRoot/components/CollapsiblePanel';
-import useToggleRequest from '@srcRoot/hooks/useToggleRequest';
-import ReportSelect from '@srcRoot/components/ReportSelect';
-import UserGuide from '@srcRoot/components/UserGuide';
-import useSubsidiarySearch from '@srcRoot/hooks/useSubsidiarySearch';
-import LangHelper from '@srcRoot/helpers/langHelper';
-import DataService from '@srcRoot/lib/dataService';
-import Site from '@srcRoot/lib/site';
+import CollapsiblePanel from '@/components/CollapsiblePanel';
+import ReportSelect from '@/components/ReportSelect';
+import SubmitButton from '@/components/SubmitButton';
+import UserGuide from '@/components/UserGuide';
+import { LIVE_REPORT, USER_GUIDE } from '@/constants/pages';
+import LangHelper from '@/helpers/langHelper';
+import useSubsidiarySearch from '@/hooks/useSubsidiarySearch';
+import useToggleRequest from '@/hooks/useToggleRequest';
+import DataService from '@/lib/dataService';
+import Site from '@/lib/site';
 
+import ExportExcel from '@/components/ExportExcel';
 import { ActionCreators } from '../actions';
 import Service, { constants } from '../common';
-import SubsidiaryDropdown from './Filter/SubsidiaryDropdown';
 import SubsidiaryCheckBox from './Filter/SubsidiaryCheckBox';
+import SubsidiaryDropdown from './Filter/SubsidiaryDropdown';
 
 const FormFilter = (props) => {
     const { DateConstraint, ApiUrl } = constants;
@@ -97,8 +98,7 @@ const FormFilter = (props) => {
             newSelectedBaseCurrency = { ...selectedCurrency, isEmpty: true };
             newBaseCurrencyList.push(newSelectedBaseCurrency);
             dispatch(setBaseCurrencyList(newBaseCurrencyList));
-        }
-        else {
+        } else {
             dispatch(setBaseCurrencyList([...formData.baseCurrencies]));
         }
 
@@ -194,7 +194,7 @@ const FormFilter = (props) => {
 
     const SupportButtons = (
         <>
-            <i className="icon-excel right" onClick={onExportExcel} title={LangHelper.getSingleResource('ExportToExcel')} />
+            <ExportExcel onClick={onExportExcel} disabled={!isValidParam} />
             {!formData.isFakeLicensee && (
                 <UserGuide
                     title={LangHelper.getSingleResource(USER_GUIDE)}
@@ -209,7 +209,7 @@ const FormFilter = (props) => {
     const isValidParam = (!currentSubsidiarySearch || !!currentSubsidiaryList) && !!currentCurrency;
 
     return (
-        <CollapsiblePanel stickyFooter={SupportButtons} isCollapseMode={false}>
+        <CollapsiblePanel className="light-shadow" stickyFooter={SupportButtons} isCollapseMode={false}>
             <div className="row">
                 {isShowSubsidiaryDropdown && currentSubsidiarySearch && (
                     <div className="col-12 col-lg-2 col-md-3 col-sm-12">
@@ -228,7 +228,7 @@ const FormFilter = (props) => {
                             limitedMonthRange={DateConstraint.limitedMonthRange}
                             firstDayOfWeek={DateConstraint.firstDayOfWeek}
                             format={'MM/DD/yyyy'}
-                            langHandler={(key) => (key === 'May' ? LangHelper.getSingleResource('May2') : LangHelper.getSingleResource(key))}
+                            langHandler={(key) => LangHelper.getDateRangeResource(key)}
                             onChange={onChangeDateRange}
                         />
                     </div>
@@ -243,6 +243,7 @@ const FormFilter = (props) => {
                     <div className="form-group">
                         <label className="label-text">{LangHelper.getSingleResource('BaseCurrency')}</label>
                         <ReportSelect
+                            id="select-list-BaseCurrency"
                             onChange={onChangeSelectBaseCurrency}
                             value={currentBaseCurrency}
                             defaultValue={currentBaseCurrency}

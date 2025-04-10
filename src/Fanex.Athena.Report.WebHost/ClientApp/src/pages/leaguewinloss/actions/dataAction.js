@@ -1,6 +1,6 @@
 import * as types from './types.js';
-import DataService from '@srcRoot/lib/dataService';
-import { toggleLoader } from '@srcRoot/actions/loaderAction';
+import DataService from '@/lib/dataService';
+import { toggleLoader } from '@/actions/loaderAction';
 
 const getReportData = (url, params) => {
     return (dispatch) => {

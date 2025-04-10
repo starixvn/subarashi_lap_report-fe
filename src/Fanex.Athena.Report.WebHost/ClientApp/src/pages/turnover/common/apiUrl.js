@@ -1,4 +1,4 @@
-import DataService from '@srcRoot/lib/dataService';
+import DataService from '@/lib/dataService';
 
 export const ApiUrl = {
     INIT_FORM_URL: 'Api/Turnover/Index',

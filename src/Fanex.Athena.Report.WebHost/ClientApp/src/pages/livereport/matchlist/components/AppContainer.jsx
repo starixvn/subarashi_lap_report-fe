@@ -2,9 +2,9 @@ import React, { useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
-import useToggleRequest from '@srcRoot/hooks/useToggleRequest';
-import Loader from '@srcRoot/components/Loader';
-import DataService from '@srcRoot/lib/dataService';
+import useToggleRequest from '@/hooks/useToggleRequest';
+import Loader from '@/components/Loader';
+import DataService from '@/lib/dataService';
 
 import DataGrid from './DataGrid';
 import FormFilter from './FormFilter';

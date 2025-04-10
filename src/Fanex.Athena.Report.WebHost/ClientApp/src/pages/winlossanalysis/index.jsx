@@ -1,11 +1,11 @@
 ﻿import React, { useEffect } from 'react';
 import AppContainer from './components/AppContainer';
 import { Provider } from 'react-redux';
-import Store from '@srcRoot/lib/store';
+import Store from '@/lib/store';
 import reducer from './reducers';
 // import styles
-import '@srcRoot/styles/pages/winlossanalysis.scss';
-import useStyleSheetLink from '@srcRoot/hooks/useStyleSheetLink';
+import '@/styles/pages/winlossanalysis.scss';
+import useStyleSheetLink from '@/hooks/useStyleSheetLink';
 import { DefaultState } from './common/constants';
 
 const store = Store.createStore(reducer, { ...DefaultState, defaultState: { ...DefaultState } });

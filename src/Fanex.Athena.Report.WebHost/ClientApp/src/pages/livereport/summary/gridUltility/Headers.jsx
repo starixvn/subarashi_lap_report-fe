@@ -1,7 +1,7 @@
 import React from 'react';
 import { HeaderRow, HeaderCell } from '@legion-lib/react-grid';
 
-import LangHelper from '@srcRoot/helpers/langHelper';
+import LangHelper from '@/helpers/langHelper';
 
 export const BuildHeaders = (tableTitle, options) => {
     const result = [BuildFirstRow(tableTitle, options)];

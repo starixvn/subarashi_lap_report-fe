@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
 import { useDispatch } from 'react-redux';
-import { toggleLoader } from '@srcRoot/actions/loaderAction';
-import LangHelper from '@srcRoot/helpers/langHelper';
+import { toggleLoader } from '@/actions/loaderAction';
+import LangHelper from '@/helpers/langHelper';
 
 const useToggleRequest = () => {
     const dispatch = useDispatch();

@@ -1,19 +1,20 @@
+import { DateRange } from '@legion-lib/react-daterangepicker';
+import MultipleSelect from '@legion-lib/react-multiselect';
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import MultipleSelect from '@legion-lib/react-multiselect';
-import { DateRange } from '@legion-lib/react-daterangepicker';
 
-import { CUSTOMER_BALANCE, USER_GUIDE } from '@srcRoot/constants/pages';
-import CollapsiblePanel from '@srcRoot/components/CollapsiblePanel';
-import useToggleRequest from '@srcRoot/hooks/useToggleRequest';
-import SubmitButton from '@srcRoot/components/SubmitButton';
-import ReportSelect from '@srcRoot/components/ReportSelect';
-import RadioGroup from '@srcRoot/components/RadioGroup';
-import UserGuide from '@srcRoot/components/UserGuide';
-import LangHelper from '@srcRoot/helpers/langHelper';
-import DataService from '@srcRoot/lib/dataService';
-import Popup from '@srcRoot/components/Popup';
-import Site from '@srcRoot/lib/site';
+import CollapsiblePanel from '@/components/CollapsiblePanel';
+import ExportExcel from '@/components/ExportExcel';
+import Popup from '@/components/Popup';
+import RadioGroup from '@/components/RadioGroup';
+import ReportSelect from '@/components/ReportSelect';
+import SubmitButton from '@/components/SubmitButton';
+import UserGuide from '@/components/UserGuide';
+import { CUSTOMER_BALANCE, USER_GUIDE } from '@/constants/pages';
+import LangHelper from '@/helpers/langHelper';
+import useToggleRequest from '@/hooks/useToggleRequest';
+import DataService from '@/lib/dataService';
+import Site from '@/lib/site';
 
 import { ActionCreators } from '../actions';
 import Service, { constants } from '../common';
@@ -127,7 +128,7 @@ const FormFilter = (props) => {
 
     const SupportButtons = (
         <>
-            <i className="icon-excel right" onClick={onExportExcel} title={LangHelper.getSingleResource('ExportToExcel')} />
+            <ExportExcel onClick={onExportExcel} disabled={!selectedProducts.length || !selectedCurrency} />
             <UserGuide
                 title={LangHelper.getSingleResource(USER_GUIDE)}
                 contentTitle={LangHelper.getSingleResource(CUSTOMER_BALANCE)}
@@ -138,7 +139,7 @@ const FormFilter = (props) => {
     );
 
     return (
-        <CollapsiblePanel stickyFooter={SupportButtons} isCollapseMode={false}>
+        <CollapsiblePanel className="light-shadow" stickyFooter={SupportButtons} isCollapseMode={false}>
             <Popup className="popup-notification" isShow={isShowErrorPopUp} title={constants.PopUpSetting.Title} onClose={() => setIsShowErrorPopUp(false)}>
                 {constants.PopUpSetting.Message}
             </Popup>
@@ -155,7 +156,7 @@ const FormFilter = (props) => {
                             limitedMonthRange={DateConstraint.limitedMonthRange}
                             firstDayOfWeek={FirstDayOfWeek}
                             onChange={onChangeDateRange}
-                            langHandler={(key) => LangHelper.getSingleResource(key)}
+                            langHandler={(key) => LangHelper.getDateRangeResource(key)}
                         />
                     </div>
                 </div>

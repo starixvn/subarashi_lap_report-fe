@@ -1,8 +1,8 @@
-import { INVALID_REQUEST_URL, LRF_SAVED_PAGE_SESSION_KEY } from '@srcRoot/constants/config';
-import Site from '@srcRoot/lib/site';
 import * as Sentry from '@sentry/react';
-import { useRouteError } from 'react-router-dom';
+import { INVALID_REQUEST_URL, LRF_SAVED_PAGE_SESSION_KEY } from '@/constants/config';
+import Site from '@/lib/site';
 import { useEffect } from 'react';
+import { useRouteError } from 'react-router-dom';
 
 function RouteErrorBoundary() {
     const error = useRouteError();
@@ -11,7 +11,7 @@ function RouteErrorBoundary() {
             Sentry.captureException(error);
         }
     }, [error]);
-    
+
     cleanUpSessionStorage();
     Site.assignToUrl(INVALID_REQUEST_URL);
 

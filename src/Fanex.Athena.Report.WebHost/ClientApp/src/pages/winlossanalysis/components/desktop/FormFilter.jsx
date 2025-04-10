@@ -1,5 +1,5 @@
 ﻿import React, { memo } from 'react';
-import CollapsiblePanel from '@srcRoot/components/CollapsiblePanel';
+import CollapsiblePanel from '@/components/CollapsiblePanel';
 import MainFilter from './MainFilter.jsx';
 import GroupByFilter from './GroupByFilter.jsx';
 

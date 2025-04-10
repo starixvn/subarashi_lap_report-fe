@@ -878,6 +878,27 @@
   <data name="FinancialDate" xml:space="preserve">
     <value>Financial Date</value>
   </data>
+  <data name="CustomerComm" xml:space="preserve">
+    <value>Customer Comm</value>
+  </data>
+  <data name="IncludeDrawData" xml:space="preserve">
+    <value>Include Draw Data</value>
+  </data>
+  <data name="LicenseeNetWL" xml:space="preserve">
+    <value>Licensee Net WL</value>
+  </data>
+  <data name="LicenseeWinLoss" xml:space="preserve">
+    <value>Licensee Win Loss</value>
+  </data>
+  <data name="LicenseeWL" xml:space="preserve">
+    <value>Licensee WL</value>
+  </data>
+  <data name="TimeZone" xml:space="preserve">
+    <value>Time Zone</value>
+  </data>
+  <data name="WinLossByTimeZone" xml:space="preserve">
+    <value>Win Loss By Time Zone</value>
+  </data>
   <data name="SettlementTime" xml:space="preserve">
     <value>Settlement Time</value>
   </data>
@@ -907,5 +928,20 @@
   </data>
   <data name="Note" xml:space="preserve">
     <value>Note</value>
+  </data>
+  <data name="Promotion" xml:space="preserve">
+    <value>Promotion</value>
+  </data>
+  <data name="Based" xml:space="preserve">
+    <value>Based</value>
+  </data>
+  <data name="SeparateSabaWinLoss" xml:space="preserve">
+    <value>Separate Saba Virtual Sports from Sportsbook</value>
+  </data>
+  <data name="SubsidiaryPerformance" xml:space="preserve">
+    <value>Subsidiary Performance</value>
+  </data>
+  <data name="SubsidiaryWL" xml:space="preserve">
+    <value>Subsidiary W/L</value>
   </data>
 </root>

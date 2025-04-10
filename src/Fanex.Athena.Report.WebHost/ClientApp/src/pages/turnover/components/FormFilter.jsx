@@ -1,22 +1,23 @@
+import MultipleSelect from '@legion-lib/react-multiselect';
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import MultipleSelect from '@legion-lib/react-multiselect';
 
-import { TURNOVER, USER_GUIDE } from '@srcRoot/constants/pages';
-import CollapsiblePanel from '@srcRoot/components/CollapsiblePanel';
-import useToggleRequest from '@srcRoot/hooks/useToggleRequest';
-import ReportSelect from '@srcRoot/components/ReportSelect';
-import RadioGroup from '@srcRoot/components/RadioGroup';
-import UserGuide from '@srcRoot/components/UserGuide';
-import LangHelper from '@srcRoot/helpers/langHelper';
-import DataService from '@srcRoot/lib/dataService';
-import Site from '@srcRoot/lib/site';
+import CollapsiblePanel from '@/components/CollapsiblePanel';
+import RadioGroup from '@/components/RadioGroup';
+import ReportSelect from '@/components/ReportSelect';
+import UserGuide from '@/components/UserGuide';
+import { TURNOVER, USER_GUIDE } from '@/constants/pages';
+import LangHelper from '@/helpers/langHelper';
+import useToggleRequest from '@/hooks/useToggleRequest';
+import DataService from '@/lib/dataService';
+import Site from '@/lib/site';
 
+import AutoComplete from '@/components/auto-complete';
+import ExportExcel from '@/components/ExportExcel';
+import MonthPicker from '@/components/month-picker';
+import SubmitButton from '@/components/SubmitButton';
 import { ActionCreators } from '../actions';
 import { constants } from '../common';
-import AutoComplete from '@srcRoot/components/auto-complete';
-import MonthPicker from '@srcRoot/components/month-picker';
-import SubmitButton from '@srcRoot/components/SubmitButton';
 
 const FormFilter = (props) => {
     const { DateConstraint, ApiUrl, ExcludeTestDataOptions } = constants;
@@ -81,8 +82,7 @@ const FormFilter = (props) => {
             newSelectedBaseCurrency = { ...currency, isEmpty: true };
             newBaseCurrencyList.push(newSelectedBaseCurrency);
             dispatch(setBaseCurrencyList(newBaseCurrencyList));
-        }
-        else{
+        } else {
             dispatch(setBaseCurrencyList([...formData.baseCurrencies]));
         }
 
@@ -148,7 +148,7 @@ const FormFilter = (props) => {
 
     const SupportButtons = (
         <>
-            <i className="icon-excel right" onClick={onExportExcel} title={LangHelper.getSingleResource('ExportToExcel')} />
+            <ExportExcel onClick={onExportExcel} disabled={isFormValid} />
             <UserGuide
                 title={LangHelper.getSingleResource(USER_GUIDE)}
                 contentTitle={LangHelper.getSingleResource(TURNOVER)}
@@ -159,7 +159,7 @@ const FormFilter = (props) => {
     );
 
     return (
-        <CollapsiblePanel stickyFooter={SupportButtons} isCollapseMode={false}>
+        <CollapsiblePanel className="light-shadow" stickyFooter={SupportButtons} isCollapseMode={false}>
             <div className="row">
                 <div className="col-12 col-lg-3 col-md-4 col-sm-12">
                     <div className="form-group">
@@ -190,6 +190,7 @@ const FormFilter = (props) => {
                     <div className="form-group">
                         <label className="label-text">{LangHelper.getSingleResource('BaseCurrency')}</label>
                         <ReportSelect
+                            id="select-list-BaseCurrency"
                             onChange={onChangeSelectedBaseCurrency}
                             value={selectedBaseCurrency}
                             defaultValue={selectedBaseCurrency}

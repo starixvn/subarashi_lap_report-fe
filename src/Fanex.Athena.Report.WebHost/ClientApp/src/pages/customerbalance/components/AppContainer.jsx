@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import Loader from '@srcRoot/components/Loader';
-import useToggleRequest from '@srcRoot/hooks/useToggleRequest';
-import DataService from '@srcRoot/lib/dataService';
+import Loader from '@/components/Loader';
+import useToggleRequest from '@/hooks/useToggleRequest';
+import DataService from '@/lib/dataService';
 
 import { ActionCreators } from '../actions/index';
 import DataGrid from './DataGrid';

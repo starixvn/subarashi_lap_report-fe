@@ -1,4 +1,4 @@
-import Site from '../lib/site';
+import Site from '@/lib/site';
 
 const GetAppSettings = () => process.env.APP_SETTING;
 

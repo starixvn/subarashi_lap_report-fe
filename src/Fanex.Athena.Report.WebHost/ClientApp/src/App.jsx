@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements, useRouteError } from 'react-router-dom';
+import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom';
 import RouteConfig from './routes';
 import RouteLayout from './layouts/RouteLayout';
 import NotFound from './pages/NotFound';
@@ -14,12 +14,12 @@ const App = () => {
     const router = createBrowserRouter(
         createRoutesFromElements(
             <Route path="/">
-                {RouteConfig.map(({ Id, Path, Permissions, Layout, Component }) => (
+                {RouteConfig.map(({ Id, PageName, Path, Permissions, Layout, Component }) => (
                     <Route
                         id={Id}
                         key={Id}
                         path={Path}
-                        element={<RouteLayout pageName={Id} layout={Layout} component={Component} />}
+                        element={<RouteLayout id={Id} pageName={PageName} layout={Layout} component={Component} />}
                         loader={async () => await AuthorizeRequestInfo({ permissions: Permissions })}
                         errorElement={errorBoundary()}
                     />

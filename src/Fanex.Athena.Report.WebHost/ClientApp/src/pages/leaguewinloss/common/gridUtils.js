@@ -1,8 +1,8 @@
 import React from 'react';
 import { Row, Cell, HeaderRow, HeaderCell } from '@legion-lib/react-grid';
 import { headerText } from './constants';
-import NumberFormat from '@srcRoot/lib/numberFormat';
-import LangHelper from '@srcRoot/helpers/langHelper';
+import NumberFormat from '@/lib/numberFormat';
+import LangHelper from '@/helpers/langHelper';
 import GroupCell from '../components/grid/GroupCell';
 import TotalCell from '../components/grid/TotalCell';
 import { v4 as uuidv4 } from 'uuid';
@@ -35,24 +35,24 @@ export const renderDataSection = (dataList, drilldownLevel, isTotalRow) => {
 
         if (!dataList[i].isDirectToCurrency) {
             detailData &&
-            dataList[i].isBreakdown &&
-            detailData.map((item, index) => {
-                dataRows.push(buildDetailDataRow(item, index, drilldownLevel));
-                const { detail, isBreakdown } = item;
+                dataList[i].isBreakdown &&
+                detailData.map((item, index) => {
+                    dataRows.push(buildDetailDataRow(item, index, drilldownLevel));
+                    const { detail, isBreakdown } = item;
 
-                detail &&
-                    isBreakdown &&
-                    detail.data.map((item) => {
-                        dataRows.push(buildCurrencyDataRow(item, drilldownLevel));
-                    });
-            });
+                    detail &&
+                        isBreakdown &&
+                        detail.data.map((item) => {
+                            dataRows.push(buildCurrencyDataRow(item, drilldownLevel));
+                        });
+                });
         }
         else {
             detailData &&
-            dataList[i].isBreakdown &&
-            detailData.map((item) => {
-                dataRows.push(buildCurrencyDataRow(item, drilldownLevel));
-            });
+                dataList[i].isBreakdown &&
+                detailData.map((item) => {
+                    dataRows.push(buildCurrencyDataRow(item, drilldownLevel));
+                });
         }
     }
 

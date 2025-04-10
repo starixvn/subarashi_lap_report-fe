@@ -1,4 +1,4 @@
-import { LRF_SAVED_PAGE_SESSION_KEY } from '../constants/config';
+import { LRF_SAVED_PAGE_SESSION_KEY } from '@/constants/config';
 
 const _rootUrl = window.rootUrl || '/';
 export default class Site {
@@ -98,7 +98,10 @@ export default class Site {
         window.location.assign(this.resolveClientUrl(url));
     }
 
-    static getSentrySetting = () => {
-        return window.sentrySettings || {};
-    };
+    static getSentrySetting = () => ({
+        dsn: process.env.APP_SETTING.SentryFEDsn,
+        environment: process.env.APP_SETTING.Environment,
+        attachStacktrace: true,
+        integrations: [],
+    });
 }

@@ -4,16 +4,16 @@ import { bindActionCreators } from 'redux';
 import { useRouteLoaderData } from 'react-router-dom';
 import MultipleSelect from '@legion-lib/react-multiselect';
 
-import ReportSelect from '@srcRoot/components/ReportSelect';
-import DataService from '@srcRoot/lib/dataService';
-import Site from '@srcRoot/lib/site';
-import LangHelper from '@srcRoot/helpers/langHelper';
-import * as pages from '@srcRoot/constants/pages';
+import ReportSelect from '@/components/ReportSelect';
+import DataService from '@/lib/dataService';
+import Site from '@/lib/site';
+import LangHelper from '@/helpers/langHelper';
+import * as pages from '@/constants/pages';
 import { ActionCreators } from '../actions';
 
 import { SupportTaskOptions, ExportUrl, ExportFileName } from '../lib/constants';
 import CollapsiblePanel from '../../../components/CollapsiblePanel';
-import SubmitButton from '@srcRoot/components/SubmitButton';
+import SubmitButton from '@/components/SubmitButton';
 
 const FormFilter = ({ formData, selectedCurrency, selectedSupportTask, setSelectedSupportTask, setSelectedCurrency, toggleLoader }) => {
     const currencies = formData.currencies;
@@ -46,7 +46,7 @@ const FormFilter = ({ formData, selectedCurrency, selectedSupportTask, setSelect
     };
 
     return (
-        <CollapsiblePanel isCollapseMode={false}>
+        <CollapsiblePanel className="light-shadow" isCollapseMode={false}>
             <div className="row">
                 <div className="col-12 col-md-3 col-sm-3 col-lg-2 col-xl-2">
                     <div className="form-group">
