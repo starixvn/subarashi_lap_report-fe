@@ -341,7 +341,7 @@ export const FormFilter = (props) => {
             });
     };
 
-    const excelButton = <ExportExcel onClick={exportExcel} />;
+    const excelButton = <ExportExcel onClick={exportExcel} disabled={!isValidModel()} />;
 
     return (
         <>

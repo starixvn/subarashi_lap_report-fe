@@ -199,7 +199,7 @@ const FormFilter = (props) => {
 
     const SupportButtons = (
         <>
-            <ExportExcel onClick={onExportExcel} />
+            <ExportExcel onClick={onExportExcel} disabled={isFormValid} />
             <UserGuide
                 title={LangHelper.getSingleResource(USER_GUIDE)}
                 contentTitle={LangHelper.getSingleResource(CUSTOMER_TURNOVER)}

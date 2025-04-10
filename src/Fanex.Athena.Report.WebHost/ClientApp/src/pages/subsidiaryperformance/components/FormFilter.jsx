@@ -144,7 +144,7 @@ const FormFilter = (props) => {
 
     const isShowSubsidiaryDropDown = formData.viewType !== SubsidiaryViewType.NOT_MANAGEMENT;
 
-    const SupportButtons = <ExportExcel onClick={onExportExcel} />;
+    const SupportButtons = <ExportExcel onClick={onExportExcel} disabled={!isValidModel} />;
 
     return (
         <CollapsiblePanel stickyFooter={SupportButtons} isCollapseMode={false}>

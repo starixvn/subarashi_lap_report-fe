@@ -300,7 +300,7 @@ export const FormFilter = (props) => {
 
     const excelButton = (
         <React.Fragment>
-            <ExportExcel onClick={exportExcel} />
+            <ExportExcel onClick={exportExcel} disabled={!isValidModel()} />
             {_renderUserGuide()}
         </React.Fragment>
     );

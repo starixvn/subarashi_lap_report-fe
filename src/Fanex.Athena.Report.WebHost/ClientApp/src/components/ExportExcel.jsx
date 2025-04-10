@@ -5,7 +5,9 @@ import PropTypes from 'prop-types';
 const ExportExcel = (props) => {
     const _onClickHandler = (event) => {
         event.preventDefault();
-        props.onClick && props.onClick();
+        if (!props.disabled) {
+            props.onClick && props.onClick();
+        }
     };
 
     return <i id="ExportToExcel" className={props.className} onClick={_onClickHandler} title={LangHelper.getSingleResource('ExportToExcel')} />;

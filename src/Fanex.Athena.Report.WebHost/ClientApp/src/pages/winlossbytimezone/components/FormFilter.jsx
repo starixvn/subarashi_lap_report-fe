@@ -10,6 +10,7 @@ import ReportSelect from '@/components/ReportSelect';
 import CollapsiblePanel from '@/components/CollapsiblePanel';
 import useToggleRequest from '@/hooks/useToggleRequest';
 import DataService from '@/lib/dataService';
+import ExportExcel from '@/components/ExportExcel';
 import { USER_GUIDE, WL_BY_TIME_ZONE } from '@/constants/pages';
 
 import { ReportBy, SettingConst, TimeZones, ApiUrl, DateConstraint } from '../constants';
@@ -178,7 +179,7 @@ const FormFilter = (props) => {
 
     const SupportButtons = (
         <>
-            <i className="icon-excel right" onClick={onExportExcel} title={LangHelper.getSingleResource('ExportToExcel')} />
+            <ExportExcel onClick={onExportExcel} disabled={!isValidModel} />
             <UserGuide
                 title={LangHelper.getSingleResource(USER_GUIDE)}
                 contentTitle={LangHelper.getSingleResource(WL_BY_TIME_ZONE)}
