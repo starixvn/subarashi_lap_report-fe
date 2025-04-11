@@ -47,17 +47,24 @@ const FormFilter = (props) => {
             const defaultCurrency = formData.baseCurrencies.find((x) => x.value === -1);
             dispatch(setSelectedBaseCurrency({ ...defaultCurrency }));
             dispatch(setSelectedCurrency(currency));
+
+            // Reset baseCurrencyList to original values from formData
+            dispatch(setBaseCurrencyList([...formData.baseCurrencies]));
             return;
         }
 
         let newSelectedBaseCurrency = currency;
         if (!formData.baseCurrencies.find((x) => x.label === currency.label)) {
-            const newBaseCurrencyList = formData.baseCurrencies.slice(0);
-            newBaseCurrencyList.push(currency);
+            // Reset baseCurrencyList to original values before adding new one
+            const originalBaseCurrencies = formData.baseCurrencies.slice(0);
+            const newBaseCurrencyList = [...originalBaseCurrencies, currency];
             dispatch(setBaseCurrencyList(newBaseCurrencyList));
 
             // Not exist base currency => set flag to send request with empty base currency in getParams()
             newSelectedBaseCurrency = { ...currency, isEmpty: true };
+        } else {
+            // If it's a default currency, just reset to original list
+            dispatch(setBaseCurrencyList([...formData.baseCurrencies]));
         }
 
         dispatch(setSelectedCurrency(currency));
