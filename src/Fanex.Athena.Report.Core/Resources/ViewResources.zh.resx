@@ -849,7 +849,7 @@
   <data name="SabaVirtualSportsWinLoss" xml:space="preserve">
     <value>沙巴虚拟赛事输赢</value>
   </data>
-  <data name="SabaVirtualSport" xml:space="preserve">
+  <data name="SabaVirtualSports" xml:space="preserve">
     <value>沙巴虚拟赛事</value>
   </data>
   <data name="CashOutCommission" xml:space="preserve">

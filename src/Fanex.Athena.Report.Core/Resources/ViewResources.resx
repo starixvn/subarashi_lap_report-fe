@@ -968,8 +968,8 @@
   <data name="CashOutCommission" xml:space="preserve">
     <value>Cash Out Commission</value>
   </data>
-  <data name="SabaVirtualSport" xml:space="preserve">
-    <value>Saba Virtual Sport</value>
+  <data name="SabaVirtualSports" xml:space="preserve">
+    <value>Saba Virtual Sports</value>
   </data>
   <data name="AllCurrencies" xml:space="preserve">
     <value>All Currencies</value>

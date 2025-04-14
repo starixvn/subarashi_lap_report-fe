@@ -63,9 +63,11 @@ export default class NumberFormat {
         if (typeof value !== 'number' || isNaN(value)) {
             return '';
         }
+        const sign = value < 0 ? -1 : 1;
+        const absoluteValue = Math.abs(value);
 
         const power = Math.pow(10, digits || 0);
-        const roundedValue = Math.round(value * power) / power;
+        const roundedValue = sign * (Math.round(absoluteValue * power) / power);
 
         return roundedValue.toFixed(digits).replace(/^[+-]?\d+/, (int) => int.replace(/(\d)(?=(\d{3})+$)/g, '$1,'));
     }

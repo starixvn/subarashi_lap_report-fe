@@ -2095,11 +2095,11 @@ namespace Fanex.Athena.Report.Core.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Saba Virtual Sport.
+        ///   Looks up a localized string similar to Saba Virtual Sports.
         /// </summary>
-        public static string SabaVirtualSport {
+        public static string SabaVirtualSports {
             get {
-                return ResourceManager.GetString("SabaVirtualSport", resourceCulture);
+                return ResourceManager.GetString("SabaVirtualSports", resourceCulture);
             }
         }
         

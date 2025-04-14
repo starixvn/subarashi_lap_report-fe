@@ -918,7 +918,7 @@
   <data name="SabaVirtualSportsWinLoss" xml:space="preserve">
     <value>Sabaกีฬาเสมือนจริง แพ้ชนะ</value>
   </data>
-  <data name="SabaVirtualSport" xml:space="preserve">
+  <data name="SabaVirtualSports" xml:space="preserve">
     <value>Sabaกีฬาเสมือนจริง</value>
   </data>
   <data name="CashOutCommission" xml:space="preserve">

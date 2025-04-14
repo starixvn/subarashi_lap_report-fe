@@ -67,7 +67,7 @@ const BuildSecondRow = ({ hasCustomerComm }) => (
             </HeaderCell>
         )}
         <HeaderCell colWidth={600} sortBy="licenseeWLSB" key="LicenseeSabaVirtualSport">
-            {LangHelper.getSingleResource('SabaVirtualSport')}
+            {LangHelper.getSingleResource('SabaVirtualSports')}
         </HeaderCell>
         <HeaderCell colWidth={400} sortBy="licenseeWLCO" key="LicenseeCashout">
             {LangHelper.getSingleResource('CashOut')}

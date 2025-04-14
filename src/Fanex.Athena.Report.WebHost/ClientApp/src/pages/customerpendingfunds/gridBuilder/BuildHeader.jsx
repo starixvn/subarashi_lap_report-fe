@@ -18,7 +18,7 @@ export const BuildHeader = (defaultSelectedHeaderKey, { isFakeLicensee }) => (
             </HeaderCell>
         )}
         <HeaderCell rowSpan="2" colWidth={250} key={constants.SortKeys.BetCount} sortBy={constants.SortKeys.BetCount}>
-            {LangHelper.getSingleResource('BetCount')}
+            {LangHelper.getSingleResource('BetCounts')}
         </HeaderCell>
         <HeaderCell rowSpan="2" colWidth={250} key={constants.SortKeys.PendingFunds} sortBy={constants.SortKeys.PendingFunds}>
             {LangHelper.getSingleResource('PendingFunds')}

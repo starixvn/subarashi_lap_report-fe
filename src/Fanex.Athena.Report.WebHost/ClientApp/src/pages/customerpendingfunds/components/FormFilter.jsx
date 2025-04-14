@@ -94,7 +94,7 @@ const FormFilter = (props) => {
     const getParams = () => {
         const params = {
             ProductOptions: selectedProducts,
-            BaseCurrency: selectedBaseCurrency.isEmpty ? null : selectedBaseCurrency.label,
+            BaseCurrency: selectedBaseCurrency.isEmpty ? '' : selectedBaseCurrency.label,
             CurrencyName: selectedCurrency.label,
             CurrencyId: selectedCurrency.value,
             OrderItem: Service.getOrderItem(gridSettings.sortBy),
