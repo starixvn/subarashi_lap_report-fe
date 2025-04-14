@@ -36,7 +36,7 @@ export const FormFilter = (props) => {
         if (isValid) {
             props.setDateRange(range);
         } else {
-            const message = LangHelper.getSingleResource('DateRangeExceedMsg').replace('{0}', AppData.dateConstraint.limitedMonthRange);
+            const message = LangHelper.getSingleResource('DateRangeExceedMsg').replace('{0}', DateSettings.DateConstraint.limitedMonthRange);
             alert(message);
         }
     };
