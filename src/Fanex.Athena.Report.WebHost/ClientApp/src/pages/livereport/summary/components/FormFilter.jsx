@@ -192,6 +192,8 @@ const FormFilter = (props) => {
         );
     };
 
+    const isValidParam = (!currentSubsidiarySearch || !!currentSubsidiaryList) && !!currentCurrency;
+
     const SupportButtons = (
         <>
             <ExportExcel onClick={onExportExcel} disabled={!isValidParam} />
@@ -205,8 +207,6 @@ const FormFilter = (props) => {
             )}
         </>
     );
-
-    const isValidParam = (!currentSubsidiarySearch || !!currentSubsidiaryList) && !!currentCurrency;
 
     return (
         <CollapsiblePanel className="light-shadow" stickyFooter={SupportButtons} isCollapseMode={false}>
