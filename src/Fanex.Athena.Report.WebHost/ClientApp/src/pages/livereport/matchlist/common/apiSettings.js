@@ -3,7 +3,7 @@ import * as pages from '@/constants/pages';
 
 export const BetListPageUrl = {
     MATCH: `/${paths.BETLIST}/${pages.LIVE_REPORT}/Match`,
-    BETRADAR: `/${paths.BETLIST}/${pages.LIVE_REPORT}/Betradar`
+    VSNEWRACING: `/${paths.BETLIST}/${pages.LIVE_REPORT}/VSNewRacing`
 };
 
 export const ApiUrl = {
