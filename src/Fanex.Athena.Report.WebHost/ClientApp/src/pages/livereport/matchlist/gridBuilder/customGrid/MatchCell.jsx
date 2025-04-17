@@ -7,6 +7,16 @@ import useNavigateParams from '@/hooks/useNavigateParams';
 import { constants } from '../../common';
 import { ActionCreators } from '../../actions';
 
+const getMatchUrl = (sportId) => {
+    switch (sportId) {
+        case 177:
+        case 198:
+            return constants.BetListPageUrl.VSNEWRACING;
+        default:
+            return constants.BetListPageUrl.MATCH;
+    }
+};
+
 function MatchCell({ data, ...rest }) {
     const navigate = useNavigateParams();
     const dispatch = useDispatch();
@@ -34,6 +44,8 @@ function MatchCell({ data, ...rest }) {
             BetType: data.betType,
             EventType: data.eventType,
             SportType: data.sportId,
+            Distance: data.distance,
+            VendorMatchId: data.vendorMatchId,
             Rows: 50,
             Page: 1,
         };
@@ -42,9 +54,7 @@ function MatchCell({ data, ...rest }) {
             params.SubsidiaryList = requestParam.SubsidiaryList;
         }
 
-        const url = data.sportId === 177 || data.sportId === 198
-            ? BetListPageUrl.BETRADAR
-            : BetListPageUrl.MATCH ;
+        const url = getMatchUrl(data.sportId);
 
         navigate(url, params);
     };
