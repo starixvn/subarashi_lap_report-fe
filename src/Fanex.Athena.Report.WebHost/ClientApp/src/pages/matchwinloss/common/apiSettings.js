@@ -17,7 +17,7 @@ export const ApiUrl = {
 
 export const SpecialProducts = ["NG"];
 
-export const VsSportTypes = [181, 182, 183, 185, 198, 177];
+export const VsSportTypes = [181, 182, 183, 185, 198, 177, 125, 126, 127];
 
 export const SupportDrillDownProducts = ["SB", "VS", "NG"];
 
