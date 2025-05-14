@@ -598,13 +598,13 @@
     <value>总结</value>
   </data>
   <data name="BySportsType" xml:space="preserve">
-    <value>根据运动类型</value>       
+    <value>根据运动类型</value>
   </data>
   <data name="ByCurrency" xml:space="preserve">
     <value>根据货币</value>
   </data>
   <data name="ByBetType" xml:space="preserve">
-    <value>根据投注类型</value>       
+    <value>根据投注类型</value>
   </data>
   <data name="CashOut" xml:space="preserve">
     <value>实时兑现</value>
@@ -777,7 +777,7 @@
   <data name="WinlossAnalysis_SettlementTimeModeNote" xml:space="preserve">
     <value>结算时间模式的资料使用票券结算时之汇率换算，资料可能与原报表根据赛事结束日期之汇率计算有些许落差。</value>
   </data>
-  <data name="TimeZone" xml:space="preserve">    
+  <data name="TimeZone" xml:space="preserve">
     <value>时区</value>
   </data>
   <data name="IncludeDrawData" xml:space="preserve">
@@ -822,7 +822,10 @@
   <data name="SubsidiaryWL" xml:space="preserve">
     <value>子网站输赢</value>
   </data>
-  <data name="SubsidiaryPerformance" xml:space="preserve">   
+  <data name="SubsidiaryPerformance" xml:space="preserve">
     <value>子网站综合报表</value>
+  </data>
+  <data name="SeparateSabaWinLoss_HideSaba" xml:space="preserve">
+    <value>将虚拟体育与体育博彩分开</value>
   </data>
 </root>

@@ -2077,6 +2077,15 @@ namespace Fanex.Athena.Report.Core.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Separate Virtual Sports from Sportsbook.
+        /// </summary>
+        public static string SeparateSabaWinLoss_HideSaba {
+            get {
+                return ResourceManager.GetString("SeparateSabaWinLoss_HideSaba", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to September.
         /// </summary>
         public static string September {

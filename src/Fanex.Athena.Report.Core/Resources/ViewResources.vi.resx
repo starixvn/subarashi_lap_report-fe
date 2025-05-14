@@ -616,19 +616,19 @@
     <value>dữ liệu</value>
   </data>
   <data name="LiveReport" xml:space="preserve">
-    <value>Báo Cáo Trực Tiếp</value>  
+    <value>Báo Cáo Trực Tiếp</value>
   </data>
   <data name="Summary" xml:space="preserve">
     <value>Tóm tắt</value>
   </data>
   <data name="BySportsType" xml:space="preserve">
-    <value>Theo Loại Thể Thao</value> 
+    <value>Theo Loại Thể Thao</value>
   </data>
   <data name="ByCurrency" xml:space="preserve">
     <value>Theo Đơn vị tiền tệ</value>
   </data>
   <data name="ByBetType" xml:space="preserve">
-    <value>Theo Loại Cược</value>     
+    <value>Theo Loại Cược</value>
   </data>
   <data name="CashOut" xml:space="preserve">
     <value>Bán vé cược</value>
@@ -855,7 +855,7 @@
   <data name="Cancel" xml:space="preserve">
     <value>Hủy</value>
   </data>
-  <data name="TimeZone" xml:space="preserve">    
+  <data name="TimeZone" xml:space="preserve">
     <value>Múi giờ</value>
   </data>
   <data name="IncludeDrawData" xml:space="preserve">
@@ -871,7 +871,7 @@
     <value>Thắng Thua Nhà Cái</value>
   </data>
   <data name="WinLossByTimeZone" xml:space="preserve">
-    <value>Thắng Thua Theo Múi Giờ</value>       
+    <value>Thắng Thua Theo Múi Giờ</value>
   </data>
   <data name="LicenseeWinLoss" xml:space="preserve">
     <value>Thắng Thua Nhà Cái</value>
@@ -891,13 +891,16 @@
   <data name="Based" xml:space="preserve">
     <value>Dựa trên</value>
   </data>
-  <data name="SeparateSabaWinLoss" xml:space="preserve">     
-    <value>Tách Saba Thể Thao Ảo ra khỏi Sportsbook</value>  
+  <data name="SeparateSabaWinLoss" xml:space="preserve">
+    <value>Tách Saba Thể Thao Ảo ra khỏi Sportsbook</value>
   </data>
   <data name="SubsidiaryWL" xml:space="preserve">
     <value>Thắng Thua Chi nhánh</value>
   </data>
-  <data name="SubsidiaryPerformance" xml:space="preserve">   
+  <data name="SubsidiaryPerformance" xml:space="preserve">
     <value>Hiệu suất Chi Nhánh</value>
+  </data>
+  <data name="SeparateSabaWinLoss_HideSaba" xml:space="preserve">
+    <value>Tách Thể Thao Ảo khỏi Sportsbook</value>
   </data>
 </root>
