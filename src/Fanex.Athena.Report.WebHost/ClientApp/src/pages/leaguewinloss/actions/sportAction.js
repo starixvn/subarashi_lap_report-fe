@@ -21,6 +21,15 @@ const getSportList = (productCodes) => {
     return async (dispatch) => {
         const response = await DataService.getData('api/CommonDataApi/GetSportsForTreeView', { productCodes: productCodes });
         const data = response.data;
+
+        if (data && Array.isArray(data)) {
+            const sbParent = data.find(item => item && item.ID === 0 && item.Value === "SB");
+            if (sbParent && sbParent.Children && Array.isArray(sbParent.Children)) {
+                sbParent.Children = sbParent.Children.filter(child =>
+                    child && (child.ID !== -1 || child.Value !== "-1"));
+            }
+        }
+
         const camelData = ObjectHelper.toCamel(data);
         const selectedSports = Service.getSelectedItemFromTreeListItem(camelData);
         dispatch(setSportList(camelData));
