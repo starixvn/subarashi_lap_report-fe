@@ -6,3 +6,9 @@ export const gridData = createReducer(null, {
         return action.data;
     },
 });
+
+export const sweetAlertOption = createReducer(null, {
+    [types.SET_SWEET_ALERT_OPTION](state, action) {
+        return action.data && { ...action.data };
+    },
+});

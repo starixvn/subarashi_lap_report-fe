@@ -1,0 +1,58 @@
+.live-score {
+    color: red;
+}
+
+.league-name {
+    font-size: 1.2rem;
+    color: #444444;
+    background: #daeef3 !important;
+    font-weight: bold;
+}
+
+.icon-alert {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.forecast-number {
+    color: #d91a1a !important;
+    font-weight: bold;
+}
+
+.normal-number {
+    color: #000 !important;
+    font-weight: bold;
+}
+
+.settled-row td {
+    background-color: #dcdcdc !important;
+}
+
+.btn-reset{
+    background-color: white;
+    border: 1px solid #c6c6c6;
+    color: #6c757d;
+    cursor: pointer;
+    
+    &:hover {
+        color: #165299;
+        border-color: #165299;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+    }
+}
+
+// override table style
+.table > thead > tr > th {
+    vertical-align: middle;
+    text-align: center;
+    border: 1px solid #ffffff;
+    border-top: 1px solid #d1dae1;
+    border-radius: 0;
+    font-weight: 500;
+    padding: 2px 5px;
+    background: #4C6375;
+    color: #fff;
+}

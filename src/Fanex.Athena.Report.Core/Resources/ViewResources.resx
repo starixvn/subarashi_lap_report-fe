@@ -947,4 +947,43 @@
   <data name="SeparateSabaWinLoss_HideSaba" xml:space="preserve">
     <value>Separate Virtual Sports from Sportsbook</value>
   </data>
+  <data name="KickOffTime" xml:space="preserve">
+    <value>Kick Off Time</value>
+  </data>
+  <data name="MatchStatus" xml:space="preserve">
+    <value>Match Status</value>
+  </data>
+  <data name="TriggeredAlert" xml:space="preserve">
+    <value>Triggered Alert</value>
+  </data>
+  <data name="AlertRules" xml:space="preserve">
+    <value>Alert Rules</value>
+  </data>
+  <data name="Event" xml:space="preserve">
+    <value>Event</value>
+  </data>
+  <data name="TotalHome" xml:space="preserve">
+    <value>Total Home</value>
+  </data>
+  <data name="TotalAway" xml:space="preserve">
+    <value>Total Away</value>
+  </data>
+  <data name="ForecastHome" xml:space="preserve">
+    <value>Forecast Home</value>
+  </data>
+  <data name="ForecastAway" xml:space="preserve">
+    <value>Forecast Away</value>
+  </data>
+  <data name="Operation" xml:space="preserve">
+    <value>Operation</value>
+  </data>
+  <data name="Setting" xml:space="preserve">
+    <value>Setting</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="ConfirmRemoveMatchMonitoring" xml:space="preserve">
+    <value>Are you sure you want to remove this event from the monitoring list? Once removed, all related alert rules and tracking will be stopped.</value>
+  </data>
 </root>

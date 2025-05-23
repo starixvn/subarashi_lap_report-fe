@@ -26,4 +26,6 @@ export const CUSTOMER_TURNOVER = 'CustomerTurnover';
 
 export const TURNOVER = 'Turnover';
 
+export const MATCH_MONITORING_CENTER = 'MatchMonitoringCenter';
+
 export const BETLIST = 'BetList';

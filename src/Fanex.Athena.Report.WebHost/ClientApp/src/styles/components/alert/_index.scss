@@ -1,0 +1,31 @@
+﻿@import "icons";
+
+.sweet-alert {
+    .popup-content {
+        width: 100%;
+        padding: 0 10px !important;
+    }
+
+    .al-button-container {
+        text-align: center;
+        margin-top: 15px !important;
+
+        button, a {
+            margin-right: 10px;
+        }
+    }
+
+    .warning {
+        color: #ee0606;
+    }
+}
+
+.sweet-alert-popup {
+    width: 500px !important;
+    height: 250px !important;
+}
+
+.sweet-alert-content {
+    padding-left: 10px;
+    padding-right: 10px;
+}

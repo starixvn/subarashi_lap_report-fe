@@ -1,0 +1,34 @@
+.piechart-tooltip {
+    position: fixed;
+    background: rgba(0, 0, 0, 0.85);
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 4px;
+    pointer-events: none;
+    white-space: nowrap;
+    font-size: 12px;
+    z-index: 9999;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.piechart-tooltip-value-row {
+    display: flex;
+    align-items: center;
+}
+
+.piechart-tooltip-colorbox {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 2px;
+    margin: 0 4px 0 0;
+    border: 1px solid #fff;
+    box-sizing: border-box;
+}
+
+.piechart-percent-label {
+    font-size: 10px;
+    fill: #fff;
+    pointer-events: none;
+    text-shadow: 0 1px 2px #000;
+}

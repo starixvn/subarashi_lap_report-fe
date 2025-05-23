@@ -97,6 +97,15 @@ namespace Fanex.Athena.Report.Core.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Alert Rules.
+        /// </summary>
+        public static string AlertRules {
+            get {
+                return ResourceManager.GetString("AlertRules", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to All.
         /// </summary>
         public static string All {
@@ -394,6 +403,15 @@ namespace Fanex.Athena.Report.Core.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Are you sure you want to remove this event from the monitoring list? Once removed, all related alert rules and tracking will be stopped..
+        /// </summary>
+        public static string ConfirmRemoveMatchMonitoring {
+            get {
+                return ResourceManager.GetString("ConfirmRemoveMatchMonitoring", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Convert all figures to Base Currency.
         /// </summary>
         public static string ConvertAllFiguresToBaseCurrency {
@@ -637,6 +655,15 @@ namespace Fanex.Athena.Report.Core.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Event.
+        /// </summary>
+        public static string Event {
+            get {
+                return ResourceManager.GetString("Event", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to This file exceeded 65535 entries. Please contact administrator for more details..
         /// </summary>
         public static string ExcelExceedRowsMsg {
@@ -732,6 +759,24 @@ namespace Fanex.Athena.Report.Core.Resources {
         public static string FinancialDate {
             get {
                 return ResourceManager.GetString("FinancialDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Forecast Away.
+        /// </summary>
+        public static string ForecastAway {
+            get {
+                return ResourceManager.GetString("ForecastAway", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Forecast Home.
+        /// </summary>
+        public static string ForecastHome {
+            get {
+                return ResourceManager.GetString("ForecastHome", resourceCulture);
             }
         }
         
@@ -903,6 +948,15 @@ namespace Fanex.Athena.Report.Core.Resources {
         public static string June {
             get {
                 return ResourceManager.GetString("June", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kick Off Time.
+        /// </summary>
+        public static string KickOffTime {
+            get {
+                return ResourceManager.GetString("KickOffTime", resourceCulture);
             }
         }
         
@@ -1123,6 +1177,15 @@ namespace Fanex.Athena.Report.Core.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Match Status.
+        /// </summary>
+        public static string MatchStatus {
+            get {
+                return ResourceManager.GetString("MatchStatus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Match Win Loss.
         /// </summary>
         public static string MatchWinLoss {
@@ -1326,6 +1389,15 @@ namespace Fanex.Athena.Report.Core.Resources {
         public static string OpeningBalance {
             get {
                 return ResourceManager.GetString("OpeningBalance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Operation.
+        /// </summary>
+        public static string Operation {
+            get {
+                return ResourceManager.GetString("Operation", resourceCulture);
             }
         }
         
@@ -1969,6 +2041,15 @@ namespace Fanex.Athena.Report.Core.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Remove.
+        /// </summary>
+        public static string Remove {
+            get {
+                return ResourceManager.GetString("Remove", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Report.
         /// </summary>
         public static string Report {
@@ -2091,6 +2172,15 @@ namespace Fanex.Athena.Report.Core.Resources {
         public static string September {
             get {
                 return ResourceManager.GetString("September", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Setting.
+        /// </summary>
+        public static string Setting {
+            get {
+                return ResourceManager.GetString("Setting", resourceCulture);
             }
         }
         
@@ -2293,6 +2383,24 @@ namespace Fanex.Athena.Report.Core.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Total Away.
+        /// </summary>
+        public static string TotalAway {
+            get {
+                return ResourceManager.GetString("TotalAway", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Total Home.
+        /// </summary>
+        public static string TotalHome {
+            get {
+                return ResourceManager.GetString("TotalHome", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Total in.
         /// </summary>
         public static string TotalIn {
@@ -2325,6 +2433,15 @@ namespace Fanex.Athena.Report.Core.Resources {
         public static string TransTime {
             get {
                 return ResourceManager.GetString("TransTime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Triggered Alert.
+        /// </summary>
+        public static string TriggeredAlert {
+            get {
+                return ResourceManager.GetString("TriggeredAlert", resourceCulture);
             }
         }
         
