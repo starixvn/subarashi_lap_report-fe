@@ -944,4 +944,7 @@
   <data name="SubsidiaryWL" xml:space="preserve">
     <value>Subsidiary W/L</value>
   </data>
+  <data name="SeparateSabaWinLoss_HideSaba" xml:space="preserve">
+    <value>Separate Virtual Sports from Sportsbook</value>
+  </data>
 </root>

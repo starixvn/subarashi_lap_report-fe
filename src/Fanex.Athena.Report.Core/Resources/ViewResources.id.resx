@@ -628,7 +628,7 @@
     <value>Berdasarkan Jenis Olahraga</value>
   </data>
   <data name="ByCurrency" xml:space="preserve">
-    <value>Menurut Mata Uang</value>  
+    <value>Menurut Mata Uang</value>
   </data>
   <data name="ByBetType" xml:space="preserve">
     <value>Berdasarkan Jenis Taruhan</value>
@@ -855,7 +855,7 @@
   <data name="Based" xml:space="preserve">
     <value>Berdasarkan</value>
   </data>
-  <data name="TimeZone" xml:space="preserve">    
+  <data name="TimeZone" xml:space="preserve">
     <value>Zona Waktu</value>
   </data>
   <data name="IncludeDrawData" xml:space="preserve">
@@ -876,13 +876,16 @@
   <data name="LicenseeWinLoss" xml:space="preserve">
     <value>Kemenangan dan Kerugian Lisensi</value>
   </data>
-  <data name="SeparateSabaWinLoss" xml:space="preserve">     
+  <data name="SeparateSabaWinLoss" xml:space="preserve">
     <value>Pisahkan Saba Virtual Sports dari Sportsbook</value>
   </data>
   <data name="SubsidiaryWL" xml:space="preserve">
-    <value>Kemenangan/Kerugian Anak Perusahaan</value>       
+    <value>Kemenangan/Kerugian Anak Perusahaan</value>
   </data>
-  <data name="SubsidiaryPerformance" xml:space="preserve">   
+  <data name="SubsidiaryPerformance" xml:space="preserve">
     <value>Performa Cabang</value>
+  </data>
+  <data name="SeparateSabaWinLoss_HideSaba" xml:space="preserve">
+    <value>Pisahkan Olahraga Virtual dari Sportsbook</value>
   </data>
 </root>
