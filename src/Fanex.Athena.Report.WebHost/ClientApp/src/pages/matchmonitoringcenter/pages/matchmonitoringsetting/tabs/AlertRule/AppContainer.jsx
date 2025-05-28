@@ -6,14 +6,14 @@ import Loader from '@/components/Loader';
 import SweetAlert from '@/components/sweet-alert';
 
 const AppContainer = ({ isLoading, sweetAlertOption }) => {
-  return (
-    <div className="alert-rule">
-      <Loader isLoading={isLoading} />
-      <FormatRule />
-      <DataGrid />
-	  {sweetAlertOption && <SweetAlert {...sweetAlertOption} />}
-    </div>
-  );
+    return (
+        <div className="alert-rule">
+            <Loader isLoading={isLoading} />
+            <FormatRule />
+            <DataGrid />
+            {sweetAlertOption && <SweetAlert {...sweetAlertOption} />}
+        </div>
+    );
 };
 
 function mapStateToProps(state) {

@@ -95,12 +95,12 @@
 }
 
 .popup-container {
-    .flat-popup.custom-popup-size {
+    .flat-popup .custom-popup-size {
         width: 540px !important;
         height: 260px !important;
     }
 
-    .flat-popup.alert-popup-size {
+    .flat-popup .alert-popup-size {
         width: 540px !important;
         height: 180px !important;
     }
@@ -109,4 +109,9 @@
 flat-popup {
     width: 540px;
     height: 220px;
+}
+
+.monitor-setting-popup{
+    width: 80% !important;
+    height: 80% !important;
 }

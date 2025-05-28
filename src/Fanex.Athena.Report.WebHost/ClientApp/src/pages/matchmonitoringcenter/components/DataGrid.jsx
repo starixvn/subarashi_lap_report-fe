@@ -22,7 +22,7 @@ const DataGrid = (props) => {
         state.settingPageOption,
     ]);
     const { headerColumns } = constants;
-    const { Remove, Setting } = useGridAction();
+    const { Remove, Setting, History } = useGridAction();
 
     if (!gridData) {
         return;
@@ -219,15 +219,31 @@ const DataGrid = (props) => {
             );
         };
 
+        const BuildAlertHistory = (isAlerted, monitoringId) => {
+            if (!isAlerted) {
+                return (
+                    <Cell key={'isAlerted'} className="center-align">
+                        <i className="icon-alert icon-safe"></i>
+                    </Cell>
+                );
+            }
+
+            return (
+                <Cell key={'alertHistory'} className="center-align">
+                    <a href="#" onClick={(e) => History(e, monitoringId)}>
+                        <i className="icon-alert icon-danger"></i>
+                    </a>
+                </Cell>
+            );
+        };
+
         return (
             <Row key={monitoringId} className={isSettled ? 'settled-row' : ''}>
                 <Cell key={'kickOffTimeString'} className="center-align">
                     {kickOffTimeString}
                 </Cell>
                 {BuildMatchStatus(liveIndicator, liveHomeScore, liveAwayScore)}
-                <Cell key={'isAlerted'} className="center-align">
-                    <i className={`icon-alert ${isAlerted ? 'icon-danger' : 'icon-safe'}`}></i>
-                </Cell>
+                {BuildAlertHistory(isAlerted, monitoringId)}
                 {BuildAlertRules(alertRules)}
                 <Cell key={'event'} className="center-align">
                     {matchName}

@@ -20,3 +20,10 @@ export const setPopupTitle = (title) => {
         data: title,
     };
 };
+
+export const setPopupStyleClassName = (styleClassName) => {
+    return {
+        type: types.SET_POPUP_STYLE_CLASS_NAME,
+        data: styleClassName,
+    };
+};

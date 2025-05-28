@@ -1,0 +1,18 @@
+.triggered-alert-history-popup{
+    width: 60% !important;
+    height: 80% !important;
+}
+
+
+// override table style
+.table > thead > tr > th {
+    vertical-align: middle;
+    text-align: center;
+    border: 1px solid #ffffff;
+    border-top: 1px solid #d1dae1;
+    border-radius: 0;
+    font-weight: 500;
+    padding: 2px 5px;
+    background: #4C6375;
+    color: #fff;
+}

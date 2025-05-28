@@ -56,12 +56,22 @@ export const useGridAction = () => {
 
     const Setting = (event, monitoringId) => {
         event.preventDefault();
-        showPopup(ApiUrl.MATCH_MONITORING_SETTING_URL + `?Id=${monitoringId}`, LangHelper.getSingleResource('MonitorSetting'));
+        showPopup(ApiUrl.MATCH_MONITORING_SETTING_URL + `?Id=${monitoringId}`, LangHelper.getSingleResource('MonitorSetting'), 'monitor-setting-popup');
+    };
+
+    const History = (event, monitoringId) => {
+        event.preventDefault();
+        showPopup(
+            ApiUrl.MATCH_MONITORING_HISTORY_URL + `?Id=${monitoringId}`,
+            LangHelper.getSingleResource('TriggeredAlertHistory'),
+            'triggered-alert-history-popup'
+        );
     };
 
     return {
         Remove,
         Setting,
+        History,
     };
 };
 

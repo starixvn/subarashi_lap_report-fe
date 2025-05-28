@@ -718,6 +718,15 @@ namespace Fanex.Athena.Report.Core.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Detected Info.
+        /// </summary>
+        public static string DetectedInfo {
+            get {
+                return ResourceManager.GetString("DetectedInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Draw.
         /// </summary>
         public static string Draw {
@@ -2604,6 +2613,15 @@ namespace Fanex.Athena.Report.Core.Resources {
         public static string TriggeredAlert {
             get {
                 return ResourceManager.GetString("TriggeredAlert", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Triggered Alert History.
+        /// </summary>
+        public static string TriggeredAlertHistory {
+            get {
+                return ResourceManager.GetString("TriggeredAlertHistory", resourceCulture);
             }
         }
         

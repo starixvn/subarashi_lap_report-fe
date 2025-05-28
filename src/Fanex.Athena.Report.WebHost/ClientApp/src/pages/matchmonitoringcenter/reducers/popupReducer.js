@@ -18,3 +18,9 @@ export const popupTitle = createReducer('', {
         return action.data;
     },
 });
+
+export const popupStyleClassName = createReducer('', {
+    [types.SET_POPUP_STYLE_CLASS_NAME](state, action) {
+        return action.data;
+    },
+});

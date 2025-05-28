@@ -7,11 +7,14 @@ const MatchMonitoringSetting = lazy(
     () => import(/* webpackChunkName: "matchmonitoringsetting" */ '../pages/matchmonitoringcenter/pages/matchmonitoringsetting')
 );
 
+const TriggeredAlertHistory = lazy(() => import(/* webpackChunkName: "triggeredalerthistory" */ '../pages/matchmonitoringcenter/pages/triggeredalerthistory'));
+
 const MatchMonitoringCenterRoute = () => {
     return (
         <Routes>
             <Route index element={<MatchMonitoringCenter />} />
             <Route path="/setting" element={<MatchMonitoringSetting />} />
+            <Route path="/history" element={<TriggeredAlertHistory />} />
         </Routes>
     );
 };

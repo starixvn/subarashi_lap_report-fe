@@ -40,6 +40,7 @@ const FormFilter = (props) => {
         matchList,
         appUuid,
         lastFetchTime,
+        isShowPopup,
     ] = useSelector((state) => [
         state.formData,
         state.userGuideContent,
@@ -53,6 +54,7 @@ const FormFilter = (props) => {
         state.matchList,
         state.appUuid,
         state.lastFetchTime,
+        state.isShowPopup,
     ]);
 
     const isFormValid = !selectedLeague || !selectedMatch || !selectedCurrency || !selectedMatchStatus || !selectedTriggeredAlert || !selectedBaseCurrency;
@@ -190,6 +192,7 @@ const FormFilter = (props) => {
                                 options={RefreshCountdown.Options}
                                 value={RefreshCountdown.DefaultValue}
                                 onRefresh={fetchData}
+                                isPaused={isShowPopup}
                             />
                         </div>
                     </div>

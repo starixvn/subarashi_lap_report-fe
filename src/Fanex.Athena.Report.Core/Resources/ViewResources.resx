@@ -1043,4 +1043,10 @@
   <data name="MonitorSetting" xml:space="preserve">
     <value>Monitor Setting</value>
   </data>
+  <data name="TriggeredAlertHistory" xml:space="preserve">
+    <value>Triggered Alert History</value>
+  </data>
+  <data name="DetectedInfo" xml:space="preserve">
+    <value>Detected Info</value>
+  </data>
 </root>

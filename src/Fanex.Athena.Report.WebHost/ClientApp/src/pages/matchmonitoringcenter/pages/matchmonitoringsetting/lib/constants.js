@@ -3,67 +3,67 @@ import LangHelper from '@/helpers/langHelper';
 
 export const tabKeys = {
     alertRule: 'AlertRule',
-    log: 'Log'
+    log: 'Log',
 };
 
 const dynamicImports = {
     [tabKeys.log]: () => import(/* webpackChunkName: "matchmonitoringcenter/monitordetail/log" */ '../tabs/Log'),
-    [tabKeys.alertRule]: () => import(/* webpackChunkName: "matchmonitoringcenter/monitordetail/alertrule" */ '../tabs/AlertRule')
+    [tabKeys.alertRule]: () => import(/* webpackChunkName: "matchmonitoringcenter/monitordetail/alertrule" */ '../tabs/AlertRule'),
 };
 
-export const tabMenuList = Object.values(tabKeys).map(key => ({
+export const tabMenuList = Object.values(tabKeys).map((key) => ({
     key,
     title: LangHelper.getSingleResource(key),
     component: React.lazy(dynamicImports[key]),
-    preLoad: dynamicImports[key]
+    preLoad: dynamicImports[key],
 }));
 
 export const preLoadComponents = (lazyComponents) => {
-    lazyComponents && setTimeout(() => lazyComponents.forEach(_ => _.preLoad && _.preLoad()), 0);
+    lazyComponents && setTimeout(() => lazyComponents.forEach((_) => _.preLoad && _.preLoad()), 0);
 };
 
 export const TabType = {
     alertRule: 1,
-    log: 2
+    log: 2,
 };
 
 export const InputType = {
-    number: "number",
-    text: "text"
+    number: 'number',
+    text: 'text',
 };
 
 export const conditions = [
     {
         key: 'and',
-        value: 'and'
+        value: 'and',
     },
     {
         key: 'or',
-        value: 'or'
-    }
+        value: 'or',
+    },
 ];
 
 export const notifyEverys = [
     {
         key: 60,
-        value: 60
+        value: 60,
     },
     {
         key: 120,
-        value: 120
+        value: 120,
     },
     {
         key: 180,
-        value: 180
+        value: 180,
     },
     {
         key: 300,
-        value: 300
+        value: 300,
     },
     {
         key: 600,
-        value: 600
-    }
+        value: 600,
+    },
 ];
 
 export const defaultNotifyEvery = 300;
@@ -73,5 +73,5 @@ export const ApiUrl = {
     ALERT_RULE_DATA_URL: 'Api/MatchMonitoringCenter/GetAlertRule',
     CREATE_ALERT_RULE_URL: 'Api/MatchMonitoringCenter/InsertAlertRule',
     UPDATE_ALERT_RULE_URL: 'Api/MatchMonitoringCenter/UpdateAlertRule',
-    DELETE_ALERT_RULE_URL: 'Api/MatchMonitoringCenter/DeleteAlertRule'
+    DELETE_ALERT_RULE_URL: 'Api/MatchMonitoringCenter/DeleteAlertRule',
 };
