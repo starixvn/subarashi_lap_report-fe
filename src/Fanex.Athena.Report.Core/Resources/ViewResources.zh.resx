@@ -267,6 +267,9 @@
   <data name="Total" xml:space="preserve">
     <value>总和</value>
   </data>
+  <data name="Submit" xml:space="preserve">
+    <value>提交</value>
+  </data>
   <data name="Results" xml:space="preserve">
     <value>赛果</value>
   </data>
@@ -284,9 +287,6 @@
   </data>
   <data name="Lastmonth" xml:space="preserve">
     <value>上个月</value>
-  </data>
-  <data name="Submit" xml:space="preserve">
-    <value>提交</value>
   </data>
   <data name="Currentmonth" xml:space="preserve">
     <value>本月</value>
@@ -393,9 +393,6 @@
   <data name="Monthly" xml:space="preserve">
     <value>每月</value>
   </data>
-  <data name="Product" xml:space="preserve">
-    <value>产品</value>
-  </data>
   <data name="PromotionType" xml:space="preserve">
     <value>活动类型</value>
   </data>
@@ -414,14 +411,8 @@
   <data name="WhiteLabel" xml:space="preserve">
     <value>包网商</value>
   </data>
-  <data name="PromotionDetails" xml:space="preserve">
-    <value>活动详情</value>
-  </data>
-  <data name="RefNo" xml:space="preserve">
-    <value>注单号码</value>
-  </data>
-  <data name="TotalTransaction" xml:space="preserve">
-    <value>总交易数</value>
+  <data name="Customer" xml:space="preserve">
+    <value>会员</value>
   </data>
   <data name="CustomerAmount" xml:space="preserve">
     <value>玩家金額</value>
@@ -432,8 +423,17 @@
   <data name="Main" xml:space="preserve">
     <value>主</value>
   </data>
-  <data name="Customer" xml:space="preserve">
-    <value>会员</value>
+  <data name="Product" xml:space="preserve">
+    <value>产品</value>
+  </data>
+  <data name="PromotionDetails" xml:space="preserve">
+    <value>活动详情</value>
+  </data>
+  <data name="RefNo" xml:space="preserve">
+    <value>注单号码</value>
+  </data>
+  <data name="TotalTransaction" xml:space="preserve">
+    <value>总交易数</value>
   </data>
   <data name="TotalIn" xml:space="preserve">
     <value>总计在</value>
@@ -468,38 +468,35 @@
   <data name="IsGroupInOriginalCurrency" xml:space="preserve">
     <value>以原始货币显示</value>
   </data>
-  <data name="Platform" xml:space="preserve">
-    <value>平台</value>
+  <data name="AmountDueToBA" xml:space="preserve">
+    <value>BA金额</value>
   </data>
   <data name="EffectiveBettingValue" xml:space="preserve">
     <value>有效投注额</value>
   </data>
-  <data name="PlayerWL" xml:space="preserve">
-    <value>玩家输赢</value>
-  </data>
-  <data name="PlayerComm" xml:space="preserve">
-    <value>玩家佣金</value>
-  </data>
   <data name="LicenseeComm" xml:space="preserve">
     <value>承租公司佣金</value>
-  </data>
-  <data name="AmountDueToBA" xml:space="preserve">
-    <value>BA金额</value>
   </data>
   <data name="Margin" xml:space="preserve">
     <value>殺數</value>
   </data>
+  <data name="Platform" xml:space="preserve">
+    <value>平台</value>
+  </data>
   <data name="Player" xml:space="preserve">
     <value>玩家</value>
+  </data>
+  <data name="PlayerComm" xml:space="preserve">
+    <value>玩家佣金</value>
+  </data>
+  <data name="PlayerWL" xml:space="preserve">
+    <value>玩家输赢</value>
   </data>
   <data name="BothGroupByAndBreakdownLevelOption" xml:space="preserve">
     <value>同时以所选组别以及细项显示</value>
   </data>
-  <data name="GroupByLevelOnlyOption" xml:space="preserve">
-    <value>仅以所选组别显示</value>
-  </data>
-  <data name="Confirmation" xml:space="preserve">
-    <value>确认</value>
+  <data name="BreakdownBy" xml:space="preserve">
+    <value>依项目细分</value>
   </data>
   <data name="ChooseDataDisplayInExcelMsg" xml:space="preserve">
     <value>请选择要在excel档案中显示的数据：</value>
@@ -507,17 +504,14 @@
   <data name="ClearAllFilters" xml:space="preserve">
     <value>清除所有筛选</value>
   </data>
-  <data name="N_A" xml:space="preserve">
-    <value>无法使用</value>
+  <data name="Confirmation" xml:space="preserve">
+    <value>确认</value>
   </data>
-  <data name="BreakdownBy" xml:space="preserve">
-    <value>依项目细分</value>
+  <data name="GroupByLevelOnlyOption" xml:space="preserve">
+    <value>仅以所选组别显示</value>
   </data>
-  <data name="OddsGroup" xml:space="preserve">
-    <value>水位组别</value>
-  </data>
-  <data name="RiskLevel" xml:space="preserve">
-    <value>风险等级</value>
+  <data name="MatchCase" xml:space="preserve">
+    <value>模糊查询 范例</value>
   </data>
   <data name="MatchPrecise" xml:space="preserve">
     <value>精准匹配</value>
@@ -525,35 +519,41 @@
   <data name="MatchPrefix" xml:space="preserve">
     <value>前缀查询 范例</value>
   </data>
-  <data name="MatchCase" xml:space="preserve">
-    <value>模糊查询 范例</value>
+  <data name="N_A" xml:space="preserve">
+    <value>无法使用</value>
   </data>
-  <data name="WinlossAnalysis" xml:space="preserve">
-    <value>输赢分析</value>
+  <data name="OddsGroup" xml:space="preserve">
+    <value>水位组别</value>
+  </data>
+  <data name="RiskLevel" xml:space="preserve">
+    <value>风险等级</value>
   </data>
   <data name="ViewCOOnly" xml:space="preserve">
     <value>只查看实时兑现</value>
   </data>
-  <data name="VIPPlayerTooltipMsg" xml:space="preserve">
-    <value>被標示在玩家管理報告中的VIP玩家</value>
-  </data>
   <data name="VIPPlayerOnly" xml:space="preserve">
     <value>只显示VIP玩家</value>
   </data>
-  <data name="LiveStatus" xml:space="preserve">
-    <value>滚球状态</value>
+  <data name="VIPPlayerTooltipMsg" xml:space="preserve">
+    <value>被標示在玩家管理報告中的VIP玩家</value>
+  </data>
+  <data name="WinlossAnalysis" xml:space="preserve">
+    <value>输赢分析</value>
   </data>
   <data name="GroupBy" xml:space="preserve">
     <value>分组方式</value>
   </data>
-  <data name="Status" xml:space="preserve">
-    <value>状态</value>
+  <data name="LiveStatus" xml:space="preserve">
+    <value>滚球状态</value>
   </data>
   <data name="SelectedItemCount" xml:space="preserve">
     <value>已选  # 个项目</value>
   </data>
   <data name="SelectOptions" xml:space="preserve">
     <value>选择一个选项</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>状态</value>
   </data>
   <data name="AmtDueToBA" xml:space="preserve">
     <value>BA金额</value>
@@ -570,9 +570,6 @@
   <data name="BetList" xml:space="preserve">
     <value>投注历史</value>
   </data>
-  <data name="TransTime" xml:space="preserve">
-    <value>交易时间</value>
-  </data>
   <data name="Choice" xml:space="preserve">
     <value>选择</value>
   </data>
@@ -582,8 +579,14 @@
   <data name="Stake" xml:space="preserve">
     <value>投注额</value>
   </data>
+  <data name="TransTime" xml:space="preserve">
+    <value>交易时间</value>
+  </data>
   <data name="Outright" xml:space="preserve">
     <value>优胜冠军</value>
+  </data>
+  <data name="LiveReport" xml:space="preserve">
+    <value>滚球报告</value>
   </data>
   <data name="Live" xml:space="preserve">
     <value>滚球(不含混合)</value>
@@ -591,29 +594,26 @@
   <data name="NoneLive" xml:space="preserve">
     <value>非滚球(不含混合)</value>
   </data>
-  <data name="LiveReport" xml:space="preserve">
-    <value>滚球报告</value>
-  </data>
-  <data name="Summary" xml:space="preserve">
-    <value>总结</value>
-  </data>
-  <data name="BySportsType" xml:space="preserve">
-    <value>根据运动类型</value>
+  <data name="ByBetType" xml:space="preserve">
+    <value>根据投注类型</value>
   </data>
   <data name="ByCurrency" xml:space="preserve">
     <value>根据货币</value>
   </data>
-  <data name="ByBetType" xml:space="preserve">
-    <value>根据投注类型</value>
+  <data name="BySportsType" xml:space="preserve">
+    <value>根据运动类型</value>
+  </data>
+  <data name="Summary" xml:space="preserve">
+    <value>总结</value>
   </data>
   <data name="CashOut" xml:space="preserve">
     <value>实时兑现</value>
   </data>
-  <data name="ExcludeCOFromSB" xml:space="preserve">
-    <value>体育博彩排除实时兑现</value>
-  </data>
   <data name="IncludeCOFromSB" xml:space="preserve">
     <value>体育博彩包含实时兑现</value>
+  </data>
+  <data name="ExcludeCOFromSB" xml:space="preserve">
+    <value>体育博彩排除实时兑现</value>
   </data>
   <data name="Report" xml:space="preserve">
     <value>报告</value>
@@ -771,32 +771,32 @@
   <data name="FinancialDate" xml:space="preserve">
     <value>依财务日期时间搜寻</value>
   </data>
+  <data name="CustomerComm" xml:space="preserve">
+    <value>会员佣金</value>
+  </data>
+  <data name="IncludeDrawData" xml:space="preserve">
+    <value>包含和局资料</value>
+  </data>
+  <data name="LicenseeNetWL" xml:space="preserve">
+    <value>承租公司净输赢</value>
+  </data>
+  <data name="LicenseeWinLoss" xml:space="preserve">
+    <value>承租公司輸贏</value>
+  </data>
+  <data name="LicenseeWL" xml:space="preserve">
+    <value>承租公司輸贏</value>
+  </data>
+  <data name="TimeZone" xml:space="preserve">
+    <value>时区</value>
+  </data>
+  <data name="WinLossByTimeZone" xml:space="preserve">
+    <value>投注时区输赢</value>
+  </data>
   <data name="SettlementTime" xml:space="preserve">
     <value>依注单结算时间搜寻</value>
   </data>
   <data name="WinlossAnalysis_SettlementTimeModeNote" xml:space="preserve">
     <value>结算时间模式的资料使用票券结算时之汇率换算，资料可能与原报表根据赛事结束日期之汇率计算有些许落差。</value>
-  </data>
-  <data name="TimeZone" xml:space="preserve">
-    <value>时区</value>
-  </data>
-  <data name="IncludeDrawData" xml:space="preserve">
-    <value>包含和局资料</value>
-  </data>
-  <data name="CustomerComm" xml:space="preserve">
-    <value>会员佣金</value>
-  </data>
-  <data name="LicenseeNetWL" xml:space="preserve">
-    <value>承租公司净输赢</value>
-  </data>
-  <data name="LicenseeWL" xml:space="preserve">
-    <value>承租公司輸贏</value>
-  </data>
-  <data name="WinLossByTimeZone" xml:space="preserve">
-    <value>投注时区输赢</value>
-  </data>
-  <data name="LicenseeWinLoss" xml:space="preserve">
-    <value>承租公司輸贏</value>
   </data>
   <data name="WinlossAnalysis_SettlementTimeModeNote2" xml:space="preserve">
     <value>结算模式仅支援查询10/01/2024后的资料。</value>
@@ -819,13 +819,19 @@
   <data name="Based" xml:space="preserve">
     <value>基于</value>
   </data>
-  <data name="SubsidiaryWL" xml:space="preserve">
-    <value>子网站输赢</value>
-  </data>
   <data name="SubsidiaryPerformance" xml:space="preserve">
     <value>子网站综合报表</value>
   </data>
+  <data name="SubsidiaryWL" xml:space="preserve">
+    <value>子网站输赢</value>
+  </data>
   <data name="SeparateSabaWinLoss_HideSaba" xml:space="preserve">
     <value>将虚拟体育与体育博彩分开</value>
+  </data>
+  <data name="CreateAlertRuleConfirmationMsg" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MonitorSetting" xml:space="preserve">
+    <value />
   </data>
 </root>

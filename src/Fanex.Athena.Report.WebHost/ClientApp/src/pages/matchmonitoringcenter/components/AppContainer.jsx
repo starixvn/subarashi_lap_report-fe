@@ -10,6 +10,7 @@ import DataService from '@/lib/dataService';
 import { ActionCreators } from '../actions';
 import DataGrid from './DataGrid';
 import FormFilter from './FormFilter';
+import PopupPage from './PopupPage';
 import { constants } from '../common';
 import { v4 as uuidv4 } from 'uuid';
 
@@ -108,6 +109,7 @@ export const AppContainer = (props) => {
             <Loader isLoading={isLoading} />
             {formData && <FormFilter />}
             <DataGrid />
+            <PopupPage />
         </React.Fragment>
     );
 };

@@ -13,3 +13,9 @@ export const SET_MATCH_LIST = 'SET_MATCH_LIST';
 export const SET_APP_UUID = 'SET_APP_UUID';
 
 export const SET_LAST_FETCH_TIME = 'SET_LAST_FETCH_TIME';
+
+export const SET_IS_SHOW_POPUP = 'SET_IS_SHOW_POPUP';
+
+export const SET_POPUP_URL = 'SET_POPUP_URL';
+
+export const SET_POPUP_TITLE = 'SET_POPUP_TITLE';

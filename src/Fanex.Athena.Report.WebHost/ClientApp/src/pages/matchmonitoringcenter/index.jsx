@@ -5,7 +5,7 @@ import reducer from './reducers/index.js';
 import Store from '@/lib/store';
 import { constants } from './common';
 
-import '@/styles/pages/matchmonitoringcenter.scss';
+import '@/styles/pages/matchmonitoringcenter/index.scss';
 
 const MatchMonitoringCenter = () => {
     const { RefreshCountdown } = constants;

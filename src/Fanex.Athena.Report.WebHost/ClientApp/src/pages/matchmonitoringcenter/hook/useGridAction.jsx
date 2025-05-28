@@ -2,6 +2,7 @@ import useToggleRequest from '@/hooks/useToggleRequest';
 import DataService from '@/lib/dataService';
 import { constants } from '../common';
 import { useFilterAction } from './useFilterAction';
+import { usePopupHandler } from './usePopupHandler';
 import LangHelper from '@/helpers/langHelper';
 import { useDispatch } from 'react-redux';
 import { generateDefaultConfirmOption } from '@/lib/sweetAlert';
@@ -10,6 +11,8 @@ import { ActionCreators } from '../actions';
 export const useGridAction = () => {
     const { sendRequest } = useToggleRequest();
     const { fetchData } = useFilterAction();
+    const { showPopup } = usePopupHandler();
+
     const { ApiUrl } = constants;
     const dispatch = useDispatch();
     const { setSweetAlertOption } = ActionCreators;
@@ -53,7 +56,7 @@ export const useGridAction = () => {
 
     const Setting = (event, monitoringId) => {
         event.preventDefault();
-        alert('Function is not implemented! monitoringId: ' + monitoringId);
+        showPopup(ApiUrl.MATCH_MONITORING_SETTING_URL + `?Id=${monitoringId}`, LangHelper.getSingleResource('MonitorSetting'));
     };
 
     return {

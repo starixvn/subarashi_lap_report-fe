@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux';
 import * as filterReducer from './filterReducer';
 import * as dataReducer from './dataReducer';
+import * as popupReducer from './popupReducer';
 import * as currencyReducer from '@/reducers/currencyReducer';
 import * as baseCurrencyReducer from '@/reducers/baseCurrencyReducer';
 import * as loaderReducer from '@/reducers/loaderReducer';
@@ -14,6 +15,7 @@ export default combineReducers(
     Object.assign(
         filterReducer,
         dataReducer,
+        popupReducer,
         currencyReducer,
         baseCurrencyReducer,
         loaderReducer,

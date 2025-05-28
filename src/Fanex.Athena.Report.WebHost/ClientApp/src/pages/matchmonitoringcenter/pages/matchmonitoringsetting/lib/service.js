@@ -1,0 +1,160 @@
+import { generateDefaultConfirmOption, generateDefaultAlertOption } from '@/lib/sweetAlert';
+import LangHelper from '@/helpers/langHelper';
+import DataService from '@/lib/dataService';
+import { ApiUrl } from './constants';
+import ActionCreators from '../actions';
+
+const { setSweetAlertOption } = ActionCreators;
+
+export const handleCellChangeValue = (setItemState, fieldKey, value) => {
+    if (fieldKey === 'negativeProfit' || fieldKey === 'betRatio') {
+        setItemState((prevItem) => ({
+            ...prevItem,
+            alertRule: {
+                ...prevItem.alertRule,
+                [fieldKey]: value,
+            },
+        }));
+    } else {
+        setItemState((prevItem) => ({
+            ...prevItem,
+            [fieldKey]: value,
+        }));
+    }
+};
+
+export const closeAlert = (dispatch) => {
+    dispatch(setSweetAlertOption(null));
+};
+
+export const buildAlertOptionForMissingFields = (handleCloseAlert) => {
+    const messageTemplate = LangHelper.getSingleResource('PleaseFillInfoMsg');
+
+    const alertOptions = generateDefaultAlertOption(messageTemplate, handleCloseAlert, handleCloseAlert, null);
+
+    return {
+        ...alertOptions,
+        className: 'alert-popup-size',
+        title: LangHelper.getSingleResource('Information'),
+    };
+};
+
+export const validateAlertRuleItem = (item) => {
+    return !!(
+        item.settingName &&
+        item.baseCurrency &&
+        item.conditionTypeName &&
+        item.notificationInterval &&
+        item.alertRule?.negativeProfit &&
+        item.alertRule?.betRatio
+    );
+};
+
+export const buildConfirmAlertOption = (item, templateKey, buildConfirmMessage, handleCloseAlert, confirmProps, cancelProps) => {
+    const messageTemplate = LangHelper.getSingleResource(templateKey);
+    const confirmMessage = buildConfirmMessage(item, messageTemplate);
+
+    return generateDefaultConfirmOption(confirmMessage, handleCloseAlert, confirmProps, cancelProps, null, {
+        title: LangHelper.getSingleResource('Confirmation'),
+        className: 'custom-popup-size',
+        icon: 'warning',
+    });
+};
+
+export const createAlertRule = async (item, monitoringID, dispatch, setAddNewRule, onDataChanged) => {
+    try {
+        if (!monitoringID) {
+            alert('Cannot create alert rule: MonitoringID is missing');
+            return false;
+        }
+
+        const params = {
+            settingName: item.settingName,
+            conditionTypeName: item.conditionTypeName,
+            baseCurrency: item.baseCurrency,
+            notificationInterval: item.notificationInterval,
+            alertRule: item.alertRule,
+            monitoringID: monitoringID,
+        };
+
+        const result = await DataService.postReportData(ApiUrl.CREATE_ALERT_RULE_URL, params);
+        if (result.data && result.data.isSuccessful) {
+            if (setAddNewRule) {
+                dispatch(setAddNewRule(false));
+            }
+
+            if (typeof onDataChanged === 'function') {
+                onDataChanged();
+            }
+            return true;
+        } else {
+            const message = result.data ? result.data.message : 'Failed to create alert rule';
+            alert(message);
+            return false;
+        }
+    } catch (error) {
+        alert('Error creating alert rule: ' + (error.message || error));
+        return false;
+    }
+};
+
+export const updateAlertRule = async (item, dispatch, setIsEdited, onDataChanged) => {
+    try {
+        const params = {
+            settingId: item.settingID,
+            settingName: item.settingName,
+            conditionTypeName: item.conditionTypeName,
+            baseCurrency: item.baseCurrency,
+            notificationInterval: item.notificationInterval,
+            alertRule: item.alertRule,
+        };
+
+        const result = await DataService.postReportData(ApiUrl.UPDATE_ALERT_RULE_URL, params);
+        if (result.data && result.data.isSuccessful) {
+            dispatch(setSweetAlertOption(null));
+            if (setIsEdited) {
+                setIsEdited(false);
+            }
+
+            if (typeof onDataChanged === 'function') {
+                onDataChanged();
+            }
+            return true;
+        } else {
+            const message = result.data ? result.data.message : 'Failed to update alert rule';
+            alert(message);
+            return false;
+        }
+    } catch (error) {
+        alert('Error updating alert rule: ' + (error.message || error));
+        return false;
+    }
+};
+
+export const deleteAlertRule = async (item, dispatch, setIsEdited, onDataChanged) => {
+    try {
+        const params = {
+            settingId: item.settingID,
+        };
+
+        const result = await DataService.postReportData(ApiUrl.DELETE_ALERT_RULE_URL, params);
+        if (result.data && result.data.isSuccessful) {
+            dispatch(setSweetAlertOption(null));
+            if (setIsEdited) {
+                setIsEdited(false);
+            }
+
+            if (typeof onDataChanged === 'function') {
+                onDataChanged();
+            }
+            return true;
+        } else {
+            const message = result.data ? result.data.message : 'Failed to delete alert rule';
+            alert(message);
+            return false;
+        }
+    } catch (error) {
+        alert('Error deleting alert rule: ' + (error.message || error));
+        return false;
+    }
+};

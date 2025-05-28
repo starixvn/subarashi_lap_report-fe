@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { lazy } from 'react';
 import { useSelector } from 'react-redux';
 import { Table, HeaderRow, HeaderCell, Cell, Row } from '@legion-lib/react-grid';
 
@@ -10,9 +10,17 @@ import { useGridAction } from '../hook';
 import NumberFormat from '@/lib/numberFormat';
 import PieChart from '@/components/PieChart';
 import SweetAlert from '@/components/sweet-alert';
+import Popup from '@/components/Popup';
+
+const MonitoringSettingDetail = lazy(() => import('../pages/matchmonitoringsetting'));
 
 const DataGrid = (props) => {
-    const [gridData, lastFetchTime, sweetAlertOption] = useSelector((state) => [state.gridData, state.lastFetchTime, state.sweetAlertOption]);
+    const [gridData, lastFetchTime, sweetAlertOption, settingPageOption] = useSelector((state) => [
+        state.gridData,
+        state.lastFetchTime,
+        state.sweetAlertOption,
+        state.settingPageOption,
+    ]);
     const { headerColumns } = constants;
     const { Remove, Setting } = useGridAction();
 
@@ -244,6 +252,17 @@ const DataGrid = (props) => {
         );
     };
 
+    const MonitoringSettingPage = () => {
+        const isDisplay = !!settingPageOption;
+        const contentTitle = LangHelper.getSingleResource('');
+
+        const onCloseHandler = () => {};
+
+        <Popup className="user-guide" contentClassName="guide-content" isShow={isDisplay} title={contentTitle} onClose={onCloseHandler}>
+            <MonitoringSettingDetail {...settingPageOption} />
+        </Popup>;
+    };
+
     return (
         <>
             <Table
@@ -257,6 +276,7 @@ const DataGrid = (props) => {
                 shouldResetScrollPosition={false}
             />
             {sweetAlertOption && <SweetAlert {...sweetAlertOption} />}
+            {MonitoringSettingPage()}
         </>
     );
 };

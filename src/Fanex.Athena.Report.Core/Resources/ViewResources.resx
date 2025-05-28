@@ -986,4 +986,61 @@
   <data name="ConfirmRemoveMatchMonitoring" xml:space="preserve">
     <value>Are you sure you want to remove this event from the monitoring list? Once removed, all related alert rules and tracking will be stopped.</value>
   </data>
+  <data name="AlertRuleTxt1" xml:space="preserve">
+    <value>**Alert Level Name** [Dangerous-1]</value>
+  </data>
+  <data name="AlertRuleTxt2" xml:space="preserve">
+    <value>When the negative profit forecast for either the home or away team exceeds **[Amount]** base currency **[Base Currency]**</value>
+  </data>
+  <data name="AlertRuleTxt4" xml:space="preserve">
+    <value>The betting ratio difference between the home or away teams is greater than **[Ratio %]** send a notification every **[Notify every]** seconds</value>
+  </data>
+  <data name="Format" xml:space="preserve">
+    <value>Format</value>
+  </data>
+  <data name="AlertLevelName" xml:space="preserve">
+    <value>Alert Level Name</value>
+  </data>
+  <data name="Amount" xml:space="preserve">
+    <value> Amount</value>
+  </data>
+  <data name="And_Or" xml:space="preserve">
+    <value>And/Or</value>
+  </data>
+  <data name="NotifyEvery" xml:space="preserve">
+    <value>Notify Every</value>
+  </data>
+  <data name="RatioPercent" xml:space="preserve">
+    <value>Ratio %</value>
+  </data>
+  <data name="Actions" xml:space="preserve">
+    <value>Actions</value>
+  </data>
+  <data name="AlertRuleTxt3" xml:space="preserve">
+    <value>**[And/Or]**</value>
+  </data>
+  <data name="AddAlertRule" xml:space="preserve">
+    <value>Add Alert Rule</value>
+  </data>
+  <data name="AlertRule" xml:space="preserve">
+    <value>Alert Rule</value>
+  </data>
+  <data name="DeleteAlterRuleConfirmationMsg" xml:space="preserve">
+    <value>Are you sure you want to delete the Alert Rule: {0} (Amount: {1} Based {2}, {3} Ratio: {4}%), Notify every {5} seconds)?</value>
+  </data>
+  <data name="NoAlertRulesMsg" xml:space="preserve">
+    <value>There are no Alert Rules configured yet.</value>
+  </data>
+  <data name="UpdateAlterRuleConfirmationMsg" xml:space="preserve">
+    <value>Are you sure you want to update this Alert Rule: {0} (Amount: {1} Based {2} , {3} Ratio: {4}%, Notify every {5} seconds)?</value>
+  </data>
+  <data name="PleaseFillInfoMsg" xml:space="preserve">
+    <value>Please fill in all required fields before saving</value>
+  </data>
+  <data name="CreateAlertRuleConfirmationMsg" xml:space="preserve">
+    <value>Are you sure you want to save this new Alert Rule: {0} (Amount: {1} Based {2}, {3} Ratio: {4}%), Notify every {5} seconds.</value>
+  </data>
+  <data name="MonitorSetting" xml:space="preserve">
+    <value>Monitor Setting</value>
+  </data>
 </root>
