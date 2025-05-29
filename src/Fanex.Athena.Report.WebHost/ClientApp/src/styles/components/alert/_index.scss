@@ -18,6 +18,15 @@
     .warning {
         color: #ee0606;
     }
+
+    .center-align.sweet-alert-content {
+        padding-top: 30px;
+    }
+
+    .swal-icon + .center-align.sweet-alert-content,
+    .swal-icon ~ .center-align.sweet-alert-content {
+        padding-top: 0;
+    }
 }
 
 .sweet-alert-popup {

@@ -8,6 +8,13 @@ const { setSweetAlertOption } = ActionCreators;
 
 export const handleCellChangeValue = (setItemState, fieldKey, value) => {
     if (fieldKey === 'negativeProfit' || fieldKey === 'betRatio') {
+        if (value !== '' && !isNaN(parseFloat(value))) {
+            const numValue = parseFloat(value);
+            if (numValue < 0) {
+                value = '0';
+            }
+        }
+
         setItemState((prevItem) => ({
             ...prevItem,
             alertRule: {
@@ -40,13 +47,23 @@ export const buildAlertOptionForMissingFields = (handleCloseAlert) => {
 };
 
 export const validateAlertRuleItem = (item) => {
+    const isValidSettingName = item.settingName && item.settingName.trim() !== '';
+
+    const isValidNegativeProfit = item.alertRule?.negativeProfit !== undefined &&
+        !isNaN(parseFloat(item.alertRule.negativeProfit)) &&
+        parseFloat(item.alertRule.negativeProfit) >= 0;
+
+    const isValidBetRatio = item.alertRule?.betRatio !== undefined &&
+        !isNaN(parseFloat(item.alertRule.betRatio)) &&
+        parseFloat(item.alertRule.betRatio) >= 0;
+
     return !!(
-        item.settingName &&
+        isValidSettingName &&
         item.baseCurrency &&
         item.conditionTypeName &&
         item.notificationInterval &&
-        item.alertRule?.negativeProfit &&
-        item.alertRule?.betRatio
+        isValidNegativeProfit &&
+        isValidBetRatio
     );
 };
 
@@ -69,7 +86,7 @@ export const createAlertRule = async (item, monitoringID, dispatch, setAddNewRul
         }
 
         const params = {
-            settingName: item.settingName,
+            settingName: item.settingName.trim(),
             conditionTypeName: item.conditionTypeName,
             baseCurrency: item.baseCurrency,
             notificationInterval: item.notificationInterval,
@@ -102,7 +119,7 @@ export const updateAlertRule = async (item, dispatch, setIsEdited, onDataChanged
     try {
         const params = {
             settingId: item.settingID,
-            settingName: item.settingName,
+            settingName: item.settingName.trim(),
             conditionTypeName: item.conditionTypeName,
             baseCurrency: item.baseCurrency,
             notificationInterval: item.notificationInterval,

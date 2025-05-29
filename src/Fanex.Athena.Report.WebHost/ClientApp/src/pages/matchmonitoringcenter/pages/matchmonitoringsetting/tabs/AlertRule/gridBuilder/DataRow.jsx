@@ -174,7 +174,13 @@ const DataRow = ({ item: initialItem, baseCurrencyList, defaultBaseCurrency, onD
                         <InputCell value={item.settingName} fieldKey="settingName" onChange={handleCellChange} />
                     </Cell>
                     <Cell className="left-align">
-                        <InputCell value={item.alertRule?.negativeProfit} fieldKey="negativeProfit" onChange={handleCellChange} type={InputType.number} />
+                        <InputCell
+                            value={item.alertRule?.negativeProfit}
+                            fieldKey="negativeProfit"
+                            onChange={handleCellChange}
+                            type={InputType.number}
+                            min={0}
+                        />
                     </Cell>
                     <Cell className="left-align">
                         <DropdownCell
@@ -193,7 +199,15 @@ const DataRow = ({ item: initialItem, baseCurrencyList, defaultBaseCurrency, onD
                         />
                     </Cell>
                     <Cell className="left-align">
-                        <InputCell value={item.alertRule?.betRatio} fieldKey="betRatio" onChange={handleCellChange} type={InputType.number} width="70%" /> %
+                        <InputCell
+                            value={item.alertRule?.betRatio}
+                            fieldKey="betRatio"
+                            onChange={handleCellChange}
+                            type={InputType.number}
+                            width="70%"
+                            min={0}
+                            max={100}
+                        /> %
                     </Cell>
                     <Cell className="left-align">
                         <DropdownCell

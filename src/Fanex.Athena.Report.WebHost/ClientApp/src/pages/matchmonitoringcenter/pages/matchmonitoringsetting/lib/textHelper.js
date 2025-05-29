@@ -35,7 +35,7 @@ export const buildConfirmMessage = (item, templateString) => {
         '{0}': item.settingName || '',
         '{1}': negativeProfit,
         '{2}': item.baseCurrency || '',
-        '{3}': item.conditionType || '',
+        '{3}': item.conditionTypeName || '',
         '{4}': alertRule.betRatio !== undefined ? alertRule.betRatio : '',
         '{5}': item.notificationInterval !== undefined ? item.notificationInterval : '',
     };

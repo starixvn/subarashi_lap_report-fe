@@ -125,7 +125,13 @@ const NewRuleRow = ({ baseCurrencyList, defaultBaseCurrency, setAddNewRule, onDa
                 <InputCell value={newItem.settingName} fieldKey="settingName" onChange={handleCellChange} />
             </Cell>
             <Cell className="left-align">
-                <InputCell value={newItem.alertRule.negativeProfit} fieldKey="negativeProfit" onChange={handleCellChange} type={InputType.number} />
+                <InputCell
+                    value={newItem.alertRule.negativeProfit}
+                    fieldKey="negativeProfit"
+                    onChange={handleCellChange}
+                    type={InputType.number}
+                    min={0}
+                />
             </Cell>
             <Cell className="left-align">
                 <DropdownCell value={newItem.baseCurrency} fieldKey="baseCurrency" dataSource={baseCurrencyList} onChange={handleCellChange} />
@@ -134,7 +140,15 @@ const NewRuleRow = ({ baseCurrencyList, defaultBaseCurrency, setAddNewRule, onDa
                 <DropdownCell value={newItem.conditionTypeName} fieldKey="conditionTypeName" dataSource={conditions} onChange={handleCellChange} />
             </Cell>
             <Cell className="left-align">
-                <InputCell value={newItem.alertRule.betRatio} fieldKey="betRatio" onChange={handleCellChange} type={InputType.number} width="70%" /> %
+                <InputCell
+                    value={newItem.alertRule.betRatio}
+                    fieldKey="betRatio"
+                    onChange={handleCellChange}
+                    type={InputType.number}
+                    width="70%"
+                    min={0}
+                    max={100}
+                /> %
             </Cell>
             <Cell className="left-align">
                 <DropdownCell
