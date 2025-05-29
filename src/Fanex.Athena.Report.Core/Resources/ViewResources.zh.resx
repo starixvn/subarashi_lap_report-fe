@@ -828,9 +828,6 @@
   <data name="SeparateSabaWinLoss_HideSaba" xml:space="preserve">
     <value>将虚拟体育与体育博彩分开</value>
   </data>
-  <data name="CreateAlertRuleConfirmationMsg" xml:space="preserve">
-    <value />
-  </data>
   <data name="MonitorSetting" xml:space="preserve">
     <value />
   </data>
@@ -842,5 +839,56 @@
   </data>
   <data name="MatchMonitoringCenter" xml:space="preserve">
     <value />
+  </data>
+  <data name="Actions" xml:space="preserve">
+    <value>操作</value>
+  </data>
+  <data name="AddAlertRule" xml:space="preserve">
+    <value>添加警报规则</value>
+  </data>
+  <data name="AlertRuleTxt1" xml:space="preserve">
+    <value>**警报等级名称** [危险-1]</value>
+  </data>
+  <data name="AlertRuleTxt2" xml:space="preserve">
+    <value>当主队或客队的负利润预测超过 **[金额]** 基础货币 **[基础货币]**</value>
+  </data>
+  <data name="AlertRuleTxt3" xml:space="preserve">
+    <value>**[并且/或者]**</value>
+  </data>
+  <data name="AlertRuleTxt4" xml:space="preserve">
+    <value>主队与客队之间的投注比例差异大于 **[比例 %]** 每隔 **[通知频率]** 秒发送一次通知</value>
+  </data>
+  <data name="Amount" xml:space="preserve">
+    <value>金额</value>
+  </data>
+  <data name="and" xml:space="preserve">
+    <value>并且</value>
+  </data>
+  <data name="Confirm" xml:space="preserve">
+    <value>确认</value>
+  </data>
+  <data name="CreateAlertRuleConfirmationMsg" xml:space="preserve">
+    <value>您确定要保存此新的警报规则吗？{0}（金额：{1} 基础货币 {2}，{3} 比例：{4}%），每隔 {5} 秒通知一次</value>
+  </data>
+  <data name="DeleteAlterRuleConfirmationMsg" xml:space="preserve">
+    <value>您确定要删除此警报规则吗？{0}（金额：{1} 基础货币 {2}，{3} 比例：{4}%），每隔 {5} 秒通知一次</value>
+  </data>
+  <data name="Logs" xml:space="preserve">
+    <value>日志</value>
+  </data>
+  <data name="NotifyEvery" xml:space="preserve">
+    <value>通知频率</value>
+  </data>
+  <data name="or" xml:space="preserve">
+    <value>或者</value>
+  </data>
+  <data name="PleaseFillInfoMsg" xml:space="preserve">
+    <value>请在保存前填写所有必填字段</value>
+  </data>
+  <data name="RatioPercent" xml:space="preserve">
+    <value>比例 %</value>
+  </data>
+  <data name="UpdateAlterRuleConfirmationMsg" xml:space="preserve">
+    <value>您确定要更新此警报规则吗？{0}（金额：{1} 基础货币 {2}，{3} 比例：{4}%），每隔 {5} 秒通知一次</value>
   </data>
 </root>

@@ -2,7 +2,8 @@ import React from 'react';
 import LangHelper from '@/helpers/langHelper';
 
 export const tabKeys = {
-    alertRule: 'AlertRule'
+    alertRule: 'AlertRule',
+    log: 'Log',
 };
 
 const dynamicImports = {

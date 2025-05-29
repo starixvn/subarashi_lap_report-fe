@@ -511,7 +511,7 @@ namespace Fanex.Athena.Report.Core.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Are you sure you want to save this new Alert Rule: {0} (Amount: {1} Based {2}, {3} Ratio: {4}%), Notify every {5} seconds..
+        ///   Looks up a localized string similar to Are you sure you want to save this new Alert Rule: {0} (Amount: {1} Based {2}, {3} Ratio: {4}%), Notify every {5} seconds?.
         /// </summary>
         public static string CreateAlertRuleConfirmationMsg {
             get {

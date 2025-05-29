@@ -903,9 +903,6 @@
   <data name="SeparateSabaWinLoss_HideSaba" xml:space="preserve">
     <value>Tách Thể Thao Ảo khỏi Sportsbook</value>
   </data>
-  <data name="CreateAlertRuleConfirmationMsg" xml:space="preserve">
-    <value />
-  </data>
   <data name="MonitorSetting" xml:space="preserve">
     <value />
   </data>
@@ -917,5 +914,56 @@
   </data>
   <data name="MatchMonitoringCenter" xml:space="preserve">
     <value />
+  </data>
+  <data name="Actions" xml:space="preserve">
+    <value>Hành Động</value>
+  </data>
+  <data name="AddAlertRule" xml:space="preserve">
+    <value>Thêm Quy Tắc Cảnh Báo</value>
+  </data>
+  <data name="AlertRuleTxt1" xml:space="preserve">
+    <value>**Tên Mức Cảnh Báo** [Nguy Hiểm-1]</value>
+  </data>
+  <data name="AlertRuleTxt2" xml:space="preserve">
+    <value>Khi dự báo lỗ của đội nhà hoặc đội khách vượt quá **[Amount]** theo đơn vị tiền tệ chính **[Base Currency]**</value>
+  </data>
+  <data name="AlertRuleTxt3" xml:space="preserve">
+    <value>**[Và/Hoặc]**</value>
+  </data>
+  <data name="AlertRuleTxt4" xml:space="preserve">
+    <value>sự chênh lệch tỷ lệ cược giữa hai đội lớn hơn **[Ratio %]** gửi thông báo mỗi **[Notify every]** giây</value>
+  </data>
+  <data name="Amount" xml:space="preserve">
+    <value>Số Tiền</value>
+  </data>
+  <data name="and" xml:space="preserve">
+    <value>và</value>
+  </data>
+  <data name="Confirm" xml:space="preserve">
+    <value>Xác Nhận</value>
+  </data>
+  <data name="CreateAlertRuleConfirmationMsg" xml:space="preserve">
+    <value>Bạn có chắc muốn lưu Quy Tắc Cảnh Báo mới này không: {0} (Số Tiền: {1} Dựa trên {2}, {3} Tỷ Lệ: {4}%), Thông báo mỗi {5} giây</value>
+  </data>
+  <data name="DeleteAlterRuleConfirmationMsg" xml:space="preserve">
+    <value>Bạn có chắc muốn xoá Quy Tắc Cảnh Báo này không: {0} (Số Tiền: {1} Dựa trên {2}, {3} Tỷ Lệ: {4}%), Thông báo mỗi {5} giây</value>
+  </data>
+  <data name="Logs" xml:space="preserve">
+    <value>Nhật Ký</value>
+  </data>
+  <data name="NotifyEvery" xml:space="preserve">
+    <value>Thông Báo Mỗi</value>
+  </data>
+  <data name="or" xml:space="preserve">
+    <value>hoặc</value>
+  </data>
+  <data name="PleaseFillInfoMsg" xml:space="preserve">
+    <value>Vui lòng điền đầy đủ tất cả các trường bắt buộc trước khi lưu</value>
+  </data>
+  <data name="RatioPercent" xml:space="preserve">
+    <value>Tỷ Lệ %</value>
+  </data>
+  <data name="UpdateAlterRuleConfirmationMsg" xml:space="preserve">
+    <value>Bạn có chắc muốn cập nhật Quy Tắc Cảnh Báo này không: {0} (Số Tiền: {1} Dựa trên {2}, {3} Tỷ Lệ: {4}%), Thông báo mỗi {5} giây</value>
   </data>
 </root>

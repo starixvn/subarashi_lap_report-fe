@@ -897,9 +897,6 @@
   <data name="SeparateSabaWinLoss_HideSaba" xml:space="preserve">
     <value>แยกกีฬาเสมือนออกจาก Sportsbook</value>
   </data>
-  <data name="CreateAlertRuleConfirmationMsg" xml:space="preserve">
-    <value />
-  </data>
   <data name="MonitorSetting" xml:space="preserve">
     <value />
   </data>
@@ -911,5 +908,56 @@
   </data>
   <data name="MatchMonitoringCenter" xml:space="preserve">
     <value />
+  </data>
+  <data name="Actions" xml:space="preserve">
+    <value>การดำเนินการ</value>
+  </data>
+  <data name="AddAlertRule" xml:space="preserve">
+    <value>เพิ่มกฎการแจ้งเตือน</value>
+  </data>
+  <data name="AlertRuleTxt1" xml:space="preserve">
+    <value>**ชื่อระดับแจ้งเตือน** [Dangerous-1]</value>
+  </data>
+  <data name="AlertRuleTxt2" xml:space="preserve">
+    <value>เมื่อการคาดการณ์กำไรติดลบของทีมเจ้าบ้านหรือทีมเยือนเกินกว่า **[Amount]** หน่วยสกุลเงินฐาน **[Base Currency]**</value>
+  </data>
+  <data name="AlertRuleTxt3" xml:space="preserve">
+    <value>**[และ/หรือ]**</value>
+  </data>
+  <data name="AlertRuleTxt4" xml:space="preserve">
+    <value>ความแตกต่างของสัดส่วนการเดิมพันระหว่างทีมเจ้าบ้านและทีมเยือนมากกว่า **[Ratio %]** ให้ส่งการแจ้งเตือนทุก ๆ **[Notify every]** วินาที</value>
+  </data>
+  <data name="Amount" xml:space="preserve">
+    <value>จำนวนเงิน</value>
+  </data>
+  <data name="and" xml:space="preserve">
+    <value>และ</value>
+  </data>
+  <data name="Confirm" xml:space="preserve">
+    <value>ยืนยัน</value>
+  </data>
+  <data name="CreateAlertRuleConfirmationMsg" xml:space="preserve">
+    <value>คุณแน่ใจหรือไม่ว่าต้องการบันทึกกฎแจ้งเตือนใหม่นี้: {0} (จำนวนเงิน: {1} ตาม {2}, {3} อัตราส่วน: {4}%), แจ้งเตือนทุก ๆ {5} วินาที</value>
+  </data>
+  <data name="DeleteAlterRuleConfirmationMsg" xml:space="preserve">
+    <value>คุณแน่ใจหรือไม่ว่าต้องการลบกฎแจ้งเตือนนี้: {0} (จำนวนเงิน: {1} ตาม {2}, {3} อัตราส่วน: {4}%), แจ้งเตือนทุก ๆ {5} วินาที</value>
+  </data>
+  <data name="Logs" xml:space="preserve">
+    <value>บันทึกกิจกรรม</value>
+  </data>
+  <data name="NotifyEvery" xml:space="preserve">
+    <value>แจ้งเตือนทุก ๆ</value>
+  </data>
+  <data name="or" xml:space="preserve">
+    <value>หรือ</value>
+  </data>
+  <data name="PleaseFillInfoMsg" xml:space="preserve">
+    <value>กรุณากรอกข้อมูลที่จำเป็นให้ครบก่อนบันทึก</value>
+  </data>
+  <data name="RatioPercent" xml:space="preserve">
+    <value>อัตราส่วน (%)</value>
+  </data>
+  <data name="UpdateAlterRuleConfirmationMsg" xml:space="preserve">
+    <value>คุณแน่ใจหรือไม่ว่าต้องการอัปเดตกฎแจ้งเตือนนี้: {0} (จำนวนเงิน: {1} ตาม {2}, {3} อัตราส่วน: {4}%), แจ้งเตือนทุก ๆ {5} วินาที</value>
   </data>
 </root>
