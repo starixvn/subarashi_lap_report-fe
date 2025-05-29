@@ -1049,4 +1049,7 @@
   <data name="DetectedInfo" xml:space="preserve">
     <value>Detected Info</value>
   </data>
+  <data name="MatchMonitoringCenter" xml:space="preserve">
+    <value>Match Monitoring Center</value>
+  </data>
 </root>

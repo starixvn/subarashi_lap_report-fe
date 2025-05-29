@@ -56,7 +56,7 @@ export const useGridAction = () => {
 
     const Setting = (event, monitoringId) => {
         event.preventDefault();
-        showPopup(ApiUrl.MATCH_MONITORING_SETTING_URL + `?Id=${monitoringId}`, LangHelper.getSingleResource('MonitorSetting'), 'monitor-setting-popup');
+        showPopup(ApiUrl.MATCH_MONITORING_SETTING_URL + `?Id=${monitoringId}`, LangHelper.getSingleResource('MonitorSetting'), 'monitor-setting-popup', true);
     };
 
     const History = (event, monitoringId) => {
@@ -64,7 +64,8 @@ export const useGridAction = () => {
         showPopup(
             ApiUrl.MATCH_MONITORING_HISTORY_URL + `?Id=${monitoringId}`,
             LangHelper.getSingleResource('TriggeredAlertHistory'),
-            'triggered-alert-history-popup'
+            'triggered-alert-history-popup',
+            false
         );
     };
 

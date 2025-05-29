@@ -24,3 +24,9 @@ export const popupStyleClassName = createReducer('', {
         return action.data;
     },
 });
+
+export const isRefresh = createReducer(false, {
+    [types.SET_IS_REFRESH](state, action) {
+        return action.data;
+    },
+});

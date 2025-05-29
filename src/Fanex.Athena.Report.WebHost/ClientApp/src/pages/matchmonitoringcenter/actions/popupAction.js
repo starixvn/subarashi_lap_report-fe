@@ -27,3 +27,10 @@ export const setPopupStyleClassName = (styleClassName) => {
         data: styleClassName,
     };
 };
+
+export const setIsRefresh = (isRefresh) => {
+    return {
+        type: types.SET_IS_REFRESH,
+        data: isRefresh,
+    };
+};
