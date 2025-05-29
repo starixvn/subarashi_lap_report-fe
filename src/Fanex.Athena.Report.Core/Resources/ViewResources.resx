@@ -1055,4 +1055,22 @@
   <data name="seconds" xml:space="preserve">
     <value>seconds</value>
   </data>
+  <data name="Search" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="Reset" xml:space="preserve">
+    <value>Reset</value>
+  </data>
+  <data name="Time" xml:space="preserve">
+    <value>Time</value>
+  </data>
+  <data name="MatchMonitoringCenter_Note" xml:space="preserve">
+    <value>If there are matches that need to be monitored, please add them from the Total Bets → Money Line page.</value>
+  </data>
+  <data name="MatchMonitoringCenter_Note2" xml:space="preserve">
+    <value>All timestamps displayed are based on GMT+8.</value>
+  </data>
+  <data name="SettingNameAlreadyExistsMsg" xml:space="preserve">
+    <value>Setting name already exists for this monitoring</value>
+  </data>
 </root>

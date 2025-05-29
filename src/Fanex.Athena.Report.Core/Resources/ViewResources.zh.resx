@@ -828,17 +828,56 @@
   <data name="SeparateSabaWinLoss_HideSaba" xml:space="preserve">
     <value>将虚拟体育与体育博彩分开</value>
   </data>
+  <data name="KickOffTime" xml:space="preserve">
+    <value>开赛时间</value>
+  </data>
+  <data name="MatchStatus" xml:space="preserve">
+    <value>比赛状态</value>
+  </data>
+  <data name="TriggeredAlert" xml:space="preserve">
+    <value>触发警报</value>
+  </data>
+  <data name="AlertRules" xml:space="preserve">
+    <value>警报规则</value>
+  </data>
+  <data name="Operation" xml:space="preserve">
+    <value>操作</value>
+  </data>
+  <data name="Setting" xml:space="preserve">
+    <value>设定</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>移除</value>
+  </data>
+  <data name="ConfirmRemoveMatchMonitoring" xml:space="preserve">
+    <value>您确定要将此赛事从监控列表中移除吗？移除后，所有相关的警报规则与追踪将会停止。</value>
+  </data>
   <data name="MonitorSetting" xml:space="preserve">
     <value />
   </data>
   <data name="TriggeredAlertHistory" xml:space="preserve">
-    <value />
+    <value>已触发警报记录</value>
   </data>
   <data name="DetectedInfo" xml:space="preserve">
-    <value />
+    <value>侦测信息</value>
   </data>
   <data name="MatchMonitoringCenter" xml:space="preserve">
-    <value />
+    <value>比赛监控中心</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>搜索</value>
+  </data>
+  <data name="Reset" xml:space="preserve">
+    <value>重置</value>
+  </data>
+  <data name="Time" xml:space="preserve">
+    <value>时间</value>
+  </data>
+  <data name="MatchMonitoringCenter_Note" xml:space="preserve">
+    <value>注意：如需监控比赛，请前往「总投注 → 独赢盘」页面添加。</value>
+  </data>
+  <data name="MatchMonitoringCenter_Note2" xml:space="preserve">
+    <value>所有时间戳均为 GMT+8 时间。</value>
   </data>
   <data name="Actions" xml:space="preserve">
     <value>操作</value>
@@ -902,5 +941,11 @@
   </data>
   <data name="seconds" xml:space="preserve">
     <value>秒</value>
+  </data>
+  <data name="AlertRule" xml:space="preserve">
+    <value>警报规则</value>
+  </data>
+  <data name="SettingNameAlreadyExistsMsg" xml:space="preserve">
+    <value>该监控已存在相同名称的设定</value>
   </data>
 </root>

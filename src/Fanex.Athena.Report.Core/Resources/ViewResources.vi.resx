@@ -903,17 +903,56 @@
   <data name="SeparateSabaWinLoss_HideSaba" xml:space="preserve">
     <value>Tách Thể Thao Ảo khỏi Sportsbook</value>
   </data>
+  <data name="KickOffTime" xml:space="preserve">
+    <value>Thời Gian Bắt Đầu</value>
+  </data>
+  <data name="MatchStatus" xml:space="preserve">
+    <value>Trạng Thái Trận Đấu</value>
+  </data>
+  <data name="TriggeredAlert" xml:space="preserve">
+    <value>Cảnh Báo Đã Kích Hoạt</value>
+  </data>
+  <data name="AlertRules" xml:space="preserve">
+    <value>Quy Tắc Cảnh Báo</value>
+  </data>
+  <data name="Operation" xml:space="preserve">
+    <value>Thao Tác</value>
+  </data>
+  <data name="Setting" xml:space="preserve">
+    <value>Cài Đặt</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Xoá</value>
+  </data>
+  <data name="ConfirmRemoveMatchMonitoring" xml:space="preserve">
+    <value>Bạn có chắc chắn muốn xoá sự kiện này khỏi danh sách theo dõi không? Khi đã xoá, toàn bộ quy tắc cảnh báo và hoạt động theo dõi liên quan sẽ dừng lại.</value>
+  </data>
   <data name="MonitorSetting" xml:space="preserve">
     <value />
   </data>
   <data name="TriggeredAlertHistory" xml:space="preserve">
-    <value />
+    <value>Lịch Sử Cảnh Báo Đã Kích Hoạt</value>
   </data>
   <data name="DetectedInfo" xml:space="preserve">
-    <value />
+    <value>Thông Tin Phát Hiện</value>
   </data>
   <data name="MatchMonitoringCenter" xml:space="preserve">
-    <value />
+    <value>Trung Tâm Theo Dõi Trận Đấu</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Tìm Kiếm</value>
+  </data>
+  <data name="Reset" xml:space="preserve">
+    <value>Đặt Lại</value>
+  </data>
+  <data name="Time" xml:space="preserve">
+    <value>Thời Gian</value>
+  </data>
+  <data name="MatchMonitoringCenter_Note" xml:space="preserve">
+    <value>Lưu ý: Nếu có trận đấu cần theo dõi, vui lòng thêm từ trang Tổng Cược → Money Line</value>
+  </data>
+  <data name="MatchMonitoringCenter_Note2" xml:space="preserve">
+    <value>Tất cả thời gian hiển thị đều theo múi giờ GMT+8.</value>
   </data>
   <data name="Actions" xml:space="preserve">
     <value>Hành Động</value>
@@ -977,5 +1016,11 @@
   </data>
   <data name="seconds" xml:space="preserve">
     <value>giây</value>
+  </data>
+  <data name="AlertRule" xml:space="preserve">
+    <value>Quy Tắc Cảnh Báo</value>
+  </data>
+  <data name="SettingNameAlreadyExistsMsg" xml:space="preserve">
+    <value>Tên cài đặt này đã tồn tại trong danh sách theo dõi</value>
   </data>
 </root>

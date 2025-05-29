@@ -31,6 +31,11 @@ const InputCell = ({ value, fieldKey, onChange, type = InputType.text, width = '
         height: '24px',
         boxSizing: 'border-box',
         backgroundColor: isValidValue() ? 'white' : '#ffcccc',
+        border: 'none',
+        borderBottom: '1px solid #ccc',
+        outline: 'none',
+        padding: '2px 4px',
+        transition: 'border-color 0.2s',
     };
 
     const handleChange = useCallback(
@@ -73,7 +78,7 @@ const InputCell = ({ value, fieldKey, onChange, type = InputType.text, width = '
                 }
             }
         },
-        [onChange, fieldKey, type, min, max, SQL_MONEY_MAX]
+        [onChange, fieldKey, type, min, max]
     );
 
     const handleKeyDown = useCallback(
@@ -91,11 +96,21 @@ const InputCell = ({ value, fieldKey, onChange, type = InputType.text, width = '
         [type]
     );
 
+    const handleFocus = useCallback((e) => {
+        e.target.style.borderBottomColor = '#2196F3';
+    }, []);
+
+    const handleBlur = useCallback((e) => {
+        e.target.style.borderBottomColor = '#ccc';
+    }, []);
+
     const inputProps = {
         type,
         value: value || '',
         onChange: handleChange,
         onKeyDown: handleKeyDown,
+        onFocus: handleFocus,
+        onBlur: handleBlur,
         style: inputStyle
     };
 

@@ -897,17 +897,56 @@
   <data name="SeparateSabaWinLoss_HideSaba" xml:space="preserve">
     <value>แยกกีฬาเสมือนออกจาก Sportsbook</value>
   </data>
+  <data name="KickOffTime" xml:space="preserve">
+    <value>เวลาเริ่มแข่งขัน</value>
+  </data>
+  <data name="MatchStatus" xml:space="preserve">
+    <value>สถานะการแข่งขัน</value>
+  </data>
+  <data name="TriggeredAlert" xml:space="preserve">
+    <value>การแจ้งเตือนที่ถูกกระตุ้น</value>
+  </data>
+  <data name="AlertRules" xml:space="preserve">
+    <value>กฎการแจ้งเตือน</value>
+  </data>
+  <data name="Operation" xml:space="preserve">
+    <value>การดำเนินการ</value>
+  </data>
+  <data name="Setting" xml:space="preserve">
+    <value>การตั้งค่า</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>ลบออก</value>
+  </data>
+  <data name="ConfirmRemoveMatchMonitoring" xml:space="preserve">
+    <value>คุณแน่ใจหรือไม่ว่าต้องการลบรายการนี้ออกจากรายการเฝ้าระวัง? หากลบออกแล้ว กฎการแจ้งเตือนและการติดตามทั้งหมดที่เกี่ยวข้องจะถูกยกเลิก</value>
+  </data>
   <data name="MonitorSetting" xml:space="preserve">
     <value />
   </data>
   <data name="TriggeredAlertHistory" xml:space="preserve">
-    <value />
+    <value>ประวัติการแจ้งเตือนที่ถูกกระตุ้น</value>
   </data>
   <data name="DetectedInfo" xml:space="preserve">
-    <value />
+    <value>ข้อมูลที่ตรวจพบ</value>
   </data>
   <data name="MatchMonitoringCenter" xml:space="preserve">
-    <value />
+    <value>ศูนย์เฝ้าระวังการแข่งขัน</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>ค้นหา</value>
+  </data>
+  <data name="Reset" xml:space="preserve">
+    <value>รีเซ็ต</value>
+  </data>
+  <data name="Time" xml:space="preserve">
+    <value>เวลา</value>
+  </data>
+  <data name="MatchMonitoringCenter_Note" xml:space="preserve">
+    <value>หมายเหตุ: หากมีการแข่งขันที่ต้องเฝ้าระวัง กรุณาเพิ่มจากหน้า Total Bets → Money Line</value>
+  </data>
+  <data name="MatchMonitoringCenter_Note2" xml:space="preserve">
+    <value>เวลาทั้งหมดที่แสดงอยู่ในระบบเป็นเวลา GMT+8</value>
   </data>
   <data name="Actions" xml:space="preserve">
     <value>การดำเนินการ</value>
@@ -971,5 +1010,11 @@
   </data>
   <data name="seconds" xml:space="preserve">
     <value>วินาที</value>
+  </data>
+  <data name="AlertRule" xml:space="preserve">
+    <value>กฎแจ้งเตือน</value>
+  </data>
+  <data name="SettingNameAlreadyExistsMsg" xml:space="preserve">
+    <value>ชื่อตั้งค่าดังกล่าวมีอยู่แล้วสำหรับการติดตามนี้</value>
   </data>
 </root>

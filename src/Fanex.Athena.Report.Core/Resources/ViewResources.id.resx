@@ -888,17 +888,56 @@
   <data name="SeparateSabaWinLoss_HideSaba" xml:space="preserve">
     <value>Pisahkan Olahraga Virtual dari Sportsbook</value>
   </data>
+  <data name="KickOffTime" xml:space="preserve">
+    <value>Waktu Kick Off</value>
+  </data>
+  <data name="MatchStatus" xml:space="preserve">
+    <value>Status Pertandingan</value>
+  </data>
+  <data name="TriggeredAlert" xml:space="preserve">
+    <value>Peringatan Aktif</value>
+  </data>
+  <data name="AlertRules" xml:space="preserve">
+    <value>Aturan Peringatan</value>
+  </data>
+  <data name="Operation" xml:space="preserve">
+    <value>Operasi</value>
+  </data>
+  <data name="Setting" xml:space="preserve">
+    <value>Pengaturan</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Hapus</value>
+  </data>
+  <data name="ConfirmRemoveMatchMonitoring" xml:space="preserve">
+    <value>Apakah Anda yakin ingin menghapus acara ini dari daftar pemantauan? Setelah dihapus, semua aturan peringatan dan pelacakan terkait akan dihentikan.</value>
+  </data>
   <data name="MonitorSetting" xml:space="preserve">
     <value />
   </data>
   <data name="TriggeredAlertHistory" xml:space="preserve">
-    <value />
+    <value>Riwayat Peringatan yang Terpicu</value>
   </data>
   <data name="DetectedInfo" xml:space="preserve">
-    <value />
+    <value>Informasi Terdeteksi</value>
   </data>
   <data name="MatchMonitoringCenter" xml:space="preserve">
-    <value />
+    <value>Pusat Pemantauan Pertandingan</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Cari</value>
+  </data>
+  <data name="Reset" xml:space="preserve">
+    <value>Atur Ulang</value>
+  </data>
+  <data name="Time" xml:space="preserve">
+    <value>Waktu</value>
+  </data>
+  <data name="MatchMonitoringCenter_Note" xml:space="preserve">
+    <value>Catatan: - Jika ada pertandingan yang perlu dipantau, silakan tambahkan dari halaman Total Taruhan → Money Line.</value>
+  </data>
+  <data name="MatchMonitoringCenter_Note2" xml:space="preserve">
+    <value>Semua cap waktu yang ditampilkan berdasarkan GMT+8.</value>
   </data>
   <data name="Actions" xml:space="preserve">
     <value>Tindakan</value>
@@ -962,5 +1001,11 @@
   </data>
   <data name="seconds" xml:space="preserve">
     <value>detik</value>
+  </data>
+  <data name="AlertRule" xml:space="preserve">
+    <value>Aturan Peringatan</value>
+  </data>
+  <data name="SettingNameAlreadyExistsMsg" xml:space="preserve">
+    <value>Nama pengaturan sudah ada untuk pemantauan ini</value>
   </data>
 </root>

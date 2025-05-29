@@ -48,10 +48,10 @@ export const BuildEmptyBody = () => (
 
 export const BuildHeaders = () => (
     <HeaderRow style={{ height: 23 }}>
-        <HeaderCell colWidth={240} key="AlertLevelName">
+        <HeaderCell colWidth={230} key="AlertLevelName">
             {LangHelper.getSingleResource('AlertLevelName')}
         </HeaderCell>
-        <HeaderCell colWidth={150} key="Amount">
+        <HeaderCell colWidth={180} key="Amount">
             {LangHelper.getSingleResource('Amount')}
         </HeaderCell>
         <HeaderCell colWidth={120} key="BaseCurrency">
@@ -63,7 +63,7 @@ export const BuildHeaders = () => (
         <HeaderCell colWidth={120} key="RatioPercent">
             {LangHelper.getSingleResource('RatioPercent')}
         </HeaderCell>
-        <HeaderCell colWidth={200} key="NotifyEvery">
+        <HeaderCell colWidth={180} key="NotifyEvery">
             {LangHelper.getSingleResource('NotifyEvery')}
         </HeaderCell>
         <HeaderCell colWidth={170} key="Actions">

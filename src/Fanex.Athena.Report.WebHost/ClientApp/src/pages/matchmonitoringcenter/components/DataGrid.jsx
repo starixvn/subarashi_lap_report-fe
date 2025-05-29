@@ -148,7 +148,7 @@ const DataGrid = (props) => {
 
             return (
                 <Cell key={'alertRules'} className="center-align">
-                    {rows}
+                    {rows.length > 0 ? rows : '-'}
                 </Cell>
             );
         };
@@ -245,20 +245,20 @@ const DataGrid = (props) => {
                 {BuildMatchStatus(liveIndicator, liveHomeScore, liveAwayScore)}
                 {BuildAlertHistory(isAlerted, monitoringId)}
                 {BuildAlertRules(alertRules)}
-                <Cell key={'event'} className="center-align">
+                <Cell key={'event'} className="left-align">
                     {matchName}
                 </Cell>
                 {BuildStakePercentage(homeName, homeStake, awayName, awayStake, isSettled)}
-                <Cell key={'totalHome'} className={`center-align normal-number`}>
+                <Cell key={'totalHome'} className={`right-align normal-number`}>
                     {isSettled ? '-' : NumberFormat.formatDecimal(totalHome)}
                 </Cell>
-                <Cell key={'totalAway'} className={`center-align normal-number`}>
+                <Cell key={'totalAway'} className={`right-align normal-number`}>
                     {isSettled ? '-' : NumberFormat.formatDecimal(totalAway)}
                 </Cell>
-                <Cell key={'forecastHome'} className={`center-align ${GetForecastNumberClass(forecastHome)}`}>
+                <Cell key={'forecastHome'} className={`right-align ${GetForecastNumberClass(forecastHome)}`}>
                     {isSettled ? '-' : NumberFormat.formatDecimal(forecastHome)}
                 </Cell>
-                <Cell key={'forecastAway'} className={`center-align ${GetForecastNumberClass(forecastAway)}`}>
+                <Cell key={'forecastAway'} className={`right-align ${GetForecastNumberClass(forecastAway)}`}>
                     {isSettled ? '-' : NumberFormat.formatDecimal(forecastAway)}
                 </Cell>
                 <Cell key={'operation'} className="center-align">

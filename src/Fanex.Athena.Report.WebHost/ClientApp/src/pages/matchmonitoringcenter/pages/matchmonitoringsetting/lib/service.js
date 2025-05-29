@@ -113,7 +113,12 @@ export const createAlertRule = async (item, monitoringID, dispatch, setAddNewRul
             }
             return true;
         } else {
-            const message = result.data ? result.data.message : 'Failed to create alert rule';
+            let message;
+            if (result.data && result.data.code === 14) {
+                message = LangHelper.getSingleResource('SettingNameAlreadyExistsMsg');
+            } else {
+                message = result.data ? result.data.message : 'Failed to create alert rule';
+            }
             alert(message);
             return false;
         }
@@ -146,7 +151,12 @@ export const updateAlertRule = async (item, dispatch, setIsEdited, onDataChanged
             }
             return true;
         } else {
-            const message = result.data ? result.data.message : 'Failed to update alert rule';
+            let message;
+            if (result.data && result.data.code === 14) {
+                message = LangHelper.getSingleResource('SettingNameAlreadyExistsMsg');
+            } else {
+                message = result.data ? result.data.message : 'Failed to update alert rule';
+            }
             alert(message);
             return false;
         }

@@ -12,6 +12,7 @@ import ExportExcel from '@/components/ExportExcel';
 import SubmitButton from '@/components/SubmitButton';
 import RefreshCountDownButton from '@/components/RefreshCountDownButton';
 import { constants } from '../common';
+import Note from './Note';
 
 import { useFilterAction, useFilterHandler } from '../hook';
 
@@ -197,6 +198,9 @@ const FormFilter = (props) => {
                         </div>
                     </div>
                 </div>
+            </div>
+            <div className="row">
+                <Note />
             </div>
         </CollapsiblePanel>
     );
