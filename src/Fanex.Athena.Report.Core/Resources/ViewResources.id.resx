@@ -951,4 +951,16 @@
   <data name="UpdateAlterRuleConfirmationMsg" xml:space="preserve">
     <value>Apakah Anda yakin ingin memperbarui Aturan Peringatan ini: {0} (Jumlah: {1} Berdasarkan {2}, {3} Rasio: {4}%), Notifikasi setiap {5} detik</value>
   </data>
+  <data name="AlertLevelName" xml:space="preserve">
+    <value>Nama Level Peringatan</value>
+  </data>
+  <data name="And_Or" xml:space="preserve">
+    <value>dan/atau</value>
+  </data>
+  <data name="Format" xml:space="preserve">
+    <value>Format</value>
+  </data>
+  <data name="seconds" xml:space="preserve">
+    <value>detik</value>
+  </data>
 </root>

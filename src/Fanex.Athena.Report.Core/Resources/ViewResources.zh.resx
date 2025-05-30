@@ -891,4 +891,16 @@
   <data name="UpdateAlterRuleConfirmationMsg" xml:space="preserve">
     <value>您确定要更新此警报规则吗？{0}（金额：{1} 基础货币 {2}，{3} 比例：{4}%），每隔 {5} 秒通知一次</value>
   </data>
+  <data name="AlertLevelName" xml:space="preserve">
+    <value>警报等级名称 </value>
+  </data>
+  <data name="And_Or" xml:space="preserve">
+    <value>并且/或者</value>
+  </data>
+  <data name="Format" xml:space="preserve">
+    <value>格式</value>
+  </data>
+  <data name="seconds" xml:space="preserve">
+    <value>秒</value>
+  </data>
 </root>

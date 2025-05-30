@@ -159,7 +159,7 @@ const DataRow = ({ item: initialItem, baseCurrencyList, defaultBaseCurrency, onD
                     <Cell className="left-align">{item.settingName}</Cell>
                     <Cell className="left-align">{NumberFormat.formatDecimal(item.alertRule?.negativeProfit)}</Cell>
                     <Cell className="left-align">{item.baseCurrency}</Cell>
-                    <Cell className="left-align">{item.conditionTypeName}</Cell>
+                    <Cell className="left-align">{LangHelper.getSingleResource(item.conditionTypeName)}</Cell>
                     <Cell className="left-align">{item.alertRule?.betRatio}%</Cell>
                     <Cell className="left-align">
                         {item.notificationInterval} {LangHelper.getSingleResource('seconds')}
@@ -192,7 +192,7 @@ const DataRow = ({ item: initialItem, baseCurrencyList, defaultBaseCurrency, onD
                     </Cell>
                     <Cell className="left-align">
                         <DropdownCell
-                            value={item.conditionTypeName || defaultCondition}
+                            value={LangHelper.getSingleResource(item.conditionTypeName) || defaultCondition}
                             fieldKey="conditionTypeName"
                             dataSource={conditions}
                             onChange={handleCellChange}

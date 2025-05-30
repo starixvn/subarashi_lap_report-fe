@@ -960,4 +960,16 @@
   <data name="UpdateAlterRuleConfirmationMsg" xml:space="preserve">
     <value>คุณแน่ใจหรือไม่ว่าต้องการอัปเดตกฎแจ้งเตือนนี้: {0} (จำนวนเงิน: {1} ตาม {2}, {3} อัตราส่วน: {4}%), แจ้งเตือนทุก ๆ {5} วินาที</value>
   </data>
+  <data name="AlertLevelName" xml:space="preserve">
+    <value>ชื่อระดับแจ้งเตือน</value>
+  </data>
+  <data name="And_Or" xml:space="preserve">
+    <value>และ/หรือ</value>
+  </data>
+  <data name="Format" xml:space="preserve">
+    <value>รูปแบบ (Format)</value>
+  </data>
+  <data name="seconds" xml:space="preserve">
+    <value>วินาที</value>
+  </data>
 </root>

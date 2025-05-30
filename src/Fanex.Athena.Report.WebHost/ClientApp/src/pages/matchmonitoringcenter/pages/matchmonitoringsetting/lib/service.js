@@ -1,7 +1,7 @@
 import { generateDefaultConfirmOption, generateDefaultAlertOption } from '@/lib/sweetAlert';
 import LangHelper from '@/helpers/langHelper';
 import DataService from '@/lib/dataService';
-import { ApiUrl } from './constants';
+import { ApiUrl, conditions } from './constants';
 import ActionCreators from '../actions';
 
 const { setSweetAlertOption } = ActionCreators;
@@ -21,6 +21,14 @@ export const handleCellChangeValue = (setItemState, fieldKey, value) => {
                 ...prevItem.alertRule,
                 [fieldKey]: value,
             },
+        }));
+    } else if (fieldKey === 'conditionTypeName') {
+        const condition = conditions.find(c => c.value === value);
+        const conditionKey = condition ? condition.key : value;
+
+        setItemState((prevItem) => ({
+            ...prevItem,
+            [fieldKey]: conditionKey,
         }));
     } else {
         setItemState((prevItem) => ({

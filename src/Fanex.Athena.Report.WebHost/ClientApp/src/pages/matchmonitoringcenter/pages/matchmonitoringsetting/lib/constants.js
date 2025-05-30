@@ -35,11 +35,11 @@ export const InputType = {
 export const conditions = [
     {
         key: 'and',
-        value: 'and',
+        value: LangHelper.getSingleResource('and'),
     },
     {
         key: 'or',
-        value: 'or',
+        value: LangHelper.getSingleResource('or'),
     },
 ];
 

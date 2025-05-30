@@ -993,7 +993,7 @@
     <value>When the negative profit forecast for either the home or away team exceeds **[Amount]** base currency **[Base Currency]**</value>
   </data>
   <data name="AlertRuleTxt4" xml:space="preserve">
-    <value>The betting ratio difference between the home or away teams is greater than **[Ratio %]** send a notification every **[Notify every]** seconds</value>
+    <value>The betting ratio difference between the home and away teams is greater than **[Ratio %]** send a notification every **[Notify every]** seconds</value>
   </data>
   <data name="Format" xml:space="preserve">
     <value>Format</value>
@@ -1051,5 +1051,8 @@
   </data>
   <data name="MatchMonitoringCenter" xml:space="preserve">
     <value>Match Monitoring Center</value>
+  </data>
+  <data name="seconds" xml:space="preserve">
+    <value>seconds</value>
   </data>
 </root>

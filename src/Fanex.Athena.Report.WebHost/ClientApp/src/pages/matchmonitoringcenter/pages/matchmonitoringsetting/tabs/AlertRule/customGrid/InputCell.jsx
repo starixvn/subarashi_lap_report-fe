@@ -3,6 +3,7 @@ import { InputType } from '../../../lib/constants';
 
 const InputCell = ({ value, fieldKey, onChange, type = InputType.text, width = '100%', min, max }) => {
     const valueRef = useRef(value);
+    const SQL_MONEY_MAX = 922337203685477;
 
     useEffect(() => {
         valueRef.current = value;
@@ -15,6 +16,9 @@ const InputCell = ({ value, fieldKey, onChange, type = InputType.text, width = '
         if (type === InputType.number && value !== '') {
             const numValue = parseFloat(value);
             if (isNaN(numValue)) return false;
+
+            if (numValue > SQL_MONEY_MAX) return false;
+
             if (min !== undefined && numValue < min) return false;
             if (max !== undefined && numValue > max) return false;
         }
@@ -38,14 +42,17 @@ const InputCell = ({ value, fieldKey, onChange, type = InputType.text, width = '
                     newValue = newValue.replace(/[eE]/g, '');
                 }
 
-                if (min !== undefined && min >= 0 && newValue.includes('-')) {
+                if (newValue.includes('-')) {
                     newValue = newValue.replace(/-/g, '');
                 }
 
-                if (newValue !== '' && !isNaN(parseFloat(newValue))) {
+                if (newValue !== '' && newValue !== '.') {
                     const numValue = parseFloat(newValue);
-
                     if (!isNaN(numValue)) {
+                        if (numValue > SQL_MONEY_MAX) {
+                            newValue = SQL_MONEY_MAX.toString();
+                        }
+
                         if (min !== undefined && numValue < min) {
                             newValue = min.toString();
                         }
@@ -66,22 +73,22 @@ const InputCell = ({ value, fieldKey, onChange, type = InputType.text, width = '
                 }
             }
         },
-        [onChange, fieldKey, type, min, max]
+        [onChange, fieldKey, type, min, max, SQL_MONEY_MAX]
     );
 
     const handleKeyDown = useCallback(
         (e) => {
             if (type === InputType.number) {
-                if (min !== undefined && min >= 0 && e.key === '-') {
+                if (e.key === 'e' || e.key === 'E') {
                     e.preventDefault();
                 }
 
-                if (e.key === 'e' || e.key === 'E') {
+                if (e.key === '-') {
                     e.preventDefault();
                 }
             }
         },
-        [type, min]
+        [type]
     );
 
     const inputProps = {

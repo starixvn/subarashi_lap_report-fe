@@ -1,5 +1,6 @@
 import React from 'react';
 import NumberFormat from '@/lib/numberFormat';
+import LangHelper from '@/helpers/langHelper';
 
 export const parseFormattedText = (text) => {
     if (!text) return null;
@@ -35,7 +36,7 @@ export const buildConfirmMessage = (item, templateString) => {
         '{0}': item.settingName || '',
         '{1}': negativeProfit,
         '{2}': item.baseCurrency || '',
-        '{3}': item.conditionTypeName || '',
+        '{3}': LangHelper.getSingleResource(item.conditionTypeName) || '',
         '{4}': alertRule.betRatio !== undefined ? alertRule.betRatio : '',
         '{5}': item.notificationInterval !== undefined ? item.notificationInterval : '',
     };

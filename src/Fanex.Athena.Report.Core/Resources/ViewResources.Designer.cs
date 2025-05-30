@@ -169,7 +169,7 @@ namespace Fanex.Athena.Report.Core.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The betting ratio difference between the home or away teams is greater than **[Ratio %]** send a notification every **[Notify every]** seconds.
+        ///   Looks up a localized string similar to The betting ratio difference between the home and away teams is greater than **[Ratio %]** send a notification every **[Notify every]** seconds.
         /// </summary>
         public static string AlertRuleTxt4 {
             get {
@@ -2289,6 +2289,15 @@ namespace Fanex.Athena.Report.Core.Resources {
         public static string SearchData {
             get {
                 return ResourceManager.GetString("SearchData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to seconds.
+        /// </summary>
+        public static string seconds {
+            get {
+                return ResourceManager.GetString("seconds", resourceCulture);
             }
         }
         

@@ -113,10 +113,9 @@ const NewRuleRow = ({ baseCurrencyList, defaultBaseCurrency, setAddNewRule, onDa
     const handleCloseClick = useCallback(
         (event) => {
             event.preventDefault();
-            const alertOption = buildAlertOptionDelete();
-            dispatch(setSweetAlertOption(alertOption));
+            handleCancelAddNew();
         },
-        [buildAlertOptionDelete, dispatch]
+        [handleCancelAddNew]
     );
 
     return (
@@ -137,7 +136,7 @@ const NewRuleRow = ({ baseCurrencyList, defaultBaseCurrency, setAddNewRule, onDa
                 <DropdownCell value={newItem.baseCurrency} fieldKey="baseCurrency" dataSource={baseCurrencyList} onChange={handleCellChange} />
             </Cell>
             <Cell className="left-align">
-                <DropdownCell value={newItem.conditionTypeName} fieldKey="conditionTypeName" dataSource={conditions} onChange={handleCellChange} />
+                <DropdownCell value={LangHelper.getSingleResource(newItem.conditionTypeName)} fieldKey="conditionTypeName" dataSource={conditions} onChange={handleCellChange} />
             </Cell>
             <Cell className="left-align">
                 <InputCell

@@ -966,4 +966,16 @@
   <data name="UpdateAlterRuleConfirmationMsg" xml:space="preserve">
     <value>Bạn có chắc muốn cập nhật Quy Tắc Cảnh Báo này không: {0} (Số Tiền: {1} Dựa trên {2}, {3} Tỷ Lệ: {4}%), Thông báo mỗi {5} giây</value>
   </data>
+  <data name="AlertLevelName" xml:space="preserve">
+    <value>Tên Mức Cảnh Báo</value>
+  </data>
+  <data name="And_Or" xml:space="preserve">
+    <value>Và/Hoặc</value>
+  </data>
+  <data name="Format" xml:space="preserve">
+    <value>Định Dạng</value>
+  </data>
+  <data name="seconds" xml:space="preserve">
+    <value>giây</value>
+  </data>
 </root>
