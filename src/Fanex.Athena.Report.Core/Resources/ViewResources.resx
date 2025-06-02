@@ -1085,4 +1085,19 @@
   <data name="or" xml:space="preserve">
     <value>or</value>
   </data>
+   <data name="Action" xml:space="preserve">
+    <value>Action</value>
+  </data>
+  <data name="Detail" xml:space="preserve">
+    <value>Detail</value>
+  </data>
+  <data name="Operator" xml:space="preserve">
+    <value>Operator</value>
+  </data>
+  <data name="TimeStamp" xml:space="preserve">
+    <value>TimeStamp</value>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>Type</value>
+  </data>
 </root>

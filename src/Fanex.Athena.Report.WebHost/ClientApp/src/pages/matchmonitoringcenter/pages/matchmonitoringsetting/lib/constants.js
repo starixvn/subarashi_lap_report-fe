@@ -3,7 +3,7 @@ import LangHelper from '@/helpers/langHelper';
 
 export const tabKeys = {
     alertRule: 'AlertRule',
-    log: 'Log',
+    log: 'Logs',
 };
 
 const dynamicImports = {
