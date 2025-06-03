@@ -1073,4 +1073,16 @@
   <data name="SettingNameAlreadyExistsMsg" xml:space="preserve">
     <value>Setting name already exists for this monitoring</value>
   </data>
+  <data name="and" xml:space="preserve">
+    <value>and</value>
+  </data>
+  <data name="Confirm" xml:space="preserve">
+    <value>Confirm</value>
+  </data>
+  <data name="Logs" xml:space="preserve">
+    <value>Logs</value>
+  </data>
+  <data name="or" xml:space="preserve">
+    <value>or</value>
+  </data>
 </root>

@@ -1017,4 +1017,16 @@
   <data name="SettingNameAlreadyExistsMsg" xml:space="preserve">
     <value>ชื่อตั้งค่าดังกล่าวมีอยู่แล้วสำหรับการติดตามนี้</value>
   </data>
+  <data name="TotalHome" xml:space="preserve">
+    <value>เจ้าบ้านทั้งหมด</value>
+  </data>
+  <data name="TotalAway" xml:space="preserve">
+    <value>ทีมเยือนทั้งหมด</value>
+  </data>
+  <data name="ForecastHome" xml:space="preserve">
+    <value>ทายเจ้าบ้าน</value>
+  </data>
+  <data name="ForecastAway" xml:space="preserve">
+    <value>ทายทีมเยือน</value>
+  </data>
 </root>

@@ -1008,4 +1008,16 @@
   <data name="SettingNameAlreadyExistsMsg" xml:space="preserve">
     <value>Nama pengaturan sudah ada untuk pemantauan ini</value>
   </data>
+  <data name="TotalHome" xml:space="preserve">
+    <value>Total Tuan Rumah</value>
+  </data>
+  <data name="TotalAway" xml:space="preserve">
+    <value>Total Tandang</value>
+  </data>
+  <data name="ForecastHome" xml:space="preserve">
+    <value>Prediksi Tuan Rumah</value>
+  </data>
+  <data name="ForecastAway" xml:space="preserve">
+    <value>Prediksi Tandang</value>
+  </data>
 </root>

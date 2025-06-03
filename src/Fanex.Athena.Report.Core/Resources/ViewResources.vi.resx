@@ -1023,4 +1023,16 @@
   <data name="SettingNameAlreadyExistsMsg" xml:space="preserve">
     <value>Tên cài đặt này đã tồn tại trong danh sách theo dõi</value>
   </data>
+  <data name="TotalHome" xml:space="preserve">
+    <value>Tổng Đội Nhà</value>
+  </data>
+  <data name="TotalAway" xml:space="preserve">
+    <value>Tổng Đội Khách</value>
+  </data>
+  <data name="ForecastHome" xml:space="preserve">
+    <value>Dự đoán Đội Nhà</value>
+  </data>
+  <data name="ForecastAway" xml:space="preserve">
+    <value>Dự đoán Đội Khách</value>
+  </data>
 </root>

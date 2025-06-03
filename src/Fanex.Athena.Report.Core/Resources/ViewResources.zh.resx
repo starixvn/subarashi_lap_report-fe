@@ -948,4 +948,16 @@
   <data name="SettingNameAlreadyExistsMsg" xml:space="preserve">
     <value>该监控已存在相同名称的设定</value>
   </data>
+  <data name="TotalHome" xml:space="preserve">
+    <value>主队总计</value>
+  </data>
+  <data name="TotalAway" xml:space="preserve">
+    <value>客队总计</value>
+  </data>
+  <data name="ForecastHome" xml:space="preserve">
+    <value>主队预测</value>
+  </data>
+  <data name="ForecastAway" xml:space="preserve">
+    <value>客队预测</value>
+  </data>
 </root>
