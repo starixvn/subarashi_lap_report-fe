@@ -1035,4 +1035,7 @@
   <data name="ForecastAway" xml:space="preserve">
     <value>Dự đoán Đội Khách</value>
   </data>
+  <data name="MatchMonitoringCenter_Note3" xml:space="preserve">
+    <value>Dữ liệu có sẵn từ {0}.</value>
+  </data>
 </root>

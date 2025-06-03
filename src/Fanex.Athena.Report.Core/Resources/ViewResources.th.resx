@@ -1029,4 +1029,7 @@
   <data name="ForecastAway" xml:space="preserve">
     <value>ทายทีมเยือน</value>
   </data>
+  <data name="MatchMonitoringCenter_Note3" xml:space="preserve">
+    <value>ข้อมูลจาก {0}.</value>
+  </data>
 </root>

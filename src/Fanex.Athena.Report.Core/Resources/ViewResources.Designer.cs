@@ -1357,6 +1357,15 @@ namespace Fanex.Athena.Report.Core.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Data is available from {0}..
+        /// </summary>
+        public static string MatchMonitoringCenter_Note3 {
+            get {
+                return ResourceManager.GetString("MatchMonitoringCenter_Note3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Match Precise.
         /// </summary>
         public static string MatchPrecise {

@@ -15,11 +15,12 @@ import Popup from '@/components/Popup';
 const MonitoringSettingDetail = lazy(() => import('../pages/matchmonitoringsetting'));
 
 const DataGrid = (props) => {
-    const [gridData, lastFetchTime, sweetAlertOption, settingPageOption] = useSelector((state) => [
+    const [gridData, lastFetchTime, sweetAlertOption, settingPageOption, formData] = useSelector((state) => [
         state.gridData,
         state.lastFetchTime,
         state.sweetAlertOption,
         state.settingPageOption,
+        state.formData,
     ]);
     const { headerColumns } = constants;
     const { Remove, Setting, History } = useGridAction();
@@ -45,11 +46,20 @@ const DataGrid = (props) => {
             );
         }
 
+        if (formData.hasSettingPermission) {
+            rows.push(
+                <HeaderCell key="operation" colWidth={100}>
+                    {LangHelper.getSingleResource('Operation')}
+                </HeaderCell>
+            );
+        }
+
         return <HeaderRow style={{ height: 32 }}>{rows}</HeaderRow>;
     };
 
     const BuildBody = () => {
         let rows = [];
+        const spanLength = headerColumns.length + (formData.hasSettingPermission ? 1 : 0);
         const { running: runningData, settled: settledData } = gridData;
         const runningGroupedData = {};
 
@@ -71,8 +81,8 @@ const DataGrid = (props) => {
 
             if (leagueData.monitors.length > 0) {
                 rows.push(
-                    <Row key={`running-league-${leagueId}`} className="league-row" span={headerColumns.length}>
-                        <Cell colSpan={headerColumns.length} className="league-name">
+                    <Row key={`running-league-${leagueId}`} className="league-row" span={spanLength}>
+                        <Cell colSpan={spanLength} className="league-name">
                             {leagueData.leagueName}
                         </Cell>
                     </Row>
@@ -104,8 +114,8 @@ const DataGrid = (props) => {
 
             if (leagueData.monitors.length > 0) {
                 rows.push(
-                    <Row key={`settled-league-${leagueId}`} className="league-row" span={headerColumns.length}>
-                        <Cell colSpan={headerColumns.length} className="league-name">
+                    <Row key={`settled-league-${leagueId}`} className="league-row" span={spanLength}>
+                        <Cell colSpan={spanLength} className="league-name">
                             {leagueData.leagueName}
                         </Cell>
                     </Row>
@@ -264,9 +274,11 @@ const DataGrid = (props) => {
                 <Cell key={'forecastAway'} className={`right-align ${GetForecastNumberClass(forecastAway)}`}>
                     {isSettled ? '-' : NumberFormat.formatDecimal(forecastAway)}
                 </Cell>
-                <Cell key={'operation'} className="center-align">
-                    {BuildOperation(isSettled)}
-                </Cell>
+                {formData.hasSettingPermission && (
+                    <Cell key={'operation'} className="center-align">
+                        {BuildOperation(isSettled)}
+                    </Cell>
+                )}
             </Row>
         );
     };

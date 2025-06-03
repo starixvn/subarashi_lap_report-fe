@@ -1085,7 +1085,7 @@
   <data name="or" xml:space="preserve">
     <value>or</value>
   </data>
-   <data name="Action" xml:space="preserve">
+  <data name="Action" xml:space="preserve">
     <value>Action</value>
   </data>
   <data name="ViewHistory" xml:space="preserve">
@@ -1102,5 +1102,8 @@
   </data>
   <data name="Type" xml:space="preserve">
     <value>Type</value>
+  </data>
+  <data name="MatchMonitoringCenter_Note3" xml:space="preserve">
+    <value>Data is available from {0}.</value>
   </data>
 </root>

@@ -1020,4 +1020,7 @@
   <data name="ForecastAway" xml:space="preserve">
     <value>Prediksi Tandang</value>
   </data>
+  <data name="MatchMonitoringCenter_Note3" xml:space="preserve">
+    <value>Data tersedia dari {0}.</value>
+  </data>
 </root>

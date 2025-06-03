@@ -51,9 +51,4 @@ export const headerColumns = [
         label: LangHelper.getSingleResource('ForecastAway'),
         width: 100,
     },
-    {
-        key: 'operation',
-        label: LangHelper.getSingleResource('Operation'),
-        width: 100,
-    },
 ];
