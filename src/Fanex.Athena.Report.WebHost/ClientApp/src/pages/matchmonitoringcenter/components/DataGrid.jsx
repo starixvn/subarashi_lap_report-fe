@@ -230,8 +230,11 @@ const DataGrid = (props) => {
 
             return (
                 <Cell key={'alertHistory'} className="center-align">
+                    <i className="icon-alert icon-danger"></i>
+                    <br />
+                    <br />
                     <a href="#" onClick={(e) => History(e, monitoringId)}>
-                        <i className="icon-alert icon-danger"></i>
+                        {LangHelper.getSingleResource('ViewHistory')}
                     </a>
                 </Cell>
             );

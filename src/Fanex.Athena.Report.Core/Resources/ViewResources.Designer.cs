@@ -1627,20 +1627,20 @@ namespace Fanex.Athena.Report.Core.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to or.
-        /// </summary>
-        public static string or {
-            get {
-                return ResourceManager.GetString("or", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Operator.
         /// </summary>
         public static string Operator {
             get {
                 return ResourceManager.GetString("Operator", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to or.
+        /// </summary>
+        public static string or {
+            get {
+                return ResourceManager.GetString("or", resourceCulture);
             }
         }
         
@@ -2545,15 +2545,6 @@ namespace Fanex.Athena.Report.Core.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
-        /// </summary>
-        public static string String1 {
-            get {
-                return ResourceManager.GetString("String1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Su.
         /// </summary>
         public static string Su {
@@ -2856,6 +2847,15 @@ namespace Fanex.Athena.Report.Core.Resources {
         public static string ViewDataInMonth {
             get {
                 return ResourceManager.GetString("ViewDataInMonth", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to View History.
+        /// </summary>
+        public static string ViewHistory {
+            get {
+                return ResourceManager.GetString("ViewHistory", resourceCulture);
             }
         }
         

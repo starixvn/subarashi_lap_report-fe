@@ -1088,6 +1088,9 @@
    <data name="Action" xml:space="preserve">
     <value>Action</value>
   </data>
+  <data name="ViewHistory" xml:space="preserve">
+    <value>View History</value>
+  </data>
   <data name="Detail" xml:space="preserve">
     <value>Detail</value>
   </data>
