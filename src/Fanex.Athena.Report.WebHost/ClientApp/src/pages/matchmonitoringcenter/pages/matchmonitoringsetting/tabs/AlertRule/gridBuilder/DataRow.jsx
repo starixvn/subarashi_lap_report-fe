@@ -171,7 +171,12 @@ const DataRow = ({ item: initialItem, baseCurrencyList, defaultBaseCurrency, onD
             ) : (
                 <>
                     <Cell className="left-align">
-                        <InputCell value={item.settingName} fieldKey="settingName" onChange={handleCellChange} />
+                        <InputCell
+                            value={item.settingName}
+                            fieldKey="settingName"
+                            onChange={handleCellChange}
+                            max={50}
+                        />
                     </Cell>
                     <Cell className="left-align">
                         <InputCell

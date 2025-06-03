@@ -32,12 +32,14 @@ export const buildConfirmMessage = (item, templateString) => {
 
     const alertRule = item.alertRule || {};
     const negativeProfit = alertRule.negativeProfit !== undefined ? NumberFormat.formatDecimal(parseFloat(alertRule.negativeProfit)) : '';
+    const betRatio = alertRule.betRatio !== undefined ? NumberFormat.formatDecimal(parseFloat(alertRule.betRatio)) : '';
+
     const placeholders = {
         '{0}': item.settingName || '',
         '{1}': negativeProfit,
         '{2}': item.baseCurrency || '',
         '{3}': LangHelper.getSingleResource(item.conditionTypeName) || '',
-        '{4}': alertRule.betRatio !== undefined ? alertRule.betRatio : '',
+        '{4}': betRatio,
         '{5}': item.notificationInterval !== undefined ? item.notificationInterval : '',
     };
 

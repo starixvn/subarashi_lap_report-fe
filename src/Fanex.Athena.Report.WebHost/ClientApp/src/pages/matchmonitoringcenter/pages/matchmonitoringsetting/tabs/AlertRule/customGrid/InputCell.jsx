@@ -4,6 +4,7 @@ import { InputType } from '../../../lib/constants';
 const InputCell = ({ value, fieldKey, onChange, type = InputType.text, width = '100%', min, max }) => {
     const valueRef = useRef(value);
     const SQL_MONEY_MAX = 922337203685477;
+    const DEFAULT_MAX_TEXT_LENGTH = 50;
 
     useEffect(() => {
         valueRef.current = value;
@@ -38,6 +39,16 @@ const InputCell = ({ value, fieldKey, onChange, type = InputType.text, width = '
         transition: 'border-color 0.2s',
     };
 
+    const limitDecimalPlaces = (value, decimalPlaces = 2) => {
+        if (!value || !value.includes('.')) return value;
+
+        const parts = value.split('.');
+        if (parts.length !== 2) return value;
+
+        const decimalPart = parts[1].slice(0, decimalPlaces);
+        return parts[0] + '.' + decimalPart;
+    };
+
     const handleChange = useCallback(
         (e) => {
             let newValue = e.target.value;
@@ -50,6 +61,8 @@ const InputCell = ({ value, fieldKey, onChange, type = InputType.text, width = '
                 if (newValue.includes('-')) {
                     newValue = newValue.replace(/-/g, '');
                 }
+
+                newValue = limitDecimalPlaces(newValue);
 
                 if (newValue !== '' && newValue !== '.') {
                     const numValue = parseFloat(newValue);
@@ -102,7 +115,19 @@ const InputCell = ({ value, fieldKey, onChange, type = InputType.text, width = '
 
     const handleBlur = useCallback((e) => {
         e.target.style.borderBottomColor = '#ccc';
-    }, []);
+
+        if (type === InputType.number && e.target.value && e.target.value.includes('.')) {
+            const formattedValue = limitDecimalPlaces(e.target.value);
+            if (formattedValue !== e.target.value) {
+                e.target.value = formattedValue;
+                if (fieldKey) {
+                    onChange(fieldKey, formattedValue);
+                } else {
+                    onChange(formattedValue);
+                }
+            }
+        }
+    }, [type, fieldKey, onChange]);
 
     const inputProps = {
         type,
@@ -117,6 +142,8 @@ const InputCell = ({ value, fieldKey, onChange, type = InputType.text, width = '
     if (type === InputType.number) {
         if (min !== undefined) inputProps.min = min;
         if (max !== undefined) inputProps.max = max;
+    } else if (type === InputType.text) {
+        inputProps.maxLength = max || DEFAULT_MAX_TEXT_LENGTH;
     }
 
     return <input {...inputProps} />;

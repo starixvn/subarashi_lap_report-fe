@@ -121,7 +121,12 @@ const NewRuleRow = ({ baseCurrencyList, defaultBaseCurrency, setAddNewRule, onDa
     return (
         <Row key="new-alert-rule">
             <Cell className="left-align">
-                <InputCell value={newItem.settingName} fieldKey="settingName" onChange={handleCellChange} />
+                <InputCell
+                    value={newItem.settingName}
+                    fieldKey="settingName"
+                    onChange={handleCellChange}
+                    max={50}
+                />
             </Cell>
             <Cell className="left-align">
                 <InputCell
