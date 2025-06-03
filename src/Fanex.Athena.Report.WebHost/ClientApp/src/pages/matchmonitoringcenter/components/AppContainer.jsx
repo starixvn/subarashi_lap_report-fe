@@ -47,11 +47,6 @@ export const AppContainer = (props) => {
         const data = result.data;
 
         data.baseCurrencies = data.baseCurrencies.map((item) => ({ value: item.key, label: item.value }));
-        dispatch(setBaseCurrencyList(data.baseCurrencies));
-
-        data.baseCurrency = data.baseCurrencies.find((x) => x.label == data.baseCurrency);
-        data.baseCurrency = data.baseCurrency ? data.baseCurrency : { value: DEFAULT_BASE_CURRENCY_VALUE, label: data.defaultBaseCurrency };
-        dispatch(setSelectedBaseCurrency(data.baseCurrency));
 
         data.currencies = [
             CurrencySelectAll,
@@ -61,6 +56,21 @@ export const AppContainer = (props) => {
             })),
         ];
 
+        const selectedCurrency = data.currencyId ? data.currencies.find((c) => c.value === data.currencyId) || data.currencies[0] : data.currencies[0];
+
+        let selectedBaseCurrency = data.baseCurrencies.find((x) => x.label === data.baseCurrency);
+
+        if (!selectedBaseCurrency) {
+            selectedBaseCurrency = { value: DEFAULT_BASE_CURRENCY_VALUE, label: data.defaultBaseCurrency };
+        }
+
+        if (selectedCurrency.value !== 0 && !data.baseCurrencies.find((x) => x.label === selectedCurrency.label)) {
+            const newBaseCurrencyList = data.baseCurrencies.slice(0);
+            selectedBaseCurrency = { ...selectedCurrency, isEmpty: true };
+            newBaseCurrencyList.push(selectedBaseCurrency);
+            data.baseCurrencies = newBaseCurrencyList;
+        }
+
         const matchIds = data.matchIds.split(',').map((item) => Number(item.trim()));
         const leagueIds = data.leagueIds.split(',').map((item) => Number(item.trim()));
 
@@ -68,25 +78,28 @@ export const AppContainer = (props) => {
         data.leagueList = data.leagueList.map((item) => ({ ...item, status: leagueIds.includes(item.id) }));
 
         const defaultState = {};
-        defaultState.selectedBaseCurrency = data.baseCurrency;
+        defaultState.selectedBaseCurrency = selectedBaseCurrency;
         defaultState.selectedMatch = data.matchIds;
         defaultState.selectedLeague = data.leagueIds;
         defaultState.selectedMatchStatus = MatchStatus[0];
         defaultState.selectedTriggeredAlert = TriggerAlert[0];
-        defaultState.selectedCurrency = data.currencies[0];
+        defaultState.selectedCurrency = selectedCurrency;
 
         const params = {
             MatchStatus: MatchStatus[0].value,
             MatchIdList: data.matchIds,
             TriggeredAlert: TriggerAlert[0].value,
-            BaseCurrency: data.baseCurrency.isEmpty ? '' : data.baseCurrency.label,
-            BaseCurrencyName: data.baseCurrency.label,
-            CurrencyName: data.currencies[0].label,
-            CurrencyId: data.currencies[0].value,
+            BaseCurrency: selectedBaseCurrency.isEmpty ? '' : selectedBaseCurrency.label,
+            BaseCurrencyName: selectedBaseCurrency.label,
+            CurrencyName: selectedCurrency.label,
+            CurrencyId: selectedCurrency.value,
         };
+
         batch(() => {
+            dispatch(setBaseCurrencyList(data.baseCurrencies));
+            dispatch(setSelectedBaseCurrency(selectedBaseCurrency));
             dispatch(setRequestParam(params));
-            dispatch(setSelectedCurrency(data.currencies[0]));
+            dispatch(setSelectedCurrency(selectedCurrency));
             dispatch(setSelectedMatchStatus(MatchStatus[0]));
             dispatch(setSelectedTriggeredAlert(TriggerAlert[0]));
             dispatch(setSelectedLeague(data.leagueIds));
