@@ -124,7 +124,7 @@ export const useFilterAction = () => {
         if (response.status === NoContentStatusCode) {
             alert(LangHelper.getSingleResource('NoInfo'));
         } else {
-            Site.downloadFile(response.data, `${MATCH_MONITORING_CENTER}.xls`);
+            Site.downloadFile(response.data, `${MATCH_MONITORING_CENTER}.xlsx`);
         }
     };
 
