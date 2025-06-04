@@ -64,7 +64,7 @@ const DataGrid = () => {
         });
 
         return (
-            <Cell key={key} className="center-align">
+            <Cell key={key} className="left-align">
                 {rows}
             </Cell>
         );
