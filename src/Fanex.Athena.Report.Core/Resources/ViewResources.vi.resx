@@ -1041,4 +1041,7 @@
   <data name="MonitorDetail" xml:space="preserve">
     <value>Chi Tiết Theo Dõi</value>
   </data>
+  <data name="Event" xml:space="preserve">
+    <value>Sự kiện</value>
+  </data>
 </root>

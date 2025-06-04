@@ -1026,4 +1026,7 @@
   <data name="MonitorDetail" xml:space="preserve">
     <value>Detail Pemantauan</value>
   </data>
+  <data name="Event" xml:space="preserve">
+    <value>Acara</value>
+  </data>
 </root>

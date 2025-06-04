@@ -1035,4 +1035,7 @@
   <data name="MonitorDetail" xml:space="preserve">
     <value>รายละเอียดการติดตาม</value>
   </data>
+  <data name="Event" xml:space="preserve">
+    <value>กิจกรรม</value>
+  </data>
 </root>

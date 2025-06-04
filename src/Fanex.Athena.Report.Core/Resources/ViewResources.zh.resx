@@ -966,4 +966,7 @@
   <data name="MonitorDetail" xml:space="preserve">
     <value>监控详情</value>
   </data>
+  <data name="Event" xml:space="preserve">
+    <value>项目</value>
+  </data>
 </root>
