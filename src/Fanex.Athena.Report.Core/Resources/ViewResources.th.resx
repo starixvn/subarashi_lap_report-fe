@@ -1032,4 +1032,7 @@
   <data name="MatchMonitoringCenter_Note3" xml:space="preserve">
     <value>ข้อมูลจาก {0}.</value>
   </data>
+  <data name="MonitorDetail" xml:space="preserve">
+    <value>รายละเอียดการติดตาม</value>
+  </data>
 </root>

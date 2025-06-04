@@ -56,7 +56,7 @@ export const useGridAction = () => {
 
     const Setting = (event, monitoringId) => {
         event.preventDefault();
-        showPopup(ApiUrl.MATCH_MONITORING_SETTING_URL + `?Id=${monitoringId}`, LangHelper.getSingleResource('MonitorSetting'), 'monitor-setting-popup', true);
+        showPopup(ApiUrl.MATCH_MONITORING_SETTING_URL + `?Id=${monitoringId}`, LangHelper.getSingleResource('MonitorDetail'), 'monitor-setting-popup', true);
     };
 
     const History = (event, monitoringId) => {

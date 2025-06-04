@@ -1022,9 +1022,6 @@
   <data name="AddAlertRule" xml:space="preserve">
     <value>Add Alert Rule</value>
   </data>
-  <data name="AlertRule" xml:space="preserve">
-    <value>Alert Rule</value>
-  </data>
   <data name="DeleteAlterRuleConfirmationMsg" xml:space="preserve">
     <value>Are you sure you want to delete the Alert Rule: {0} (Amount: {1} Based {2}, {3} Ratio: {4}%), Notify every {5} seconds)?</value>
   </data>
@@ -1105,5 +1102,11 @@
   </data>
   <data name="MatchMonitoringCenter_Note3" xml:space="preserve">
     <value>Data is available from {0}.</value>
+  </data>
+  <data name="AlertRule" xml:space="preserve">
+    <value>Alert Rule</value>
+  </data>
+  <data name="MonitorDetail" xml:space="preserve">
+    <value>Monitor Detail</value>
   </data>
 </root>

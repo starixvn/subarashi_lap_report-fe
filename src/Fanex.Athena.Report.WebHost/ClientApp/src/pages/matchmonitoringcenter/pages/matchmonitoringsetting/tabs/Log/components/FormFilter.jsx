@@ -12,6 +12,7 @@ const FormFilter = () => {
     const formData = useSelector(state => state.formData);
     const selectedLogTypes = useSelector(state => state.selectedLogTypes || '');
     const selectedActions = useSelector(state => state.selectedActions || '');
+    const monitoringID = useSelector(state => state.monitoringID);
 
     const logTypeOptions = formData?.logTypeOptions || [];
     const actionOptions = formData?.actionOptions || [];
@@ -27,7 +28,8 @@ const FormFilter = () => {
 
     const getParams = () => {
         return {
-            Actions: selectedActions
+            Actions: selectedActions,
+            MonitoringID: monitoringID
         };
     };
 

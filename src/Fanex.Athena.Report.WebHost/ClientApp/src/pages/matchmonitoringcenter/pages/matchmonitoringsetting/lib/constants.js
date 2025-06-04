@@ -2,7 +2,7 @@ import React from 'react';
 import LangHelper from '@/helpers/langHelper';
 
 export const tabKeys = {
-    alertRule: 'AlertRule',
+    alertRule: 'AlertRules',
     log: 'Logs',
 };
 
@@ -70,6 +70,7 @@ export const defaultNotifyEvery = 300;
 export const defaultCondition = 'and';
 
 export const ApiUrl = {
+    SETTING_INDEX_URL: 'Api/MatchMonitoringCenter/SettingIndex',
     ALERT_RULE_DATA_URL: 'Api/MatchMonitoringCenter/GetAlertRule',
     CREATE_ALERT_RULE_URL: 'Api/MatchMonitoringCenter/InsertAlertRule',
     UPDATE_ALERT_RULE_URL: 'Api/MatchMonitoringCenter/UpdateAlertRule',

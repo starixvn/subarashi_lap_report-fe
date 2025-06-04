@@ -963,4 +963,7 @@
   <data name="MatchMonitoringCenter_Note3" xml:space="preserve">
     <value>仅支援{0}以后的注单。</value>
   </data>
+  <data name="MonitorDetail" xml:space="preserve">
+    <value>监控详情</value>
+  </data>
 </root>

@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import { tabMenuList } from './lib/constants';
 import { Provider } from 'react-redux';
 import Store from '@/lib/store';
 import AppContainer from './AppContainer';
@@ -13,7 +12,6 @@ const MonitoringSettingDetail = () => {
     const monitoringID = searchParams.get('Id');
 
     const defaultState = {
-        selectedTabKey: tabMenuList[0].key,
         monitoringID,
     };
 

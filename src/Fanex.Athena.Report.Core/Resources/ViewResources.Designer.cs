@@ -1447,6 +1447,15 @@ namespace Fanex.Athena.Report.Core.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Monitor Detail.
+        /// </summary>
+        public static string MonitorDetail {
+            get {
+                return ResourceManager.GetString("MonitorDetail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Monitor Setting.
         /// </summary>
         public static string MonitorSetting {

@@ -1038,4 +1038,7 @@
   <data name="MatchMonitoringCenter_Note3" xml:space="preserve">
     <value>Dữ liệu có sẵn từ {0}.</value>
   </data>
+  <data name="MonitorDetail" xml:space="preserve">
+    <value>Chi Tiết Theo Dõi</value>
+  </data>
 </root>

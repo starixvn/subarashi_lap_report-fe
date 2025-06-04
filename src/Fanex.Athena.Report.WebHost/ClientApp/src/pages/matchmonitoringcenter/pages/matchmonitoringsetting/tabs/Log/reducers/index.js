@@ -51,13 +51,16 @@ export const loading = createReducer(false, {
     }
 });
 
+export const monitoringID = createReducer(null, {});
+
 const logReducer = combineReducers({
     selectedLogTypes,
     selectedActions,
     requestParam,
     formData,
     gridData,
-    loading
+    loading,
+    monitoringID
 });
 
 export default logReducer;

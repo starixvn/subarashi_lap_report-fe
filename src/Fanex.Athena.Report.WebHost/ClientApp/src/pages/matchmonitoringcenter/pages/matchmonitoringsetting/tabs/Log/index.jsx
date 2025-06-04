@@ -3,10 +3,10 @@ import { Provider } from 'react-redux';
 import AppContainer from './components/AppContainer';
 import reducers from './reducers';
 import useSessionStore from '@/hooks/useSessionStore';
+import { connect } from 'react-redux';
 
-const Log = () => {
-  // Create a separate store instance for the Log tab
-  const store = useSessionStore(reducers, {});
+const Log = ({ monitoringID }) => {
+  const store = useSessionStore(reducers, { monitoringID });
 
   return (
     <div className="logs-tab">
@@ -17,4 +17,10 @@ const Log = () => {
   );
 };
 
-export default Log;
+function mapStateToProps(state) {
+  return {
+    monitoringID: state.monitoringID
+  };
+}
+
+export default connect(mapStateToProps)(Log);
