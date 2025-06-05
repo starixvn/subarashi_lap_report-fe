@@ -33,6 +33,7 @@ export const AppContainer = (props) => {
         setSelectedMatchStatus,
         setSelectedTriggeredAlert,
         setMatchList,
+        setLeagueList,
         setRequestParam,
         setAppUuid,
     } = ActionCreators;
@@ -59,9 +60,15 @@ export const AppContainer = (props) => {
         const selectedCurrency = data.currencyId ? data.currencies.find((c) => c.value === data.currencyId) || data.currencies[0] : data.currencies[0];
 
         let selectedBaseCurrency = data.baseCurrencies.find((x) => x.label === data.baseCurrency);
+        let defaultBaseCurrency = data.baseCurrencies.find((x) => x.label === data.defaultBaseCurrency);
+        let defaultBaseCurrencyList = data.baseCurrencies;
 
         if (!selectedBaseCurrency) {
             selectedBaseCurrency = { value: DEFAULT_BASE_CURRENCY_VALUE, label: data.defaultBaseCurrency };
+        }
+
+        if (!defaultBaseCurrency) {
+            defaultBaseCurrency = { value: DEFAULT_BASE_CURRENCY_VALUE, label: data.defaultBaseCurrency };
         }
 
         if (selectedCurrency.value !== 0 && !data.baseCurrencies.find((x) => x.label === selectedCurrency.label)) {
@@ -78,12 +85,14 @@ export const AppContainer = (props) => {
         data.leagueList = data.leagueList.map((item) => ({ ...item, status: leagueIds.includes(item.id) }));
 
         const defaultState = {};
-        defaultState.selectedBaseCurrency = selectedBaseCurrency;
-        defaultState.selectedMatch = data.matchIds;
-        defaultState.selectedLeague = data.leagueIds;
+        defaultState.selectedBaseCurrency = defaultBaseCurrency;
+        defaultState.selectedMatch = data.matchList.map((item) => item.id);
+        defaultState.selectedLeague = data.leagueList.map((item) => item.id);
         defaultState.selectedMatchStatus = MatchStatus[0];
         defaultState.selectedTriggeredAlert = TriggerAlert[0];
-        defaultState.selectedCurrency = selectedCurrency;
+        defaultState.selectedCurrency = CurrencySelectAll;
+        defaultState.leagueList = data.leagueList.map((item) => ({ ...item, status: true }));
+        defaultState.baseCurrencyList = defaultBaseCurrencyList;
 
         const params = {
             MatchStatus: MatchStatus[0].value,
@@ -106,6 +115,7 @@ export const AppContainer = (props) => {
             dispatch(setSelectedMatch(data.matchIds));
             dispatch(setFormData(data));
             dispatch(setMatchList(data.matchList));
+            dispatch(setLeagueList(data.leagueList));
             dispatch(setDefaultState(defaultState));
             dispatch(setAppUuid(`${uuidv4()}`));
         });

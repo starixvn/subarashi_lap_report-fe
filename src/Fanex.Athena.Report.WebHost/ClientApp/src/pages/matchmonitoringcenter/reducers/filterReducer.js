@@ -42,3 +42,9 @@ export const appUuid = createReducer('', {
         return action.data;
     },
 });
+
+export const leagueList = createReducer([], {
+    [types.SET_LEAGUE_LIST](state, action) {
+        return action.data;
+    },
+});

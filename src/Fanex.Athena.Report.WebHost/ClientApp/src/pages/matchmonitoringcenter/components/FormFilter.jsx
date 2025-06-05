@@ -42,6 +42,7 @@ const FormFilter = (props) => {
         appUuid,
         lastFetchTime,
         isShowPopup,
+        leagueList,
     ] = useSelector((state) => [
         state.formData,
         state.userGuideContent,
@@ -56,6 +57,7 @@ const FormFilter = (props) => {
         state.appUuid,
         state.lastFetchTime,
         state.isShowPopup,
+        state.leagueList,
     ]);
 
     const isFormValid = !selectedLeague || !selectedMatch || !selectedCurrency || !selectedMatchStatus || !selectedTriggeredAlert || !selectedBaseCurrency;
@@ -86,7 +88,7 @@ const FormFilter = (props) => {
                             key={`LeagueList-${appUuid}`}
                             id="LeagueList"
                             language={LangHelper.currentLanguage}
-                            dataSource={formData.leagueList}
+                            dataSource={leagueList}
                             hasSearchBox={true}
                             keyField={'id'}
                             valueField={'name'}

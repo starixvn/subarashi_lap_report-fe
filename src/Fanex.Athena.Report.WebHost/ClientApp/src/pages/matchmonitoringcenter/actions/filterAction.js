@@ -68,3 +68,10 @@ export const getMatchList = (leagueIds) => {
         dispatch(setSelectedMatch(matchIds));
     };
 };
+
+export const setLeagueList = (item) => {
+    return {
+        type: types.SET_LEAGUE_LIST,
+        data: item,
+    };
+};

@@ -14,30 +14,20 @@ export const useFilterAction = () => {
     const { sendRequest } = useToggleRequest();
     const dispatch = useDispatch();
 
-    const [
-        selectedMatchStatus,
-        selectedMatch,
-        selectedTriggeredAlert,
-        selectedBaseCurrency,
-        selectedCurrency,
-        userGuideContent,
-        defaultState,
-        formData,
-        requestParam,
-    ] = useSelector(
-        (state) => [
-            state.selectedMatchStatus,
-            state.selectedMatch,
-            state.selectedTriggeredAlert,
-            state.selectedBaseCurrency,
-            state.selectedCurrency,
-            state.userGuideContent,
-            state.defaultState,
-            state.formData,
-            state.requestParam,
-        ],
-        shallowEqual
-    );
+    const [selectedMatchStatus, selectedMatch, selectedTriggeredAlert, selectedBaseCurrency, selectedCurrency, userGuideContent, defaultState, requestParam] =
+        useSelector(
+            (state) => [
+                state.selectedMatchStatus,
+                state.selectedMatch,
+                state.selectedTriggeredAlert,
+                state.selectedBaseCurrency,
+                state.selectedCurrency,
+                state.userGuideContent,
+                state.defaultState,
+                state.requestParam,
+            ],
+            shallowEqual
+        );
 
     const {
         setGridData,
@@ -49,7 +39,9 @@ export const useFilterAction = () => {
         setSelectedTriggeredAlert,
         setSelectedMatch,
         setSelectedLeague,
-        setMatchList,
+        getMatchList,
+        setLeagueList,
+        setBaseCurrencyList,
         setAppUuid,
         setLastFetchTime,
     } = ActionCreators;
@@ -58,6 +50,7 @@ export const useFilterAction = () => {
 
     const resetFilter = (event) => {
         event.preventDefault();
+        const leagueIds = defaultState.leagueList.map((item) => item.id).join(',');
 
         batch(() => {
             dispatch(setSelectedMatchStatus(defaultState.selectedMatchStatus));
@@ -66,7 +59,9 @@ export const useFilterAction = () => {
             dispatch(setSelectedLeague(defaultState.selectedLeague));
             dispatch(setSelectedCurrency(defaultState.selectedCurrency));
             dispatch(setSelectedBaseCurrency(defaultState.selectedBaseCurrency));
-            dispatch(setMatchList(formData.matchList));
+            dispatch(getMatchList(leagueIds));
+            dispatch(setLeagueList(defaultState.leagueList));
+            dispatch(setBaseCurrencyList(defaultState.baseCurrencyList));
             dispatch(setAppUuid(`${uuidv4()}`));
         });
     };
