@@ -120,18 +120,6 @@
   <data name="AccessDeniedMsg" xml:space="preserve">
     <value>ขออภัย คุณไม่ได้รับอนุญาตให้เข้าถึงหน้านี้</value>
   </data>
-  <data name="Adjustment" xml:space="preserve">
-    <value>การปรับ</value>
-  </data>
-  <data name="AffiliateTransfer" xml:space="preserve">
-    <value>โอนให้พันธมิตร</value>
-  </data>
-  <data name="All" xml:space="preserve">
-    <value>ทั้งหมด</value>
-  </data>
-  <data name="AmountDueTo" xml:space="preserve">
-    <value>จำนวนเงินจาก</value>
-  </data>
   <data name="Apr" xml:space="preserve">
     <value>เมษายน</value>
   </data>
@@ -143,39 +131,6 @@
   </data>
   <data name="August" xml:space="preserve">
     <value>สิงหาคม</value>
-  </data>
-  <data name="BA" xml:space="preserve">
-    <value>BA</value>
-  </data>
-  <data name="Bonus" xml:space="preserve">
-    <value>โบนัส</value>
-  </data>
-  <data name="ClosingBalance" xml:space="preserve">
-    <value>ยอดปิดบัญชี</value>
-  </data>
-  <data name="Comm" xml:space="preserve">
-    <value>ค่าคอมมิชชั่น</value>
-  </data>
-  <data name="Currency" xml:space="preserve">
-    <value>สกุลเงิน</value>
-  </data>
-  <data name="Currentmonth" xml:space="preserve">
-    <value>เดือนนี้</value>
-  </data>
-  <data name="Currentweek" xml:space="preserve">
-    <value>สัปดาห์ปัจจุบัน</value>
-  </data>
-  <data name="CustomerBalance" xml:space="preserve">
-    <value>ยอดคงเหลือลูกค้า</value>
-  </data>
-  <data name="CustomerSupportTask" xml:space="preserve">
-    <value>งานสนับสนุนลูกค้า</value>
-  </data>
-  <data name="CustomerW_L" xml:space="preserve">
-    <value>ลูกค้าแพ้ชนะ</value>
-  </data>
-  <data name="CustomerWinLoss" xml:space="preserve">
-    <value>ลูกค้าแพ้ชนะ</value>
   </data>
   <data name="Date" xml:space="preserve">
     <value>วันที่</value>
@@ -195,50 +150,11 @@
   <data name="December" xml:space="preserve">
     <value>ธันวาคม</value>
   </data>
-  <data name="Deposit" xml:space="preserve">
-    <value>ฝากเงิน</value>
-  </data>
-  <data name="DrawGame" xml:space="preserve">
-    <value>เกมเสมอ</value>
-  </data>
-  <data name="Entered" xml:space="preserve">
-    <value>ป้อน</value>
-  </data>
-  <data name="ErrorProcessingMsg" xml:space="preserve">
-    <value>ขออภัย เกิดข้อผิดพลาดขณะดำเนินการตามคำขอของคุณ</value>
-  </data>
-  <data name="ExcludeTestData" xml:space="preserve">
-    <value>ไม่รวมข้อมูลการทดสอบ</value>
-  </data>
-  <data name="ExportToExcel" xml:space="preserve">
-    <value>ส่งไปที่Excel</value>
-  </data>
-  <data name="ExternalId" xml:space="preserve">
-    <value>รหัสภายนอก</value>
-  </data>
-  <data name="ExtraPayout" xml:space="preserve">
-    <value>การจ่ายเงินพิเศษ</value>
-  </data>
-  <data name="Feb" xml:space="preserve">
-    <value>กุมภาพันธ์</value>
-  </data>
-  <data name="February" xml:space="preserve">
-    <value>กุมภาพันธ์</value>
-  </data>
   <data name="Fr" xml:space="preserve">
     <value>ศ.</value>
   </data>
   <data name="Friday" xml:space="preserve">
     <value>วันศุกร์</value>
-  </data>
-  <data name="GetAllCustomersHavingPositiveClosingBalance" xml:space="preserve">
-    <value>แสดงเฉพาะลูกค้าที่มียอดปิด &gt; 0</value>
-  </data>
-  <data name="GetAllCustomersHavingRunningTickets" xml:space="preserve">
-    <value>รับตั๋วแข่งขันทั้งหมดของลูกค้า</value>
-  </data>
-  <data name="GetAllRunningTickets" xml:space="preserve">
-    <value>รับตั๋วแข่งขันทั้งหมด</value>
   </data>
   <data name="Jan" xml:space="preserve">
     <value>มกราคม</value>
@@ -258,9 +174,6 @@
   <data name="June" xml:space="preserve">
     <value>มิถุนายน</value>
   </data>
-  <data name="Lastmonth" xml:space="preserve">
-    <value>เดือนที่แล้ว</value>
-  </data>
   <data name="Lastweek" xml:space="preserve">
     <value>อาทิตย์ที่แล้ว</value>
   </data>
@@ -269,9 +182,6 @@
   </data>
   <data name="March" xml:space="preserve">
     <value>มีนาคม</value>
-  </data>
-  <data name="May" xml:space="preserve">
-    <value>พฤษภาคม</value>
   </data>
   <data name="May2" xml:space="preserve">
     <value>พฤษภาคม</value>
@@ -285,17 +195,8 @@
   <data name="Month" xml:space="preserve">
     <value>เดือน</value>
   </data>
-  <data name="NetTurnOver" xml:space="preserve">
-    <value>เทิร์นโอเวอร์สุทธิ</value>
-  </data>
-  <data name="No" xml:space="preserve">
-    <value>เลขที่</value>
-  </data>
   <data name="NoInfo" xml:space="preserve">
     <value>ไม่มีข้อมูล</value>
-  </data>
-  <data name="NonEntered" xml:space="preserve">
-    <value>ไม่ป้อน</value>
   </data>
   <data name="Nov" xml:space="preserve">
     <value>พฤศจิกายน</value>
@@ -309,35 +210,14 @@
   <data name="October" xml:space="preserve">
     <value>ตุลาคม</value>
   </data>
-  <data name="OpeningBalance" xml:space="preserve">
-    <value>ยอดคงเหลือตอนเปิดบัญชี</value>
-  </data>
-  <data name="PendingFunds" xml:space="preserve">
-    <value>เงินรอดำเนินการ</value>
-  </data>
-  <data name="Results" xml:space="preserve">
-    <value>ผลลัพธ์</value>
-  </data>
   <data name="Sa" xml:space="preserve">
     <value>ส.</value>
   </data>
   <data name="Saturday" xml:space="preserve">
     <value>วันเสาร์</value>
   </data>
-  <data name="SelectTop" xml:space="preserve">
-    <value>เลือกด้านบน</value>
-  </data>
-  <data name="Sep" xml:space="preserve">
-    <value>กันยายน</value>
-  </data>
-  <data name="September" xml:space="preserve">
-    <value>กันยายน</value>
-  </data>
   <data name="SettledMatchCount" xml:space="preserve">
     <value>นับการตัดสินการแข่งขัน</value>
-  </data>
-  <data name="Sincelastmonth" xml:space="preserve">
-    <value>ตั้งแต่เดือนที่แล้ว</value>
   </data>
   <data name="Sport" xml:space="preserve">
     <value>กีฬา</value>
@@ -345,38 +225,14 @@
   <data name="Su" xml:space="preserve">
     <value>อา.</value>
   </data>
-  <data name="Submit" xml:space="preserve">
-    <value>ยอม</value>
-  </data>
-  <data name="SupportTask" xml:space="preserve">
-    <value>งานสนับสนุน</value>
-  </data>
-  <data name="SystemId" xml:space="preserve">
-    <value>รหัสระบบ</value>
-  </data>
   <data name="Th" xml:space="preserve">
     <value>พฤ.</value>
-  </data>
-  <data name="Today" xml:space="preserve">
-    <value>วันนี้</value>
-  </data>
-  <data name="Total" xml:space="preserve">
-    <value>ทั้งหมด</value>
   </data>
   <data name="Tu" xml:space="preserve">
     <value>อ.</value>
   </data>
   <data name="Tuesday" xml:space="preserve">
     <value>วันอังคาร</value>
-  </data>
-  <data name="Turnover" xml:space="preserve">
-    <value>เทิร์นโอเวอร์</value>
-  </data>
-  <data name="UserGuide" xml:space="preserve">
-    <value>คู่มือผู้ใช้</value>
-  </data>
-  <data name="Viewin" xml:space="preserve">
-    <value>ดูใน {0}</value>
   </data>
   <data name="We" xml:space="preserve">
     <value>พ.</value>
@@ -387,17 +243,161 @@
   <data name="WeeklyLiveMatches" xml:space="preserve">
     <value>การแข่งขันแทงบอลสดประจำสัปดาห์</value>
   </data>
+  <data name="Yesterday" xml:space="preserve">
+    <value>เมื่อวาน</value>
+  </data>
+  <data name="May" xml:space="preserve">
+    <value>พฤษภาคม</value>
+  </data>
+  <data name="Sep" xml:space="preserve">
+    <value>กันยายน</value>
+  </data>
+  <data name="September" xml:space="preserve">
+    <value>กันยายน</value>
+  </data>
+  <data name="Feb" xml:space="preserve">
+    <value>กุมภาพันธ์</value>
+  </data>
+  <data name="February" xml:space="preserve">
+    <value>กุมภาพันธ์</value>
+  </data>
+  <data name="ExportToExcel" xml:space="preserve">
+    <value>ส่งไปที่Excel</value>
+  </data>
+  <data name="UserGuide" xml:space="preserve">
+    <value>คู่มือผู้ใช้</value>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>ทั้งหมด</value>
+  </data>
+  <data name="Submit" xml:space="preserve">
+    <value>ยอม</value>
+  </data>
+  <data name="Results" xml:space="preserve">
+    <value>ผลลัพธ์</value>
+  </data>
+  <data name="Entered" xml:space="preserve">
+    <value>ป้อน</value>
+  </data>
+  <data name="NonEntered" xml:space="preserve">
+    <value>ไม่ป้อน</value>
+  </data>
+  <data name="Currentweek" xml:space="preserve">
+    <value>สัปดาห์ปัจจุบัน</value>
+  </data>
+  <data name="Sincelastmonth" xml:space="preserve">
+    <value>ตั้งแต่เดือนที่แล้ว</value>
+  </data>
+  <data name="Lastmonth" xml:space="preserve">
+    <value>เดือนที่แล้ว</value>
+  </data>
+  <data name="Currentmonth" xml:space="preserve">
+    <value>เดือนนี้</value>
+  </data>
+  <data name="All" xml:space="preserve">
+    <value>ทั้งหมด</value>
+  </data>
+  <data name="Currency" xml:space="preserve">
+    <value>สกุลเงิน</value>
+  </data>
+  <data name="CustomerBalance" xml:space="preserve">
+    <value>ยอดคงเหลือลูกค้า</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>เลขที่</value>
+  </data>
+  <data name="SelectTop" xml:space="preserve">
+    <value>เลือกด้านบน</value>
+  </data>
+  <data name="Viewin" xml:space="preserve">
+    <value>ดูใน {0}</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>ใช่</value>
+  </data>
+  <data name="Adjustment" xml:space="preserve">
+    <value>การปรับ</value>
+  </data>
+  <data name="AffiliateTransfer" xml:space="preserve">
+    <value>โอนให้พันธมิตร</value>
+  </data>
+  <data name="AmountDueTo" xml:space="preserve">
+    <value>จำนวนเงินจาก</value>
+  </data>
+  <data name="BA" xml:space="preserve">
+    <value>BA</value>
+  </data>
+  <data name="Bonus" xml:space="preserve">
+    <value>โบนัส</value>
+  </data>
+  <data name="ClosingBalance" xml:space="preserve">
+    <value>ยอดปิดบัญชี</value>
+  </data>
+  <data name="Comm" xml:space="preserve">
+    <value>ค่าคอมมิชชั่น</value>
+  </data>
+  <data name="CustomerWinLoss" xml:space="preserve">
+    <value>ลูกค้าแพ้ชนะ</value>
+  </data>
+  <data name="Deposit" xml:space="preserve">
+    <value>ฝากเงิน</value>
+  </data>
+  <data name="DrawGame" xml:space="preserve">
+    <value>เกมเสมอ</value>
+  </data>
+  <data name="ExternalId" xml:space="preserve">
+    <value>รหัสภายนอก</value>
+  </data>
+  <data name="ExtraPayout" xml:space="preserve">
+    <value>การจ่ายเงินพิเศษ</value>
+  </data>
+  <data name="NetTurnOver" xml:space="preserve">
+    <value>เทิร์นโอเวอร์สุทธิ</value>
+  </data>
+  <data name="OpeningBalance" xml:space="preserve">
+    <value>ยอดคงเหลือตอนเปิดบัญชี</value>
+  </data>
+  <data name="PendingFunds" xml:space="preserve">
+    <value>เงินรอดำเนินการ</value>
+  </data>
+  <data name="SystemId" xml:space="preserve">
+    <value>รหัสระบบ</value>
+  </data>
+  <data name="Turnover" xml:space="preserve">
+    <value>เทิร์นโอเวอร์</value>
+  </data>
   <data name="WinLoss" xml:space="preserve">
     <value>แพ้ชนะ</value>
   </data>
   <data name="Withdrawal" xml:space="preserve">
     <value>ถอนเงิน</value>
   </data>
-  <data name="Yes" xml:space="preserve">
-    <value>ใช่</value>
+  <data name="CustomerW_L" xml:space="preserve">
+    <value>ลูกค้าแพ้ชนะ</value>
   </data>
-  <data name="Yesterday" xml:space="preserve">
-    <value>เมื่อวาน</value>
+  <data name="Today" xml:space="preserve">
+    <value>วันนี้</value>
+  </data>
+  <data name="ExcludeTestData" xml:space="preserve">
+    <value>ไม่รวมข้อมูลการทดสอบ</value>
+  </data>
+  <data name="CustomerSupportTask" xml:space="preserve">
+    <value>งานสนับสนุนลูกค้า</value>
+  </data>
+  <data name="ErrorProcessingMsg" xml:space="preserve">
+    <value>ขออภัย เกิดข้อผิดพลาดขณะดำเนินการตามคำขอของคุณ</value>
+  </data>
+  <data name="GetAllCustomersHavingPositiveClosingBalance" xml:space="preserve">
+    <value>แสดงเฉพาะลูกค้าที่มียอดปิด &gt; 0</value>
+  </data>
+  <data name="GetAllCustomersHavingRunningTickets" xml:space="preserve">
+    <value>รับตั๋วแข่งขันทั้งหมดของลูกค้า</value>
+  </data>
+  <data name="GetAllRunningTickets" xml:space="preserve">
+    <value>รับตั๋วแข่งขันทั้งหมด</value>
+  </data>
+  <data name="SupportTask" xml:space="preserve">
+    <value>งานสนับสนุน</value>
   </data>
   <data name="BaseCurrency" xml:space="preserve">
     <value>สกุลเงินหลัก</value>
@@ -413,9 +413,6 @@
   </data>
   <data name="Monthly" xml:space="preserve">
     <value>รายเดือน</value>
-  </data>
-  <data name="Product" xml:space="preserve">
-    <value>ผลิตภัณฑ์</value>
   </data>
   <data name="PromotionType" xml:space="preserve">
     <value>ประเภทโปรโมชั่น</value>
@@ -435,14 +432,8 @@
   <data name="WhiteLabel" xml:space="preserve">
     <value>ป้ายขาว</value>
   </data>
-  <data name="PromotionDetails" xml:space="preserve">
-    <value>รายละเอียดโปรโมชั่น</value>
-  </data>
-  <data name="RefNo" xml:space="preserve">
-    <value>หมายเลขอ้างอิง</value>
-  </data>
-  <data name="TotalTransaction" xml:space="preserve">
-    <value>ธุรกรรมทั้งหมด</value>
+  <data name="Customer" xml:space="preserve">
+    <value>ลูกค้า</value>
   </data>
   <data name="CustomerAmount" xml:space="preserve">
     <value>จำนวนลูกค้า</value>
@@ -453,8 +444,17 @@
   <data name="Main" xml:space="preserve">
     <value>หลัก</value>
   </data>
-  <data name="Customer" xml:space="preserve">
-    <value>ลูกค้า</value>
+  <data name="Product" xml:space="preserve">
+    <value>ผลิตภัณฑ์</value>
+  </data>
+  <data name="PromotionDetails" xml:space="preserve">
+    <value>รายละเอียดโปรโมชั่น</value>
+  </data>
+  <data name="RefNo" xml:space="preserve">
+    <value>หมายเลขอ้างอิง</value>
+  </data>
+  <data name="TotalTransaction" xml:space="preserve">
+    <value>ธุรกรรมทั้งหมด</value>
   </data>
   <data name="TotalIn" xml:space="preserve">
     <value>รวมใน</value>
@@ -489,38 +489,35 @@
   <data name="IsGroupInOriginalCurrency" xml:space="preserve">
     <value>แสดงการแบ่งกลุ่มในสกุลเงินเดิม</value>
   </data>
-  <data name="Platform" xml:space="preserve">
-    <value>แพลตฟอร์ม</value>
+  <data name="AmountDueToBA" xml:space="preserve">
+    <value>จำนวนเงินจาก BA</value>
   </data>
   <data name="EffectiveBettingValue" xml:space="preserve">
     <value>มูลค่าการเดิมพันที่มีประสิทธิภาพ</value>
   </data>
-  <data name="PlayerWL" xml:space="preserve">
-    <value>ผู้เล่น ชนะ/แพ้</value>
-  </data>
-  <data name="PlayerComm" xml:space="preserve">
-    <value>ค่าคอมมิชชั่นผู้เล่น</value>
-  </data>
   <data name="LicenseeComm" xml:space="preserve">
     <value>ผู้รับอนุญาตสื่อสาร</value>
-  </data>
-  <data name="AmountDueToBA" xml:space="preserve">
-    <value>จำนวนเงินจาก BA</value>
   </data>
   <data name="Margin" xml:space="preserve">
     <value>Margin</value>
   </data>
+  <data name="Platform" xml:space="preserve">
+    <value>แพลตฟอร์ม</value>
+  </data>
   <data name="Player" xml:space="preserve">
     <value>ผู้เล่น</value>
+  </data>
+  <data name="PlayerComm" xml:space="preserve">
+    <value>ค่าคอมมิชชั่นผู้เล่น</value>
+  </data>
+  <data name="PlayerWL" xml:space="preserve">
+    <value>ผู้เล่น ชนะ/แพ้</value>
   </data>
   <data name="BothGroupByAndBreakdownLevelOption" xml:space="preserve">
     <value>ทั้งจัดกลุ่มและแบ่งตามระดับ</value>
   </data>
-  <data name="GroupByLevelOnlyOption" xml:space="preserve">
-    <value>จัดกลุ่มตามระดับเท่านั้น</value>
-  </data>
-  <data name="Confirmation" xml:space="preserve">
-    <value>การยืนยัน</value>
+  <data name="BreakdownBy" xml:space="preserve">
+    <value>แบ่งตาม</value>
   </data>
   <data name="ChooseDataDisplayInExcelMsg" xml:space="preserve">
     <value>โปรดเลือกข้อมูลที่จะแสดงในไฟล์ excel:</value>
@@ -528,14 +525,14 @@
   <data name="ClearAllFilters" xml:space="preserve">
     <value>ล้างตัวกรองทั้งหมด</value>
   </data>
-  <data name="BreakdownBy" xml:space="preserve">
-    <value>แบ่งตาม</value>
+  <data name="Confirmation" xml:space="preserve">
+    <value>การยืนยัน</value>
   </data>
-  <data name="OddsGroup" xml:space="preserve">
-    <value>อัตราต่อรองกลุ่ม</value>
+  <data name="GroupByLevelOnlyOption" xml:space="preserve">
+    <value>จัดกลุ่มตามระดับเท่านั้น</value>
   </data>
-  <data name="RiskLevel" xml:space="preserve">
-    <value>ระดับความเสี่ยง</value>
+  <data name="MatchCase" xml:space="preserve">
+    <value>การแข่งขัน กรณีเช่น</value>
   </data>
   <data name="MatchPrecise" xml:space="preserve">
     <value>การแข่งขัน แม่นยำ</value>
@@ -543,29 +540,32 @@
   <data name="MatchPrefix" xml:space="preserve">
     <value>คำนำหน้าการแข่งขัน เช่น</value>
   </data>
-  <data name="MatchCase" xml:space="preserve">
-    <value>การแข่งขัน กรณีเช่น</value>
+  <data name="OddsGroup" xml:space="preserve">
+    <value>อัตราต่อรองกลุ่ม</value>
   </data>
-  <data name="WinlossAnalysis" xml:space="preserve">
-    <value>วิเคราะห์ผลแพ้ชนะ</value>
+  <data name="RiskLevel" xml:space="preserve">
+    <value>ระดับความเสี่ยง</value>
   </data>
   <data name="ViewCOOnly" xml:space="preserve">
     <value>ดูการถอนเงินสดเท่านั้น</value>
   </data>
-  <data name="VIPPlayerTooltipMsg" xml:space="preserve">
-    <value>ผู้เล่นวีไอพีจะถูกทำเครื่องหมายในการแบ่งส่วนผู้เล่น</value>
-  </data>
   <data name="VIPPlayerOnly" xml:space="preserve">
     <value>ผู้เล่นวีไอพีเท่านั้น</value>
   </data>
-  <data name="LiveStatus" xml:space="preserve">
-    <value>สถานะแทงบอลสด</value>
+  <data name="VIPPlayerTooltipMsg" xml:space="preserve">
+    <value>ผู้เล่นวีไอพีจะถูกทำเครื่องหมายในการแบ่งส่วนผู้เล่น</value>
+  </data>
+  <data name="WinlossAnalysis" xml:space="preserve">
+    <value>วิเคราะห์ผลแพ้ชนะ</value>
   </data>
   <data name="GroupBy" xml:space="preserve">
     <value>จัดกลุ่มตาม</value>
   </data>
-  <data name="Status" xml:space="preserve">
-    <value>สถานะ</value>
+  <data name="LiveStatus" xml:space="preserve">
+    <value>สถานะแทงบอลสด</value>
+  </data>
+  <data name="SearchData" xml:space="preserve">
+    <value>ค้นหาข้อมูล</value>
   </data>
   <data name="SelectedItemCount" xml:space="preserve">
     <value># ลือกแล้ว</value>
@@ -573,8 +573,8 @@
   <data name="SelectOptions" xml:space="preserve">
     <value>เลือกตัวเลือก</value>
   </data>
-  <data name="SearchData" xml:space="preserve">
-    <value>ค้นหาข้อมูล</value>
+  <data name="Status" xml:space="preserve">
+    <value>สถานะ</value>
   </data>
   <data name="AmtDueToBA" xml:space="preserve">
     <value>จำนวนเงินจาก BA</value>
@@ -591,9 +591,6 @@
   <data name="BetList" xml:space="preserve">
     <value>รายการเดิมพัน</value>
   </data>
-  <data name="TransTime" xml:space="preserve">
-    <value>เวลาส่ง</value>
-  </data>
   <data name="Choice" xml:space="preserve">
     <value>การเลือก</value>
   </data>
@@ -603,11 +600,17 @@
   <data name="Stake" xml:space="preserve">
     <value>เงินเดิมพัน</value>
   </data>
+  <data name="TransTime" xml:space="preserve">
+    <value>เวลาส่ง</value>
+  </data>
   <data name="Outright" xml:space="preserve">
     <value>แทงบอลทายผลชนะเลิศ</value>
   </data>
   <data name="ExcelExceedRowsMsg" xml:space="preserve">
     <value>ไฟล์นี้เกิน 65535 รายการ โปรดติดต่อผู้ดูแลระบบเพื่อขอรายละเอียดเพิ่มเติม</value>
+  </data>
+  <data name="LiveReport" xml:space="preserve">
+    <value>รายงานสด</value>
   </data>
   <data name="Live" xml:space="preserve">
     <value>แทงบอลสด</value>
@@ -618,29 +621,26 @@
   <data name="Data" xml:space="preserve">
     <value>ข้อมูล</value>
   </data>
-  <data name="LiveReport" xml:space="preserve">
-    <value>รายงานสด</value>
-  </data>
-  <data name="Summary" xml:space="preserve">
-    <value>สรุป</value>
-  </data>
-  <data name="BySportsType" xml:space="preserve">
-    <value>ตามประเภทกีฬา</value>
+  <data name="ByBetType" xml:space="preserve">
+    <value>ตามประเภทการเดิมพัน</value>
   </data>
   <data name="ByCurrency" xml:space="preserve">
     <value>ตามสกุลเงิน</value>
   </data>
-  <data name="ByBetType" xml:space="preserve">
-    <value>ตามประเภทการเดิมพัน</value>
+  <data name="BySportsType" xml:space="preserve">
+    <value>ตามประเภทกีฬา</value>
+  </data>
+  <data name="Summary" xml:space="preserve">
+    <value>สรุป</value>
   </data>
   <data name="CashOut" xml:space="preserve">
     <value>เงินออก</value>
   </data>
-  <data name="ExcludeCOFromSB" xml:space="preserve">
-    <value>ไม่รวมการเงินสดออกจาก Sportsbook</value>
-  </data>
   <data name="IncludeCOFromSB" xml:space="preserve">
     <value>รวมการเงินสดออกเข้ากับ Sportsbook</value>
+  </data>
+  <data name="ExcludeCOFromSB" xml:space="preserve">
+    <value>ไม่รวมการเงินสดออกจาก Sportsbook</value>
   </data>
   <data name="Back" xml:space="preserve">
     <value>กลับ</value>
@@ -834,6 +834,27 @@
   <data name="FinancialDate" xml:space="preserve">
     <value>วันที่การเงิน</value>
   </data>
+  <data name="CustomerComm" xml:space="preserve">
+    <value>ค่าคอมมิชชั่นลูกค้า</value>
+  </data>
+  <data name="IncludeDrawData" xml:space="preserve">
+    <value>รวมข้อมูลเสมอ</value>
+  </data>
+  <data name="LicenseeNetWL" xml:space="preserve">
+    <value>ผู้ได้รับอนุญาต แพ้ชนะสุทธิ</value>
+  </data>
+  <data name="LicenseeWinLoss" xml:space="preserve">
+    <value>ผู้ได้รับอนุญาต แพ้ชนะ</value>
+  </data>
+  <data name="LicenseeWL" xml:space="preserve">
+    <value>ผู้ได้รับอนุญาต แพ้ชนะ</value>
+  </data>
+  <data name="TimeZone" xml:space="preserve">
+    <value>เขตเวลา</value>
+  </data>
+  <data name="WinLossByTimeZone" xml:space="preserve">
+    <value>แพ้ชนะตามเขตเวลา</value>
+  </data>
   <data name="SettlementTime" xml:space="preserve">
     <value>เวลาการชำระเงิน</value>
   </data>
@@ -864,37 +885,157 @@
   <data name="Based" xml:space="preserve">
     <value>หลัก</value>
   </data>
-  <data name="TimeZone" xml:space="preserve">
-    <value>เขตเวลา</value>
-  </data>
-  <data name="IncludeDrawData" xml:space="preserve">
-    <value>รวมข้อมูลเสมอ</value>
-  </data>
-  <data name="CustomerComm" xml:space="preserve">
-    <value>ค่าคอมมิชชั่นลูกค้า</value>
-  </data>
-  <data name="LicenseeNetWL" xml:space="preserve">
-    <value>ผู้ได้รับอนุญาต แพ้ชนะสุทธิ</value>
-  </data>
-  <data name="LicenseeWL" xml:space="preserve">
-    <value>ผู้ได้รับอนุญาต แพ้ชนะ</value>
-  </data>
-  <data name="WinLossByTimeZone" xml:space="preserve">
-    <value>แพ้ชนะตามเขตเวลา</value>
-  </data>
-  <data name="LicenseeWinLoss" xml:space="preserve">
-    <value>ผู้ได้รับอนุญาต แพ้ชนะ</value>
-  </data>
   <data name="SeparateSabaWinLoss" xml:space="preserve">
     <value>แยก Sabaกีฬาเสมือนจริงออกจากสปอร์ตบุ๊ค</value>
-  </data>
-  <data name="SubsidiaryWL" xml:space="preserve">
-    <value>บริษัทย่อย แพ้ชนะ</value>
   </data>
   <data name="SubsidiaryPerformance" xml:space="preserve">
     <value>ผลการดำเนินงานของบริษัทย่อย</value>
   </data>
+  <data name="SubsidiaryWL" xml:space="preserve">
+    <value>บริษัทย่อย แพ้ชนะ</value>
+  </data>
   <data name="SeparateSabaWinLoss_HideSaba" xml:space="preserve">
     <value>แยกกีฬาเสมือนออกจาก Sportsbook</value>
+  </data>
+  <data name="KickOffTime" xml:space="preserve">
+    <value>เวลาเริ่มแข่งขัน</value>
+  </data>
+  <data name="MatchStatus" xml:space="preserve">
+    <value>สถานะการแข่งขัน</value>
+  </data>
+  <data name="TriggeredAlert" xml:space="preserve">
+    <value>การแจ้งเตือนที่ถูกกระตุ้น</value>
+  </data>
+  <data name="AlertRules" xml:space="preserve">
+    <value>กฎการแจ้งเตือน</value>
+  </data>
+  <data name="Operation" xml:space="preserve">
+    <value>การดำเนินการ</value>
+  </data>
+  <data name="Setting" xml:space="preserve">
+    <value>การตั้งค่า</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>ลบออก</value>
+  </data>
+  <data name="ConfirmRemoveMatchMonitoring" xml:space="preserve">
+    <value>คุณแน่ใจหรือไม่ว่าต้องการลบรายการนี้ออกจากรายการเฝ้าระวัง? หากลบออกแล้ว กฎการแจ้งเตือนและการติดตามทั้งหมดที่เกี่ยวข้องจะถูกยกเลิก</value>
+  </data>
+  <data name="MonitorSetting" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TriggeredAlertHistory" xml:space="preserve">
+    <value>ประวัติการแจ้งเตือนที่ถูกกระตุ้น</value>
+  </data>
+  <data name="DetectedInfo" xml:space="preserve">
+    <value>ข้อมูลที่ตรวจพบ</value>
+  </data>
+  <data name="MatchMonitoringCenter" xml:space="preserve">
+    <value>ศูนย์เฝ้าระวังการแข่งขัน</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>ค้นหา</value>
+  </data>
+  <data name="Reset" xml:space="preserve">
+    <value>รีเซ็ต</value>
+  </data>
+  <data name="Time" xml:space="preserve">
+    <value>เวลา</value>
+  </data>
+  <data name="MatchMonitoringCenter_Note" xml:space="preserve">
+    <value>หมายเหตุ: หากมีการแข่งขันที่ต้องเฝ้าระวัง กรุณาเพิ่มจากหน้า Total Bets → Money Line</value>
+  </data>
+  <data name="MatchMonitoringCenter_Note2" xml:space="preserve">
+    <value>เวลาทั้งหมดที่แสดงอยู่ในระบบเป็นเวลา GMT+8</value>
+  </data>
+  <data name="Actions" xml:space="preserve">
+    <value>การดำเนินการ</value>
+  </data>
+  <data name="AddAlertRule" xml:space="preserve">
+    <value>เพิ่มกฎการแจ้งเตือน</value>
+  </data>
+  <data name="AlertRuleTxt1" xml:space="preserve">
+    <value>**ชื่อระดับแจ้งเตือน** [Dangerous-1]</value>
+  </data>
+  <data name="AlertRuleTxt2" xml:space="preserve">
+    <value>เมื่อการคาดการณ์กำไรติดลบของทีมเจ้าบ้านหรือทีมเยือนเกินกว่า **[Amount]** หน่วยสกุลเงินฐาน **[Base Currency]**</value>
+  </data>
+  <data name="AlertRuleTxt3" xml:space="preserve">
+    <value>**[และ/หรือ]**</value>
+  </data>
+  <data name="AlertRuleTxt4" xml:space="preserve">
+    <value>ความแตกต่างของสัดส่วนการเดิมพันระหว่างทีมเจ้าบ้านและทีมเยือนมากกว่า **[Ratio %]** ให้ส่งการแจ้งเตือนทุก ๆ **[Notify every]** วินาที</value>
+  </data>
+  <data name="Amount" xml:space="preserve">
+    <value>จำนวนเงิน</value>
+  </data>
+  <data name="and" xml:space="preserve">
+    <value>และ</value>
+  </data>
+  <data name="Confirm" xml:space="preserve">
+    <value>ยืนยัน</value>
+  </data>
+  <data name="CreateAlertRuleConfirmationMsg" xml:space="preserve">
+    <value>คุณแน่ใจหรือไม่ว่าต้องการบันทึกกฎแจ้งเตือนใหม่นี้: {0} (จำนวนเงิน: {1} ตาม {2}, {3} อัตราส่วน: {4}%), แจ้งเตือนทุก ๆ {5} วินาที</value>
+  </data>
+  <data name="DeleteAlterRuleConfirmationMsg" xml:space="preserve">
+    <value>คุณแน่ใจหรือไม่ว่าต้องการลบกฎแจ้งเตือนนี้: {0} (จำนวนเงิน: {1} ตาม {2}, {3} อัตราส่วน: {4}%), แจ้งเตือนทุก ๆ {5} วินาที</value>
+  </data>
+  <data name="Logs" xml:space="preserve">
+    <value>บันทึกกิจกรรม</value>
+  </data>
+  <data name="NotifyEvery" xml:space="preserve">
+    <value>แจ้งเตือนทุก ๆ</value>
+  </data>
+  <data name="or" xml:space="preserve">
+    <value>หรือ</value>
+  </data>
+  <data name="PleaseFillInfoMsg" xml:space="preserve">
+    <value>กรุณากรอกข้อมูลที่จำเป็นให้ครบก่อนบันทึก</value>
+  </data>
+  <data name="RatioPercent" xml:space="preserve">
+    <value>อัตราส่วน (%)</value>
+  </data>
+  <data name="UpdateAlterRuleConfirmationMsg" xml:space="preserve">
+    <value>คุณแน่ใจหรือไม่ว่าต้องการอัปเดตกฎแจ้งเตือนนี้: {0} (จำนวนเงิน: {1} ตาม {2}, {3} อัตราส่วน: {4}%), แจ้งเตือนทุก ๆ {5} วินาที</value>
+  </data>
+  <data name="AlertLevelName" xml:space="preserve">
+    <value>ชื่อระดับแจ้งเตือน</value>
+  </data>
+  <data name="And_Or" xml:space="preserve">
+    <value>และ/หรือ</value>
+  </data>
+  <data name="Format" xml:space="preserve">
+    <value>รูปแบบ (Format)</value>
+  </data>
+  <data name="seconds" xml:space="preserve">
+    <value>วินาที</value>
+  </data>
+  <data name="AlertRule" xml:space="preserve">
+    <value>กฎแจ้งเตือน</value>
+  </data>
+  <data name="SettingNameAlreadyExistsMsg" xml:space="preserve">
+    <value>ชื่อตั้งค่าดังกล่าวมีอยู่แล้วสำหรับการติดตามนี้</value>
+  </data>
+  <data name="TotalHome" xml:space="preserve">
+    <value>เจ้าบ้านทั้งหมด</value>
+  </data>
+  <data name="TotalAway" xml:space="preserve">
+    <value>ทีมเยือนทั้งหมด</value>
+  </data>
+  <data name="ForecastHome" xml:space="preserve">
+    <value>ทายเจ้าบ้าน</value>
+  </data>
+  <data name="ForecastAway" xml:space="preserve">
+    <value>ทายทีมเยือน</value>
+  </data>
+  <data name="MatchMonitoringCenter_Note3" xml:space="preserve">
+    <value>ข้อมูลจาก {0}.</value>
+  </data>
+  <data name="MonitorDetail" xml:space="preserve">
+    <value>รายละเอียดการติดตาม</value>
+  </data>
+  <data name="Event" xml:space="preserve">
+    <value>กิจกรรม</value>
   </data>
 </root>

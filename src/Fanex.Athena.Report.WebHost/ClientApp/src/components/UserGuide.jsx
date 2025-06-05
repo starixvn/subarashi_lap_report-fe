@@ -12,6 +12,7 @@ const UserGuide = (props) => {
 
     const _onCloseHandler = () => {
         setIsShow(false);
+        props.onClose && props.onClose();
     };
 
     const { className, title, content, contentTitle, isHtml } = props;

@@ -23,3 +23,5 @@ export const LIVE_REPORT = 'LiveReport38';
 export const CUSTOMER_TURNOVER = 'CustomerTurnover51';
 
 export const TURNOVER = 'Turnover39';
+
+export const MATCH_MONITORING_CENTER = 'MatchMonitoringCenter';

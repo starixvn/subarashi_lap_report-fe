@@ -6,3 +6,10 @@ export function setGridData(data) {
         data: data,
     };
 }
+
+export const setSweetAlertOption = (data) => {
+    return {
+        type: types.SET_SWEET_ALERT_OPTION,
+        data,
+    };
+};

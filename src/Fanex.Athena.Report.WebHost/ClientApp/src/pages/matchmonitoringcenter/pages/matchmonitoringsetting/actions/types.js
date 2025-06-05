@@ -1,0 +1,3 @@
+export const SET_ADD_NEW_RULE = 'SET_ADD_NEW_RULE';
+
+export const SET_MONITORING_ID = 'SET_MONITORING_ID';

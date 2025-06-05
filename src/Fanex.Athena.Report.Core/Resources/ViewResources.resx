@@ -947,4 +947,166 @@
   <data name="SeparateSabaWinLoss_HideSaba" xml:space="preserve">
     <value>Separate Virtual Sports from Sportsbook</value>
   </data>
+  <data name="KickOffTime" xml:space="preserve">
+    <value>Kick Off Time</value>
+  </data>
+  <data name="MatchStatus" xml:space="preserve">
+    <value>Match Status</value>
+  </data>
+  <data name="TriggeredAlert" xml:space="preserve">
+    <value>Triggered Alert</value>
+  </data>
+  <data name="AlertRules" xml:space="preserve">
+    <value>Alert Rules</value>
+  </data>
+  <data name="Event" xml:space="preserve">
+    <value>Event</value>
+  </data>
+  <data name="TotalHome" xml:space="preserve">
+    <value>Total Home</value>
+  </data>
+  <data name="TotalAway" xml:space="preserve">
+    <value>Total Away</value>
+  </data>
+  <data name="ForecastHome" xml:space="preserve">
+    <value>Forecast Home</value>
+  </data>
+  <data name="ForecastAway" xml:space="preserve">
+    <value>Forecast Away</value>
+  </data>
+  <data name="Operation" xml:space="preserve">
+    <value>Operation</value>
+  </data>
+  <data name="Setting" xml:space="preserve">
+    <value>Setting</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="ConfirmRemoveMatchMonitoring" xml:space="preserve">
+    <value>Are you sure you want to remove this event from the monitoring list? Once removed, all related alert rules and tracking will be stopped.</value>
+  </data>
+  <data name="AlertRuleTxt1" xml:space="preserve">
+    <value>**Alert Level Name** [Dangerous-1]</value>
+  </data>
+  <data name="AlertRuleTxt2" xml:space="preserve">
+    <value>When the negative profit forecast for either the home or away team exceeds **[Amount]** base currency **[Base Currency]**</value>
+  </data>
+  <data name="AlertRuleTxt4" xml:space="preserve">
+    <value>The betting ratio difference between the home and away teams is greater than **[Ratio %]** send a notification every **[Notify every]** seconds</value>
+  </data>
+  <data name="Format" xml:space="preserve">
+    <value>Format</value>
+  </data>
+  <data name="AlertLevelName" xml:space="preserve">
+    <value>Alert Level Name</value>
+  </data>
+  <data name="Amount" xml:space="preserve">
+    <value> Amount</value>
+  </data>
+  <data name="And_Or" xml:space="preserve">
+    <value>And/Or</value>
+  </data>
+  <data name="NotifyEvery" xml:space="preserve">
+    <value>Notify Every</value>
+  </data>
+  <data name="RatioPercent" xml:space="preserve">
+    <value>Ratio %</value>
+  </data>
+  <data name="Actions" xml:space="preserve">
+    <value>Actions</value>
+  </data>
+  <data name="AlertRuleTxt3" xml:space="preserve">
+    <value>**[And/Or]**</value>
+  </data>
+  <data name="AddAlertRule" xml:space="preserve">
+    <value>Add Alert Rule</value>
+  </data>
+  <data name="DeleteAlterRuleConfirmationMsg" xml:space="preserve">
+    <value>Are you sure you want to delete the Alert Rule: {0} (Amount: {1} Based {2}, {3} Ratio: {4}%), Notify every {5} seconds)?</value>
+  </data>
+  <data name="NoAlertRulesMsg" xml:space="preserve">
+    <value>There are no Alert Rules configured yet.</value>
+  </data>
+  <data name="UpdateAlterRuleConfirmationMsg" xml:space="preserve">
+    <value>Are you sure you want to update this Alert Rule: {0} (Amount: {1} Based {2} , {3} Ratio: {4}%, Notify every {5} seconds)?</value>
+  </data>
+  <data name="PleaseFillInfoMsg" xml:space="preserve">
+    <value>Please fill in all required fields before saving</value>
+  </data>
+  <data name="CreateAlertRuleConfirmationMsg" xml:space="preserve">
+    <value>Are you sure you want to save this new Alert Rule: {0} (Amount: {1} Based {2}, {3} Ratio: {4}%), Notify every {5} seconds?</value>
+  </data>
+  <data name="MonitorSetting" xml:space="preserve">
+    <value>Monitor Setting</value>
+  </data>
+  <data name="TriggeredAlertHistory" xml:space="preserve">
+    <value>Triggered Alert History</value>
+  </data>
+  <data name="DetectedInfo" xml:space="preserve">
+    <value>Detected Info</value>
+  </data>
+  <data name="MatchMonitoringCenter" xml:space="preserve">
+    <value>Match Monitoring Center</value>
+  </data>
+  <data name="seconds" xml:space="preserve">
+    <value>seconds</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="Reset" xml:space="preserve">
+    <value>Reset</value>
+  </data>
+  <data name="Time" xml:space="preserve">
+    <value>Time</value>
+  </data>
+  <data name="MatchMonitoringCenter_Note" xml:space="preserve">
+    <value>If there are matches that need to be monitored, please add them from the Total Bets → Money Line page.</value>
+  </data>
+  <data name="MatchMonitoringCenter_Note2" xml:space="preserve">
+    <value>All timestamps displayed are based on GMT+8.</value>
+  </data>
+  <data name="SettingNameAlreadyExistsMsg" xml:space="preserve">
+    <value>Setting name already exists for this monitoring</value>
+  </data>
+  <data name="and" xml:space="preserve">
+    <value>and</value>
+  </data>
+  <data name="Confirm" xml:space="preserve">
+    <value>Confirm</value>
+  </data>
+  <data name="Logs" xml:space="preserve">
+    <value>Logs</value>
+  </data>
+  <data name="or" xml:space="preserve">
+    <value>or</value>
+  </data>
+  <data name="Action" xml:space="preserve">
+    <value>Action</value>
+  </data>
+  <data name="ViewHistory" xml:space="preserve">
+    <value>View History</value>
+  </data>
+  <data name="Detail" xml:space="preserve">
+    <value>Detail</value>
+  </data>
+  <data name="Operator" xml:space="preserve">
+    <value>Operator</value>
+  </data>
+  <data name="TimeStamp" xml:space="preserve">
+    <value>TimeStamp</value>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="MatchMonitoringCenter_Note3" xml:space="preserve">
+    <value>Data is available from {0}.</value>
+  </data>
+  <data name="AlertRule" xml:space="preserve">
+    <value>Alert Rule</value>
+  </data>
+  <data name="MonitorDetail" xml:space="preserve">
+    <value>Monitor Detail</value>
+  </data>
 </root>

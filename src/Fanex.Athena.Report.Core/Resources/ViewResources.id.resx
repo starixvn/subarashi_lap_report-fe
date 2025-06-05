@@ -120,18 +120,6 @@
   <data name="AccessDeniedMsg" xml:space="preserve">
     <value>Maaf, Anda tidak memiliki izin untuk mengakses halaman ini.</value>
   </data>
-  <data name="Adjustment" xml:space="preserve">
-    <value>Penyesuaian</value>
-  </data>
-  <data name="AffiliateTransfer" xml:space="preserve">
-    <value>Transfer Afiliasi</value>
-  </data>
-  <data name="All" xml:space="preserve">
-    <value>Semua</value>
-  </data>
-  <data name="AmountDueTo" xml:space="preserve">
-    <value>Jumlah yang Harus Dibayarkan Kepada</value>
-  </data>
   <data name="Apr" xml:space="preserve">
     <value>April</value>
   </data>
@@ -143,39 +131,6 @@
   </data>
   <data name="August" xml:space="preserve">
     <value>Agustus</value>
-  </data>
-  <data name="BA" xml:space="preserve">
-    <value>BA</value>
-  </data>
-  <data name="Bonus" xml:space="preserve">
-    <value>Bonus</value>
-  </data>
-  <data name="ClosingBalance" xml:space="preserve">
-    <value>Saldo Penutupan</value>
-  </data>
-  <data name="Comm" xml:space="preserve">
-    <value>Komisi</value>
-  </data>
-  <data name="Currency" xml:space="preserve">
-    <value>Mata Uang</value>
-  </data>
-  <data name="Currentmonth" xml:space="preserve">
-    <value>Bulan ini</value>
-  </data>
-  <data name="Currentweek" xml:space="preserve">
-    <value>Minggu ini</value>
-  </data>
-  <data name="CustomerBalance" xml:space="preserve">
-    <value>Saldo Pelanggan</value>
-  </data>
-  <data name="CustomerSupportTask" xml:space="preserve">
-    <value>Tugas Dukungan Pelanggan</value>
-  </data>
-  <data name="CustomerW_L" xml:space="preserve">
-    <value>Kemenangan dan Kerugian Pelanggan</value>
-  </data>
-  <data name="CustomerWinLoss" xml:space="preserve">
-    <value>Kemenangan dan Kerugian Pelanggan</value>
   </data>
   <data name="Date" xml:space="preserve">
     <value>Tanggal</value>
@@ -195,50 +150,11 @@
   <data name="December" xml:space="preserve">
     <value>Desember</value>
   </data>
-  <data name="Deposit" xml:space="preserve">
-    <value>Deposit</value>
-  </data>
-  <data name="DrawGame" xml:space="preserve">
-    <value>Permainan Seri</value>
-  </data>
-  <data name="Entered" xml:space="preserve">
-    <value>Masuk</value>
-  </data>
-  <data name="ErrorProcessingMsg" xml:space="preserve">
-    <value>Maaf, terjadi kesalahan saat memproses permintaan Anda.</value>
-  </data>
-  <data name="ExcludeTestData" xml:space="preserve">
-    <value>Kecualikan Data Uji</value>
-  </data>
-  <data name="ExportToExcel" xml:space="preserve">
-    <value>Ekspor ke Excel</value>
-  </data>
-  <data name="ExternalId" xml:space="preserve">
-    <value>ID Eksternal</value>
-  </data>
-  <data name="ExtraPayout" xml:space="preserve">
-    <value>Pembayaran Tambahan</value>
-  </data>
-  <data name="Feb" xml:space="preserve">
-    <value>Februari</value>
-  </data>
-  <data name="February" xml:space="preserve">
-    <value>Februari</value>
-  </data>
   <data name="Fr" xml:space="preserve">
     <value>Jum</value>
   </data>
   <data name="Friday" xml:space="preserve">
     <value>Jumat</value>
-  </data>
-  <data name="GetAllCustomersHavingPositiveClosingBalance" xml:space="preserve">
-    <value>Hanya tampilkan pelanggan dengan saldo penutupan &gt; 0</value>
-  </data>
-  <data name="GetAllCustomersHavingRunningTickets" xml:space="preserve">
-    <value>Dapatkan semua pelanggan yang memiliki tiket berjalan</value>
-  </data>
-  <data name="GetAllRunningTickets" xml:space="preserve">
-    <value>Dapatkan semua tiket yang sedang berjalan</value>
   </data>
   <data name="Jan" xml:space="preserve">
     <value>Januari</value>
@@ -258,9 +174,6 @@
   <data name="June" xml:space="preserve">
     <value>Juni</value>
   </data>
-  <data name="Lastmonth" xml:space="preserve">
-    <value>Bulan lalu</value>
-  </data>
   <data name="Lastweek" xml:space="preserve">
     <value>Minggu lalu</value>
   </data>
@@ -269,9 +182,6 @@
   </data>
   <data name="March" xml:space="preserve">
     <value>Maret</value>
-  </data>
-  <data name="May" xml:space="preserve">
-    <value>Mei</value>
   </data>
   <data name="May2" xml:space="preserve">
     <value>Mei</value>
@@ -285,17 +195,8 @@
   <data name="Month" xml:space="preserve">
     <value>Bulan</value>
   </data>
-  <data name="NetTurnOver" xml:space="preserve">
-    <value>Omset Bersih</value>
-  </data>
-  <data name="No" xml:space="preserve">
-    <value>Tidak</value>
-  </data>
   <data name="NoInfo" xml:space="preserve">
     <value>Tidak ada informasi yang tersedia</value>
-  </data>
-  <data name="NonEntered" xml:space="preserve">
-    <value>Belum Dimasukkan</value>
   </data>
   <data name="Nov" xml:space="preserve">
     <value>November</value>
@@ -309,35 +210,14 @@
   <data name="October" xml:space="preserve">
     <value>Oktober</value>
   </data>
-  <data name="OpeningBalance" xml:space="preserve">
-    <value>Saldo Awal</value>
-  </data>
-  <data name="PendingFunds" xml:space="preserve">
-    <value>Dana yang Tertunda</value>
-  </data>
-  <data name="Results" xml:space="preserve">
-    <value>Hasil</value>
-  </data>
   <data name="Sa" xml:space="preserve">
     <value>Sab</value>
   </data>
   <data name="Saturday" xml:space="preserve">
     <value>Sabtu</value>
   </data>
-  <data name="SelectTop" xml:space="preserve">
-    <value>Pilih Teratas</value>
-  </data>
-  <data name="Sep" xml:space="preserve">
-    <value>September</value>
-  </data>
-  <data name="September" xml:space="preserve">
-    <value>September</value>
-  </data>
   <data name="SettledMatchCount" xml:space="preserve">
     <value>Jumlah Pertandingan yang Diselesaikan</value>
-  </data>
-  <data name="Sincelastmonth" xml:space="preserve">
-    <value>Sejak bulan lalu</value>
   </data>
   <data name="Sport" xml:space="preserve">
     <value>Olahraga</value>
@@ -345,38 +225,14 @@
   <data name="Su" xml:space="preserve">
     <value>Min</value>
   </data>
-  <data name="Submit" xml:space="preserve">
-    <value>Kirim</value>
-  </data>
-  <data name="SupportTask" xml:space="preserve">
-    <value>Tugas Dukungan</value>
-  </data>
-  <data name="SystemId" xml:space="preserve">
-    <value>ID Sistem</value>
-  </data>
   <data name="Th" xml:space="preserve">
     <value>Kam</value>
-  </data>
-  <data name="Today" xml:space="preserve">
-    <value>Hari Ini</value>
-  </data>
-  <data name="Total" xml:space="preserve">
-    <value>Total</value>
   </data>
   <data name="Tu" xml:space="preserve">
     <value>Sel</value>
   </data>
   <data name="Tuesday" xml:space="preserve">
     <value>Selasa</value>
-  </data>
-  <data name="Turnover" xml:space="preserve">
-    <value>Omset</value>
-  </data>
-  <data name="UserGuide" xml:space="preserve">
-    <value>Panduan Pengguna</value>
-  </data>
-  <data name="Viewin" xml:space="preserve">
-    <value>Lihat {0}</value>
   </data>
   <data name="We" xml:space="preserve">
     <value>Rab</value>
@@ -387,17 +243,161 @@
   <data name="WeeklyLiveMatches" xml:space="preserve">
     <value>Pertandingan Langsung Mingguan</value>
   </data>
+  <data name="Yesterday" xml:space="preserve">
+    <value>Kemarin</value>
+  </data>
+  <data name="May" xml:space="preserve">
+    <value>Mei</value>
+  </data>
+  <data name="Sep" xml:space="preserve">
+    <value>September</value>
+  </data>
+  <data name="September" xml:space="preserve">
+    <value>September</value>
+  </data>
+  <data name="Feb" xml:space="preserve">
+    <value>Februari</value>
+  </data>
+  <data name="February" xml:space="preserve">
+    <value>Februari</value>
+  </data>
+  <data name="ExportToExcel" xml:space="preserve">
+    <value>Ekspor ke Excel</value>
+  </data>
+  <data name="UserGuide" xml:space="preserve">
+    <value>Panduan Pengguna</value>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="Submit" xml:space="preserve">
+    <value>Kirim</value>
+  </data>
+  <data name="Results" xml:space="preserve">
+    <value>Hasil</value>
+  </data>
+  <data name="Entered" xml:space="preserve">
+    <value>Masuk</value>
+  </data>
+  <data name="NonEntered" xml:space="preserve">
+    <value>Belum Dimasukkan</value>
+  </data>
+  <data name="Currentweek" xml:space="preserve">
+    <value>Minggu ini</value>
+  </data>
+  <data name="Sincelastmonth" xml:space="preserve">
+    <value>Sejak bulan lalu</value>
+  </data>
+  <data name="Lastmonth" xml:space="preserve">
+    <value>Bulan lalu</value>
+  </data>
+  <data name="Currentmonth" xml:space="preserve">
+    <value>Bulan ini</value>
+  </data>
+  <data name="All" xml:space="preserve">
+    <value>Semua</value>
+  </data>
+  <data name="Currency" xml:space="preserve">
+    <value>Mata Uang</value>
+  </data>
+  <data name="CustomerBalance" xml:space="preserve">
+    <value>Saldo Pelanggan</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>Tidak</value>
+  </data>
+  <data name="SelectTop" xml:space="preserve">
+    <value>Pilih Teratas</value>
+  </data>
+  <data name="Viewin" xml:space="preserve">
+    <value>Lihat {0}</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Ya</value>
+  </data>
+  <data name="Adjustment" xml:space="preserve">
+    <value>Penyesuaian</value>
+  </data>
+  <data name="AffiliateTransfer" xml:space="preserve">
+    <value>Transfer Afiliasi</value>
+  </data>
+  <data name="AmountDueTo" xml:space="preserve">
+    <value>Jumlah yang Harus Dibayarkan Kepada</value>
+  </data>
+  <data name="BA" xml:space="preserve">
+    <value>BA</value>
+  </data>
+  <data name="Bonus" xml:space="preserve">
+    <value>Bonus</value>
+  </data>
+  <data name="ClosingBalance" xml:space="preserve">
+    <value>Saldo Penutupan</value>
+  </data>
+  <data name="Comm" xml:space="preserve">
+    <value>Komisi</value>
+  </data>
+  <data name="CustomerWinLoss" xml:space="preserve">
+    <value>Kemenangan dan Kerugian Pelanggan</value>
+  </data>
+  <data name="Deposit" xml:space="preserve">
+    <value>Deposit</value>
+  </data>
+  <data name="DrawGame" xml:space="preserve">
+    <value>Permainan Seri</value>
+  </data>
+  <data name="ExternalId" xml:space="preserve">
+    <value>ID Eksternal</value>
+  </data>
+  <data name="ExtraPayout" xml:space="preserve">
+    <value>Pembayaran Tambahan</value>
+  </data>
+  <data name="NetTurnOver" xml:space="preserve">
+    <value>Omset Bersih</value>
+  </data>
+  <data name="OpeningBalance" xml:space="preserve">
+    <value>Saldo Awal</value>
+  </data>
+  <data name="PendingFunds" xml:space="preserve">
+    <value>Dana yang Tertunda</value>
+  </data>
+  <data name="SystemId" xml:space="preserve">
+    <value>ID Sistem</value>
+  </data>
+  <data name="Turnover" xml:space="preserve">
+    <value>Omset</value>
+  </data>
   <data name="WinLoss" xml:space="preserve">
     <value>Menang-Kalah</value>
   </data>
   <data name="Withdrawal" xml:space="preserve">
     <value>Penarikan</value>
   </data>
-  <data name="Yes" xml:space="preserve">
-    <value>Ya</value>
+  <data name="CustomerW_L" xml:space="preserve">
+    <value>Kemenangan dan Kerugian Pelanggan</value>
   </data>
-  <data name="Yesterday" xml:space="preserve">
-    <value>Kemarin</value>
+  <data name="Today" xml:space="preserve">
+    <value>Hari Ini</value>
+  </data>
+  <data name="ExcludeTestData" xml:space="preserve">
+    <value>Kecualikan Data Uji</value>
+  </data>
+  <data name="CustomerSupportTask" xml:space="preserve">
+    <value>Tugas Dukungan Pelanggan</value>
+  </data>
+  <data name="ErrorProcessingMsg" xml:space="preserve">
+    <value>Maaf, terjadi kesalahan saat memproses permintaan Anda.</value>
+  </data>
+  <data name="GetAllCustomersHavingPositiveClosingBalance" xml:space="preserve">
+    <value>Hanya tampilkan pelanggan dengan saldo penutupan &gt; 0</value>
+  </data>
+  <data name="GetAllCustomersHavingRunningTickets" xml:space="preserve">
+    <value>Dapatkan semua pelanggan yang memiliki tiket berjalan</value>
+  </data>
+  <data name="GetAllRunningTickets" xml:space="preserve">
+    <value>Dapatkan semua tiket yang sedang berjalan</value>
+  </data>
+  <data name="SupportTask" xml:space="preserve">
+    <value>Tugas Dukungan</value>
   </data>
   <data name="BaseCurrency" xml:space="preserve">
     <value>Mata Uang Dasar</value>
@@ -413,9 +413,6 @@
   </data>
   <data name="Monthly" xml:space="preserve">
     <value>Bulanan</value>
-  </data>
-  <data name="Product" xml:space="preserve">
-    <value>Produk</value>
   </data>
   <data name="PromotionType" xml:space="preserve">
     <value>Jenis Promosi</value>
@@ -435,14 +432,8 @@
   <data name="WhiteLabel" xml:space="preserve">
     <value>Whitelabel</value>
   </data>
-  <data name="PromotionDetails" xml:space="preserve">
-    <value>Rincian Promosi</value>
-  </data>
-  <data name="RefNo" xml:space="preserve">
-    <value>No. Ref</value>
-  </data>
-  <data name="TotalTransaction" xml:space="preserve">
-    <value>Total Transaksi</value>
+  <data name="Customer" xml:space="preserve">
+    <value>Pelanggan</value>
   </data>
   <data name="CustomerAmount" xml:space="preserve">
     <value>Jumlah Pelanggan</value>
@@ -453,8 +444,17 @@
   <data name="Main" xml:space="preserve">
     <value>Utama</value>
   </data>
-  <data name="Customer" xml:space="preserve">
-    <value>Pelanggan</value>
+  <data name="Product" xml:space="preserve">
+    <value>Produk</value>
+  </data>
+  <data name="PromotionDetails" xml:space="preserve">
+    <value>Rincian Promosi</value>
+  </data>
+  <data name="RefNo" xml:space="preserve">
+    <value>No. Ref</value>
+  </data>
+  <data name="TotalTransaction" xml:space="preserve">
+    <value>Total Transaksi</value>
   </data>
   <data name="TotalIn" xml:space="preserve">
     <value>Total dalam</value>
@@ -489,38 +489,35 @@
   <data name="IsGroupInOriginalCurrency" xml:space="preserve">
     <value>Tampilkan pembagian grup dalam mata uang asli</value>
   </data>
-  <data name="Platform" xml:space="preserve">
-    <value>Platform</value>
+  <data name="AmountDueToBA" xml:space="preserve">
+    <value>Jumlah yang Harus Dibayarkan ke BA</value>
   </data>
   <data name="EffectiveBettingValue" xml:space="preserve">
     <value>Nilai Taruhan Efektif</value>
   </data>
-  <data name="PlayerWL" xml:space="preserve">
-    <value>Kemenangan dan kekalahan pemain</value>
-  </data>
-  <data name="PlayerComm" xml:space="preserve">
-    <value>Komisi pemain</value>
-  </data>
   <data name="LicenseeComm" xml:space="preserve">
     <value>Komisi perusahaan sewa-menyewa</value>
-  </data>
-  <data name="AmountDueToBA" xml:space="preserve">
-    <value>Jumlah yang Harus Dibayarkan ke BA</value>
   </data>
   <data name="Margin" xml:space="preserve">
     <value>Margin</value>
   </data>
+  <data name="Platform" xml:space="preserve">
+    <value>Platform</value>
+  </data>
   <data name="Player" xml:space="preserve">
     <value>Pemain</value>
+  </data>
+  <data name="PlayerComm" xml:space="preserve">
+    <value>Komisi pemain</value>
+  </data>
+  <data name="PlayerWL" xml:space="preserve">
+    <value>Kemenangan dan kekalahan pemain</value>
   </data>
   <data name="BothGroupByAndBreakdownLevelOption" xml:space="preserve">
     <value>Pengelompokan dan pemisahan berdasarkan level</value>
   </data>
-  <data name="GroupByLevelOnlyOption" xml:space="preserve">
-    <value>Hanya tingkat Pengelompokan</value>
-  </data>
-  <data name="Confirmation" xml:space="preserve">
-    <value>Konfirmasi</value>
+  <data name="BreakdownBy" xml:space="preserve">
+    <value>Tampilkan berdasarkan</value>
   </data>
   <data name="ChooseDataDisplayInExcelMsg" xml:space="preserve">
     <value>Silakan pilih data yang akan ditampilkan dalam file excel:</value>
@@ -528,14 +525,14 @@
   <data name="ClearAllFilters" xml:space="preserve">
     <value>Hapus semua filter</value>
   </data>
-  <data name="BreakdownBy" xml:space="preserve">
-    <value>Tampilkan berdasarkan</value>
+  <data name="Confirmation" xml:space="preserve">
+    <value>Konfirmasi</value>
   </data>
-  <data name="OddsGroup" xml:space="preserve">
-    <value>Kelompok Ganjil</value>
+  <data name="GroupByLevelOnlyOption" xml:space="preserve">
+    <value>Hanya tingkat Pengelompokan</value>
   </data>
-  <data name="RiskLevel" xml:space="preserve">
-    <value>Tingkat Risiko</value>
+  <data name="MatchCase" xml:space="preserve">
+    <value>Cocokkan Kapitalisasi, contohnya</value>
   </data>
   <data name="MatchPrecise" xml:space="preserve">
     <value>Tepat Cocok</value>
@@ -543,29 +540,32 @@
   <data name="MatchPrefix" xml:space="preserve">
     <value>Cocokkan Awalan, contohnya</value>
   </data>
-  <data name="MatchCase" xml:space="preserve">
-    <value>Cocokkan Kapitalisasi, contohnya</value>
+  <data name="OddsGroup" xml:space="preserve">
+    <value>Kelompok Ganjil</value>
   </data>
-  <data name="WinlossAnalysis" xml:space="preserve">
-    <value>Analisis Menang Kalah</value>
+  <data name="RiskLevel" xml:space="preserve">
+    <value>Tingkat Risiko</value>
   </data>
   <data name="ViewCOOnly" xml:space="preserve">
     <value>Hanya melihat CashOut secara langsung</value>
   </data>
-  <data name="VIPPlayerTooltipMsg" xml:space="preserve">
-    <value>Pemain VIP ditandai dalam Segmentasi Pemain</value>
-  </data>
   <data name="VIPPlayerOnly" xml:space="preserve">
     <value>Hanya Pemain VIP</value>
   </data>
-  <data name="LiveStatus" xml:space="preserve">
-    <value>Status Langsung</value>
+  <data name="VIPPlayerTooltipMsg" xml:space="preserve">
+    <value>Pemain VIP ditandai dalam Segmentasi Pemain</value>
+  </data>
+  <data name="WinlossAnalysis" xml:space="preserve">
+    <value>Analisis Menang Kalah</value>
   </data>
   <data name="GroupBy" xml:space="preserve">
     <value>Kelompok Berdasarkan</value>
   </data>
-  <data name="Status" xml:space="preserve">
-    <value>Status</value>
+  <data name="LiveStatus" xml:space="preserve">
+    <value>Status Langsung</value>
+  </data>
+  <data name="SearchData" xml:space="preserve">
+    <value>Cari data</value>
   </data>
   <data name="SelectedItemCount" xml:space="preserve">
     <value># terpilih</value>
@@ -573,8 +573,8 @@
   <data name="SelectOptions" xml:space="preserve">
     <value>Pilih opsi</value>
   </data>
-  <data name="SearchData" xml:space="preserve">
-    <value>Cari data</value>
+  <data name="Status" xml:space="preserve">
+    <value>Status</value>
   </data>
   <data name="AmtDueToBA" xml:space="preserve">
     <value>Jumlah yang Harus Dibayarkan ke BA</value>
@@ -591,9 +591,6 @@
   <data name="BetList" xml:space="preserve">
     <value>Daftar Taruhan</value>
   </data>
-  <data name="TransTime" xml:space="preserve">
-    <value>Waktu Transaksi</value>
-  </data>
   <data name="Choice" xml:space="preserve">
     <value>Pilihan</value>
   </data>
@@ -603,11 +600,17 @@
   <data name="Stake" xml:space="preserve">
     <value>Taruhan</value>
   </data>
+  <data name="TransTime" xml:space="preserve">
+    <value>Waktu Transaksi</value>
+  </data>
   <data name="Outright" xml:space="preserve">
     <value>Pemenang Keseluruhan</value>
   </data>
   <data name="ExcelExceedRowsMsg" xml:space="preserve">
     <value>File ini melebihi 65535 entri. Harap hubungi administrator untuk lebih detailnya.</value>
+  </data>
+  <data name="LiveReport" xml:space="preserve">
+    <value>Laporan Langsung</value>
   </data>
   <data name="Live" xml:space="preserve">
     <value>Langsung</value>
@@ -618,29 +621,26 @@
   <data name="Data" xml:space="preserve">
     <value>data</value>
   </data>
-  <data name="LiveReport" xml:space="preserve">
-    <value>Laporan Langsung</value>
-  </data>
-  <data name="Summary" xml:space="preserve">
-    <value>Ringkasan</value>
-  </data>
-  <data name="BySportsType" xml:space="preserve">
-    <value>Berdasarkan Jenis Olahraga</value>
+  <data name="ByBetType" xml:space="preserve">
+    <value>Berdasarkan Jenis Taruhan</value>
   </data>
   <data name="ByCurrency" xml:space="preserve">
     <value>Menurut Mata Uang</value>
   </data>
-  <data name="ByBetType" xml:space="preserve">
-    <value>Berdasarkan Jenis Taruhan</value>
+  <data name="BySportsType" xml:space="preserve">
+    <value>Berdasarkan Jenis Olahraga</value>
+  </data>
+  <data name="Summary" xml:space="preserve">
+    <value>Ringkasan</value>
   </data>
   <data name="CashOut" xml:space="preserve">
     <value>Penukaran Instan</value>
   </data>
-  <data name="ExcludeCOFromSB" xml:space="preserve">
-    <value>Mengecualikan Tunai Keluar dari Sportsbook</value>
-  </data>
   <data name="IncludeCOFromSB" xml:space="preserve">
     <value>Memasukkan Tunai Keluar ke dalam Sportsbook</value>
+  </data>
+  <data name="ExcludeCOFromSB" xml:space="preserve">
+    <value>Mengecualikan Tunai Keluar dari Sportsbook</value>
   </data>
   <data name="Back" xml:space="preserve">
     <value>Kembali</value>
@@ -825,6 +825,27 @@
   <data name="FinancialDate" xml:space="preserve">
     <value>Tanggal Keuangan</value>
   </data>
+  <data name="CustomerComm" xml:space="preserve">
+    <value>Komisi Pelanggan</value>
+  </data>
+  <data name="IncludeDrawData" xml:space="preserve">
+    <value>Sertakan data Undian</value>
+  </data>
+  <data name="LicenseeNetWL" xml:space="preserve">
+    <value>Pemegang Lisensi Net WL</value>
+  </data>
+  <data name="LicenseeWinLoss" xml:space="preserve">
+    <value>Kemenangan dan Kerugian Lisensi</value>
+  </data>
+  <data name="LicenseeWL" xml:space="preserve">
+    <value>Pemegang Lisensi WL</value>
+  </data>
+  <data name="TimeZone" xml:space="preserve">
+    <value>Zona Waktu</value>
+  </data>
+  <data name="WinLossByTimeZone" xml:space="preserve">
+    <value>Kemenangan/Kerugian berdasarkan Zona Waktu</value>
+  </data>
   <data name="SettlementTime" xml:space="preserve">
     <value>Waktu Penyelesaian</value>
   </data>
@@ -855,37 +876,157 @@
   <data name="Based" xml:space="preserve">
     <value>Berdasarkan</value>
   </data>
-  <data name="TimeZone" xml:space="preserve">
-    <value>Zona Waktu</value>
-  </data>
-  <data name="IncludeDrawData" xml:space="preserve">
-    <value>Sertakan data Undian</value>
-  </data>
-  <data name="CustomerComm" xml:space="preserve">
-    <value>Komisi Pelanggan</value>
-  </data>
-  <data name="LicenseeNetWL" xml:space="preserve">
-    <value>Pemegang Lisensi Net WL</value>
-  </data>
-  <data name="LicenseeWL" xml:space="preserve">
-    <value>Pemegang Lisensi WL</value>
-  </data>
-  <data name="WinLossByTimeZone" xml:space="preserve">
-    <value>Kemenangan/Kerugian berdasarkan Zona Waktu</value>
-  </data>
-  <data name="LicenseeWinLoss" xml:space="preserve">
-    <value>Kemenangan dan Kerugian Lisensi</value>
-  </data>
   <data name="SeparateSabaWinLoss" xml:space="preserve">
     <value>Pisahkan Saba Virtual Sports dari Sportsbook</value>
-  </data>
-  <data name="SubsidiaryWL" xml:space="preserve">
-    <value>Kemenangan/Kerugian Anak Perusahaan</value>
   </data>
   <data name="SubsidiaryPerformance" xml:space="preserve">
     <value>Performa Cabang</value>
   </data>
+  <data name="SubsidiaryWL" xml:space="preserve">
+    <value>Kemenangan/Kerugian Anak Perusahaan</value>
+  </data>
   <data name="SeparateSabaWinLoss_HideSaba" xml:space="preserve">
     <value>Pisahkan Olahraga Virtual dari Sportsbook</value>
+  </data>
+  <data name="KickOffTime" xml:space="preserve">
+    <value>Waktu Kick Off</value>
+  </data>
+  <data name="MatchStatus" xml:space="preserve">
+    <value>Status Pertandingan</value>
+  </data>
+  <data name="TriggeredAlert" xml:space="preserve">
+    <value>Peringatan Aktif</value>
+  </data>
+  <data name="AlertRules" xml:space="preserve">
+    <value>Aturan Peringatan</value>
+  </data>
+  <data name="Operation" xml:space="preserve">
+    <value>Operasi</value>
+  </data>
+  <data name="Setting" xml:space="preserve">
+    <value>Pengaturan</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Hapus</value>
+  </data>
+  <data name="ConfirmRemoveMatchMonitoring" xml:space="preserve">
+    <value>Apakah Anda yakin ingin menghapus acara ini dari daftar pemantauan? Setelah dihapus, semua aturan peringatan dan pelacakan terkait akan dihentikan.</value>
+  </data>
+  <data name="MonitorSetting" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TriggeredAlertHistory" xml:space="preserve">
+    <value>Riwayat Peringatan yang Terpicu</value>
+  </data>
+  <data name="DetectedInfo" xml:space="preserve">
+    <value>Informasi Terdeteksi</value>
+  </data>
+  <data name="MatchMonitoringCenter" xml:space="preserve">
+    <value>Pusat Pemantauan Pertandingan</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Cari</value>
+  </data>
+  <data name="Reset" xml:space="preserve">
+    <value>Atur Ulang</value>
+  </data>
+  <data name="Time" xml:space="preserve">
+    <value>Waktu</value>
+  </data>
+  <data name="MatchMonitoringCenter_Note" xml:space="preserve">
+    <value>Catatan: - Jika ada pertandingan yang perlu dipantau, silakan tambahkan dari halaman Total Taruhan → Money Line.</value>
+  </data>
+  <data name="MatchMonitoringCenter_Note2" xml:space="preserve">
+    <value>Semua cap waktu yang ditampilkan berdasarkan GMT+8.</value>
+  </data>
+  <data name="Actions" xml:space="preserve">
+    <value>Tindakan</value>
+  </data>
+  <data name="AddAlertRule" xml:space="preserve">
+    <value>Tambah Aturan Peringatan</value>
+  </data>
+  <data name="AlertRuleTxt1" xml:space="preserve">
+    <value>**Nama Level Peringatan** [Dangerous-1]</value>
+  </data>
+  <data name="AlertRuleTxt2" xml:space="preserve">
+    <value>Ketika perkiraan kerugian negatif untuk tim home atau away melebihi **[Jumlah]** mata uang dasar **[Mata Uang Dasar]**</value>
+  </data>
+  <data name="AlertRuleTxt3" xml:space="preserve">
+    <value>**[Dan/Atau]**</value>
+  </data>
+  <data name="AlertRuleTxt4" xml:space="preserve">
+    <value>perbedaan rasio taruhan antara tim home dan away lebih besar dari **[Persentase Rasio %]** kirim notifikasi setiap **[Notifikasi setiap]** detik</value>
+  </data>
+  <data name="Amount" xml:space="preserve">
+    <value>Jumlah</value>
+  </data>
+  <data name="and" xml:space="preserve">
+    <value>dan</value>
+  </data>
+  <data name="Confirm" xml:space="preserve">
+    <value>Konfirmasi</value>
+  </data>
+  <data name="CreateAlertRuleConfirmationMsg" xml:space="preserve">
+    <value>Apakah Anda yakin ingin menyimpan Aturan Peringatan baru ini: {0} (Jumlah: {1} Berdasarkan {2}, {3} Rasio: {4}%), Notifikasi setiap {5} detik</value>
+  </data>
+  <data name="DeleteAlterRuleConfirmationMsg" xml:space="preserve">
+    <value>Apakah Anda yakin ingin menghapus Aturan Peringatan ini: {0} (Jumlah: {1} Berdasarkan {2}, {3} Rasio: {4}%), Notifikasi setiap {5} detik</value>
+  </data>
+  <data name="Logs" xml:space="preserve">
+    <value>Log</value>
+  </data>
+  <data name="NotifyEvery" xml:space="preserve">
+    <value>Notifikasi setiap</value>
+  </data>
+  <data name="or" xml:space="preserve">
+    <value>atau</value>
+  </data>
+  <data name="PleaseFillInfoMsg" xml:space="preserve">
+    <value>Silakan isi semua kolom yang wajib sebelum menyimpan</value>
+  </data>
+  <data name="RatioPercent" xml:space="preserve">
+    <value>Persentase Rasio %</value>
+  </data>
+  <data name="UpdateAlterRuleConfirmationMsg" xml:space="preserve">
+    <value>Apakah Anda yakin ingin memperbarui Aturan Peringatan ini: {0} (Jumlah: {1} Berdasarkan {2}, {3} Rasio: {4}%), Notifikasi setiap {5} detik</value>
+  </data>
+  <data name="AlertLevelName" xml:space="preserve">
+    <value>Nama Level Peringatan</value>
+  </data>
+  <data name="And_Or" xml:space="preserve">
+    <value>dan/atau</value>
+  </data>
+  <data name="Format" xml:space="preserve">
+    <value>Format</value>
+  </data>
+  <data name="seconds" xml:space="preserve">
+    <value>detik</value>
+  </data>
+  <data name="AlertRule" xml:space="preserve">
+    <value>Aturan Peringatan</value>
+  </data>
+  <data name="SettingNameAlreadyExistsMsg" xml:space="preserve">
+    <value>Nama pengaturan sudah ada untuk pemantauan ini</value>
+  </data>
+  <data name="TotalHome" xml:space="preserve">
+    <value>Total Tuan Rumah</value>
+  </data>
+  <data name="TotalAway" xml:space="preserve">
+    <value>Total Tandang</value>
+  </data>
+  <data name="ForecastHome" xml:space="preserve">
+    <value>Prediksi Tuan Rumah</value>
+  </data>
+  <data name="ForecastAway" xml:space="preserve">
+    <value>Prediksi Tandang</value>
+  </data>
+  <data name="MatchMonitoringCenter_Note3" xml:space="preserve">
+    <value>Data tersedia dari {0}.</value>
+  </data>
+  <data name="MonitorDetail" xml:space="preserve">
+    <value>Detail Pemantauan</value>
+  </data>
+  <data name="Event" xml:space="preserve">
+    <value>Acara</value>
   </data>
 </root>

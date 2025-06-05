@@ -19,6 +19,7 @@ import CustomerTurnoverRoute from './CustomerTurnoverRoute';
 import TurnoverRoute from './TurnoverRoute';
 import LicenseeWinLossByTimeZoneRoute from './WinLossByTimeZone';
 import SubsidiaryPerformanceRoute from './SubsidiaryPerformanceRoute';
+import MatchMonitoringCenterRoute from './MatchMonitoringCenterRoute';
 
 export default [
     {
@@ -118,5 +119,12 @@ export default [
         Path: `${paths.BETLIST}/:controller/*`,
         Layout: AppLayout,
         Component: BetListRoute,
+    },
+    {
+        Id: pages.MATCH_MONITORING_CENTER,
+        Path: 'MatchMonitoringCenter/*',
+        Permissions: [permission.MATCH_MONITORING_CENTER],
+        Layout: AppLayout,
+        Component: MatchMonitoringCenterRoute,
     },
 ];
