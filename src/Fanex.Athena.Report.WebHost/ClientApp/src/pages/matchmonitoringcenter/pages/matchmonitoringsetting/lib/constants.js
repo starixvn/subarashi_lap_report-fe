@@ -45,14 +45,6 @@ export const conditions = [
 
 export const notifyEverys = [
     {
-        key: 60,
-        value: 60,
-    },
-    {
-        key: 120,
-        value: 120,
-    },
-    {
         key: 180,
         value: 180,
     },

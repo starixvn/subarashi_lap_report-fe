@@ -1267,6 +1267,15 @@ namespace Fanex.Athena.Report.Core.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Log Type.
+        /// </summary>
+        public static string LogType {
+            get {
+                return ResourceManager.GetString("LogType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Lost.
         /// </summary>
         public static string Lost {
@@ -1510,7 +1519,7 @@ namespace Fanex.Athena.Report.Core.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to There are no Alert Rules configured yet..
+        ///   Looks up a localized string similar to There are no Alert Rules configured yet.
         /// </summary>
         public static string NoAlertRulesMsg {
             get {
@@ -1533,6 +1542,15 @@ namespace Fanex.Athena.Report.Core.Resources {
         public static string NoneLive {
             get {
                 return ResourceManager.GetString("NoneLive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Non-Live.
+        /// </summary>
+        public static string NoneLive2 {
+            get {
+                return ResourceManager.GetString("NoneLive2", resourceCulture);
             }
         }
         
@@ -2487,6 +2505,15 @@ namespace Fanex.Athena.Report.Core.Resources {
         public static string Setting {
             get {
                 return ResourceManager.GetString("Setting", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This setting is already existed..
+        /// </summary>
+        public static string SettingAlreadyExisted {
+            get {
+                return ResourceManager.GetString("SettingAlreadyExisted", resourceCulture);
             }
         }
         

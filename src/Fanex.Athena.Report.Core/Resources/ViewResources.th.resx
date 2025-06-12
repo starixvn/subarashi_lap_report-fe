@@ -1038,4 +1038,28 @@
   <data name="Event" xml:space="preserve">
     <value>กิจกรรม</value>
   </data>
+  <data name="Dangerous" xml:space="preserve">
+    <value>อันตราย</value>
+  </data>
+  <data name="LogType" xml:space="preserve">
+    <value>ประเภทบันทึก</value>
+  </data>
+  <data name="NoAlertRulesMsg" xml:space="preserve">
+    <value>ยังไม่มีการตั้งค่ากฎแจ้งเตือนใด ๆ</value>
+  </data>
+  <data name="Safe" xml:space="preserve">
+    <value>ปลอดภัย</value>
+  </data>
+  <data name="SettingAlreadyExisted" xml:space="preserve">
+    <value>การตั้งค่านี้มีอยู่แล้ว</value>
+  </data>
+  <data name="ViewHistory" xml:space="preserve">
+    <value>ดูประวัติ</value>
+  </data>
+  <data name="NoneLive2" xml:space="preserve">
+    <value>ไม่แทงบอลสด</value>
+  </data>
+  <data name="Action" xml:space="preserve">
+    <value>การดำเนินการ</value>
+  </data>
 </root>

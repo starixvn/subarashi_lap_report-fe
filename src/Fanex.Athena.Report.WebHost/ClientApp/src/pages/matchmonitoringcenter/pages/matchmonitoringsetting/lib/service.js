@@ -116,7 +116,11 @@ export const createAlertRule = async (item, monitoringID, dispatch, setAddNewRul
             let message;
             if (result.data && result.data.code === 14) {
                 message = LangHelper.getSingleResource('SettingNameAlreadyExistsMsg');
-            } else {
+            }
+            else if (result.data && result.data.code === 21) {
+                message = LangHelper.getSingleResource('SettingAlreadyExisted');
+            }
+            else {
                 message = result.data ? result.data.message : 'Failed to create alert rule';
             }
             alert(message);
@@ -154,7 +158,11 @@ export const updateAlertRule = async (item, dispatch, setIsEdited, onDataChanged
             let message;
             if (result.data && result.data.code === 14) {
                 message = LangHelper.getSingleResource('SettingNameAlreadyExistsMsg');
-            } else {
+            }
+            else if (result.data && result.data.code === 21) {
+                message = LangHelper.getSingleResource('SettingAlreadyExisted');
+            }
+            else {
                 message = result.data ? result.data.message : 'Failed to update alert rule';
             }
             alert(message);

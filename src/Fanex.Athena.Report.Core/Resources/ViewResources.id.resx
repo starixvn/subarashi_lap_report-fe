@@ -1029,4 +1029,28 @@
   <data name="Event" xml:space="preserve">
     <value>Acara</value>
   </data>
+  <data name="Dangerous" xml:space="preserve">
+    <value>Berbahaya</value>
+  </data>
+  <data name="LogType" xml:space="preserve">
+    <value>Tipe Log</value>
+  </data>
+  <data name="NoAlertRulesMsg" xml:space="preserve">
+    <value>Belum ada Aturan Peringatan yang dikonfigurasi.</value>
+  </data>
+  <data name="Safe" xml:space="preserve">
+    <value>Aman</value>
+  </data>
+  <data name="SettingAlreadyExisted" xml:space="preserve">
+    <value>Pengaturan ini sudah ada.</value>
+  </data>
+  <data name="ViewHistory" xml:space="preserve">
+    <value>Lihat riwayat</value>
+  </data>
+  <data name="NoneLive2" xml:space="preserve">
+    <value>Non-Live</value>
+  </data>
+  <data name="Action" xml:space="preserve">
+    <value>Tindakan</value>
+  </data>
 </root>

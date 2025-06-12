@@ -135,7 +135,7 @@ const DataGrid = (props) => {
             if (!liveIndicator)
                 return (
                     <Cell key={'matchStatus'} className="center-align">
-                        {LangHelper.getSingleResource('NoneLive')}
+                        {LangHelper.getSingleResource('NoneLive2')}
                     </Cell>
                 );
             return (
