@@ -1,6 +1,6 @@
 ﻿@{
     var context = HttpContextAccessor?.HttpContext;
-    var isProduction = WebHostEnvironment.IsEnvironment("PROD");
+    var isProduction =string.Equals(appSettings.Environment, "PROD", StringComparison.OrdinalIgnoreCase);
     var langCode = context?.Request.Headers["Language"].ToString();
     var rootUrl = string.Concat(context?.Request.Headers["RootUrl"].ToString().TrimEnd('/'), "/");
     var appBaseUrl = $"{context?.Request.Scheme}://{context?.Request.Host}{context?.Request.PathBase}";
