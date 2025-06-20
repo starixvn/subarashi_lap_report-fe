@@ -964,13 +964,13 @@
     <value>**Tên Mức Cảnh Báo** [Nguy Hiểm-1]</value>
   </data>
   <data name="AlertRuleTxt2" xml:space="preserve">
-    <value>Khi dự báo lỗ của đội nhà hoặc đội khách vượt quá **[Amount]** theo đơn vị tiền tệ chính **[Base Currency]**</value>
+    <value>Khi dự báo lỗ của đội nhà hoặc đội khách vượt quá **[Số Tiền]** theo đơn vị tiền tệ chính **[Tiền tệ cơ sở]**</value>
   </data>
   <data name="AlertRuleTxt3" xml:space="preserve">
     <value>**[Và/Hoặc]**</value>
   </data>
   <data name="AlertRuleTxt4" xml:space="preserve">
-    <value>sự chênh lệch tỷ lệ cược giữa hai đội lớn hơn **[Ratio %]** gửi thông báo mỗi **[Notify every]** giây</value>
+    <value>sự chênh lệch tỷ lệ cược giữa hai đội lớn hơn **[Tỷ Lệ %]** gửi thông báo mỗi **[Thông Báo Mỗi]** giây</value>
   </data>
   <data name="Amount" xml:space="preserve">
     <value>Số Tiền</value>
@@ -1043,5 +1043,29 @@
   </data>
   <data name="Event" xml:space="preserve">
     <value>Sự kiện</value>
+  </data>
+  <data name="Dangerous" xml:space="preserve">
+    <value>Nguy hiểm</value>
+  </data>
+  <data name="LogType" xml:space="preserve">
+    <value>Loại Nhật Ký</value>
+  </data>
+  <data name="NoAlertRulesMsg" xml:space="preserve">
+    <value>Chưa có Quy Tắc Cảnh Báo nào được cài đặt.</value>
+  </data>
+  <data name="Safe" xml:space="preserve">
+    <value>An toàn</value>
+  </data>
+  <data name="SettingAlreadyExisted" xml:space="preserve">
+    <value>Cài đặt này đã tồn tại.</value>
+  </data>
+  <data name="ViewHistory" xml:space="preserve">
+    <value>Xem lịch sử</value>
+  </data>
+  <data name="NoneLive2" xml:space="preserve">
+    <value>Không Trực tiếp</value>
+  </data>
+  <data name="Action" xml:space="preserve">
+    <value>Hành Động</value>
   </data>
 </root>

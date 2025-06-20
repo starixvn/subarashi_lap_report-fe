@@ -969,4 +969,28 @@
   <data name="Event" xml:space="preserve">
     <value>项目</value>
   </data>
+  <data name="Dangerous" xml:space="preserve">
+    <value>危险</value>
+  </data>
+  <data name="LogType" xml:space="preserve">
+    <value>日志类型</value>
+  </data>
+  <data name="NoAlertRulesMsg" xml:space="preserve">
+    <value>尚未配置任何警报规则。</value>
+  </data>
+  <data name="Safe" xml:space="preserve">
+    <value>安全</value>
+  </data>
+  <data name="SettingAlreadyExisted" xml:space="preserve">
+    <value>此设置已存在。</value>
+  </data>
+  <data name="ViewHistory" xml:space="preserve">
+    <value>查看历史</value>
+  </data>
+  <data name="NoneLive2" xml:space="preserve">
+    <value>非滚球</value>
+  </data>
+  <data name="Action" xml:space="preserve">
+    <value>操作</value>
+  </data>
 </root>

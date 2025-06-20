@@ -47,7 +47,7 @@ const FormFilter = () => {
             <div className="row">
                 <div className="col-12 col-lg-4 col-md-4 col-sm-12">
                     <div className="form-group">
-                        <label className="label-text">Log Type</label>
+                        <label className="label-text">{LangHelper.getSingleResource('LogType')}</label>
                         <MultipleSelect
                             id={'LogTypeList'}
                             language={LangHelper.currentLanguage}
@@ -61,7 +61,7 @@ const FormFilter = () => {
                 </div>
                 <div className="col-12 col-lg-4 col-md-4 col-sm-12">
                     <div className="form-group">
-                        <label className="label-text">Action</label>
+                        <label className="label-text">{LangHelper.getSingleResource('Action')}</label>
                         <MultipleSelect
                             id={'ActionList'}
                             language={LangHelper.currentLanguage}
