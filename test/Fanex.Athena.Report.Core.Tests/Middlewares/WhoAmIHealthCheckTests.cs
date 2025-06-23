@@ -1,9 +1,7 @@
 namespace Fanex.Athena.Report.Core.Tests.Middlewares;
 
 using System;
-using System.Collections.Generic;
 using System.Net;
-using System.Net.Sockets;
 using System.Threading;
 using System.Threading.Tasks;
 using Core.Middleware;
@@ -35,6 +33,7 @@ public class WhoAmIHealthCheckTests
         _httpContext.Request.Returns(_request);
 
         _healthCheck = new WhoAmIHealthCheck(_httpContextAccessor, _webHostEnvironment);
+        SetupDefaultContext();
     }
 
     private void SetupDefaultContext()
@@ -50,7 +49,6 @@ public class WhoAmIHealthCheckTests
     public async Task CheckHealthAsync_WithValidContext_ReturnsHealthyResult()
     {
         // Arrange
-        SetupDefaultContext();
         var context = new HealthCheckContext();
         var cancellationToken = CancellationToken.None;
 
@@ -67,7 +65,6 @@ public class WhoAmIHealthCheckTests
     public async Task CheckHealthAsync_WithValidContext_ContainsEnvironmentInfo()
     {
         // Arrange
-        SetupDefaultContext();
         var context = new HealthCheckContext();
         var expectedEnvironment = "Development";
         _webHostEnvironment.EnvironmentName.Returns(expectedEnvironment);
@@ -84,7 +81,6 @@ public class WhoAmIHealthCheckTests
     public async Task CheckHealthAsync_WithValidContext_ContainsHostName()
     {
         // Arrange
-        SetupDefaultContext();
         var context = new HealthCheckContext();
 
         // Act
@@ -100,7 +96,6 @@ public class WhoAmIHealthCheckTests
     public async Task CheckHealthAsync_WithValidContext_ContainsServerIPs()
     {
         // Arrange
-        SetupDefaultContext();
         var context = new HealthCheckContext();
 
         // Act
@@ -125,7 +120,6 @@ public class WhoAmIHealthCheckTests
     public async Task CheckHealthAsync_WithValidContext_ContainsLocalIpAddress()
     {
         // Arrange
-        SetupDefaultContext();
         var context = new HealthCheckContext();
         var expectedLocalIp = System.Net.IPAddress.Parse("127.0.0.1");
         _connectionInfo.LocalIpAddress.Returns(expectedLocalIp);
@@ -142,7 +136,6 @@ public class WhoAmIHealthCheckTests
     public async Task CheckHealthAsync_WithValidContext_ContainsLocalPort()
     {
         // Arrange
-        SetupDefaultContext();
         var context = new HealthCheckContext();
         var expectedPort = 8080;
         _connectionInfo.LocalPort.Returns(expectedPort);
@@ -159,7 +152,6 @@ public class WhoAmIHealthCheckTests
     public async Task CheckHealthAsync_WithValidContext_ContainsClientIpAddress()
     {
         // Arrange
-        SetupDefaultContext();
         var context = new HealthCheckContext();
         var expectedClientIp = System.Net.IPAddress.Parse("192.168.1.100");
         _connectionInfo.RemoteIpAddress.Returns(expectedClientIp);
@@ -176,7 +168,6 @@ public class WhoAmIHealthCheckTests
     public async Task CheckHealthAsync_WithValidContext_ContainsServerTime()
     {
         // Arrange
-        SetupDefaultContext();
         var context = new HealthCheckContext();
 
         // Act
@@ -196,7 +187,6 @@ public class WhoAmIHealthCheckTests
     public async Task CheckHealthAsync_WithValidContext_ContainsLastUpdated()
     {
         // Arrange
-        SetupDefaultContext();
         var context = new HealthCheckContext();
 
         // Act
@@ -216,7 +206,6 @@ public class WhoAmIHealthCheckTests
     public async Task CheckHealthAsync_WithValidContext_ContainsHost()
     {
         // Arrange
-        SetupDefaultContext();
         var context = new HealthCheckContext();
         var expectedHost = new HostString("localhost", 8080);
         _request.Host.Returns(expectedHost);
@@ -233,7 +222,6 @@ public class WhoAmIHealthCheckTests
     public async Task CheckHealthAsync_WithValidContext_ContainsSchema()
     {
         // Arrange
-        SetupDefaultContext();
         var context = new HealthCheckContext();
         var expectedScheme = "https";
         _request.Scheme.Returns(expectedScheme);
@@ -263,7 +251,6 @@ public class WhoAmIHealthCheckTests
     {
         // Arrange
         var context = new HealthCheckContext();
-        SetupDefaultContext();
         _httpContext.Connection.Returns((ConnectionInfo)null);
 
         // Act & Assert
@@ -276,7 +263,6 @@ public class WhoAmIHealthCheckTests
     {
         // Arrange
         var context = new HealthCheckContext();
-        SetupDefaultContext();
         _httpContext.Request.Returns((HttpRequest)null);
 
         // Act & Assert
@@ -288,7 +274,6 @@ public class WhoAmIHealthCheckTests
     public async Task CheckHealthAsync_WithNullLocalIpAddress_ThrowsNullReferenceException()
     {
         // Arrange
-        SetupDefaultContext();
         var context = new HealthCheckContext();
         _connectionInfo.LocalIpAddress.Returns((System.Net.IPAddress)null);
 
@@ -300,7 +285,6 @@ public class WhoAmIHealthCheckTests
     public async Task CheckHealthAsync_WithNullRemoteIpAddress_ThrowsNullReferenceException()
     {
         // Arrange
-        SetupDefaultContext();
         var context = new HealthCheckContext();
         _connectionInfo.RemoteIpAddress.Returns((System.Net.IPAddress)null);
 
@@ -312,7 +296,6 @@ public class WhoAmIHealthCheckTests
     public async Task CheckHealthAsync_WithNullHost_HandlesGracefully()
     {
         // Arrange
-        SetupDefaultContext();
         var context = new HealthCheckContext();
         _request.Host.Returns(new HostString());
 
@@ -329,7 +312,6 @@ public class WhoAmIHealthCheckTests
     public async Task CheckHealthAsync_WithNullScheme_HandlesGracefully()
     {
         // Arrange
-        SetupDefaultContext();
         var context = new HealthCheckContext();
         _request.Scheme.Returns((string)null);
 
@@ -345,7 +327,6 @@ public class WhoAmIHealthCheckTests
     public async Task CheckHealthAsync_WithDifferentEnvironments_ReturnsCorrectEnvironment()
     {
         // Arrange
-        SetupDefaultContext();
         var context = new HealthCheckContext();
         var environments = new[] { "Development", "Production", "Staging", "Test" };
 
@@ -365,7 +346,6 @@ public class WhoAmIHealthCheckTests
     public async Task CheckHealthAsync_WithEmptyEnvironment_ReturnsEmptyEnvironment()
     {
         // Arrange
-        SetupDefaultContext();
         var context = new HealthCheckContext();
         _webHostEnvironment.EnvironmentName.Returns("");
 
@@ -380,7 +360,6 @@ public class WhoAmIHealthCheckTests
     public async Task CheckHealthAsync_WithNullEnvironment_ReturnsNullEnvironment()
     {
         // Arrange
-        SetupDefaultContext();
         var context = new HealthCheckContext();
         _webHostEnvironment.EnvironmentName.Returns((string)null);
 
@@ -395,7 +374,6 @@ public class WhoAmIHealthCheckTests
     public async Task CheckHealthAsync_WithValidContext_ContainsAllRequiredFields()
     {
         // Arrange
-        SetupDefaultContext();
         var context = new HealthCheckContext();
         var expectedFields = new[]
         {
@@ -417,7 +395,6 @@ public class WhoAmIHealthCheckTests
     public async Task CheckHealthAsync_WithValidContext_ReturnsReadOnlyDictionary()
     {
         // Arrange
-        SetupDefaultContext();
         var context = new HealthCheckContext();
 
         // Act
