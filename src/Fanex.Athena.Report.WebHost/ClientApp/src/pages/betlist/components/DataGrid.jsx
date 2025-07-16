@@ -33,10 +33,11 @@ const DataGrid = (props) => {
         dispatch(setRequestParam({ ...requestParam, Page: index, Rows: size }));
     };
 
-    const onSort = (sortBy, sortOrder) => {
+    const onSort = (sortType, sortOrder) => {
         getData({
             ...requestParam,
-            SortBy: getSortParam(sortBy),
+            SortBy: getSortParam(sortType),
+            SortType: sortType,
             SortOrder: sortOrder,
             Page: TableSettings.PageIndex,
             Rows: TableSettings.PageSize,

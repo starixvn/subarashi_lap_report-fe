@@ -7,6 +7,19 @@ const BetListTable = (props) => {
         props.afterLoad && props.afterLoad();
     }, [props.data]);
 
+    const sortOrderMapper = {
+        asc: 1,
+        desc: 2
+    };
+
+    const sortTypeMapper = {
+        transdate: 0,
+        stake: 1,
+        winloss: 2,
+        licenseewl: 3,
+        betplaced: 4
+    };
+
     const getResource = (key) => {
         return props.getResourceFunc ? props.getResourceFunc(key) : key;
     };
@@ -133,8 +146,11 @@ const BetListTable = (props) => {
         );
     };
 
-    const onSort = (sortBy, sortOrder) => {
-        props.onSort && props.onSort(sortBy, sortOrder);
+    const onSort = (sortType, sortOrder) => {
+        const newSortOrder = sortOrderMapper[sortOrder.toLowerCase()] ?? sortOrderMapper.asc;
+        const newSortType = sortTypeMapper[sortType.toLowerCase()] ?? sortTypeMapper.transdate;
+
+        props.onSort && props.onSort(newSortType, newSortOrder);
     };
 
     const onPaging = (index, size) => {

@@ -36,7 +36,7 @@ function FooterSpecialBetTypeRows(props) {
             ProductCodeList: requestParam.ProductOptions.map((item) => item.code).join(','),
             Rows: 50,
             Page: 1,
-            SortOrder: 'asc',
+            SortOrder: 1,
         };
 
         if (requestParam.SubsidiaryList) {
