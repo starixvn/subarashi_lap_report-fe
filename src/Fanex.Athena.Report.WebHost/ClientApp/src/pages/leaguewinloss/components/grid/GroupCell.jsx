@@ -194,7 +194,7 @@ export const GroupCell = (props) => {
 
     const directDrilldown = (
         <>
-            <Cell key={`group-cell-${key}-${rowData.leagueId}-direct-currency`} colSpan="2" className="left-align" style={{ whiteSpace: 'pre-wrap' }}>
+            <Cell key={`group-cell-${key}-${rowData.leagueId}-direct-currency`} colSpan="3" className="left-align" style={{ whiteSpace: 'pre-wrap' }}>
                 <i className={`icon-strong-arrow left ${_isDrillDown ? 'arrow-down' : 'arrow-right'}`} onClick={_handleDirectBreakDownCurrency}>
                     {' '}
                 </i>{' '}

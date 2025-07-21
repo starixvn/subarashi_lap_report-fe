@@ -12,6 +12,7 @@ export const ApiUrl = {
 
 export const headerText = {
     league: LangHelper.getSingleResource('League'),
+    playercount: LangHelper.getSingleResource('PlayerCount'),
     betcount: LangHelper.getSingleResource('BetCount'),
     turnover: LangHelper.getSingleResource('Turnover'),
     customerWL: LangHelper.getSingleResource('CustomerW_L'),

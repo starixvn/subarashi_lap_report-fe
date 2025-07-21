@@ -14,6 +14,7 @@ export const renderHeader = (drilldownLevel) => {
             {drilldownLevel === 0 && <HeaderCell colWidth={320}>{headerText.league}</HeaderCell>}
             {drilldownLevel === 1 && <HeaderCell colWidth={320}>{headerText.match}</HeaderCell>}
             {drilldownLevel === 2 && <HeaderCell colWidth={280}>{headerText.bettype}</HeaderCell>}
+            <HeaderCell colWidth={100}>{headerText.playercount}</HeaderCell>
             <HeaderCell colWidth={80}>{headerText.betcount}</HeaderCell>
             <HeaderCell colWidth={110}>{headerText.turnover}</HeaderCell>
             <HeaderCell colWidth={110}>{headerText.customerWL}</HeaderCell>
@@ -76,12 +77,13 @@ const buildDataRow = (dataItem, drilldownLevel) => {
 };
 
 const buildDetailDataRow = (dataItem, index, drilldownLevel) => {
-    const { betCount, turnOver, licenseeWL, customerWL } = dataItem;
+    const { playerCount, betCount, turnOver, licenseeWL, customerWL } = dataItem;
 
     return (
         <Row key={`detail-row-${uuidv4()}`}>
             <Cell className="center-align">{++index}</Cell>
             <GroupCell rowData={dataItem} level={drilldownLevel} />
+            <Cell className="right-align">{NumberFormat.format(playerCount)}</Cell>
             <Cell className="right-align">{NumberFormat.format(betCount)}</Cell>
             <Cell className="right-align">{NumberFormat.formatDecimal(turnOver)}</Cell>
             <Cell className="right-align">{NumberFormat.formatDecimal(customerWL)}</Cell>
@@ -91,12 +93,13 @@ const buildDetailDataRow = (dataItem, index, drilldownLevel) => {
 };
 
 const buildCurrencyDataRow = (dataItem, drilldownLevel) => {
-    const { currencyName, betCount, turnOver, licenseeWL, customerWL } = dataItem;
+    const { currencyName, playerCount, betCount, turnOver, licenseeWL, customerWL } = dataItem;
 
     return (
         <Row className="currency-row" key={`currency-row-${uuidv4()}-${drilldownLevel}`}>
             <Cell className="center-align"></Cell>
             <Cell className="left-align">{currencyName}</Cell>
+            <Cell className="right-align">{NumberFormat.format(playerCount)}</Cell>
             <Cell className="right-align">{NumberFormat.format(betCount)}</Cell>
             <Cell className="right-align">{NumberFormat.formatDecimal(turnOver)}</Cell>
             <Cell className="right-align">{NumberFormat.formatDecimal(customerWL)}</Cell>
@@ -109,7 +112,7 @@ const buildTotalRow = (dataItem) => {
     const { betCount, turnOver, licenseeWL, customerWL } = dataItem;
     return (
         <Row className="grant-total-row" key="grantTotal-row">
-            <Cell className="right-align" colSpan="2">
+            <Cell className="right-align" colSpan="3">
                 {LangHelper.getSingleResource('Total')}
             </Cell>
             <Cell className="right-align">{NumberFormat.format(betCount)}</Cell>

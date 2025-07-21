@@ -993,4 +993,7 @@
   <data name="Action" xml:space="preserve">
     <value>操作</value>
   </data>
+  <data name="PlayerCount" xml:space="preserve">
+    <value>玩家数量</value>
+  </data>
 </root>
