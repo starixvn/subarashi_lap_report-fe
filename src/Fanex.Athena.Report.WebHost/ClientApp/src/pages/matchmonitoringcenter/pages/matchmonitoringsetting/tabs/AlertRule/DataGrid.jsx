@@ -81,7 +81,7 @@ function DataGrid() {
                 isIncludeScrollWidth={true}
                 header={BuildHeaders()}
                 body={BuildBody(gridData, baseCurrencyList, addNewRule, onDataChanged, setAddNewRule, defaultBaseCurrency, monitoringID)}
-                shouldResetScrollPosition={true}
+                shouldResetScrollPosition={false}
             />
             {renderAddNewRuleButton()}
         </>

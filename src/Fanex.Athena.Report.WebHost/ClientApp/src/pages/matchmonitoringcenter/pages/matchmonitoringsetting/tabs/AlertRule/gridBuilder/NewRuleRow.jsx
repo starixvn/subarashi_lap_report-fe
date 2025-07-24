@@ -160,9 +160,7 @@ const NewRuleRow = ({ baseCurrencyList, defaultBaseCurrency, setAddNewRule, onDa
                     fieldKey="notificationInterval"
                     dataSource={notifyEverys}
                     onChange={handleCellChange}
-                    width="50%"
-                />{' '}
-                {LangHelper.getSingleResource('seconds')}
+                />
             </Cell>
 
             <Cell className="center-align">

@@ -993,7 +993,7 @@
     <value>When the negative profit forecast for either the home or away team exceeds **[Amount]** base currency **[Base Currency]**</value>
   </data>
   <data name="AlertRuleTxt4" xml:space="preserve">
-    <value>The betting ratio difference between the home and away teams is greater than **[Ratio %]** send a notification every **[Notify every]** seconds</value>
+    <value>The betting ratio difference between the home and away teams is greater than **[Ratio %]** send a notification every **[Notify every]**</value>
   </data>
   <data name="Format" xml:space="preserve">
     <value>Format</value>
@@ -1023,19 +1023,19 @@
     <value>Add Alert Rule</value>
   </data>
   <data name="DeleteAlterRuleConfirmationMsg" xml:space="preserve">
-    <value>Are you sure you want to delete the Alert Rule: {0} (Amount: {1} Based {2}, {3} Ratio: {4}%), Notify every {5} seconds)?</value>
+    <value>Are you sure you want to delete the Alert Rule: {0} (Amount: {1} Based {2}, {3} Ratio: {4}%), Notify: {5}?</value>
   </data>
   <data name="NoAlertRulesMsg" xml:space="preserve">
     <value>There are no Alert Rules configured yet.</value>
   </data>
   <data name="UpdateAlterRuleConfirmationMsg" xml:space="preserve">
-    <value>Are you sure you want to update this Alert Rule: {0} (Amount: {1} Based {2} , {3} Ratio: {4}%, Notify every {5} seconds)?</value>
+    <value>Are you sure you want to update this Alert Rule: {0} (Amount: {1} Based {2} , {3} Ratio: {4}%, Notify: {5}?</value>
   </data>
   <data name="PleaseFillInfoMsg" xml:space="preserve">
     <value>Please fill in all required fields before saving</value>
   </data>
   <data name="CreateAlertRuleConfirmationMsg" xml:space="preserve">
-    <value>Are you sure you want to save this new Alert Rule: {0} (Amount: {1} Based {2}, {3} Ratio: {4}%), Notify every {5} seconds?</value>
+    <value>Are you sure you want to save this new Alert Rule: {0} (Amount: {1} Based {2}, {3} Ratio: {4}%), Notify: {5}?</value>
   </data>
   <data name="MonitorSetting" xml:space="preserve">
     <value>Monitor Setting</value>
@@ -1120,5 +1120,8 @@
   </data>
   <data name="PlayerCount" xml:space="preserve">
     <value>Player Count</value>
+  </data>
+  <data name="OnlyOnce" xml:space="preserve">
+    <value>Only once</value>
   </data>
 </root>

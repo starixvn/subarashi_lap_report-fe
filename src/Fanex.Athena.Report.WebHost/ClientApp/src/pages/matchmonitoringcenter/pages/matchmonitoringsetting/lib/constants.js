@@ -35,26 +35,36 @@ export const InputType = {
 export const conditions = [
     {
         key: 'and',
-        value: LangHelper.getSingleResource('and'),
+        value: 'and',
+        displayValue: LangHelper.getSingleResource('and'),
     },
     {
         key: 'or',
-        value: LangHelper.getSingleResource('or'),
+        value: 'or',
+        displayValue: LangHelper.getSingleResource('or'),
     },
 ];
 
 export const notifyEverys = [
     {
+        key: -1,
+        value: -1,
+        displayValue: LangHelper.getSingleResource('OnlyOnce'),
+    },
+    {
         key: 180,
         value: 180,
+        displayValue: `180 ${LangHelper.getSingleResource('seconds')}`,
     },
     {
         key: 300,
         value: 300,
+        displayValue: `300 ${LangHelper.getSingleResource('seconds')}`,
     },
     {
         key: 600,
         value: 600,
+        displayValue: `600 ${LangHelper.getSingleResource('seconds')}`,
     },
 ];
 
