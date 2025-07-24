@@ -1068,4 +1068,7 @@
   <data name="Action" xml:space="preserve">
     <value>Hành Động</value>
   </data>
+  <data name="PlayerCount" xml:space="preserve">
+    <value>Số lượng người chơi</value>
+  </data>
 </root>

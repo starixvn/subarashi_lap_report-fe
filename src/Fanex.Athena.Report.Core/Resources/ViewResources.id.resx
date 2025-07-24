@@ -1053,4 +1053,7 @@
   <data name="Action" xml:space="preserve">
     <value>Tindakan</value>
   </data>
+  <data name="PlayerCount" xml:space="preserve">
+    <value>Jumlah Pemain</value>
+  </data>
 </root>

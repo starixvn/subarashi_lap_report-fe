@@ -1062,4 +1062,7 @@
   <data name="Action" xml:space="preserve">
     <value>การดำเนินการ</value>
   </data>
+  <data name="PlayerCount" xml:space="preserve">
+    <value>จำนวนผู้เล่น</value>
+  </data>
 </root>

@@ -1519,7 +1519,7 @@ namespace Fanex.Athena.Report.Core.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to There are no Alert Rules configured yet.
+        ///   Looks up a localized string similar to There are no Alert Rules configured yet..
         /// </summary>
         public static string NoAlertRulesMsg {
             get {
@@ -1722,6 +1722,15 @@ namespace Fanex.Athena.Report.Core.Resources {
         public static string PlayerComm {
             get {
                 return ResourceManager.GetString("PlayerComm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Player Count.
+        /// </summary>
+        public static string PlayerCount {
+            get {
+                return ResourceManager.GetString("PlayerCount", resourceCulture);
             }
         }
         

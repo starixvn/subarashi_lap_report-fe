@@ -55,7 +55,7 @@ export const TotalCell = (props) => {
     };
 
     return (
-        <Cell colSpan="2" className="left-align" style={{ whiteSpace: 'pre-wrap' }}>
+        <Cell colSpan="3" className="left-align" style={{ whiteSpace: 'pre-wrap' }}>
             <i className={`icon-strong-arrow left ${_isDrillDown ? 'arrow-down' : 'arrow-right'}`} onClick={_handleBreakDown}>
                 {' '}
             </i>{' '}
