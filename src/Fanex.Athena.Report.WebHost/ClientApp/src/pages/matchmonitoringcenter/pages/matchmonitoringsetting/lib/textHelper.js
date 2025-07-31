@@ -1,6 +1,7 @@
 import React from 'react';
 import NumberFormat from '@/lib/numberFormat';
 import LangHelper from '@/helpers/langHelper';
+import { notifyEverys } from './constants';
 
 export const parseFormattedText = (text) => {
     if (!text) return null;
@@ -27,6 +28,13 @@ export const parseFormattedText = (text) => {
     return parts;
 };
 
+const getFormattedNotificationInterval = (interval) => {
+    if (interval === undefined) return '';
+
+    const notifyEveryOption = notifyEverys.find(n => n.key === Number(interval));
+    return notifyEveryOption?.displayValue || interval.toString();
+};
+
 export const buildConfirmMessage = (item, templateString) => {
     if (!item || !templateString) return '';
 
@@ -40,7 +48,7 @@ export const buildConfirmMessage = (item, templateString) => {
         '{2}': item.baseCurrency || '',
         '{3}': LangHelper.getSingleResource(item.conditionTypeName) || '',
         '{4}': betRatio,
-        '{5}': item.notificationInterval !== undefined ? item.notificationInterval : '',
+        '{5}': getFormattedNotificationInterval(item.notificationInterval),
     };
 
     let result = templateString;

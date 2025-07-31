@@ -955,7 +955,7 @@
     <value>**[Dan/Atau]**</value>
   </data>
   <data name="AlertRuleTxt4" xml:space="preserve">
-    <value>perbedaan rasio taruhan antara tim home dan away lebih besar dari **[Persentase Rasio %]** kirim notifikasi setiap **[Notifikasi setiap]** detik</value>
+    <value>perbedaan rasio taruhan antara tim home dan away lebih besar dari **[Persentase Rasio %]** kirim notifikasi setiap **[Notifikasi setiap]**</value>
   </data>
   <data name="Amount" xml:space="preserve">
     <value>Jumlah</value>
@@ -967,10 +967,10 @@
     <value>Konfirmasi</value>
   </data>
   <data name="CreateAlertRuleConfirmationMsg" xml:space="preserve">
-    <value>Apakah Anda yakin ingin menyimpan Aturan Peringatan baru ini: {0} (Jumlah: {1} Berdasarkan {2}, {3} Rasio: {4}%), Notifikasi setiap {5} detik</value>
+    <value>Apakah Anda yakin ingin menyimpan Aturan Peringatan baru ini: {0} (Jumlah: {1} Berdasarkan {2}, {3} Rasio: {4}%), Notifikasi: {5}?</value>
   </data>
   <data name="DeleteAlterRuleConfirmationMsg" xml:space="preserve">
-    <value>Apakah Anda yakin ingin menghapus Aturan Peringatan ini: {0} (Jumlah: {1} Berdasarkan {2}, {3} Rasio: {4}%), Notifikasi setiap {5} detik</value>
+    <value>Apakah Anda yakin ingin menghapus Aturan Peringatan ini: {0} (Jumlah: {1} Berdasarkan {2}, {3} Rasio: {4}%), Notifikasi: {5}?</value>
   </data>
   <data name="Logs" xml:space="preserve">
     <value>Log</value>
@@ -988,7 +988,7 @@
     <value>Persentase Rasio %</value>
   </data>
   <data name="UpdateAlterRuleConfirmationMsg" xml:space="preserve">
-    <value>Apakah Anda yakin ingin memperbarui Aturan Peringatan ini: {0} (Jumlah: {1} Berdasarkan {2}, {3} Rasio: {4}%), Notifikasi setiap {5} detik</value>
+    <value>Apakah Anda yakin ingin memperbarui Aturan Peringatan ini: {0} (Jumlah: {1} Berdasarkan {2}, {3} Rasio: {4}%), Notifikasi: {5}?</value>
   </data>
   <data name="AlertLevelName" xml:space="preserve">
     <value>Nama Level Peringatan</value>
@@ -1055,5 +1055,8 @@
   </data>
   <data name="PlayerCount" xml:space="preserve">
     <value>Jumlah Pemain</value>
+  </data>
+  <data name="OnlyOnce" xml:space="preserve">
+    <value>Hanya sekali</value>
   </data>
 </root>

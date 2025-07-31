@@ -178,7 +178,7 @@ namespace Fanex.Athena.Report.Core.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The betting ratio difference between the home and away teams is greater than **[Ratio %]** send a notification every **[Notify every]** seconds.
+        ///   Looks up a localized string similar to The betting ratio difference between the home and away teams is greater than **[Ratio %]** send a notification every **[Notify every]**.
         /// </summary>
         public static string AlertRuleTxt4 {
             get {
@@ -538,7 +538,7 @@ namespace Fanex.Athena.Report.Core.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Are you sure you want to save this new Alert Rule: {0} (Amount: {1} Based {2}, {3} Ratio: {4}%), Notify every {5} seconds?.
+        ///   Looks up a localized string similar to Are you sure you want to save this new Alert Rule: {0} (Amount: {1} Based {2}, {3} Ratio: {4}%), Notify: {5}?.
         /// </summary>
         public static string CreateAlertRuleConfirmationMsg {
             get {
@@ -727,7 +727,7 @@ namespace Fanex.Athena.Report.Core.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Are you sure you want to delete the Alert Rule: {0} (Amount: {1} Based {2}, {3} Ratio: {4}%), Notify every {5} seconds)?.
+        ///   Looks up a localized string similar to Are you sure you want to delete the Alert Rule: {0} (Amount: {1} Based {2}, {3} Ratio: {4}%), Notify: {5}?.
         /// </summary>
         public static string DeleteAlterRuleConfirmationMsg {
             get {
@@ -1641,6 +1641,15 @@ namespace Fanex.Athena.Report.Core.Resources {
         public static string OK {
             get {
                 return ResourceManager.GetString("OK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Only once.
+        /// </summary>
+        public static string OnlyOnce {
+            get {
+                return ResourceManager.GetString("OnlyOnce", resourceCulture);
             }
         }
         
@@ -2860,7 +2869,7 @@ namespace Fanex.Athena.Report.Core.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Are you sure you want to update this Alert Rule: {0} (Amount: {1} Based {2} , {3} Ratio: {4}%, Notify every {5} seconds)?.
+        ///   Looks up a localized string similar to Are you sure you want to update this Alert Rule: {0} (Amount: {1} Based {2} , {3} Ratio: {4}%, Notify: {5}?.
         /// </summary>
         public static string UpdateAlterRuleConfirmationMsg {
             get {

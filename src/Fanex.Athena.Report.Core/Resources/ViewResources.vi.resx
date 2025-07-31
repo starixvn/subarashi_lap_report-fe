@@ -970,7 +970,7 @@
     <value>**[Và/Hoặc]**</value>
   </data>
   <data name="AlertRuleTxt4" xml:space="preserve">
-    <value>sự chênh lệch tỷ lệ cược giữa hai đội lớn hơn **[Tỷ Lệ %]** gửi thông báo mỗi **[Thông Báo Mỗi]** giây</value>
+    <value>sự chênh lệch tỷ lệ cược giữa hai đội lớn hơn **[Tỷ Lệ %]** gửi thông báo mỗi **[Thông Báo Mỗi]**</value>
   </data>
   <data name="Amount" xml:space="preserve">
     <value>Số Tiền</value>
@@ -982,10 +982,10 @@
     <value>Xác Nhận</value>
   </data>
   <data name="CreateAlertRuleConfirmationMsg" xml:space="preserve">
-    <value>Bạn có chắc muốn lưu Quy Tắc Cảnh Báo mới này không: {0} (Số Tiền: {1} Dựa trên {2}, {3} Tỷ Lệ: {4}%), Thông báo mỗi {5} giây</value>
+    <value>Bạn có chắc muốn lưu Quy Tắc Cảnh Báo mới này không: {0} (Số Tiền: {1} Dựa trên {2}, {3} Tỷ Lệ: {4}%), Thông báo: {5}?</value>
   </data>
   <data name="DeleteAlterRuleConfirmationMsg" xml:space="preserve">
-    <value>Bạn có chắc muốn xoá Quy Tắc Cảnh Báo này không: {0} (Số Tiền: {1} Dựa trên {2}, {3} Tỷ Lệ: {4}%), Thông báo mỗi {5} giây</value>
+    <value>Bạn có chắc muốn xoá Quy Tắc Cảnh Báo này không: {0} (Số Tiền: {1} Dựa trên {2}, {3} Tỷ Lệ: {4}%), Thông báo: {5}?</value>
   </data>
   <data name="Logs" xml:space="preserve">
     <value>Nhật Ký</value>
@@ -1003,7 +1003,7 @@
     <value>Tỷ Lệ %</value>
   </data>
   <data name="UpdateAlterRuleConfirmationMsg" xml:space="preserve">
-    <value>Bạn có chắc muốn cập nhật Quy Tắc Cảnh Báo này không: {0} (Số Tiền: {1} Dựa trên {2}, {3} Tỷ Lệ: {4}%), Thông báo mỗi {5} giây</value>
+    <value>Bạn có chắc muốn cập nhật Quy Tắc Cảnh Báo này không: {0} (Số Tiền: {1} Dựa trên {2}, {3} Tỷ Lệ: {4}%), Thông báo: {5}?</value>
   </data>
   <data name="AlertLevelName" xml:space="preserve">
     <value>Tên Mức Cảnh Báo</value>
@@ -1070,5 +1070,8 @@
   </data>
   <data name="PlayerCount" xml:space="preserve">
     <value>Số lượng người chơi</value>
+  </data>
+  <data name="OnlyOnce" xml:space="preserve">
+    <value>Chỉ một lần</value>
   </data>
 </root>

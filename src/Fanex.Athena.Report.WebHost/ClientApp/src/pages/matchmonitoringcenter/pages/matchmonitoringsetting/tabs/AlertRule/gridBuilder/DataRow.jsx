@@ -19,6 +19,13 @@ import {
     deleteAlertRule,
 } from '../../../lib/service';
 
+const getFormattedNotificationInterval = (interval) => {
+    if (interval === undefined) return '';
+
+    const notifyEveryOption = notifyEverys.find(n => n.key === interval);
+    return notifyEveryOption?.displayValue || interval.toString();
+};
+
 const DataRow = ({ item: initialItem, baseCurrencyList, defaultBaseCurrency, onDataChanged }) => {
     const { setSweetAlertOption } = ActionCreators;
     const [isEdited, setIsEdited] = useState(false);
@@ -162,7 +169,7 @@ const DataRow = ({ item: initialItem, baseCurrencyList, defaultBaseCurrency, onD
                     <Cell className="left-align">{LangHelper.getSingleResource(item.conditionTypeName)}</Cell>
                     <Cell className="left-align">{item.alertRule?.betRatio}%</Cell>
                     <Cell className="left-align">
-                        {item.notificationInterval} {LangHelper.getSingleResource('seconds')}
+                        {getFormattedNotificationInterval(item.notificationInterval)}
                     </Cell>
                     <Cell className="center-align">
                         <ActionCell isEdited={isEdited} onEditClick={handleEditClick} onCloseClick={handleCloseClick} />
@@ -220,9 +227,7 @@ const DataRow = ({ item: initialItem, baseCurrencyList, defaultBaseCurrency, onD
                             fieldKey="notificationInterval"
                             dataSource={notifyEverys}
                             onChange={handleCellChange}
-                            width="50%"
-                        />{' '}
-                        {LangHelper.getSingleResource('seconds')}
+                        />
                     </Cell>
                     <Cell className="center-align">
                         <ActionCell isEdited={isEdited} onSaveClick={handleSaveClick} onCloseClick={handleCloseClick} />

@@ -22,14 +22,6 @@ export const handleCellChangeValue = (setItemState, fieldKey, value) => {
                 [fieldKey]: value,
             },
         }));
-    } else if (fieldKey === 'conditionTypeName') {
-        const condition = conditions.find(c => c.value === value);
-        const conditionKey = condition ? condition.key : value;
-
-        setItemState((prevItem) => ({
-            ...prevItem,
-            [fieldKey]: conditionKey,
-        }));
     } else {
         setItemState((prevItem) => ({
             ...prevItem,
