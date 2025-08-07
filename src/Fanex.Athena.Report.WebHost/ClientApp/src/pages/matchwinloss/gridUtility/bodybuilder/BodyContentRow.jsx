@@ -114,7 +114,7 @@ function BodyContentRow(props) {
             EventType: match.eventType,
             Rows: 50,
             Page: 1,
-            SortOrder: 'asc',
+            SortOrder: 1,
         };
 
         if (requestParam.SubsidiaryList) {
