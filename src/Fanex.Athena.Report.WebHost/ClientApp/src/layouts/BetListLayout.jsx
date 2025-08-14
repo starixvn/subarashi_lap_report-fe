@@ -4,13 +4,13 @@ import PropTypes from 'prop-types';
 import Popup from '@/components/Popup';
 import GtagHelper from '@/helpers/gtagHelper';
 
-const BetListLayout = (props) => {
+const BetListLayout = ({ pageName, rootUrl = '/', baseCurrency = '', beforeShowFunc, afterShowFunc, formatDateStringFunc, children }) => {
     const [isShowPopup, setIsShowPopup] = useState(false);
     const [popupUrl, setPopupUrl] = useState(null);
     const [popupTitle, setPopupTitle] = useState(null);
 
     useEffect(() => {
-        GtagHelper.logOpenBetlist(props.pageName);
+        GtagHelper.logOpenBetlist(pageName);
         window.openPopup = openPopup;
         window.getResource = null; //use resource from BetTicket site
         window.formatDateString = formatDateString;
@@ -19,18 +19,18 @@ const BetListLayout = (props) => {
         window.getBaseCurrency = getBaseCurrency;
         window.getAccessToken = getAccessToken;
         window.getLanguage = getLanguage;
-    }, [props.pageName]);
+    }, [pageName]);
 
     const formatDateString = (dateString) => {
-        return props.formatDateStringFunc ? props.formatDateStringFunc(dateString) : dateString;
+        return formatDateStringFunc ? formatDateStringFunc(dateString) : dateString;
     };
 
     const beforeShow = () => {
-        props.beforeShowFunc && props.beforeShowFunc();
+        beforeShowFunc && beforeShowFunc();
     };
 
     const afterShow = () => {
-        props.afterShowFunc && props.afterShowFunc();
+        afterShowFunc && afterShowFunc();
     };
 
     const openPopup = (url, title) => {
@@ -44,7 +44,7 @@ const BetListLayout = (props) => {
     };
 
     const getBaseCurrency = () => {
-        return props.baseCurrency;
+        return baseCurrency;
     };
 
     const getAccessToken = () => {
@@ -57,7 +57,7 @@ const BetListLayout = (props) => {
 
     return (
         <div className="betlist-layout">
-            {props.children}
+            {children}
             {isShowPopup && (
                 <Popup
                     containerClassName="betlist-popup"
@@ -79,11 +79,6 @@ BetListLayout.propTypes = {
     beforeShowFunc: PropTypes.func,
     afterShowFunc: PropTypes.func,
     formatDateStringFunc: PropTypes.func,
-};
-
-BetListLayout.defaultProps = {
-    rootUrl: '/',
-    baseCurrency: '',
 };
 
 export default BetListLayout;

@@ -28,3 +28,6 @@ msbuild.wrn
 
 # publish folder
 [Pp]ublish/
+
+# test folder
+coverage/

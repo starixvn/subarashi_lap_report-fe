@@ -1,0 +1,37 @@
+import * as types from '@/actions/types'
+
+describe('action types', () => {
+	test('constants match expected values', () => {
+		expect(types.SET_DATE_RANGE).toBe('SET_DATE_RANGE')
+		expect(types.SET_DATE).toBe('SET_DATE')
+		expect(types.TOGGLE_LOADER).toBe('TOGGLE_LOADER')
+		expect(types.SET_REQUEST_PARAM).toBe('SET_REQUEST_PARAM')
+		expect(types.SET_GRID_DATA).toBe('SET_GRID_DATA')
+		expect(types.USER_GUIDE_CONTENT).toBe('USER_GUIDE_CONTENT')
+		expect(types.SET_SELECTED_PRODUCT).toBe('SET_SELECTED_PRODUCT')
+		expect(types.SET_SELECTED_CURRENCY).toBe('SET_SELECTED_CURRENCY')
+		expect(types.SET_FORM_DATA).toBe('SET_FORM_DATA')
+		expect(types.SET_REPORT_TITLE).toBe('SET_REPORT_TITLE')
+		expect(types.SET_SELECTED_BETTYPE).toBe('SET_SELECTED_BETTYPE')
+		expect(types.SET_BETTYPE_LIST).toBe('SET_BETTYPE_LIST')
+		expect(types.SET_ORIGINAL_BETTYPE_LIST).toBe('SET_ORIGINAL_BETTYPE_LIST')
+		expect(types.SET_SUBSIDIARY_LIST).toBe('SET_SUBSIDIARY_LIST')
+		expect(types.SET_SUBSIDIARY_SEARCH).toBe('SET_SUBSIDIARY_SEARCH')
+		expect(types.SET_WHITELABEL_TREE_LIST).toBe('SET_WHITELABEL_TREE_LIST')
+		expect(types.SET_SELECTED_BASECURRENCY).toBe('SET_SELECTED_BASECURRENCY')
+		expect(types.SET_BASECURRENCY_LIST).toBe('SET_BASECURRENCY_LIST')
+		expect(types.SET_SELECTED_CUSTOMERCLASS).toBe('SET_SELECTED_CUSTOMERCLASS')
+		expect(types.SET_SELECTED_RISKLEVEL).toBe('SET_SELECTED_RISKLEVEL')
+		expect(types.SET_SELECTED_STATUS).toBe('SET_SELECTED_STATUS')
+		expect(types.SET_SELECTED_LIVESTATUS).toBe('SET_SELECTED_LIVESTATUS')
+		expect(types.SET_SELECTED_PLATFORM).toBe('SET_SELECTED_PLATFORM')
+		expect(types.CHANGE_IS_CONVERT_ALL).toBe('CHANGE_IS_CONVERT_ALL')
+		expect(types.SET_USERNAME).toBe('SET_USERNAME')
+		expect(types.CHANGE_IS_EXCLUDE_TEST).toBe('CHANGE_IS_EXCLUDE_TEST')
+		expect(types.SET_SWEET_ALERT_OPTION).toBe('SET_SWEET_ALERT_OPTION')
+		expect(types.SET_SELECTED_TAB).toBe('SET_SELECTED_TAB')
+		expect(types.SET_TAB_KEYS).toBe('SET_TAB_KEYS')
+	})
+})
+
+
