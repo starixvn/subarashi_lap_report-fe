@@ -5,7 +5,7 @@ import NoDataTitle from '@/components/NoDataTitle';
 import { BuildHeaders, BuildBody } from '../lib/gridBuilder';
 
 const DataGrid = () => {
-    const gridData = useSelector(state => state.gridData);
+    const gridData = useSelector((state) => state.gridData);
 
     if (!gridData) {
         return null;
@@ -17,13 +17,7 @@ const DataGrid = () => {
 
     return (
         <div className="data-grid-container">
-            <Table
-                autoWidth={true}
-                autoHeight={true}
-                header={BuildHeaders()}
-                body={BuildBody(gridData)}
-                shouldResetScrollPosition={true}
-            />
+            <Table autoWidth={true} autoHeight={true} header={BuildHeaders()} body={BuildBody(gridData)} shouldResetScrollPosition={true} />
         </div>
     );
 };

@@ -37,7 +37,7 @@ class Cache {
             this._size++;
         }
 
-        let data = { value: value };
+        const data = { value: value };
         data.timeout = setTimeout(() => this._remove(key), time * 60000);
         this._cache[key] = data;
     }

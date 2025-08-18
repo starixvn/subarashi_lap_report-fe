@@ -15,10 +15,10 @@ export const ApiUrl = {
     EXPORT_EXCEL_URL: 'Api/MatchWinLoss/ExportExcel',
 };
 
-export const SpecialProducts = ["NG"];
+export const SpecialProducts = ['NG'];
 
 export const VsSportTypes = [181, 182, 183, 185, 198, 177, 125, 126, 127];
 
-export const SupportDrillDownProducts = ["SB", "VS", "NG"];
+export const SupportDrillDownProducts = ['SB', 'VS', 'NG'];
 
 export const MaxLength = 36;

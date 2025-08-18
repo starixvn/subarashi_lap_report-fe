@@ -6,7 +6,7 @@ const Day = ({ id, label, value, min, max, onChange }) => {
     const [showDateDrop, setShowDateDrop] = useState(false);
 
     const renderOption = (min, max, value) => {
-        let options = [];
+        const options = [];
 
         for (let i = min; i <= max; i++) {
             options.push(

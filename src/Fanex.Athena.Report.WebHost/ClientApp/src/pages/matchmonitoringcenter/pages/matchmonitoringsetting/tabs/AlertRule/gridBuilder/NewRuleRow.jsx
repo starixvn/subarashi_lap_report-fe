@@ -121,27 +121,21 @@ const NewRuleRow = ({ baseCurrencyList, defaultBaseCurrency, setAddNewRule, onDa
     return (
         <Row key="new-alert-rule">
             <Cell className="left-align">
-                <InputCell
-                    value={newItem.settingName}
-                    fieldKey="settingName"
-                    onChange={handleCellChange}
-                    max={50}
-                />
+                <InputCell value={newItem.settingName} fieldKey="settingName" onChange={handleCellChange} max={50} />
             </Cell>
             <Cell className="left-align">
-                <InputCell
-                    value={newItem.alertRule.negativeProfit}
-                    fieldKey="negativeProfit"
-                    onChange={handleCellChange}
-                    type={InputType.number}
-                    min={0}
-                />
+                <InputCell value={newItem.alertRule.negativeProfit} fieldKey="negativeProfit" onChange={handleCellChange} type={InputType.number} min={0} />
             </Cell>
             <Cell className="left-align">
                 <DropdownCell value={newItem.baseCurrency} fieldKey="baseCurrency" dataSource={baseCurrencyList} onChange={handleCellChange} />
             </Cell>
             <Cell className="left-align">
-                <DropdownCell value={LangHelper.getSingleResource(newItem.conditionTypeName)} fieldKey="conditionTypeName" dataSource={conditions} onChange={handleCellChange} />
+                <DropdownCell
+                    value={LangHelper.getSingleResource(newItem.conditionTypeName)}
+                    fieldKey="conditionTypeName"
+                    dataSource={conditions}
+                    onChange={handleCellChange}
+                />
             </Cell>
             <Cell className="left-align">
                 <InputCell
@@ -152,15 +146,11 @@ const NewRuleRow = ({ baseCurrencyList, defaultBaseCurrency, setAddNewRule, onDa
                     width="70%"
                     min={0}
                     max={100}
-                /> %
+                />{' '}
+                %
             </Cell>
             <Cell className="left-align">
-                <DropdownCell
-                    value={newItem.notificationInterval}
-                    fieldKey="notificationInterval"
-                    dataSource={notifyEverys}
-                    onChange={handleCellChange}
-                />
+                <DropdownCell value={newItem.notificationInterval} fieldKey="notificationInterval" dataSource={notifyEverys} onChange={handleCellChange} />
             </Cell>
 
             <Cell className="center-align">

@@ -30,7 +30,7 @@ const BuildDetailBody = (data) => {
 };
 
 const BuildMainBody = (data, { viewType }) => {
-    let rows = [];
+    const rows = [];
     let key = 0;
 
     for (let label = 0; label < data.length; label++) {

@@ -12,7 +12,7 @@ export const errorIconMarkup = () => {
   `;
 
     return markup;
-}
+};
 
 export const warningIconMarkup = () => {
     const icon = `${ICON}--warning`;

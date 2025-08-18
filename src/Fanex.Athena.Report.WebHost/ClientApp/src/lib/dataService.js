@@ -58,7 +58,7 @@ export default class DataService {
                 'X-Requested-With': 'XMLHttpRequest',
             },
         };
-        let requestOptions = Object.assign({}, defaultOptions, options);
+        const requestOptions = Object.assign({}, defaultOptions, options);
         return axios.post(url, params, requestOptions);
     }
 

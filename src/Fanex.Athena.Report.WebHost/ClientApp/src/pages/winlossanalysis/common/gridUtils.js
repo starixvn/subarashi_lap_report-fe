@@ -10,7 +10,7 @@ export const renderHeader = (option) => {
 
     const _renderDefaultHeader = () => {
         const prefixKey = 'hearder-default';
-        let headerCells = [
+        const headerCells = [
             <HeaderCell className="border-left-0" key={`${prefixKey}-#`} colWidth={30}>
                 #
             </HeaderCell>,
@@ -24,7 +24,7 @@ export const renderHeader = (option) => {
 
     const _renderGroupByPlayerModeHeaderCell = () => {
         const prefixKey = 'hearder-player';
-        let headerCells = [
+        const headerCells = [
             <HeaderCell key={`${prefixKey}-#`} className="border-left-0" rowSpan={2} colWidth={30}>
                 #
             </HeaderCell>,
@@ -47,7 +47,7 @@ export const renderHeader = (option) => {
     };
 
     const getCommonHeaderCells = (rowSpan, prefixKey) => {
-        let firstGroup = [
+        const firstGroup = [
             <HeaderCell key={`${prefixKey}-${HeaderText.BetCount}`} sortBy={SortBy.BetCount} rowSpan={rowSpan} colWidth={80}>
                 {HeaderText.BetCount}
             </HeaderCell>,
@@ -61,7 +61,7 @@ export const renderHeader = (option) => {
                 {HeaderText.PlayerWL}
             </HeaderCell>,
         ];
-        let secondGroup = [
+        const secondGroup = [
             <HeaderCell key={`${prefixKey}-${HeaderText.PlayerComm}`} sortBy={SortBy.MemComm} rowSpan={rowSpan} colWidth={110}>
                 {HeaderText.PlayerComm}
             </HeaderCell>,
@@ -75,7 +75,7 @@ export const renderHeader = (option) => {
                 {HeaderText.Margin}
             </HeaderCell>,
         ];
-        let effectiveBetCell = (
+        const effectiveBetCell = (
             <HeaderCell key={`${prefixKey}-${HeaderText.EffectiveBettingValue}`} sortBy={SortBy.BetEffective} rowSpan={rowSpan} colWidth={110}>
                 {HeaderText.EffectiveBettingValue}
             </HeaderCell>

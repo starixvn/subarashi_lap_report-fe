@@ -34,8 +34,7 @@ const DropdownCell = ({ value, fieldKey, dataSource, onChange, width = '100%', i
             onChange={(e) => onChange(fieldKey, e.target.value)}
             value={actualValue}
             onFocus={handleFocus}
-            onBlur={handleBlur}
-        >
+            onBlur={handleBlur}>
             {enhancedDataSource.map((item) => (
                 <option key={item.key} value={item.value} disabled={item.disabled}>
                     {item.displayValue || item.value}

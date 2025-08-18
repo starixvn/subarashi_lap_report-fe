@@ -10,5 +10,5 @@ export default combineReducers({
     ...loaderReducer,
     ...gridDataReducer,
     ...filterReducer,
-    ...logReducers
+    ...logReducers,
 });

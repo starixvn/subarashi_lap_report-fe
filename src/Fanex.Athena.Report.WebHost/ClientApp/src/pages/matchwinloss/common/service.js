@@ -37,7 +37,7 @@ class Service {
 
     static convertToReportData(gridData) {
         const matches = [];
-        for (let key in gridData.leagueList) {
+        for (const key in gridData.leagueList) {
             if (gridData.leagueList.hasOwnProperty(key)) {
                 matches.push({
                     leagueId: key,
@@ -59,19 +59,18 @@ class Service {
         let awayName = match.awayName;
         if (SpecialProducts.includes(match.productName)) {
             if (matchName.length > MaxLength) {
-                matchName = `<span title='${matchName.replace(",", "&#39;")}'>${matchName.substring(0, MaxLength - 3)}...</span>`
+                matchName = `<span title='${matchName.replace(',', '&#39;')}'>${matchName.substring(0, MaxLength - 3)}...</span>`;
             }
-        }
-        else if (!VsSportTypes.includes(match.sportType)) {
+        } else if (!VsSportTypes.includes(match.sportType)) {
             if (homeName.length > MaxLength) {
-                homeName = `<span title='${homeName.replace(",", "&#39;")}'>${homeName.substring(0, MaxLength - 3)}...</span>`
+                homeName = `<span title='${homeName.replace(',', '&#39;')}'>${homeName.substring(0, MaxLength - 3)}...</span>`;
             }
 
             if (awayName.length > MaxLength) {
-                awayName = `<span title='${awayName.replace(",", "&#39;")}'>${awayName.substring(0, MaxLength - 3)}...</span>`
+                awayName = `<span title='${awayName.replace(',', '&#39;')}'>${awayName.substring(0, MaxLength - 3)}...</span>`;
             }
 
-            matchName = `${homeName}<br />${awayName}`
+            matchName = `${homeName}<br />${awayName}`;
         }
 
         return matchName;

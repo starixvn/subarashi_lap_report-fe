@@ -63,7 +63,6 @@ function DataGrid() {
         dispatch(setGridData(gridData));
     };
 
-
     return (
         <>
             <ReportTitle content={Service.generateReportTitle(FromDate, ToDate, CurrencyName, Odds, UserName)} />

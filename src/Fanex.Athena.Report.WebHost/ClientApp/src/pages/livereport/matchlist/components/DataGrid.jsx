@@ -13,7 +13,7 @@ import { BuildBody, BuildHeaders } from '../gridBuilder';
 import { ActionCreators } from '../actions';
 
 function DataGrid() {
-    let [searchParams, setSearchParams] = useSearchParams();
+    const [searchParams, setSearchParams] = useSearchParams();
 
     const dispatch = useDispatch();
     const formData = useSelector((state) => state.formData);
@@ -27,7 +27,7 @@ function DataGrid() {
         return null;
     }
 
-    const baseCurrencyText = !!searchParams.get('BaseCurrency') ? searchParams.get('BaseCurrency') : searchParams.get('CurrencyName');
+    const baseCurrencyText = searchParams.get('BaseCurrency') ? searchParams.get('BaseCurrency') : searchParams.get('CurrencyName');
 
     if (!gridData.length) {
         return (

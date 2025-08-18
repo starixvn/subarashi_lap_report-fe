@@ -24,7 +24,7 @@ function SummaryDataGrid(props) {
     const { setGridData, setRequestParam, setSelectedProductCode } = ActionCreators;
     const options = {
         hasAmountDueToColumn: formData.hasAmountDueToColumn,
-        isAllowedCustomerCommission: formData.isAllowedCustomerCommission
+        isAllowedCustomerCommission: formData.isAllowedCustomerCommission,
     };
 
     if (!summaryGridData) {
@@ -61,7 +61,7 @@ function SummaryDataGrid(props) {
         dispatch(setGridData({ ...gridData, ...data }));
     };
 
-    const currencyOption = { fromCents: false, precision: 4 }
+    const currencyOption = { fromCents: false, precision: 4 };
 
     const totalData = summaryGridData.reduce(
         (total, item) => {
@@ -82,7 +82,7 @@ function SummaryDataGrid(props) {
             licenseeComm: currency(0, currencyOption),
             amountDue: currency(0, currencyOption),
             customerWinLoss: currency(0, currencyOption),
-            customerComm: currency(0 , currencyOption),
+            customerComm: currency(0, currencyOption),
             customerTotal: currency(0, currencyOption),
         }
     );
@@ -96,7 +96,7 @@ function SummaryDataGrid(props) {
         customerWinLoss: totalData.customerWinLoss.value,
         customerComm: totalData.customerComm.value,
         customerTotal: totalData.customerTotal.value,
-    }
+    };
 
     return (
         <LiveReportTable

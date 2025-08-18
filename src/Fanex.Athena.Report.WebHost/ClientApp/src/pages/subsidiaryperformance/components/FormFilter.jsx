@@ -100,7 +100,7 @@ const FormFilter = (props) => {
 
     const onChangeSubsidiary = (currentItem, selectedItemsKey, treeViewList) => {
         if (formData.viewType === SubsidiaryViewType.MASTER_MANAGEMENT) {
-            let selectedParentItems = [];
+            const selectedParentItems = [];
             for (let i = 0; i < treeViewList.length; i++) {
                 const item = treeViewList[i];
                 if (item.checked && item.level === 1 && selectedParentItems.indexOf(item.parentKey) < 0) {

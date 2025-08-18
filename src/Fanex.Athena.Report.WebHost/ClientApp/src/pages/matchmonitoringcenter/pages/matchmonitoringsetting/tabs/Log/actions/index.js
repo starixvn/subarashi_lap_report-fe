@@ -8,27 +8,27 @@ export const ACTION_TYPES = {
     SET_SELECTED_LOG_TYPES: 'SET_SELECTED_LOG_TYPES',
     SET_SELECTED_ACTIONS: 'SET_SELECTED_ACTIONS',
     SET_REQUEST_PARAM: 'SET_REQUEST_PARAM',
-    SET_ACTION_OPTIONS: 'SET_ACTION_OPTIONS'
+    SET_ACTION_OPTIONS: 'SET_ACTION_OPTIONS',
 };
 
 export const setSelectedLogTypes = (logTypes) => ({
     type: ACTION_TYPES.SET_SELECTED_LOG_TYPES,
-    payload: logTypes
+    payload: logTypes,
 });
 
 export const setSelectedActions = (actions) => ({
     type: ACTION_TYPES.SET_SELECTED_ACTIONS,
-    payload: actions
+    payload: actions,
 });
 
 export const setRequestParam = (params) => ({
     type: ACTION_TYPES.SET_REQUEST_PARAM,
-    payload: params
+    payload: params,
 });
 
 export const setActionOptions = (options) => ({
     type: ACTION_TYPES.SET_ACTION_OPTIONS,
-    payload: options
+    payload: options,
 });
 
 export const getActionList = (logTypes) => {
@@ -38,10 +38,12 @@ export const getActionList = (logTypes) => {
                 const state = getState();
                 const currentFormData = state.formData || {};
 
-                dispatch(formDataAction.setFormData({
-                    ...currentFormData,
-                    actionOptions: []
-                }));
+                dispatch(
+                    formDataAction.setFormData({
+                        ...currentFormData,
+                        actionOptions: [],
+                    })
+                );
 
                 dispatch(setSelectedActions(''));
                 return;
@@ -50,21 +52,23 @@ export const getActionList = (logTypes) => {
             const response = await DataService.getReportData(ApiUrl.GET_ACTION_LIST, { logTypes });
 
             if (response && response.data) {
-                const actionOptions = response.data.map(item => ({
+                const actionOptions = response.data.map((item) => ({
                     ...item,
-                    status: true
+                    status: true,
                 }));
 
                 const state = getState();
                 const currentFormData = state.formData || {};
 
-                dispatch(formDataAction.setFormData({
-                    ...currentFormData,
-                    actionOptions: actionOptions
-                }));
+                dispatch(
+                    formDataAction.setFormData({
+                        ...currentFormData,
+                        actionOptions: actionOptions,
+                    })
+                );
 
                 if (actionOptions.length > 0) {
-                    const actionKeys = actionOptions.map(item => item.key).join(',');
+                    const actionKeys = actionOptions.map((item) => item.key).join(',');
                     dispatch(setSelectedActions(actionKeys));
                 } else {
                     dispatch(setSelectedActions(''));
@@ -83,28 +87,28 @@ const getInitFormData = () => {
             const data = response.data;
 
             if (data.logTypeOptions) {
-                data.logTypeOptions = data.logTypeOptions.map(item => ({
+                data.logTypeOptions = data.logTypeOptions.map((item) => ({
                     ...item,
-                    status: true
+                    status: true,
                 }));
             }
 
             if (data.actionOptions) {
-                data.actionOptions = data.actionOptions.map(item => ({
+                data.actionOptions = data.actionOptions.map((item) => ({
                     ...item,
-                    status: true
+                    status: true,
                 }));
             }
 
             dispatch(formDataAction.setFormData(data));
 
             if (data.logTypeOptions && data.logTypeOptions.length > 0) {
-                const logTypeKeys = data.logTypeOptions.map(item => item.key).join(',');
+                const logTypeKeys = data.logTypeOptions.map((item) => item.key).join(',');
                 dispatch(setSelectedLogTypes(logTypeKeys));
             }
 
             if (data.actionOptions && data.actionOptions.length > 0) {
-                const actionKeys = data.actionOptions.map(item => item.key).join(',');
+                const actionKeys = data.actionOptions.map((item) => item.key).join(',');
                 dispatch(setSelectedActions(actionKeys));
             }
 
@@ -144,5 +148,5 @@ export const ActionCreators = {
     setActionOptions,
     getActionList,
     getInitFormData,
-    fetchLogData
+    fetchLogData,
 };

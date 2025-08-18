@@ -49,22 +49,12 @@ export const buildAlertOptionForMissingFields = (handleCloseAlert) => {
 export const validateAlertRuleItem = (item) => {
     const isValidSettingName = item.settingName && item.settingName.trim() !== '';
 
-    const isValidNegativeProfit = item.alertRule?.negativeProfit !== undefined &&
-        !isNaN(parseFloat(item.alertRule.negativeProfit)) &&
-        parseFloat(item.alertRule.negativeProfit) >= 0;
+    const isValidNegativeProfit =
+        item.alertRule?.negativeProfit !== undefined && !isNaN(parseFloat(item.alertRule.negativeProfit)) && parseFloat(item.alertRule.negativeProfit) >= 0;
 
-    const isValidBetRatio = item.alertRule?.betRatio !== undefined &&
-        !isNaN(parseFloat(item.alertRule.betRatio)) &&
-        parseFloat(item.alertRule.betRatio) >= 0;
+    const isValidBetRatio = item.alertRule?.betRatio !== undefined && !isNaN(parseFloat(item.alertRule.betRatio)) && parseFloat(item.alertRule.betRatio) >= 0;
 
-    return !!(
-        isValidSettingName &&
-        item.baseCurrency &&
-        item.conditionTypeName &&
-        item.notificationInterval &&
-        isValidNegativeProfit &&
-        isValidBetRatio
-    );
+    return !!(isValidSettingName && item.baseCurrency && item.conditionTypeName && item.notificationInterval && isValidNegativeProfit && isValidBetRatio);
 };
 
 export const buildConfirmAlertOption = (item, templateKey, buildConfirmMessage, handleCloseAlert, confirmProps, cancelProps) => {
@@ -108,11 +98,9 @@ export const createAlertRule = async (item, monitoringID, dispatch, setAddNewRul
             let message;
             if (result.data && result.data.code === 14) {
                 message = LangHelper.getSingleResource('SettingNameAlreadyExistsMsg');
-            }
-            else if (result.data && result.data.code === 21) {
+            } else if (result.data && result.data.code === 21) {
                 message = LangHelper.getSingleResource('SettingAlreadyExisted');
-            }
-            else {
+            } else {
                 message = result.data ? result.data.message : 'Failed to create alert rule';
             }
             alert(message);
@@ -150,11 +138,9 @@ export const updateAlertRule = async (item, dispatch, setIsEdited, onDataChanged
             let message;
             if (result.data && result.data.code === 14) {
                 message = LangHelper.getSingleResource('SettingNameAlreadyExistsMsg');
-            }
-            else if (result.data && result.data.code === 21) {
+            } else if (result.data && result.data.code === 21) {
                 message = LangHelper.getSingleResource('SettingAlreadyExisted');
-            }
-            else {
+            } else {
                 message = result.data ? result.data.message : 'Failed to update alert rule';
             }
             alert(message);

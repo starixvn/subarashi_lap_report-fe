@@ -9,7 +9,7 @@ import useSubsidiarySearch from '@/hooks/useSubsidiarySearch';
 
 const SubsidiaryDropDownFilter = (props) => {
     const formData = useSelector((state) => state.formData);
-    const {onChange, isValid} = props
+    const { onChange, isValid } = props;
     const { isWhiteLabelView } = useSubsidiarySearch();
     const _renderSubsidiaryTreeView = () => {
         return (

@@ -23,10 +23,9 @@ const getSportList = (productCodes) => {
         const data = response.data;
 
         if (data && Array.isArray(data)) {
-            const sbParent = data.find(item => item && item.ID === 0 && item.Value === "SB");
+            const sbParent = data.find((item) => item && item.ID === 0 && item.Value === 'SB');
             if (sbParent && sbParent.Children && Array.isArray(sbParent.Children)) {
-                sbParent.Children = sbParent.Children.filter(child =>
-                    child && (child.ID !== -1 || child.Value !== "-1"));
+                sbParent.Children = sbParent.Children.filter((child) => child && (child.ID !== -1 || child.Value !== '-1'));
             }
         }
 

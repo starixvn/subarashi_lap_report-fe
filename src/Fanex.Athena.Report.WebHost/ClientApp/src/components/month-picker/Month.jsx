@@ -37,7 +37,7 @@ const Month = ({ id, label, value, min, max, onChange }) => {
     };
 
     const renderOption = (min, max, value) => {
-        let options = [];
+        const options = [];
         for (let i = min.year; i <= max.year; i++) {
             if (i === expandYear) {
                 options.push(

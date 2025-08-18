@@ -15,5 +15,5 @@ const breadcrumbParams = createReducer(null, {
 
 export default {
     reportFilter,
-    breadcrumbParams
+    breadcrumbParams,
 };

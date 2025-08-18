@@ -43,7 +43,7 @@ export const useFilterAction = () => {
         formData,
         selectedViewInTime,
         selectedHour,
-        defaultState
+        defaultState,
     ] = useSelector(
         (state) => [
             state.requestParam,
@@ -106,7 +106,7 @@ export const useFilterAction = () => {
         setAppUuid,
         setProductList,
         setSelectedViewInTime,
-        setHour
+        setHour,
     } = ActionCreators;
 
     const _buildTitle = (params) => {
@@ -116,10 +116,10 @@ export const useFilterAction = () => {
             'BaseCurrency'
         )}: ${BaseCurrencyName}`;
         const productText = `, ${LangHelper.getSingleResource('LicenseeW_L')} (${ProductCodes})`;
-        const userText = !!SearchUserName ? `, ${LangHelper.getSingleResource('Username')}: ${SearchUserName}` : '';
-        const viewinTimeText = ` - ${ViewInTime == ViewInTimeMode.Settlement ? LangHelper.getSingleResource("SettlementTime") : LangHelper.getSingleResource("FinancialDate")}`;
+        const userText = SearchUserName ? `, ${LangHelper.getSingleResource('Username')}: ${SearchUserName}` : '';
+        const viewinTimeText = ` - ${ViewInTime == ViewInTimeMode.Settlement ? LangHelper.getSingleResource('SettlementTime') : LangHelper.getSingleResource('FinancialDate')}`;
 
-        return LangHelper.getSingleResource("WinlossAnalysis") + viewinTimeText + dateRangeText + currencyText + productText + userText;
+        return LangHelper.getSingleResource('WinlossAnalysis') + viewinTimeText + dateRangeText + currencyText + productText + userText;
     };
     const _getParams = () => {
         if (!isValidModel) {

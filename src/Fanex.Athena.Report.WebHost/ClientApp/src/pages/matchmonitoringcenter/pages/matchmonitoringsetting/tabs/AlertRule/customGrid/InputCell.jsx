@@ -113,21 +113,24 @@ const InputCell = ({ value, fieldKey, onChange, type = InputType.text, width = '
         e.target.style.borderBottomColor = '#2196F3';
     }, []);
 
-    const handleBlur = useCallback((e) => {
-        e.target.style.borderBottomColor = '#ccc';
+    const handleBlur = useCallback(
+        (e) => {
+            e.target.style.borderBottomColor = '#ccc';
 
-        if (type === InputType.number && e.target.value && e.target.value.includes('.')) {
-            const formattedValue = limitDecimalPlaces(e.target.value);
-            if (formattedValue !== e.target.value) {
-                e.target.value = formattedValue;
-                if (fieldKey) {
-                    onChange(fieldKey, formattedValue);
-                } else {
-                    onChange(formattedValue);
+            if (type === InputType.number && e.target.value && e.target.value.includes('.')) {
+                const formattedValue = limitDecimalPlaces(e.target.value);
+                if (formattedValue !== e.target.value) {
+                    e.target.value = formattedValue;
+                    if (fieldKey) {
+                        onChange(fieldKey, formattedValue);
+                    } else {
+                        onChange(formattedValue);
+                    }
                 }
             }
-        }
-    }, [type, fieldKey, onChange]);
+        },
+        [type, fieldKey, onChange]
+    );
 
     const inputProps = {
         type,
@@ -136,7 +139,7 @@ const InputCell = ({ value, fieldKey, onChange, type = InputType.text, width = '
         onKeyDown: handleKeyDown,
         onFocus: handleFocus,
         onBlur: handleBlur,
-        style: inputStyle
+        style: inputStyle,
     };
 
     if (type === InputType.number) {

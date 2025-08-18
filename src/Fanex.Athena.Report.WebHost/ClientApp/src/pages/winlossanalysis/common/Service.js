@@ -58,12 +58,14 @@ export default class Service {
 
     static buildGroupByOption = (selectedViewInTime, licenseeName) => {
         return this.isOneTwoBetLicensee(licenseeName)
-            ? GroupByList.filter(item => selectedViewInTime === ViewInTimeMode.Settlement || item.value !== GroupByMode.Hour)
-            : GroupByList.filter(item => item.value !== GroupByMode.Agent && (selectedViewInTime === ViewInTimeMode.Settlement || item.value !== GroupByMode.Hour));
+            ? GroupByList.filter((item) => selectedViewInTime === ViewInTimeMode.Settlement || item.value !== GroupByMode.Hour)
+            : GroupByList.filter(
+                  (item) => item.value !== GroupByMode.Agent && (selectedViewInTime === ViewInTimeMode.Settlement || item.value !== GroupByMode.Hour)
+              );
     };
 
     static buildBreakDownOptionFromGroupByMode = (groupByMode, licenseeName) => {
-        let breakDownByOption = {
+        const breakDownByOption = {
             Product: { value: BreakdownByMode.Product, label: LangHelper.getSingleResource('Product'), isDisabled: false },
             Currency: { value: BreakdownByMode.Currency, label: LangHelper.getSingleResource('Currency'), isDisabled: false },
             Player: { value: BreakdownByMode.Player, label: LangHelper.getSingleResource('Player'), isDisabled: true },
@@ -111,7 +113,7 @@ export default class Service {
             return ALL_SELECTED_TEXT;
         }
         const currencyCodesText = currencyListIds.split(',').reduce((prev, cur, index) => {
-            let code = currencyList.find((c) => c.id == cur).value;
+            const code = currencyList.find((c) => c.id == cur).value;
             if (index === 0) {
                 return code;
             }
@@ -124,28 +126,28 @@ export default class Service {
         if (!params) {
             return;
         }
-        let totalRow = await this.getTotalRow(params);
-        let totalPage = Math.ceil(totalRow / MAX_PAGE_EXPORT_PAGE_SIZE);
+        const totalRow = await this.getTotalRow(params);
+        const totalPage = Math.ceil(totalRow / MAX_PAGE_EXPORT_PAGE_SIZE);
 
-        for (let i = 1; i <= totalPage;) {
-            let arrayTask = [];
+        for (let i = 1; i <= totalPage; ) {
+            const arrayTask = [];
             for (let j = 1; j <= NUMBER_OF_CUNCURRENT_DOWNLOAD_REQUEST && i <= totalPage; j++) {
-                let exportExcelFileParam = { ...params, PageSize: MAX_PAGE_EXPORT_PAGE_SIZE, PageIndex: i };
+                const exportExcelFileParam = { ...params, PageSize: MAX_PAGE_EXPORT_PAGE_SIZE, PageIndex: i };
                 arrayTask.push(this.downloadExcelFile(exportExcelFileParam));
                 i++;
             }
             var results = await Promise.all(arrayTask);
-            if (results.some(result => !result)) {
+            if (results.some((result) => !result)) {
                 break;
             }
         }
-    }
+    };
 
     static getTotalRow = async (params) => {
-        let queryTotalPageParams = { ...params, PageSize: 1, PageIndex: 1 };
+        const queryTotalPageParams = { ...params, PageSize: 1, PageIndex: 1 };
         var response = await DataService.postProxyData(DataService.apiKeys.report, ApiUrl.GET_DATA_URL, queryTotalPageParams);
         return response.data.totalRow;
-    }
+    };
 
     static downloadExcelFile = async (params) => {
         try {
@@ -167,18 +169,17 @@ export default class Service {
                     alert(LangHelper.getSingleResource('NoInfo'));
                 } else {
                     const fileName = params.ExportExcelMode == ExportExcelMode.All ? 'WinLossReportGroupByAndBreakdownBy' : 'WinLossReportGroupBy';
-                    const isZipFile = response.headers["content-type"] === "application/zip";
-                    const pageSuffix = isZipFile ? `_${params.PageIndex}` : "";
-                    const fileNameWithExt = `${fileName}${pageSuffix}.${isZipFile ? "zip" : "xls"}`;
+                    const isZipFile = response.headers['content-type'] === 'application/zip';
+                    const pageSuffix = isZipFile ? `_${params.PageIndex}` : '';
+                    const fileNameWithExt = `${fileName}${pageSuffix}.${isZipFile ? 'zip' : 'xls'}`;
 
                     Site.downloadFile(response.data, fileNameWithExt);
                     return true;
                 }
             }
             return false;
-        }
-        catch (error) {
+        } catch (error) {
             alert(LangHelper.getSingleResource('ErrorProcessingMsg'));
-        };
+        }
     };
 }

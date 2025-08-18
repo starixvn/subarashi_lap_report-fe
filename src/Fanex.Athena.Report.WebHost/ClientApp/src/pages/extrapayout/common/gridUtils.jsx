@@ -38,7 +38,7 @@ export const renderDataSection = (dataList, drilldownLevel, handleDrilldown, han
 };
 
 export const renderFooter = (data, drilldownLevel) => {
-    let totalRows = [];
+    const totalRows = [];
 
     const total = data.totalCurrency,
         colSpan = drilldownLevel === 0 ? 2 : 3,
@@ -98,7 +98,7 @@ const buildDataRow = (dataItem, drilldownLevel, handleDrilldown, handleDrilldown
         currency,
         currencyName,
         productCode,
-        promotionType
+        promotionType,
     } = dataItem;
 
     return (
@@ -113,8 +113,12 @@ const buildDataRow = (dataItem, drilldownLevel, handleDrilldown, handleDrilldown
                     {dateString}
                 </Cell>
             )}
-            {indexRowSpan > 0  && drilldownLevel === 1 && buildAccountText(promotionType, nickname, indexRowSpan, (e)=> handleDrilldownBetlist(e, custId, nickname, username,currencyName))}
-            {indexRowSpan > 0  && drilldownLevel === 1 && buildAccountText(promotionType, username, indexRowSpan, (e)=> handleDrilldownBetlist(e, custId, nickname, username,currencyName))}
+            {indexRowSpan > 0 &&
+                drilldownLevel === 1 &&
+                buildAccountText(promotionType, nickname, indexRowSpan, (e) => handleDrilldownBetlist(e, custId, nickname, username))}
+            {indexRowSpan > 0 &&
+                drilldownLevel === 1 &&
+                buildAccountText(promotionType, username, indexRowSpan, (e) => handleDrilldownBetlist(e, custId, nickname, username))}
             {curencyRowSpan > 0 && drilldownLevel === 0 && (
                 <Cell className="center-align" rowSpan={curencyRowSpan}>
                     <a href="#" onClick={(e) => handleDrilldown(e, currency, currencyName, date)}>
@@ -139,15 +143,17 @@ const buildDataRow = (dataItem, drilldownLevel, handleDrilldown, handleDrilldown
 };
 
 const buildAccountText = (promotionType, textValue, indexRowSpan, onClickFunc) =>
-    promotionType === PayoutPromotionType.OddsBoostAdjustment
-        && <Cell className="center-align" rowSpan={indexRowSpan}>
+    (promotionType === PayoutPromotionType.OddsBoostAdjustment && (
+        <Cell className="center-align" rowSpan={indexRowSpan}>
+            {textValue}
+        </Cell>
+    )) || (
+        <Cell className="center-align" rowSpan={indexRowSpan}>
+            <a href="#" onClick={onClickFunc}>
                 {textValue}
-            </Cell>
-        || <Cell className="center-align" rowSpan={indexRowSpan}>
-                <a href="#" onClick={onClickFunc}>
-                    {textValue}
-                </a>
-            </Cell>
+            </a>
+        </Cell>
+    );
 
 const buildCommonRow = (turnover, betCount, amount, sharingAmount, productCode) => {
     return (

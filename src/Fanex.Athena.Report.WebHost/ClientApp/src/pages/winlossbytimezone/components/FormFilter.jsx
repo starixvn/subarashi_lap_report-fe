@@ -137,7 +137,7 @@ const FormFilter = (props) => {
             return;
         }
 
-        let newSelectedBaseCurrency = currency;
+        const newSelectedBaseCurrency = currency;
         if (!formData.baseCurrencies.find((x) => x.label === currency.label)) {
             const newBaseCurrencyList = formData.baseCurrencies.slice(0);
             newBaseCurrencyList.push(currency);

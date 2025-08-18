@@ -87,7 +87,8 @@ export const AppContainer = () => {
         defaultState.selectedViewInTime = ViewInTimeMode.Financial;
 
         data.hourList = data.hourList.map((item) => ({ id: item.key, value: item.value, status: true }));
-        data.settlementTimeProductList = orgProductOptions.filter((item) => SettlementTimeSupportProductList.includes(item.code))
+        data.settlementTimeProductList = orgProductOptions
+            .filter((item) => SettlementTimeSupportProductList.includes(item.code))
             .map((item) => ({ id: item.code, value: item.name, status: true }));
         defaultState.selectedHour = 'All';
 
@@ -101,7 +102,7 @@ export const AppContainer = () => {
             dispatch(setSelectedOddsGroup(defaultState.selectedOddsGroup));
             dispatch(setSelectedCustomerClass(defaultState.selectedCustomerClass));
 
-            dispatch(setDefaultState({...DefaultState, ...defaultState}));
+            dispatch(setDefaultState({ ...DefaultState, ...defaultState }));
             dispatch(setProductList(data.productOptions));
             dispatch(setFormData(data));
         });

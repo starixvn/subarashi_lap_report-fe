@@ -47,8 +47,7 @@ export const renderDataSection = (dataList, drilldownLevel, isTotalRow) => {
                             dataRows.push(buildCurrencyDataRow(item, drilldownLevel));
                         });
                 });
-        }
-        else {
+        } else {
             detailData &&
                 dataList[i].isBreakdown &&
                 detailData.map((item) => {
@@ -65,9 +64,7 @@ const buildDataRow = (dataItem, drilldownLevel) => {
 
     return (
         <Row className="total-row" key={`total-row-${index}-${drilldownLevel}`}>
-            {(isDirectToCurrency && <GroupCell rowData={dataItem} level={drilldownLevel} />) || (
-                <TotalCell rowData={dataItem} level={drilldownLevel} />
-            )}
+            {(isDirectToCurrency && <GroupCell rowData={dataItem} level={drilldownLevel} />) || <TotalCell rowData={dataItem} level={drilldownLevel} />}
             <Cell className="right-align">{NumberFormat.format(betCount)}</Cell>
             <Cell className="right-align">{NumberFormat.formatDecimal(turnOver)}</Cell>
             <Cell className="right-align">{NumberFormat.formatDecimal(customerWL)}</Cell>

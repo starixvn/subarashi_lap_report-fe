@@ -8,7 +8,7 @@ import { SettingConst } from '../constants/settingConst';
 export const BuildBody = (data, { reportBy: selectedReportBy, groupBy }) => {
     const groupByClassName = groupBy === SettingConst.GroupByProduct ? 'left-align' : 'center-align';
 
-    let rows = [];
+    const rows = [];
     for (let i = 0; i < data.length; i++) {
         const item = data[i];
         const reportBy = moment(item.reportBy).format(selectedReportBy === 2 ? 'MM/DD/YYYY' : 'MM/YYYY');

@@ -15,7 +15,7 @@ export const AppContainer = (props) => {
     const dispatch = useDispatch();
     const isLoading = useSelector((state) => state.isLoading);
 
-    let [searchParams, setSearchParams] = useSearchParams();
+    const [searchParams, setSearchParams] = useSearchParams();
     const { sendRequest } = useToggleRequest();
     const { setGridData, setFormData, setRequestParam } = ActionCreators;
 

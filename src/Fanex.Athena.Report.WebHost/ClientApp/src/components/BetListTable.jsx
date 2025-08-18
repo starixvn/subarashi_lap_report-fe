@@ -9,7 +9,7 @@ const BetListTable = (props) => {
 
     const sortOrderMapper = {
         asc: 1,
-        desc: 2
+        desc: 2,
     };
 
     const sortTypeMapper = {
@@ -17,7 +17,7 @@ const BetListTable = (props) => {
         stake: 1,
         winloss: 2,
         licenseewl: 3,
-        betplaced: 4
+        betplaced: 4,
     };
 
     const getResource = (key) => {
@@ -40,7 +40,7 @@ const BetListTable = (props) => {
     };
 
     const buildHeader = () => {
-        let rows = [];
+        const rows = [];
         const timestamp = new Date().getTime();
         const { columns, columnWidths, sortableColumns, customHeaderCell } = props;
 
@@ -63,16 +63,16 @@ const BetListTable = (props) => {
 
     const buildBody = () => {
         const { columns, columnAlignments, data } = props;
-        let rows = [];
+        const rows = [];
         const timestamp = new Date().getTime();
 
         for (let i = 0; i < data.length; i++) {
             const item = mapData(data[i]);
-            let cells = [];
+            const cells = [];
 
             for (let j = 0; j < columns.length; j++) {
                 const column = columns[j];
-                let hasTooltip = columnAlignments[j].indexOf('tooltip') !== -1;
+                const hasTooltip = columnAlignments[j].indexOf('tooltip') !== -1;
 
                 cells.push(
                     <Cell
@@ -98,8 +98,8 @@ const BetListTable = (props) => {
 
         const { columns, totalColumns, total, totalText, columnAlignments, customFooterRow } = props;
         const startTotalIndex = columns.indexOf(totalColumns[0]);
-        let rows = [];
-        let cells = [];
+        const rows = [];
+        const cells = [];
 
         cells.push(
             <Cell key="total" className="right-align" colSpan={startTotalIndex}>

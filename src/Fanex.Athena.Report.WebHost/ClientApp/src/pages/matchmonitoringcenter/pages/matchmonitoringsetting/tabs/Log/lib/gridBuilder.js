@@ -27,16 +27,15 @@ export const BuildBody = (data) => {
         return BuildEmptyBody();
     }
 
-    var rows =
-        data.map((item, index) => (
-            <Row key={index}>
-                <Cell className="left-align">{item.timeStamp}</Cell>
-                <Cell className="left-align">{item.type}</Cell>
-                <Cell className="left-align">{item.action}</Cell>
-                <Cell className="left-align">{item.operator}</Cell>
-                <Cell className="left-align">{item.detail}</Cell>
-            </Row>
-        ));
+    var rows = data.map((item, index) => (
+        <Row key={index}>
+            <Cell className="left-align">{item.timeStamp}</Cell>
+            <Cell className="left-align">{item.type}</Cell>
+            <Cell className="left-align">{item.action}</Cell>
+            <Cell className="left-align">{item.operator}</Cell>
+            <Cell className="left-align">{item.detail}</Cell>
+        </Row>
+    ));
 
     return rows;
 };

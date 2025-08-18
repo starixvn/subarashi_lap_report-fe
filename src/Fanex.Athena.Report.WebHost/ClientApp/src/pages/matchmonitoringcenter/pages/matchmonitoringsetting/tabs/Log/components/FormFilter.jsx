@@ -9,10 +9,10 @@ import SubmitButton from '@/components/SubmitButton';
 const FormFilter = () => {
     const dispatch = useDispatch();
 
-    const formData = useSelector(state => state.formData);
-    const selectedLogTypes = useSelector(state => state.selectedLogTypes || '');
-    const selectedActions = useSelector(state => state.selectedActions || '');
-    const monitoringID = useSelector(state => state.monitoringID);
+    const formData = useSelector((state) => state.formData);
+    const selectedLogTypes = useSelector((state) => state.selectedLogTypes || '');
+    const selectedActions = useSelector((state) => state.selectedActions || '');
+    const monitoringID = useSelector((state) => state.monitoringID);
 
     const logTypeOptions = formData?.logTypeOptions || [];
     const actionOptions = formData?.actionOptions || [];
@@ -29,7 +29,7 @@ const FormFilter = () => {
     const getParams = () => {
         return {
             Actions: selectedActions,
-            MonitoringID: monitoringID
+            MonitoringID: monitoringID,
         };
     };
 

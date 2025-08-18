@@ -16,5 +16,5 @@ const setBreadcrumbParams = (data) => {
 
 export default {
     setReportFilter,
-    setBreadcrumbParams
+    setBreadcrumbParams,
 };

@@ -34,7 +34,7 @@ const DataGrid = (props) => {
     }
 
     const BuildHeaders = () => {
-        let rows = [];
+        const rows = [];
 
         for (let i = 0; i < headerColumns.length; i++) {
             const column = headerColumns[i];
@@ -58,7 +58,7 @@ const DataGrid = (props) => {
     };
 
     const BuildBody = () => {
-        let rows = [];
+        const rows = [];
         const spanLength = headerColumns.length + (formData.hasSettingPermission ? 1 : 0);
         const { running: runningData, settled: settledData } = gridData;
         const runningGroupedData = {};
@@ -148,7 +148,7 @@ const DataGrid = (props) => {
         };
 
         const BuildAlertRules = (alertRules) => {
-            let rows = [];
+            const rows = [];
             alertRules.forEach((rule, index) => {
                 rows.push(<span key={`alert rule-${index}`}>- {rule}</span>);
                 if (index < alertRules.length - 1) {
@@ -172,7 +172,7 @@ const DataGrid = (props) => {
                 );
             }
 
-            let data = [];
+            const data = [];
             data.push({ name: homeName, value: homeStake });
             data.push({ name: awayName, value: awayStake });
             return (

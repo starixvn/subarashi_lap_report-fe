@@ -31,7 +31,7 @@ const tryAddPageToSession = (pathName) => {
         savedPages[pathName] = true;
     }
 
-    for (let key in savedPages) {
+    for (const key in savedPages) {
         if (savedPages.hasOwnProperty(key) && savedPages[key]) {
             sessionStorage.removeItem(key);
         }

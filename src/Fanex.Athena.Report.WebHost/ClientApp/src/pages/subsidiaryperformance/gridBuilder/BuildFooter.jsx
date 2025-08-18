@@ -13,7 +13,7 @@ const buildDetailFooter = ({ totalData, grandTotalData }, { baseCurrency }) => {
     const subs = Object.keys(totalData);
     const rowSpan = subs.length;
 
-    let footer = [];
+    const footer = [];
     for (let i = 0; i < rowSpan; i++) {
         const totalName = subs[i];
         const item = totalData[totalName];
@@ -60,7 +60,7 @@ const buildMainFooter = ({ totalData, grandTotalData }, { viewType }) => {
     const subs = Object.keys(totalData);
     const colSpan = viewType === SubsidiaryViewType.MASTER_MANAGEMENT ? 2 : 1;
 
-    let footer = [];
+    const footer = [];
     for (let i = 0; i < subs.length; i++) {
         const totalName = subs[i];
         const item = totalData[totalName];

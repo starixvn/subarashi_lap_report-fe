@@ -22,7 +22,7 @@ import {
 const getFormattedNotificationInterval = (interval) => {
     if (interval === undefined) return '';
 
-    const notifyEveryOption = notifyEverys.find(n => n.key === interval);
+    const notifyEveryOption = notifyEverys.find((n) => n.key === interval);
     return notifyEveryOption?.displayValue || interval.toString();
 };
 
@@ -168,9 +168,7 @@ const DataRow = ({ item: initialItem, baseCurrencyList, defaultBaseCurrency, onD
                     <Cell className="left-align">{item.baseCurrency}</Cell>
                     <Cell className="left-align">{LangHelper.getSingleResource(item.conditionTypeName)}</Cell>
                     <Cell className="left-align">{item.alertRule?.betRatio}%</Cell>
-                    <Cell className="left-align">
-                        {getFormattedNotificationInterval(item.notificationInterval)}
-                    </Cell>
+                    <Cell className="left-align">{getFormattedNotificationInterval(item.notificationInterval)}</Cell>
                     <Cell className="center-align">
                         <ActionCell isEdited={isEdited} onEditClick={handleEditClick} onCloseClick={handleCloseClick} />
                     </Cell>
@@ -178,12 +176,7 @@ const DataRow = ({ item: initialItem, baseCurrencyList, defaultBaseCurrency, onD
             ) : (
                 <>
                     <Cell className="left-align">
-                        <InputCell
-                            value={item.settingName}
-                            fieldKey="settingName"
-                            onChange={handleCellChange}
-                            max={50}
-                        />
+                        <InputCell value={item.settingName} fieldKey="settingName" onChange={handleCellChange} max={50} />
                     </Cell>
                     <Cell className="left-align">
                         <InputCell
@@ -219,7 +212,8 @@ const DataRow = ({ item: initialItem, baseCurrencyList, defaultBaseCurrency, onD
                             width="70%"
                             min={0}
                             max={100}
-                        /> %
+                        />{' '}
+                        %
                     </Cell>
                     <Cell className="left-align">
                         <DropdownCell

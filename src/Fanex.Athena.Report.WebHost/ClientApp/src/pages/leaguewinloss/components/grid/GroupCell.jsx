@@ -7,8 +7,19 @@ import { ApiUrl, ReportLevel } from '../../common/constants';
 import DataService from '@/lib/dataService';
 
 export const GroupCell = (props) => {
-    const { rowData, level, reportData, requestParam, setReportData, toggleLoader, setReloadReport, setRequestParam, getReportData, setBreadcrumbParams, breadcrumbParams } =
-        props;
+    const {
+        rowData,
+        level,
+        reportData,
+        requestParam,
+        setReportData,
+        toggleLoader,
+        setReloadReport,
+        setRequestParam,
+        getReportData,
+        setBreadcrumbParams,
+        breadcrumbParams,
+    } = props;
     const _isDrillDown = !!rowData.isBreakdown;
     const _isDirectToCurrency = !!rowData.isDirectToCurrency;
 
@@ -47,7 +58,7 @@ export const GroupCell = (props) => {
         }
 
         toggleLoader(true);
-        let drillDownData = await _fetchBreakDownCurrencyData();
+        const drillDownData = await _fetchBreakDownCurrencyData();
 
         if (drillDownData) {
             newDataList[itemIndex].detail = drillDownData.data;
@@ -119,7 +130,14 @@ export const GroupCell = (props) => {
     };
 
     const _fetchBreakDownCurrencyData = async () => {
-        const params = { ...requestParam, leagueId: rowData.leagueId, eventType: rowData.eventType, betTypeId: rowData.betTypeId, matchId: rowData.matchId, ProductCodeList: rowData.productGroup };
+        const params = {
+            ...requestParam,
+            leagueId: rowData.leagueId,
+            eventType: rowData.eventType,
+            betTypeId: rowData.betTypeId,
+            matchId: rowData.matchId,
+            ProductCodeList: rowData.productGroup,
+        };
 
         try {
             const response = await DataService.postReportData(ApiUrl.REPORT_CURRENCY_DATA_URL, params);
@@ -208,7 +226,10 @@ export const GroupCell = (props) => {
 
 function mapDispatchToProps(dispatch) {
     const { getReportData, toggleLoader, setRequestParam, setReportData, setReloadReport, setBreadcrumbParams } = ActionCreators;
-    return bindActionCreators(Object.assign({}, { getReportData, toggleLoader, setRequestParam, setReportData, setReloadReport, setBreadcrumbParams }), dispatch);
+    return bindActionCreators(
+        Object.assign({}, { getReportData, toggleLoader, setRequestParam, setReportData, setReloadReport, setBreadcrumbParams }),
+        dispatch
+    );
 }
 
 function mapStateToProps(state) {

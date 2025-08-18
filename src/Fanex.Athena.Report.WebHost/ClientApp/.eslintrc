@@ -18,13 +18,20 @@
     },
     "plugins": ["react"],
     "extends": [
-        // "eslint:recommended",
+        "eslint:recommended",
         "plugin:prettier/recommended",
         "plugin:react/recommended"
     ],
     "rules": {
         "react/prop-types": "off",
         "react/no-unescaped-entities": 0,
+        "no-unused-vars": "error",
+        "no-undef": "error",
+        "no-redeclare": "error",
+        "no-unreachable": "error",
+        "no-duplicate-imports": "error",
+        "no-console": "warn",
+        "prefer-const": "error",
         "prettier/prettier": [
             "warn",
             {

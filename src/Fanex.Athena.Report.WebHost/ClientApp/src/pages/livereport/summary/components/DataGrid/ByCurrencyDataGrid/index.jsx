@@ -12,7 +12,7 @@ function ByCurrencyDataGrid() {
 
     const options = {
         hasAmountDueToColumn: formData.hasAmountDueToColumn,
-        isAllowedCustomerCommission: formData.isAllowedCustomerCommission
+        isAllowedCustomerCommission: formData.isAllowedCustomerCommission,
     };
 
     if (!selectedProductCode || !gridData || !gridData.length) {

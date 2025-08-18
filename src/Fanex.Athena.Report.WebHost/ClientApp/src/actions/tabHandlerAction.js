@@ -1,15 +1,15 @@
 import { SET_SELECTED_TAB, SET_TAB_KEYS } from './types';
 
-export const setSelectedTab = selectedTabKey => {
+export const setSelectedTab = (selectedTabKey) => {
     return {
         type: SET_SELECTED_TAB,
-        data: selectedTabKey
-    }
-}
+        data: selectedTabKey,
+    };
+};
 
-export const setTabKeys = tabKeys => {
+export const setTabKeys = (tabKeys) => {
     return {
         type: SET_TAB_KEYS,
-        data: tabKeys
-    }
-}
+        data: tabKeys,
+    };
+};

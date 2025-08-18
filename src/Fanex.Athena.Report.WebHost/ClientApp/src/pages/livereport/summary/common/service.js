@@ -26,7 +26,7 @@ class Service {
                 newSportId === 177 ||
                 newSportId === 198 ||
                 newSportId === 134 ||
-                newSportId === 147||
+                newSportId === 147 ||
                 newSportId === 125 ||
                 newSportId === 126 ||
                 newSportId === 127

@@ -31,7 +31,7 @@ export const parseFormattedText = (text) => {
 const getFormattedNotificationInterval = (interval) => {
     if (interval === undefined) return '';
 
-    const notifyEveryOption = notifyEverys.find(n => n.key === Number(interval));
+    const notifyEveryOption = notifyEverys.find((n) => n.key === Number(interval));
     return notifyEveryOption?.displayValue || interval.toString();
 };
 

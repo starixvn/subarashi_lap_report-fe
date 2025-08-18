@@ -9,7 +9,7 @@ class Service {
         const dateTitle = `${fromDate} → ${toDate}`;
         const currencyTitle = `${LangHelper.getSingleResource('Currency')}: ${currencyName}`;
         const minimumOddsTitle = `${LangHelper.getSingleResource('MinimumOdds')}: ${minimumOdds}`;
-        const userNameTitle = !!userName ? ` - ${LangHelper.getSingleResource('Username')}: ${userName}` : '';
+        const userNameTitle = userName ? ` - ${LangHelper.getSingleResource('Username')}: ${userName}` : '';
         return `${title}, ${dateTitle} - ${currencyTitle} - ${minimumOddsTitle}${userNameTitle}`;
     }
 

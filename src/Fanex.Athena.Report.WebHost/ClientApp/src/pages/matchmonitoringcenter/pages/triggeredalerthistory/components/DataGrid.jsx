@@ -20,7 +20,7 @@ const DataGrid = () => {
     }
 
     const BuildHeaders = () => {
-        let rows = [];
+        const rows = [];
 
         for (let i = 0; i < headerColumns.length; i++) {
             const column = headerColumns[i];
@@ -36,7 +36,7 @@ const DataGrid = () => {
     };
 
     const BuildBody = () => {
-        let rows = [];
+        const rows = [];
 
         gridData.forEach((item, index) => {
             const { timeString, detectedInfos, alertRules } = item;
@@ -55,7 +55,7 @@ const DataGrid = () => {
     };
 
     const BuildMultipleLineText = (text, key) => {
-        let rows = [];
+        const rows = [];
         text.forEach((rule, index) => {
             rows.push(<span key={`${key}-${index}`}>{rule}</span>);
             if (index < text.length - 1) {

@@ -6,21 +6,21 @@ import useSessionStore from '@/hooks/useSessionStore';
 import { connect } from 'react-redux';
 
 const Log = ({ monitoringID }) => {
-  const store = useSessionStore(reducers, { monitoringID });
+    const store = useSessionStore(reducers, { monitoringID });
 
-  return (
-    <div className="logs-tab">
-      <Provider store={store}>
-        <AppContainer />
-      </Provider>
-    </div>
-  );
+    return (
+        <div className="logs-tab">
+            <Provider store={store}>
+                <AppContainer />
+            </Provider>
+        </div>
+    );
 };
 
 function mapStateToProps(state) {
-  return {
-    monitoringID: state.monitoringID
-  };
+    return {
+        monitoringID: state.monitoringID,
+    };
 }
 
 export default connect(mapStateToProps)(Log);

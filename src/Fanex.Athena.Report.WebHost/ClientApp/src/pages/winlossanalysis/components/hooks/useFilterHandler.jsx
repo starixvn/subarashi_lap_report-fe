@@ -40,7 +40,7 @@ export const useFilterHandler = () => {
         setSelectedViewInTime,
         setHour,
         setSelectedGroupByOption,
-        setSelectedBreakDownByOption
+        setSelectedBreakDownByOption,
     } = ActionCreators;
 
     const onUserNameInputHandler = useCallback((value) => dispatch(setUsername(value)), []);
@@ -51,7 +51,7 @@ export const useFilterHandler = () => {
         if (isValidMonthRange) {
             dispatch(setDateRange(date));
         } else {
-            const message = LangHelper.getSingleResource("DateRangeExceedMsg").replace("{0}", limitedMonthRange);
+            const message = LangHelper.getSingleResource('DateRangeExceedMsg').replace('{0}', limitedMonthRange);
             alert(message);
         }
     }, []);
@@ -104,11 +104,12 @@ export const useFilterHandler = () => {
         if (item.value === CashOutMode.ViewCOOnly) {
             var productListOrg = viewInTime == ViewInTimeMode.Settlement ? settlementTimeProductList : orgProductList;
 
-            const selectedProduct = productListOrg.filter(product => product.id == ProductCode.SportsBook)
+            const selectedProduct = productListOrg
+                .filter((product) => product.id == ProductCode.SportsBook)
                 .map((item) => item.id)
                 .join(',');
 
-            const productList = productListOrg.map(product => product.id == ProductCode.SportsBook ? product : { ...product, status: false });
+            const productList = productListOrg.map((product) => (product.id == ProductCode.SportsBook ? product : { ...product, status: false }));
             onProductChangeHandler(null, selectedProduct);
             dispatch(setProductList(productList));
         }
@@ -133,12 +134,11 @@ export const useFilterHandler = () => {
         batch(() => {
             if (value == ViewInTimeMode.Settlement) {
                 const productList = settlementTimeProductList;
-                const selectedProduct = productList.map(product => product.id).join(',');
+                const selectedProduct = productList.map((product) => product.id).join(',');
 
                 onProductChangeHandler(null, selectedProduct);
                 dispatch(setProductList(productList));
-            }
-            else {
+            } else {
                 onProductChangeHandler(null, defaultState.selectedProduct);
                 dispatch(setProductList(orgProductList));
             }
@@ -154,7 +154,6 @@ export const useFilterHandler = () => {
     }, []);
 
     const onHourChangeHandler = useCallback((currentItem, selectedItemsKey) => dispatch(setHour(selectedItemsKey)), []);
-
 
     return {
         onUserNameInputHandler,
@@ -178,6 +177,6 @@ export const useFilterHandler = () => {
         onExcludeTextDataChangeHandler,
         onCashOutModeChangeHandler,
         onViewInTimeChangeHandler,
-        onHourChangeHandler
+        onHourChangeHandler,
     };
 };

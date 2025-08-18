@@ -10,7 +10,7 @@ const AppContainer = () => {
     const dispatch = useDispatch();
     const { sendRequest } = useToggleRequest();
 
-    const loading = useSelector(state => state.loading);
+    const loading = useSelector((state) => state.loading);
 
     useEffect(() => {
         sendRequest(() => dispatch(ActionCreators.getInitFormData()));

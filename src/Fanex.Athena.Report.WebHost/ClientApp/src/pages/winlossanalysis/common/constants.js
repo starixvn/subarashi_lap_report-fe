@@ -38,7 +38,7 @@ export const GroupByMode = {
     Platform: 7,
     Player: 8,
     Agent: 9,
-    Hour: 10
+    Hour: 10,
 };
 
 export const BreakdownByMode = {
@@ -49,8 +49,8 @@ export const BreakdownByMode = {
 
 export const ViewInTimeMode = {
     Financial: 1,
-    Settlement: 2
-}
+    Settlement: 2,
+};
 
 export const ALL_SELECTED_TEXT = 'ALL';
 
@@ -67,7 +67,7 @@ export const VipOnlyList = [
 
 export const GroupByList = [
     { value: GroupByMode.Player, label: LangHelper.getSingleResource('Player') },
-    { value: GroupByMode.Hour, label: LangHelper.getSingleResource("Hour") },
+    { value: GroupByMode.Hour, label: LangHelper.getSingleResource('Hour') },
     { value: GroupByMode.Date, label: LangHelper.getSingleResource('Date') },
     { value: GroupByMode.Month, label: LangHelper.getSingleResource('Month') },
     { value: GroupByMode.Product, label: LangHelper.getSingleResource('Product') },
@@ -174,7 +174,7 @@ export const DefaultState = {
     selectedSport: 0,
     reloadReport: false,
     selectedViewInTime: ViewInTimeMode.Financial,
-    selectedHour: "All"
+    selectedHour: 'All',
 };
 
 export const SettlementTimeSupportProductList = [ProductCode.SportsBook, ProductCode.VS, ProductCode.NG];

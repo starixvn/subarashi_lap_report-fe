@@ -15,20 +15,8 @@ export const MobileGroupByRow = (props) => {
     const [collapseRef, setCollapseRef] = useState(null);
     const parentData = data.keyItem;
     const children = data.children;
-    const {
-        groupByFieldText,
-        betCount,
-        turnover,
-        netTurnover,
-        playerWinloss,
-        playerComm,
-        betEffective,
-        licWinloss,
-        licComm,
-        margin,
-        externalId,
-        systemId,
-    } = parentData;
+    const { groupByFieldText, betCount, turnover, netTurnover, playerWinloss, playerComm, betEffective, licWinloss, licComm, margin, externalId, systemId } =
+        parentData;
     const _onCollapsed = useCallback(() => {
         setIsBreakdown(false);
     }, []);

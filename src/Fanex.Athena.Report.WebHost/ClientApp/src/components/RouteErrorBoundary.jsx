@@ -20,7 +20,7 @@ function RouteErrorBoundary() {
 
 const cleanUpSessionStorage = () => {
     const savedPages = { ...JSON.parse(sessionStorage.getItem(LRF_SAVED_PAGE_SESSION_KEY)) };
-    for (let key in savedPages) {
+    for (const key in savedPages) {
         if (savedPages.hasOwnProperty(key) && savedPages[key]) {
             sessionStorage.removeItem(key);
         }
