@@ -15,7 +15,7 @@ export const handleCellChangeValue = (setItemState, fieldKey, value) => {
             }
         }
 
-        setItemState((prevItem) => ({
+        setItemState(prevItem => ({
             ...prevItem,
             alertRule: {
                 ...prevItem.alertRule,
@@ -23,18 +23,18 @@ export const handleCellChangeValue = (setItemState, fieldKey, value) => {
             },
         }));
     } else {
-        setItemState((prevItem) => ({
+        setItemState(prevItem => ({
             ...prevItem,
             [fieldKey]: value,
         }));
     }
 };
 
-export const closeAlert = (dispatch) => {
+export const closeAlert = dispatch => {
     dispatch(setSweetAlertOption(null));
 };
 
-export const buildAlertOptionForMissingFields = (handleCloseAlert) => {
+export const buildAlertOptionForMissingFields = handleCloseAlert => {
     const messageTemplate = LangHelper.getSingleResource('PleaseFillInfoMsg');
 
     const alertOptions = generateDefaultAlertOption(messageTemplate, handleCloseAlert, handleCloseAlert, null);
@@ -46,7 +46,8 @@ export const buildAlertOptionForMissingFields = (handleCloseAlert) => {
     };
 };
 
-export const validateAlertRuleItem = (item) => {
+// eslint-disable-next-line complexity
+export const validateAlertRuleItem = item => {
     const isValidSettingName = item.settingName && item.settingName.trim() !== '';
 
     const isValidNegativeProfit =
@@ -68,6 +69,7 @@ export const buildConfirmAlertOption = (item, templateKey, buildConfirmMessage, 
     });
 };
 
+// eslint-disable-next-line complexity
 export const createAlertRule = async (item, monitoringID, dispatch, setAddNewRule, onDataChanged) => {
     try {
         if (!monitoringID) {
@@ -107,11 +109,12 @@ export const createAlertRule = async (item, monitoringID, dispatch, setAddNewRul
             return false;
         }
     } catch (error) {
-        alert('Error creating alert rule: ' + (error.message || error));
+        alert(`Error creating alert rule: ${error.message || error}`);
         return false;
     }
 };
 
+// eslint-disable-next-line complexity
 export const updateAlertRule = async (item, dispatch, setIsEdited, onDataChanged) => {
     try {
         const params = {
@@ -147,7 +150,7 @@ export const updateAlertRule = async (item, dispatch, setIsEdited, onDataChanged
             return false;
         }
     } catch (error) {
-        alert('Error updating alert rule: ' + (error.message || error));
+        alert(`Error updating alert rule: ${error.message || error}`);
         return false;
     }
 };
@@ -175,7 +178,7 @@ export const deleteAlertRule = async (item, dispatch, setIsEdited, onDataChanged
             return false;
         }
     } catch (error) {
-        alert('Error deleting alert rule: ' + (error.message || error));
+        alert(`Error deleting alert rule: ${error.message || error}`);
         return false;
     }
 };

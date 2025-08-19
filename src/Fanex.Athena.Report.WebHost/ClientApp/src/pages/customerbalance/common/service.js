@@ -21,7 +21,7 @@ export default class Service {
         }
     }
 
-    static formatDecimalInObjectNumbers = (obj) => {
+    static formatDecimalInObjectNumbers = obj => {
         const result = {};
         for (const key in obj) {
             if (Object.hasOwnProperty.call(obj, key)) {

@@ -5,7 +5,7 @@ import NoDataTitle from '@/components/NoDataTitle';
 import { BuildHeaders, BuildBody } from '../lib/gridBuilder';
 
 const DataGrid = () => {
-    const gridData = useSelector((state) => state.gridData);
+    const gridData = useSelector(state => state.gridData);
 
     if (!gridData) {
         return null;

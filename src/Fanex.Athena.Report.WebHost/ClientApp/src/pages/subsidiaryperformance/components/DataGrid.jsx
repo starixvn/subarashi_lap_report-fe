@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import { useSelector } from 'react-redux';
 import { Table } from '@legion-lib/react-grid';
 
@@ -10,10 +10,10 @@ import Service from '../common';
 import GridBreadcrumb from './GridBreadcrumb';
 
 const DataGrid = () => {
-    const formData = useSelector((state) => state.formData);
-    const requestParam = useSelector((state) => state.requestParam);
+    const formData = useSelector(state => state.formData);
+    const requestParam = useSelector(state => state.requestParam);
 
-    const gridData = useSelector((state) => state.gridData);
+    const gridData = useSelector(state => state.gridData);
     const bodyData = gridData?.data;
     const totalData = gridData?.total;
     const grandTotalData = gridData?.grandTotal;

@@ -39,19 +39,19 @@ const FormFilter = () => {
 
     const dispatch = useDispatch();
 
-    const formData = useSelector((state) => state.formData);
-    const userGuideContent = useSelector((state) => state.userGuideContent);
+    const formData = useSelector(state => state.formData);
+    const userGuideContent = useSelector(state => state.userGuideContent);
 
-    const dateRange = useSelector((state) => state.dateRange);
-    const username = useSelector((state) => state.username);
-    const reportBy = useSelector((state) => state.reportBy);
-    const bettypeList = useSelector((state) => state.bettypeList);
-    const selectedCurrency = useSelector((state) => state.selectedCurrency);
-    const selectedProduct = useSelector((state) => state.selectedProduct);
-    const minimumOdds = useSelector((state) => state.minimumOdds);
-    const selectedTickets = useSelector((state) => state.selectedTickets);
-    const selectedBettype = useSelector((state) => state.selectedBettype);
-    const requestParam = useSelector((state) => state.requestParam);
+    const dateRange = useSelector(state => state.dateRange);
+    const username = useSelector(state => state.username);
+    const reportBy = useSelector(state => state.reportBy);
+    const bettypeList = useSelector(state => state.bettypeList);
+    const selectedCurrency = useSelector(state => state.selectedCurrency);
+    const selectedProduct = useSelector(state => state.selectedProduct);
+    const minimumOdds = useSelector(state => state.minimumOdds);
+    const selectedTickets = useSelector(state => state.selectedTickets);
+    const selectedBettype = useSelector(state => state.selectedBettype);
+    const requestParam = useSelector(state => state.requestParam);
 
     const [allSelected, setAllSelected] = useState(true);
 
@@ -69,27 +69,27 @@ const FormFilter = () => {
     };
 
     useEffect(() => {
-        const selectedProductAndSportIds = formData.productOptions.map((item) => (item.parentId !== -1 ? CHILD_ID_PREFIX + item.id : item.id)).join(',');
+        const selectedProductAndSportIds = formData.productOptions.map(item => (item.parentId !== -1 ? CHILD_ID_PREFIX + item.id : item.id)).join(',');
         dispatch(setSelectedProducts(selectedProductAndSportIds, formData.productOptions, formData.productHasNoSport));
     }, []);
 
-    const onChangeSelectedCurrency = (currency) => {
+    const onChangeSelectedCurrency = currency => {
         dispatch(setSelectedCurrency(currency));
     };
 
-    const onChangeSelectedProducts = (currentItem, selectedproductAndSportIds) => {
+    const onChangeSelectedProducts = (_currentItem, selectedproductAndSportIds) => {
         dispatch(setSelectedProducts(selectedproductAndSportIds, formData.productOptions, formData.productHasNoSport));
     };
 
-    const onChangeSelectedBettype = (currentItem, selectedItemsKey) => {
+    const onChangeSelectedBettype = (_currentItem, selectedItemsKey) => {
         dispatch(setSelectedBettype(selectedItemsKey));
     };
 
-    const onChangeReportBy = (value) => {
+    const onChangeReportBy = value => {
         dispatch(setReportBy(value));
     };
 
-    const onChangeMinimumOdds = (event) => {
+    const onChangeMinimumOdds = event => {
         const { value } = event.target;
         if (isNaN(value)) {
             return;
@@ -98,20 +98,21 @@ const FormFilter = () => {
         dispatch(setMiniumOdds(value));
     };
 
-    const onChangeTicketFilter = (option) => {
-        if (option.value == TicketFilterValue.All) {
-            return onAllSelectedChange();
+    const onChangeTicketFilter = option => {
+        if (option.value === TicketFilterValue.All) {
+            onAllSelectedChange();
+            return;
         }
         let newSelectedList = [...selectedTickets];
 
-        const selected = newSelectedList.find((x) => x.value == option.value);
+        const selected = newSelectedList.find(x => x.value === option.value);
         if (selected) {
-            newSelectedList = newSelectedList.filter((x) => x.value !== option.value);
+            newSelectedList = newSelectedList.filter(x => x.value !== option.value);
         } else {
             newSelectedList.push(option);
         }
 
-        if (newSelectedList.length == TicketFilterOptions.length) {
+        if (newSelectedList.length === TicketFilterOptions.length) {
             setAllSelected(true);
         } else {
             setAllSelected(false);
@@ -131,7 +132,7 @@ const FormFilter = () => {
         dispatch(setSelectedTicket(TicketFilterOptions));
     };
 
-    const onSubmit = (event) => {
+    const onSubmit = event => {
         event.preventDefault();
 
         const params = getParams();
@@ -140,7 +141,7 @@ const FormFilter = () => {
         dispatch(setRequestParam(params));
     };
 
-    const updateData = (result) => {
+    const updateData = result => {
         let gridData = null;
         if (result && result.data !== null) {
             gridData = result.data;
@@ -152,7 +153,7 @@ const FormFilter = () => {
     const getParams = () => {
         const bettypes = Service.getSelectedBettypeXML(
             selectedBettype.split(','),
-            bettypeList.map((item) => item.id)
+            bettypeList.map(item => item.id)
         );
 
         const params = {
@@ -163,9 +164,9 @@ const FormFilter = () => {
             Odds: minimumOdds ? minimumOdds : 0,
             ReportBy: reportBy,
             Bettypes: bettypes,
-            ShowDraw: selectedTickets.some((filter) => filter.value == TicketFilterValue.Draw),
-            ShowLoss: selectedTickets.some((filter) => filter.value == TicketFilterValue.Lost),
-            ShowWin: selectedTickets.some((filter) => filter.value == TicketFilterValue.Won),
+            ShowDraw: selectedTickets.some(filter => filter.value === TicketFilterValue.Draw),
+            ShowLoss: selectedTickets.some(filter => filter.value === TicketFilterValue.Lost),
+            ShowWin: selectedTickets.some(filter => filter.value === TicketFilterValue.Won),
             CurrencyName: selectedCurrency.label,
             CurrencyId: selectedCurrency.value,
             PageIndex: DefaultPagingOption.PageIndex,
@@ -185,13 +186,13 @@ const FormFilter = () => {
         sendRequest(() => DataService.getReportFile(ApiUrl.EXPORT_EXCEL_URL, getParams()), downLoadExcel);
     };
 
-    const downLoadExcel = (response) => {
+    const downLoadExcel = response => {
         const NoContentStatusCode = 204;
 
         if (response.status === NoContentStatusCode) {
             alert(LangHelper.getSingleResource('NoInfo'));
         } else {
-            const fileNameWithExt = 'CustomerTurnover' + (response.headers['content-type'] === 'application/zip' ? '.zip' : '.xls');
+            const fileNameWithExt = `CustomerTurnover${response.headers['content-type'] === 'application/zip' ? '.zip' : '.xls'}`;
 
             Site.downloadFile(response.data, fileNameWithExt);
         }
@@ -220,7 +221,7 @@ const FormFilter = () => {
                             startDate={dateRange.fromDate}
                             endDate={dateRange.toDate}
                             onChange={onChangeDateRange}
-                            langHandler={(key) => LangHelper.getDateRangeResource(key)}
+                            langHandler={key => LangHelper.getDateRangeResource(key)}
                         />
                     </div>
                 </div>
@@ -229,8 +230,8 @@ const FormFilter = () => {
                         <label className="label-text">{LangHelper.getSingleResource('Username')}</label>
                         <AutoComplete
                             url={ApiUrl.SEARCH_CUSTOMER}
-                            onSelect={(value) => dispatch(setUsername(value))}
-                            onInput={(value) => dispatch(setUsername(value))}
+                            onSelect={value => dispatch(setUsername(value))}
+                            onInput={value => dispatch(setUsername(value))}
                             htmlAttributes={{ placeholder: LangHelper.getSingleResource('All'), id: 'Username' }}
                         />
                     </div>
@@ -309,7 +310,7 @@ const FormFilter = () => {
                             onChange={onAllSelectedChange}
                             label={LangHelper.getSingleResource('All')}
                         />
-                        {TicketFilterOptions.map((option) => (
+                        {TicketFilterOptions.map(option => (
                             <CheckBox
                                 id={`checkbox-${option.value}`}
                                 key={option.label}
@@ -327,7 +328,7 @@ const FormFilter = () => {
                         <input
                             type="radio"
                             value={ReportByValue.Daily}
-                            checked={reportBy == ReportByValue.Daily}
+                            checked={reportBy === ReportByValue.Daily}
                             name="ReportBy"
                             id="reportbydaily"
                             onChange={() => onChangeReportBy(ReportByValue.Daily)}
@@ -338,7 +339,7 @@ const FormFilter = () => {
                             value={ReportByValue.Monthly}
                             name="ReportBy"
                             id="reportbymonthly"
-                            checked={reportBy == ReportByValue.Monthly}
+                            checked={reportBy === ReportByValue.Monthly}
                             onChange={() => onChangeReportBy(ReportByValue.Monthly)}
                         />
                         <label htmlFor="reportbymonthly">{LangHelper.getSingleResource('Monthly')}</label>

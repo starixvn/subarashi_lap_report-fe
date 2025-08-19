@@ -5,7 +5,7 @@ import LangHelper from '@/helpers/langHelper';
 import ReportSelect from '@/components/ReportSelect';
 import { VipOnlyList } from '../../common/constants';
 
-export const VipOnlyFilter = (props) => {
+export const VipOnlyFilter = props => {
     const { onChange, value } = props;
 
     return (

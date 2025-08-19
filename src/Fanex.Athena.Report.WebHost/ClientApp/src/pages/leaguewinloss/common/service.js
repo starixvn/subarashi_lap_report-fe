@@ -1,11 +1,11 @@
-﻿import LangHelper from '@/helpers/langHelper';
+import LangHelper from '@/helpers/langHelper';
 import Site from '@/lib/site';
 import Report from '@/lib/report';
 import { ALL_SELECTED_TEXT } from './constants';
 
 export default class Service {
     static getTitle(fromDate, toDate, currency, baseCurrency, username) {
-        const dateRangeText = fromDate && toDate ? `, ${Site.convertDateToString(fromDate)} → ${Site.convertDateToString(toDate)}` : '';
+        const dateRangeText = fromDate && toDate ? `, ${Site.convertDateToString(fromDate)} ? ${Site.convertDateToString(toDate)}` : '';
 
         const currencyText = currency ? `, ${LangHelper.getSingleResource('Currency')}: ${currency}` : '';
         const baseCurrencyText = baseCurrency ? `, ${LangHelper.getSingleResource('BaseCurrency')}: ${baseCurrency}` : '';
@@ -25,7 +25,7 @@ export default class Service {
     static getSelectedItemFromTreeListItem(items) {
         return items
             .reduce((accum, elem) => accum.concat(elem.children), [])
-            .map((elem) => elem.value)
+            .map(elem => elem.value)
             .join(',');
     }
 
@@ -34,19 +34,19 @@ export default class Service {
         return selectedValue === allSelected ? ALL_SELECTED_TEXT : selectedValue;
     }
 
-    static getSelectedBettypeXML = (seletedBetTypeIds) => {
-        var bettypeList = seletedBetTypeIds.split(',').map((elem) => ({
+    static getSelectedBettypeXML = seletedBetTypeIds => {
+        const bettypeList = seletedBetTypeIds.split(',').map(elem => ({
             parent: elem.substring(elem.indexOf('_') + 1),
             value: elem.substring(0, elem.indexOf('_')),
         }));
 
-        var bettypeListBaseOnProduct = bettypeList.reduce((r, a) => {
+        const bettypeListBaseOnProduct = bettypeList.reduce((r, a) => {
             r[a.parent] = r[a.parent] || '';
-            r[a.parent] = r[a.parent] !== '' ? r[a.parent] + `,${a.value}` : a.value;
+            r[a.parent] = r[a.parent] !== '' ? `${r[a.parent]},${a.value}` : a.value;
             return r;
         }, {});
 
-        var xmlDoc = document.implementation.createDocument(null, 'ROOT', null);
+        const xmlDoc = document.implementation.createDocument(null, 'ROOT', null);
 
         for (const product in bettypeListBaseOnProduct) {
             Service.buildBettypeElement(xmlDoc, product, bettypeListBaseOnProduct[product]);
@@ -56,7 +56,7 @@ export default class Service {
     };
 
     static buildBettypeElement = (xmlDoc, productCode, bettypeList) => {
-        var bettypeElem = xmlDoc.createElement('Bettype');
+        const bettypeElem = xmlDoc.createElement('Bettype');
 
         bettypeElem.setAttribute('pc', productCode);
         bettypeElem.setAttribute('bt', bettypeList);

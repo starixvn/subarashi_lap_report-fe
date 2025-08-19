@@ -16,7 +16,7 @@ import { ApiUrl, ReportLevel, BreadcrumbText, DefaultPagingOption } from '../com
 import Service from '../common/service';
 import Detail from './Detail';
 
-export const DataGrid = (props) => {
+export const DataGrid = props => {
     const [showBetList, setShowBetList] = useState(false);
     const [betListData, setBetListData] = useState(null);
     const [betlistTitle, setBetlistTitle] = useState('');
@@ -50,11 +50,11 @@ export const DataGrid = (props) => {
         const selectedDate = new Date(drilldownDate);
         const dateValue = Service.getFormattedDate(selectedDate);
 
-        const drilldownFromDate = requestParam.ReportBy == 1 ? drilldownDate : getDrilldownFromDate(selectedDate, requestParam.FromDate);
-        const drilldownFromDateValue = requestParam.ReportBy == 1 ? dateValue : Service.getFormattedDate(drilldownFromDate);
+        const drilldownFromDate = requestParam.ReportBy === 1 ? drilldownDate : getDrilldownFromDate(selectedDate, requestParam.FromDate);
+        const drilldownFromDateValue = requestParam.ReportBy === 1 ? dateValue : Service.getFormattedDate(drilldownFromDate);
 
-        const drilldownToDate = requestParam.ReportBy == 1 ? drilldownDate : getDrilldownToDate(selectedDate, requestParam.ToDate);
-        const drilldownToDateValue = requestParam.ReportBy == 1 ? dateValue : Service.getFormattedDate(drilldownToDate);
+        const drilldownToDate = requestParam.ReportBy === 1 ? drilldownDate : getDrilldownToDate(selectedDate, requestParam.ToDate);
+        const drilldownToDateValue = requestParam.ReportBy === 1 ? dateValue : Service.getFormattedDate(drilldownToDate);
 
         const newRequestParam = {
             ...requestParam,
@@ -122,7 +122,7 @@ export const DataGrid = (props) => {
         props.toggleLoader(true);
 
         DataService.postReportData(ApiUrl.REPORT_DETAIL_DATA_URL, detailParams)
-            .then((response) => {
+            .then(response => {
                 setShowBetList(true);
                 setBetListData(response.data);
 
@@ -135,7 +135,7 @@ export const DataGrid = (props) => {
     };
 
     const getDrilldownToDate = (selectedDate, toDate) => {
-        var paramTodate = new Date(toDate);
+        const paramTodate = new Date(toDate);
         if (selectedDate.getFullYear() === paramTodate.getFullYear() && selectedDate.getMonth() === paramTodate.getMonth()) {
             return new Date(toDate);
         } else {
@@ -144,7 +144,7 @@ export const DataGrid = (props) => {
     };
 
     const getDrilldownFromDate = (selectedDate, fromDate) => {
-        var paramFromdate = new Date(fromDate);
+        const paramFromdate = new Date(fromDate);
         if (selectedDate.getFullYear() === paramFromdate.getFullYear() && selectedDate.getMonth() === paramFromdate.getMonth()) {
             return paramFromdate;
         } else {
@@ -158,7 +158,7 @@ export const DataGrid = (props) => {
         props.setDetailParams(null);
     };
 
-    const drillDownData = (level) => {
+    const drillDownData = level => {
         const currentLevel = requestParam.DrillDownLevel;
 
         if (currentLevel === level || level !== ReportLevel.MAIN) {
@@ -208,9 +208,9 @@ export const DataGrid = (props) => {
         props.getReportData(ApiUrl.REPORT_DATA_URL, newRequestParam);
     };
 
-    var lastIndex = requestParam.DrillDownLevel === ReportLevel.CUSTOMER && pagingOption.PageIndex > 1 ? pagingOption.LastIndex : 0;
-    var { bodyData, index } = renderDataSection(data, requestParam.DrillDownLevel, _handleDrilldown, _handleDrilldownBetlist, lastIndex);
-    var currenPagingOption = {
+    const lastIndex = requestParam.DrillDownLevel === ReportLevel.CUSTOMER && pagingOption.PageIndex > 1 ? pagingOption.LastIndex : 0;
+    const { bodyData, index } = renderDataSection(data, requestParam.DrillDownLevel, _handleDrilldown, _handleDrilldownBetlist, lastIndex);
+    const currenPagingOption = {
         PageIndex: requestParam.PageIndex,
         PageSize: requestParam.PageSize,
         TotalItem: totalRows,
@@ -219,7 +219,7 @@ export const DataGrid = (props) => {
 
     return (
         <div className="result-content">
-            <Breadcrumb items={breadcrumbItems} value={requestParam.DrillDownLevel} onChange={(item) => drillDownData(item.value)} />
+            <Breadcrumb items={breadcrumbItems} value={requestParam.DrillDownLevel} onChange={item => drillDownData(item.value)} />
             <ReportTitle content={props.reportTitle} />
             <Table
                 key={`table-${requestParam.DrillDownLevel}-${props.reloadReport}`}

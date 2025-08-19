@@ -8,10 +8,8 @@ export const BuildBody = (data, columnCount) => {
         return [];
     }
 
-    if (data.length == 1 && !data[0].leagueName) {
-        return data[0].data.map((item, indexCell) => {
-            return [<BodyContentRow key={`row-empty-league-${indexCell}`} index={indexCell + 1} matchData={item} />];
-        });
+    if (data.length === 1 && !data[0].leagueName) {
+        return data[0].data.map((item, indexCell) => [<BodyContentRow key={`row-empty-league-${indexCell}`} index={indexCell + 1} matchData={item} />]);
     }
 
     const rows = [];

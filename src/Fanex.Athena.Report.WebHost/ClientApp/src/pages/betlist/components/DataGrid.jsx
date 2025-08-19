@@ -13,7 +13,7 @@ import { TableSettings } from '../common/constants';
 
 const DataGrid = () => {
     const dispatch = useDispatch();
-    const [formData, gridData, requestParam] = useSelector((state) => [state.formData, state.gridData, state.requestParam], shallowEqual);
+    const [formData, gridData, requestParam] = useSelector(state => [state.formData, state.gridData, state.requestParam], shallowEqual);
 
     const { sendRequest } = useToggleRequest();
 
@@ -44,7 +44,7 @@ const DataGrid = () => {
         });
     };
 
-    const getSortParam = (sortBy) => {
+    const getSortParam = sortBy => {
         switch (sortBy) {
             case 'WinLoss':
                 return 'Winlost';
@@ -57,21 +57,23 @@ const DataGrid = () => {
         }
     };
 
-    const getData = (params) => {
+    const getData = params => {
         dispatch(setRequestParam(params));
         sendRequest(() => DataService.getBetListData(formData.url, params), updateGridData);
     };
 
-    const updateGridData = (result) => {
+    const updateGridData = result => {
         if (!result || !result.data) {
             return;
         }
         let { data } = result.data;
-        if (!data) data = result.data; // use parent data instead of null children
+        if (!data) {
+            data = result.data;
+        } // use parent data instead of null children
         dispatch(setGridData(BetListHelper.loadBetListDataGrid(data, formData.isServerPaging)));
     };
 
-    const getHeaderName = (column) => {
+    const getHeaderName = column => {
         if (column === 'LicenseeWL') {
             return `${LangHelper.getSingleResource('LicenseeW_L')}/${LangHelper.getSingleResource('Comm')}`;
         }
@@ -104,7 +106,7 @@ const DataGrid = () => {
                 totalRows={gridData.totalRows}
                 totalText={LangHelper.getSingleResource('GrandTotal')}
                 onSort={onSort}
-                getResourceFunc={(key) => LangHelper.getSingleResource(key)}
+                getResourceFunc={key => LangHelper.getSingleResource(key)}
                 adjustedHeight={-20}
                 customHeaderCell={HeaderCell}
                 customFooterRow={FooterRow}

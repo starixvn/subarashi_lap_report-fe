@@ -4,7 +4,7 @@ import { useCallback } from 'react';
 
 export const useFilterHandler = () => {
     const dispatch = useDispatch();
-    const formData = useSelector((state) => state.formData);
+    const formData = useSelector(state => state.formData);
 
     const {
         setSelectedCurrency,
@@ -17,9 +17,9 @@ export const useFilterHandler = () => {
         getMatchList,
     } = ActionCreators;
 
-    const onChangeSelectedCurrency = useCallback((currency) => {
+    const onChangeSelectedCurrency = useCallback(currency => {
         if (currency.value === 0) {
-            const defaultCurrency = formData.baseCurrencies.find((x) => x.value === -1);
+            const defaultCurrency = formData.baseCurrencies.find(x => x.value === -1);
             dispatch(setSelectedBaseCurrency({ ...defaultCurrency }), []);
             dispatch(setSelectedCurrency(currency), []);
             dispatch(setBaseCurrencyList([...formData.baseCurrencies]), []);
@@ -27,7 +27,7 @@ export const useFilterHandler = () => {
         }
 
         let newSelectedBaseCurrency = currency;
-        if (!formData.baseCurrencies.find((x) => x.label === currency.label)) {
+        if (!formData.baseCurrencies.find(x => x.label === currency.label)) {
             const newBaseCurrencyList = formData.baseCurrencies.slice(0);
             newSelectedBaseCurrency = { ...currency, isEmpty: true };
             newBaseCurrencyList.push(newSelectedBaseCurrency);
@@ -40,11 +40,11 @@ export const useFilterHandler = () => {
         dispatch(setSelectedBaseCurrency({ ...newSelectedBaseCurrency }));
     }, []);
 
-    const onChangeSelectedBaseCurrency = useCallback((currency) => dispatch(setSelectedBaseCurrency(currency)), []);
+    const onChangeSelectedBaseCurrency = useCallback(currency => dispatch(setSelectedBaseCurrency(currency)), []);
 
-    const onChangeSelectedMatchStatus = useCallback((status) => dispatch(setSelectedMatchStatus(status)), []);
+    const onChangeSelectedMatchStatus = useCallback(status => dispatch(setSelectedMatchStatus(status)), []);
 
-    const onChangeSelectedTriggeredAlert = useCallback((alert) => dispatch(setSelectedTriggeredAlert(alert)), []);
+    const onChangeSelectedTriggeredAlert = useCallback(alert => dispatch(setSelectedTriggeredAlert(alert)), []);
 
     const onChangeSelectedLeague = useCallback((currentItem, selectedItemsKey) => {
         dispatch(getMatchList(selectedItemsKey));

@@ -2,15 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const HeaderRow = ({ defaultSelectedHeaderKey, onSort, children, sortBy, sortOrder, ...rest }) => {
-    const renderChildren = () => {
+    const renderChildren = () =>
         // Register onSort event
-        return React.Children.map(children, (child) => {
+        React.Children.map(children, child => {
             if (!child) {
                 return null;
             }
 
             let newSortOrder = null;
-            if (!sortBy && defaultSelectedHeaderKey == child.key) {
+            if (!sortBy && defaultSelectedHeaderKey === child.key) {
                 newSortOrder = child.props.lockArrow;
             } else {
                 newSortOrder = sortBy === child.props.sortBy ? sortOrder : null;
@@ -18,8 +18,6 @@ const HeaderRow = ({ defaultSelectedHeaderKey, onSort, children, sortBy, sortOrd
 
             return React.cloneElement(child, { onSort: onSort, sortOrder: newSortOrder });
         });
-    };
-
     return <tr {...rest}>{renderChildren()}</tr>;
 };
 

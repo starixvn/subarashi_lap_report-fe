@@ -18,11 +18,11 @@ const DropdownCell = ({ value, fieldKey, dataSource, onChange, width = '100%', i
         backgroundColor: 'white',
     };
 
-    const handleFocus = useCallback((e) => {
+    const handleFocus = useCallback(e => {
         e.target.style.borderBottomColor = '#2196F3';
     }, []);
 
-    const handleBlur = useCallback((e) => {
+    const handleBlur = useCallback(e => {
         e.target.style.borderBottomColor = '#ccc';
     }, []);
 
@@ -31,11 +31,11 @@ const DropdownCell = ({ value, fieldKey, dataSource, onChange, width = '100%', i
             id={fieldKey}
             className="cell-dropdown"
             style={selectStyle}
-            onChange={(e) => onChange(fieldKey, e.target.value)}
+            onChange={e => onChange(fieldKey, e.target.value)}
             value={actualValue}
             onFocus={handleFocus}
             onBlur={handleBlur}>
-            {enhancedDataSource.map((item) => (
+            {enhancedDataSource.map(item => (
                 <option key={item.key} value={item.value} disabled={item.disabled}>
                     {item.displayValue || item.value}
                 </option>

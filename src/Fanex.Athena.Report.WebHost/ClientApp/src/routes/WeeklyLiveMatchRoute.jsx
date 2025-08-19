@@ -3,12 +3,10 @@ import { Route, Routes } from 'react-router-dom';
 
 const WeeklyLiveMatch = lazy(() => import(/* webpackChunkName: "weeklylivematch" */ '../pages/weeklylivematch'));
 
-const WeeklyLiveMatchRoute = () => {
-    return (
-        <Routes>
-            <Route index element={<WeeklyLiveMatch />} />
-        </Routes>
-    );
-};
+const WeeklyLiveMatchRoute = () => (
+    <Routes>
+        <Route index element={<WeeklyLiveMatch />} />
+    </Routes>
+);
 
 export default WeeklyLiveMatchRoute;

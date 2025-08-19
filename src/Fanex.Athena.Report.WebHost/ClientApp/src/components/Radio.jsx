@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Radio = (props) => {
+const Radio = props => {
     const handleChange = () => {
         if (props.onChange) {
             props.onChange(props.value);

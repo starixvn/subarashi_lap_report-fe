@@ -11,7 +11,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 export const ExcelPopUp = () => {
     const [isShow, setIsShow] = useState(false);
-    const requestParam = useSelector((state) => state.requestParam);
+    const requestParam = useSelector(state => state.requestParam);
     const { toggleLoader } = ActionCreators;
     const dispatch = useDispatch();
     const [exportExcelMode, setExportExcelMode] = useState(ExportExcelMode.All);
@@ -29,11 +29,11 @@ export const ExcelPopUp = () => {
         setExportExcelMode(ExportExcelMode.All);
     };
 
-    const _onChangeExcelModeHandler = (value) => {
+    const _onChangeExcelModeHandler = value => {
         setExportExcelMode(value);
     };
 
-    const _onExportExcelHandler = (event) => {
+    const _onExportExcelHandler = event => {
         event.preventDefault();
         const params = { ...requestParam, ExportExcelMode: exportExcelMode };
         dispatch(toggleLoader(true));

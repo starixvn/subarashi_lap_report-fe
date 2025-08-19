@@ -12,20 +12,20 @@ import { constants } from '../common';
 
 export const AppContainer = () => {
     const dispatch = useDispatch();
-    const formData = useSelector((state) => state.formData);
-    const isLoading = useSelector((state) => state.isLoading);
+    const formData = useSelector(state => state.formData);
+    const isLoading = useSelector(state => state.isLoading);
 
     const { sendRequest } = useToggleRequest();
 
     const { setFormData, setSelectedProducts, setDateRange } = ActionCreators;
 
-    const setInitFormData = (result) => {
+    const setInitFormData = result => {
         if (!result || !result.data) {
             dispatch(setFormData(null));
             return;
         }
 
-        result.data.currencies = result.data.currencies.map((item) => ({ value: item.key, label: item.value }));
+        result.data.currencies = result.data.currencies.map(item => ({ value: item.key, label: item.value }));
         result.data.IsExcludedTestData = true;
         dispatch(setFormData(result.data));
         dispatch(setSelectedProducts(result.data.productOptions));

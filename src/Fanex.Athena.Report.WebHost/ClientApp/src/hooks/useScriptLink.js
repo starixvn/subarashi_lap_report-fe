@@ -17,7 +17,7 @@ const useScriptLink = () => {
         return script;
     }, []);
 
-    const remove = useCallback((script) => {
+    const remove = useCallback(script => {
         body.removeChild(script);
     }, []);
 

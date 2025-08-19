@@ -5,8 +5,8 @@ import MultipleSelect from '@legion-lib/react-multiselect';
 
 import LangHelper from '@/helpers/langHelper';
 
-export const PlatformFilter = (props) => {
-    const formData = useSelector((state) => state.formData);
+export const PlatformFilter = props => {
+    const formData = useSelector(state => state.formData);
     const { onChange, isValid } = props;
 
     const _renderPlatformSelectList = () => {

@@ -6,7 +6,7 @@ import LangHelper from '@/helpers/langHelper';
 
 import { CashOutModeList } from '../../common/constants';
 
-export const CashOutModeFilter = (props) => {
+export const CashOutModeFilter = props => {
     const { onChange, value, viewInTime, disabled } = props;
 
     return (
@@ -17,7 +17,7 @@ export const CashOutModeFilter = (props) => {
                 value={value}
                 options={CashOutModeList}
                 isDisabled={disabled}
-                onChange={(e) => {
+                onChange={e => {
                     onChange(e, viewInTime);
                 }}
             />

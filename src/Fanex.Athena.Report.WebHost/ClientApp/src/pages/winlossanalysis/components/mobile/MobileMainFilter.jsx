@@ -1,4 +1,4 @@
-﻿import React, { useEffect, memo } from 'react';
+import React, { useEffect, memo } from 'react';
 import { shallowEqual, useSelector } from 'react-redux';
 import CollapsiblePanel from '@/components/CollapsiblePanel';
 import useBaseCurrencyForMultiSelectCurrency from '@/hooks/useBaseCurrencyForMultiSelectCurrency';
@@ -27,7 +27,7 @@ import CurrencyFilter from '../filters/CurrencyFilter.jsx';
 import PropTypes from 'prop-types';
 import { DefaultDateRange } from '../../common/dateSetting.js';
 
-export const MobileMainFilter = (props) => {
+export const MobileMainFilter = props => {
     const { isCollapsed } = props;
     const {
         appUuid,
@@ -49,7 +49,7 @@ export const MobileMainFilter = (props) => {
         selectedCashOutMode,
         selectedCurrency,
         formData,
-    } = useSelector((state) => state, shallowEqual);
+    } = useSelector(state => state, shallowEqual);
     const { isShowSubsidiaryDropdown, isSubsidiarySearch, isShowSubsidiarySearchCheckBox } = useSubsidiarySearch();
     const { baseCurrencyList, selectedBaseCurrency: newBaseCurrency } = useBaseCurrencyForMultiSelectCurrency(selectedBaseCurrency, formData);
     const {

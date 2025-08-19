@@ -3,7 +3,7 @@ import LangHelper from '@/helpers/langHelper';
 import CheckBox from '@/components/CheckBox';
 import PropTypes from 'prop-types';
 
-export const SubsidiaryCheckBoxFilter = (props) => {
+export const SubsidiaryCheckBoxFilter = props => {
     const { value, onChange } = props;
 
     return (

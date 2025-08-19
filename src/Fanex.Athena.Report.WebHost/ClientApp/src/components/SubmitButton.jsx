@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import GtagHelper from '@/helpers/gtagHelper';
 
 const SubmitButton = ({ id, onClick, disabled, children, className, label, ...rest }) => {
-    const onClickSubmit = (e) => {
+    const onClickSubmit = e => {
         GtagHelper.logViewReportData(label);
 
         onClick && onClick(e);

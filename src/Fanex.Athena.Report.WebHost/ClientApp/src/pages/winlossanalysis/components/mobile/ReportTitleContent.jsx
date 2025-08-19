@@ -5,7 +5,7 @@ import { useElementSize } from 'usehooks-ts';
 import Overlay from '@/components/Overlay.jsx';
 
 export const ReportTitleContent = () => {
-    const reportTitle = useSelector((state) => state.reportTitle);
+    const reportTitle = useSelector(state => state.reportTitle);
     const [isShowTooltipIcon, setIsShowTooltipIcon] = useState(false);
     const [isShowTooltip, setIsShowTooltip] = useState(false);
     const [setRef, { width }] = useElementSize();
@@ -22,7 +22,7 @@ export const ReportTitleContent = () => {
         setIsShowTooltip(!isShowTooltip);
     };
 
-    const _setRef = (elem) => {
+    const _setRef = elem => {
         titleRef.current = elem;
         setRef(elem);
     };

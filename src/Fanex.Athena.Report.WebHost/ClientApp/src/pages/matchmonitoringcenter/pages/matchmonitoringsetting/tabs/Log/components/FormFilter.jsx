@@ -9,31 +9,29 @@ import SubmitButton from '@/components/SubmitButton';
 const FormFilter = () => {
     const dispatch = useDispatch();
 
-    const formData = useSelector((state) => state.formData);
-    const selectedLogTypes = useSelector((state) => state.selectedLogTypes || '');
-    const selectedActions = useSelector((state) => state.selectedActions || '');
-    const monitoringID = useSelector((state) => state.monitoringID);
+    const formData = useSelector(state => state.formData);
+    const selectedLogTypes = useSelector(state => state.selectedLogTypes || '');
+    const selectedActions = useSelector(state => state.selectedActions || '');
+    const monitoringID = useSelector(state => state.monitoringID);
 
     const logTypeOptions = formData?.logTypeOptions || [];
     const actionOptions = formData?.actionOptions || [];
 
-    const onChangeSelectedLogTypes = (currentItem, selectedItemsKey) => {
+    const onChangeSelectedLogTypes = (_currentItem, selectedItemsKey) => {
         dispatch(ActionCreators.setSelectedLogTypes(selectedItemsKey));
         dispatch(ActionCreators.getActionList(selectedItemsKey));
     };
 
-    const onChangeSelectedActions = (currentItem, selectedItemsKey) => {
+    const onChangeSelectedActions = (_currentItem, selectedItemsKey) => {
         dispatch(ActionCreators.setSelectedActions(selectedItemsKey));
     };
 
-    const getParams = () => {
-        return {
-            Actions: selectedActions,
-            MonitoringID: monitoringID,
-        };
-    };
+    const getParams = () => ({
+        Actions: selectedActions,
+        MonitoringID: monitoringID,
+    });
 
-    const onSubmit = (event) => {
+    const onSubmit = event => {
         event.preventDefault();
 
         const params = getParams();

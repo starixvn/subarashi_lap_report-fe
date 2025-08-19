@@ -22,7 +22,7 @@ import { ApiUrl, ReportLevel } from '../common/constants';
 import * as DateSettings from '../common/dateSetting';
 import Service from '../common/service';
 
-export const FormFilter = (props) => {
+export const FormFilter = props => {
     const [isExcludeTest, setExcludeTest] = useState(true);
     const [username, setUsername] = useState('');
     const [baseCurrencyList, setBaseCurrencyList] = useState(props.AppData.baseCurrencyList);
@@ -41,33 +41,30 @@ export const FormFilter = (props) => {
         }
     };
 
-    const _renderDateFilter = () => {
-        return (
-            <DateRange
-                startDate={DateSettings.DateRange.fromDate}
-                endDate={DateSettings.DateRange.toDate}
-                minDate={DateSettings.DateConstraint.minDate}
-                maxDate={DateSettings.DateConstraint.maxDate}
-                limitedMonthRange={DateSettings.DateConstraint.limitedMonthRange}
-                today={DateSettings.DateRange.toDate}
-                firstDayOfWeek={DateSettings.FirstDayOfWeek}
-                onChange={_onChangeDateRange}
-                langHandler={(key) => LangHelper.getDateRangeResource(key)}
-            />
-        );
-    };
+    const _renderDateFilter = () => (
+        <DateRange
+            startDate={DateSettings.DateRange.fromDate}
+            endDate={DateSettings.DateRange.toDate}
+            minDate={DateSettings.DateConstraint.minDate}
+            maxDate={DateSettings.DateConstraint.maxDate}
+            limitedMonthRange={DateSettings.DateConstraint.limitedMonthRange}
+            today={DateSettings.DateRange.toDate}
+            firstDayOfWeek={DateSettings.FirstDayOfWeek}
+            onChange={_onChangeDateRange}
+            langHandler={key => LangHelper.getDateRangeResource(key)}
+        />
+    );
 
-    const _renderBaseCurrencySelectList = () => {
-        return baseCurrencyList && baseCurrencyList.length ? (
+    const _renderBaseCurrencySelectList = () =>
+        baseCurrencyList && baseCurrencyList.length ? (
             <ReportSelect
                 id="select-list-BaseCurrency"
                 instanceId="baseCurrency"
                 value={props.selectedBaseCurrency.value !== DEFAULT_BASE_CURRENCY_VALUE ? props.selectedBaseCurrency : null}
                 options={baseCurrencyList}
-                onChange={(item) => props.setSelectedBaseCurrency(item)}
+                onChange={item => props.setSelectedBaseCurrency(item)}
             />
         ) : null;
-    };
 
     const _renderProductSelectList = () => {
         const productOptions = AppData.productOptions;
@@ -103,7 +100,7 @@ export const FormFilter = (props) => {
         ) : null;
     };
 
-    const onChangeProduct = (productCode) => {
+    const onChangeProduct = productCode => {
         props.setSelectedProducts(productCode);
         props.getPromotionTypeList(productCode);
     };
@@ -125,20 +122,20 @@ export const FormFilter = (props) => {
     };
 
     // Update Base Currency base on Currencies
-    const onChangeCurrency = (currencyIdList) => {
+    const onChangeCurrency = currencyIdList => {
         let baseCurrency;
         let newBaseCurrencyList;
 
         if (!currencyIdList || currencyIdList.indexOf(',') > 0) {
-            baseCurrency = AppData.baseCurrencyList.find((x) => x.value === props.selectedBaseCurrency.value)
+            baseCurrency = AppData.baseCurrencyList.find(x => x.value === props.selectedBaseCurrency.value)
                 ? props.selectedBaseCurrency
                 : AppData.defaultBaseCurrency;
             setBaseCurrencyList(AppData.baseCurrencyList);
         } else {
-            const currency = AppData.currencyList.find((x) => x.key == currencyIdList);
+            const currency = AppData.currencyList.find(x => x.key === currencyIdList);
             baseCurrency = { value: currency.key, label: currency.value };
 
-            if (!baseCurrencyList.find((x) => x.value === currency.value)) {
+            if (!baseCurrencyList.find(x => x.value === currency.value)) {
                 newBaseCurrencyList = AppData.baseCurrencyList.slice(0);
                 newBaseCurrencyList.push(baseCurrency);
                 setBaseCurrencyList(newBaseCurrencyList);
@@ -149,7 +146,7 @@ export const FormFilter = (props) => {
         props.setSelectedBaseCurrency(baseCurrency);
     };
 
-    const onChangeSubsidiaryList = (currentItem, selectedItemsKey) => {
+    const onChangeSubsidiaryList = (_currentItem, selectedItemsKey) => {
         props.setSubsidiaryList(selectedItemsKey);
     };
 
@@ -174,25 +171,23 @@ export const FormFilter = (props) => {
         );
     };
 
-    const _renderSubsidiaryTreeView = () => {
-        return (
-            <TreeViewSelect
-                language={LangHelper.currentLanguage}
-                id="SubsidiaryTreeView"
-                dataSource={AppData.whitelabelList}
-                keyField="value"
-                valueField="name"
-                statusField="checked"
-                texts={{ SelectOptions: 'Please select', All: 'All', SelectedItemCount: '# selected' }}
-                isAllTextShown={false}
-                hasSearchBox={false}
-                treeViewOption={TreeViewOption}
-                onChange={onChangeSubsidiaryList}
-            />
-        );
-    };
+    const _renderSubsidiaryTreeView = () => (
+        <TreeViewSelect
+            language={LangHelper.currentLanguage}
+            id="SubsidiaryTreeView"
+            dataSource={AppData.whitelabelList}
+            keyField="value"
+            valueField="name"
+            statusField="checked"
+            texts={{ SelectOptions: 'Please select', All: 'All', SelectedItemCount: '# selected' }}
+            isAllTextShown={false}
+            hasSearchBox={false}
+            treeViewOption={TreeViewOption}
+            onChange={onChangeSubsidiaryList}
+        />
+    );
 
-    const onSubmit = (event) => {
+    const onSubmit = event => {
         event.preventDefault();
         const params = getParams();
         if (!params) {
@@ -232,11 +227,11 @@ export const FormFilter = (props) => {
             selectedCurrencyArray.length === AppData.currencyList.length
                 ? 'All'
                 : AppData.currencyList
-                      .filter((item) => selectedCurrencyArray.includes(item.key.toString()))
-                      .map((item) => item.value)
+                      .filter(item => selectedCurrencyArray.includes(item.key.toString()))
+                      .map(item => item.value)
                       .join(',');
 
-        const baseCurrency = baseCurrencyList.find((x) => x.value === props.selectedBaseCurrency.value);
+        const baseCurrency = baseCurrencyList.find(x => x.value === props.selectedBaseCurrency.value);
         const subsidiarySearch = props.subsidiarySearch;
 
         return {
@@ -287,7 +282,7 @@ export const FormFilter = (props) => {
 
         props.toggleLoader(true);
         DataService.getReportFile(ApiUrl.EXPORT_REPORT_DATA_URL, exportRequestParam)
-            .then((response) => {
+            .then(response => {
                 const NoContentStatusCode = 204;
                 if (response.status === NoContentStatusCode) {
                     alert(LangHelper.getSingleResource('NoInfo'));
@@ -372,7 +367,7 @@ export const FormFilter = (props) => {
                                 type="text"
                                 value={username}
                                 placeholder={LangHelper.getSingleResource('ExternalIdOrSystemId')}
-                                onChange={(event) => setUsername(event.target.value)}
+                                onChange={event => setUsername(event.target.value)}
                             />
                         </div>
                     </div>
@@ -380,9 +375,9 @@ export const FormFilter = (props) => {
                     <div className="col-12 col-md-3 col-sm-3 col-lg-2 col-xl-2">
                         <div className="form-group">
                             <label className="label-text">{LangHelper.getSingleResource('ReportBy')}</label>
-                            <input type="radio" value={1} checked={reportBy == 1} name="ReportBy" id="reportbydaily" onChange={() => setReportBy(1)} />
+                            <input type="radio" value={1} checked={reportBy === 1} name="ReportBy" id="reportbydaily" onChange={() => setReportBy(1)} />
                             <label htmlFor="reportbydaily">{LangHelper.getSingleResource('Daily')}</label>
-                            <input type="radio" value={2} name="ReportBy" id="reportbymonthly" checked={reportBy == 2} onChange={() => setReportBy(2)} />
+                            <input type="radio" value={2} name="ReportBy" id="reportbymonthly" checked={reportBy === 2} onChange={() => setReportBy(2)} />
                             <label htmlFor="reportbymonthly">{LangHelper.getSingleResource('Monthly')}</label>
                         </div>
                     </div>
@@ -392,7 +387,7 @@ export const FormFilter = (props) => {
                             <CheckBox
                                 id="ConvertAllFiguresToBaseCurrency"
                                 checked={isConvertAllToBaseCurrency}
-                                onChange={(checked) => setConvertAllToBaseCurrency(checked)}
+                                onChange={checked => setConvertAllToBaseCurrency(checked)}
                                 label={LangHelper.getSingleResource('ConvertAllFiguresToBaseCurrency')}
                             />
                         </div>
@@ -402,7 +397,7 @@ export const FormFilter = (props) => {
                             <CheckBox
                                 id="ExcludeTest"
                                 checked={isExcludeTest}
-                                onChange={(checked) => setExcludeTest(checked)}
+                                onChange={checked => setExcludeTest(checked)}
                                 label={LangHelper.getSingleResource('ExcludeTestData')}
                             />
                         </div>
@@ -425,7 +420,7 @@ export const FormFilter = (props) => {
                                         <CheckBox
                                             id="SubsidiarySearch"
                                             checked={props.subsidiarySearch}
-                                            onChange={(checked) => props.setSubsidiarySearch(checked)}
+                                            onChange={checked => props.setSubsidiarySearch(checked)}
                                             label={LangHelper.getSingleResource('SubsidiarySearch')}
                                         />
                                     </div>

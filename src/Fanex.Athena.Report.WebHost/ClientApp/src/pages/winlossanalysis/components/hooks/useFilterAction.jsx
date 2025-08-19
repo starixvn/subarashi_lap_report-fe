@@ -45,7 +45,7 @@ export const useFilterAction = () => {
         selectedHour,
         defaultState,
     ] = useSelector(
-        (state) => [
+        state => [
             state.requestParam,
             state.username,
             state.selectedBaseCurrency,
@@ -109,7 +109,7 @@ export const useFilterAction = () => {
         setHour,
     } = ActionCreators;
 
-    const _buildTitle = (params) => {
+    const _buildTitle = params => {
         const { FromDate, ToDate, ProductCodes, SearchUserName, CurrencyCodes, BaseCurrencyName, ViewInTime } = params;
         const dateRangeText = `, ${Site.convertDateToString(FromDate)} → ${Site.convertDateToString(ToDate)}`;
         const currencyText = `, ${LangHelper.getSingleResource('Currency')}: ${CurrencyCodes}, ${LangHelper.getSingleResource(
@@ -117,7 +117,7 @@ export const useFilterAction = () => {
         )}: ${BaseCurrencyName}`;
         const productText = `, ${LangHelper.getSingleResource('LicenseeW_L')} (${ProductCodes})`;
         const userText = SearchUserName ? `, ${LangHelper.getSingleResource('Username')}: ${SearchUserName}` : '';
-        const viewinTimeText = ` - ${ViewInTime == ViewInTimeMode.Settlement ? LangHelper.getSingleResource('SettlementTime') : LangHelper.getSingleResource('FinancialDate')}`;
+        const viewinTimeText = ` - ${ViewInTime === ViewInTimeMode.Settlement ? LangHelper.getSingleResource('SettlementTime') : LangHelper.getSingleResource('FinancialDate')}`;
 
         return LangHelper.getSingleResource('WinlossAnalysis') + viewinTimeText + dateRangeText + currencyText + productText + userText;
     };
@@ -129,7 +129,7 @@ export const useFilterAction = () => {
         const { fromDate, toDate } = dateRange;
         const { PageSize } = requestParam;
         const { oddsGroupList, riskLevelList, liveStatusList, statusList, platformList, currencyList } = formData;
-        const baseCurrency = baseCurrencyList.find((x) => x.value === selectedBaseCurrency.value);
+        const baseCurrency = baseCurrencyList.find(x => x.value === selectedBaseCurrency.value);
         const subsidiary = Site.getLrfSubsidiary(loadedData.IsSelfMode);
         let { SubsidiarySearch, SubsidiaryList } = subsidiary;
         if (!subsidiary || Object.keys(subsidiary).length === 0) {
@@ -139,7 +139,7 @@ export const useFilterAction = () => {
 
         const selectedCurrencyCode = Service.getCurrencyCodes(selectedCurrency, currencyList);
         const seletedCurrencyText =
-            selectedCurrencyCode == ALL_SELECTED_TEXT ? LangHelper.getSingleResource('All') : StringHelper.addSpaceAfterComma(selectedCurrencyCode);
+            selectedCurrencyCode === ALL_SELECTED_TEXT ? LangHelper.getSingleResource('All') : StringHelper.addSpaceAfterComma(selectedCurrencyCode);
 
         return {
             PageSize: PageSize,
@@ -160,8 +160,8 @@ export const useFilterAction = () => {
             PlatformIds: Service.getNormalizedSelectedParamValueForMultiSelectFilter(selectedPlatform, platformList),
             LiveStatusIds: Service.getNormalizedSelectedParamValueForMultiSelectFilter(selectedLiveStatus, liveStatusList),
             IsVipOnly: selectedVipOnly.value,
-            CustomerClass: Service.getNormalizedSelectedParamValueForMultiSelectFilter(selectedCustomerClass, riskLevelList, (r) => r.customerClassList),
-            FullCustomerClass: riskLevelList && riskLevelList.map((r) => r.customerClassList).join(','),
+            CustomerClass: Service.getNormalizedSelectedParamValueForMultiSelectFilter(selectedCustomerClass, riskLevelList, r => r.customerClassList),
+            FullCustomerClass: riskLevelList && riskLevelList.map(r => r.customerClassList).join(','),
             OddsGroup: Service.getNormalizedSelectedParamValueForMultiSelectFilter(selectedOddsGroup, oddsGroupList),
             IsShowInOrginalCurrency: isGroupInOriginalCurrency,
             IsExcludedTestData: isExcludeTestData,
@@ -177,7 +177,7 @@ export const useFilterAction = () => {
         };
     };
 
-    const submit = (event) => {
+    const submit = event => {
         event.preventDefault();
         const params = _getParams();
         if (!params) {

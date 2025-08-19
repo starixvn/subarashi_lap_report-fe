@@ -10,18 +10,31 @@ const InputCell = ({ value, fieldKey, onChange, type = InputType.text, width = '
         valueRef.current = value;
     }, [value]);
 
+    // eslint-disable-next-line complexity
     const isValidValue = () => {
-        if (!value) return false;
-        if (type === InputType.text && value.trim() === '') return false;
+        if (!value) {
+            return false;
+        }
+        if (type === InputType.text && value.trim() === '') {
+            return false;
+        }
 
         if (type === InputType.number && value !== '') {
             const numValue = parseFloat(value);
-            if (isNaN(numValue)) return false;
+            if (isNaN(numValue)) {
+                return false;
+            }
 
-            if (numValue > SQL_MONEY_MAX) return false;
+            if (numValue > SQL_MONEY_MAX) {
+                return false;
+            }
 
-            if (min !== undefined && numValue < min) return false;
-            if (max !== undefined && numValue > max) return false;
+            if (min !== undefined && numValue < min) {
+                return false;
+            }
+            if (max !== undefined && numValue > max) {
+                return false;
+            }
         }
 
         return true;
@@ -40,17 +53,22 @@ const InputCell = ({ value, fieldKey, onChange, type = InputType.text, width = '
     };
 
     const limitDecimalPlaces = (value, decimalPlaces = 2) => {
-        if (!value || !value.includes('.')) return value;
+        if (!value || !value.includes('.')) {
+            return value;
+        }
 
         const parts = value.split('.');
-        if (parts.length !== 2) return value;
+        if (parts.length !== 2) {
+            return value;
+        }
 
         const decimalPart = parts[1].slice(0, decimalPlaces);
-        return parts[0] + '.' + decimalPart;
+        return `${parts[0]}.${decimalPart}`;
     };
 
     const handleChange = useCallback(
-        (e) => {
+        // eslint-disable-next-line complexity, max-depth
+        e => {
             let newValue = e.target.value;
 
             if (type === InputType.number) {
@@ -67,15 +85,12 @@ const InputCell = ({ value, fieldKey, onChange, type = InputType.text, width = '
                 if (newValue !== '' && newValue !== '.') {
                     const numValue = parseFloat(newValue);
                     if (!isNaN(numValue)) {
+                        // eslint-disable-next-line max-depth
                         if (numValue > SQL_MONEY_MAX) {
                             newValue = SQL_MONEY_MAX.toString();
-                        }
-
-                        if (min !== undefined && numValue < min) {
+                        } else if (min !== undefined && numValue < min) {
                             newValue = min.toString();
-                        }
-
-                        if (max !== undefined && numValue > max) {
+                        } else if (max !== undefined && numValue > max) {
                             newValue = max.toString();
                         }
                     }
@@ -95,7 +110,7 @@ const InputCell = ({ value, fieldKey, onChange, type = InputType.text, width = '
     );
 
     const handleKeyDown = useCallback(
-        (e) => {
+        e => {
             if (type === InputType.number) {
                 if (e.key === 'e' || e.key === 'E') {
                     e.preventDefault();
@@ -109,12 +124,12 @@ const InputCell = ({ value, fieldKey, onChange, type = InputType.text, width = '
         [type]
     );
 
-    const handleFocus = useCallback((e) => {
+    const handleFocus = useCallback(e => {
         e.target.style.borderBottomColor = '#2196F3';
     }, []);
 
     const handleBlur = useCallback(
-        (e) => {
+        e => {
             e.target.style.borderBottomColor = '#ccc';
 
             if (type === InputType.number && e.target.value && e.target.value.includes('.')) {
@@ -143,8 +158,12 @@ const InputCell = ({ value, fieldKey, onChange, type = InputType.text, width = '
     };
 
     if (type === InputType.number) {
-        if (min !== undefined) inputProps.min = min;
-        if (max !== undefined) inputProps.max = max;
+        if (min !== undefined) {
+            inputProps.min = min;
+        }
+        if (max !== undefined) {
+            inputProps.max = max;
+        }
     } else if (type === InputType.text) {
         inputProps.maxLength = max || DEFAULT_MAX_TEXT_LENGTH;
     }

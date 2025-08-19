@@ -1,4 +1,4 @@
-﻿import React, { memo } from 'react';
+import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 
 import { DrowdownRadioList } from '@/components/dropdown';
@@ -6,7 +6,7 @@ import LangHelper from '@/helpers/langHelper';
 
 import { SearchMode } from '../../common/constants';
 
-const SearchOption = (props) => {
+const SearchOption = props => {
     const { value, onChange } = props;
     const dataSource = [
         { id: SearchMode.MatchPrecise, text: LangHelper.getSingleResource('MatchPrecise') },

@@ -3,7 +3,7 @@ import { HeaderRow, HeaderCell } from '@legion-lib/react-grid';
 
 import LangHelper from '@/helpers/langHelper';
 
-export const BuildHeaders = (options) => {
+export const BuildHeaders = options => {
     const result = [BuildFirstRow(options)];
     if (options.isAllowedCustomerCommission) {
         result.push(BuildSecondRow());

@@ -6,7 +6,7 @@ import LangHelper from '@/helpers/langHelper';
 import CommonCells from '../CommonCells';
 import FooterSpecialBetTypeRows from './FooterSpecialBetTypeRows';
 
-export const BuildFooter = (footerData) => {
+export const BuildFooter = footerData => {
     const footer = [];
     if (footerData.isShowTotal && footerData.isShowSpecialBetTypeResult) {
         footer.push([

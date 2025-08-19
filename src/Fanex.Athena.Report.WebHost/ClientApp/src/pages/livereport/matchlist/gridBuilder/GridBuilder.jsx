@@ -7,18 +7,15 @@ import MatchCell from './customGrid/MatchCell';
 import HeaderCell from './customGrid/HeaderCell';
 import CommonCells from './customGrid/CommonCells';
 
-export const BuildBody = (data) => {
-    return data.map((item) => {
-        return (
-            <Row key={`row-sport-${item.matchId}`}>
-                <MatchCell data={item} />
-                <CommonCells data={item} />
-            </Row>
-        );
-    });
-};
+export const BuildBody = data =>
+    data.map(item => (
+        <Row key={`row-sport-${item.matchId}`}>
+            <MatchCell data={item} />
+            <CommonCells data={item} />
+        </Row>
+    ));
 
-export const BuildHeaders = (options) => {
+export const BuildHeaders = options => {
     const result = [BuildFirstRow(options)];
     if (options.isAllowedCustomerCommission) {
         result.push(BuildSecondRow());

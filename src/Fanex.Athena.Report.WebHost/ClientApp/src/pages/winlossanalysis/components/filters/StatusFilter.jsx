@@ -6,8 +6,8 @@ import MultipleSelect from '@legion-lib/react-multiselect';
 
 import LangHelper from '@/helpers/langHelper';
 
-export const StatusFilter = (props) => {
-    const formData = useSelector((state) => state.formData);
+export const StatusFilter = props => {
+    const formData = useSelector(state => state.formData);
 
     const { onChange, isValid } = props;
     const _renderStatusSelectList = () => {

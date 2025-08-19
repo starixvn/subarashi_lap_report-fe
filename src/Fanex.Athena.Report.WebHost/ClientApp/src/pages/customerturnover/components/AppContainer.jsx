@@ -12,23 +12,23 @@ import DataGrid from './DataGrid';
 
 export const AppContainer = () => {
     const dispatch = useDispatch();
-    const formData = useSelector((state) => state.formData);
-    const isLoading = useSelector((state) => state.isLoading);
+    const formData = useSelector(state => state.formData);
+    const isLoading = useSelector(state => state.isLoading);
 
     const { sendRequest } = useToggleRequest();
 
     const { setFormData, setSelectedCurrency } = ActionCreators;
 
-    const setInitFormData = async (result) => {
+    const setInitFormData = async result => {
         if (!result || !result.data) {
             dispatch(setFormData(null));
             return;
         }
         const data = result.data;
 
-        data.currencyList = data.currencyList.map((item) => ({ value: item.key, label: item.value }));
+        data.currencyList = data.currencyList.map(item => ({ value: item.key, label: item.value }));
         data.productTreeViewOptions = Service.convertToCheckedItems(data.productOptions);
-        data.productHasNoSport = data.productTreeViewOptions.filter((product) => !product.children?.length).map((product) => product.id);
+        data.productHasNoSport = data.productTreeViewOptions.filter(product => !product.children?.length).map(product => product.id);
         if (!data.productHasNoSport) {
             data.productHasNoSport = [];
         }

@@ -1,4 +1,4 @@
-﻿import React, { memo, useMemo, useRef, useEffect, useState, useCallback } from 'react';
+import React, { memo, useMemo, useRef, useEffect, useState, useCallback } from 'react';
 import { shallowEqual, useDispatch, useSelector } from 'react-redux';
 import { ActionCreators } from '../../actions/index.js';
 import NoDataTitle from '@/components/NoDataTitle';
@@ -22,7 +22,7 @@ const LargeColumnWidths = ['31%', '31%', '31%', '7%'];
 
 export const MobileDataGrid = () => {
     const [requestParam, reportData, reloadReport] = useSelector(
-        (state) => [state.requestParam, state.reportData, state.reportTitle, state.reloadReport, state.selectedProduct],
+        state => [state.requestParam, state.reportData, state.reportTitle, state.reloadReport, state.selectedProduct],
         shallowEqual
     );
     const ref = useRef(null);
@@ -60,7 +60,7 @@ export const MobileDataGrid = () => {
     );
 
     const onChangeIdDisplayType = useCallback(
-        (event) => {
+        event => {
             const { value } = event.target;
             setHeaderDisplayType(value);
         },
@@ -103,7 +103,7 @@ export const MobileDataGrid = () => {
 
     const _renderFooter = () => {
         if (!sumTotal) {
-            return;
+            return null;
         }
         const { turnover, playerWinloss } = sumTotal;
         return (
@@ -131,14 +131,14 @@ export const MobileDataGrid = () => {
         PageList: DefaultPagingOption.PageList,
     };
 
-    const submitRequest = (params) => {
+    const submitRequest = params => {
         dispatch(setRequestParam(params));
         dispatch(toggleLoader(true));
         dispatch(getReportData(params));
     };
 
     const onSort = (sortBy, sortOrder) => {
-        const requestSortOrder = sortOrder == 'asc' ? SortOrder.ASC : SortOrder.DESC;
+        const requestSortOrder = sortOrder === 'asc' ? SortOrder.ASC : SortOrder.DESC;
         const params = { ...requestParam, SortBy: sortBy, SortOrder: requestSortOrder };
         submitRequest(params);
     };

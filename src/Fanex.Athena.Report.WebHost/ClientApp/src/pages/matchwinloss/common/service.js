@@ -8,31 +8,31 @@ class Service {
             return `${matchWinLossTitle}, ${date}`;
         }
 
-        const productCodes = products.map((item) => item.code).join(',');
+        const productCodes = products.map(item => item.code).join(',');
         const currencyView = LangHelper.getSingleResource('Viewin').replace('{0}', currencyName);
         const productCodeView = `${LangHelper.getSingleResource('LicenseeW_L')} (${productCodes})`;
         return `${matchWinLossTitle}, ${date} - ${currencyView}, ${productCodeView}`;
     }
 
     static getProductCodeList(productOptions) {
-        return productOptions.map((item) => item.code).join(',');
+        return productOptions.map(item => item.code).join(',');
     }
 
     static getMatchProductCodeList(matchProductCode, productOptions) {
         const codeList = ['NG', 'LC', 'VS'];
         const productCodeList = [];
 
-        if (matchProductCode === 'SB' && productOptions.some((option) => option.code === 'SB')) {
+        if (matchProductCode === 'SB' && productOptions.some(option => option.code === 'SB')) {
             productCodeList.push('SB');
         }
 
-        codeList.forEach((item) => {
-            if (matchProductCode === item && productOptions.some((option) => option.code === item)) {
+        codeList.forEach(item => {
+            if (matchProductCode === item && productOptions.some(option => option.code === item)) {
                 productCodeList.push(item);
             }
         });
 
-        return productCodeList.map((item) => item).join(',');
+        return productCodeList.map(item => item).join(',');
     }
 
     static convertToReportData(gridData) {
@@ -42,7 +42,7 @@ class Service {
                 matches.push({
                     leagueId: key,
                     leagueName: gridData.leagueList[key],
-                    data: gridData.data.filter((match) => match.leagueId == key),
+                    data: gridData.data.filter(match => match.leagueId === key),
                 });
             }
         }

@@ -7,20 +7,20 @@ import { DisplayGroupBreakDownMapping } from '../../common/constants';
 
 export const useGroupFilterHandler = () => {
     const dispatch = useDispatch();
-    const selectedGroupByOption = useSelector((state) => state.selectedGroupByOption);
-    const formData = useSelector((state) => state.formData);
+    const selectedGroupByOption = useSelector(state => state.selectedGroupByOption);
+    const formData = useSelector(state => state.formData);
     const { setSelectedGroupByOption, setSelectedBreakDownByOption, setGroupInOriginalCurrency } = ActionCreators;
 
     const _setValueForIsDisplayInOriginalCurrencyFilter = (groupByMode, breakdownByMode) => {
-        const currentMapping = DisplayGroupBreakDownMapping.find((item) => item.groupByMode == groupByMode && item.breakdownMode == breakdownByMode);
+        const currentMapping = DisplayGroupBreakDownMapping.find(item => item.groupByMode === groupByMode && item.breakdownMode === breakdownByMode);
         if (!currentMapping.isDisplayBreakDownInCurrency) {
             dispatch(setGroupInOriginalCurrency(currentMapping.isDisplayBreakDownInCurrency));
         }
     };
-    const onChangeGroupByOption = useCallback((event) => {
+    const onChangeGroupByOption = useCallback(event => {
         const groupMode = event.target.value;
         const breakDownOption = Service.buildBreakDownOptionFromGroupByMode(groupMode, formData.licenseeName);
-        const firstEnabledSelectBreakDown = breakDownOption.find((item) => !item.isDisabled);
+        const firstEnabledSelectBreakDown = breakDownOption.find(item => !item.isDisabled);
         batch(() => {
             dispatch(setSelectedGroupByOption(groupMode));
             dispatch(setSelectedBreakDownByOption(firstEnabledSelectBreakDown.value));
@@ -29,7 +29,7 @@ export const useGroupFilterHandler = () => {
     }, []);
 
     const onChangeBreakByOption = useCallback(
-        (event) => {
+        event => {
             const mode = event.target.value;
             dispatch(setSelectedBreakDownByOption(mode));
             _setValueForIsDisplayInOriginalCurrencyFilter(selectedGroupByOption, mode);

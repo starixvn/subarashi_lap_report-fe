@@ -14,7 +14,7 @@ import { SETTLED_MATCH_COUNT, USER_GUIDE } from '@/constants/pages';
 
 const FormFilter = () => {
     const dispatch = useDispatch();
-    const userGuideContent = useSelector((state) => state.userGuideContent);
+    const userGuideContent = useSelector(state => state.userGuideContent);
 
     const { sendRequest } = useToggleRequest();
 
@@ -25,7 +25,7 @@ const FormFilter = () => {
         sendRequest(() => DataService.getReportData(ApiUrl.REPORT_DATA_URL), _updateData);
     }, []);
 
-    const _updateData = (result) => {
+    const _updateData = result => {
         GtagHelper.logViewReportData(SETTLED_MATCH_COUNT);
 
         if (result && result.data !== null) {

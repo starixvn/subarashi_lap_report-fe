@@ -1,4 +1,4 @@
-﻿import { combineReducers } from 'redux';
+import { combineReducers } from 'redux';
 import * as filterHandlerReducer from './filterHandlerReducer.js';
 import * as productReducer from '@/reducers/productReducer';
 import * as currencyReducer from '@/reducers/currencyReducer';

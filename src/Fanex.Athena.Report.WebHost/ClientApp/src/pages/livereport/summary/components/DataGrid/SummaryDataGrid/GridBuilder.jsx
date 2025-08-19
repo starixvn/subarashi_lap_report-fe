@@ -4,7 +4,7 @@ import { Row, Cell } from '@legion-lib/react-grid';
 import LangHelper from '@/helpers/langHelper';
 import { BuildHeaders, CommonCells } from '../../../gridUltility';
 
-export const BuildSummaryHeaders = (options) => BuildHeaders(LangHelper.getSingleResource('Product'), options);
+export const BuildSummaryHeaders = options => BuildHeaders(LangHelper.getSingleResource('Product'), options);
 
 export const BuildSummaryBody = (data, onClick) => {
     const onDetailClick = (event, detailData) => {
@@ -12,22 +12,20 @@ export const BuildSummaryBody = (data, onClick) => {
         onClick(detailData);
     };
 
-    return data.map((item) => {
-        return (
-            <Row key={`row-summary-${item.productName}`}>
-                <Cell title={item.productName} className="left-align" key={`cell-bonus`}>
-                    <a href="#" onClick={(e) => onDetailClick(e, item)}>
-                        {item.productName}
-                    </a>
-                </Cell>
-                <CommonCells data={item} />
-            </Row>
-        );
-    });
+    return data.map(item => (
+        <Row key={`row-summary-${item.productName}`}>
+            <Cell title={item.productName} className="left-align" key={`cell-bonus`}>
+                <a href="#" onClick={e => onDetailClick(e, item)}>
+                    {item.productName}
+                </a>
+            </Cell>
+            <CommonCells data={item} />
+        </Row>
+    ));
 };
 
 export const BuildSummaryFooter = (data, onClick) => {
-    const onDetailClick = (event) => {
+    const onDetailClick = event => {
         event.preventDefault();
         onClick({ productCode: 'ALL' });
     };

@@ -17,7 +17,7 @@ export const useGridAction = () => {
     const dispatch = useDispatch();
     const { setSweetAlertOption } = ActionCreators;
 
-    const Delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+    const Delay = ms => new Promise(resolve => setTimeout(resolve, ms));
     const handleCloseAlert = () => dispatch(setSweetAlertOption(null));
 
     const Remove = (event, monitoringId) => {
@@ -30,11 +30,11 @@ export const useGridAction = () => {
                         await Delay(2000);
                         return response;
                     },
-                    (res) => {
+                    res => {
                         handleCloseAlert();
                         if (res && res.data) {
                             const { code, message } = res.data;
-                            if (code == 0) {
+                            if (code === 0) {
                                 fetchData();
                             } else {
                                 alert(message);
@@ -56,13 +56,13 @@ export const useGridAction = () => {
 
     const Setting = (event, monitoringId) => {
         event.preventDefault();
-        showPopup(ApiUrl.MATCH_MONITORING_SETTING_URL + `?Id=${monitoringId}`, LangHelper.getSingleResource('MonitorDetail'), 'monitor-setting-popup', true);
+        showPopup(`${ApiUrl.MATCH_MONITORING_SETTING_URL}?Id=${monitoringId}`, LangHelper.getSingleResource('MonitorDetail'), 'monitor-setting-popup', true);
     };
 
     const History = (event, monitoringId) => {
         event.preventDefault();
         showPopup(
-            ApiUrl.MATCH_MONITORING_HISTORY_URL + `?Id=${monitoringId}`,
+            `${ApiUrl.MATCH_MONITORING_HISTORY_URL}?Id=${monitoringId}`,
             LangHelper.getSingleResource('TriggeredAlertHistory'),
             'triggered-alert-history-popup',
             false

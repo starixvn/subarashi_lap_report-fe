@@ -5,7 +5,7 @@ import LangHelper from '@/helpers/langHelper';
 import ReportSelect from '@/components/ReportSelect';
 import { DEFAULT_BASE_CURRENCY_VALUE } from '@/constants/config';
 
-export const BaseCurrencyFilter = (props) => {
+export const BaseCurrencyFilter = props => {
     const { onChange, value, options } = props;
     const _renderBaseCurrencySelectList = () => {
         const baseCurrencyList = options;

@@ -6,9 +6,9 @@ import LangHelper from '@/helpers/langHelper';
 import { BuildByBetTypeBody, BuildByBetTypeHeaders } from './GridBuilder';
 
 function ByBetTypeDataGrid() {
-    const gridData = useSelector((state) => state.gridData?.dataByBetType);
-    const formData = useSelector((state) => state.formData);
-    const selectedProductCode = useSelector((state) => state.selectedProductCode);
+    const gridData = useSelector(state => state.gridData?.dataByBetType);
+    const formData = useSelector(state => state.formData);
+    const selectedProductCode = useSelector(state => state.selectedProductCode);
 
     const options = {
         hasAmountDueToColumn: formData.hasAmountDueToColumn,
@@ -16,7 +16,7 @@ function ByBetTypeDataGrid() {
     };
 
     if (!selectedProductCode || !gridData || !gridData.length) {
-        return;
+        return null;
     }
 
     return (

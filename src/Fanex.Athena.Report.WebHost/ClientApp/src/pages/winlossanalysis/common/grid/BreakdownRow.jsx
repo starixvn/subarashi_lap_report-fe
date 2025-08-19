@@ -2,7 +2,7 @@ import React from 'react';
 import { Row, Cell } from '@legion-lib/react-grid';
 import NumberFormat from '@/lib/numberFormat';
 
-export const BreakdownRow = (props) => {
+export const BreakdownRow = props => {
     const { data, option } = props;
     const {
         betCount,

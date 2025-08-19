@@ -4,12 +4,13 @@ import { LiveStatusesReportTitle } from './filterSettings';
 class Service {
     static generateReportTitle(liveIndicator, fromDate, toDate, currencyName) {
         const liveReportTitle = `${LangHelper.getSingleResource('LiveReport')}`;
-        const liveIndicatorTitle = `${LiveStatusesReportTitle.find((status) => status.value == liveIndicator).label} ${LangHelper.getSingleResource('Data')}`;
+        const liveIndicatorTitle = `${LiveStatusesReportTitle.find(status => status.value === liveIndicator).label} ${LangHelper.getSingleResource('Data')}`;
         const dateTitle = `${fromDate} → ${toDate}`;
         const currencyTitle = LangHelper.getSingleResource('Viewin').replace('{0}', currencyName);
         return `${liveReportTitle} - ${liveIndicatorTitle}, ${dateTitle} - ${currencyTitle}`;
     }
 
+    // eslint-disable-next-line complexity
     static getMatchListProductOption(sportId, productCode) {
         const newSportId = Number(sportId);
         let productOptions = [];
@@ -67,8 +68,8 @@ class Service {
     static hasAllChildrenSelected(subsidiaryItem, subsidiarySelected) {
         if (
             !subsidiarySelected ||
-            subsidiarySelected.some((item) => subsidiaryItem.value == item) ||
-            subsidiarySelected.some((item) => subsidiaryItem.name == item)
+            subsidiarySelected.some(item => subsidiaryItem.value === item) ||
+            subsidiarySelected.some(item => subsidiaryItem.name === item)
         ) {
             return true;
         }
@@ -85,7 +86,7 @@ class Service {
             count++;
         }
 
-        return count == subsidiaryItem.children.length;
+        return count === subsidiaryItem.children.length;
     }
 }
 

@@ -11,9 +11,9 @@ import { BuildBody, BuildFooter, BuildHeader } from '../gridBuilder';
 const DataGrid = () => {
     const { TableSettings } = constants;
 
-    const gridData = useSelector((state) => state.gridData);
-    const formData = useSelector((state) => state.formData);
-    const requestParam = useSelector((state) => state.requestParam);
+    const gridData = useSelector(state => state.gridData);
+    const formData = useSelector(state => state.formData);
+    const requestParam = useSelector(state => state.requestParam);
 
     if (!gridData) {
         return null;

@@ -33,7 +33,7 @@ function CommonCells({ data, options, hideClosingBalance, hideOpeningBalance }) 
     // Casino Transfer column
     const transfer3rd = NumberFormat.formatDecimal(data.transfer3rd);
 
-    const hideDataClassName = (hide) => (hide ? 'center-align' : 'right-align');
+    const hideDataClassName = hide => (hide ? 'center-align' : 'right-align');
 
     return (
         <>

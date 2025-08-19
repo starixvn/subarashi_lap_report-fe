@@ -12,7 +12,7 @@ import { constants } from '../common';
 
 const FormFilter = () => {
     const navigate = useNavigate();
-    const requestParam = useSelector((state) => state.requestParam);
+    const requestParam = useSelector(state => state.requestParam);
 
     const handler = useToggleRequest();
 
@@ -20,7 +20,7 @@ const FormFilter = () => {
     const onExportExcel = () => {
         handler.sendRequest(
             () => DataService.getReportFile(ApiUrl.EXPORT_EXCEL_URL, requestParam),
-            (response) => Site.downloadFile(response.data, 'LiveReport.xls')
+            response => Site.downloadFile(response.data, 'LiveReport.xls')
         );
     };
 

@@ -9,7 +9,7 @@ import { ActionCreators } from '../../../actions';
 const SportCell = ({ data, isShowedDetailLink }) => {
     const navigate = useNavigateParams();
     const dispatch = useDispatch();
-    const requestParam = useSelector((state) => state.requestParam);
+    const requestParam = useSelector(state => state.requestParam);
 
     const { MatchListPage, BetListPageUrl } = constants;
     const { toggleLoader } = ActionCreators;
@@ -40,14 +40,14 @@ const SportCell = ({ data, isShowedDetailLink }) => {
 
         return (
             <Cell title={data.productName} className="left-align" key={`cell-title`}>
-                <a href="#" onClick={(e) => onBetListClick(e, betListUrl + createSearchParams(params))}>
+                <a href="#" onClick={e => onBetListClick(e, betListUrl + createSearchParams(params))}>
                     {data.productName}
                 </a>
             </Cell>
         );
     }
 
-    const onMatchListClickHandler = (event) => {
+    const onMatchListClickHandler = event => {
         event.preventDefault();
         dispatch(toggleLoader(true));
 

@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import classNames from 'classnames';
 import { useDispatch, useSelector } from 'react-redux';
 import MultipleSelect, { TreeViewSelect } from '@legion-lib/react-multiselect';
@@ -17,21 +17,22 @@ import ExportExcel from '@/components/ExportExcel';
 import actions from '../actions/index';
 import { constants } from '../common';
 
+// eslint-disable-next-line complexity
 const FormFilter = () => {
     const dispatch = useDispatch();
 
-    const dateRange = useSelector((state) => state.dateRange);
-    const selectedProduct = useSelector((state) => state.selectedProduct);
-    const selectedBaseCurrency = useSelector((state) => state.selectedBaseCurrency);
-    const requestParam = useSelector((state) => state.requestParam);
-    const convertAll = useSelector((state) => state.convertAll);
-    const includeDrawData = useSelector((state) => state.includeDrawData);
-    const selectedWhiteLabel = useSelector((state) => state.selectedWhiteLabel);
-    const selectedSubsidiary = useSelector((state) => state.selectedSubsidiary);
-    const separateSabaWinLoss = useSelector((state) => state.separateSabaWinLoss);
-    const excludeTest = useSelector((state) => state.excludeTest);
+    const dateRange = useSelector(state => state.dateRange);
+    const selectedProduct = useSelector(state => state.selectedProduct);
+    const selectedBaseCurrency = useSelector(state => state.selectedBaseCurrency);
+    const requestParam = useSelector(state => state.requestParam);
+    const convertAll = useSelector(state => state.convertAll);
+    const includeDrawData = useSelector(state => state.includeDrawData);
+    const selectedWhiteLabel = useSelector(state => state.selectedWhiteLabel);
+    const selectedSubsidiary = useSelector(state => state.selectedSubsidiary);
+    const separateSabaWinLoss = useSelector(state => state.separateSabaWinLoss);
+    const excludeTest = useSelector(state => state.excludeTest);
 
-    const formData = useSelector((state) => state.formData);
+    const formData = useSelector(state => state.formData);
 
     const {
         setDateRange,
@@ -49,11 +50,11 @@ const FormFilter = () => {
     const { ApiUrl, DateConstraint } = constants;
 
     const isValidModel =
-        selectedSubsidiary && selectedProduct && selectedBaseCurrency && formData.baseCurrencies.find((x) => x.value == selectedBaseCurrency.value);
+        selectedSubsidiary && selectedProduct && selectedBaseCurrency && formData.baseCurrencies.find(x => x.value === selectedBaseCurrency.value);
 
     const { sendRequest } = useToggleRequest();
 
-    const submit = (event) => {
+    const submit = event => {
         event.preventDefault();
         const params = getParams();
         if (!params) {
@@ -84,11 +85,11 @@ const FormFilter = () => {
         };
     };
 
-    const productChangeHandler = (currentItem, selectedItemsKey) => {
+    const productChangeHandler = (_currentItem, selectedItemsKey) => {
         dispatch(setSelectedProducts(selectedItemsKey));
     };
 
-    const onChangeBaseCurrency = (val) => dispatch(setSelectedBaseCurrency(val));
+    const onChangeBaseCurrency = val => dispatch(setSelectedBaseCurrency(val));
 
     const onChangeIncludeDrawDate = () => dispatch(changeIncludeDrawData(!includeDrawData));
 
@@ -98,7 +99,7 @@ const FormFilter = () => {
 
     const onChangeSeparateSabaWinLoss = () => dispatch(changeSeparateSabaWinLoss(!separateSabaWinLoss));
 
-    const onChangeSubsidiary = (currentItem, selectedItemsKey, treeViewList) => {
+    const onChangeSubsidiary = (_currentItem, selectedItemsKey, treeViewList) => {
         if (formData.viewType === SubsidiaryViewType.MASTER_MANAGEMENT) {
             const selectedParentItems = [];
             for (let i = 0; i < treeViewList.length; i++) {
@@ -125,14 +126,14 @@ const FormFilter = () => {
 
     const onExportExcel = () => {
         const params = requestParam ?? getParams();
-        if (params?.DrillDownLevel == ReportLevel.CUSTOMER) {
+        if (params?.DrillDownLevel === ReportLevel.CUSTOMER) {
             return sendRequest(() => DataService.getReportFile(ApiUrl.EXPORT_DETAIL_EXCEL_URL, params), downLoadExcel);
         }
 
         return sendRequest(() => DataService.getReportFile(ApiUrl.EXPORT_SUMMARY_EXCEL_URL, params), downLoadExcel);
     };
 
-    const downLoadExcel = (response) => {
+    const downLoadExcel = response => {
         const NoContentStatusCode = 204;
 
         if (response.status === NoContentStatusCode) {
@@ -184,7 +185,7 @@ const FormFilter = () => {
                             today={DateConstraint.today}
                             limitedMonthRange={DateConstraint.limitedMonthRange}
                             onChange={applyDateRangeHandler}
-                            langHandler={(key) => LangHelper.getDateRangeResource(key)}
+                            langHandler={key => LangHelper.getDateRangeResource(key)}
                         />
                     </div>
                 </div>
@@ -252,7 +253,7 @@ const FormFilter = () => {
                         <CheckBox
                             id="SeparateSabaWinLoss"
                             checked={separateSabaWinLoss}
-                            disabled={`,${selectedProduct},`.toLowerCase().indexOf(',sb,') == -1}
+                            disabled={`,${selectedProduct},`.toLowerCase().indexOf(',sb,') === -1}
                             onChange={onChangeSeparateSabaWinLoss}
                             label={LangHelper.getSingleResource('SeparateSabaWinLoss', formData.isHideSaba)}
                         />

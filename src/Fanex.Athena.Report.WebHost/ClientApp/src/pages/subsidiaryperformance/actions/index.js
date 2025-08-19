@@ -1,4 +1,4 @@
-﻿import * as loaderAction from '@/actions/loaderAction';
+import * as loaderAction from '@/actions/loaderAction';
 import * as dateRangeAction from '@/actions/dateRangeAction';
 import * as gridDataAction from '@/actions/gridDataAction';
 import * as requestParamAction from '@/actions/requestParamAction';

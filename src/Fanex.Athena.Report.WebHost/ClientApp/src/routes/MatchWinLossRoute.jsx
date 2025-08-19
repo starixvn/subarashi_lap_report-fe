@@ -3,12 +3,10 @@ import { Route, Routes } from 'react-router-dom';
 
 const MatchWinLoss = lazy(() => import(/* webpackChunkName: "matchwinloss" */ '../pages/matchwinloss'));
 
-const MatchWinLossRoute = () => {
-    return (
-        <Routes>
-            <Route index element={<MatchWinLoss />} />
-        </Routes>
-    );
-};
+const MatchWinLossRoute = () => (
+    <Routes>
+        <Route index element={<MatchWinLoss />} />
+    </Routes>
+);
 
 export default MatchWinLossRoute;

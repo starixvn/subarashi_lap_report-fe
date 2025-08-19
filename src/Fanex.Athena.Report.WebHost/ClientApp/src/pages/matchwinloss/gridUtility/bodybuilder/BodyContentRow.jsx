@@ -14,7 +14,7 @@ function BodyContentRow(props) {
     const navigate = useNavigateParams();
 
     const dispatch = useDispatch();
-    const requestParam = useSelector((state) => state.requestParam);
+    const requestParam = useSelector(state => state.requestParam);
 
     const [expanded, setExpanded] = useState(false);
     const [detailData, setDetailData] = useState([]);
@@ -35,7 +35,7 @@ function BodyContentRow(props) {
         setExpanded(false);
     };
 
-    const onClickExpandHandler = (e) => {
+    const onClickExpandHandler = e => {
         e.preventDefault();
 
         if (detailData.length && expanded) {
@@ -54,7 +54,7 @@ function BodyContentRow(props) {
         sendRequest(() => DataService.postReportData(ApiUrl.DETAIL_DATA_URL, params), updateDetailData);
     };
 
-    const updateDetailData = (result) => {
+    const updateDetailData = result => {
         if (!result || !result.data) {
             return;
         }
@@ -79,7 +79,7 @@ function BodyContentRow(props) {
             ProductCode: matchData.productName,
             ProductCodeList: Service.getMatchProductCodeList(
                 matchData.productName,
-                requestParam.ProductOptions.filter((item) => item.status)
+                requestParam.ProductOptions.filter(item => item.status)
             ),
         };
     };
@@ -129,7 +129,7 @@ function BodyContentRow(props) {
     };
 
     const getIndexRowSpan = () => (detailData.length && expanded ? detailData.length + 1 : null);
-    const isLinkData = (match) => Service.includeDrilldownProduct(match.productName);
+    const isLinkData = match => Service.includeDrilldownProduct(match.productName);
     const matchName = Service.getMatchName(matchData);
 
     const rows = [
@@ -142,7 +142,7 @@ function BodyContentRow(props) {
                     <a
                         className={`text-bold cell ${isLinkData(matchData) ? 'bet-list-link' : ''}`}
                         href={isLinkData(matchData) ? '#' : null}
-                        onClick={(e) => isLinkData(matchData) && onClickMatchHandler(e, matchData)}
+                        onClick={e => isLinkData(matchData) && onClickMatchHandler(e, matchData)}
                         dangerouslySetInnerHTML={{ __html: matchName }}></a>
                     <a className={`icon-wrapper cell ${expanded ? 'expanded' : ''}`} href="#" onClick={onClickExpandHandler}>
                         <i className={`icon-arrow`}></i>
@@ -158,7 +158,7 @@ function BodyContentRow(props) {
             detailData.map((match, matchIndex) => (
                 <Row key={`x-submatch-${matchIndex}`}>
                     <Cell key={`col-matchName`}>
-                        <a href="#" onClick={(e) => onClickMatchHandler(e, match)}>
+                        <a href="#" onClick={e => onClickMatchHandler(e, match)}>
                             <span>{match.bettypeName}</span>
                         </a>
                     </Cell>

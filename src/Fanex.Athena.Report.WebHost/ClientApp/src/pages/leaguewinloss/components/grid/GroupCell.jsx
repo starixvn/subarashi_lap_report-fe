@@ -6,7 +6,8 @@ import ActionCreators from '../../actions';
 import { ApiUrl, ReportLevel } from '../../common/constants';
 import DataService from '@/lib/dataService';
 
-export const GroupCell = (props) => {
+// eslint-disable-next-line complexity
+export const GroupCell = props => {
     const {
         rowData,
         level,
@@ -45,7 +46,7 @@ export const GroupCell = (props) => {
     const _handleDirectBreakDownCurrency = async () => {
         const dataList = reportData.data;
 
-        const itemIndex = dataList.findIndex((_) => _[property] === key);
+        const itemIndex = dataList.findIndex(_ => _[property] === key);
 
         if (itemIndex === -1) {
             return;
@@ -94,7 +95,7 @@ export const GroupCell = (props) => {
                 continue;
             }
 
-            rowIndex = detailData.findIndex((_) => _[property] === key);
+            rowIndex = detailData.findIndex(_ => _[property] === key);
 
             if (rowIndex !== -1) {
                 itemIndex = i;
@@ -145,8 +146,10 @@ export const GroupCell = (props) => {
             if (response.status === 200) {
                 return response.data;
             }
+            return null;
         } catch (error) {
             alert('Sorry, an error occurred while processing your request.');
+            return null;
         }
     };
 
@@ -163,7 +166,7 @@ export const GroupCell = (props) => {
         toggleLoader(false);
     };
 
-    const _drilldownReportClick = async (e) => {
+    const _drilldownReportClick = async e => {
         e.preventDefault();
 
         if (_isDirectToCurrency) {
@@ -193,15 +196,14 @@ export const GroupCell = (props) => {
         setBreadcrumbParams([...breadcrumbParams, newRequestParam]);
     };
 
-    const text = () => {
-        return level === ReportLevel.BETTYPE ? (
+    const text = () =>
+        level === ReportLevel.BETTYPE ? (
             textValue
         ) : (
-            <a href="#" onClick={(e) => _drilldownReportClick(e)}>
+            <a href="#" onClick={e => _drilldownReportClick(e)}>
                 {textValue}
             </a>
         );
-    };
 
     const drilldown = (
         <Cell key={`group-cell-${key}-${rowData.leagueId}`} className="left-align">

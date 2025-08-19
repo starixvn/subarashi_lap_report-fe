@@ -7,9 +7,7 @@ export function setGridData(data) {
     };
 }
 
-export const setSweetAlertOption = (data) => {
-    return {
-        type: types.SET_SWEET_ALERT_OPTION,
-        data,
-    };
-};
+export const setSweetAlertOption = data => ({
+    type: types.SET_SWEET_ALERT_OPTION,
+    data,
+});

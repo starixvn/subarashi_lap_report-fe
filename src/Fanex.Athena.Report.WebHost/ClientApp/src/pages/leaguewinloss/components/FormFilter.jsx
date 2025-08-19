@@ -23,7 +23,7 @@ import Service from '../common/service';
 
 import { TreeViewOption } from '@/constants/report';
 
-export const FormFilter = (props) => {
+export const FormFilter = props => {
     const [isGroupInOriginalCurrency, setGroupInOriginalCurrency] = useState(true);
     const [leagueName, setLeagueName] = useState('');
     const [baseCurrencyList, setBaseCurrencyList] = useState(props.AppData.baseCurrencyList);
@@ -43,36 +43,31 @@ export const FormFilter = (props) => {
         }
     };
 
-    const _renderDateFilter = () => {
-        return (
-            <DateRange
-                startDate={props.dateRange.fromDate}
-                endDate={props.dateRange.toDate}
-                today={props.dateRange.toDate}
-                minDate={DateConstraint.minDate}
-                maxDate={DateConstraint.maxDate}
-                limitedMonthRange={DateConstraint.limitedMonthRange}
-                firstDayOfWeek={DateConstraint.firstDayOfWeek}
-                onChange={_onChangeDateRange}
-                langHandler={(key) => LangHelper.getDateRangeResource(key)}
+    const _renderDateFilter = () => (
+        <DateRange
+            startDate={props.dateRange.fromDate}
+            endDate={props.dateRange.toDate}
+            today={props.dateRange.toDate}
+            minDate={DateConstraint.minDate}
+            maxDate={DateConstraint.maxDate}
+            limitedMonthRange={DateConstraint.limitedMonthRange}
+            firstDayOfWeek={DateConstraint.firstDayOfWeek}
+            onChange={_onChangeDateRange}
+            langHandler={key => LangHelper.getDateRangeResource(key)}
+        />
+    );
+
+    const _renderBaseCurrencySelectList = () =>
+        baseCurrencyList &&
+        baseCurrencyList.length && (
+            <ReportSelect
+                id="select-list-BaseCurrency"
+                instanceId="baseCurrency"
+                value={props.selectedBaseCurrency.value !== DEFAULT_BASE_CURRENCY_VALUE ? props.selectedBaseCurrency : null}
+                options={baseCurrencyList}
+                onChange={item => props.setSelectedBaseCurrency(item)}
             />
         );
-    };
-
-    const _renderBaseCurrencySelectList = () => {
-        return (
-            baseCurrencyList &&
-            baseCurrencyList.length && (
-                <ReportSelect
-                    id="select-list-BaseCurrency"
-                    instanceId="baseCurrency"
-                    value={props.selectedBaseCurrency.value !== DEFAULT_BASE_CURRENCY_VALUE ? props.selectedBaseCurrency : null}
-                    options={baseCurrencyList}
-                    onChange={(item) => props.setSelectedBaseCurrency(item)}
-                />
-            )
-        );
-    };
 
     const _renderProductSelectList = () => {
         const productOptions = AppData.productOptions;
@@ -171,7 +166,7 @@ export const FormFilter = (props) => {
         );
     };
 
-    const onChangeProduct = (productCode) => {
+    const onChangeProduct = productCode => {
         props.setSelectedProducts(productCode);
         props.getSportList(productCode);
         props.getBettypeList(productCode);
@@ -197,20 +192,20 @@ export const FormFilter = (props) => {
         );
     };
 
-    const onChangeCurrency = (currencyIdList) => {
+    const onChangeCurrency = currencyIdList => {
         let baseCurrency = '';
         let newBaseCurrencyList;
 
         if (!currencyIdList || currencyIdList.indexOf(',') > 0) {
-            baseCurrency = AppData.baseCurrencyList.find((x) => x.value === props.selectedBaseCurrency.value)
+            baseCurrency = AppData.baseCurrencyList.find(x => x.value === props.selectedBaseCurrency.value)
                 ? props.selectedBaseCurrency
                 : AppData.defaultBaseCurrency;
             setBaseCurrencyList(AppData.baseCurrencyList);
         } else {
-            const currency = AppData.currencyList.find((x) => x.key == currencyIdList);
+            const currency = AppData.currencyList.find(x => x.key === currencyIdList);
             baseCurrency = { value: currency.key, label: currency.value };
 
-            if (!baseCurrencyList.find((x) => x.value === currency.value)) {
+            if (!baseCurrencyList.find(x => x.value === currency.value)) {
                 newBaseCurrencyList = AppData.baseCurrencyList.slice(0);
                 newBaseCurrencyList.push(baseCurrency);
                 setBaseCurrencyList(newBaseCurrencyList);
@@ -241,7 +236,7 @@ export const FormFilter = (props) => {
         );
     };
 
-    const onSubmit = (event) => {
+    const onSubmit = event => {
         event.preventDefault();
         const params = getParams();
         if (!params) {
@@ -270,11 +265,11 @@ export const FormFilter = (props) => {
             selectedCurrencyArray.length === AppData.currencyList.length
                 ? 'All'
                 : AppData.currencyList
-                      .filter((item) => selectedCurrencyArray.includes(item.key.toString()))
-                      .map((item) => item.value)
+                      .filter(item => selectedCurrencyArray.includes(item.key.toString()))
+                      .map(item => item.value)
                       .join(',');
 
-        const baseCurrency = baseCurrencyList.find((x) => x.value === props.selectedBaseCurrency.value);
+        const baseCurrency = baseCurrencyList.find(x => x.value === props.selectedBaseCurrency.value);
         return {
             PageSize: PageSize,
             PageIndex: 1,
@@ -323,7 +318,7 @@ export const FormFilter = (props) => {
 
         props.toggleLoader(true);
         DataService.getReportFile(ApiUrl.EXPORT_REPORT_DATA_URL, exportRequestParam)
-            .then((response) => {
+            .then(response => {
                 const NoContentStatusCode = 204;
                 if (response.status === NoContentStatusCode) {
                     alert(LangHelper.getSingleResource('NoInfo'));
@@ -376,7 +371,7 @@ export const FormFilter = (props) => {
                                 type="text"
                                 value={leagueName}
                                 placeholder={LangHelper.getSingleResource('LeagueName')}
-                                onChange={(event) => setLeagueName(event.target.value)}
+                                onChange={event => setLeagueName(event.target.value)}
                             />
                         </div>
                     </div>
@@ -401,8 +396,8 @@ export const FormFilter = (props) => {
                             <label className="label-text">{LangHelper.getSingleResource('Username')}</label>
                             <AutoComplete
                                 url={ApiUrl.CUSTOMER_SEARCH_URL}
-                                onSelect={(value) => props.setUsername(value)}
-                                onInput={(value) => props.setUsername(value)}
+                                onSelect={value => props.setUsername(value)}
+                                onInput={value => props.setUsername(value)}
                                 htmlAttributes={{ placeholder: LangHelper.getSingleResource('ExternalIdOrSystemId') }}
                             />
                         </div>
@@ -426,7 +421,7 @@ export const FormFilter = (props) => {
                             <CheckBox
                                 id="IsGroupInOriginalCurrency"
                                 checked={isGroupInOriginalCurrency}
-                                onChange={(checked) => setGroupInOriginalCurrency(checked)}
+                                onChange={checked => setGroupInOriginalCurrency(checked)}
                                 label={LangHelper.getSingleResource('IsGroupInOriginalCurrency')}
                             />
                         </div>

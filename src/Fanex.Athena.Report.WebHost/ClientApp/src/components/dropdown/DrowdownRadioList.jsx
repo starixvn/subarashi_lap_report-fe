@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { v4 as uuidv4 } from 'uuid';
 import DropdownRadioItem from './DropdownRadioItem';
 
-export const DrowdownRadioList = (props) => {
+export const DrowdownRadioList = props => {
     const { valueSelector, onChange, dataSource, keySelector, selectedValue, iconClass, className, id } = props;
     const [isOpen, setIsOpen] = useState(false);
     const _handleToggleDropdown = () => {
@@ -29,12 +29,12 @@ export const DrowdownRadioList = (props) => {
             buttonLabel={<i className={iconClass}>settings</i>}
             onClose={_handleClose}>
             {dataSource.length > 0 &&
-                dataSource.map((item) => {
-                    const value = typeof keySelector == 'function' ? item[Object.keys(item).find(keySelector)] : item[keySelector];
-                    const text = typeof valueSelector == 'function' ? item[Object.keys(item).find(valueSelector)] : item[valueSelector];
+                dataSource.map(item => {
+                    const value = typeof keySelector === 'function' ? item[Object.keys(item).find(keySelector)] : item[keySelector];
+                    const text = typeof valueSelector === 'function' ? item[Object.keys(item).find(valueSelector)] : item[valueSelector];
                     return (
                         <DropdownItem key={`${id}-${value}`} tag="div">
-                            <DropdownRadioItem id={`${id}-${value}`} checked={selectedValue == value} value={value} text={text} onChange={onChange} />
+                            <DropdownRadioItem id={`${id}-${value}`} checked={selectedValue === value} value={value} text={text} onChange={onChange} />
                         </DropdownItem>
                     );
                 })}

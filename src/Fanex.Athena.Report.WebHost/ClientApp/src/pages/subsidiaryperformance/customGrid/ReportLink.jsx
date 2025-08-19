@@ -9,14 +9,14 @@ import { constants } from '../common';
 
 const ReportLink = ({ subsidiary, children }) => {
     const dispatch = useDispatch();
-    const requestParam = useSelector((state) => state.requestParam);
+    const requestParam = useSelector(state => state.requestParam);
 
     const { sendRequest } = useToggleRequest();
 
     const { fetchGridData } = actions;
     const { ApiUrl } = constants;
 
-    const onClickHandler = (event) => {
+    const onClickHandler = event => {
         event.preventDefault();
         const params = {
             ...requestParam,

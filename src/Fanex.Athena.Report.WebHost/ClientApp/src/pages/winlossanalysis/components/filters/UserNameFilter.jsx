@@ -6,7 +6,7 @@ import AutoComplete from '@/components/auto-complete';
 import SearchOption from './SearchOption';
 import { ApiUrl } from '../../common/constants';
 
-const UserNameFilter = (props) => {
+const UserNameFilter = props => {
     const { onChangeSearchMode, onChangeUserName, searchMode } = props;
 
     return (

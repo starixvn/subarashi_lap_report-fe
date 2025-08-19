@@ -9,7 +9,7 @@ import NoDataTitle from '@/components/NoDataTitle';
 import { BreadcrumbItems, ReportLevel, ApiUrl } from '../common/constants';
 import ReportTitle from '@/components/ReportTitle';
 
-export const DataGrid = (props) => {
+export const DataGrid = props => {
     const { data, total } = props.reportData;
 
     if (!data) {
@@ -22,22 +22,22 @@ export const DataGrid = (props) => {
 
     const { pagingOption, AppData, requestParam } = props;
 
-    const contentData = data.map((item) => {
+    const contentData = data.map(item => {
         if (!item.detail) {
             return item;
         }
 
         // Level 1
-        item.detail = item.detail.map((rows) => {
-            let currency = AppData.currencyList.find((x) => x.key === rows.currency);
+        item.detail = item.detail.map(rows => {
+            let currency = AppData.currencyList.find(x => x.key === rows.currency);
             currency && (rows.currencyName = currency.value);
             if (!rows.detail || !rows.detail.data) {
                 return rows;
             }
 
             // Level 2
-            rows.detail.data = rows.detail.data.map((cells) => {
-                currency = AppData.currencyList.find((x) => x.key === cells.currency);
+            rows.detail.data = rows.detail.data.map(cells => {
+                currency = AppData.currencyList.find(x => x.key === cells.currency);
                 currency && (cells.currencyName = currency.value);
                 return cells;
             });
@@ -48,7 +48,7 @@ export const DataGrid = (props) => {
         return item;
     });
 
-    const drillDownData = (level) => {
+    const drillDownData = level => {
         const currentLevel = requestParam.DrillDownLevel;
 
         if (currentLevel === level || level < ReportLevel.MAIN || level > ReportLevel.BETTYPE) {
@@ -66,7 +66,7 @@ export const DataGrid = (props) => {
 
     return (
         <div className="result-content">
-            <Breadcrumb items={BreadcrumbItems} value={requestParam.DrillDownLevel} onChange={(item) => drillDownData(item.value)} />
+            <Breadcrumb items={BreadcrumbItems} value={requestParam.DrillDownLevel} onChange={item => drillDownData(item.value)} />
             <ReportTitle content={props.reportTitle} />
             <Table
                 key={`table-${requestParam.DrillDownLevel}-${props.reloadReport}`}

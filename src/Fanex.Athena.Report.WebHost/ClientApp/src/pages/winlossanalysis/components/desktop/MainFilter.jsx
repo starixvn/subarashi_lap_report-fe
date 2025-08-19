@@ -1,4 +1,4 @@
-﻿import React, { useEffect, memo } from 'react';
+import React, { useEffect, memo } from 'react';
 import { shallowEqual, useSelector } from 'react-redux';
 
 import CollapsiblePanel from '@/components/CollapsiblePanel';
@@ -57,7 +57,7 @@ export const MainFilter = () => {
         selectedSubsidiary,
         formData,
     ] = useSelector(
-        (state) => [
+        state => [
             state.appUuid,
             state.selectedProduct,
             state.selectedSport,
@@ -140,7 +140,7 @@ export const MainFilter = () => {
                     <DateRangeFilter key={`date-${appUuid}-${selectedViewInTime}`} onChange={onDateRangeChangeHandler} viewInTime={selectedViewInTime} />
                 </div>
 
-                {selectedViewInTime == ViewInTimeMode.Settlement && (
+                {selectedViewInTime === ViewInTimeMode.Settlement && (
                     <div className="col-12 col-md-3 col-sm-6 col-lg-4 col-xl-2">
                         <HourFilter onChange={onHourChangeHandler} isValid={!!selectedHour} />
                     </div>
@@ -234,7 +234,7 @@ export const MainFilter = () => {
                     </div>
                 )}
             </div>
-            {selectedViewInTime == ViewInTimeMode.Settlement && (
+            {selectedViewInTime === ViewInTimeMode.Settlement && (
                 <div className="row">
                     <Note />
                 </div>

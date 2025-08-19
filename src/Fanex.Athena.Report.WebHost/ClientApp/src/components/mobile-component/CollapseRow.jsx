@@ -4,12 +4,12 @@ import classNames from 'classnames';
 import RefRow from './RefRow';
 import { useHover } from 'usehooks-ts';
 
-const CollapseRow = (props) => {
+const CollapseRow = props => {
     const { isFocus, className, onFocus, index, isUseCumtomCollapseRow, children } = props;
     const [oldIsHover, setOldIsHover] = useState(false);
     const ref = useRef(null);
     const isHover = useHover(ref);
-    if (isHover != oldIsHover) {
+    if (isHover !== oldIsHover) {
         setOldIsHover(isHover);
         onFocus(index, isHover);
     }

@@ -8,7 +8,7 @@ const useNavigateParams = () => {
             return navigate(url);
         }
 
-        navigate({
+        return navigate({
             pathname: url,
             search: createSearchParams(params).toString(),
         });

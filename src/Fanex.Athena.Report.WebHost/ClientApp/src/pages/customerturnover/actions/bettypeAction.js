@@ -7,31 +7,29 @@ import { toggleLoader } from '@/actions/loaderAction';
 
 const BETTYPE_CACHE_KEY = 'CUSTOMER_TURNOVER_BETTYPE_CACHE_KEY';
 
-export const fetchBetTypeList = (sportProducts) => {
-    return async (dispatch) => {
-        try {
-            dispatch(toggleLoader(true));
+export const fetchBetTypeList = sportProducts => async dispatch => {
+    try {
+        dispatch(toggleLoader(true));
 
-            const cacheKey = `${BETTYPE_CACHE_KEY}:${sportProducts.map((x) => x.name).join(',')}`;
-            const data = await Service.fetchBetTypeList({ url: ApiUrl.BETTYPE_URL, cacheKey: cacheKey, sportProducts });
-            if (!data) {
-                return;
-            }
-
-            const { bettypeTree, selectedBettypeIds } = buildBettypeTree(data);
-
-            dispatch(bettypeAction.setBettypeList(bettypeTree));
-            dispatch(bettypeAction.setSelectedBettype(selectedBettypeIds.join(',')));
-        } finally {
-            dispatch(toggleLoader(false));
+        const cacheKey = `${BETTYPE_CACHE_KEY}:${sportProducts.map(x => x.name).join(',')}`;
+        const data = await Service.fetchBetTypeList({ url: ApiUrl.BETTYPE_URL, cacheKey: cacheKey, sportProducts });
+        if (!data) {
+            return;
         }
-    };
+
+        const { bettypeTree, selectedBettypeIds } = buildBettypeTree(data);
+
+        dispatch(bettypeAction.setBettypeList(bettypeTree));
+        dispatch(bettypeAction.setSelectedBettype(selectedBettypeIds.join(',')));
+    } finally {
+        dispatch(toggleLoader(false));
+    }
 };
 
-const buildBettypeTree = (bettypeList) => {
+const buildBettypeTree = bettypeList => {
     const selectedBettypeIds = [];
 
-    const productPrefixs = [...new Set(bettypeList.map((item) => item.productPrefix))];
+    const productPrefixs = [...new Set(bettypeList.map(item => item.productPrefix))];
     const bettypeTree = productPrefixs.map((productPrefix, index) => {
         const children = [];
         for (let i = 0; i < bettypeList.length; ++i) {
@@ -51,7 +49,7 @@ const buildBettypeTree = (bettypeList) => {
 
         return {
             id: productPrefix,
-            name: LangHelper.getSingleResource('Product' + productPrefix),
+            name: LangHelper.getSingleResource(`Product${productPrefix}`),
             value: `-1-${index}`,
             checked: true,
             children: children,

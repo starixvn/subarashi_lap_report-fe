@@ -9,14 +9,14 @@ const useToggleRequest = () => {
     const sendRequest = useCallback((requestFunc, callbackFunc) => {
         dispatch(toggleLoader(true));
         requestFunc()
-            .then((response) => {
+            .then(response => {
                 if (callbackFunc) {
                     callbackFunc(response);
                 }
 
                 dispatch(toggleLoader(false));
             })
-            .catch((error) => {
+            .catch(error => {
                 alert(LangHelper.getSingleResource('ErrorProcessingMsg'));
 
                 // eslint-disable-next-line no-console

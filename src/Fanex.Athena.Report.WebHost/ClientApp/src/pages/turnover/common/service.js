@@ -6,7 +6,7 @@ export default class Service {
         const dateTitle = `${fromDate} → ${toDate}`;
 
         if (username) {
-            const customerTitle = `${LangHelper.getSingleResource('Customer')} ` + username + ` (${baseCurrency})`;
+            const customerTitle = `${LangHelper.getSingleResource('Customer')} ${username} (${baseCurrency})`;
             return `${title}, ${dateTitle} - ${customerTitle}`;
         }
 

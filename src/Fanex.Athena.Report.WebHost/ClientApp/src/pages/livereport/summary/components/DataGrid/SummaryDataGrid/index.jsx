@@ -11,12 +11,12 @@ import currency from 'currency.js';
 
 function SummaryDataGrid() {
     const dispatch = useDispatch();
-    const gridData = useSelector((state) => state.gridData);
+    const gridData = useSelector(state => state.gridData);
     const summaryGridData = gridData?.summary;
 
-    const formData = useSelector((state) => state.formData);
-    const requestParam = useSelector((state) => state.requestParam);
-    const selectedProductCode = useSelector((state) => state.selectedProductCode);
+    const formData = useSelector(state => state.formData);
+    const requestParam = useSelector(state => state.requestParam);
+    const selectedProductCode = useSelector(state => state.selectedProductCode);
 
     const { sendRequest } = useToggleRequest();
 
@@ -28,11 +28,11 @@ function SummaryDataGrid() {
     };
 
     if (!summaryGridData) {
-        return;
+        return null;
     }
 
-    const onClickDetail = (product) => {
-        if (selectedProductCode == product.productCode) {
+    const onClickDetail = product => {
+        if (selectedProductCode === product.productCode) {
             return;
         }
 
@@ -53,7 +53,7 @@ function SummaryDataGrid() {
         return data;
     };
 
-    const setDetailData = (data) => {
+    const setDetailData = data => {
         if (!data) {
             return;
         }

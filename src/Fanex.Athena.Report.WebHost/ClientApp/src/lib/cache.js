@@ -20,7 +20,9 @@ class Cache {
 
     get(key, defaultValue = null) {
         const data = this._cache[key];
-        if (!data) return defaultValue;
+        if (!data) {
+            return defaultValue;
+        }
         return data.value;
     }
 
@@ -30,7 +32,7 @@ class Cache {
             throw new Error('Invalid params!');
         }
 
-        var oldData = this._cache[key];
+        const oldData = this._cache[key];
         if (oldData) {
             clearTimeout(oldData.timeout);
         } else {
@@ -43,7 +45,7 @@ class Cache {
     }
 
     clear() {
-        for (var key in this._cache) {
+        for (const key in this._cache) {
             clearTimeout(this._cache[key].timeout);
         }
         this._size = 0;

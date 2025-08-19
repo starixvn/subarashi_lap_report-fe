@@ -3,7 +3,7 @@ import { useCallback } from 'react';
 const useStyleSheetLink = () => {
     const head = document.head;
 
-    const append = useCallback((stylePath) => {
+    const append = useCallback(stylePath => {
         const link = document.createElement('link');
         link.type = 'text/css';
         link.rel = 'stylesheet';
@@ -14,7 +14,7 @@ const useStyleSheetLink = () => {
         return link;
     }, []);
 
-    const remove = useCallback((link) => {
+    const remove = useCallback(link => {
         head.removeChild(link);
     }, []);
 

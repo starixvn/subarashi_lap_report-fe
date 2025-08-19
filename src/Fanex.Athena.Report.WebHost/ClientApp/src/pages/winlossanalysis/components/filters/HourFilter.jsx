@@ -5,9 +5,9 @@ import PropTypes from 'prop-types';
 import { ALL_SELECTED_TEXT } from '../../common/constants';
 import { useSelector } from 'react-redux';
 
-export const HourFilter = (props) => {
+export const HourFilter = props => {
     const { onChange, isValid } = props;
-    const formData = useSelector((state) => state.formData);
+    const formData = useSelector(state => state.formData);
 
     const _renderHourSelectList = () => {
         const hourList = formData.hourList;

@@ -16,9 +16,9 @@ function DataGrid() {
     const [searchParams] = useSearchParams();
 
     const dispatch = useDispatch();
-    const formData = useSelector((state) => state.formData);
-    const gridData = useSelector((state) => state.gridData);
-    const requestParam = useSelector((state) => state.requestParam);
+    const formData = useSelector(state => state.formData);
+    const gridData = useSelector(state => state.gridData);
+    const requestParam = useSelector(state => state.requestParam);
 
     const { sendRequest } = useToggleRequest();
     const { setGridData } = ActionCreators;
@@ -45,13 +45,13 @@ function DataGrid() {
         sendRequest(() => fetchReportData(params), updateGridData);
     };
 
-    const fetchReportData = async (params) => {
+    const fetchReportData = async params => {
         const response = await DataService.getReportData(ApiUrl.DATA_URL, params);
 
         return response.data;
     };
 
-    const updateGridData = (result) => {
+    const updateGridData = result => {
         if (result) {
             dispatch(setGridData(result));
             return;

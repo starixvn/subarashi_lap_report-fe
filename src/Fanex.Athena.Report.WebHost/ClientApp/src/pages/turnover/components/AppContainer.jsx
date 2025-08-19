@@ -13,14 +13,14 @@ import { constants } from '../common';
 
 export const AppContainer = () => {
     const dispatch = useDispatch();
-    const formData = useSelector((state) => state.formData);
-    const isLoading = useSelector((state) => state.isLoading);
+    const formData = useSelector(state => state.formData);
+    const isLoading = useSelector(state => state.isLoading);
 
     const { sendRequest } = useToggleRequest();
 
     const { setFormData, setSelectedBaseCurrency, setBaseCurrencyList, setSelectedCurrency, setSelectedProducts } = ActionCreators;
     const { CurrencySelectAll } = constants;
-    const setInitFormData = (result) => {
+    const setInitFormData = result => {
         if (!result || !result.data) {
             dispatch(setFormData(null));
             return;
@@ -28,16 +28,16 @@ export const AppContainer = () => {
 
         const data = result.data;
 
-        data.baseCurrencies = data.baseCurrencies.map((item) => ({ value: item.key, label: item.value }));
+        data.baseCurrencies = data.baseCurrencies.map(item => ({ value: item.key, label: item.value }));
         dispatch(setBaseCurrencyList(data.baseCurrencies));
 
-        data.baseCurrency = data.baseCurrencies.find((x) => x.label == data.baseCurrency);
+        data.baseCurrency = data.baseCurrencies.find(x => x.label === data.baseCurrency);
         data.baseCurrency = data.baseCurrency ? data.baseCurrency : { value: DEFAULT_BASE_CURRENCY_VALUE, label: data.defaultBaseCurrency };
         dispatch(setSelectedBaseCurrency(data.baseCurrency));
 
         data.currencies = [
             CurrencySelectAll,
-            ...data.currencies.map((item) => ({
+            ...data.currencies.map(item => ({
                 value: item.key,
                 label: item.value,
             })),

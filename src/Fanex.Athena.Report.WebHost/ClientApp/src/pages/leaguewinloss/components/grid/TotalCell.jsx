@@ -5,7 +5,7 @@ import { Cell } from '@legion-lib/react-grid';
 import ActionCreators from '../../actions';
 import { ReportLevel } from '../../common/constants';
 
-export const TotalCell = (props) => {
+export const TotalCell = props => {
     const { rowData, level, reportData, setReportData, toggleLoader, setReloadReport } = props;
     const _isDrillDown = !!rowData.isBreakdown;
 
@@ -31,7 +31,7 @@ export const TotalCell = (props) => {
     const _handleBreakDown = async () => {
         const dataList = reportData.data;
 
-        const itemIndex = dataList.findIndex((_) => _[property] === key);
+        const itemIndex = dataList.findIndex(_ => _[property] === key);
 
         if (itemIndex === -1) {
             return;

@@ -11,23 +11,19 @@ export default function ReportSelect(props) {
     );
 }
 
-const CustomDropdownIndicator = (props) => {
+const CustomDropdownIndicator = props => {
     const { selectProps } = props;
-    const CaretDownIcon = () => {
-        return (
-            <div className="select-arrow-zone">
-                <span className="select-arrow"></span>
-            </div>
-        );
-    };
+    const CaretDownIcon = () => (
+        <div className="select-arrow-zone">
+            <span className="select-arrow"></span>
+        </div>
+    );
 
-    const CaretUpIcon = () => {
-        return (
-            <div className="select-arrow-zone">
-                <span className="select-arrow expanded"></span>
-            </div>
-        );
-    };
+    const CaretUpIcon = () => (
+        <div className="select-arrow-zone">
+            <span className="select-arrow expanded"></span>
+        </div>
+    );
 
     return <components.DropdownIndicator {...props}>{selectProps.menuIsOpen ? <CaretUpIcon /> : <CaretDownIcon />}</components.DropdownIndicator>;
 };

@@ -8,10 +8,10 @@ import { ProductCode, CashOutMode, ViewInTimeMode } from '../../common/constants
 
 export const useFilterHandler = () => {
     const dispatch = useDispatch();
-    const formData = useSelector((state) => state.formData);
-    const orgProductList = useSelector((state) => state.productList);
+    const formData = useSelector(state => state.formData);
+    const orgProductList = useSelector(state => state.productList);
     const { defaultSelectedSubsidiary } = useSubsidiarySearch();
-    const defaultState = useSelector((state) => state.defaultState);
+    const defaultState = useSelector(state => state.defaultState);
 
     const {
         setUsername,
@@ -43,7 +43,7 @@ export const useFilterHandler = () => {
         setSelectedBreakDownByOption,
     } = ActionCreators;
 
-    const onUserNameInputHandler = useCallback((value) => dispatch(setUsername(value)), []);
+    const onUserNameInputHandler = useCallback(value => dispatch(setUsername(value)), []);
 
     const onSubsidiaryDropDownChangeHandler = useCallback((currentItem, selectedItemsKey) => dispatch(setSubsidiaryList(selectedItemsKey)), []);
 
@@ -77,8 +77,8 @@ export const useFilterHandler = () => {
 
     const onRiskLevelChangeHandler = useCallback((currentItem, selectedItemsKey) => {
         const customerClass = formData.riskLevelList
-            .filter((r) => selectedItemsKey.includes(r.id))
-            .map((r) => r.customerClassList)
+            .filter(r => selectedItemsKey.includes(r.id))
+            .map(r => r.customerClassList)
             .join(',');
         dispatch(setSelectedCustomerClass(customerClass));
     }, []);
@@ -89,52 +89,52 @@ export const useFilterHandler = () => {
 
     const onCurrencyChangeHandler = useCallback((currentItem, selectedItemsKey) => dispatch(setSelectedCurrency(selectedItemsKey)), []);
 
-    const onBaseCurrencyChangeHandler = useCallback((item) => dispatch(setSelectedBaseCurrency(item)), []);
+    const onBaseCurrencyChangeHandler = useCallback(item => dispatch(setSelectedBaseCurrency(item)), []);
 
-    const onConverAllChangeHandler = useCallback((checked) => dispatch(changeIsConvertAll(checked)), []);
+    const onConverAllChangeHandler = useCallback(checked => dispatch(changeIsConvertAll(checked)), []);
 
-    const onVipOnlyChangeHandler = useCallback((item) => dispatch(setSelectedVipOnly(item)), []);
+    const onVipOnlyChangeHandler = useCallback(item => dispatch(setSelectedVipOnly(item)), []);
 
-    const onGroupInOriginalCurrencyChangeHandler = useCallback((checked) => dispatch(setGroupInOriginalCurrency(checked)), []);
+    const onGroupInOriginalCurrencyChangeHandler = useCallback(checked => dispatch(setGroupInOriginalCurrency(checked)), []);
 
-    const onExcludeTextDataChangeHandler = useCallback((checked) => dispatch(setExcludeTestData(checked)), []);
+    const onExcludeTextDataChangeHandler = useCallback(checked => dispatch(setExcludeTestData(checked)), []);
 
     const onCashOutModeChangeHandler = useCallback((item, viewInTime) => {
         const { settlementTimeProductList } = formData;
         if (item.value === CashOutMode.ViewCOOnly) {
-            var productListOrg = viewInTime == ViewInTimeMode.Settlement ? settlementTimeProductList : orgProductList;
+            const productListOrg = viewInTime === ViewInTimeMode.Settlement ? settlementTimeProductList : orgProductList;
 
             const selectedProduct = productListOrg
-                .filter((product) => product.id == ProductCode.SportsBook)
-                .map((item) => item.id)
+                .filter(product => product.id === ProductCode.SportsBook)
+                .map(item => item.id)
                 .join(',');
 
-            const productList = productListOrg.map((product) => (product.id == ProductCode.SportsBook ? product : { ...product, status: false }));
+            const productList = productListOrg.map(product => (product.id === ProductCode.SportsBook ? product : { ...product, status: false }));
             onProductChangeHandler(null, selectedProduct);
             dispatch(setProductList(productList));
         }
         dispatch(setSelectedCashOutMode(item));
     }, []);
 
-    const onSearchModeChangeHandler = useCallback((event) => {
+    const onSearchModeChangeHandler = useCallback(event => {
         const { value } = event.target;
         dispatch(setSearchMode(value));
     }, []);
 
-    const onSubsidiaryCheckBoxChangeHandler = useCallback((checked) => {
+    const onSubsidiaryCheckBoxChangeHandler = useCallback(checked => {
         dispatch(setSubsidiarySearch(checked));
         checked && dispatch(setSubsidiaryList(defaultSelectedSubsidiary));
     }, []);
 
-    const onViewInTimeChangeHandler = useCallback((event) => {
+    const onViewInTimeChangeHandler = useCallback(event => {
         const { settlementTimeProductList } = formData;
 
         const value = +event.target.value;
 
         batch(() => {
-            if (value == ViewInTimeMode.Settlement) {
+            if (value === ViewInTimeMode.Settlement) {
                 const productList = settlementTimeProductList;
-                const selectedProduct = productList.map((product) => product.id).join(',');
+                const selectedProduct = productList.map(product => product.id).join(',');
 
                 onProductChangeHandler(null, selectedProduct);
                 dispatch(setProductList(productList));

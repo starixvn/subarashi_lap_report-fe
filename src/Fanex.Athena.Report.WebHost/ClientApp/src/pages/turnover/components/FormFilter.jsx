@@ -34,14 +34,14 @@ const FormFilter = () => {
     } = ActionCreators;
 
     const dispatch = useDispatch();
-    const formData = useSelector((state) => state.formData);
-    const username = useSelector((state) => state.username);
-    const dateRange = useSelector((state) => state.dateRange);
-    const userGuideContent = useSelector((state) => state.userGuideContent);
-    const selectedProducts = useSelector((state) => state.selectedProduct);
-    const selectedCurrency = useSelector((state) => state.selectedCurrency);
-    const baseCurrencyList = useSelector((state) => state.baseCurrencyList);
-    const selectedBaseCurrency = useSelector((state) => state.selectedBaseCurrency);
+    const formData = useSelector(state => state.formData);
+    const username = useSelector(state => state.username);
+    const dateRange = useSelector(state => state.dateRange);
+    const userGuideContent = useSelector(state => state.userGuideContent);
+    const selectedProducts = useSelector(state => state.selectedProduct);
+    const selectedCurrency = useSelector(state => state.selectedCurrency);
+    const baseCurrencyList = useSelector(state => state.baseCurrencyList);
+    const selectedBaseCurrency = useSelector(state => state.selectedBaseCurrency);
 
     const isFormValid = !selectedProducts?.length || !selectedCurrency;
     const usernamePlaceHolder = formData.isFakeLicensee ? LangHelper.getSingleResource('ExternalId') : LangHelper.getSingleResource('ExternalIdOrSystemId');
@@ -50,26 +50,26 @@ const FormFilter = () => {
 
     const { sendRequest } = useToggleRequest();
 
-    const onChangeDateRange = (range) => {
+    const onChangeDateRange = range => {
         dispatch(setDateRange({ startDate: range.fromDate, endDate: range.toDate }));
     };
 
     const onChangeSelectedProducts = (currentItem, selectedItemsKey) => {
-        const filteredProducts = formData.productOptions.filter((x) => selectedItemsKey.split(',').includes(x.code));
+        const filteredProducts = formData.productOptions.filter(x => selectedItemsKey.split(',').includes(x.code));
         dispatch(setSelectedProducts(filteredProducts));
     };
 
-    const onChangeExcludeTestData = (value) => {
+    const onChangeExcludeTestData = value => {
         setExcludeTestData(value);
     };
 
-    const onChangeSelectedBaseCurrency = (currency) => {
+    const onChangeSelectedBaseCurrency = currency => {
         dispatch(setSelectedBaseCurrency(currency));
     };
 
-    const onChangeSelectedCurrency = (currency) => {
+    const onChangeSelectedCurrency = currency => {
         if (currency.value === 0) {
-            const defaultCurrency = formData.baseCurrencies.find((x) => x.value === -1);
+            const defaultCurrency = formData.baseCurrencies.find(x => x.value === -1);
             dispatch(setSelectedBaseCurrency({ ...defaultCurrency }));
             dispatch(setSelectedCurrency(currency));
             dispatch(setBaseCurrencyList([...formData.baseCurrencies]));
@@ -77,7 +77,7 @@ const FormFilter = () => {
         }
 
         let newSelectedBaseCurrency = currency;
-        if (!formData.baseCurrencies.find((x) => x.label === currency.label)) {
+        if (!formData.baseCurrencies.find(x => x.label === currency.label)) {
             const newBaseCurrencyList = formData.baseCurrencies.slice(0);
             newSelectedBaseCurrency = { ...currency, isEmpty: true };
             newBaseCurrencyList.push(newSelectedBaseCurrency);
@@ -90,7 +90,7 @@ const FormFilter = () => {
         dispatch(setSelectedBaseCurrency({ ...newSelectedBaseCurrency }));
     };
 
-    const onSubmit = (event) => {
+    const onSubmit = event => {
         event.preventDefault();
 
         const params = getParams();
@@ -99,7 +99,7 @@ const FormFilter = () => {
         dispatch(setRequestParam(params));
     };
 
-    const updateData = (result) => {
+    const updateData = result => {
         if (result && result.data !== null) {
             const gridData = result.data;
 
@@ -116,7 +116,7 @@ const FormFilter = () => {
             ToDate: dateRange.toDate,
             UserName: username,
             ProductOptions: selectedProducts,
-            IsExcludedTestData: excludeTestData == 'true',
+            IsExcludedTestData: excludeTestData === 'true',
             BaseCurrency: selectedBaseCurrency.isEmpty ? '' : selectedBaseCurrency.label,
             BaseCurrencyName: selectedBaseCurrency.label,
             CurrencyName: selectedCurrency.label,
@@ -136,7 +136,7 @@ const FormFilter = () => {
         sendRequest(() => DataService.getReportFile(ApiUrl.EXPORT_EXCEL_URL, getParams()), downLoadExcel);
     };
 
-    const downLoadExcel = (response) => {
+    const downLoadExcel = response => {
         const NoContentStatusCode = 204;
 
         if (response.status === NoContentStatusCode) {
@@ -203,8 +203,8 @@ const FormFilter = () => {
                         <label className="label-text">{LangHelper.getSingleResource('Username')}</label>
                         <AutoComplete
                             url={ApiUrl.SEARCH_CUSTOMER}
-                            onSelect={(value) => dispatch(setUsername(value))}
-                            onInput={(value) => dispatch(setUsername(value))}
+                            onSelect={value => dispatch(setUsername(value))}
+                            onInput={value => dispatch(setUsername(value))}
                             htmlAttributes={{ placeholder: usernamePlaceHolder }}
                         />
                     </div>

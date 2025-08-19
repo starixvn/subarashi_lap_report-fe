@@ -9,7 +9,7 @@ export const BuildBody = (data, baseCurrencyList, addNewRule, onDataChanged, set
         return BuildEmptyBody();
     }
 
-    var rows =
+    const rows =
         data.map((item, index) => (
             <DataRow
                 key={`row-sport-${item.settingID}-${index}`}

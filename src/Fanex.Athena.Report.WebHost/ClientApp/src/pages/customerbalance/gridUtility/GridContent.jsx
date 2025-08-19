@@ -15,37 +15,32 @@ export const GenerateReportTitle = (fromDate, toDate, currencyName) => {
     return `${customerBalanceTitle}, ${dateRange}, ${currencyView}`;
 };
 
-export const BuildBody = (data, isEnableSingleWallet, isAllowedCustomerCommission) => {
-    return data.map((item) => {
-        return (
-            <Row key={`row-${item.index}`}>
-                <Cell title={parseInt(item.index)} className={'center-align'} key={`col-${0}`}>
-                    {parseInt(item.index)}
-                </Cell>
-                <Cell title={item.externalId} className={'left-align'} key={`col-externalid`}>
-                    {item.externalId}
-                </Cell>
-                {item.systemId && (
-                    <Cell title={item.systemId} className={'left-align'} key={`col-systemid`}>
-                        {item.systemId}
-                    </Cell>
-                )}
-                {BuildContent(item, isEnableSingleWallet, isAllowedCustomerCommission)}
-            </Row>
-        );
-    });
-};
-
-export const BuildFooter = (totalData, totalSpan, isEnableSingleWallet, isAllowedCustomerCommission) => {
-    return (
-        <Row key={'footer'}>
-            <Cell titlt={LangHelper.getSingleResource('Total')} className="center-align" colSpan={totalSpan}>
-                {LangHelper.getSingleResource('Total')}
+export const BuildBody = (data, isEnableSingleWallet, isAllowedCustomerCommission) =>
+    data.map(item => (
+        <Row key={`row-${item.index}`}>
+            <Cell title={parseInt(item.index)} className={'center-align'} key={`col-${0}`}>
+                {parseInt(item.index)}
             </Cell>
-            {BuildContent(totalData, isEnableSingleWallet, isAllowedCustomerCommission)}
+            <Cell title={item.externalId} className={'left-align'} key={`col-externalid`}>
+                {item.externalId}
+            </Cell>
+            {item.systemId && (
+                <Cell title={item.systemId} className={'left-align'} key={`col-systemid`}>
+                    {item.systemId}
+                </Cell>
+            )}
+            {BuildContent(item, isEnableSingleWallet, isAllowedCustomerCommission)}
         </Row>
-    );
-};
+    ));
+
+export const BuildFooter = (totalData, totalSpan, isEnableSingleWallet, isAllowedCustomerCommission) => (
+    <Row key={'footer'}>
+        <Cell titlt={LangHelper.getSingleResource('Total')} className="center-align" colSpan={totalSpan}>
+            {LangHelper.getSingleResource('Total')}
+        </Cell>
+        {BuildContent(totalData, isEnableSingleWallet, isAllowedCustomerCommission)}
+    </Row>
+);
 
 const BuildContent = (data, isEnableSingleWallet, isAllowedCustomerCommission) => {
     const decimalData = Service.formatDecimalInObjectNumbers(data);

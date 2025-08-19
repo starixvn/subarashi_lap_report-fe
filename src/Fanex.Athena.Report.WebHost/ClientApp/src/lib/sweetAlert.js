@@ -22,33 +22,29 @@ export const defaultOkButton = {
     className: 'btn btn-apply',
 };
 
-export const generateDefaultConfirmOption = (content, onClose, submitProps, cancelProps, icon = predefinedIcons.warning, customOption = {}) => {
-    return {
-        buttons: [
-            { ...defaultSubmitButton, ...submitProps },
-            { ...defaultCancelButton, ...cancelProps },
-        ],
-        icon,
-        isShow: true,
-        children: <p className="center-align sweet-alert-content">{content}</p>,
-        onClose,
-        title: LangHelper.getSingleResource('Confirmation'),
-        ...customOption,
-    };
-};
+export const generateDefaultConfirmOption = (content, onClose, submitProps, cancelProps, icon = predefinedIcons.warning, customOption = {}) => ({
+    buttons: [
+        { ...defaultSubmitButton, ...submitProps },
+        { ...defaultCancelButton, ...cancelProps },
+    ],
+    icon,
+    isShow: true,
+    children: <p className="center-align sweet-alert-content">{content}</p>,
+    onClose,
+    title: LangHelper.getSingleResource('Confirmation'),
+    ...customOption,
+});
 
-export const generateDefaultAlertOption = (content, onClose, onClick, icon = predefinedIcons.success) => {
-    return {
-        buttons: [
-            {
-                text: LangHelper.getSingleResource('OK'),
-                className: 'btn btn-apply',
-                onClick: onClick || onClose,
-            },
-        ],
-        icon,
-        isShow: true,
-        children: <p className="center-align sweet-alert-content">{content}</p>,
-        onClose,
-    };
-};
+export const generateDefaultAlertOption = (content, onClose, onClick, icon = predefinedIcons.success) => ({
+    buttons: [
+        {
+            text: LangHelper.getSingleResource('OK'),
+            className: 'btn btn-apply',
+            onClick: onClick || onClose,
+        },
+    ],
+    icon,
+    isShow: true,
+    children: <p className="center-align sweet-alert-content">{content}</p>,
+    onClose,
+});

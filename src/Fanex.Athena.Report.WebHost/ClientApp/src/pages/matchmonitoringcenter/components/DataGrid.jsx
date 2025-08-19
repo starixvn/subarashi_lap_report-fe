@@ -15,7 +15,7 @@ import Popup from '@/components/Popup';
 const MonitoringSettingDetail = lazy(() => import('../pages/matchmonitoringsetting'));
 
 const DataGrid = () => {
-    const [gridData, lastFetchTime, sweetAlertOption, settingPageOption, formData] = useSelector((state) => [
+    const [gridData, lastFetchTime, sweetAlertOption, settingPageOption, formData] = useSelector(state => [
         state.gridData,
         state.lastFetchTime,
         state.sweetAlertOption,
@@ -26,7 +26,7 @@ const DataGrid = () => {
     const { Remove, Setting, History } = useGridAction();
 
     if (!gridData) {
-        return;
+        return null;
     }
 
     if ((!gridData.running || !gridData.running.length) && (!gridData.settled || !gridData.settled.length)) {
@@ -76,7 +76,7 @@ const DataGrid = () => {
             runningGroupedData[leagueId].monitors.push(runningData[i]);
         }
 
-        Object.keys(runningGroupedData).forEach((leagueId) => {
+        Object.keys(runningGroupedData).forEach(leagueId => {
             const leagueData = runningGroupedData[leagueId];
 
             if (leagueData.monitors.length > 0) {
@@ -88,7 +88,7 @@ const DataGrid = () => {
                     </Row>
                 );
             }
-            leagueData.monitors.forEach((monitor) => {
+            leagueData.monitors.forEach(monitor => {
                 const item = BuildDataRow(monitor);
                 rows.push(item);
             });
@@ -109,7 +109,7 @@ const DataGrid = () => {
             settledGroupedData[leagueId].monitors.push(settledData[i]);
         }
 
-        Object.keys(settledGroupedData).forEach((leagueId) => {
+        Object.keys(settledGroupedData).forEach(leagueId => {
             const leagueData = settledGroupedData[leagueId];
 
             if (leagueData.monitors.length > 0) {
@@ -121,7 +121,7 @@ const DataGrid = () => {
                     </Row>
                 );
             }
-            leagueData.monitors.forEach((monitor) => {
+            leagueData.monitors.forEach(monitor => {
                 const item = BuildDataRow(monitor);
                 rows.push(item);
             });
@@ -130,14 +130,15 @@ const DataGrid = () => {
         return rows;
     };
 
-    const BuildDataRow = (dataItem) => {
+    const BuildDataRow = dataItem => {
         const BuildMatchStatus = (liveIndicator, liveHomeScore, liveAwayScore) => {
-            if (!liveIndicator)
+            if (!liveIndicator) {
                 return (
                     <Cell key={'matchStatus'} className="center-align">
                         {LangHelper.getSingleResource('NoneLive2')}
                     </Cell>
                 );
+            }
             return (
                 <Cell key={'matchStatus'} className="center-align">
                     {LangHelper.getSingleResource('Live')}
@@ -147,7 +148,7 @@ const DataGrid = () => {
             );
         };
 
-        const BuildAlertRules = (alertRules) => {
+        const BuildAlertRules = alertRules => {
             const rows = [];
             alertRules.forEach((rule, index) => {
                 rows.push(<span key={`alert rule-${index}`}>- {rule}</span>);
@@ -202,27 +203,27 @@ const DataGrid = () => {
             isSettled,
         } = dataItem;
 
-        const GetForecastNumberClass = (number) => {
+        const GetForecastNumberClass = number => {
             if (number > 0) {
                 return 'forecast-number';
             }
             return 'normal-number';
         };
 
-        const BuildOperation = (isSettled) => {
+        const BuildOperation = isSettled => {
             if (isSettled) {
                 return (
-                    <a href="#" onClick={(e) => Remove(e, monitoringId)}>
+                    <a href="#" onClick={e => Remove(e, monitoringId)}>
                         {LangHelper.getSingleResource('Remove')}
                     </a>
                 );
             }
             return (
                 <span>
-                    <a href="#" onClick={(e) => Setting(e, monitoringId)} style={{ marginRight: 8 }}>
+                    <a href="#" onClick={e => Setting(e, monitoringId)} style={{ marginRight: 8 }}>
                         {LangHelper.getSingleResource('Setting')}
                     </a>
-                    <a href="#" onClick={(e) => Remove(e, monitoringId)}>
+                    <a href="#" onClick={e => Remove(e, monitoringId)}>
                         {LangHelper.getSingleResource('Remove')}
                     </a>
                 </span>
@@ -243,7 +244,7 @@ const DataGrid = () => {
                     <i className="icon-alert icon-danger"></i>
                     <br />
                     <br />
-                    <a href="#" onClick={(e) => History(e, monitoringId)}>
+                    <a href="#" onClick={e => History(e, monitoringId)}>
                         {LangHelper.getSingleResource('ViewHistory')}
                     </a>
                 </Cell>
@@ -289,9 +290,11 @@ const DataGrid = () => {
 
         const onCloseHandler = () => {};
 
-        <Popup className="user-guide" contentClassName="guide-content" isShow={isDisplay} title={contentTitle} onClose={onCloseHandler}>
-            <MonitoringSettingDetail {...settingPageOption} />
-        </Popup>;
+        return (
+            <Popup className="user-guide" contentClassName="guide-content" isShow={isDisplay} title={contentTitle} onClose={onCloseHandler}>
+                <MonitoringSettingDetail {...settingPageOption} />
+            </Popup>
+        );
     };
 
     return (

@@ -4,13 +4,11 @@ import PropTypes from 'prop-types';
 import LangHelper from '@/helpers/langHelper';
 import CheckBox from '@/components/CheckBox';
 
-export const ExcludeTestDataCheckBoxFilter = (props) => {
-    return (
-        <div className="form-group">
-            <CheckBox id="IsExcludeTestData" {...props} label={LangHelper.getSingleResource('ExcludeTestData')} />
-        </div>
-    );
-};
+export const ExcludeTestDataCheckBoxFilter = props => (
+    <div className="form-group">
+        <CheckBox id="IsExcludeTestData" {...props} label={LangHelper.getSingleResource('ExcludeTestData')} />
+    </div>
+);
 
 const propTypes = {
     onChange: PropTypes.func,

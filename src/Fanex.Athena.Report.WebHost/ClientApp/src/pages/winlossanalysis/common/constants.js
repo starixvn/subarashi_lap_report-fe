@@ -1,4 +1,4 @@
-﻿import LangHelper from '@/helpers/langHelper';
+import LangHelper from '@/helpers/langHelper';
 import DataService from '@/lib/dataService';
 import { DefaultDateRange } from './dateSetting';
 

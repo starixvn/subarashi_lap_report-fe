@@ -3,7 +3,7 @@ import { HeaderRow, HeaderCell } from '@legion-lib/react-grid';
 
 import LangHelper from '@/helpers/langHelper';
 
-export const BuildHeaders = (hasCustomerComm) => {
+export const BuildHeaders = hasCustomerComm => {
     const result = [BuildFirstRow(hasCustomerComm)];
     if (hasCustomerComm) {
         result.push(BuildSecondRow());
@@ -12,7 +12,7 @@ export const BuildHeaders = (hasCustomerComm) => {
     return result;
 };
 
-const BuildFirstRow = (hasCustomerComm) => (
+const BuildFirstRow = hasCustomerComm => (
     <HeaderRow style={{ height: 23 }} key="header1">
         <HeaderCell rowSpan="2" colWidth={100} key="Index1">
             #

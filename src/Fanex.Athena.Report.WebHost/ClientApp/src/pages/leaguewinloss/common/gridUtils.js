@@ -7,21 +7,19 @@ import GroupCell from '../components/grid/GroupCell';
 import TotalCell from '../components/grid/TotalCell';
 import { v4 as uuidv4 } from 'uuid';
 
-export const renderHeader = (drilldownLevel) => {
-    return (
-        <HeaderRow style={{ height: 32 }}>
-            <HeaderCell colWidth={20}>#</HeaderCell>
-            {drilldownLevel === 0 && <HeaderCell colWidth={320}>{headerText.league}</HeaderCell>}
-            {drilldownLevel === 1 && <HeaderCell colWidth={320}>{headerText.match}</HeaderCell>}
-            {drilldownLevel === 2 && <HeaderCell colWidth={280}>{headerText.bettype}</HeaderCell>}
-            <HeaderCell colWidth={100}>{headerText.playercount}</HeaderCell>
-            <HeaderCell colWidth={80}>{headerText.betcount}</HeaderCell>
-            <HeaderCell colWidth={110}>{headerText.turnover}</HeaderCell>
-            <HeaderCell colWidth={110}>{headerText.customerWL}</HeaderCell>
-            <HeaderCell colWidth={110}>{headerText.licenseeWL}</HeaderCell>
-        </HeaderRow>
-    );
-};
+export const renderHeader = drilldownLevel => (
+    <HeaderRow style={{ height: 32 }}>
+        <HeaderCell colWidth={20}>#</HeaderCell>
+        {drilldownLevel === 0 && <HeaderCell colWidth={320}>{headerText.league}</HeaderCell>}
+        {drilldownLevel === 1 && <HeaderCell colWidth={320}>{headerText.match}</HeaderCell>}
+        {drilldownLevel === 2 && <HeaderCell colWidth={280}>{headerText.bettype}</HeaderCell>}
+        <HeaderCell colWidth={100}>{headerText.playercount}</HeaderCell>
+        <HeaderCell colWidth={80}>{headerText.betcount}</HeaderCell>
+        <HeaderCell colWidth={110}>{headerText.turnover}</HeaderCell>
+        <HeaderCell colWidth={110}>{headerText.customerWL}</HeaderCell>
+        <HeaderCell colWidth={110}>{headerText.licenseeWL}</HeaderCell>
+    </HeaderRow>
+);
 
 export const renderDataSection = (dataList, drilldownLevel, isTotalRow) => {
     if (isTotalRow) {
@@ -43,14 +41,14 @@ export const renderDataSection = (dataList, drilldownLevel, isTotalRow) => {
 
                     detail &&
                         isBreakdown &&
-                        detail.data.map((item) => {
+                        detail.data.map(item => {
                             dataRows.push(buildCurrencyDataRow(item, drilldownLevel));
                         });
                 });
         } else {
             detailData &&
                 dataList[i].isBreakdown &&
-                detailData.map((item) => {
+                detailData.map(item => {
                     dataRows.push(buildCurrencyDataRow(item, drilldownLevel));
                 });
         }
@@ -105,7 +103,7 @@ const buildCurrencyDataRow = (dataItem, drilldownLevel) => {
     );
 };
 
-const buildTotalRow = (dataItem) => {
+const buildTotalRow = dataItem => {
     const { betCount, turnOver, licenseeWL, customerWL } = dataItem;
     return (
         <Row className="grant-total-row" key="grantTotal-row">

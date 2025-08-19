@@ -5,7 +5,7 @@ import { usePopupHandler } from '../hook';
 
 const PopupPage = () => {
     const { closePopup } = usePopupHandler();
-    const [isShow, url, title, styleClassName, isRefresh] = useSelector((state) => [
+    const [isShow, url, title, styleClassName, isRefresh] = useSelector(state => [
         state.isShowPopup,
         state.popupUrl,
         state.popupTitle,

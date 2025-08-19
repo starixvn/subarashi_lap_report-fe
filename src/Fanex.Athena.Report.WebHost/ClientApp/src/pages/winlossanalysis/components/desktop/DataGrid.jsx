@@ -1,4 +1,4 @@
-﻿import React, { memo, useMemo } from 'react';
+import React, { memo, useMemo } from 'react';
 import { shallowEqual, useDispatch, useSelector } from 'react-redux';
 
 import { Table } from '@legion-lib/react-grid';
@@ -13,7 +13,7 @@ import ExcelPopUp from '../ExcelPopUp.jsx';
 
 export const DataGrid = () => {
     const [requestParam, reportData, reportTitle, reloadReport] = useSelector(
-        (state) => [state.requestParam, state.reportData, state.reportTitle, state.reloadReport],
+        state => [state.requestParam, state.reportData, state.reportTitle, state.reloadReport],
         shallowEqual
     );
 
@@ -21,8 +21,8 @@ export const DataGrid = () => {
     const dispatch = useDispatch();
     const { data, sumTotal, totalRow } = reportData;
     const renderOption = {
-        isGroupByPlayerMode: requestParam.GroupMode == GroupByMode.Player,
-        isBreakDownPlayerMode: requestParam.BreakdownMode == BreakdownByMode.Player,
+        isGroupByPlayerMode: requestParam.GroupMode === GroupByMode.Player,
+        isBreakDownPlayerMode: requestParam.BreakdownMode === BreakdownByMode.Player,
     };
 
     const header = useMemo(() => renderHeader(renderOption), [requestParam]);
@@ -36,14 +36,14 @@ export const DataGrid = () => {
         PageList: DefaultPagingOption.PageList,
     };
 
-    const submitRequest = (params) => {
+    const submitRequest = params => {
         dispatch(setRequestParam(params));
         dispatch(toggleLoader(true));
         dispatch(getReportData(params));
     };
 
     const onSort = (sortBy, sortOrder) => {
-        const requestSortOrder = sortOrder == 'asc' ? SortOrder.ASC : SortOrder.DESC;
+        const requestSortOrder = sortOrder === 'asc' ? SortOrder.ASC : SortOrder.DESC;
         const params = { ...requestParam, SortBy: sortBy, SortOrder: requestSortOrder };
         submitRequest(params);
     };

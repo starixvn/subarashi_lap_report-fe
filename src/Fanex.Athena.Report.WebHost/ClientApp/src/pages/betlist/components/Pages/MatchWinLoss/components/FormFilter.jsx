@@ -6,9 +6,9 @@ import LangHelper from '@/helpers/langHelper';
 import ExportExcel from '@/components/ExportExcel';
 import { ApiUrl } from '../constant/apiSettings';
 
-const MatchWinLossFormFilter = (props) => {
+const MatchWinLossFormFilter = props => {
     const navigate = useNavigate();
-    const [formData, requestParam] = useSelector((state) => [state.formData, state.requestParam], shallowEqual);
+    const [formData, requestParam] = useSelector(state => [state.formData, state.requestParam], shallowEqual);
 
     const { isValidExcel, processExcel } = props;
     const exportExcel = () => {

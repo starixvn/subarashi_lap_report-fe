@@ -13,8 +13,8 @@ import HeaderCell from '../customGrid/HeaderCell';
 
 const DataGrid = () => {
     const dispatch = useDispatch();
-    const requestParam = useSelector((state) => state.requestParam);
-    const gridData = useSelector((state) => state.gridData);
+    const requestParam = useSelector(state => state.requestParam);
+    const gridData = useSelector(state => state.gridData);
 
     const { setRequestParam, setGridData } = ActionCreators;
     const { GridSettings } = Constants;
@@ -27,7 +27,7 @@ const DataGrid = () => {
         return <NoDataTitle />;
     }
 
-    const _buildHeader = (headers) => {
+    const _buildHeader = headers => {
         const headerCells = [
             <HeaderCell colWidth={40} key="header-index">
                 #
@@ -48,47 +48,42 @@ const DataGrid = () => {
         ];
     };
 
-    const _buildBody = (data) => {
-        return data.map((item, indexCell) => {
-            return (
-                <Row key={`row-${item.cell[GridSettings.COL_INDEX]}`}>
-                    <Cell className={'center-align'} key={`col-${GridSettings.COL_INDEX}`}>
-                        {indexCell + 1}
-                    </Cell>
-                    <Cell className={'left-align'} key={`col-${GridSettings.COL_SPORT_NAME}`}>
-                        {item.cell[GridSettings.COL_SPORT_NAME]}
-                    </Cell>
-                    {item.cell.slice(GridSettings.COL_START_WEEK).map((cell, index) => (
-                        <Cell className={'right-align'} key={`col-${index}`}>
-                            {NumberFormat.formatInteger(cell)}
-                        </Cell>
-                    ))}
-                </Row>
-            );
-        });
-    };
-
-    const _buildFooter = (totalData) => {
-        return (
-            <Row key={'footer'}>
-                <Cell className="center-align" colSpan={2}>
-                    {LangHelper.getSingleResource('Total')}
+    const _buildBody = data =>
+        data.map((item, indexCell) => (
+            <Row key={`row-${item.cell[GridSettings.COL_INDEX]}`}>
+                <Cell className={'center-align'} key={`col-${GridSettings.COL_INDEX}`}>
+                    {indexCell + 1}
                 </Cell>
-                {totalData.map((total, index) => (
-                    <Cell className="right-align" key={`footer-${index}`}>
-                        {NumberFormat.formatInteger(total)}
+                <Cell className={'left-align'} key={`col-${GridSettings.COL_SPORT_NAME}`}>
+                    {item.cell[GridSettings.COL_SPORT_NAME]}
+                </Cell>
+                {item.cell.slice(GridSettings.COL_START_WEEK).map((cell, index) => (
+                    <Cell className={'right-align'} key={`col-${index}`}>
+                        {NumberFormat.formatInteger(cell)}
                     </Cell>
                 ))}
             </Row>
-        );
-    };
+        ));
 
-    const objectComparator = (objA, objB, sortOrderBy, getValue = (obj) => obj) => {
-        if (getValue(objA) == getValue(objB)) {
+    const _buildFooter = totalData => (
+        <Row key={'footer'}>
+            <Cell className="center-align" colSpan={2}>
+                {LangHelper.getSingleResource('Total')}
+            </Cell>
+            {totalData.map((total, index) => (
+                <Cell className="right-align" key={`footer-${index}`}>
+                    {NumberFormat.formatInteger(total)}
+                </Cell>
+            ))}
+        </Row>
+    );
+
+    const objectComparator = (objA, objB, sortOrderBy, getValue = obj => obj) => {
+        if (getValue(objA) === getValue(objB)) {
             return 0;
         }
 
-        if (sortOrderBy == 'asc') {
+        if (sortOrderBy === 'asc') {
             return getValue(objA) > getValue(objB) ? 1 : -1;
         }
 
@@ -101,7 +96,7 @@ const DataGrid = () => {
             columnIndex = Number(sortBy.replace(GridSettings.PREFIX_WEEK, '')) + GridSettings.COL_START_WEEK;
         }
 
-        const getValue = (match) => match.cell[columnIndex];
+        const getValue = match => match.cell[columnIndex];
         gridData.data.sort((matchA, matchB) => objectComparator(matchA, matchB, sortOrderBy, getValue));
 
         dispatch(setGridData(gridData));

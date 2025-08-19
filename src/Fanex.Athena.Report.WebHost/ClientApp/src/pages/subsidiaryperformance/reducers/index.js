@@ -1,4 +1,4 @@
-﻿import { combineReducers } from 'redux';
+import { combineReducers } from 'redux';
 
 import * as loaderReducer from '@/reducers/loaderReducer';
 import * as gridDataReducer from '@/reducers/gridDataReducer';

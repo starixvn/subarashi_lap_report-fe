@@ -10,7 +10,7 @@ import { ReportBy, TimeZones } from './constants/settingConst';
 const defaultState = {
     dateRange: DateRange,
     groupBy: 1,
-    selectedTimeZone: TimeZones.find((timezone) => timezone.value == 8),
+    selectedTimeZone: TimeZones.find(timezone => timezone.value === 8),
     selectedReportBy: ReportBy[0],
     isConvertAll: true,
     isIncludeDrawData: true,

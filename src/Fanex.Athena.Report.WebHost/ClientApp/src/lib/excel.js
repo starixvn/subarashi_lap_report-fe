@@ -13,7 +13,7 @@ export default class Excel {
             _XLSX = window.XLSX;
             callback && callback();
         } else {
-            import(/* webpackChunkName: "lib/xlsx-style-sparta" */ 'xlsx-style-sparta').then((XLSX) => {
+            import(/* webpackChunkName: "lib/xlsx-style-sparta" */ 'xlsx-style-sparta').then(XLSX => {
                 _XLSX = XLSX;
                 callback && callback();
             });
@@ -50,7 +50,7 @@ export default class Excel {
         const workbook = { SheetNames: [fileName], Sheets: {}, Props: {} };
         workbook.Sheets[fileName] = worksheet;
 
-        var workbookOutput = _XLSX.write(workbook, option);
+        const workbookOutput = _XLSX.write(workbook, option);
         this.download(workbookOutput, fileName);
     }
 
@@ -89,7 +89,9 @@ export default class Excel {
     static sheetToArrayBuffer(s) {
         const buffer = new ArrayBuffer(s.length);
         const view = new Uint8Array(buffer);
-        for (let i = 0; i != s.length; ++i) view[i] = s.charCodeAt(i) & 0xff;
+        for (let i = 0; i !== s.length; ++i) {
+            view[i] = s.charCodeAt(i) & 0xff;
+        }
         return buffer;
     }
 }

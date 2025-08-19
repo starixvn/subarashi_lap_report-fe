@@ -5,8 +5,8 @@ import PropTypes from 'prop-types';
 
 import LangHelper from '@/helpers/langHelper';
 
-export const CurrencyFilter = (props) => {
-    const formData = useSelector((state) => state.formData);
+export const CurrencyFilter = props => {
+    const formData = useSelector(state => state.formData);
 
     const { onChange, isValid } = props;
 

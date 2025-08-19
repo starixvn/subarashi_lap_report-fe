@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import { Table } from '@legion-lib/react-grid';
 import NoDataTitle from '@/components/NoDataTitle';
 import ReportTitle from '@/components/ReportTitle';
@@ -8,15 +8,15 @@ import { BuildBody, BuildFooter, BuildHeader } from '../gridBuilder';
 import { TimeZones } from '../constants';
 
 const DataGrid = () => {
-    const gridData = useSelector((state) => state.gridData);
-    const requestParam = useSelector((state) => state.requestParam);
+    const gridData = useSelector(state => state.gridData);
+    const requestParam = useSelector(state => state.requestParam);
 
     if (!gridData) {
         return null;
     }
 
     const { FromDate, ToDate, BaseCurrency, CurrencyName, IsConvertAll, ReportBy, GroupBy, TimeZone } = requestParam;
-    const selectedTimezone = TimeZones.find((tz) => tz.value == TimeZone)?.label;
+    const selectedTimezone = TimeZones.find(tz => tz.value === TimeZone)?.label;
 
     if (!gridData.data?.length) {
         return (

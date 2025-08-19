@@ -6,30 +6,27 @@ import MultipleSelect from '@legion-lib/react-multiselect';
 
 import LangHelper from '@/helpers/langHelper';
 
-export const ProductFilter = (props) => {
+export const ProductFilter = props => {
     const { value, onChange, isValid, disabled } = props;
-    const productList = useSelector((state) => state.productList);
+    const productList = useSelector(state => state.productList);
 
-    const _renderProductSelectList = () => {
-        return (
-            productList &&
-            productList.length && (
-                <MultipleSelect
-                    id="ProductList"
-                    language={LangHelper.currentLanguage}
-                    value={value}
-                    hasSearchBox={true}
-                    dataSource={productList}
-                    valueField={'value'}
-                    keyField={'id'}
-                    statusField={'status'}
-                    onChange={onChange}
-                    isValid={isValid}
-                    disabled={disabled}
-                />
-            )
+    const _renderProductSelectList = () =>
+        productList &&
+        productList.length && (
+            <MultipleSelect
+                id="ProductList"
+                language={LangHelper.currentLanguage}
+                value={value}
+                hasSearchBox={true}
+                dataSource={productList}
+                valueField={'value'}
+                keyField={'id'}
+                statusField={'status'}
+                onChange={onChange}
+                isValid={isValid}
+                disabled={disabled}
+            />
         );
-    };
 
     return (
         <div className="form-group">

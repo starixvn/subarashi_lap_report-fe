@@ -9,15 +9,15 @@ import DataService from '@/lib/dataService';
 import Service, { constants } from '../common';
 
 function BetListFormFilter() {
-    const formData = useSelector((state) => state.formData);
-    const gridData = useSelector((state) => state.gridData);
+    const formData = useSelector(state => state.formData);
+    const gridData = useSelector(state => state.gridData);
 
     const { sendRequest } = useToggleRequest();
 
     const processExcel = (url, params, fileName) =>
         sendRequest(
             () => DataService.getBetListFile(url, params),
-            (res) => Service.downloadExcelFile(res, fileName)
+            res => Service.downloadExcelFile(res, fileName)
         );
 
     const isValidExcel = () => {

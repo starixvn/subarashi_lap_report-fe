@@ -8,10 +8,10 @@ import { constants } from '../common';
 
 const DataGrid = () => {
     const { headerColumns } = constants;
-    const [gridData] = useSelector((state) => [state.gridData]);
+    const [gridData] = useSelector(state => [state.gridData]);
 
     if (!gridData) {
-        return;
+        return null;
     }
 
     if (!gridData.length) {

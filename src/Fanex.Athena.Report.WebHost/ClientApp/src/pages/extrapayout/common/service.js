@@ -1,51 +1,41 @@
-﻿import LangHelper from '@/helpers/langHelper';
+import LangHelper from '@/helpers/langHelper';
 import Site from '@/lib/site';
 import Report from '@/lib/report';
 
 export default class Service {
     static getTitle(fromDate, toDate, currency, baseCurrency, ProductCodeList, username, isConvertAllToBaseCurrency) {
-        const dateRangeText = fromDate && toDate ? `, ${Site.convertDateToString(fromDate)} → ${Site.convertDateToString(toDate)}` : '';
+        const dateRangeText = fromDate && toDate ? `, ${Site.convertDateToString(fromDate)} ? ${Site.convertDateToString(toDate)}` : '';
 
         const currencyName = baseCurrency === '' ? currency : baseCurrency;
-        const baseCurrencyText = isConvertAllToBaseCurrency ? ', ' + LangHelper.getSingleResource('BaseCurrency') + ': ' + currencyName : '';
+        const baseCurrencyText = isConvertAllToBaseCurrency ? `, ${LangHelper.getSingleResource('BaseCurrency')}: ${currencyName}` : '';
         const productText = ` (${ProductCodeList.replaceAll(',', ', ')})`;
-        const userNameText = username === '' ? '' : ', ' + LangHelper.getSingleResource('Username') + ': ' + username;
+        const userNameText = username === '' ? '' : `, ${LangHelper.getSingleResource('Username')}: ${username}`;
 
-        return (
-            LangHelper.getSingleResource('ExtraPayout') +
-            dateRangeText +
-            ', ' +
-            LangHelper.getSingleResource('Currency') +
-            ': ' +
-            currency +
-            baseCurrencyText +
-            ', ' +
-            LangHelper.getSingleResource('LicenseeW_L') +
-            productText +
-            userNameText
-        );
+        return `${LangHelper.getSingleResource('ExtraPayout') + dateRangeText}, ${LangHelper.getSingleResource('Currency')}: ${currency}${
+            baseCurrencyText
+        }, ${LangHelper.getSingleResource('LicenseeW_L')}${productText}${userNameText}`;
     }
 
     static getDetailTitle(fromDate, toDate, currency, baseCurrency, nickname, username) {
-        const dateRangeText = fromDate && toDate ? `, ${Site.convertDateToString(fromDate)} → ${Site.convertDateToString(toDate)}` : '';
+        const dateRangeText = fromDate && toDate ? `, ${Site.convertDateToString(fromDate)} ? ${Site.convertDateToString(toDate)}` : '';
 
         const currencyName = baseCurrency === '' ? currency : baseCurrency;
         const baseCurrencyText = ` - ${LangHelper.getSingleResource('Viewin').replace('{0}', currencyName)}`;
         const userNameText = username === '' ? '' : `${nickname}(${username}) `;
 
-        return LangHelper.getSingleResource('PromotionDetails') + dateRangeText + '- ' + userNameText + baseCurrencyText;
+        return `${LangHelper.getSingleResource('PromotionDetails') + dateRangeText}- ${userNameText}${baseCurrencyText}`;
     }
 
     static getFormattedDate(date) {
         const year = date.getFullYear();
 
         let month = (1 + date.getMonth()).toString();
-        month = month.length > 1 ? month : '0' + month;
+        month = month.length > 1 ? month : `0${month}`;
 
         let day = date.getDate().toString();
-        day = day.length > 1 ? day : '0' + day;
+        day = day.length > 1 ? day : `0${day}`;
 
-        return month + '/' + day + '/' + year;
+        return `${month}/${day}/${year}`;
     }
 
     static showErrorMsg() {

@@ -1,4 +1,4 @@
-﻿import createReducer from '@/lib/createReducer.js';
+import createReducer from '@/lib/createReducer.js';
 import { SET_SELECTED_SUPPORT_TASK } from '../actions/types';
 import * as currencyReducer from '@/reducers/currencyReducer';
 

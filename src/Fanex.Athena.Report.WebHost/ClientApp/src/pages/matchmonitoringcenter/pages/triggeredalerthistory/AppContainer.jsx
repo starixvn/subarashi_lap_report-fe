@@ -14,14 +14,14 @@ const AppContainer = () => {
     const { setGridData } = ActionCreators;
     const { ApiUrl } = constants;
 
-    const [isLoading, monitoringId] = useSelector((state) => [state.isLoading, state.monitoringId]);
+    const [isLoading, monitoringId] = useSelector(state => [state.isLoading, state.monitoringId]);
 
     useEffect(() => {
         const params = { monitoringId };
         sendRequest(() => DataService.getReportData(ApiUrl.INIT_FORM_URL, params), updateData);
     }, []);
 
-    const updateData = (result) => {
+    const updateData = result => {
         if (result && result.data !== null) {
             const gridData = result.data;
 

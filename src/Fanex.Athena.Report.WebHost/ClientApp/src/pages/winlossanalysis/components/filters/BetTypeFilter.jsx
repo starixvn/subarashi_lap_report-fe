@@ -5,7 +5,7 @@ import { TreeViewSelect } from '@legion-lib/react-multiselect';
 import { TreeViewOption } from '@/constants/report';
 import LangHelper from '@/helpers/langHelper';
 
-export const BetTypeFilter = (props) => {
+export const BetTypeFilter = props => {
     const { dataSource, onChange, isValid } = props;
 
     const _renderBettypeSelectList = () => {

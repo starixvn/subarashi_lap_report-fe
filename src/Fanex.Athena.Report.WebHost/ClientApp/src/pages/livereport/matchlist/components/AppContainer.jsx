@@ -13,7 +13,7 @@ import { ActionCreators } from '../actions';
 
 export const AppContainer = () => {
     const dispatch = useDispatch();
-    const isLoading = useSelector((state) => state.isLoading);
+    const isLoading = useSelector(state => state.isLoading);
 
     const [searchParams] = useSearchParams();
     const { sendRequest } = useToggleRequest();
@@ -32,7 +32,7 @@ export const AppContainer = () => {
         return response.data;
     };
 
-    const setInitData = (result) => {
+    const setInitData = result => {
         if (!result) {
             dispatch(setFormData(null));
             return;

@@ -3,7 +3,7 @@ import LangHelper from '@/helpers/langHelper';
 import { useSelector } from 'react-redux';
 
 export const Note = () => {
-    const [formData] = useSelector((state) => [state.formData]);
+    const [formData] = useSelector(state => [state.formData]);
     return (
         <>
             <div className="col-12 col-md-3 col-xl-1 note text-bold">{LangHelper.getSingleResource('Note')}:</div>

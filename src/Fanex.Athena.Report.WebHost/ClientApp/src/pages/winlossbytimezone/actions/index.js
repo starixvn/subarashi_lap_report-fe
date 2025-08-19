@@ -1,4 +1,4 @@
-﻿import * as filterHandlerAction from './filterHandlerAction.js';
+import * as filterHandlerAction from './filterHandlerAction.js';
 import * as gridDataAction from '@/actions/gridDataAction';
 import * as productAction from '@/actions/productAction';
 import * as currencyAction from '@/actions/currencyAction';

@@ -17,7 +17,7 @@ const RefreshCountDown = ({ value, options, onRefresh, isPaused }) => {
     useEffect(() => {
         if (!isPaused) {
             const timer = setInterval(() => {
-                setCount((prevCount) => {
+                setCount(prevCount => {
                     if (prevCount <= 0) {
                         onRefresh();
                         return selectedInterval;
@@ -28,15 +28,16 @@ const RefreshCountDown = ({ value, options, onRefresh, isPaused }) => {
 
             return () => clearInterval(timer);
         }
+        return undefined;
     }, [selectedInterval, onRefresh, isPaused]);
 
-    const handleClickOutside = (event) => {
+    const handleClickOutside = event => {
         if (componentRef.current && !componentRef.current.contains(event.target)) {
             setIsMenuOpen(false);
         }
     };
 
-    const handleIntervalChange = (option) => {
+    const handleIntervalChange = option => {
         setSelectedInterval(option);
         setCount(option);
         setIsMenuOpen(false);
@@ -59,7 +60,7 @@ const RefreshCountDown = ({ value, options, onRefresh, isPaused }) => {
             </a>
             {isMenuOpen && (
                 <ul className="countdown-menu dropdown-content">
-                    {options.map((option) => (
+                    {options.map(option => (
                         <li
                             key={option}
                             className={`menu-item ${option === selectedInterval ? 'menu-selected' : ''}`}

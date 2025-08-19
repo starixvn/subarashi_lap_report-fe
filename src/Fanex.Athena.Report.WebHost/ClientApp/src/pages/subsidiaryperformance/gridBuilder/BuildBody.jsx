@@ -5,30 +5,28 @@ import ReportLink from '../customGrid/ReportLink';
 import { ReportLevel, SubsidiaryViewType } from '@/constants/report';
 import CommonCells from './CommonCells';
 
-export const BuildBody = (data, { drillDownLevel, ...options }) => {
-    return drillDownLevel === ReportLevel.CUSTOMER ? BuildDetailBody(data) : BuildMainBody(data, options);
-};
+export const BuildBody = (data, { drillDownLevel, ...options }) =>
+    drillDownLevel === ReportLevel.CUSTOMER ? BuildDetailBody(data) : BuildMainBody(data, options);
 
-const BuildDetailBody = (data) => {
-    const rows = data.map((item, index) => {
-        return (
-            <Row key={index}>
-                <Cell title={index + 1} className="center-align">
-                    {index + 1}
-                </Cell>
-                <Cell title={item.externalId}>{item.externalId}</Cell>
-                <Cell title={item.systemId}>{item.systemId}</Cell>
-                <Cell title={item.currencyName} className="center-align">
-                    {item.currencyName}
-                </Cell>
-                <CommonCells data={item} index={index} />
-            </Row>
-        );
-    });
+const BuildDetailBody = data => {
+    const rows = data.map((item, index) => (
+        <Row key={index}>
+            <Cell title={index + 1} className="center-align">
+                {index + 1}
+            </Cell>
+            <Cell title={item.externalId}>{item.externalId}</Cell>
+            <Cell title={item.systemId}>{item.systemId}</Cell>
+            <Cell title={item.currencyName} className="center-align">
+                {item.currencyName}
+            </Cell>
+            <CommonCells data={item} index={index} />
+        </Row>
+    ));
 
     return rows;
 };
 
+// eslint-disable-next-line complexity, max-depth
 const BuildMainBody = (data, { viewType }) => {
     const rows = [];
     let key = 0;
@@ -45,6 +43,7 @@ const BuildMainBody = (data, { viewType }) => {
                 const products = item.details[currency];
                 const rowSpan = products.length;
 
+                // eslint-disable-next-line max-depth
                 for (let pro = 0; pro < rowSpan; pro++) {
                     const product = products[pro];
 

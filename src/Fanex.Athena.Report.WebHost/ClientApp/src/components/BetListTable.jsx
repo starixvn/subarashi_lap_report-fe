@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { Table, HeaderCell, HeaderRow, Row, Cell } from '@legion-lib/react-grid';
 import PropTypes from 'prop-types';
 
-const BetListTable = (props) => {
+const BetListTable = props => {
     useEffect(() => {
         props.afterLoad && props.afterLoad();
     }, [props.data]);
@@ -20,9 +20,7 @@ const BetListTable = (props) => {
         betplaced: 4,
     };
 
-    const getResource = (key) => {
-        return props.getResourceFunc ? props.getResourceFunc(key) : key;
-    };
+    const getResource = key => (props.getResourceFunc ? props.getResourceFunc(key) : key);
 
     const getTotalCellClassName = (column, value) => {
         if (props.getTotalCellClassNameFunc) {
@@ -31,13 +29,9 @@ const BetListTable = (props) => {
         return column === 'LicenseeWL' && value && value.startsWith('-') ? 'negative' : '';
     };
 
-    const getHeaderName = (column) => {
-        return props.getHeaderNameFunc ? props.getHeaderNameFunc(column) : column;
-    };
+    const getHeaderName = column => (props.getHeaderNameFunc ? props.getHeaderNameFunc(column) : column);
 
-    const mapData = (data) => {
-        return props.mappingDataFunc ? props.mappingDataFunc(data) : data;
-    };
+    const mapData = data => (props.mappingDataFunc ? props.mappingDataFunc(data) : data);
 
     const buildHeader = () => {
         const rows = [];
@@ -138,13 +132,11 @@ const BetListTable = (props) => {
         return rows;
     };
 
-    const renderNodata = () => {
-        return (
-            <div className="result-content">
-                <p className="no-info-row center-align">{getResource('NoInfo')}</p>
-            </div>
-        );
-    };
+    const renderNodata = () => (
+        <div className="result-content">
+            <p className="no-info-row center-align">{getResource('NoInfo')}</p>
+        </div>
+    );
 
     const onSort = (sortType, sortOrder) => {
         const newSortOrder = sortOrderMapper[sortOrder.toLowerCase()] ?? sortOrderMapper.asc;

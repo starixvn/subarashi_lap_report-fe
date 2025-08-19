@@ -9,12 +9,12 @@ import { BuildBody, BuildFooter, BuildHeaders } from '../gridUtility';
 import Service from '../common';
 
 const DataGrid = () => {
-    const gridData = useSelector((state) => state.gridData);
-    const formData = useSelector((state) => state.formData);
-    const requestParam = useSelector((state) => state.requestParam);
+    const gridData = useSelector(state => state.gridData);
+    const formData = useSelector(state => state.formData);
+    const requestParam = useSelector(state => state.requestParam);
 
     if (!gridData || !gridData.data) {
-        return;
+        return null;
     }
 
     if (!gridData.data.length && !gridData.specialBetTypeResult.length) {

@@ -16,7 +16,7 @@ const Overlay = ({ children, closeOnOutsideClick, isOpening, onOpen, onClose }) 
         onClose && onClose();
     };
 
-    const handleClickOutside = (event) => {
+    const handleClickOutside = event => {
         if (containerRef.current && !containerRef.current.contains(event.target) && isOpen) {
             handleClose();
         }

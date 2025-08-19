@@ -14,14 +14,14 @@ class Service {
     }
 
     static convertToCheckedItem(item, allItems) {
-        const children = allItems.filter((x) => x.parentId === item.id);
+        const children = allItems.filter(x => x.parentId === item.id);
 
         return {
             name: item.name,
             id: item.id.toString(),
             value: item.id.toString(),
             checked: item.checked,
-            children: children.map((child) => ({
+            children: children.map(child => ({
                 name: child.name,
                 id: CHILD_ID_PREFIX + child.id,
                 value: CHILD_ID_PREFIX + child.id,
@@ -31,13 +31,13 @@ class Service {
     }
 
     static convertToCheckedItems(items) {
-        const children = items.filter((x) => x.parentId !== -1);
+        const children = items.filter(x => x.parentId !== -1);
 
-        return items.filter((x) => x.parentId === -1).map((x) => this.convertToCheckedItem(x, children));
+        return items.filter(x => x.parentId === -1).map(x => this.convertToCheckedItem(x, children));
     }
 
     static async fetchBetTypeList({ cacheKey, url, sportProducts }) {
-        var cacheData = cache.get(cacheKey);
+        const cacheData = cache.get(cacheKey);
         if (cacheData) {
             return cacheData;
         }
@@ -50,9 +50,9 @@ class Service {
 
     // BetTypesIds format: `${parent}-${id}`
     static getSelectedBettypeXML = (seletedBetTypesIds, parentPrefixs) => {
-        var xmlDoc = document.implementation.createDocument(null, 'ROOT', null);
+        const xmlDoc = document.implementation.createDocument(null, 'ROOT', null);
 
-        parentPrefixs.forEach((parent) => {
+        parentPrefixs.forEach(parent => {
             const children = [];
             for (let i = 0; i < seletedBetTypesIds.length; i++) {
                 if (seletedBetTypesIds[i].startsWith(parent)) {
@@ -65,10 +65,10 @@ class Service {
                 return;
             }
 
-            var productCode = parent;
-            var bettypeList = children
+            const productCode = parent;
+            const bettypeList = children
                 .reduce((accum, elem) => accum.concat(elem), [])
-                .map((elem) => elem)
+                .map(elem => elem)
                 .join(',');
 
             this.buildBettypeElement(xmlDoc, productCode, bettypeList);
@@ -78,7 +78,7 @@ class Service {
     };
 
     static buildBettypeElement = (xmlDoc, productCode, bettypeList) => {
-        var bettypeElem = xmlDoc.createElement('Bettype');
+        const bettypeElem = xmlDoc.createElement('Bettype');
 
         bettypeElem.setAttribute('pc', productCode);
         bettypeElem.setAttribute('bt', bettypeList);

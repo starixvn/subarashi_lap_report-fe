@@ -22,25 +22,25 @@ const FormFilter = () => {
 
     const dispatch = useDispatch();
 
-    const selectedDate = useSelector((state) => state.selectedDate);
+    const selectedDate = useSelector(state => state.selectedDate);
     const [currentDate, setCurrentDate] = useState(selectedDate);
 
-    const selectedCurrency = useSelector((state) => state.selectedCurrency);
+    const selectedCurrency = useSelector(state => state.selectedCurrency);
     const [currentCurrency, setCurrentCurrency] = useState(selectedCurrency);
 
-    const baseCurrencyList = useSelector((state) => state.baseCurrencyList);
-    const selectedBaseCurrency = useSelector((state) => state.selectedBaseCurrency);
+    const baseCurrencyList = useSelector(state => state.baseCurrencyList);
+    const selectedBaseCurrency = useSelector(state => state.selectedBaseCurrency);
     const [currentBaseCurrency, setCurrentBaseCurrency] = useState(selectedBaseCurrency);
 
-    const selectedProduct = useSelector((state) => state.selectedProduct);
+    const selectedProduct = useSelector(state => state.selectedProduct);
     const [currentProduct, setCurrentProduct] = useState(selectedProduct);
 
-    const formData = useSelector((state) => state.formData);
-    const userGuideContent = useSelector((state) => state.userGuideContent);
+    const formData = useSelector(state => state.formData);
+    const userGuideContent = useSelector(state => state.userGuideContent);
 
-    const productOptions = formData.productOptions.map((option) => ({
+    const productOptions = formData.productOptions.map(option => ({
         ...option,
-        status: currentProduct.some((selected) => selected.code === option.code),
+        status: currentProduct.some(selected => selected.code === option.code),
     }));
 
     const { sendRequest } = useToggleRequest();
@@ -56,13 +56,13 @@ const FormFilter = () => {
         setGridData,
     } = ActionCreators;
 
-    const onChangeDateRange = (date) => {
+    const onChangeDateRange = date => {
         setCurrentDate(date.format('MM/DD/YYYY'));
     };
 
-    const onChangeSelectedCurrency = (selectedCurrency) => {
+    const onChangeSelectedCurrency = selectedCurrency => {
         if (selectedCurrency.value === 0) {
-            const defaultCurrency = formData.baseCurrencies.find((x) => x.value === -1);
+            const defaultCurrency = formData.baseCurrencies.find(x => x.value === -1);
             setCurrentBaseCurrency({ ...defaultCurrency });
             setCurrentCurrency(selectedCurrency);
             dispatch(setBaseCurrencyList([...formData.baseCurrencies]));
@@ -70,7 +70,7 @@ const FormFilter = () => {
         }
 
         let newSelectedBaseCurrency = selectedCurrency;
-        if (!formData.baseCurrencies.find((x) => x.label === selectedCurrency.label)) {
+        if (!formData.baseCurrencies.find(x => x.label === selectedCurrency.label)) {
             const newBaseCurrencyList = formData.baseCurrencies.slice(0);
             newSelectedBaseCurrency = { ...selectedCurrency, isEmpty: true };
             newBaseCurrencyList.push(newSelectedBaseCurrency);
@@ -83,16 +83,16 @@ const FormFilter = () => {
         setCurrentBaseCurrency({ ...newSelectedBaseCurrency });
     };
 
-    const onChangeSelectBaseCurrency = (value) => {
+    const onChangeSelectBaseCurrency = value => {
         setCurrentBaseCurrency(value);
     };
 
     const onChangeSelectedProducts = (currentItem, selectedItemsKey) => {
-        const filteredProducts = formData.productOptions.filter((x) => selectedItemsKey.split(',').includes(x.code));
+        const filteredProducts = formData.productOptions.filter(x => selectedItemsKey.split(',').includes(x.code));
         setCurrentProduct(filteredProducts);
     };
 
-    const onSubmit = (event) => {
+    const onSubmit = event => {
         event.preventDefault();
 
         const params = getParams();
@@ -101,17 +101,15 @@ const FormFilter = () => {
         sendRequest(() => fetchReportGridData(ApiUrl.DATA_URL, params), updateGridData);
     };
 
-    const getParams = () => {
-        return {
-            Date: currentDate.toString(),
-            ProductOptions: currentProduct,
-            CurrencyName: currentCurrency.label,
-            CurrencyId: currentCurrency.value,
-            BaseCurrency: currentBaseCurrency.isEmpty ? '' : currentBaseCurrency.label,
-            BaseCurrencyText: currentBaseCurrency.isEmpty ? currentCurrency.label : currentBaseCurrency.label,
-            ...Site.getLrfSubsidiary(formData.isSelfMode),
-        };
-    };
+    const getParams = () => ({
+        Date: currentDate.toString(),
+        ProductOptions: currentProduct,
+        CurrencyName: currentCurrency.label,
+        CurrencyId: currentCurrency.value,
+        BaseCurrency: currentBaseCurrency.isEmpty ? '' : currentBaseCurrency.label,
+        BaseCurrencyText: currentBaseCurrency.isEmpty ? currentCurrency.label : currentBaseCurrency.label,
+        ...Site.getLrfSubsidiary(formData.isSelfMode),
+    });
 
     const saveParamsToState = () => {
         dispatch(setSelectedDate(currentDate));
@@ -129,7 +127,7 @@ const FormFilter = () => {
         return data;
     };
 
-    const updateGridData = (data) => {
+    const updateGridData = data => {
         dispatch(setGridData(Service.convertToReportData(data)));
     };
 
@@ -142,7 +140,7 @@ const FormFilter = () => {
     const onExportExcel = () => {
         sendRequest(
             () => DataService.getReportFile(ApiUrl.EXPORT_EXCEL_URL, getParams()),
-            (response) => Site.downloadFile(response.data, 'MatchWinLoss.xls')
+            response => Site.downloadFile(response.data, 'MatchWinLoss.xls')
         );
     };
 
@@ -171,7 +169,7 @@ const FormFilter = () => {
                             format={'MM/DD/yyyy'}
                             firstDayOfWeek={FirstDayOfWeek}
                             onChange={onChangeDateRange}
-                            langHandler={(key) => (key === 'May' ? LangHelper.getSingleResource('May2') : LangHelper.getSingleResource(key))}
+                            langHandler={key => (key === 'May' ? LangHelper.getSingleResource('May2') : LangHelper.getSingleResource(key))}
                         />
                     </div>
                 </div>

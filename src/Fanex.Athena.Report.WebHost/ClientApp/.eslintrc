@@ -32,6 +32,15 @@
         "no-duplicate-imports": "error",
         "no-console": "warn",
         "prefer-const": "error",
+        "arrow-body-style": ["error", "as-needed"],
+        "arrow-parens": ["error", "as-needed"],
+        "consistent-return": "error",
+        "eqeqeq": ["error", "always"],
+        "curly": ["error", "all"],
+        "complexity": ["error", {"max": 10}],
+        "max-depth": ["error", {"max": 3}],
+        "no-var": "error",
+        "prefer-template": "error",
         "prettier/prettier": [
             "warn",
             {
@@ -42,7 +51,8 @@
                 "tabWidth": 4,
                 "useTabs": false,
                 "printWidth": 160,
-                "jsxBracketSameLine": true
+                "jsxBracketSameLine": true,
+                "arrowParens": "avoid"
             }
         ]
     },

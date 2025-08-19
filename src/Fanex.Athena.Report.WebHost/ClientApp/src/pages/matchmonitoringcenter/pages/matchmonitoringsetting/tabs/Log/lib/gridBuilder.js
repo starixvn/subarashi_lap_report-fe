@@ -22,12 +22,12 @@ export const BuildHeaders = () => (
     </HeaderRow>
 );
 
-export const BuildBody = (data) => {
+export const BuildBody = data => {
     if (!data || !data.length) {
         return BuildEmptyBody();
     }
 
-    var rows = data.map((item, index) => (
+    const rows = data.map((item, index) => (
         <Row key={index}>
             <Cell className="left-align">{item.timeStamp}</Cell>
             <Cell className="left-align">{item.type}</Cell>
@@ -40,12 +40,10 @@ export const BuildBody = (data) => {
     return rows;
 };
 
-const BuildEmptyBody = () => {
-    return (
-        <Row>
-            <Cell colSpan={5} className="center-align">
-                {LangHelper.getSingleResource('NoData')}
-            </Cell>
-        </Row>
-    );
-};
+const BuildEmptyBody = () => (
+    <Row>
+        <Cell colSpan={5} className="center-align">
+            {LangHelper.getSingleResource('NoData')}
+        </Cell>
+    </Row>
+);

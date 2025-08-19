@@ -10,14 +10,14 @@ import ByCurrencyDataGrid from './ByCurrencyDataGrid';
 import ByBetTypeDataGrid from './ByBetTypeDataGrid';
 
 const DataGrid = () => {
-    const gridData = useSelector((state) => state.gridData);
-    const requestParam = useSelector((state) => state.requestParam);
+    const gridData = useSelector(state => state.gridData);
+    const requestParam = useSelector(state => state.requestParam);
 
     if (!gridData?.summary) {
-        return;
+        return null;
     }
 
-    const currencyText = requestParam.CurrencyId != 0 && !requestParam.BaseCurrency ? requestParam.CurrencyName : requestParam.BaseCurrency;
+    const currencyText = requestParam.CurrencyId !== 0 && !requestParam.BaseCurrency ? requestParam.CurrencyName : requestParam.BaseCurrency;
 
     if (!gridData.summary.length) {
         return (

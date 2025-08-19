@@ -5,7 +5,7 @@ import FormFilter from './FormFilter';
 import DataGrid from './DataGrid';
 
 const AppContainer = () => {
-    const isLoading = useSelector((state) => state.isLoading);
+    const isLoading = useSelector(state => state.isLoading);
 
     return (
         <React.Fragment>

@@ -6,7 +6,7 @@ import { TreeViewSelect } from '@legion-lib/react-multiselect';
 import LangHelper from '@/helpers/langHelper';
 import { TreeViewOption } from '@/constants/report';
 
-export const SportFilter = (props) => {
+export const SportFilter = props => {
     const { dataSource, onChange, isValid } = props;
 
     const _renderSportSelectList = () => {

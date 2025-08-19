@@ -1,10 +1,10 @@
 import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 
-export const DropdownRadioItem = (props) => {
+export const DropdownRadioItem = props => {
     const { checked, text, value, onChange, id } = props;
 
-    const _onClick = (event) => {
+    const _onClick = event => {
         event.preventDefault();
         event.stopPropagation();
         event.value = event.target.value = value;

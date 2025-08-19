@@ -3,7 +3,5 @@ export default class StringHelper {
         return !str || str.trim().length === 0;
     }
 
-    static addSpaceAfterComma = (str) => {
-        return str.split(',').join(', ');
-    };
+    static addSpaceAfterComma = str => str.split(',').join(', ');
 }

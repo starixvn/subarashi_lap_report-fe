@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const TabMenuItem = (props) => {
+export const TabMenuItem = props => {
     const { item, isActive, onClickTabMenu } = props;
 
     return (

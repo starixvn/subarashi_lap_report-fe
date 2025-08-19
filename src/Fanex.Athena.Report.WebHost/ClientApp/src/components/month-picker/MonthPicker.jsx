@@ -1,10 +1,11 @@
-﻿import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 import Month from './Month';
 import Day from './Day';
 
-const MonthPicker = (props) => {
+// eslint-disable-next-line complexity
+const MonthPicker = props => {
     const format = 'MM/DD/YYYY';
 
     const minDate = moment(props.minDate, format);
@@ -35,12 +36,10 @@ const MonthPicker = (props) => {
         }
     }, [from, to, fromDate, toDate, props]);
 
-    const formatDate = (date, month, year) => {
-        return `${month < 9 ? '0' + (month + 1) : month + 1}/${date < 10 ? '0' + date : date}/${year}`;
-    };
+    const formatDate = (date, month, year) => `${month < 9 ? `0${month + 1}` : month + 1}/${date < 10 ? `0${date}` : date}/${year}`;
 
     const onMonthChange = useCallback(
-        (value) => {
+        value => {
             const minDate = value.year === min.year && value.month === min.month ? min.date : 1;
             const maxDate = value.year === max.year && value.month === max.month ? max.date : moment({ year: value.year, month: value.month }).daysInMonth();
 
@@ -56,7 +55,7 @@ const MonthPicker = (props) => {
         [min, max, props]
     );
 
-    const onFromDateChange = (value) => {
+    const onFromDateChange = value => {
         setFrom(value);
         props.onChange({
             fromDate: formatDate(value, month.month, month.year),
@@ -64,7 +63,7 @@ const MonthPicker = (props) => {
         });
     };
 
-    const onToDateChange = (value) => {
+    const onToDateChange = value => {
         setTo(value);
         props.onChange({
             fromDate: formatDate(from, month.month, month.year),

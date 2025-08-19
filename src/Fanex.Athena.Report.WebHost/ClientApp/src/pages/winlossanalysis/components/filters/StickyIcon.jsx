@@ -6,7 +6,7 @@ import UserGuide from '@/components/UserGuide';
 import { ActionCreators } from '../../actions/index.js';
 
 const StickyIcon = () => {
-    const userGuideContent = useSelector((state) => state.userGuideContent);
+    const userGuideContent = useSelector(state => state.userGuideContent);
     const dispatch = useDispatch();
     const { getUserGuideContent } = ActionCreators;
 
@@ -16,16 +16,14 @@ const StickyIcon = () => {
         }
     };
 
-    const _renderUserGuide = () => {
-        return (
-            <UserGuide
-                title={LangHelper.getSingleResource('UserGuide')}
-                contentTitle={LangHelper.getSingleResource('WinlossAnalysis')}
-                onClick={_showUserGuide}
-                content={userGuideContent}
-            />
-        );
-    };
+    const _renderUserGuide = () => (
+        <UserGuide
+            title={LangHelper.getSingleResource('UserGuide')}
+            contentTitle={LangHelper.getSingleResource('WinlossAnalysis')}
+            onClick={_showUserGuide}
+            content={userGuideContent}
+        />
+    );
 
     return <div>{_renderUserGuide()}</div>;
 };

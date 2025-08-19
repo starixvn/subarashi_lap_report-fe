@@ -3,7 +3,8 @@ import { Row, Cell } from '@legion-lib/react-grid';
 import NumberFormat from '@/lib/numberFormat';
 import BreakdownRow from './BreakdownRow';
 
-export const TreeViewGridRowNode = (props) => {
+// eslint-disable-next-line complexity
+export const TreeViewGridRowNode = props => {
     const [isBreakdown, setIsBreakDown] = useState(false);
     const { data, option } = props;
     const { isGroupByPlayerMode, isBreakDownPlayerMode } = option;
@@ -14,18 +15,16 @@ export const TreeViewGridRowNode = (props) => {
     const _onclick = () => {
         setIsBreakDown(!isBreakdown);
     };
-    const renderDrillDownCell = (text) => {
-        return (
-            <Cell className="left-align drill-down-cell" colSpan={groupByColumnColSpan}>
-                <div className="flex w100" onClick={_onclick} style={{ cursor: 'pointer' }}>
-                    <span className="w100 main-text" title={text}>
-                        {text}
-                    </span>
-                    <span className={`arrow-icon ${arrowClass}`}></span>
-                </div>
-            </Cell>
-        );
-    };
+    const renderDrillDownCell = text => (
+        <Cell className="left-align drill-down-cell" colSpan={groupByColumnColSpan}>
+            <div className="flex w100" onClick={_onclick} style={{ cursor: 'pointer' }}>
+                <span className="w100 main-text" title={text}>
+                    {text}
+                </span>
+                <span className={`arrow-icon ${arrowClass}`}></span>
+            </div>
+        </Cell>
+    );
 
     const parentData = data.keyItem;
     const children = data.children;
@@ -71,7 +70,7 @@ export const TreeViewGridRowNode = (props) => {
             {isBreakdown &&
                 children?.length &&
                 children.length > 0 &&
-                children.map((item) => <BreakdownRow key={`break-down-row-${item.groupBy}-${item.breakBy}`} data={item} option={option} />)}
+                children.map(item => <BreakdownRow key={`break-down-row-${item.groupBy}-${item.breakBy}`} data={item} option={option} />)}
         </>
     );
 };

@@ -28,7 +28,7 @@ export const headerColumns = [
     },
     {
         key: 'stake',
-        label: LangHelper.getSingleResource('Stake') + ' (%)',
+        label: `${LangHelper.getSingleResource('Stake')} (%)`,
         width: 100,
     },
     {

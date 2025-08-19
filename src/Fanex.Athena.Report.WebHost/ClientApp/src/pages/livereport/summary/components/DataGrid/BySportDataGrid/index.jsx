@@ -6,11 +6,11 @@ import LangHelper from '@/helpers/langHelper';
 import { BuildBySportBody, BuildBySportHeaders } from './GridBuilder';
 
 function BySportDataGrid() {
-    const gridData = useSelector((state) => state.gridData?.dataBySport);
-    const isShowedDetailLink = useSelector((state) => state.gridData.isShowedDetailLink);
+    const gridData = useSelector(state => state.gridData?.dataBySport);
+    const isShowedDetailLink = useSelector(state => state.gridData.isShowedDetailLink);
 
-    const formData = useSelector((state) => state.formData);
-    const selectedProductCode = useSelector((state) => state.selectedProductCode);
+    const formData = useSelector(state => state.formData);
+    const selectedProductCode = useSelector(state => state.selectedProductCode);
 
     const options = {
         hasAmountDueToColumn: formData.hasAmountDueToColumn,
@@ -18,7 +18,7 @@ function BySportDataGrid() {
     };
 
     if (!selectedProductCode || !gridData || !gridData.length) {
-        return;
+        return null;
     }
 
     return (

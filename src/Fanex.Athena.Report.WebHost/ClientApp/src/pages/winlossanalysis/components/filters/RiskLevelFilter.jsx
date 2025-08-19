@@ -5,8 +5,8 @@ import PropTypes from 'prop-types';
 import MultipleSelect from '@legion-lib/react-multiselect';
 import LangHelper from '@/helpers/langHelper';
 
-export const RiskLevelFilter = (props) => {
-    const formData = useSelector((state) => state.formData);
+export const RiskLevelFilter = props => {
+    const formData = useSelector(state => state.formData);
 
     const { onChange, isValid } = props;
 

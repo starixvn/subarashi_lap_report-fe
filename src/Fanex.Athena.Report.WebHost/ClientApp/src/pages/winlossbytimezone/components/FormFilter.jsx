@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import MultipleSelect from '@legion-lib/react-multiselect';
 import { DateRange } from '@legion-lib/react-daterangepicker';
@@ -19,19 +19,19 @@ import { ActionCreators } from '../actions/index';
 const FormFilter = () => {
     const dispatch = useDispatch();
 
-    const dateRange = useSelector((state) => state.dateRange);
-    const selectedProduct = useSelector((state) => state.selectedProduct);
-    const userGuideContent = useSelector((state) => state.userGuideContent);
-    const selectedBaseCurrency = useSelector((state) => state.selectedBaseCurrency);
-    const selectedCurrency = useSelector((state) => state.selectedCurrency);
-    const isConvertAll = useSelector((state) => state.isConvertAll);
-    const isIncludeDrawData = useSelector((state) => state.isIncludeDrawData);
-    const selectedTimeZone = useSelector((state) => state.selectedTimeZone);
-    const selectedReportBy = useSelector((state) => state.selectedReportBy);
-    const groupBy = useSelector((state) => state.groupBy);
-    const isExcludeTest = useSelector((state) => state.isExcludeTest);
-    const baseCurrencyList = useSelector((state) => state.baseCurrencyList);
-    const formData = useSelector((state) => state.formData);
+    const dateRange = useSelector(state => state.dateRange);
+    const selectedProduct = useSelector(state => state.selectedProduct);
+    const userGuideContent = useSelector(state => state.userGuideContent);
+    const selectedBaseCurrency = useSelector(state => state.selectedBaseCurrency);
+    const selectedCurrency = useSelector(state => state.selectedCurrency);
+    const isConvertAll = useSelector(state => state.isConvertAll);
+    const isIncludeDrawData = useSelector(state => state.isIncludeDrawData);
+    const selectedTimeZone = useSelector(state => state.selectedTimeZone);
+    const selectedReportBy = useSelector(state => state.selectedReportBy);
+    const groupBy = useSelector(state => state.groupBy);
+    const isExcludeTest = useSelector(state => state.isExcludeTest);
+    const baseCurrencyList = useSelector(state => state.baseCurrencyList);
+    const formData = useSelector(state => state.formData);
 
     const {
         setDateRange,
@@ -54,7 +54,7 @@ const FormFilter = () => {
 
     const { sendRequest } = useToggleRequest();
 
-    const submit = (event) => {
+    const submit = event => {
         event.preventDefault();
         const params = getParams();
         if (!params) {
@@ -65,7 +65,7 @@ const FormFilter = () => {
         dispatch(setRequestParam({ ...params, CurrencyName: selectedCurrency.label }));
     };
 
-    const updateData = (result) => {
+    const updateData = result => {
         if (result && result.data !== null) {
             const gridData = result.data;
 
@@ -76,7 +76,7 @@ const FormFilter = () => {
         dispatch(setGridData(null));
     };
 
-    const onChangeGroupBy = (value) => {
+    const onChangeGroupBy = value => {
         dispatch(changeGroupBy(value));
         if (value === SettingConst.GroupByProduct && selectedCurrency.value === 0) {
             dispatch(changeIsConvertAll(true));
@@ -103,15 +103,15 @@ const FormFilter = () => {
         };
     };
 
-    const productChangeHandler = (currentItem, selectedItemsKey) => {
+    const productChangeHandler = (_currentItem, selectedItemsKey) => {
         dispatch(setSelectedProducts(selectedItemsKey));
     };
 
-    const onChangeTimeZone = (val) => dispatch(setSelectedTimeZone(val));
+    const onChangeTimeZone = val => dispatch(setSelectedTimeZone(val));
 
-    const onChangeBaseCurrency = (val) => dispatch(setSelectedBaseCurrency(val));
+    const onChangeBaseCurrency = val => dispatch(setSelectedBaseCurrency(val));
 
-    const onChangeReportBy = (val) => dispatch(setSelectedReportBy(val));
+    const onChangeReportBy = val => dispatch(setSelectedReportBy(val));
 
     const onChangeIncludeDrawDate = () => dispatch(changeIsIncludeDrawData(!isIncludeDrawData));
 
@@ -128,9 +128,9 @@ const FormFilter = () => {
         }
     };
 
-    const onChangeCurrency = (currency) => {
+    const onChangeCurrency = currency => {
         if (currency.value === 0) {
-            const defaultCurrency = formData.baseCurrencies.find((x) => x.value === -1);
+            const defaultCurrency = formData.baseCurrencies.find(x => x.value === -1);
             dispatch(setSelectedBaseCurrency({ ...defaultCurrency }));
             dispatch(setSelectedCurrency(currency));
             dispatch(setBaseCurrencyList([...formData.baseCurrencies]));
@@ -138,7 +138,7 @@ const FormFilter = () => {
         }
 
         const newSelectedBaseCurrency = currency;
-        if (!formData.baseCurrencies.find((x) => x.label === currency.label)) {
+        if (!formData.baseCurrencies.find(x => x.label === currency.label)) {
             const newBaseCurrencyList = formData.baseCurrencies.slice(0);
             newBaseCurrencyList.push(currency);
             dispatch(setBaseCurrencyList(newBaseCurrencyList));
@@ -167,7 +167,7 @@ const FormFilter = () => {
         sendRequest(() => DataService.getReportFile(ApiUrl.EXPORT_EXCEL_URL, params), downLoadExcel);
     };
 
-    const downLoadExcel = (response) => {
+    const downLoadExcel = response => {
         const NoContentStatusCode = 204;
 
         if (response.status === NoContentStatusCode) {
@@ -203,7 +203,7 @@ const FormFilter = () => {
                             today={DateConstraint.today}
                             limitedMonthRange={DateConstraint.limitedMonthRange}
                             onChange={applyDateRangeHandler}
-                            langHandler={(key) => LangHelper.getDateRangeResource(key)}
+                            langHandler={key => LangHelper.getDateRangeResource(key)}
                         />
                     </div>
                 </div>
@@ -255,9 +255,9 @@ const FormFilter = () => {
                 <div className="col-12 col-md-4 col-sm-4 col-lg-3 col-xl-3">
                     <div className="form-group">
                         <label className="label-text">{LangHelper.getSingleResource('GroupBy')}</label>
-                        <input type="radio" value={1} checked={groupBy == 1} name="GroupBy" id="GroupByProduct" onChange={() => onChangeGroupBy(1)} />
+                        <input type="radio" value={1} checked={groupBy === 1} name="GroupBy" id="GroupByProduct" onChange={() => onChangeGroupBy(1)} />
                         <label htmlFor="GroupByProduct">{LangHelper.getSingleResource('Product')}</label>
-                        <input type="radio" value={2} name="GroupBy" id="GroupByCurrency" checked={groupBy == 2} onChange={() => onChangeGroupBy(2)} />
+                        <input type="radio" value={2} name="GroupBy" id="GroupByCurrency" checked={groupBy === 2} onChange={() => onChangeGroupBy(2)} />
                         <label htmlFor="GroupByCurrency">{LangHelper.getSingleResource('Currency')}</label>
                     </div>
                 </div>
@@ -282,9 +282,9 @@ const FormFilter = () => {
                             <input
                                 type="checkbox"
                                 className="checkbox"
-                                checked={(groupBy === 1 && selectedCurrency.value == 0) || isConvertAll}
+                                checked={(groupBy === 1 && selectedCurrency.value === 0) || isConvertAll}
                                 id="IsConvertAll"
-                                disabled={groupBy === 1 && selectedCurrency.value == 0}
+                                disabled={groupBy === 1 && selectedCurrency.value === 0}
                                 onChange={onChangeConvertAll}
                             />
                             <label htmlFor="IsConvertAll">{LangHelper.getSingleResource('ConvertAllFiguresToBaseCurrency')}</label>

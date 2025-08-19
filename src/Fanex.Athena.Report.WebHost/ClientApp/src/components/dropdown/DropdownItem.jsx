@@ -7,7 +7,7 @@ class DropdownItem extends Component {
         super(props);
     }
 
-    handleClick = (e) => {
+    handleClick = e => {
         e.preventDefault();
         if (this.props.disabled) {
             return;

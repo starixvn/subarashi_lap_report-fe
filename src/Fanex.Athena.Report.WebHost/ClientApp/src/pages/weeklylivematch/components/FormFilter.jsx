@@ -19,9 +19,9 @@ const FormFilter = () => {
     const dispatch = useDispatch();
     const { sendRequest } = useToggleRequest();
 
-    const userGuideContent = useSelector((state) => state.userGuideContent);
-    const dateRange = useSelector((state) => state.dateRange);
-    const requestParam = useSelector((state) => state.requestParam);
+    const userGuideContent = useSelector(state => state.userGuideContent);
+    const dateRange = useSelector(state => state.dateRange);
+    const requestParam = useSelector(state => state.requestParam);
 
     const { ApiUrl, DateConstraint, FirstDayOfWeek } = Constants;
     const { setDateRange, setGridData, setRequestParam, getUserGuideContent } = ActionCreators;
@@ -35,21 +35,19 @@ const FormFilter = () => {
         }
     };
 
-    const _renderDateFilter = () => {
-        return (
-            <DateRange
-                startDate={Constants.DateRange.fromDate}
-                endDate={Constants.DateRange.toDate}
-                minDate={DateConstraint.minDate}
-                maxDate={DateConstraint.maxDate}
-                today={DateConstraint.today}
-                limitedMonthRange={DateConstraint.limitedMonthRange}
-                firstDayOfWeek={FirstDayOfWeek}
-                onChange={_onChangeDateRange}
-                langHandler={(key) => LangHelper.getDateRangeResource(key)}
-            />
-        );
-    };
+    const _renderDateFilter = () => (
+        <DateRange
+            startDate={Constants.DateRange.fromDate}
+            endDate={Constants.DateRange.toDate}
+            minDate={DateConstraint.minDate}
+            maxDate={DateConstraint.maxDate}
+            today={DateConstraint.today}
+            limitedMonthRange={DateConstraint.limitedMonthRange}
+            firstDayOfWeek={FirstDayOfWeek}
+            onChange={_onChangeDateRange}
+            langHandler={key => LangHelper.getDateRangeResource(key)}
+        />
+    );
 
     const fetchUserGuide = () => {
         if (!userGuideContent) {
@@ -57,21 +55,19 @@ const FormFilter = () => {
         }
     };
 
-    const _renderSupportButton = () => {
-        return (
-            <>
-                <ExportExcel onClick={onExportExcel} />
-                <UserGuide
-                    title={LangHelper.getSingleResource(USER_GUIDE)}
-                    contentTitle={LangHelper.getSingleResource(WEEKLY_LIVE_MATCHES)}
-                    onClick={fetchUserGuide}
-                    content={userGuideContent}
-                />
-            </>
-        );
-    };
+    const _renderSupportButton = () => (
+        <>
+            <ExportExcel onClick={onExportExcel} />
+            <UserGuide
+                title={LangHelper.getSingleResource(USER_GUIDE)}
+                contentTitle={LangHelper.getSingleResource(WEEKLY_LIVE_MATCHES)}
+                onClick={fetchUserGuide}
+                content={userGuideContent}
+            />
+        </>
+    );
 
-    const _updateData = (result) => {
+    const _updateData = result => {
         if (result && result.data !== null) {
             dispatch(setGridData(result.data));
             return;
@@ -90,13 +86,13 @@ const FormFilter = () => {
         return params;
     };
 
-    const onSubmit = (event) => {
+    const onSubmit = event => {
         event.preventDefault();
         const params = _getParams();
         sendRequest(() => DataService.postReportData(ApiUrl.REPORT_DATA_URL, params), _updateData);
     };
 
-    const _downLoadExcel = (response) => {
+    const _downLoadExcel = response => {
         const NoContentStatusCode = 204;
 
         if (response.status === NoContentStatusCode) {

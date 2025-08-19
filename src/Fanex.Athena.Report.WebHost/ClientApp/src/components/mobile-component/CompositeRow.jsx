@@ -6,7 +6,8 @@ import CollapseRow from './CollapseRow';
 import { useHover } from 'usehooks-ts';
 import RefRow from './RefRow';
 
-const CompositeRow = (props) => {
+// eslint-disable-next-line complexity
+const CompositeRow = props => {
     const {
         isCollapsible,
         expandRows,

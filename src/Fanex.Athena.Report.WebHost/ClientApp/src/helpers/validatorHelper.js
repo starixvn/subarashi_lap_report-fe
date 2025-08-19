@@ -5,7 +5,7 @@ import DataService from '@/lib/dataService';
 const hasPermission = 'HasPermission';
 let currentInterval = null;
 
-export const AuthorizeRequestInfo = async (params) => {
+export const AuthorizeRequestInfo = async params => {
     if (!params.permissions) {
         return null;
     }
@@ -28,16 +28,16 @@ const validatePermission = (permissions, functionKeys) => {
         return;
     }
 
-    if (!functionKeys || functionKeys.every((res) => res[hasPermission] === false)) {
+    if (!functionKeys || functionKeys.every(res => res[hasPermission] === false)) {
         Site.redirectToUrl(ACCESS_DENIED_URL);
     }
 };
 
-const checkAliveInterval = (identityName) => {
+const checkAliveInterval = identityName => {
     const internalSessionUrl = `Utility/SessionIsAlive?identityName=${identityName}`;
 
     return setInterval(function () {
-        DataService.getData(internalSessionUrl).then((response) => {
+        DataService.getData(internalSessionUrl).then(response => {
             const data = response.data;
 
             if (data.IsUM) {

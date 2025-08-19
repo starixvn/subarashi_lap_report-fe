@@ -12,13 +12,13 @@ export const BuildFooter = (data, { reportBy, baseCurrency }) => {
     const licenseeWL = NumberFormat.formatDecimal(data.licenseeWinLoss);
     const licenseeComm = NumberFormat.formatDecimal(data.licenseeComm);
     const licenseeNetWL = NumberFormat.formatDecimal(data.licenseeNetWinLoss);
-    const margin = NumberFormat.formatDecimal(data.margin) + '%';
+    const margin = `${NumberFormat.formatDecimal(data.margin)}%`;
     const colSpan = reportBy === SettingConst.ReportBySummary ? 2 : 3;
 
     return [
         <Row className="fixed-table-grant-total" key={1}>
             <Cell className="center-align" colSpan={colSpan}>
-                {LangHelper.getSingleResource('TotalIn') + ' ' + baseCurrency}
+                {`${LangHelper.getSingleResource('TotalIn')} ${baseCurrency}`}
             </Cell>
             <Cell title={betcount} className="right-align">
                 {betcount}

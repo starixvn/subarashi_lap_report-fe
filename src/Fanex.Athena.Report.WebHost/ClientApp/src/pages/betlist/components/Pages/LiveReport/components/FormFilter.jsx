@@ -5,9 +5,9 @@ import { useSelector, shallowEqual } from 'react-redux';
 import LangHelper from '@/helpers/langHelper';
 import ExportExcel from '@/components/ExportExcel';
 
-const LiveReportFormFilter = (props) => {
+const LiveReportFormFilter = props => {
     const navigate = useNavigate();
-    const [formData, requestParam] = useSelector((state) => [state.formData, state.requestParam], shallowEqual);
+    const [formData, requestParam] = useSelector(state => [state.formData, state.requestParam], shallowEqual);
 
     const { isValidExcel, processExcel } = props;
     const exportExcel = () => {

@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import Item from './Radio';
 
-const RadioGroup = (props) => {
+const RadioGroup = props => {
     const [value, setValue] = useState(props.value);
 
-    const onChange = (selectedValue) => {
+    const onChange = selectedValue => {
         if (value === selectedValue) {
             return;
         }
@@ -19,7 +19,7 @@ const RadioGroup = (props) => {
 
     const renderItem = () => {
         const { options, name } = props;
-        return options.map((item) => {
+        return options.map(item => {
             const isChecked = item.value === value;
             const id = `${name}-${item.value}`;
 
@@ -31,7 +31,7 @@ const RadioGroup = (props) => {
                     name={name}
                     id={id}
                     label={item.label}
-                    onChange={(selectedValue) => onChange(selectedValue)}
+                    onChange={selectedValue => onChange(selectedValue)}
                 />
             );
         });

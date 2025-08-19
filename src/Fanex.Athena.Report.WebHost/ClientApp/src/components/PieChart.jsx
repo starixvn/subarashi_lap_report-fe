@@ -12,7 +12,7 @@ const PieChart = ({ data, size, colors }) => {
 
     // Helper to describe an SVG arc
     const describeArc = (cx, cy, r, startAngle, endAngle) => {
-        const rad = (deg) => (Math.PI / 180) * deg;
+        const rad = deg => (Math.PI / 180) * deg;
         const x1 = cx + r * Math.cos(rad(startAngle));
         const y1 = cy + r * Math.sin(rad(startAngle));
         const x2 = cx + r * Math.cos(rad(endAngle));
@@ -39,11 +39,11 @@ const PieChart = ({ data, size, colors }) => {
         const labelY = center + labelRadius * Math.sin(((midAngle - 90) * Math.PI) / 180);
         const percentage = ((value / total) * 100).toFixed(2);
         const commonProps = {
-            onMouseEnter: (e) => {
+            onMouseEnter: e => {
                 setHoveredIndex(i);
                 setMousePos({ x: e.clientX, y: e.clientY });
             },
-            onMouseMove: (e) => {
+            onMouseMove: e => {
                 setMousePos({ x: e.clientX, y: e.clientY });
             },
             onMouseLeave: () => setHoveredIndex(null),

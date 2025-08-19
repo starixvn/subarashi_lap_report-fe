@@ -1,4 +1,4 @@
-﻿import React, { memo } from 'react';
+import React, { memo } from 'react';
 
 import CollapsiblePanel from '@/components/CollapsiblePanel';
 import LangHelper from '@/helpers/langHelper';
@@ -12,7 +12,7 @@ import BreakDownOptionFilter from '../filters/BreakDownOptionFilter.jsx';
 import PropTypes from 'prop-types';
 import StickyIcon from '../filters/StickyIcon.jsx';
 
-export const MobileGroupByFilter = (props) => {
+export const MobileGroupByFilter = props => {
     const { isCollapsed } = props;
     const isValidModel = useValidParam();
     const { submit, onClickClearFilter } = useFilterAction();

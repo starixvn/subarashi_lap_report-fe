@@ -9,7 +9,7 @@ import useRenderRowOption from '../hooks/useRenderRowOption';
 import { HeaderText, MobileGroupByHeaderDisplayType } from '../../common/constants';
 import MobileExpandRowContent from './MobileExpandRowContent';
 
-export const MobileBreakdownRow = (props) => {
+export const MobileBreakdownRow = props => {
     const { data, selectedDisplayTypeId } = props;
     const { isShowBetEffectiveField, isBreakDownPlayerMode } = useRenderRowOption();
     const {
@@ -43,7 +43,7 @@ export const MobileBreakdownRow = (props) => {
         <MobileExpandRowContent text={HeaderText.Margin} value={`${NumberFormat.formatDecimal(margin * 100)}%`} valueClass={margin < 0 ? 'negative' : ''} />
     );
 
-    const idColumnText = selectedDisplayTypeId == MobileGroupByHeaderDisplayType.ExternalId ? externalId : systemId;
+    const idColumnText = selectedDisplayTypeId === MobileGroupByHeaderDisplayType.ExternalId ? externalId : systemId;
     const displayColumnName = isBreakDownPlayerMode ? idColumnText : breakDownFieldText;
     return (
         <CompositeRow key={`breakdown-row-${groupBy}-${breakBy}`} expandRows={expandRows} className="detail-row parent-row" collapaseRowClass="detail-row">

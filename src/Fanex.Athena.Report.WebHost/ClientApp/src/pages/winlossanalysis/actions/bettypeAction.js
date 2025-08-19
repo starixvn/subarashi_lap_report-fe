@@ -14,24 +14,20 @@ const dispatchBettypeList = (dispatch, data) => {
     dispatch(setSelectedBettype(selectedSports));
 };
 
-export const setSelectedBettype = (betTypeIds) => {
-    return {
-        type: types.SET_SELECTED_BETTYPE,
-        data: betTypeIds,
-    };
-};
+export const setSelectedBettype = betTypeIds => ({
+    type: types.SET_SELECTED_BETTYPE,
+    data: betTypeIds,
+});
 
-export const setBettypeList = (list) => {
-    return {
-        type: types.SET_BETTYPE_LIST,
-        data: list,
-    };
-};
+export const setBettypeList = list => ({
+    type: types.SET_BETTYPE_LIST,
+    data: list,
+});
 
 export const getBetTypeList = (productCodes, licenseeName) => {
     const cacheKey = BETTYPE_CACHE_KEY + productCodes + licenseeName;
-    return async (dispatch) => {
-        var cacheData = Cache.get(cacheKey);
+    return async dispatch => {
+        const cacheData = Cache.get(cacheKey);
         if (cacheData) {
             dispatchBettypeList(dispatch, [...cacheData]);
             return;

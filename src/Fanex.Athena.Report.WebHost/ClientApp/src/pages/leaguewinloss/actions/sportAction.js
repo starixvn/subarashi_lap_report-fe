@@ -3,37 +3,31 @@ import Service from '../common/service';
 import * as types from './types.js';
 import ObjectHelper from '@/lib/objectHelper.js';
 
-const setSelectedSport = (sportId) => {
-    return {
-        type: types.SET_SELECTED_SPORT,
-        data: sportId,
-    };
-};
+const setSelectedSport = sportId => ({
+    type: types.SET_SELECTED_SPORT,
+    data: sportId,
+});
 
-const setSportList = (list) => {
-    return {
-        type: types.SET_SPORT_LIST,
-        data: list,
-    };
-};
+const setSportList = list => ({
+    type: types.SET_SPORT_LIST,
+    data: list,
+});
 
-const getSportList = (productCodes) => {
-    return async (dispatch) => {
-        const response = await DataService.getData('api/CommonDataApi/GetSportsForTreeView', { productCodes: productCodes });
-        const data = response.data;
+const getSportList = productCodes => async dispatch => {
+    const response = await DataService.getData('api/CommonDataApi/GetSportsForTreeView', { productCodes: productCodes });
+    const data = response.data;
 
-        if (data && Array.isArray(data)) {
-            const sbParent = data.find((item) => item && item.ID === 0 && item.Value === 'SB');
-            if (sbParent && sbParent.Children && Array.isArray(sbParent.Children)) {
-                sbParent.Children = sbParent.Children.filter((child) => child && (child.ID !== -1 || child.Value !== '-1'));
-            }
+    if (data && Array.isArray(data)) {
+        const sbParent = data.find(item => item && item.ID === 0 && item.Value === 'SB');
+        if (sbParent && sbParent.Children && Array.isArray(sbParent.Children)) {
+            sbParent.Children = sbParent.Children.filter(child => child && (child.ID !== -1 || child.Value !== '-1'));
         }
+    }
 
-        const camelData = ObjectHelper.toCamel(data);
-        const selectedSports = Service.getSelectedItemFromTreeListItem(camelData);
-        dispatch(setSportList(camelData));
-        dispatch(setSelectedSport(selectedSports));
-    };
+    const camelData = ObjectHelper.toCamel(data);
+    const selectedSports = Service.getSelectedItemFromTreeListItem(camelData);
+    dispatch(setSportList(camelData));
+    dispatch(setSelectedSport(selectedSports));
 };
 
 export default {

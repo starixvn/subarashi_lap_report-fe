@@ -6,30 +6,28 @@ import LangHelper from '@/helpers/langHelper';
 import { DateConstraint } from '../../common/dateSetting';
 import { DefaultState, ViewInTimeMode } from '../../common/constants';
 
-export const DateRangeFilter = (props) => {
+export const DateRangeFilter = props => {
     const { onChange, isMobile, viewInTime } = props;
 
     const { limitedMonthRange, minDate } =
-        viewInTime == ViewInTimeMode.Settlement
+        viewInTime === ViewInTimeMode.Settlement
             ? { limitedMonthRange: DateConstraint.settlementTimeLimitedMonthRange, minDate: DateConstraint.settlementTimeMinDate }
             : { limitedMonthRange: DateConstraint.limitedMonthRange, minDate: DateConstraint.minDate };
 
-    const _renderDateRange = () => {
-        return (
-            <DateRange
-                startDate={DefaultState.dateRange.fromDate}
-                endDate={DefaultState.dateRange.toDate}
-                minDate={minDate}
-                maxDate={DateConstraint.maxDate}
-                today={DateConstraint.maxDate}
-                limitedMonthRange={limitedMonthRange}
-                firstDayOfWeek={DateConstraint.firstDayOfWeek}
-                onChange={(date, isValid) => onChange(date, isValid, limitedMonthRange)}
-                isMobile={isMobile}
-                langHandler={(key) => LangHelper.getDateRangeResource(key)}
-            />
-        );
-    };
+    const _renderDateRange = () => (
+        <DateRange
+            startDate={DefaultState.dateRange.fromDate}
+            endDate={DefaultState.dateRange.toDate}
+            minDate={minDate}
+            maxDate={DateConstraint.maxDate}
+            today={DateConstraint.maxDate}
+            limitedMonthRange={limitedMonthRange}
+            firstDayOfWeek={DateConstraint.firstDayOfWeek}
+            onChange={(date, isValid) => onChange(date, isValid, limitedMonthRange)}
+            isMobile={isMobile}
+            langHandler={key => LangHelper.getDateRangeResource(key)}
+        />
+    );
 
     return (
         <div className="form-group">

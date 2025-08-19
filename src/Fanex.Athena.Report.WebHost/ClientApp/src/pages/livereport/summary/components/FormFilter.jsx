@@ -25,30 +25,30 @@ const FormFilter = () => {
 
     const dispatch = useDispatch();
 
-    const dateRange = useSelector((state) => state.dateRange);
+    const dateRange = useSelector(state => state.dateRange);
     const [currentDateRange, setCurrentDateRange] = useState(dateRange);
 
-    const selectedCurrency = useSelector((state) => state.selectedCurrency);
+    const selectedCurrency = useSelector(state => state.selectedCurrency);
     const [currentCurrency, setCurrentCurrency] = useState(selectedCurrency);
 
-    const baseCurrencyList = useSelector((state) => state.baseCurrencyList);
-    const selectedBaseCurrency = useSelector((state) => state.selectedBaseCurrency);
+    const baseCurrencyList = useSelector(state => state.baseCurrencyList);
+    const selectedBaseCurrency = useSelector(state => state.selectedBaseCurrency);
     const [currentBaseCurrency, setCurrentBaseCurrency] = useState(selectedBaseCurrency);
 
-    const selectedStatus = useSelector((state) => state.selectedStatus);
+    const selectedStatus = useSelector(state => state.selectedStatus);
     const [currentStatus, setCurrentStatus] = useState(selectedStatus);
 
-    const selectedSubsidiary = useSelector((state) => state.selectedSubsidiary);
+    const selectedSubsidiary = useSelector(state => state.selectedSubsidiary);
     const { defaultSelectedSubsidiary, isShowSubsidiaryDropdown, isShowSubsidiarySearchCheckBox, isSubsidiarySearch } = useSubsidiarySearch();
     const [currentSubsidiarySearch, setCurrentSubsidiarySearch] = useState(isSubsidiarySearch);
     const [currentSubsidiaryList, setCurrentSubsidiaryList] = useState(selectedSubsidiary);
 
-    const whiteLabelTreeList = useSelector((state) => state.whiteLabelTreeList);
+    const whiteLabelTreeList = useSelector(state => state.whiteLabelTreeList);
     const [currentWhiteLabelTreeList, setCurrentWhiteLabelTreeList] = useState(whiteLabelTreeList);
 
-    const selectedProductCode = useSelector((state) => state.selectedProductCode);
-    const userGuideContent = useSelector((state) => state.userGuideContent);
-    const formData = useSelector((state) => state.formData);
+    const selectedProductCode = useSelector(state => state.selectedProductCode);
+    const userGuideContent = useSelector(state => state.userGuideContent);
+    const formData = useSelector(state => state.formData);
 
     useEffect(() => {
         onSubsidiaryCheckBoxChangeHandler(isSubsidiarySearch || (!isShowSubsidiarySearchCheckBox && isShowSubsidiaryDropdown));
@@ -83,9 +83,9 @@ const FormFilter = () => {
         }
     };
 
-    const onChangeSelectedCurrency = (selectedCurrency) => {
+    const onChangeSelectedCurrency = selectedCurrency => {
         if (selectedCurrency.value === 0) {
-            const defaultCurrency = formData.baseCurrencies.find((x) => x.value === -1);
+            const defaultCurrency = formData.baseCurrencies.find(x => x.value === -1);
             setCurrentBaseCurrency({ ...defaultCurrency });
             setCurrentCurrency(selectedCurrency);
             dispatch(setBaseCurrencyList([...formData.baseCurrencies]));
@@ -93,7 +93,7 @@ const FormFilter = () => {
         }
 
         let newSelectedBaseCurrency = selectedCurrency;
-        if (!formData.baseCurrencies.find((x) => x.label === selectedCurrency.label)) {
+        if (!formData.baseCurrencies.find(x => x.label === selectedCurrency.label)) {
             const newBaseCurrencyList = formData.baseCurrencies.slice(0);
             newSelectedBaseCurrency = { ...selectedCurrency, isEmpty: true };
             newBaseCurrencyList.push(newSelectedBaseCurrency);
@@ -106,15 +106,15 @@ const FormFilter = () => {
         setCurrentBaseCurrency({ ...newSelectedBaseCurrency });
     };
 
-    const onChangeSelectBaseCurrency = (value) => {
+    const onChangeSelectBaseCurrency = value => {
         setCurrentBaseCurrency(value);
     };
 
-    const onChangeSelectedStatus = (value) => {
+    const onChangeSelectedStatus = value => {
         setCurrentStatus(value);
     };
 
-    const onSubmit = (event) => {
+    const onSubmit = event => {
         event.preventDefault();
 
         const params = getParams();
@@ -123,18 +123,16 @@ const FormFilter = () => {
         sendRequest(() => fetchReportGridData(ApiUrl.DATA_URL, params), updateGridData);
     };
 
-    const getParams = () => {
-        return {
-            FromDate: Site.convertDateToString(currentDateRange.fromDate),
-            ToDate: Site.convertDateToString(currentDateRange.toDate),
-            LiveIndicator: currentStatus.value,
-            CurrencyName: currentCurrency.label,
-            CurrencyId: currentCurrency.value,
-            BaseCurrency: currentBaseCurrency.isEmpty ? '' : currentBaseCurrency.label,
-            SubsidiarySearch: currentSubsidiarySearch,
-            SubsidiaryList: currentSubsidiaryList,
-        };
-    };
+    const getParams = () => ({
+        FromDate: Site.convertDateToString(currentDateRange.fromDate),
+        ToDate: Site.convertDateToString(currentDateRange.toDate),
+        LiveIndicator: currentStatus.value,
+        CurrencyName: currentCurrency.label,
+        CurrencyId: currentCurrency.value,
+        BaseCurrency: currentBaseCurrency.isEmpty ? '' : currentBaseCurrency.label,
+        SubsidiarySearch: currentSubsidiarySearch,
+        SubsidiaryList: currentSubsidiaryList,
+    });
 
     const saveParamsToState = () => {
         dispatch(
@@ -162,7 +160,7 @@ const FormFilter = () => {
         return data;
     };
 
-    const updateGridData = (data) => {
+    const updateGridData = data => {
         dispatch(setGridData({ summary: data }));
     };
 
@@ -177,7 +175,7 @@ const FormFilter = () => {
         setCurrentSubsidiaryList(selectedItemsKey);
     };
 
-    const onSubsidiaryCheckBoxChangeHandler = (checked) => {
+    const onSubsidiaryCheckBoxChangeHandler = checked => {
         setCurrentSubsidiarySearch(checked);
         checked && setCurrentSubsidiaryList(defaultSelectedSubsidiary);
     };
@@ -188,7 +186,7 @@ const FormFilter = () => {
 
         sendRequest(
             () => DataService.getReportFile(ApiUrl.EXPORT_EXCEL_URL, params),
-            (response) => Site.downloadFile(response.data, `${LIVE_REPORT}.xls`)
+            response => Site.downloadFile(response.data, `${LIVE_REPORT}.xls`)
         );
     };
 
@@ -228,7 +226,7 @@ const FormFilter = () => {
                             limitedMonthRange={DateConstraint.limitedMonthRange}
                             firstDayOfWeek={DateConstraint.firstDayOfWeek}
                             format={'MM/DD/yyyy'}
-                            langHandler={(key) => LangHelper.getDateRangeResource(key)}
+                            langHandler={key => LangHelper.getDateRangeResource(key)}
                             onChange={onChangeDateRange}
                         />
                     </div>

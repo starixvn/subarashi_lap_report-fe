@@ -18,9 +18,9 @@ const fetchReportData = async (params, apiUrl) => {
 
 function DataGrid() {
     const dispatch = useDispatch();
-    const gridData = useSelector((state) => state.gridData);
-    const addNewRule = useSelector((state) => state.addNewRule);
-    const monitoringID = useSelector((state) => state.monitoringID);
+    const gridData = useSelector(state => state.gridData);
+    const addNewRule = useSelector(state => state.addNewRule);
+    const monitoringID = useSelector(state => state.monitoringID);
     const [baseCurrencyList, setBaseCurrencyList] = useState(null);
     const [defaultBaseCurrency, setDefaultBaseCurrency] = useState(null);
     const [, setIsLoading] = useState(true);
@@ -36,7 +36,7 @@ function DataGrid() {
         }
     }, [monitoringID]);
 
-    const updateData = (result) => {
+    const updateData = result => {
         setIsLoading(false);
         if (result) {
             dispatch(setGridData(result.dataList || []));
@@ -56,7 +56,7 @@ function DataGrid() {
         }
     };
 
-    const onAddNewRule = (event) => {
+    const onAddNewRule = event => {
         event.preventDefault();
 
         const newValue = !addNewRule;

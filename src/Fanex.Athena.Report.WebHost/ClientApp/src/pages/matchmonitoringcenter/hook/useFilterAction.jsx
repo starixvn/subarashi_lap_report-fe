@@ -16,7 +16,7 @@ export const useFilterAction = () => {
 
     const [selectedMatchStatus, selectedMatch, selectedTriggeredAlert, selectedBaseCurrency, selectedCurrency, userGuideContent, defaultState, requestParam] =
         useSelector(
-            (state) => [
+            state => [
                 state.selectedMatchStatus,
                 state.selectedMatch,
                 state.selectedTriggeredAlert,
@@ -48,9 +48,9 @@ export const useFilterAction = () => {
 
     const { ApiUrl } = constants;
 
-    const resetFilter = (event) => {
+    const resetFilter = event => {
         event.preventDefault();
-        const leagueIds = defaultState.leagueList.map((item) => item.id).join(',');
+        const leagueIds = defaultState.leagueList.map(item => item.id).join(',');
 
         batch(() => {
             dispatch(setSelectedMatchStatus(defaultState.selectedMatchStatus));
@@ -66,7 +66,7 @@ export const useFilterAction = () => {
         });
     };
 
-    const submit = (event) => {
+    const submit = event => {
         event.preventDefault();
         const params = getParams();
         sendRequest(() => DataService.postReportData(ApiUrl.DATA_URL, params), updateData);
@@ -78,7 +78,7 @@ export const useFilterAction = () => {
         sendRequest(() => DataService.postReportData(ApiUrl.DATA_URL, requestParam), updateData);
     };
 
-    const updateData = (result) => {
+    const updateData = result => {
         if (result && result.data !== null) {
             const gridData = result.data;
 
@@ -113,7 +113,7 @@ export const useFilterAction = () => {
         sendRequest(() => DataService.getReportFile(ApiUrl.EXPORT_EXCEL_URL, getParams()), downLoadExcel);
     };
 
-    const downLoadExcel = (response) => {
+    const downLoadExcel = response => {
         const NoContentStatusCode = 204;
 
         if (response.status === NoContentStatusCode) {

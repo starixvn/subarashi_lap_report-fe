@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import LangHelper from '@/helpers/langHelper';
 import { ViewInTimeMode } from '../../common/constants';
 
-export const ViewInTimeFilter = (props) => {
+export const ViewInTimeFilter = props => {
     const { onChange, value } = props;
 
     return (
@@ -15,7 +15,7 @@ export const ViewInTimeFilter = (props) => {
                         <input
                             type="radio"
                             value={ViewInTimeMode.Financial}
-                            checked={value == ViewInTimeMode.Financial}
+                            checked={value === ViewInTimeMode.Financial}
                             id={`ViewIn-${ViewInTimeMode.Financial}`}
                             onChange={onChange}
                         />
@@ -25,7 +25,7 @@ export const ViewInTimeFilter = (props) => {
                         <input
                             type="radio"
                             value={ViewInTimeMode.Settlement}
-                            checked={value == ViewInTimeMode.Settlement}
+                            checked={value === ViewInTimeMode.Settlement}
                             id={`ViewIn-${ViewInTimeMode.Settlement}`}
                             onChange={onChange}
                         />

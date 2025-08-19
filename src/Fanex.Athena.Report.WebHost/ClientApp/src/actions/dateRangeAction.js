@@ -1,6 +1,6 @@
 import * as types from './types';
 
-export const setDateRange = (dateRange) => {
+export const setDateRange = dateRange => {
     const range = {
         fromDate: dateRange.startDate,
         toDate: dateRange.endDate,

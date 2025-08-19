@@ -7,7 +7,7 @@ import useNavigateParams from '@/hooks/useNavigateParams';
 import { constants } from '../../common';
 import { ActionCreators } from '../../actions';
 
-const getMatchUrl = (sportId) => {
+const getMatchUrl = sportId => {
     switch (sportId) {
         case 177:
         case 198:
@@ -23,11 +23,11 @@ const getMatchUrl = (sportId) => {
 function MatchCell({ data, ...rest }) {
     const navigate = useNavigateParams();
     const dispatch = useDispatch();
-    const requestParam = useSelector((state) => state.requestParam);
+    const requestParam = useSelector(state => state.requestParam);
 
     const { toggleLoader } = ActionCreators;
 
-    const onClickMatch = (e) => {
+    const onClickMatch = e => {
         e.preventDefault();
         dispatch(toggleLoader(true));
 

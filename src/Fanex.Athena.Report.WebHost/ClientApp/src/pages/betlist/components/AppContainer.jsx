@@ -19,14 +19,14 @@ export const AppContainer = () => {
     const { controller, action } = useParams();
 
     const dispatch = useDispatch();
-    const formData = useSelector((state) => state.formData);
-    const isLoading = useSelector((state) => state.isLoading);
+    const formData = useSelector(state => state.formData);
+    const isLoading = useSelector(state => state.isLoading);
 
     const { sendRequest } = useToggleRequest();
 
     const { setFormData, setGridData, setRequestParam } = ActionCreators;
 
-    const setInitData = (result) => {
+    const setInitData = result => {
         if (!result || !result.data) {
             dispatch(setFormData(null));
 
@@ -52,12 +52,12 @@ export const AppContainer = () => {
         sendRequest(() => DataService.getBetListData(`api/${betListController}/${action}${query}`), setInitData);
     }, []);
 
-    const formatDateString = (dateString) => {
+    const formatDateString = dateString => {
         const date = new Date(dateString);
         const month = date.getMonth() + 1;
         const day = date.getDate();
 
-        return `${month < 10 ? '0' + month : month}/${day < 10 ? '0' + day : day}/${date.getFullYear()}`;
+        return `${month < 10 ? `0${month}` : month}/${day < 10 ? `0${day}` : day}/${date.getFullYear()}`;
     };
 
     if (!formData && isLoading) {

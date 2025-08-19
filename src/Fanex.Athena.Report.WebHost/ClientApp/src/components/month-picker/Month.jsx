@@ -1,4 +1,4 @@
-﻿import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
 
 import Overlay from '@/components/Overlay';
@@ -25,16 +25,14 @@ const Month = ({ id, label, value, min, max, onChange }) => {
     const [showMonthDrop, setShowMonthDrop] = useState(false);
 
     const handleChange = useCallback(
-        (newValue) => {
+        newValue => {
             onChange(newValue);
             setShowMonthDrop(false);
         },
         [onChange]
     );
 
-    const formatString = (month, year) => {
-        return `${shortMonths[month]} ${year}`;
-    };
+    const formatString = (month, year) => `${shortMonths[month]} ${year}`;
 
     const renderOption = (min, max, value) => {
         const options = [];
@@ -97,7 +95,16 @@ const Month = ({ id, label, value, min, max, onChange }) => {
     };
 
     const checkValidMonth = (month, year) => {
-        return (year > min.year && year < max.year) || (year === min.year && month >= min.month) || (year === max.year && month <= max.month);
+        if (year > min.year && year < max.year) {
+            return true;
+        }
+        if (year === min.year && month >= min.month) {
+            return true;
+        }
+        if (year === max.year && month <= max.month) {
+            return true;
+        }
+        return false;
     };
 
     const goToMonth = (e, newValue) => {
@@ -119,13 +126,13 @@ const Month = ({ id, label, value, min, max, onChange }) => {
             <div className="month-content">
                 <div className="month-container">
                     <div className="month-picked">
-                        <a href="javascript:;" className="prev" onClick={(e) => validPrevMonth && goToMonth(e, prevMonth)}>
+                        <a href="javascript:;" className="prev" onClick={e => validPrevMonth && goToMonth(e, prevMonth)}>
                             <span className={`arrow-icon left-arrow ${validPrevMonth ? '' : 'disable'}`}></span>
                         </a>
                         <span className="month-label" onClick={() => setShowMonthDrop(true)}>
                             {formatString(value.month, value.year)}
                         </span>
-                        <a href="javascript:;" className="next" onClick={(e) => validNextMonth && goToMonth(e, nextMonth)}>
+                        <a href="javascript:;" className="next" onClick={e => validNextMonth && goToMonth(e, nextMonth)}>
                             <span className={`arrow-icon right-arrow ${validNextMonth ? '' : 'disable'}`}></span>
                         </a>
                     </div>

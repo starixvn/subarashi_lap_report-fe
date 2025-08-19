@@ -1,4 +1,4 @@
-﻿import React, { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import AppContainer from './components/AppContainer';
 import { Provider } from 'react-redux';
 import Store from '@/lib/store';

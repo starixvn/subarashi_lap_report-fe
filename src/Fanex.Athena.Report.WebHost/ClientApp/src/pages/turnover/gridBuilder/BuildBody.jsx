@@ -4,8 +4,8 @@ import { Cell, Row } from '@legion-lib/react-grid';
 import moment from 'moment';
 import CommonCells from './CommonCells';
 
-export const BuildBody = (data, options) => {
-    return data.map((row, index) => {
+export const BuildBody = (data, options) =>
+    data.map((row, index) => {
         const date = moment(row.date).format('MM/DD/YYYY');
 
         return (
@@ -20,4 +20,3 @@ export const BuildBody = (data, options) => {
             </Row>
         );
     });
-};

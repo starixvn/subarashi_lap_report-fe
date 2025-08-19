@@ -1,8 +1,8 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import Popup from './Popup';
 import PropTypes from 'prop-types';
 
-const UserGuide = (props) => {
+const UserGuide = props => {
     const [isShow, setIsShow] = useState(false);
 
     const _onClickHandler = () => {

@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import AppContainer from './components/AppContainer.jsx';
 import { Provider } from 'react-redux';
 import reducer from './reducers/index.js';

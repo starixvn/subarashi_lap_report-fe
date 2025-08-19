@@ -83,7 +83,7 @@ const BuildFirstRow = (isEnableSingleWallet, hasCustomerComm) => (
         </HeaderCell>
     </HeaderRow>
 );
-const BuildSecondRow = (hasCustomerComm) => (
+const BuildSecondRow = hasCustomerComm => (
     <HeaderRow style={{ height: 23 }} key="header2">
         {hasCustomerComm && (
             <HeaderCell colWidth={180} key="CusWinLoss" sortBy={constants.SortKeys.CustomerWinloss}>

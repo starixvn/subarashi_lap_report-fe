@@ -3,8 +3,10 @@ import NumberFormat from '@/lib/numberFormat';
 import LangHelper from '@/helpers/langHelper';
 import { notifyEverys } from './constants';
 
-export const parseFormattedText = (text) => {
-    if (!text) return null;
+export const parseFormattedText = text => {
+    if (!text) {
+        return null;
+    }
 
     const regex = /\*\*(.*?)\*\*/g;
     const parts = [];
@@ -28,15 +30,19 @@ export const parseFormattedText = (text) => {
     return parts;
 };
 
-const getFormattedNotificationInterval = (interval) => {
-    if (interval === undefined) return '';
+const getFormattedNotificationInterval = interval => {
+    if (interval === undefined) {
+        return '';
+    }
 
-    const notifyEveryOption = notifyEverys.find((n) => n.key === Number(interval));
+    const notifyEveryOption = notifyEverys.find(n => n.key === Number(interval));
     return notifyEveryOption?.displayValue || interval.toString();
 };
 
 export const buildConfirmMessage = (item, templateString) => {
-    if (!item || !templateString) return '';
+    if (!item || !templateString) {
+        return '';
+    }
 
     const alertRule = item.alertRule || {};
     const negativeProfit = alertRule.negativeProfit !== undefined ? NumberFormat.formatDecimal(parseFloat(alertRule.negativeProfit)) : '';

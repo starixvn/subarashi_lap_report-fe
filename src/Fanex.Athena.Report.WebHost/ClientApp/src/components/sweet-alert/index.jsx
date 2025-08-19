@@ -12,20 +12,18 @@ const ICON_CONTENTS = {
 };
 
 const SweetAlert = ({ buttons, children, icon, ...props }) => {
-    const buildButtonGroup = (buttons) => {
-        return (
-            <div className="al-button-container">
-                {buttons.map((btnItem, index) => {
-                    const { text, ...attrs } = btnItem;
-                    return (
-                        <button key={index} type="button" {...attrs}>
-                            {text}
-                        </button>
-                    );
-                })}
-            </div>
-        );
-    };
+    const buildButtonGroup = buttons => (
+        <div className="al-button-container">
+            {buttons.map((btnItem, index) => {
+                const { text, ...attrs } = btnItem;
+                return (
+                    <button key={index} type="button" {...attrs}>
+                        {text}
+                    </button>
+                );
+            })}
+        </div>
+    );
 
     const buildIcon = () => {
         const className = `${ICON} ${ICON}--${icon}`;

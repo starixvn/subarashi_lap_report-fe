@@ -19,8 +19,8 @@ const useSessionStore = (reducer, initialState, resetState) => {
     return store;
 };
 
-const tryAddPageToSession = (pathName) => {
-    if (window.location.hash == LRF_SAVED_PAGE_HASH_KEY) {
+const tryAddPageToSession = pathName => {
+    if (window.location.hash === LRF_SAVED_PAGE_HASH_KEY) {
         sessionStorage.setItem(LRF_SAVED_PAGE_SESSION_KEY, JSON.stringify({ [pathName]: true }));
         return;
     }

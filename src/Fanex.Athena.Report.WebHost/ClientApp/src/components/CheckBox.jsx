@@ -2,21 +2,19 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-const CheckBox = React.forwardRef((props, ref) => {
-    return (
-        <div className={classNames('checkbox-group', props.className)} ref={ref}>
-            <input
-                type="checkbox"
-                className="checkbox"
-                id={props.id}
-                checked={props.checked}
-                disabled={props.disabled}
-                onChange={() => props.onChange(!props.checked)}
-            />
-            <label htmlFor={props.id}>{props.label}</label>
-        </div>
-    );
-});
+const CheckBox = React.forwardRef((props, ref) => (
+    <div className={classNames('checkbox-group', props.className)} ref={ref}>
+        <input
+            type="checkbox"
+            className="checkbox"
+            id={props.id}
+            checked={props.checked}
+            disabled={props.disabled}
+            onChange={() => props.onChange(!props.checked)}
+        />
+        <label htmlFor={props.id}>{props.label}</label>
+    </div>
+));
 
 CheckBox.displayName = 'CheckBox';
 

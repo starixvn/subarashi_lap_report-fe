@@ -8,7 +8,7 @@ import CompositeRow from '../../../../components/mobile-component/CompositeRow';
 import { Cell } from '@legion-lib/react-grid';
 import MobileBreakdownRow from './MobileBreakdownRow';
 
-export const MobileGroupByRow = (props) => {
+export const MobileGroupByRow = props => {
     const { data, selectedDisplayTypeId } = props;
     const { isShowBetEffectiveField, isGroupByPlayerMode } = useRenderRowOption();
     const [isBreakdown, setIsBreakdown] = useState(false);
@@ -46,10 +46,10 @@ export const MobileGroupByRow = (props) => {
 
     const detailRows = useMemo(() => _getDetailRows(), [parentData, isShowBetEffectiveField]);
     const breakDownRowList = useMemo(
-        () => children.map((item) => <MobileBreakdownRow key={`${item.groupBy}-${item.breakBy}`} data={item} selectedDisplayTypeId={selectedDisplayTypeId} />),
+        () => children.map(item => <MobileBreakdownRow key={`${item.groupBy}-${item.breakBy}`} data={item} selectedDisplayTypeId={selectedDisplayTypeId} />),
         [children, selectedDisplayTypeId]
     );
-    const idColumnText = selectedDisplayTypeId == MobileGroupByHeaderDisplayType.ExternalId ? externalId : systemId;
+    const idColumnText = selectedDisplayTypeId === MobileGroupByHeaderDisplayType.ExternalId ? externalId : systemId;
     const displayColumnName = isGroupByPlayerMode ? idColumnText : groupByFieldText;
     const arrowClass = isBreakdown ? 'down-arrow' : 'right-arrow';
     return (

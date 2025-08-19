@@ -2,6 +2,7 @@ import { shallowEqual, useSelector } from 'react-redux';
 import { ViewInTimeMode } from '../../common/constants';
 import useSubsidiarySearch from '@/hooks/useSubsidiarySearch';
 
+// eslint-disable-next-line complexity
 export const useValidParam = () => {
     const [
         selectedProduct,
@@ -17,7 +18,7 @@ export const useValidParam = () => {
         selectedViewInTime,
         selectedSubsidiary,
     ] = useSelector(
-        (state) => [
+        state => [
             state.selectedProduct,
             state.selectedStatus,
             state.selectedPlatform,
@@ -45,7 +46,7 @@ export const useValidParam = () => {
         !!selectedPlatform &&
         !!selectedCustomerClass &&
         !!selectedOddsGroup &&
-        (selectedViewInTime == ViewInTimeMode.Financial || !!selectedHour) &&
+        (selectedViewInTime === ViewInTimeMode.Financial || !!selectedHour) &&
         (!isSubsidiarySearch || !!selectedSubsidiary)
     );
 };

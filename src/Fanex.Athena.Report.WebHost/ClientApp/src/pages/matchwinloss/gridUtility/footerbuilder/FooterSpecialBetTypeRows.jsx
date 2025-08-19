@@ -9,7 +9,7 @@ import { constants } from '../../common';
 
 function FooterSpecialBetTypeRows(props) {
     const navigate = useNavigateParams();
-    const requestParam = useSelector((state) => state.requestParam);
+    const requestParam = useSelector(state => state.requestParam);
 
     const { BetListPageUrl } = constants;
     const onClickOutrightMixParlay = (e, match) => {
@@ -25,7 +25,7 @@ function FooterSpecialBetTypeRows(props) {
         }
     };
 
-    const getParams = (match) => {
+    const getParams = match => {
         const params = {
             CurrencyId: requestParam.CurrencyId,
             BaseCurrency: requestParam.BaseCurrency,
@@ -33,7 +33,7 @@ function FooterSpecialBetTypeRows(props) {
             FromDate: requestParam.Date,
             ToDate: requestParam.Date,
             BetType: match.betType,
-            ProductCodeList: requestParam.ProductOptions.map((item) => item.code).join(','),
+            ProductCodeList: requestParam.ProductOptions.map(item => item.code).join(','),
             Rows: 50,
             Page: 1,
             SortOrder: 1,
@@ -50,10 +50,10 @@ function FooterSpecialBetTypeRows(props) {
         return params;
     };
 
-    return props.data.map((item) => (
+    return props.data.map(item => (
         <Row key={`footer-SystemParlay-${item.bettypeName}`} className="light-footer">
             <Cell key={'footer-SystemParlay-title'} className="left-align" colSpan={props.totalSpan}>
-                <a className="text-bold cell bet-list-link" href="#" onClick={(e) => onClickOutrightMixParlay(e, item)}>
+                <a className="text-bold cell bet-list-link" href="#" onClick={e => onClickOutrightMixParlay(e, item)}>
                     {item.bettypeName}
                 </a>
             </Cell>

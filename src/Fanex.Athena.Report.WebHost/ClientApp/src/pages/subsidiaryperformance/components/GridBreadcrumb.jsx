@@ -12,28 +12,30 @@ const GridBreadcrumb = () => {
     const dispatch = useDispatch();
     const { sendRequest } = useToggleRequest();
 
-    const requestParam = useSelector((state) => state.requestParam);
+    const requestParam = useSelector(state => state.requestParam);
 
     const { fetchGridData } = actions;
     const { ApiUrl, BreadcrumbItems } = constants;
 
-    const drillDownData = (level) => {
+    const drillDownData = level => {
         const currentLevel = requestParam.DrillDownLevel;
 
         if (currentLevel === level) {
             return;
         }
 
-        if (level == ReportLevel.MAIN) {
-            return sendRequest(() => dispatch(fetchGridData(ApiUrl.DATA_URL, { ...requestParam, DrillDownLevel: level })));
+        if (level === ReportLevel.MAIN) {
+            sendRequest(() => dispatch(fetchGridData(ApiUrl.DATA_URL, { ...requestParam, DrillDownLevel: level })));
+            return;
         }
 
-        if (level == ReportLevel.CUSTOMER) {
-            return sendRequest(() => dispatch(fetchGridData(ApiUrl.DETAIL_URL, { ...requestParam, DrillDownLevel: level })));
+        if (level === ReportLevel.CUSTOMER) {
+            sendRequest(() => dispatch(fetchGridData(ApiUrl.DETAIL_URL, { ...requestParam, DrillDownLevel: level })));
+            return;
         }
     };
 
-    return <Breadcrumb items={BreadcrumbItems} value={requestParam.DrillDownLevel} onChange={(item) => drillDownData(item.value)} />;
+    return <Breadcrumb items={BreadcrumbItems} value={requestParam.DrillDownLevel} onChange={item => drillDownData(item.value)} />;
 };
 
 export default React.memo(GridBreadcrumb);

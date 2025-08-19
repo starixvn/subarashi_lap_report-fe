@@ -1,4 +1,4 @@
-﻿import LangHelper from '@/helpers/langHelper';
+import LangHelper from '@/helpers/langHelper';
 import Site from '@/lib/site';
 import {
     CashOutModeList,
@@ -15,38 +15,36 @@ import DataService from '@/lib/dataService';
 
 export default class Service {
     static getCashoutMode(modeValue) {
-        return CashOutModeList.find((mode) => mode.value == modeValue);
+        return CashOutModeList.find(mode => mode.value === modeValue);
     }
 
-    static isOneTwoBetLicensee = (licenseeName) => {
-        return licenseeName.toLowerCase() === OneTwoBetLicenseeName.toLowerCase();
-    };
+    static isOneTwoBetLicensee = licenseeName => licenseeName.toLowerCase() === OneTwoBetLicenseeName.toLowerCase();
 
-    static isContainProductSportBook = (selectedItemsKey) => {
-        var listSelectedProduct = selectedItemsKey.split(',');
+    static isContainProductSportBook = selectedItemsKey => {
+        const listSelectedProduct = selectedItemsKey.split(',');
         return listSelectedProduct.indexOf(ProductCode.SportsBook) >= 0;
     };
 
     static getSelectedItemFromTreeListItem(items) {
         return items
             .reduce((accum, elem) => accum.concat(elem.children), [])
-            .map((elem) => elem.value)
+            .map(elem => elem.value)
             .join(',');
     }
 
-    static getSelectedBettypeXML = (seletedBetTypeIds) => {
-        var bettypeList = seletedBetTypeIds.split(',').map((elem) => ({
+    static getSelectedBettypeXML = seletedBetTypeIds => {
+        const bettypeList = seletedBetTypeIds.split(',').map(elem => ({
             parent: elem.substring(elem.indexOf('_') + 1),
             value: elem.substring(0, elem.indexOf('_')),
         }));
 
-        var bettypeListBaseOnProduct = bettypeList.reduce((r, a) => {
+        const bettypeListBaseOnProduct = bettypeList.reduce((r, a) => {
             r[a.parent] = r[a.parent] || '';
-            r[a.parent] = r[a.parent] !== '' ? r[a.parent] + `,${a.value}` : a.value;
+            r[a.parent] = r[a.parent] !== '' ? `${r[a.parent]},${a.value}` : a.value;
             return r;
         }, {});
 
-        var xmlDoc = document.implementation.createDocument(null, 'ROOT', null);
+        const xmlDoc = document.implementation.createDocument(null, 'ROOT', null);
 
         for (const product in bettypeListBaseOnProduct) {
             Service.buildBettypeElement(xmlDoc, product, bettypeListBaseOnProduct[product]);
@@ -56,7 +54,7 @@ export default class Service {
     };
 
     static buildBettypeElement = (xmlDoc, productCode, bettypeList) => {
-        var bettypeElem = xmlDoc.createElement('Bettype');
+        const bettypeElem = xmlDoc.createElement('Bettype');
 
         bettypeElem.setAttribute('pc', productCode);
         bettypeElem.setAttribute('bt', bettypeList);
@@ -64,13 +62,12 @@ export default class Service {
         xmlDoc.documentElement.appendChild(bettypeElem);
     };
 
-    static buildGroupByOption = (selectedViewInTime, licenseeName) => {
-        return this.isOneTwoBetLicensee(licenseeName)
-            ? GroupByList.filter((item) => selectedViewInTime === ViewInTimeMode.Settlement || item.value !== GroupByMode.Hour)
+    static buildGroupByOption = (selectedViewInTime, licenseeName) =>
+        this.isOneTwoBetLicensee(licenseeName)
+            ? GroupByList.filter(item => selectedViewInTime === ViewInTimeMode.Settlement || item.value !== GroupByMode.Hour)
             : GroupByList.filter(
-                  (item) => item.value !== GroupByMode.Agent && (selectedViewInTime === ViewInTimeMode.Settlement || item.value !== GroupByMode.Hour)
+                  item => item.value !== GroupByMode.Agent && (selectedViewInTime === ViewInTimeMode.Settlement || item.value !== GroupByMode.Hour)
               );
-    };
 
     static buildBreakDownOptionFromGroupByMode = (groupByMode, licenseeName) => {
         const breakDownByOption = {
@@ -104,10 +101,10 @@ export default class Service {
     };
 
     static getNormalizedSelectedParamValueForMultiSelectFilter(selectedValue, dataList, selectedIdFunc) {
-        const allSelected = selectedIdFunc instanceof Function ? dataList.map(selectedIdFunc).join(',') : dataList.map((item) => item.id).join(',');
+        const allSelected = selectedIdFunc instanceof Function ? dataList.map(selectedIdFunc).join(',') : dataList.map(item => item.id).join(',');
         const listAllSelectId = allSelected.split(',');
         const listSelectedId = selectedValue.split(',');
-        return listAllSelectId.every((id) => listSelectedId.indexOf(id) >= 0) ? ALL_SELECTED_TEXT : selectedValue;
+        return listAllSelectId.every(id => listSelectedId.indexOf(id) >= 0) ? ALL_SELECTED_TEXT : selectedValue;
     }
 
     static getNormalizedSelectedParamValueForTreeListFilter(selectedValue, dataList) {
@@ -121,7 +118,7 @@ export default class Service {
             return ALL_SELECTED_TEXT;
         }
         const currencyCodesText = currencyListIds.split(',').reduce((prev, cur, index) => {
-            const code = currencyList.find((c) => c.id == cur).value;
+            const code = currencyList.find(c => c.id === cur).value;
             if (index === 0) {
                 return code;
             }
@@ -130,7 +127,7 @@ export default class Service {
         return currencyCodesText;
     };
 
-    static getFile = async (params) => {
+    static getFile = async params => {
         if (!params) {
             return;
         }
@@ -144,26 +141,26 @@ export default class Service {
                 arrayTask.push(this.downloadExcelFile(exportExcelFileParam));
                 i++;
             }
-            var results = await Promise.all(arrayTask);
-            if (results.some((result) => !result)) {
+            const results = await Promise.all(arrayTask);
+            if (results.some(result => !result)) {
                 break;
             }
         }
     };
 
-    static getTotalRow = async (params) => {
+    static getTotalRow = async params => {
         const queryTotalPageParams = { ...params, PageSize: 1, PageIndex: 1 };
-        var response = await DataService.postProxyData(DataService.apiKeys.report, ApiUrl.GET_DATA_URL, queryTotalPageParams);
+        const response = await DataService.postProxyData(DataService.apiKeys.report, ApiUrl.GET_DATA_URL, queryTotalPageParams);
         return response.data.totalRow;
     };
 
-    static downloadExcelFile = async (params) => {
+    static downloadExcelFile = async params => {
         try {
             const response = await DataService.getProxyFile(DataService.apiKeys.report, ApiUrl.EXPORT_EXCEL_URL, params);
             const contentType = response.headers['content-type'];
             if (contentType && contentType.indexOf('application/json') > -1) {
                 const RowsExceedLimitErrorCode = 1001;
-                Site.readAsJson(response.data, (result) => {
+                Site.readAsJson(response.data, result => {
                     if (result.ErrorCode === RowsExceedLimitErrorCode) {
                         this._showExportWarning();
                     } else {
@@ -176,7 +173,7 @@ export default class Service {
                 if (response.status === NoContentStatusCode) {
                     alert(LangHelper.getSingleResource('NoInfo'));
                 } else {
-                    const fileName = params.ExportExcelMode == ExportExcelMode.All ? 'WinLossReportGroupByAndBreakdownBy' : 'WinLossReportGroupBy';
+                    const fileName = params.ExportExcelMode === ExportExcelMode.All ? 'WinLossReportGroupByAndBreakdownBy' : 'WinLossReportGroupBy';
                     const isZipFile = response.headers['content-type'] === 'application/zip';
                     const pageSuffix = isZipFile ? `_${params.PageIndex}` : '';
                     const fileNameWithExt = `${fileName}${pageSuffix}.${isZipFile ? 'zip' : 'xls'}`;
@@ -188,6 +185,7 @@ export default class Service {
             return false;
         } catch (error) {
             alert(LangHelper.getSingleResource('ErrorProcessingMsg'));
+            return null;
         }
     };
 }

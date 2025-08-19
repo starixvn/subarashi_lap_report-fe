@@ -3,12 +3,10 @@ import { Route, Routes } from 'react-router-dom';
 
 const ExtraPayout = lazy(() => import(/* webpackChunkName: "extrapayout" */ '../pages/extrapayout'));
 
-const ExtraPayoutRoute = () => {
-    return (
-        <Routes>
-            <Route index element={<ExtraPayout />} />
-        </Routes>
-    );
-};
+const ExtraPayoutRoute = () => (
+    <Routes>
+        <Route index element={<ExtraPayout />} />
+    </Routes>
+);
 
 export default ExtraPayoutRoute;

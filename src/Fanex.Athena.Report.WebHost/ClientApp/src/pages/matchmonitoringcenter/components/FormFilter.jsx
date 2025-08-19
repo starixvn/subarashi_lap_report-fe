@@ -43,7 +43,7 @@ const FormFilter = () => {
         lastFetchTime,
         isShowPopup,
         leagueList,
-    ] = useSelector((state) => [
+    ] = useSelector(state => [
         state.formData,
         state.userGuideContent,
         state.selectedLeague,

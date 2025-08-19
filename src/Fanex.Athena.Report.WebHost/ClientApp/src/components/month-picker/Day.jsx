@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import Overlay from '@/components/Overlay';
 
@@ -11,7 +11,7 @@ const Day = ({ id, label, value, min, max, onChange }) => {
         for (let i = min; i <= max; i++) {
             options.push(
                 <li key={i} onClick={() => handleChange(i)}>
-                    <a href="#" onClick={(event) => event.preventDefault()}>
+                    <a href="#" onClick={event => event.preventDefault()}>
                         {i}
                     </a>
                 </li>
@@ -21,7 +21,7 @@ const Day = ({ id, label, value, min, max, onChange }) => {
         return options;
     };
 
-    const handleChange = (value) => {
+    const handleChange = value => {
         onChange(parseInt(value, 10));
         setShowDateDrop(false);
     };
@@ -33,7 +33,7 @@ const Day = ({ id, label, value, min, max, onChange }) => {
                 <div className="date-container">
                     <div className="date-picked" onClick={() => setShowDateDrop(true)}>
                         <span className="date-label">{value}</span>
-                        <a href="#" onClick={(event) => event.preventDefault()}>
+                        <a href="#" onClick={event => event.preventDefault()}>
                             <span className="arrow-icon down-arrow"></span>
                         </a>
                     </div>

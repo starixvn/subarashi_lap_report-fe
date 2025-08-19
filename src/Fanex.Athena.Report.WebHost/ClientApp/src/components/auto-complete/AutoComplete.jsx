@@ -49,7 +49,7 @@ export default class AutoComplete extends Component {
         document.removeEventListener('mousedown', this._handleClickOut);
     }
 
-    _handleClickOut = (event) => {
+    _handleClickOut = event => {
         if (this.isShowSuggestionList && this.wrapperRef && !this.wrapperRef.current.contains(event.target)) {
             this._clearState();
         }
@@ -59,7 +59,7 @@ export default class AutoComplete extends Component {
         return this.state.suggestions && this.state.suggestions.length > 0;
     }
 
-    _onKeyDown = (event) => {
+    _onKeyDown = event => {
         if (!this.isShowSuggestionList) {
             return;
         }
@@ -100,7 +100,7 @@ export default class AutoComplete extends Component {
         this.setState({ suggestions: null, selectedIndex: -1 });
     };
 
-    _onSelect = (selectedItem) => {
+    _onSelect = selectedItem => {
         const { onSelect } = this.props;
         onSelect && onSelect(selectedItem);
         this.input.value = typeof selectedItem === 'object' ? selectedItem.value : selectedItem;
@@ -116,7 +116,7 @@ export default class AutoComplete extends Component {
             .get(apiUrl, {
                 headers: { 'X-Requested-With': 'XMLHttpRequest' },
             })
-            .then((response) => {
+            .then(response => {
                 const data = responseDataField ? response.data[responseDataField] : response.data;
                 this._setStateWithCaching(value, data);
             });
@@ -154,7 +154,7 @@ export default class AutoComplete extends Component {
                     {...this.props.htmlAttributes}
                     onChange={this.onChange}
                     onKeyDown={this._onKeyDown}
-                    ref={(element) => (this.input = element)}
+                    ref={element => (this.input = element)}
                 />
 
                 {this.isShowSuggestionList && (

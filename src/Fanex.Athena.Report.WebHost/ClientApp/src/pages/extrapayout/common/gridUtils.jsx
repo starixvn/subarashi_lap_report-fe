@@ -9,23 +9,21 @@ import { headerText, PayoutPromotionType } from './constants';
 
 const ProductTIP = 'TIP';
 
-export const renderHeader = (drilldownLevel) => {
-    return (
-        <HeaderRow style={{ height: 32 }}>
-            <HeaderCell colWidth={50}>#</HeaderCell>
-            {drilldownLevel === 0 && <HeaderCell colWidth={100}>{headerText.date}</HeaderCell>}
-            {drilldownLevel === 1 && <HeaderCell colWidth={120}>{headerText.externalId}</HeaderCell>}
-            {drilldownLevel === 1 && <HeaderCell colWidth={120}>{headerText.systemId}</HeaderCell>}
-            <HeaderCell colWidth={70}>{headerText.currency}</HeaderCell>
-            <HeaderCell colWidth={150}>{headerText.product}</HeaderCell>
-            {drilldownLevel === 1 && <HeaderCell colWidth={270}>{headerText.promotionType}</HeaderCell>}
-            <HeaderCell colWidth={110}>{headerText.turnover}</HeaderCell>
-            <HeaderCell colWidth={100}>{headerText.totalTransaction}</HeaderCell>
-            <HeaderCell colWidth={110}>{headerText.customerAmount}</HeaderCell>
-            <HeaderCell colWidth={120}>{headerText.licSharingAmount}</HeaderCell>
-        </HeaderRow>
-    );
-};
+export const renderHeader = drilldownLevel => (
+    <HeaderRow style={{ height: 32 }}>
+        <HeaderCell colWidth={50}>#</HeaderCell>
+        {drilldownLevel === 0 && <HeaderCell colWidth={100}>{headerText.date}</HeaderCell>}
+        {drilldownLevel === 1 && <HeaderCell colWidth={120}>{headerText.externalId}</HeaderCell>}
+        {drilldownLevel === 1 && <HeaderCell colWidth={120}>{headerText.systemId}</HeaderCell>}
+        <HeaderCell colWidth={70}>{headerText.currency}</HeaderCell>
+        <HeaderCell colWidth={150}>{headerText.product}</HeaderCell>
+        {drilldownLevel === 1 && <HeaderCell colWidth={270}>{headerText.promotionType}</HeaderCell>}
+        <HeaderCell colWidth={110}>{headerText.turnover}</HeaderCell>
+        <HeaderCell colWidth={100}>{headerText.totalTransaction}</HeaderCell>
+        <HeaderCell colWidth={110}>{headerText.customerAmount}</HeaderCell>
+        <HeaderCell colWidth={120}>{headerText.licSharingAmount}</HeaderCell>
+    </HeaderRow>
+);
 
 export const renderDataSection = (dataList, drilldownLevel, handleDrilldown, handleDrilldownBetlist, index) => {
     const dataRows = [];
@@ -78,6 +76,7 @@ export const renderFooter = (data, drilldownLevel) => {
     return totalRows;
 };
 
+// eslint-disable-next-line complexity
 const buildDataRow = (dataItem, drilldownLevel, handleDrilldown, handleDrilldownBetlist) => {
     const {
         index,
@@ -115,13 +114,13 @@ const buildDataRow = (dataItem, drilldownLevel, handleDrilldown, handleDrilldown
             )}
             {indexRowSpan > 0 &&
                 drilldownLevel === 1 &&
-                buildAccountText(promotionType, nickname, indexRowSpan, (e) => handleDrilldownBetlist(e, custId, nickname, username))}
+                buildAccountText(promotionType, nickname, indexRowSpan, e => handleDrilldownBetlist(e, custId, nickname, username))}
             {indexRowSpan > 0 &&
                 drilldownLevel === 1 &&
-                buildAccountText(promotionType, username, indexRowSpan, (e) => handleDrilldownBetlist(e, custId, nickname, username))}
+                buildAccountText(promotionType, username, indexRowSpan, e => handleDrilldownBetlist(e, custId, nickname, username))}
             {curencyRowSpan > 0 && drilldownLevel === 0 && (
                 <Cell className="center-align" rowSpan={curencyRowSpan}>
-                    <a href="#" onClick={(e) => handleDrilldown(e, currency, currencyName, date)}>
+                    <a href="#" onClick={e => handleDrilldown(e, currency, currencyName, date)}>
                         {currencyName}
                     </a>
                 </Cell>
@@ -155,38 +154,34 @@ const buildAccountText = (promotionType, textValue, indexRowSpan, onClickFunc) =
         </Cell>
     );
 
-const buildCommonRow = (turnover, betCount, amount, sharingAmount, productCode) => {
-    return (
-        <React.Fragment>
-            <Cell className="right-align">{NumberFormat.formatDecimal(turnover)}</Cell>
-            <Cell className="right-align">{NumberFormat.format(betCount)}</Cell>
-            <Cell className={`right-align ${amount < 0 ? 'negative' : ''}`}>{NumberFormat.formatDecimal(amount)}</Cell>
-            <Cell className={`right-align ${sharingAmount < 0 ? 'negative' : ''}`}>
-                {productCode === ProductTIP ? '-' : NumberFormat.formatDecimal(sharingAmount)}
-            </Cell>
-        </React.Fragment>
-    );
-};
+const buildCommonRow = (turnover, betCount, amount, sharingAmount, productCode) => (
+    <React.Fragment>
+        <Cell className="right-align">{NumberFormat.formatDecimal(turnover)}</Cell>
+        <Cell className="right-align">{NumberFormat.format(betCount)}</Cell>
+        <Cell className={`right-align ${amount < 0 ? 'negative' : ''}`}>{NumberFormat.formatDecimal(amount)}</Cell>
+        <Cell className={`right-align ${sharingAmount < 0 ? 'negative' : ''}`}>
+            {productCode === ProductTIP ? '-' : NumberFormat.formatDecimal(sharingAmount)}
+        </Cell>
+    </React.Fragment>
+);
 
-export const renderDetailHeader = () => {
-    return (
-        <HeaderRow style={{ height: 32 }}>
-            <HeaderCell colWidth={60}>#</HeaderCell>
-            <HeaderCell colWidth={180}>{headerText.date}</HeaderCell>
-            <HeaderCell colWidth={280}>{headerText.refno}</HeaderCell>
-            <HeaderCell colWidth={230} title={headerText.extraPayoutBetIDTooltip}>
-                {headerText.betID}[i]
-            </HeaderCell>
-            <HeaderCell colWidth={220}>{headerText.product}</HeaderCell>
-            <HeaderCell colWidth={290}>{headerText.promotionType}</HeaderCell>
-            <HeaderCell colWidth={170}>{headerText.turnover}</HeaderCell>
-            <HeaderCell colWidth={190}>{headerText.customerAmount}</HeaderCell>
-            <HeaderCell colWidth={190}>{headerText.licSharingAmount}</HeaderCell>
-        </HeaderRow>
-    );
-};
+export const renderDetailHeader = () => (
+    <HeaderRow style={{ height: 32 }}>
+        <HeaderCell colWidth={60}>#</HeaderCell>
+        <HeaderCell colWidth={180}>{headerText.date}</HeaderCell>
+        <HeaderCell colWidth={280}>{headerText.refno}</HeaderCell>
+        <HeaderCell colWidth={230} title={headerText.extraPayoutBetIDTooltip}>
+            {headerText.betID}[i]
+        </HeaderCell>
+        <HeaderCell colWidth={220}>{headerText.product}</HeaderCell>
+        <HeaderCell colWidth={290}>{headerText.promotionType}</HeaderCell>
+        <HeaderCell colWidth={170}>{headerText.turnover}</HeaderCell>
+        <HeaderCell colWidth={190}>{headerText.customerAmount}</HeaderCell>
+        <HeaderCell colWidth={190}>{headerText.licSharingAmount}</HeaderCell>
+    </HeaderRow>
+);
 
-export const renderDetailDataSection = (dataList) => {
+export const renderDetailDataSection = dataList => {
     const dataRows = [];
     for (let i = 0; i < dataList.length; i++) {
         dataRows.push(buildDetailDataRow(dataList[i], i));

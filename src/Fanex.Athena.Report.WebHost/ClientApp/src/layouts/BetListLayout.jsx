@@ -21,9 +21,7 @@ const BetListLayout = ({ pageName, baseCurrency = '', beforeShowFunc, afterShowF
         window.getLanguage = getLanguage;
     }, [pageName]);
 
-    const formatDateString = (dateString) => {
-        return formatDateStringFunc ? formatDateStringFunc(dateString) : dateString;
-    };
+    const formatDateString = dateString => (formatDateStringFunc ? formatDateStringFunc(dateString) : dateString);
 
     const beforeShow = () => {
         beforeShowFunc && beforeShowFunc();
@@ -43,17 +41,11 @@ const BetListLayout = ({ pageName, baseCurrency = '', beforeShowFunc, afterShowF
         setIsShowPopup(false);
     };
 
-    const getBaseCurrency = () => {
-        return baseCurrency;
-    };
+    const getBaseCurrency = () => baseCurrency;
 
-    const getAccessToken = () => {
-        return window.topSameOriginWindow.lrf && window.topSameOriginWindow.lrf.access_token;
-    };
+    const getAccessToken = () => window.topSameOriginWindow.lrf && window.topSameOriginWindow.lrf.access_token;
 
-    const getLanguage = () => {
-        return window.pageLanguage;
-    };
+    const getLanguage = () => window.pageLanguage;
 
     return (
         <div className="betlist-layout">

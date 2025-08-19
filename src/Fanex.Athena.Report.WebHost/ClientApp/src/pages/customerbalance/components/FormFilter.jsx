@@ -24,11 +24,11 @@ const FormFilter = () => {
     const { setSelectedProducts, setGridData, setRequestParam, setDateRange, getUserGuideContent } = ActionCreators;
 
     const dispatch = useDispatch();
-    const dateRange = useSelector((state) => state.dateRange);
-    const formData = useSelector((state) => state.formData);
-    const requestParam = useSelector((state) => state.requestParam);
-    const userGuideContent = useSelector((state) => state.userGuideContent);
-    const selectedProducts = useSelector((state) => state.selectedProduct);
+    const dateRange = useSelector(state => state.dateRange);
+    const formData = useSelector(state => state.formData);
+    const requestParam = useSelector(state => state.requestParam);
+    const userGuideContent = useSelector(state => state.userGuideContent);
+    const selectedProducts = useSelector(state => state.selectedProduct);
 
     const [excludeTestData, setExcludeTestData] = useState(ExcludeTestDataOptions[0].value);
     const [selectedCurrency, setSelectedCurrency] = useState(formData.currencies[0]);
@@ -46,24 +46,24 @@ const FormFilter = () => {
         }
     };
 
-    const onChangeSelectedCurrency = (selectedCurrency) => {
+    const onChangeSelectedCurrency = selectedCurrency => {
         setSelectedCurrency(selectedCurrency);
     };
 
-    const onChangeSelectTop = (value) => {
+    const onChangeSelectTop = value => {
         setSelectTop(value);
     };
 
     const onChangeSelectedProducts = (currentItem, selectedItemsKey) => {
-        const filteredProducts = formData.productOptions.filter((x) => selectedItemsKey.split(',').includes(x.code));
+        const filteredProducts = formData.productOptions.filter(x => selectedItemsKey.split(',').includes(x.code));
         dispatch(setSelectedProducts(filteredProducts));
     };
 
-    const onChangeExcludeTestData = (value) => {
+    const onChangeExcludeTestData = value => {
         setExcludeTestData(value);
     };
 
-    const onSubmit = (event) => {
+    const onSubmit = event => {
         event.preventDefault();
 
         const params = getParams();
@@ -72,7 +72,7 @@ const FormFilter = () => {
         dispatch(setRequestParam(params));
     };
 
-    const updateData = (result) => {
+    const updateData = result => {
         if (result && result.data !== null) {
             const gridData = result.data;
 
@@ -90,7 +90,7 @@ const FormFilter = () => {
             OrderItem: requestParam?.OrderItem ? requestParam.OrderItem : Service.getOrderItem(constants.SortKeys.Deposit),
             ProductOptions: selectedProducts,
             TopCount: selectTop.value,
-            IsExcludedTestData: excludeTestData == 'true',
+            IsExcludedTestData: excludeTestData === 'true',
             CurrencyName: selectedCurrency.label,
             CurrencyId: selectedCurrency.value,
             PageIndex: DefaultPagingOption.PageIndex,
@@ -115,7 +115,7 @@ const FormFilter = () => {
         sendRequest(() => DataService.postReportData(ApiUrl.EXPORT_EXCEL_URL, getParams()), downLoadExcel);
     };
 
-    const downLoadExcel = (response) => {
+    const downLoadExcel = response => {
         const NoContentStatusCode = 204;
 
         if (response.status === NoContentStatusCode) {
@@ -155,7 +155,7 @@ const FormFilter = () => {
                             limitedMonthRange={DateConstraint.limitedMonthRange}
                             firstDayOfWeek={FirstDayOfWeek}
                             onChange={onChangeDateRange}
-                            langHandler={(key) => LangHelper.getDateRangeResource(key)}
+                            langHandler={key => LangHelper.getDateRangeResource(key)}
                         />
                     </div>
                 </div>

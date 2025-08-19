@@ -1,4 +1,4 @@
-﻿import React, { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import Loader from '@/components/Loader';
@@ -13,23 +13,23 @@ import FormFilter from './FormFilter';
 
 export const AppContainer = () => {
     const dispatch = useDispatch();
-    const formData = useSelector((state) => state.formData);
-    const isLoading = useSelector((state) => state.isLoading);
+    const formData = useSelector(state => state.formData);
+    const isLoading = useSelector(state => state.isLoading);
 
     const { sendRequest } = useToggleRequest();
 
     const { setFormData, setSelectedProducts, setSelectedBaseCurrency, setSelectedSubsidiary, setSelectedWhiteLabel } = actions;
 
-    const setInitFormData = (result) => {
+    const setInitFormData = result => {
         if (!result || !result.data) {
             dispatch(setFormData(null));
             return;
         }
 
         const data = result.data;
-        data.baseCurrencies = data.baseCurrencies.map((item) => ({ value: item.key, label: item.value }));
+        data.baseCurrencies = data.baseCurrencies.map(item => ({ value: item.key, label: item.value }));
 
-        data.baseCurrency = data.baseCurrencies.find((x) => x.label == data.baseCurrency);
+        data.baseCurrency = data.baseCurrencies.find(x => x.label === data.baseCurrency);
         data.baseCurrency = data.baseCurrency ? data.baseCurrency : data.baseCurrencies[0];
         dispatch(setSelectedBaseCurrency(data.baseCurrency));
 
@@ -37,17 +37,17 @@ export const AppContainer = () => {
         let selectedWhiteLabel;
 
         if (data.viewType === SubsidiaryViewType.MASTER_MANAGEMENT) {
-            selectedSubsidiary = Array.from(new Set(data.subsidiaryList.flatMap((x) => x.children?.map((y) => y.value)))).join(',');
-            selectedWhiteLabel = data.subsidiaryList.map((x) => x.value).join(',');
+            selectedSubsidiary = Array.from(new Set(data.subsidiaryList.flatMap(x => x.children?.map(y => y.value)))).join(',');
+            selectedWhiteLabel = data.subsidiaryList.map(x => x.value).join(',');
         } else {
-            selectedSubsidiary = data.subsidiaryList.map((x) => x.value).join(',');
+            selectedSubsidiary = data.subsidiaryList.map(x => x.value).join(',');
             selectedWhiteLabel = '';
         }
 
         dispatch(setSelectedSubsidiary(selectedSubsidiary));
         dispatch(setSelectedWhiteLabel(selectedWhiteLabel));
 
-        dispatch(setSelectedProducts(data.products.map((item) => item.code).join(',')));
+        dispatch(setSelectedProducts(data.products.map(item => item.code).join(',')));
         dispatch(setFormData(data));
     };
 

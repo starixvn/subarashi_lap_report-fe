@@ -5,7 +5,7 @@ import { Cell } from '@legion-lib/react-grid';
 import NumberFormat from '@/lib/numberFormat';
 
 const CommonCells = ({ data }) => {
-    const formData = useSelector((state) => state.formData);
+    const formData = useSelector(state => state.formData);
     const { isAllowedCustomerCommission, hasAmountDueToColumn } = formData;
 
     const customerWinLoss = NumberFormat.formatDecimal(data.customerWinLoss);

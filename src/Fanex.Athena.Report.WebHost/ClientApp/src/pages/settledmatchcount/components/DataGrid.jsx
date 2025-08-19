@@ -8,7 +8,7 @@ import { MAX_WIDTH_PAGE } from '@/constants/config';
 import NoDataTitle from '@/components/NoDataTitle';
 
 const DataGrid = () => {
-    const gridData = useSelector((state) => state.gridData);
+    const gridData = useSelector(state => state.gridData);
 
     if (!gridData) {
         return null;
@@ -44,19 +44,16 @@ const DataGrid = () => {
         ];
     };
 
-    const _buildBody = (data) => {
-        return data.map((item, index) => {
-            return (
-                <Row key={`settled_match_count_row_${index}`}>
-                    <Cell className="left-align">{item.sportName}</Cell>
-                    <Cell className="right-align">{item.yesterdayEntered}</Cell>
-                    <Cell className="right-align">{item.yesterdayNonEntered}</Cell>
-                    <Cell className="right-align">{item.todayEntered}</Cell>
-                    <Cell className="right-align">{item.todayNonEntered}</Cell>
-                </Row>
-            );
-        });
-    };
+    const _buildBody = data =>
+        data.map((item, index) => (
+            <Row key={`settled_match_count_row_${index}`}>
+                <Cell className="left-align">{item.sportName}</Cell>
+                <Cell className="right-align">{item.yesterdayEntered}</Cell>
+                <Cell className="right-align">{item.yesterdayNonEntered}</Cell>
+                <Cell className="right-align">{item.todayEntered}</Cell>
+                <Cell className="right-align">{item.todayNonEntered}</Cell>
+            </Row>
+        ));
 
     return (
         <React.Fragment>

@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import { Cell } from '@legion-lib/react-grid';
 
-export const MobileExpandRowContent = (props) => {
+export const MobileExpandRowContent = props => {
     const { text, value, className, valueClass } = props;
     return (
         <Cell className={className} colSpan={4}>

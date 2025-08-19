@@ -16,20 +16,22 @@ export default class LangHelper {
     }
 
     static getSingleResource(key, hideSaba = false) {
-        var langHandler = window[resourceName];
-        var newKey = hideSaba ? key + '_HideSaba' : key;
+        const langHandler = window[resourceName];
+        const newKey = hideSaba ? `${key}_HideSaba` : key;
 
         return (langHandler && langHandler[newKey]) || (window[DEFAULT_RESOURCE_NAME] && window[DEFAULT_RESOURCE_NAME][newKey]) || newKey;
     }
 
     static getDateRangeResource(key) {
-        if (key === 'May') return this.getSingleResource('May2');
+        if (key === 'May') {
+            return this.getSingleResource('May2');
+        }
         return this.getSingleResource(key);
     }
 
     static getResources(keys) {
-        var langHandler = window[resourceName];
+        const langHandler = window[resourceName];
 
-        return keys.map((key) => (langHandler && langHandler[key]) || (window[DEFAULT_RESOURCE_NAME] && window[DEFAULT_RESOURCE_NAME][key]) || key);
+        return keys.map(key => (langHandler && langHandler[key]) || (window[DEFAULT_RESOURCE_NAME] && window[DEFAULT_RESOURCE_NAME][key]) || key);
     }
 }

@@ -3,12 +3,10 @@ import { Route, Routes } from 'react-router-dom';
 
 const SubsidiaryPerformance = lazy(() => import(/* webpackChunkName: "subsidiaryperformance" */ '../pages/subsidiaryperformance'));
 
-const SubsidiaryPerformanceRoute = () => {
-    return (
-        <Routes>
-            <Route index element={<SubsidiaryPerformance />} />
-        </Routes>
-    );
-};
+const SubsidiaryPerformanceRoute = () => (
+    <Routes>
+        <Route index element={<SubsidiaryPerformance />} />
+    </Routes>
+);
 
 export default SubsidiaryPerformanceRoute;

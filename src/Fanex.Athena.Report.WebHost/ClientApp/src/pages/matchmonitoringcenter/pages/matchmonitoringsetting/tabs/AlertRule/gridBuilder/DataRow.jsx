@@ -19,10 +19,12 @@ import {
     deleteAlertRule,
 } from '../../../lib/service';
 
-const getFormattedNotificationInterval = (interval) => {
-    if (interval === undefined) return '';
+const getFormattedNotificationInterval = interval => {
+    if (interval === undefined) {
+        return '';
+    }
 
-    const notifyEveryOption = notifyEverys.find((n) => n.key === interval);
+    const notifyEveryOption = notifyEverys.find(n => n.key === interval);
     return notifyEveryOption?.displayValue || interval.toString();
 };
 
@@ -36,7 +38,7 @@ const DataRow = ({ item: initialItem, baseCurrencyList, defaultBaseCurrency, onD
         setItem(initialItem);
     }, [initialItem]);
 
-    const handleToggleEdit = useCallback((editState) => {
+    const handleToggleEdit = useCallback(editState => {
         setIsEdited(editState);
     }, []);
 
@@ -45,9 +47,11 @@ const DataRow = ({ item: initialItem, baseCurrencyList, defaultBaseCurrency, onD
     }, []);
 
     const hasChanges = useCallback(() => {
-        if (!item || !initialItem) return false;
+        if (!item || !initialItem) {
+            return false;
+        }
 
-        const topLevelKeys = Object.keys(item).filter((key) => key !== 'alertRule');
+        const topLevelKeys = Object.keys(item).filter(key => key !== 'alertRule');
         for (const key of topLevelKeys) {
             if (item[key] !== initialItem[key]) {
                 return true;
@@ -101,27 +105,28 @@ const DataRow = ({ item: initialItem, baseCurrencyList, defaultBaseCurrency, onD
         [handleDeleteItem]
     );
 
-    const buildAlertOptionApplyChange = useCallback(() => {
-        return buildConfirmAlertOption(
-            item,
-            'UpdateAlterRuleConfirmationMsg',
-            buildConfirmMessage,
-            handleCloseAlert,
-            createApplyChangeConfirmProps(),
-            cancelProps
-        );
-    }, [item, handleCloseAlert, createApplyChangeConfirmProps, cancelProps]);
+    const buildAlertOptionApplyChange = useCallback(
+        () =>
+            buildConfirmAlertOption(
+                item,
+                'UpdateAlterRuleConfirmationMsg',
+                buildConfirmMessage,
+                handleCloseAlert,
+                createApplyChangeConfirmProps(),
+                cancelProps
+            ),
+        [item, handleCloseAlert, createApplyChangeConfirmProps, cancelProps]
+    );
 
-    const buildAlertOptionDelete = useCallback(() => {
-        return buildConfirmAlertOption(item, 'DeleteAlterRuleConfirmationMsg', buildConfirmMessage, handleCloseAlert, createDeleteConfirmProps(), cancelProps);
-    }, [item, handleCloseAlert, createDeleteConfirmProps, cancelProps]);
+    const buildAlertOptionDelete = useCallback(
+        () => buildConfirmAlertOption(item, 'DeleteAlterRuleConfirmationMsg', buildConfirmMessage, handleCloseAlert, createDeleteConfirmProps(), cancelProps),
+        [item, handleCloseAlert, createDeleteConfirmProps, cancelProps]
+    );
 
-    const buildAlertOption = useCallback(() => {
-        return buildAlertOptionForMissingFields(handleCloseAlert);
-    }, [handleCloseAlert]);
+    const buildAlertOption = useCallback(() => buildAlertOptionForMissingFields(handleCloseAlert), [handleCloseAlert]);
 
     const handleSaveClick = useCallback(
-        (event) => {
+        event => {
             event.preventDefault();
 
             if (!validateAlertRuleItem(item)) {
@@ -141,7 +146,7 @@ const DataRow = ({ item: initialItem, baseCurrencyList, defaultBaseCurrency, onD
     );
 
     const handleEditClick = useCallback(
-        (event) => {
+        event => {
             event.preventDefault();
             handleToggleEdit(true);
         },
@@ -149,7 +154,7 @@ const DataRow = ({ item: initialItem, baseCurrencyList, defaultBaseCurrency, onD
     );
 
     const handleCloseClick = useCallback(
-        (event) => {
+        event => {
             event.preventDefault();
             const alertOption = buildAlertOptionDelete();
             dispatch(setSweetAlertOption(alertOption));

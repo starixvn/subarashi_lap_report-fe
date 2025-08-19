@@ -15,9 +15,9 @@ import { ApiUrl } from '../common/apiSettings';
 import ActionCreators from '../actions';
 
 function DataGrid() {
-    const formData = useSelector((state) => state.formData);
-    const requestParam = useSelector((state) => state.requestParam);
-    const gridData = useSelector((state) => state.gridData);
+    const formData = useSelector(state => state.formData);
+    const requestParam = useSelector(state => state.requestParam);
+    const gridData = useSelector(state => state.gridData);
     const { sendRequest } = useToggleRequest();
     const dispatch = useDispatch();
     const { setGridData, setRequestParam } = ActionCreators;
@@ -54,7 +54,7 @@ function DataGrid() {
         dispatch(setRequestParam(params));
     };
 
-    const updateData = (result) => {
+    const updateData = result => {
         let gridData = null;
         if (result && result.data !== null) {
             gridData = result.data;

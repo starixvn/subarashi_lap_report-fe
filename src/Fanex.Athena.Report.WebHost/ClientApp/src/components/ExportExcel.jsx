@@ -2,8 +2,8 @@ import React from 'react';
 import LangHelper from '@/helpers/langHelper';
 import PropTypes from 'prop-types';
 
-const ExportExcel = (props) => {
-    const _onClickHandler = (event) => {
+const ExportExcel = props => {
+    const _onClickHandler = event => {
         event.preventDefault();
         if (!props.disabled) {
             props.onClick && props.onClick();

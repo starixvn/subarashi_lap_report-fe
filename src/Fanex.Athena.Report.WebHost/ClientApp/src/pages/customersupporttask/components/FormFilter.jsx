@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { useRouteLoaderData } from 'react-router-dom';
@@ -19,7 +19,7 @@ const FormFilter = ({ formData, selectedCurrency, selectedSupportTask, setSelect
     const currencies = formData.currencies;
     const loadedData = useRouteLoaderData(pages.CUSTOMER_SUPPORT_TASK);
 
-    const exportExcel = (event) => {
+    const exportExcel = event => {
         event.preventDefault();
         toggleLoader(true);
 
@@ -30,7 +30,7 @@ const FormFilter = ({ formData, selectedCurrency, selectedSupportTask, setSelect
         };
 
         DataService.getReportFile(ExportUrl, params)
-            .then((response) => {
+            .then(response => {
                 toggleLoader(false);
                 const NoContentStatusCode = 204;
                 if (response.status === NoContentStatusCode) {
@@ -70,7 +70,7 @@ const FormFilter = ({ formData, selectedCurrency, selectedSupportTask, setSelect
                             isSearchable={false}
                             value={selectedSupportTask}
                             options={SupportTaskOptions}
-                            onChange={(item) => setSelectedSupportTask(item)}
+                            onChange={item => setSelectedSupportTask(item)}
                         />
                     </div>
                 </div>

@@ -22,7 +22,7 @@ const NewRuleRow = ({ baseCurrencyList, defaultBaseCurrency, setAddNewRule, onDa
     const { setSweetAlertOption } = ActionCreators;
     const [isEdited] = useState(true);
     const dispatch = useDispatch();
-    const stateMonitoringID = useSelector((state) => state.monitoringID);
+    const stateMonitoringID = useSelector(state => state.monitoringID);
     const monitoringID = propMonitoringID || stateMonitoringID;
 
     const [newItem, setNewItem] = useState({
@@ -66,16 +66,15 @@ const NewRuleRow = ({ baseCurrencyList, defaultBaseCurrency, setAddNewRule, onDa
         [handleCreateItem, handleCloseAlert]
     );
 
-    const buildAlertOptionCreate = useCallback(() => {
-        return buildConfirmAlertOption(newItem, 'CreateAlertRuleConfirmationMsg', buildConfirmMessage, handleCloseAlert, createConfirmProps(), cancelProps);
-    }, [newItem, handleCloseAlert, createConfirmProps, cancelProps]);
+    const buildAlertOptionCreate = useCallback(
+        () => buildConfirmAlertOption(newItem, 'CreateAlertRuleConfirmationMsg', buildConfirmMessage, handleCloseAlert, createConfirmProps(), cancelProps),
+        [newItem, handleCloseAlert, createConfirmProps, cancelProps]
+    );
 
-    const buildAlertOption = useCallback(() => {
-        return buildAlertOptionForMissingFields(handleCloseAlert);
-    }, [handleCloseAlert]);
+    const buildAlertOption = useCallback(() => buildAlertOptionForMissingFields(handleCloseAlert), [handleCloseAlert]);
 
     const handleSaveClick = useCallback(
-        async (event) => {
+        async event => {
             event.preventDefault();
             if (!validateAlertRuleItem(newItem)) {
                 const alertOption = buildAlertOption();
@@ -90,7 +89,7 @@ const NewRuleRow = ({ baseCurrencyList, defaultBaseCurrency, setAddNewRule, onDa
     );
 
     const handleCloseClick = useCallback(
-        (event) => {
+        event => {
             event.preventDefault();
             handleCancelAddNew();
         },

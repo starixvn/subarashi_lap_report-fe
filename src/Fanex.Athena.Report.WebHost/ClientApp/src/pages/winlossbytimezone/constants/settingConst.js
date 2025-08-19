@@ -1,4 +1,4 @@
-﻿import LangHelper from '@/helpers/langHelper';
+import LangHelper from '@/helpers/langHelper';
 
 export const SettingConst = {
     GroupByProduct: 1,

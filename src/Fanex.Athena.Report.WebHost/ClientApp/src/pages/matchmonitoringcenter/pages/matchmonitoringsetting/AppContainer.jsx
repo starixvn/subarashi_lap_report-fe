@@ -11,17 +11,17 @@ import useToggleRequest from '@/hooks/useToggleRequest';
 
 const AppContainer = () => {
     const dispatch = useDispatch();
-    const selectedTabKey = useSelector((state) => state.selectedTabKey);
-    const availableTabKeys = useSelector((state) => state.tabKeys || []);
-    const isLoading = useSelector((state) => state.isLoading);
+    const selectedTabKey = useSelector(state => state.selectedTabKey);
+    const availableTabKeys = useSelector(state => state.tabKeys || []);
+    const isLoading = useSelector(state => state.isLoading);
     const { sendRequest } = useToggleRequest();
 
     useEffect(() => {
         sendRequest(
             () => DataService.getReportData(ApiUrl.SETTING_INDEX_URL),
-            (response) => {
+            response => {
                 if (response && response.data && response.data.tabKeys && response.data.tabKeys.length > 0) {
-                    const filteredTabKeys = response.data.tabKeys.filter((key) => Object.values(tabKeys).includes(key));
+                    const filteredTabKeys = response.data.tabKeys.filter(key => Object.values(tabKeys).includes(key));
 
                     if (filteredTabKeys.length === 0) {
                         Site.assignToUrl(INVALID_REQUEST_URL);
@@ -43,13 +43,13 @@ const AppContainer = () => {
         preLoadComponents(tabMenuList);
     }, []);
 
-    const onClickTabMenu = (tabKey) => {
+    const onClickTabMenu = tabKey => {
         dispatch(setSelectedTab(tabKey));
     };
 
-    const filteredTabMenuList = tabMenuList.filter((tab) => availableTabKeys.includes(tab.key));
+    const filteredTabMenuList = tabMenuList.filter(tab => availableTabKeys.includes(tab.key));
 
-    const selectedTab = filteredTabMenuList.find((_) => _.key === selectedTabKey);
+    const selectedTab = filteredTabMenuList.find(_ => _.key === selectedTabKey);
     const Component = selectedTab?.component;
 
     return (

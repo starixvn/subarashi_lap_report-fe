@@ -18,7 +18,7 @@ export const BuildBody = (data, { reportBy: selectedReportBy, groupBy }) => {
         const licenseeWL = NumberFormat.formatDecimal(item.licenseeWinLoss);
         const licenseeComm = NumberFormat.formatDecimal(item.licenseeComm);
         const licenseeNetWL = NumberFormat.formatDecimal(item.licenseeNetWinLoss);
-        const margin = NumberFormat.formatDecimal(item.margin) + '%';
+        const margin = `${NumberFormat.formatDecimal(item.margin)}%`;
 
         const reportByCell = selectedReportBy !== SettingConst.ReportBySummary && (
             <Cell title={reportBy} className="center-align">

@@ -6,9 +6,9 @@ import LangHelper from '@/helpers/langHelper';
 import { BuildByCurrencyBody, BuildByCurrencyHeaders } from './GridBuilder';
 
 function ByCurrencyDataGrid() {
-    const gridData = useSelector((state) => state.gridData?.dataByCurrency);
-    const formData = useSelector((state) => state.formData);
-    const selectedProductCode = useSelector((state) => state.selectedProductCode);
+    const gridData = useSelector(state => state.gridData?.dataByCurrency);
+    const formData = useSelector(state => state.formData);
+    const selectedProductCode = useSelector(state => state.selectedProductCode);
 
     const options = {
         hasAmountDueToColumn: formData.hasAmountDueToColumn,
@@ -16,7 +16,7 @@ function ByCurrencyDataGrid() {
     };
 
     if (!selectedProductCode || !gridData || !gridData.length) {
-        return;
+        return null;
     }
 
     return (

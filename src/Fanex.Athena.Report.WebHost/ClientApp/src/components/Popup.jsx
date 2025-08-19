@@ -1,7 +1,7 @@
-﻿import React from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
-const Popup = (props) => {
+const Popup = props => {
     const { title, isShow, containerClassName, contentClassName, className, isHtml, children, iframeUrl } = props;
     let content;
     if (iframeUrl) {

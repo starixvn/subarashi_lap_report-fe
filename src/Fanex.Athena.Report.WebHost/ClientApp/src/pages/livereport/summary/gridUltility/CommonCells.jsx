@@ -4,8 +4,8 @@ import { Cell } from '@legion-lib/react-grid';
 
 import NumberFormat from '@/lib/numberFormat';
 
-const CommonCells = (props) => {
-    const formData = useSelector((state) => state.formData);
+const CommonCells = props => {
+    const formData = useSelector(state => state.formData);
     const data = { ...props.data };
 
     const { isAllowedCustomerCommission, hasAmountDueToColumn } = formData;

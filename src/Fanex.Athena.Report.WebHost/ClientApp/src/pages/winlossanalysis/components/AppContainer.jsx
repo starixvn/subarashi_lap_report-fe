@@ -1,4 +1,4 @@
-﻿import React, { useLayoutEffect } from 'react';
+import React, { useLayoutEffect } from 'react';
 import { batch, useDispatch, useSelector } from 'react-redux';
 
 import { DEFAULT_BASE_CURRENCY_VALUE } from '@/constants/config';
@@ -17,9 +17,9 @@ import MobileFormFilter from './mobile/MobileFormFilter';
 
 export const AppContainer = () => {
     const dispatch = useDispatch();
-    const defaultState = useSelector((state) => state.defaultState);
-    const formData = useSelector((state) => state.formData);
-    const isLoading = useSelector((state) => state.isLoading);
+    const defaultState = useSelector(state => state.defaultState);
+    const formData = useSelector(state => state.formData);
+    const isLoading = useSelector(state => state.isLoading);
     const isUseMobileVer = useMobileVersion();
 
     const { sendRequest } = useToggleRequest();
@@ -38,7 +38,7 @@ export const AppContainer = () => {
         setSelectedCustomerClass,
     } = ActionCreators;
 
-    const setInitFormData = (result) => {
+    const setInitFormData = result => {
         if (!result || !result.data) {
             dispatch(setFormData(null));
             return;
@@ -46,38 +46,38 @@ export const AppContainer = () => {
         const data = result.data;
 
         const orgProductOptions = data.productOptions;
-        data.productOptions = orgProductOptions.map((item) => ({ id: item.code, value: item.name, status: true }));
-        defaultState.selectedProduct = data.productOptions.map((item) => item.id).join(',');
+        data.productOptions = orgProductOptions.map(item => ({ id: item.code, value: item.name, status: true }));
+        defaultState.selectedProduct = data.productOptions.map(item => item.id).join(',');
 
-        data.currencyList = data.currencyList.map((item) => ({ id: item.key, value: item.value, status: true }));
-        defaultState.selectedCurrency = data.currencyList.map((item) => item.id).join(',');
+        data.currencyList = data.currencyList.map(item => ({ id: item.key, value: item.value, status: true }));
+        defaultState.selectedCurrency = data.currencyList.map(item => item.id).join(',');
 
-        data.baseCurrencyList = data.baseCurrencyList.map((item) => ({ value: item.key, label: item.value }));
+        data.baseCurrencyList = data.baseCurrencyList.map(item => ({ value: item.key, label: item.value }));
 
-        const defaultBaseCurrency = data.baseCurrencyList.find((x) => x.label == data.defaultBaseCurrency);
+        const defaultBaseCurrency = data.baseCurrencyList.find(x => x.label === data.defaultBaseCurrency);
         data.defaultBaseCurrency = defaultBaseCurrency ? defaultBaseCurrency : { value: DEFAULT_BASE_CURRENCY_VALUE, label: data.defaultBaseCurrency };
         defaultState.selectedBaseCurrency = data.defaultBaseCurrency;
 
-        defaultState.selectedStatus = data.statusList.map((item) => item.id).join(',');
+        defaultState.selectedStatus = data.statusList.map(item => item.id).join(',');
 
-        data.statusList = data.statusList.map((item) => ({ id: item.id, value: item.name, status: true }));
-        data.liveStatusList = data.liveStatusList.map((item) => ({ id: item.key, value: item.value, status: true }));
-        defaultState.selectedLiveStatus = data.liveStatusList.map((item) => item.id).join(',');
+        data.statusList = data.statusList.map(item => ({ id: item.id, value: item.name, status: true }));
+        data.liveStatusList = data.liveStatusList.map(item => ({ id: item.key, value: item.value, status: true }));
+        defaultState.selectedLiveStatus = data.liveStatusList.map(item => item.id).join(',');
 
-        data.platformList = data.platformList.map((item) => ({ id: item.key, value: item.value, status: true }));
-        defaultState.selectedPlatform = data.platformList.map((item) => item.id).join(',');
+        data.platformList = data.platformList.map(item => ({ id: item.key, value: item.value, status: true }));
+        defaultState.selectedPlatform = data.platformList.map(item => item.id).join(',');
 
-        data.oddsGroupList = data.oddsGroupList.map((item) => ({ id: item, value: item, status: true }));
-        defaultState.selectedOddsGroup = data.oddsGroupList.map((item) => item.id).join(',');
+        data.oddsGroupList = data.oddsGroupList.map(item => ({ id: item, value: item, status: true }));
+        defaultState.selectedOddsGroup = data.oddsGroupList.map(item => item.id).join(',');
 
-        const defaultSelectedCustomerClass = data.riskLevel.map((item) => item.customerClassList.map((item) => item).join(','));
-        defaultState.selectedCustomerClass = defaultSelectedCustomerClass.map((item) => item).join(',');
+        const defaultSelectedCustomerClass = data.riskLevel.map(item => item.customerClassList.map(item => item).join(','));
+        defaultState.selectedCustomerClass = defaultSelectedCustomerClass.map(item => item).join(',');
 
-        data.riskLevelList = data.riskLevel.map((item) => ({
+        data.riskLevelList = data.riskLevel.map(item => ({
             id: item.id,
             value: item.name,
-            valueDecoration: 'risk-level ' + item.key,
-            customerClassList: item.customerClassList.map((item) => item).join(','),
+            valueDecoration: `risk-level ${item.key}`,
+            customerClassList: item.customerClassList.map(item => item).join(','),
             status: true,
         }));
 
@@ -86,10 +86,10 @@ export const AppContainer = () => {
 
         defaultState.selectedViewInTime = ViewInTimeMode.Financial;
 
-        data.hourList = data.hourList.map((item) => ({ id: item.key, value: item.value, status: true }));
+        data.hourList = data.hourList.map(item => ({ id: item.key, value: item.value, status: true }));
         data.settlementTimeProductList = orgProductOptions
-            .filter((item) => SettlementTimeSupportProductList.includes(item.code))
-            .map((item) => ({ id: item.code, value: item.name, status: true }));
+            .filter(item => SettlementTimeSupportProductList.includes(item.code))
+            .map(item => ({ id: item.code, value: item.name, status: true }));
         defaultState.selectedHour = 'All';
 
         batch(() => {

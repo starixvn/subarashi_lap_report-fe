@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import DropdownToggle from './DropdownToggle';
 import DropdownMenu from './DropdownMenu';
 
-const DropdownButton = (props) => {
+const DropdownButton = props => {
     const { className, children, toggleButton, dropdownMenu, isOpen, onOpen, onClose, onToggle, buttonLabel, ...attrs } = props;
     const classes = classNames('dropdown', className);
 

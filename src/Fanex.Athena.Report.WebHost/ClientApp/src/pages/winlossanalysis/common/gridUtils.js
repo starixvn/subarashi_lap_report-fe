@@ -5,7 +5,7 @@ import NumberFormat from '@/lib/numberFormat';
 import TreeViewGridRowNode from './grid/TreeViewGridRowNode';
 import LangHelper from '@/helpers/langHelper';
 
-export const renderHeader = (option) => {
+export const renderHeader = option => {
     const { isGroupByPlayerMode, isBreakDownPlayerMode } = option;
 
     const _renderDefaultHeader = () => {
@@ -19,7 +19,7 @@ export const renderHeader = (option) => {
             </HeaderCell>,
             ...getCommonHeaderCells(1, prefixKey),
         ];
-        return <HeaderRow>{headerCells.map((elem) => elem)}</HeaderRow>;
+        return <HeaderRow>{headerCells.map(elem => elem)}</HeaderRow>;
     };
 
     const _renderGroupByPlayerModeHeaderCell = () => {
@@ -34,7 +34,7 @@ export const renderHeader = (option) => {
             ...getCommonHeaderCells(2),
         ];
         return [
-            <HeaderRow key={'header-row-1'}>{headerCells.map((elem) => elem)}</HeaderRow>,
+            <HeaderRow key={'header-row-1'}>{headerCells.map(elem => elem)}</HeaderRow>,
             <HeaderRow key={'header-row-2'}>
                 <HeaderCell key={`${prefixKey}-${HeaderText.SystemId}`} colWidth={120}>
                     {HeaderText.SystemId}
@@ -88,9 +88,7 @@ export const renderHeader = (option) => {
 
 export const renderDataSection = (dataList, option) => {
     let dataRows = [];
-    dataRows = dataList?.map((item) => (
-        <TreeViewGridRowNode key={`row-groupby-${item.keyItem.rowIndex}-${item.keyItem.groupBy}`} data={item} option={option} />
-    ));
+    dataRows = dataList?.map(item => <TreeViewGridRowNode key={`row-groupby-${item.keyItem.rowIndex}-${item.keyItem.groupBy}`} data={item} option={option} />);
 
     return dataRows;
 };

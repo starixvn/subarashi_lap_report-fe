@@ -1,4 +1,4 @@
-﻿import LangHelper from '@/helpers/langHelper';
+import LangHelper from '@/helpers/langHelper';
 
 const headerText = {
     Index: '#',
@@ -15,9 +15,9 @@ const headerText = {
 
 export default class Service {
     static getReportTitle(timeZone, fromDate, toDate, currency, baseCurrency, isConvertAll) {
-        const viewInByCurrency = isConvertAll ? ', ' + LangHelper.getSingleResource('BaseCurrency') + ': ' + baseCurrency : '';
-        const currencyText = LangHelper.getSingleResource('Currency') + ': ' + currency;
-        return `${LangHelper.getSingleResource('WinLossByTimeZone')}, ${timeZone}, ${fromDate} → ${toDate}, ${currencyText}${viewInByCurrency}`;
+        const viewInByCurrency = isConvertAll ? `, ${LangHelper.getSingleResource('BaseCurrency')}: ${baseCurrency}` : '';
+        const currencyText = `${LangHelper.getSingleResource('Currency')}: ${currency}`;
+        return `${LangHelper.getSingleResource('WinLossByTimeZone')}, ${timeZone}, ${fromDate} ? ${toDate}, ${currencyText}${viewInByCurrency}`;
     }
 
     static getHeaderText(reportBy, groupBy) {

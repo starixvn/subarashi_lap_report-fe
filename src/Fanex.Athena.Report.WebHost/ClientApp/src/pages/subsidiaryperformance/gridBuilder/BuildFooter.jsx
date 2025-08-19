@@ -5,9 +5,8 @@ import CommonCells from './CommonCells';
 import { ReportLevel, SubsidiaryViewType } from '@/constants/report';
 import { TotalText } from '../common/tableSetting';
 
-export const BuildFooter = (data, { drillDownLevel, ...options }) => {
-    return drillDownLevel === ReportLevel.CUSTOMER ? buildDetailFooter(data, options) : buildMainFooter(data, options);
-};
+export const BuildFooter = (data, { drillDownLevel, ...options }) =>
+    drillDownLevel === ReportLevel.CUSTOMER ? buildDetailFooter(data, options) : buildMainFooter(data, options);
 
 const buildDetailFooter = ({ totalData, grandTotalData }, { baseCurrency }) => {
     const subs = Object.keys(totalData);
@@ -40,7 +39,7 @@ const buildDetailFooter = ({ totalData, grandTotalData }, { baseCurrency }) => {
     return footer;
 };
 
-const buildDetailGrandTotal = (grandTotalData) => {
+const buildDetailGrandTotal = grandTotalData => {
     if (!grandTotalData) {
         return null;
     }

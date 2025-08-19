@@ -11,15 +11,15 @@ const dynamicImports = {
     [tabKeys.alertRule]: () => import(/* webpackChunkName: "matchmonitoringcenter/monitordetail/alertrule" */ '../tabs/AlertRule'),
 };
 
-export const tabMenuList = Object.values(tabKeys).map((key) => ({
+export const tabMenuList = Object.values(tabKeys).map(key => ({
     key,
     title: LangHelper.getSingleResource(key),
     component: React.lazy(dynamicImports[key]),
     preLoad: dynamicImports[key],
 }));
 
-export const preLoadComponents = (lazyComponents) => {
-    lazyComponents && setTimeout(() => lazyComponents.forEach((_) => _.preLoad && _.preLoad()), 0);
+export const preLoadComponents = lazyComponents => {
+    lazyComponents && setTimeout(() => lazyComponents.forEach(_ => _.preLoad && _.preLoad()), 0);
 };
 
 export const TabType = {

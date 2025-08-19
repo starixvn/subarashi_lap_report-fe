@@ -16,35 +16,35 @@ import Site from '@/lib/site';
 export const AppContainer = () => {
     const dispatch = useDispatch();
     const loadedData = useRouteLoaderData(LIVE_REPORT);
-    const formData = useSelector((state) => state.formData);
-    const isLoading = useSelector((state) => state.isLoading);
+    const formData = useSelector(state => state.formData);
+    const isLoading = useSelector(state => state.isLoading);
     const { sendRequest } = useToggleRequest();
 
     const { LiveStatuses, CurrencySelectAll, DefaultLiveStatus } = constants;
     const { setFormData, setSelectedStatus, setSelectedCurrency, setSelectedBaseCurrency, setBaseCurrencyList, setSubsidiarySearch, setWhiteLabelTreeList } =
         ActionCreators;
 
-    const setInitFormData = async (result) => {
+    const setInitFormData = async result => {
         if (!result || !result.data) {
             dispatch(setFormData(null));
             return;
         }
         const data = result.data;
 
-        data.baseCurrencies = data.baseCurrencies.map((item) => ({
+        data.baseCurrencies = data.baseCurrencies.map(item => ({
             value: item.key,
             label: item.value,
         }));
 
         dispatch(setBaseCurrencyList(data.baseCurrencies));
 
-        data.baseCurrency = data.baseCurrencies.find((x) => x.label == data.baseCurrency);
+        data.baseCurrency = data.baseCurrencies.find(x => x.label === data.baseCurrency);
         data.baseCurrency = data.baseCurrency ? data.baseCurrency : data.baseCurrencies[0];
         dispatch(setSelectedBaseCurrency(data.baseCurrency));
 
         data.currencies = [
             CurrencySelectAll,
-            ...data.currencies.map((item) => ({
+            ...data.currencies.map(item => ({
                 value: item.key,
                 label: item.value,
             })),

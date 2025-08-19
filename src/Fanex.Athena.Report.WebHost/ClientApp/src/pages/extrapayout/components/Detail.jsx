@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
@@ -15,7 +15,7 @@ import ExportExcel from '@/components/ExportExcel';
 import { ApiUrl } from '../common/constants';
 import { renderDetailDataSection, renderDetailFooter, renderDetailHeader } from '../common/gridUtils';
 
-export const Detail = (props) => {
+export const Detail = props => {
     const { title, data, param, toggleLoader } = props;
 
     const exportDetailExcel = () => {
@@ -29,7 +29,7 @@ export const Detail = (props) => {
 
         toggleLoader(true);
         DataService.getReportFile(ApiUrl.EXPORT_REPORT_DETAIL_DATA_URL, exportRequestParam)
-            .then((response) => {
+            .then(response => {
                 const NoContentStatusCode = 204;
                 if (response.status === NoContentStatusCode) {
                     alert(LangHelper.getSingleResource('NoInfo'));
