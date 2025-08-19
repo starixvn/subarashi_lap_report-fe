@@ -20,7 +20,7 @@ import {
 
 const NewRuleRow = ({ baseCurrencyList, defaultBaseCurrency, setAddNewRule, onDataChanged, monitoringID: propMonitoringID }) => {
     const { setSweetAlertOption } = ActionCreators;
-    const [isEdited, setIsEdited] = useState(true);
+    const [isEdited] = useState(true);
     const dispatch = useDispatch();
     const stateMonitoringID = useSelector((state) => state.monitoringID);
     const monitoringID = propMonitoringID || stateMonitoringID;
@@ -51,27 +51,6 @@ const NewRuleRow = ({ baseCurrencyList, defaultBaseCurrency, setAddNewRule, onDa
     const handleCancelAddNew = useCallback(() => {
         dispatch(setAddNewRule(false));
     }, [dispatch, setAddNewRule]);
-
-    const createCancelConfirmProps = useCallback(
-        () => ({
-            onClick: () => {
-                handleCloseAlert();
-                handleCancelAddNew();
-            },
-        }),
-        [handleCancelAddNew, handleCloseAlert]
-    );
-
-    const buildAlertOptionDelete = useCallback(() => {
-        return buildConfirmAlertOption(
-            newItem,
-            'DeleteAlterRuleConfirmationMsg',
-            buildConfirmMessage,
-            handleCloseAlert,
-            createCancelConfirmProps(),
-            cancelProps
-        );
-    }, [newItem, handleCloseAlert, createCancelConfirmProps, cancelProps]);
 
     const handleCreateItem = useCallback(async () => {
         await createAlertRule(newItem, monitoringID, dispatch, setAddNewRule, onDataChanged);

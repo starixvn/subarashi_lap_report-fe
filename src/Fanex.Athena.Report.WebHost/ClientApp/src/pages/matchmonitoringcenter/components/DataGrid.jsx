@@ -14,7 +14,7 @@ import Popup from '@/components/Popup';
 
 const MonitoringSettingDetail = lazy(() => import('../pages/matchmonitoringsetting'));
 
-const DataGrid = (props) => {
+const DataGrid = () => {
     const [gridData, lastFetchTime, sweetAlertOption, settingPageOption, formData] = useSelector((state) => [
         state.gridData,
         state.lastFetchTime,

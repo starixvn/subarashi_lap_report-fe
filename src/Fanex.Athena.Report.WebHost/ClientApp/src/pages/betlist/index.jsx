@@ -10,7 +10,7 @@ import reducer from './reducers';
 // import styles
 import '@/styles/pages/betlist.scss';
 
-const BetList = (props) => {
+const BetList = () => {
     const scriptLink = useScriptLink();
 
     useLayoutEffect(() => {

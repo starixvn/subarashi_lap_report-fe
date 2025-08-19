@@ -12,6 +12,7 @@ import * as requestParamReducer from '@/reducers/requestParamReducer';
 
 export default combineReducers(
     Object.assign(
+        {},
         filterHandlerReducer,
         productReducer,
         currencyReducer,

@@ -22,14 +22,10 @@ export const toggleLoaderAction = (requestFunc, callbackFunc) => {
             .catch((error) => {
                 alert(LangHelper.getSingleResource('ErrorProcessingMsg'));
 
+                // eslint-disable-next-line no-console
                 console.error(error);
 
                 dispatch(toggleLoader(false));
             });
-
-        return {
-            type: types.TOGGLE_LOADER,
-            data: show,
-        };
     };
 };

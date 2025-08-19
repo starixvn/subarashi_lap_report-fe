@@ -11,7 +11,7 @@ import { getBetListPageWithPageName } from './Pages';
 import { HeaderCell, FooterRow } from '../customGrid';
 import { TableSettings } from '../common/constants';
 
-const DataGrid = (props) => {
+const DataGrid = () => {
     const dispatch = useDispatch();
     const [formData, gridData, requestParam] = useSelector((state) => [state.formData, state.gridData, state.requestParam], shallowEqual);
 
@@ -64,8 +64,6 @@ const DataGrid = (props) => {
 
     const updateGridData = (result) => {
         if (!result || !result.data) {
-            dispatch(setFormData(null));
-
             return;
         }
         let { data } = result.data;

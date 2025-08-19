@@ -1,10 +1,8 @@
-import React, { memo } from 'react';
+import React, { memo, useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { useState } from 'react';
 import { Cell } from '@legion-lib/react-grid';
 import CollapseRow from './CollapseRow';
-import { useRef } from 'react';
 import { useHover } from 'usehooks-ts';
 import RefRow from './RefRow';
 

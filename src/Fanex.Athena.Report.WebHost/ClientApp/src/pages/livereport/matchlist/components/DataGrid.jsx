@@ -13,7 +13,7 @@ import { BuildBody, BuildHeaders } from '../gridBuilder';
 import { ActionCreators } from '../actions';
 
 function DataGrid() {
-    const [searchParams, setSearchParams] = useSearchParams();
+    const [searchParams] = useSearchParams();
 
     const dispatch = useDispatch();
     const formData = useSelector((state) => state.formData);
@@ -21,7 +21,7 @@ function DataGrid() {
     const requestParam = useSelector((state) => state.requestParam);
 
     const { sendRequest } = useToggleRequest();
-    const { setRequestParam, setGridData } = ActionCreators;
+    const { setGridData } = ActionCreators;
 
     if (!gridData) {
         return null;

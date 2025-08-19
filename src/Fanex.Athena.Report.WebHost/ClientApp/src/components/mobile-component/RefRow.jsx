@@ -1,5 +1,4 @@
-import React from 'react';
-import { forwardRef } from 'react';
+import React, { forwardRef } from 'react';
 
 const RefRow = forwardRef(function RefRow(props, ref) {
     return (

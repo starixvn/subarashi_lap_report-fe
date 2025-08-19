@@ -39,7 +39,7 @@ export const Detail = (props) => {
                 }
                 toggleLoader(false);
             })
-            .catch((error) => {
+            .catch(() => {
                 alert(LangHelper.getSingleResource('ErrorProcessingMsg'));
                 toggleLoader(false);
             });
@@ -77,7 +77,7 @@ function mapDispatchToProps(dispatch) {
     return bindActionCreators({ toggleLoader }, dispatch);
 }
 
-function mapStateToProps(state) {
+function mapStateToProps() {
     return {};
 }
 

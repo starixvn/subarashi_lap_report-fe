@@ -1,6 +1,6 @@
 import axios, { HttpStatusCode } from 'axios';
 
-import { INVALID_REQUEST_URL, ACCESS_DENIED_URL, SIGN_IN_URL, UM_URL } from '@/constants/config';
+import { ACCESS_DENIED_URL, SIGN_IN_URL, UM_URL } from '@/constants/config';
 import Site from './site';
 
 axios.interceptors.response.use(

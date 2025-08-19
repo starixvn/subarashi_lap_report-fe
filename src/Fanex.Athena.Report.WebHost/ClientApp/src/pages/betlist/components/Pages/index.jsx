@@ -1,4 +1,5 @@
 import * as pages from '@/constants/pages';
+import { NOT_FOUND_URL } from '@/constants/config';
 
 import Site from '@/lib/site';
 import MatchWinLoss from './MatchWinLoss';

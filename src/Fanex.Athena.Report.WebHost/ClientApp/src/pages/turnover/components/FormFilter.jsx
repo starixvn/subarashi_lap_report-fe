@@ -19,7 +19,7 @@ import SubmitButton from '@/components/SubmitButton';
 import { ActionCreators } from '../actions';
 import { constants } from '../common';
 
-const FormFilter = (props) => {
+const FormFilter = () => {
     const { DateConstraint, ApiUrl, ExcludeTestDataOptions } = constants;
     const {
         setSelectedProducts,

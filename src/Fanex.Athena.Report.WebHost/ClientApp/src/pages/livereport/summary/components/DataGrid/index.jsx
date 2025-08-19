@@ -9,7 +9,7 @@ import BySportDataGrid from './BySportDataGrid';
 import ByCurrencyDataGrid from './ByCurrencyDataGrid';
 import ByBetTypeDataGrid from './ByBetTypeDataGrid';
 
-const DataGrid = (props) => {
+const DataGrid = () => {
     const gridData = useSelector((state) => state.gridData);
     const requestParam = useSelector((state) => state.requestParam);
 

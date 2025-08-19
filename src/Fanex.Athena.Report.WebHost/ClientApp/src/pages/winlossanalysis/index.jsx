@@ -10,7 +10,7 @@ import { DefaultState } from './common/constants';
 
 const store = Store.createStore(reducer, { ...DefaultState, defaultState: { ...DefaultState } });
 
-const WinLossAnalysis = (props) => {
+const WinLossAnalysis = () => {
     const styleSheet = useStyleSheetLink();
 
     useEffect(() => {

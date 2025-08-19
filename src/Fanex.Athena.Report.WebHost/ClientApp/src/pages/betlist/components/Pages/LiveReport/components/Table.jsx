@@ -1,5 +1,5 @@
 import React from 'react';
-import { useSelector, shallowEqual } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import BetListTable from '@/components/BetListTable';
 import tableSettings from '../common/tableSettings';

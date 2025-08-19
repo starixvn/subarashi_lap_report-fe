@@ -20,7 +20,7 @@ import Service, { constants } from '../common';
 import SubsidiaryCheckBox from './Filter/SubsidiaryCheckBox';
 import SubsidiaryDropdown from './Filter/SubsidiaryDropdown';
 
-const FormFilter = (props) => {
+const FormFilter = () => {
     const { DateConstraint, ApiUrl } = constants;
 
     const dispatch = useDispatch();

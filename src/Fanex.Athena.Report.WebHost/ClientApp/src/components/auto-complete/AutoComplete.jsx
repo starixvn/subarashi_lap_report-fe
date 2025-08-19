@@ -122,7 +122,7 @@ export default class AutoComplete extends Component {
             });
     }
 
-    _onChange = (event) => {
+    _onChange = () => {
         const value = (this.input.value || '').trim();
 
         const { onInput } = this.props;

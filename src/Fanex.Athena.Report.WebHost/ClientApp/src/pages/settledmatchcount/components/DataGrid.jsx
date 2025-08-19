@@ -7,7 +7,7 @@ import LangHelper from '@/helpers/langHelper';
 import { MAX_WIDTH_PAGE } from '@/constants/config';
 import NoDataTitle from '@/components/NoDataTitle';
 
-const DataGrid = (props) => {
+const DataGrid = () => {
     const gridData = useSelector((state) => state.gridData);
 
     if (!gridData) {

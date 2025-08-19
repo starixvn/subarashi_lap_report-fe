@@ -5,15 +5,15 @@ import { Table } from '@legion-lib/react-grid';
 
 import NoDataTitle from '@/components/NoDataTitle';
 import ReportTitle from '@/components/ReportTitle';
-import Service from '../../common/Service.js';
+
 import { renderHeader, renderDataSection, renderFooter } from '../../common/gridUtils';
 import { BreakdownByMode, DefaultPagingOption, GroupByMode, SortOrder } from '../../common/constants.js';
 import { ActionCreators } from '../../actions/index.js';
 import ExcelPopUp from '../ExcelPopUp.jsx';
 
 export const DataGrid = () => {
-    const [requestParam, reportData, reportTitle, reloadReport, selectedProduct] = useSelector(
-        (state) => [state.requestParam, state.reportData, state.reportTitle, state.reloadReport, state.selectedProduct],
+    const [requestParam, reportData, reportTitle, reloadReport] = useSelector(
+        (state) => [state.requestParam, state.reportData, state.reportTitle, state.reloadReport],
         shallowEqual
     );
 

@@ -128,7 +128,7 @@ export const DataGrid = (props) => {
 
                 props.toggleLoader(false);
             })
-            .catch((error) => {
+            .catch(() => {
                 Service.showErrorMsg();
                 props.toggleLoader(false);
             });

@@ -11,7 +11,7 @@ import { constants } from '../common';
 import DataGrid from './DataGrid';
 import FormFilter from './FormFilter';
 
-export const AppContainer = (props) => {
+export const AppContainer = () => {
     const dispatch = useDispatch();
     const formData = useSelector((state) => state.formData);
     const isLoading = useSelector((state) => state.isLoading);

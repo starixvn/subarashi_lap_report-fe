@@ -70,7 +70,7 @@ const BuildFirstRow = (isEnableSingleWallet, hasCustomerComm) => (
             colWidth={180}
             colSpan={hasCustomerComm ? 3 : 1}
             key="CustomerWinloss"
-            sortBy={!hasCustomerComm ? Constants.SortKeys.CustomerWinloss : null}>
+            sortBy={!hasCustomerComm ? constants.SortKeys.CustomerWinloss : null}>
             {LangHelper.getSingleResource('CustomerW_L')}
         </HeaderCell>
         {!isEnableSingleWallet && (

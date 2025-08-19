@@ -1,8 +1,7 @@
-import React from 'react';
+import React, { memo } from 'react';
 import MultipleSelect from '@legion-lib/react-multiselect';
 import LangHelper from '@/helpers/langHelper';
 import PropTypes from 'prop-types';
-import { memo } from 'react';
 import { ALL_SELECTED_TEXT } from '../../common/constants';
 import { useSelector } from 'react-redux';
 

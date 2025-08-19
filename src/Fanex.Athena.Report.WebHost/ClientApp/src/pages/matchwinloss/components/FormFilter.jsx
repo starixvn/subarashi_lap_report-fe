@@ -17,7 +17,7 @@ import ExportExcel from '@/components/ExportExcel';
 import { ActionCreators } from '../actions';
 import Service, { constants } from '../common';
 
-const FormFilter = (props) => {
+const FormFilter = () => {
     const { DateConstraint, ApiUrl, FirstDayOfWeek } = constants;
 
     const dispatch = useDispatch();

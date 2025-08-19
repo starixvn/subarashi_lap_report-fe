@@ -32,7 +32,7 @@ const tryAddPageToSession = (pathName) => {
     }
 
     for (const key in savedPages) {
-        if (savedPages.hasOwnProperty(key) && savedPages[key]) {
+        if (Object.prototype.hasOwnProperty.call(savedPages, key) && savedPages[key]) {
             sessionStorage.removeItem(key);
         }
     }

@@ -16,7 +16,7 @@ import { USER_GUIDE, WL_BY_TIME_ZONE } from '@/constants/pages';
 import { ReportBy, SettingConst, TimeZones, ApiUrl, DateConstraint } from '../constants';
 import { ActionCreators } from '../actions/index';
 
-const FormFilter = (props) => {
+const FormFilter = () => {
     const dispatch = useDispatch();
 
     const dateRange = useSelector((state) => state.dateRange);

@@ -17,7 +17,7 @@ const defaultState = {
     isExcludeTest: true,
 };
 
-const WinLossByTimeZone = (props) => {
+const WinLossByTimeZone = () => {
     const store = Store.createStore(reducer, defaultState);
     return (
         <Provider store={store}>

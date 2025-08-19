@@ -11,7 +11,7 @@ import reducer from './reducers';
 import { constants } from './common';
 import { ReportLevel } from '@/constants/report';
 
-const SubsidiaryPerformance = (props) => {
+const SubsidiaryPerformance = () => {
     const store = Store.createStore(reducer, {
         convertAll: false,
         includeDrawData: true,

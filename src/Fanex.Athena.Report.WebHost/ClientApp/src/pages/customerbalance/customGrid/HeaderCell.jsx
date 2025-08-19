@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react';
 import PropTypes from 'prop-types';
 
-const HeaderCell = ({ lockArrow, colWidth, sortBy, sortOrder, onSort, children, ...rest }) => {
+const HeaderCell = ({ lockArrow, sortBy, sortOrder, onSort, children, ...rest }) => {
     const onClick = useCallback(() => {
         if (!sortBy) {
             return;

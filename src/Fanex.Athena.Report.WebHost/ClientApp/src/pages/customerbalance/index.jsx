@@ -6,7 +6,7 @@ import reducer from './reducers';
 // import styles
 import '@/styles/pages/customerbalance.scss';
 
-const CustomerBalance = (props) => {
+const CustomerBalance = () => {
     const store = Store.createStore(reducer, { gridData: null });
     return (
         <Provider store={store}>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Cell, Row } from '@legion-lib/react-grid';
+import { Cell } from '@legion-lib/react-grid';
 
 import NumberFormat from '@/lib/numberFormat';
 

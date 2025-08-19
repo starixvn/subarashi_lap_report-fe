@@ -1,9 +1,8 @@
 import React from 'react';
-import { HeaderRow, HeaderCell } from '@legion-lib/react-grid';
+import { HeaderRow, HeaderCell, Row, Cell } from '@legion-lib/react-grid';
 import LangHelper from '@/helpers/langHelper';
 import DataRow from './DataRow';
 import NewRuleRow from './NewRuleRow';
-import { Row, Cell } from '@legion-lib/react-grid';
 
 export const BuildBody = (data, baseCurrencyList, addNewRule, onDataChanged, setAddNewRule, defaultBaseCurrency, monitoringID) => {
     if ((!data || !data.length) && !addNewRule) {

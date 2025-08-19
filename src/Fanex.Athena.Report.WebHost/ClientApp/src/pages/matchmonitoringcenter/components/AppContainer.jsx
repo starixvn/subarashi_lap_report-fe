@@ -14,7 +14,7 @@ import PopupPage from './PopupPage';
 import { constants } from '../common';
 import { v4 as uuidv4 } from 'uuid';
 
-export const AppContainer = (props) => {
+export const AppContainer = () => {
     const dispatch = useDispatch();
     const [searchParams] = useSearchParams();
 

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Popup from '@/components/Popup';
 import GtagHelper from '@/helpers/gtagHelper';
 
-const BetListLayout = ({ pageName, rootUrl = '/', baseCurrency = '', beforeShowFunc, afterShowFunc, formatDateStringFunc, children }) => {
+const BetListLayout = ({ pageName, baseCurrency = '', beforeShowFunc, afterShowFunc, formatDateStringFunc, children }) => {
     const [isShowPopup, setIsShowPopup] = useState(false);
     const [popupUrl, setPopupUrl] = useState(null);
     const [popupTitle, setPopupTitle] = useState(null);

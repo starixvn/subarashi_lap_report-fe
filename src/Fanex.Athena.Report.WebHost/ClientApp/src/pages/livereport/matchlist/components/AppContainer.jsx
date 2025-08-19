@@ -11,11 +11,11 @@ import FormFilter from './FormFilter';
 import { constants } from '../common';
 import { ActionCreators } from '../actions';
 
-export const AppContainer = (props) => {
+export const AppContainer = () => {
     const dispatch = useDispatch();
     const isLoading = useSelector((state) => state.isLoading);
 
-    const [searchParams, setSearchParams] = useSearchParams();
+    const [searchParams] = useSearchParams();
     const { sendRequest } = useToggleRequest();
     const { setGridData, setFormData, setRequestParam } = ActionCreators;
 
@@ -37,7 +37,7 @@ export const AppContainer = (props) => {
             dispatch(setFormData(null));
             return;
         }
-        const { data, ...rest } = result;
+        const { ...rest } = result;
 
         dispatch(setGridData(result.data));
         dispatch(setFormData(rest));

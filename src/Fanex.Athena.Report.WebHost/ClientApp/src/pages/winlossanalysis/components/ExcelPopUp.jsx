@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, memo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { ActionCreators } from '../actions/index.js';
 import { ExportExcelMode } from '../common/constants';
@@ -8,7 +8,6 @@ import RadioGroup from '@/components/RadioGroup';
 import LangHelper from '@/helpers/langHelper';
 import { decode } from '@/lib/htmlHelper';
 import { v4 as uuidv4 } from 'uuid';
-import { memo } from 'react';
 
 export const ExcelPopUp = () => {
     const [isShow, setIsShow] = useState(false);

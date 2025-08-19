@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation, useParams } from 'react-router-dom/dist';
 
@@ -14,7 +14,7 @@ import Service from '../common';
 import DataGrid from './DataGrid';
 import BetListFormFilter from './FormFilter';
 
-export const AppContainer = (props) => {
+export const AppContainer = () => {
     const location = useLocation();
     const { controller, action } = useParams();
 

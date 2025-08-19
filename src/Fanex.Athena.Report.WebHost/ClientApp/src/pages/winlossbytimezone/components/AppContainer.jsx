@@ -11,7 +11,7 @@ import FormFilter from './FormFilter';
 import { CurrencySelectAll } from '../constants/settingConst';
 import { ApiUrl } from '../constants/apiUrl';
 
-export const AppContainer = (props) => {
+export const AppContainer = () => {
     const dispatch = useDispatch();
     const formData = useSelector((state) => state.formData);
     const isLoading = useSelector((state) => state.isLoading);

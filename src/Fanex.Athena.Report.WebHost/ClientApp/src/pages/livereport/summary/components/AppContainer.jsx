@@ -13,7 +13,7 @@ import DataGrid from './DataGrid';
 import FormFilter from './FormFilter';
 import Site from '@/lib/site';
 
-export const AppContainer = (props) => {
+export const AppContainer = () => {
     const dispatch = useDispatch();
     const loadedData = useRouteLoaderData(LIVE_REPORT);
     const formData = useSelector((state) => state.formData);
@@ -21,16 +21,8 @@ export const AppContainer = (props) => {
     const { sendRequest } = useToggleRequest();
 
     const { LiveStatuses, CurrencySelectAll, DefaultLiveStatus } = constants;
-    const {
-        setFormData,
-        setSelectedStatus,
-        setSelectedCurrency,
-        setSelectedBaseCurrency,
-        setBaseCurrencyList,
-        setSubsidiarySearch,
-        setWhiteLabelTreeList,
-        setSubsidiaryList,
-    } = ActionCreators;
+    const { setFormData, setSelectedStatus, setSelectedCurrency, setSelectedBaseCurrency, setBaseCurrencyList, setSubsidiarySearch, setWhiteLabelTreeList } =
+        ActionCreators;
 
     const setInitFormData = async (result) => {
         if (!result || !result.data) {

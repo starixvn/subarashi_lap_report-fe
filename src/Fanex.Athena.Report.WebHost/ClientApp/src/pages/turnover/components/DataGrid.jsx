@@ -8,7 +8,7 @@ import ReportTitle from '@/components/ReportTitle';
 import Service, { constants } from '../common';
 import { BuildBody, BuildFooter, BuildHeader } from '../gridBuilder';
 
-const DataGrid = (props) => {
+const DataGrid = () => {
     const { TableSettings } = constants;
 
     const gridData = useSelector((state) => state.gridData);

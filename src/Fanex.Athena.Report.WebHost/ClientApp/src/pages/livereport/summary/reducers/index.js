@@ -13,19 +13,17 @@ import * as dateReducer from '@/reducers/dateReducer';
 import * as subsidiaryReducer from '@/reducers/subsidiaryReducer';
 import * as filterReducer from './filterReducer';
 
-export default combineReducers(
-    Object.assign(
-        dateReducer,
-        dateRangeReducer,
-        statusReducer,
-        loaderReducer,
-        gridDataReducer,
-        userGuideReducer,
-        formDataReducer,
-        requestParamReducer,
-        baseCurrencyReducer,
-        currencyReducer,
-        subsidiaryReducer,
-        filterReducer
-    )
-);
+export default combineReducers({
+    ...dateReducer,
+    ...dateRangeReducer,
+    ...statusReducer,
+    ...loaderReducer,
+    ...gridDataReducer,
+    ...userGuideReducer,
+    ...formDataReducer,
+    ...requestParamReducer,
+    ...baseCurrencyReducer,
+    ...currencyReducer,
+    ...subsidiaryReducer,
+    ...filterReducer,
+});

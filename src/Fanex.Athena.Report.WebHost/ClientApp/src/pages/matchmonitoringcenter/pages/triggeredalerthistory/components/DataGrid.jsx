@@ -1,9 +1,8 @@
-import React, { lazy } from 'react';
+import React from 'react';
 import { useSelector } from 'react-redux';
 import { Table, HeaderRow, HeaderCell, Cell, Row } from '@legion-lib/react-grid';
 
 import NoDataTitle from '@/components/NoDataTitle';
-import LangHelper from '@/helpers/langHelper';
 
 import { constants } from '../common';
 

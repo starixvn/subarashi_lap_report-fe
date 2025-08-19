@@ -11,7 +11,7 @@ const getReportData = (url, params) => {
                 dispatch(setReportData(response.data));
                 dispatch(toggleLoader(false));
             })
-            .catch((error) => {
+            .catch(() => {
                 alert(LangHelper.getSingleResource('ErrorProcessingMsg'));
                 dispatch(toggleLoader(false));
             });

@@ -1,5 +1,4 @@
 ﻿import LangHelper from '@/helpers/langHelper';
-import Site from '@/lib/site';
 
 const headerText = {
     Index: '#',

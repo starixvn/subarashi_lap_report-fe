@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 import LangHelper from '@/helpers/langHelper';
 import { useSelector } from 'react-redux';
 
-export const Note = (props) => {
+export const Note = () => {
     const [formData] = useSelector((state) => [state.formData]);
     return (
         <>

@@ -25,6 +25,7 @@ import * as defaultStateReducer from './defaultStateReducer';
 
 export default combineReducers(
     Object.assign(
+        {},
         gridDataReducer,
         productReducer,
         currencyReducer,

@@ -38,7 +38,7 @@ class Service {
     static convertToReportData(gridData) {
         const matches = [];
         for (const key in gridData.leagueList) {
-            if (gridData.leagueList.hasOwnProperty(key)) {
+            if (Object.prototype.hasOwnProperty.call(gridData.leagueList, key)) {
                 matches.push({
                     leagueId: key,
                     leagueName: gridData.leagueList[key],

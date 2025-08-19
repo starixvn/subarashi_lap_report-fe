@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import LangHelper from '@/helpers/langHelper';
 
-export const Note = (props) => {
+export const Note = () => {
     return (
         <>
             <div className="col-12 col-md-3 col-xl-1 note">{LangHelper.getSingleResource('Note')}:</div>

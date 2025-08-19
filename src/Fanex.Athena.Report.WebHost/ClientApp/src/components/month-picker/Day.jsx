@@ -5,7 +5,7 @@ import Overlay from '@/components/Overlay';
 const Day = ({ id, label, value, min, max, onChange }) => {
     const [showDateDrop, setShowDateDrop] = useState(false);
 
-    const renderOption = (min, max, value) => {
+    const renderOption = (min, max) => {
         const options = [];
 
         for (let i = min; i <= max; i++) {
@@ -40,7 +40,7 @@ const Day = ({ id, label, value, min, max, onChange }) => {
                     <Overlay isOpening={showDateDrop} onClose={() => setShowDateDrop(false)}>
                         {showDateDrop && (
                             <div className="date-selection-container">
-                                <ul>{renderOption(min, max, value)}</ul>
+                                <ul>{renderOption(min, max)}</ul>
                             </div>
                         )}
                     </Overlay>

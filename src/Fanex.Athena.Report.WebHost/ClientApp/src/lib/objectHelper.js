@@ -11,7 +11,7 @@ export default class ObjectHelper {
         } else {
             newO = {};
             for (origKey in o) {
-                if (o.hasOwnProperty(origKey)) {
+                if (Object.prototype.hasOwnProperty.call(o, origKey)) {
                     newKey = (origKey.charAt(0).toLowerCase() + origKey.slice(1) || origKey).toString();
                     value = o[origKey];
                     if (value instanceof Array || (value !== null && value.constructor === Object)) {

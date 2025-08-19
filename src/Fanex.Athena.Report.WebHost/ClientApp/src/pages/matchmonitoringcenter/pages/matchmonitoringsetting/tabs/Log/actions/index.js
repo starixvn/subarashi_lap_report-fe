@@ -75,6 +75,7 @@ export const getActionList = (logTypes) => {
                 }
             }
         } catch (error) {
+            // eslint-disable-next-line no-console
             console.error('Error fetching action list:', error);
         }
     };
@@ -114,6 +115,7 @@ const getInitFormData = () => {
 
             return data;
         } catch (error) {
+            // eslint-disable-next-line no-console
             console.error('Error fetching init form data:', error);
         }
     };
@@ -131,6 +133,7 @@ const fetchLogData = (params) => {
                 dispatch(gridDataAction.setGridData(response.data));
             }
         } catch (error) {
+            // eslint-disable-next-line no-console
             console.error('Error fetching log data:', error);
         } finally {
             dispatch(loaderAction.toggleLoader(false));

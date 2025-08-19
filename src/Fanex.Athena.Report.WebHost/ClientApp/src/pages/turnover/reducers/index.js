@@ -13,6 +13,7 @@ import * as baseCurrencyReducer from '@/reducers/baseCurrencyReducer';
 
 export default combineReducers(
     Object.assign(
+        {},
         dateRangeReducer,
         productReducer,
         loaderReducer,

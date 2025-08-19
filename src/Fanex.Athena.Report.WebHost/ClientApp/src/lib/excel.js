@@ -10,7 +10,7 @@ let _XLSX = null;
 export default class Excel {
     static process(callback) {
         if (window.XLSX) {
-            _XLSX = xlsx;
+            _XLSX = window.XLSX;
             callback && callback();
         } else {
             import(/* webpackChunkName: "lib/xlsx-style-sparta" */ 'xlsx-style-sparta').then((XLSX) => {

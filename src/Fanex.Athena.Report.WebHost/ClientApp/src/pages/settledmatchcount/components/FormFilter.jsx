@@ -12,7 +12,7 @@ import { ActionCreators } from '../actions/index';
 import Constants from '../constants';
 import { SETTLED_MATCH_COUNT, USER_GUIDE } from '@/constants/pages';
 
-const FormFilter = (props) => {
+const FormFilter = () => {
     const dispatch = useDispatch();
     const userGuideContent = useSelector((state) => state.userGuideContent);
 

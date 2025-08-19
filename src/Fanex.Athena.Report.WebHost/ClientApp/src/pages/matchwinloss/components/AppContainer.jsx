@@ -13,7 +13,7 @@ import DataGrid from './DataGrid';
 import FormFilter from './FormFilter';
 import Site from '@/lib/site';
 
-export const AppContainer = (props) => {
+export const AppContainer = () => {
     const dispatch = useDispatch();
     const loadedData = useRouteLoaderData(MATCH_WL);
     const formData = useSelector((state) => state.formData);

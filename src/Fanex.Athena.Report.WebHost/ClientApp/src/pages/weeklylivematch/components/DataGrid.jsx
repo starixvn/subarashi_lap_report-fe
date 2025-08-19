@@ -11,7 +11,7 @@ import { ActionCreators } from '../actions';
 import Constants from '../constants';
 import HeaderCell from '../customGrid/HeaderCell';
 
-const DataGrid = (props) => {
+const DataGrid = () => {
     const dispatch = useDispatch();
     const requestParam = useSelector((state) => state.requestParam);
     const gridData = useSelector((state) => state.gridData);

@@ -1,9 +1,8 @@
 import React from 'react';
-import { Provider } from 'react-redux';
+import { Provider, connect } from 'react-redux';
 import AppContainer from './components/AppContainer';
 import reducers from './reducers';
 import useSessionStore from '@/hooks/useSessionStore';
-import { connect } from 'react-redux';
 
 const Log = ({ monitoringID }) => {
     const store = useSessionStore(reducers, { monitoringID });

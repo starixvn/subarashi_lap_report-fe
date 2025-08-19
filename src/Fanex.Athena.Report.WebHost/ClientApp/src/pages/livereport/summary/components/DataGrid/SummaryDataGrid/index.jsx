@@ -9,7 +9,7 @@ import { constants } from '../../../common';
 import { ActionCreators } from '../../../actions';
 import currency from 'currency.js';
 
-function SummaryDataGrid(props) {
+function SummaryDataGrid() {
     const dispatch = useDispatch();
     const gridData = useSelector((state) => state.gridData);
     const summaryGridData = gridData?.summary;

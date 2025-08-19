@@ -15,7 +15,7 @@ import ExportExcel from '@/components/ExportExcel';
 import { ActionCreators } from '../actions';
 import Constants from '../constants/index';
 
-const FormFilter = (props) => {
+const FormFilter = () => {
     const dispatch = useDispatch();
     const { sendRequest } = useToggleRequest();
 

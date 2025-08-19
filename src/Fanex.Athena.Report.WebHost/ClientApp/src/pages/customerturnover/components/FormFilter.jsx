@@ -21,7 +21,7 @@ import ActionCreators from '../actions';
 import Service, { constants } from '../common';
 import { TicketFilterOptions, TicketFilterValue } from '../common/filterSettings';
 
-const FormFilter = (props) => {
+const FormFilter = () => {
     const { DateConstraint, ApiUrl, TreeViewOption, ReportByValue, DefaultPagingOption, MAX_ODDS_DIGITS, CHILD_ID_PREFIX } = constants;
     const {
         setDateRange,
@@ -77,11 +77,11 @@ const FormFilter = (props) => {
         dispatch(setSelectedCurrency(currency));
     };
 
-    const onChangeSelectedProducts = (currentItem, selectedproductAndSportIds, selectedItem) => {
+    const onChangeSelectedProducts = (currentItem, selectedproductAndSportIds) => {
         dispatch(setSelectedProducts(selectedproductAndSportIds, formData.productOptions, formData.productHasNoSport));
     };
 
-    const onChangeSelectedBettype = (currentItem, selectedItemsKey, selectedItems) => {
+    const onChangeSelectedBettype = (currentItem, selectedItemsKey) => {
         dispatch(setSelectedBettype(selectedItemsKey));
     };
 

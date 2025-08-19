@@ -11,7 +11,7 @@ import { BuildBody, BuildFooter, BuildHeaders, GenerateReportTitle, GetDefaultPa
 import { ActionCreators } from '../actions/index';
 import Service, { constants } from '../common';
 
-const DataGrid = (props) => {
+const DataGrid = () => {
     const { ApiUrl, TableSettings } = constants;
     const { setRequestParam, setGridData } = ActionCreators;
 
@@ -39,7 +39,7 @@ const DataGrid = (props) => {
 
     const totalSpan = gridData.data[0].systemId ? 3 : 2;
 
-    const onPaging = (index, pageSize) => {
+    const onPaging = (index) => {
         const params = { ...requestParam, PageIndex: index };
         sendRequest(() => DataService.postReportData(ApiUrl.DATA_URL, params), updateGridData);
         dispatch(setRequestParam(params));

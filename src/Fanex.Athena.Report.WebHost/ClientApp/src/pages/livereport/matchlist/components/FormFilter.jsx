@@ -10,7 +10,7 @@ import Site from '@/lib/site';
 import ExportExcel from '@/components/ExportExcel';
 import { constants } from '../common';
 
-const FormFilter = (props) => {
+const FormFilter = () => {
     const navigate = useNavigate();
     const requestParam = useSelector((state) => state.requestParam);
 

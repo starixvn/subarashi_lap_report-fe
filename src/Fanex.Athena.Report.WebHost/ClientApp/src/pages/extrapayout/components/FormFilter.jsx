@@ -149,7 +149,7 @@ export const FormFilter = (props) => {
         props.setSelectedBaseCurrency(baseCurrency);
     };
 
-    const onChangeSubsidiaryList = (currentItem, selectedItemsKey, treeViewList) => {
+    const onChangeSubsidiaryList = (currentItem, selectedItemsKey) => {
         props.setSubsidiaryList(selectedItemsKey);
     };
 
@@ -297,7 +297,7 @@ export const FormFilter = (props) => {
                 }
                 props.toggleLoader(false);
             })
-            .catch((error) => {
+            .catch(() => {
                 alert(LangHelper.getSingleResource('ErrorProcessingMsg'));
                 props.toggleLoader(false);
             });

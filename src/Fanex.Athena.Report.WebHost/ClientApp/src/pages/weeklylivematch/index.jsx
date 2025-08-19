@@ -8,7 +8,7 @@ import Constants from './constants';
 // import styles
 import '@/styles/pages/weeklylivematch.scss';
 
-const WeeklyLiveMatch = (props) => {
+const WeeklyLiveMatch = () => {
     const defaultState = Object.assign({}, { dateRange: Constants.DateRange });
 
     const store = Store.createStore(reducer, defaultState);

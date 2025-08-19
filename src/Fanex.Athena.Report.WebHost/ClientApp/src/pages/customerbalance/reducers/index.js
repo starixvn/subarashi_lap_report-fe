@@ -8,6 +8,12 @@ import * as requestParamReducer from '@/reducers/requestParamReducer';
 import * as productReducer from '@/reducers/productReducer';
 import * as formDataReducer from '@/reducers/formDataReducer';
 
-export default combineReducers(
-    Object.assign(dateRangeReducer, productReducer, loaderReducer, gridDataReducer, userGuideReducer, formDataReducer, requestParamReducer)
-);
+export default combineReducers({
+    ...dateRangeReducer,
+    ...productReducer,
+    ...loaderReducer,
+    ...gridDataReducer,
+    ...userGuideReducer,
+    ...formDataReducer,
+    ...requestParamReducer,
+});

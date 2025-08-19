@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 
 import LangHelper from '@/helpers/langHelper';
 import GtagHelper from '@/helpers/gtagHelper';

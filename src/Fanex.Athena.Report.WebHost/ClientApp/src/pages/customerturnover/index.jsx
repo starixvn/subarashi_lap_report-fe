@@ -11,7 +11,7 @@ import reducers from './reducers';
 import { constants } from './common';
 import { TicketFilterOptions } from './common/filterSettings';
 
-const CustomerTurnOver = (props) => {
+const CustomerTurnOver = () => {
     const store = Store.createStore(reducers, {
         reportBy: constants.ReportByValue.Daily,
         minimumOdds: 0,

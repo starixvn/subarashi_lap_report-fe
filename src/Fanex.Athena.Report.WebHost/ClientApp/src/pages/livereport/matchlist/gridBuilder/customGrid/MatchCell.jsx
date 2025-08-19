@@ -25,7 +25,6 @@ function MatchCell({ data, ...rest }) {
     const dispatch = useDispatch();
     const requestParam = useSelector((state) => state.requestParam);
 
-    const { BetListPageUrl } = constants;
     const { toggleLoader } = ActionCreators;
 
     const onClickMatch = (e) => {

@@ -8,7 +8,7 @@ import reducers from './reducers';
 import '@/styles/pages/livereportmatchlist.scss';
 import Store from '@/lib/store';
 
-const LiveReportMatchList = (props) => {
+const LiveReportMatchList = () => {
     const store = Store.createStore(reducers, { gridData: null });
 
     return (

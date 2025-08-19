@@ -1,7 +1,15 @@
 ﻿import LangHelper from '@/helpers/langHelper';
 import Site from '@/lib/site';
-import { CashOutModeList, ExportExcelMode, OneTwoBetLicenseeName } from './constants';
-import { BreakdownByMode, GroupByMode, GroupByList, ALL_SELECTED_TEXT, ProductCode } from './constants';
+import {
+    CashOutModeList,
+    ExportExcelMode,
+    OneTwoBetLicenseeName,
+    BreakdownByMode,
+    GroupByMode,
+    GroupByList,
+    ALL_SELECTED_TEXT,
+    ProductCode,
+} from './constants';
 import { ApiUrl, ViewInTimeMode, MAX_PAGE_EXPORT_PAGE_SIZE, NUMBER_OF_CUNCURRENT_DOWNLOAD_REQUEST } from '../common/constants.js';
 import DataService from '@/lib/dataService';
 

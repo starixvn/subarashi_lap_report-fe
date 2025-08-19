@@ -16,7 +16,7 @@ import Note from './Note';
 
 import { useFilterAction, useFilterHandler } from '../hook';
 
-const FormFilter = (props) => {
+const FormFilter = () => {
     const { TriggerAlert, MatchStatus, RefreshCountdown } = constants;
     const { submit, fetchData, resetFilter, exportExcel, fetchUserGuide } = useFilterAction();
     const {

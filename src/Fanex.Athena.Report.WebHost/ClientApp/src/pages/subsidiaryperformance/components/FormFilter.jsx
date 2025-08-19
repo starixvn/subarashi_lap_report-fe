@@ -17,7 +17,7 @@ import ExportExcel from '@/components/ExportExcel';
 import actions from '../actions/index';
 import { constants } from '../common';
 
-const FormFilter = (props) => {
+const FormFilter = () => {
     const dispatch = useDispatch();
 
     const dateRange = useSelector((state) => state.dateRange);

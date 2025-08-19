@@ -13,6 +13,7 @@ import * as dateReducer from '@/reducers/dateReducer';
 
 export default combineReducers(
     Object.assign(
+        {},
         dateReducer,
         dateRangeReducer,
         productReducer,

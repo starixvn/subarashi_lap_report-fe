@@ -19,6 +19,7 @@ const useToggleRequest = () => {
             .catch((error) => {
                 alert(LangHelper.getSingleResource('ErrorProcessingMsg'));
 
+                // eslint-disable-next-line no-console
                 console.error(error);
 
                 dispatch(toggleLoader(false));

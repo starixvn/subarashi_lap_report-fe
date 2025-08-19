@@ -13,6 +13,7 @@ import * as gridDataReducer from '@/reducers/gridDataReducer';
 
 export default combineReducers(
     Object.assign(
+        {},
         filterReducer,
         dataReducer,
         popupReducer,

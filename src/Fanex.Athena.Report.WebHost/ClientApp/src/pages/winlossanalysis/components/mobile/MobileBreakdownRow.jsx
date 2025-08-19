@@ -20,7 +20,7 @@ export const MobileBreakdownRow = (props) => {
         playerComm,
         betEffective,
         licWinloss,
-        licComm,
+
         margin,
         groupBy,
         breakBy,

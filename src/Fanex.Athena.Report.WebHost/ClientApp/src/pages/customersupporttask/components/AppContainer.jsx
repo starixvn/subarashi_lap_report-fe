@@ -10,7 +10,7 @@ import FormFilter from './FormFilter';
 import constants from '../constants';
 import { SupportTaskOptions } from '../lib/constants';
 
-export const AppContainer = (props) => {
+export const AppContainer = () => {
     const dispatch = useDispatch();
     const formData = useSelector((state) => state.formData);
     const isLoading = useSelector((state) => state.isLoading);

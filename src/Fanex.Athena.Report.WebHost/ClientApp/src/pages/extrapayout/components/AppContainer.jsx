@@ -11,7 +11,7 @@ import DataGrid from './DataGrid';
 import FormFilter from './FormFilter';
 import { ApiUrl } from '../common/constants';
 
-export const AppContainer = (props) => {
+export const AppContainer = () => {
     const dispatch = useDispatch();
     const formData = useSelector((state) => state.formData);
     const isLoading = useSelector((state) => state.isLoading);

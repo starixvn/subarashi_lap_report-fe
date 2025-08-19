@@ -6,7 +6,7 @@ import reducer from './reducers';
 // import styles
 import '@/styles/pages/settledmatchcount.scss';
 
-const SettledMatchCount = (props) => {
+const SettledMatchCount = () => {
     const store = Store.createStore(reducer, {});
     return (
         <Provider store={store}>

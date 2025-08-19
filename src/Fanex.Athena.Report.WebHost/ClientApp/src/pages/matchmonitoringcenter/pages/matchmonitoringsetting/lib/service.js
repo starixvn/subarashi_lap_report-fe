@@ -1,7 +1,7 @@
 import { generateDefaultConfirmOption, generateDefaultAlertOption } from '@/lib/sweetAlert';
 import LangHelper from '@/helpers/langHelper';
 import DataService from '@/lib/dataService';
-import { ApiUrl, conditions } from './constants';
+import { ApiUrl } from './constants';
 import ActionCreators from '../actions';
 
 const { setSweetAlertOption } = ActionCreators;

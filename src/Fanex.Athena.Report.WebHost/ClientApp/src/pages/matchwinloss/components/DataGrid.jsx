@@ -8,7 +8,7 @@ import ReportTitle from '@/components/ReportTitle';
 import { BuildBody, BuildFooter, BuildHeaders } from '../gridUtility';
 import Service from '../common';
 
-const DataGrid = (props) => {
+const DataGrid = () => {
     const gridData = useSelector((state) => state.gridData);
     const formData = useSelector((state) => state.formData);
     const requestParam = useSelector((state) => state.requestParam);

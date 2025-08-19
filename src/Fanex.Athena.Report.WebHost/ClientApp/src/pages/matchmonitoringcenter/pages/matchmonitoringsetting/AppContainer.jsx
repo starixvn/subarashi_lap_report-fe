@@ -1,9 +1,8 @@
-import React, { Suspense, useEffect, useState } from 'react';
+import React, { Suspense, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import TabMenu from '@/components/TabMenu';
-import { tabKeys, tabMenuList, preLoadComponents } from './lib/constants';
+import { tabKeys, tabMenuList, preLoadComponents, ApiUrl } from './lib/constants';
 import DataService from '@/lib/dataService';
-import { ApiUrl } from './lib/constants';
 import { setSelectedTab, setTabKeys } from '@/actions/tabHandlerAction';
 import { INVALID_REQUEST_URL } from '@/constants/config';
 import Site from '@/lib/site';

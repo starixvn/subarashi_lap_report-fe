@@ -19,7 +19,7 @@ import Site from '@/lib/site';
 import { ActionCreators } from '../actions';
 import Service, { constants } from '../common';
 
-const FormFilter = (props) => {
+const FormFilter = () => {
     const { DateConstraint, ApiUrl, SelectTopOptions, ExcludeTestDataOptions, FirstDayOfWeek, DefaultPagingOption } = constants;
     const { setSelectedProducts, setGridData, setRequestParam, setDateRange, getUserGuideContent } = ActionCreators;
 
@@ -93,7 +93,6 @@ const FormFilter = (props) => {
             IsExcludedTestData: excludeTestData == 'true',
             CurrencyName: selectedCurrency.label,
             CurrencyId: selectedCurrency.value,
-            TopCount: selectTop.value,
             PageIndex: DefaultPagingOption.PageIndex,
             PageSize: DefaultPagingOption.PageSize,
         };

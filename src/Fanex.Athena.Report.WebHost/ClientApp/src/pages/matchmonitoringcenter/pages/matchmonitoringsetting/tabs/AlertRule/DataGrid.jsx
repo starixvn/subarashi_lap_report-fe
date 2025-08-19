@@ -23,7 +23,7 @@ function DataGrid() {
     const monitoringID = useSelector((state) => state.monitoringID);
     const [baseCurrencyList, setBaseCurrencyList] = useState(null);
     const [defaultBaseCurrency, setDefaultBaseCurrency] = useState(null);
-    const [isLoading, setIsLoading] = useState(true);
+    const [, setIsLoading] = useState(true);
 
     const { sendRequest } = useToggleRequest();
     const { setGridData, setAddNewRule } = ActionCreators;

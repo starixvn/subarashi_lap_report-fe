@@ -39,7 +39,7 @@ const FormFilter = ({ formData, selectedCurrency, selectedSupportTask, setSelect
                     Site.downloadFile(response.data, ExportFileName);
                 }
             })
-            .catch((error) => {
+            .catch(() => {
                 alert(LangHelper.getSingleResource('ErrorProcessingMsg'));
                 toggleLoader(false);
             });

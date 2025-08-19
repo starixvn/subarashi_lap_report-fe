@@ -8,7 +8,7 @@ import { DefaultDateRange } from './common/dateSetting';
 // import styles
 import '@/styles/pages/leaguewinloss.scss';
 
-const LeagueWinLoss = (props) => {
+const LeagueWinLoss = () => {
     const store = Store.createStore(reducer, {
         username: '',
         bettypeList: [],

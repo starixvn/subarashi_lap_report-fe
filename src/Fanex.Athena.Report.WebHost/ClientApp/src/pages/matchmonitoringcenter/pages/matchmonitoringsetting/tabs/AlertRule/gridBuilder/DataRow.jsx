@@ -157,8 +157,6 @@ const DataRow = ({ item: initialItem, baseCurrencyList, defaultBaseCurrency, onD
         [buildAlertOptionDelete, dispatch]
     );
 
-    console.log(item);
-
     return (
         <Row>
             {!isEdited ? (

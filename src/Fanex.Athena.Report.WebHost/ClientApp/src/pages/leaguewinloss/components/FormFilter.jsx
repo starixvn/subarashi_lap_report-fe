@@ -1,6 +1,5 @@
 import { DateRange } from '@legion-lib/react-daterangepicker';
-import MultipleSelect from '@legion-lib/react-multiselect';
-import moment from 'moment';
+import MultipleSelect, { TreeViewSelect } from '@legion-lib/react-multiselect';
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -22,7 +21,6 @@ import { ApiUrl, ReportLevel } from '../common/constants';
 import { DateConstraint } from '../common/dateSetting';
 import Service from '../common/service';
 
-import { TreeViewSelect } from '@legion-lib/react-multiselect';
 import { TreeViewOption } from '@/constants/report';
 
 export const FormFilter = (props) => {
@@ -335,7 +333,7 @@ export const FormFilter = (props) => {
                 }
                 props.toggleLoader(false);
             })
-            .catch((error) => {
+            .catch(() => {
                 alert(LangHelper.getSingleResource('ErrorProcessingMsg'));
                 props.toggleLoader(false);
             });

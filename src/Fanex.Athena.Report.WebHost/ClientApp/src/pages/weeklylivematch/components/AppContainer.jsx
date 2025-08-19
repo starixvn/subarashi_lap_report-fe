@@ -4,7 +4,7 @@ import Loader from '@/components/Loader';
 import FormFilter from './FormFilter';
 import DataGrid from './DataGrid';
 
-const AppContainer = (props) => {
+const AppContainer = () => {
     const isLoading = useSelector((state) => state.isLoading);
 
     return (

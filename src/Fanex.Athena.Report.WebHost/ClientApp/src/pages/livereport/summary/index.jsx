@@ -12,7 +12,7 @@ import useSessionStore from '@/hooks/useSessionStore';
 const defaultState = { dateRange: constants.DefaultDateRange, selectedSubsidiary: '' };
 const resetState = { selectedProductCode: null, isLoading: false };
 
-const LiveReportSummary = (props) => {
+const LiveReportSummary = () => {
     const store = useSessionStore(reducers, defaultState, resetState);
 
     return (

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const HeaderRow = ({ defaultSelectedHeaderKey, onSort, lockArrow, children, defaultSelectedKey, sortBy, sortOrder, ...rest }) => {
+const HeaderRow = ({ defaultSelectedHeaderKey, onSort, children, sortBy, sortOrder, ...rest }) => {
     const renderChildren = () => {
         // Register onSort event
         return React.Children.map(children, (child) => {

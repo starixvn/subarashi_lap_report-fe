@@ -14,7 +14,7 @@ const CommonCells = ({ data }) => {
     const turnOver = NumberFormat.formatDecimal(data.turnOver);
     const betCount = NumberFormat.formatInteger(data.betCount);
     const licenseeWinLoss = NumberFormat.formatDecimal(data.licenseeWinLoss);
-    const licenseeComm = NumberFormat.formatDecimal(data.licenseeComm);
+
     const amountDue = NumberFormat.formatDecimal(data.amountDue);
 
     return (

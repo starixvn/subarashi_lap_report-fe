@@ -13,6 +13,7 @@ import * as filterReducer from './filterReducer';
 
 export default combineReducers(
     Object.assign(
+        {},
         productReducer,
         loaderReducer,
         gridDataReducer,

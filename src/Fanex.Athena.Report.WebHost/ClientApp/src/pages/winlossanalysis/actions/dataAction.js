@@ -11,7 +11,7 @@ export const getReportData = (params) => {
                 dispatch(setReportData(response.data));
                 dispatch(toggleLoader(false));
             })
-            .catch((error) => {
+            .catch(() => {
                 alert('Sorry, an error occurred while processing your request.');
                 dispatch(toggleLoader(false));
             });
