@@ -54,7 +54,7 @@ const FormFilter = () => {
         dispatch(setDateRange({ startDate: range.fromDate, endDate: range.toDate }));
     };
 
-    const onChangeSelectedProducts = (currentItem, selectedItemsKey) => {
+    const onChangeSelectedProducts = (_currentItem, selectedItemsKey) => {
         const filteredProducts = formData.productOptions.filter(x => selectedItemsKey.split(',').includes(x.code));
         dispatch(setSelectedProducts(filteredProducts));
     };

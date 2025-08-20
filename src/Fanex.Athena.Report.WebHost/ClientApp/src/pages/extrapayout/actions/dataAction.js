@@ -1,4 +1,4 @@
-import * as types from './types';
+import { SET_REPORT_DATA, SET_RELOAD_REPORT } from './types';
 import DataService from '@/lib/dataService';
 import LangHelper from '@/helpers/langHelper';
 import { toggleLoader } from '@/actions/loaderAction';
@@ -17,12 +17,12 @@ const getReportData = (url, params) => dispatch => {
 };
 
 const setReportData = data => ({
-    type: types.SET_REPORT_DATA,
+    type: SET_REPORT_DATA,
     data: data,
 });
 
 const setReloadReport = data => ({
-    type: types.SET_RELOAD_REPORT,
+    type: SET_RELOAD_REPORT,
     data: data,
 });
 

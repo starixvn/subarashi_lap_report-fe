@@ -64,8 +64,7 @@ const DataGrid = () => {
         const runningGroupedData = {};
 
         for (let i = 0; i < runningData.length; i++) {
-            const leagueId = runningData[i].leagueId;
-            const leagueName = runningData[i].leagueName;
+            const { leagueId, leagueName } = runningData[i];
 
             if (!runningGroupedData[leagueId]) {
                 runningGroupedData[leagueId] = {
@@ -97,8 +96,7 @@ const DataGrid = () => {
         const settledGroupedData = {};
 
         for (let i = 0; i < settledData.length; i++) {
-            const leagueId = settledData[i].leagueId;
-            const leagueName = settledData[i].leagueName;
+            const { leagueId, leagueName } = settledData[i];
 
             if (!settledGroupedData[leagueId]) {
                 settledGroupedData[leagueId] = {

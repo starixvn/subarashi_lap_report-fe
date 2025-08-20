@@ -1,9 +1,9 @@
-import * as paths from '@/constants/path';
-import * as pages from '@/constants/pages';
+import { BETLIST } from '@/constants/path';
+import { LIVE_REPORT } from '@/constants/pages';
 
 export const BetListPageUrl = {
-    MATCH: `/${paths.BETLIST}/${pages.LIVE_REPORT}/Match`,
-    VSNEWRACING: `/${paths.BETLIST}/${pages.LIVE_REPORT}/VSNewRacing`,
+    MATCH: `/${BETLIST}/${LIVE_REPORT}/Match`,
+    VSNEWRACING: `/${BETLIST}/${LIVE_REPORT}/VSNewRacing`,
 };
 
 export const ApiUrl = {

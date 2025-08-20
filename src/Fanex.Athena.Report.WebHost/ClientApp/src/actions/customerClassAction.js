@@ -1,11 +1,11 @@
-import * as types from './types';
+import { SET_SELECTED_CUSTOMERCLASS, SET_SELECTED_RISKLEVEL } from './types';
 
 export const setSelectedCustomerClass = selectedCustomerClass => ({
-    type: types.SET_SELECTED_CUSTOMERCLASS,
+    type: SET_SELECTED_CUSTOMERCLASS,
     data: selectedCustomerClass,
 });
 
 export const setSelectedRiskLevel = selectedRiskLevel => ({
-    type: types.SET_SELECTED_RISKLEVEL,
+    type: SET_SELECTED_RISKLEVEL,
     data: selectedRiskLevel,
 });

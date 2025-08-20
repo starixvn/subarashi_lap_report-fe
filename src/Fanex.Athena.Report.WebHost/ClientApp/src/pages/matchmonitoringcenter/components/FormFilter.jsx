@@ -60,7 +60,15 @@ const FormFilter = () => {
         state.leagueList,
     ]);
 
-    const isFormValid = !selectedLeague || !selectedMatch || !selectedCurrency || !selectedMatchStatus || !selectedTriggeredAlert || !selectedBaseCurrency;
+    const hasRequiredLeague = !!selectedLeague;
+    const hasRequiredMatch = !!selectedMatch;
+    const hasRequiredCurrency = !!selectedCurrency;
+    const hasRequiredMatchStatus = !!selectedMatchStatus;
+    const hasRequiredTriggeredAlert = !!selectedTriggeredAlert;
+    const hasRequiredBaseCurrency = !!selectedBaseCurrency;
+
+    const isFormValid =
+        !hasRequiredLeague || !hasRequiredMatch || !hasRequiredCurrency || !hasRequiredMatchStatus || !hasRequiredTriggeredAlert || !hasRequiredBaseCurrency;
 
     useEffect(() => {
         fetchData();

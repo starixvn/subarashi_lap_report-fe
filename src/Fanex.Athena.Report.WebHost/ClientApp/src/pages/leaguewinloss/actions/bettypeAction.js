@@ -1,7 +1,7 @@
 import DataService from '@/lib/dataService';
 import Cache from '@/lib/cache';
 import Service from '../common/service';
-import * as types from './types';
+import { SET_SELECTED_BETTYPE, SET_BETTYPE_LIST } from './types';
 import ObjectHelper from '@/lib/objectHelper';
 
 const BETTYPE_CACHE_KEY = 'BETTYPE_CACHE_KEY';
@@ -15,12 +15,12 @@ const dispatchBettypeList = (dispatch, data) => {
 };
 
 const setSelectedBettype = bettypeId => ({
-    type: types.SET_SELECTED_BETTYPE,
+    type: SET_SELECTED_BETTYPE,
     data: bettypeId,
 });
 
 const setBettypeList = list => ({
-    type: types.SET_BETTYPE_LIST,
+    type: SET_BETTYPE_LIST,
     data: list,
 });
 

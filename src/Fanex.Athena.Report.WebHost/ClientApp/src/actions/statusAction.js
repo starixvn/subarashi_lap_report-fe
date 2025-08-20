@@ -1,6 +1,6 @@
-import * as types from './types';
+import { SET_SELECTED_STATUS } from './types';
 
 export const setSelectedStatus = item => ({
-    type: types.SET_SELECTED_STATUS,
+    type: SET_SELECTED_STATUS,
     data: item,
 });

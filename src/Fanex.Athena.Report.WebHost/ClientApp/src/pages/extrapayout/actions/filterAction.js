@@ -1,17 +1,17 @@
-import * as types from './types';
+import { SET_REPORT_FILTER, SET_DETAIL_PARAMS, SET_CONVERT_ALL_TO_BASE_CURRENCY } from './types';
 
 const setReportFilter = data => ({
-    type: types.SET_REPORT_FILTER,
+    type: SET_REPORT_FILTER,
     data: data,
 });
 
 const setDetailParams = data => ({
-    type: types.SET_DETAIL_PARAMS,
+    type: SET_DETAIL_PARAMS,
     data: data,
 });
 
 const setConvertAllToBaseCurrency = data => ({
-    type: types.SET_CONVERT_ALL_TO_BASE_CURRENCY,
+    type: SET_CONVERT_ALL_TO_BASE_CURRENCY,
     data: data,
 });
 

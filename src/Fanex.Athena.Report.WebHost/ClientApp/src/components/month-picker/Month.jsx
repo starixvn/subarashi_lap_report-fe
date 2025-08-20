@@ -94,18 +94,8 @@ const Month = ({ id, label, value, min, max, onChange }) => {
         return { year, month };
     };
 
-    const checkValidMonth = (month, year) => {
-        if (year > min.year && year < max.year) {
-            return true;
-        }
-        if (year === min.year && month >= min.month) {
-            return true;
-        }
-        if (year === max.year && month <= max.month) {
-            return true;
-        }
-        return false;
-    };
+    const checkValidMonth = (month, year) =>
+        (year > min.year && year < max.year) || (year === min.year && month >= min.month) || (year === max.year && month <= max.month);
 
     const goToMonth = (e, newValue) => {
         e.preventDefault();

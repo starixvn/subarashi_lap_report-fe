@@ -1,14 +1,14 @@
-import * as types from '../actions/types';
+import { SET_REPORT_FILTER, SET_BREADCRUMB_PARAMS } from '../actions/types';
 import createReducer from '@/lib/createReducer.js';
 
 const reportFilter = createReducer(null, {
-    [types.SET_REPORT_FILTER](state, action) {
+    [SET_REPORT_FILTER](state, action) {
         return action.data;
     },
 });
 
 const breadcrumbParams = createReducer(null, {
-    [types.SET_BREADCRUMB_PARAMS](state, action) {
+    [SET_BREADCRUMB_PARAMS](state, action) {
         return action.data;
     },
 });

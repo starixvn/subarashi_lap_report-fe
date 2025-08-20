@@ -1,5 +1,5 @@
 import LangHelper from '@/helpers/langHelper';
-import * as ReportConstant from '@/constants/report';
+import { TreeViewOption as ReportConstant_TreeViewOption } from '@/constants/report';
 
 export const ReportByValue = {
     Monthly: 2,
@@ -29,7 +29,7 @@ export const DefaultPagingOption = {
 };
 
 export const TreeViewOption = {
-    ...ReportConstant.TreeViewOption,
+    ...ReportConstant_TreeViewOption,
     includeSelectedParentKey: true,
 };
 

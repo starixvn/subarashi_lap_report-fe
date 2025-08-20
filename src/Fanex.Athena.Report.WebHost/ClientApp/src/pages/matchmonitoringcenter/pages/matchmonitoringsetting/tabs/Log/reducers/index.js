@@ -1,5 +1,5 @@
 import { ACTION_TYPES } from '../actions';
-import * as types from '@/actions/types';
+import { SET_FORM_DATA, SET_GRID_DATA, TOGGLE_LOADER } from '@/actions/types';
 import { combineReducers } from 'redux';
 import createReducer from '@/lib/createReducer';
 
@@ -22,7 +22,7 @@ export const requestParam = createReducer(null, {
 });
 
 export const formData = createReducer(null, {
-    [types.SET_FORM_DATA](state, action) {
+    [SET_FORM_DATA](state, action) {
         return action.data;
     },
     [ACTION_TYPES.SET_ACTION_OPTIONS](state, action) {
@@ -40,13 +40,13 @@ export const formData = createReducer(null, {
 });
 
 export const gridData = createReducer(null, {
-    [types.SET_GRID_DATA](state, action) {
+    [SET_GRID_DATA](state, action) {
         return action.data;
     },
 });
 
 export const loading = createReducer(false, {
-    [types.TOGGLE_LOADER](state, action) {
+    [TOGGLE_LOADER](state, action) {
         return action.data;
     },
 });

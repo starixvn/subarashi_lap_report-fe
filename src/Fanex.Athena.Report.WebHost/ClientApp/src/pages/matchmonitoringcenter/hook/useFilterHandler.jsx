@@ -46,12 +46,12 @@ export const useFilterHandler = () => {
 
     const onChangeSelectedTriggeredAlert = useCallback(alert => dispatch(setSelectedTriggeredAlert(alert)), []);
 
-    const onChangeSelectedLeague = useCallback((currentItem, selectedItemsKey) => {
+    const onChangeSelectedLeague = useCallback((_currentItem, selectedItemsKey) => {
         dispatch(getMatchList(selectedItemsKey));
         dispatch(setSelectedLeague(selectedItemsKey));
     }, []);
 
-    const onChangeSelectedMatch = useCallback((currentItem, selectedItemsKey) => dispatch(setSelectedMatch(selectedItemsKey)), []);
+    const onChangeSelectedMatch = useCallback((_currentItem, selectedItemsKey) => dispatch(setSelectedMatch(selectedItemsKey)), []);
 
     return {
         onChangeSelectedCurrency,

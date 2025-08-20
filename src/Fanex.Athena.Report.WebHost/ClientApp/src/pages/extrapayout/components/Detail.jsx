@@ -73,12 +73,12 @@ export const Detail = props => {
     );
 };
 
-function mapDispatchToProps(dispatch) {
+const mapDispatchToProps = function (dispatch) {
     return bindActionCreators({ toggleLoader }, dispatch);
-}
+};
 
-function mapStateToProps() {
+const mapStateToProps = function () {
     return {};
-}
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Detail);

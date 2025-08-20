@@ -19,13 +19,17 @@ const MonthPicker = props => {
 
     const [month, setMonth] = useState({ year: fromDate.year(), month: fromDate.month() });
     const [from, setFrom] = useState(props.showDate ? fromDate.date() : 1);
-    const [to, setTo] = useState(
-        props.showDate
-            ? toDate.date()
-            : toDate.year() === max.year && toDate.month() === max.month
-              ? max.date
-              : moment({ year: toDate.year(), month: toDate.month() }).daysInMonth()
-    );
+    const getInitialToValue = () => {
+        if (props.showDate) {
+            return toDate.date();
+        }
+        if (toDate.year() === max.year && toDate.month() === max.month) {
+            return max.date;
+        }
+        return moment({ year: toDate.year(), month: toDate.month() }).daysInMonth();
+    };
+
+    const [to, setTo] = useState(getInitialToValue());
 
     useEffect(() => {
         if (!props.showDate) {

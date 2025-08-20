@@ -1,4 +1,4 @@
-import { DateRange } from '@legion-lib/react-daterangepicker';
+import { DateRange as DateRangeComponent } from '@legion-lib/react-daterangepicker';
 import MultipleSelect, { TreeViewSelect } from '@legion-lib/react-multiselect';
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
@@ -19,7 +19,7 @@ import Site from '@/lib/site';
 
 import ActionCreators from '../actions';
 import { ApiUrl, ReportLevel } from '../common/constants';
-import * as DateSettings from '../common/dateSetting';
+import { DateConstraint, DateRange, FirstDayOfWeek } from '../common/dateSetting';
 import Service from '../common/service';
 
 export const FormFilter = props => {
@@ -36,20 +36,20 @@ export const FormFilter = props => {
         if (isValid) {
             props.setDateRange(range);
         } else {
-            const message = LangHelper.getSingleResource('DateRangeExceedMsg').replace('{0}', DateSettings.DateConstraint.limitedMonthRange);
+            const message = LangHelper.getSingleResource('DateRangeExceedMsg').replace('{0}', DateConstraint.limitedMonthRange);
             alert(message);
         }
     };
 
     const _renderDateFilter = () => (
-        <DateRange
-            startDate={DateSettings.DateRange.fromDate}
-            endDate={DateSettings.DateRange.toDate}
-            minDate={DateSettings.DateConstraint.minDate}
-            maxDate={DateSettings.DateConstraint.maxDate}
-            limitedMonthRange={DateSettings.DateConstraint.limitedMonthRange}
-            today={DateSettings.DateRange.toDate}
-            firstDayOfWeek={DateSettings.FirstDayOfWeek}
+        <DateRangeComponent
+            startDate={DateRange.fromDate}
+            endDate={DateRange.toDate}
+            minDate={DateConstraint.minDate}
+            maxDate={DateConstraint.maxDate}
+            limitedMonthRange={DateConstraint.limitedMonthRange}
+            today={DateRange.toDate}
+            firstDayOfWeek={FirstDayOfWeek}
             onChange={_onChangeDateRange}
             langHandler={key => LangHelper.getDateRangeResource(key)}
         />
@@ -258,13 +258,15 @@ export const FormFilter = props => {
     };
 
     const isValidModel = () => {
+        const hasValidSubsidiary = !props.subsidiarySearch || !!props.selectedSubsidiary;
+        const hasSelectedProduct = !!props.selectedProduct;
+        const hasSelectedCurrency = !!props.selectedCurrency;
+        const hasPromotionTypeList = !!props.promotionTypeList;
+        const hasSelectedPromotionTypes = !!props.selectedPromotionTypes;
+        const hasSelectedBaseCurrency = !!props.selectedBaseCurrency;
+
         const result =
-            (!props.subsidiarySearch || !!props.selectedSubsidiary) &&
-            !!props.selectedProduct &&
-            !!props.selectedCurrency &&
-            !!props.promotionTypeList &&
-            !!props.selectedPromotionTypes &&
-            !!props.selectedBaseCurrency;
+            hasValidSubsidiary && hasSelectedProduct && hasSelectedCurrency && hasPromotionTypeList && hasSelectedPromotionTypes && hasSelectedBaseCurrency;
 
         return result;
     };

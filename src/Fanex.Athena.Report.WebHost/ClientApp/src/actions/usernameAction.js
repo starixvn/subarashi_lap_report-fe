@@ -1,6 +1,6 @@
-import * as types from './types.js';
+import { SET_USERNAME } from './types.js';
 
 export const setUsername = value => ({
-    type: types.SET_USERNAME,
+    type: SET_USERNAME,
     data: value,
 });

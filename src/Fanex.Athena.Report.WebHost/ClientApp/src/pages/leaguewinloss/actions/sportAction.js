@@ -1,15 +1,15 @@
 import DataService from '@/lib/dataService';
 import Service from '../common/service';
-import * as types from './types.js';
+import { SET_SELECTED_SPORT, SET_SPORT_LIST } from './types.js';
 import ObjectHelper from '@/lib/objectHelper.js';
 
 const setSelectedSport = sportId => ({
-    type: types.SET_SELECTED_SPORT,
+    type: SET_SELECTED_SPORT,
     data: sportId,
 });
 
 const setSportList = list => ({
-    type: types.SET_SPORT_LIST,
+    type: SET_SPORT_LIST,
     data: list,
 });
 

@@ -67,7 +67,17 @@ export const MobileDataGrid = () => {
         [setHeaderDisplayType]
     );
 
-    const collumnWidths = width > 500 ? LargeColumnWidths : width > 370 ? SmallColumnWidths : VerySmallColumnWidths;
+    const getColumnWidths = () => {
+        if (width > 500) {
+            return LargeColumnWidths;
+        }
+        if (width > 370) {
+            return SmallColumnWidths;
+        }
+        return VerySmallColumnWidths;
+    };
+
+    const collumnWidths = getColumnWidths();
 
     const _renderHeader = () => {
         const className = isDisplayHeaderDropdownOption ? 'cell-dropdown' : '';

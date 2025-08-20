@@ -1,6 +1,6 @@
-import * as types from './types';
+import { SET_PRODUCT_CODE } from './types';
 
 export const setSelectedProductCode = item => ({
-    type: types.SET_PRODUCT_CODE,
+    type: SET_PRODUCT_CODE,
     data: item,
 });

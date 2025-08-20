@@ -9,7 +9,7 @@ import { constants } from '../../../common';
 import { ActionCreators } from '../../../actions';
 import currency from 'currency.js';
 
-function SummaryDataGrid() {
+const SummaryDataGrid = function () {
     const dispatch = useDispatch();
     const gridData = useSelector(state => state.gridData);
     const summaryGridData = gridData?.summary;
@@ -106,6 +106,6 @@ function SummaryDataGrid() {
             footer={BuildSummaryFooter(footerData, onClickDetail)}
         />
     );
-}
+};
 
 export default SummaryDataGrid;

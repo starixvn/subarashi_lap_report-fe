@@ -170,7 +170,7 @@ const FormFilter = () => {
         }
     };
 
-    const onSubsidiaryDropDownChangeHandler = (currentItem, selectedItemsKey) => {
+    const onSubsidiaryDropDownChangeHandler = (_currentItem, selectedItemsKey) => {
         setCurrentWhiteLabelTreeList(Service.getSubsidiarySelected(currentWhiteLabelTreeList, selectedItemsKey.split(',')));
         setCurrentSubsidiaryList(selectedItemsKey);
     };

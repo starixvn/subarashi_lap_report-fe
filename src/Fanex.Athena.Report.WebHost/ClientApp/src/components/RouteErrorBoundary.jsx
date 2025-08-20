@@ -1,4 +1,4 @@
-import * as Sentry from '@sentry/react';
+import { captureException } from '@sentry/react';
 import { INVALID_REQUEST_URL, LRF_SAVED_PAGE_SESSION_KEY } from '@/constants/config';
 import Site from '@/lib/site';
 import { useEffect } from 'react';
@@ -8,7 +8,7 @@ function RouteErrorBoundary() {
     const error = useRouteError();
     useEffect(() => {
         if (error) {
-            Sentry.captureException(error);
+            captureException(error);
         }
     }, [error]);
 

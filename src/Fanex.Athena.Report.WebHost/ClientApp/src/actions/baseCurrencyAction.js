@@ -1,11 +1,11 @@
-import * as types from './types';
+import { SET_SELECTED_BASECURRENCY, SET_BASECURRENCY_LIST } from './types';
 
 export const setSelectedBaseCurrency = baseCurrency => ({
-    type: types.SET_SELECTED_BASECURRENCY,
+    type: SET_SELECTED_BASECURRENCY,
     data: baseCurrency,
 });
 
 export const setBaseCurrencyList = baseCurrencyList => ({
-    type: types.SET_BASECURRENCY_LIST,
+    type: SET_BASECURRENCY_LIST,
     data: baseCurrencyList,
 });

@@ -293,13 +293,14 @@ export const FormFilter = props => {
     };
 
     const isValidModel = () => {
-        const result =
-            !!props.selectedProduct &&
-            !!props.selectedStatus &&
-            !!props.selectedCurrency &&
-            !!props.selectedSport &&
-            !!props.selectedBettype &&
-            !!props.selectedBaseCurrency;
+        const hasSelectedProduct = !!props.selectedProduct;
+        const hasSelectedStatus = !!props.selectedStatus;
+        const hasSelectedCurrency = !!props.selectedCurrency;
+        const hasSelectedSport = !!props.selectedSport;
+        const hasSelectedBettype = !!props.selectedBettype;
+        const hasSelectedBaseCurrency = !!props.selectedBaseCurrency;
+
+        const result = hasSelectedProduct && hasSelectedStatus && hasSelectedCurrency && hasSelectedSport && hasSelectedBettype && hasSelectedBaseCurrency;
 
         return result;
     };

@@ -8,7 +8,7 @@ import ReportSelect from '@/components/ReportSelect';
 import DataService from '@/lib/dataService';
 import Site from '@/lib/site';
 import LangHelper from '@/helpers/langHelper';
-import * as pages from '@/constants/pages';
+import { CUSTOMER_SUPPORT_TASK } from '@/constants/pages';
 import { ActionCreators } from '../actions';
 
 import { SupportTaskOptions, ExportUrl, ExportFileName } from '../lib/constants';
@@ -17,7 +17,7 @@ import SubmitButton from '@/components/SubmitButton';
 
 const FormFilter = ({ formData, selectedCurrency, selectedSupportTask, setSelectedSupportTask, setSelectedCurrency, toggleLoader }) => {
     const currencies = formData.currencies;
-    const loadedData = useRouteLoaderData(pages.CUSTOMER_SUPPORT_TASK);
+    const loadedData = useRouteLoaderData(CUSTOMER_SUPPORT_TASK);
 
     const exportExcel = event => {
         event.preventDefault();
@@ -77,7 +77,7 @@ const FormFilter = ({ formData, selectedCurrency, selectedSupportTask, setSelect
                 <div className="col-12 col-md-3 col-sm-3 col-lg-2 col-xl-2">
                     <div className="form-group">
                         <div className="button-group">
-                            <SubmitButton disabled={!selectedCurrency} onClick={exportExcel} label={pages.CUSTOMER_SUPPORT_TASK}>
+                            <SubmitButton disabled={!selectedCurrency} onClick={exportExcel} label={CUSTOMER_SUPPORT_TASK}>
                                 {LangHelper.getSingleResource('ExportToExcel')}
                             </SubmitButton>
                         </div>

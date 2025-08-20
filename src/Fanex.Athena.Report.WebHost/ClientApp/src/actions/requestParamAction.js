@@ -1,6 +1,6 @@
-import * as types from './types';
+import { SET_REQUEST_PARAM } from './types';
 
 export const setRequestParam = data => ({
-    type: types.SET_REQUEST_PARAM,
+    type: SET_REQUEST_PARAM,
     data: data,
 });

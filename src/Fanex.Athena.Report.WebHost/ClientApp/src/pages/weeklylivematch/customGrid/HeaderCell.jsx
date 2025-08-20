@@ -16,7 +16,12 @@ const HeaderCell = ({ sortBy, sortOrder, onSort, children, ...rest }) => {
     if (sortBy) {
         const upArrow = <div className="asc"></div>;
         const downArrow = <div className="desc"></div>;
-        const displayArrow = sortOrder === 'asc' ? upArrow : sortOrder === 'desc' ? downArrow : null;
+        let displayArrow = null;
+        if (sortOrder === 'asc') {
+            displayArrow = upArrow;
+        } else if (sortOrder === 'desc') {
+            displayArrow = downArrow;
+        }
 
         sortableHeader = (
             <th {...rest} className={`sortable sorting header-title ${displayArrow ? 'selected' : ''}`} onClick={onClick}>

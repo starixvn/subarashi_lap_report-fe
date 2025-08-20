@@ -1,16 +1,16 @@
-import * as types from './types';
+import { SET_SELECTED_BETTYPE, SET_BETTYPE_LIST, SET_ORIGINAL_BETTYPE_LIST } from './types';
 
 export const setSelectedBettype = betTypeIds => ({
-    type: types.SET_SELECTED_BETTYPE,
+    type: SET_SELECTED_BETTYPE,
     data: betTypeIds,
 });
 
 export const setBettypeList = list => ({
-    type: types.SET_BETTYPE_LIST,
+    type: SET_BETTYPE_LIST,
     data: list,
 });
 
 export const setOrginalBetTypeList = list => ({
-    type: types.SET_ORIGINAL_BETTYPE_LIST,
+    type: SET_ORIGINAL_BETTYPE_LIST,
     data: list,
 });

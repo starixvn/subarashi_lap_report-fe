@@ -1,4 +1,4 @@
-import * as types from './types';
+import { USER_GUIDE_CONTENT } from './types';
 import DataService from '@/lib/dataService';
 
 const fetchData = async resourceName => DataService.getReportData(`Api/UserGuide/Index?resourcename=${resourceName}&_=${new Date().getTime()}`);
@@ -11,6 +11,6 @@ export function getUserGuideContent(params) {
 }
 
 export const setUserGuideContent = data => ({
-    type: types.USER_GUIDE_CONTENT,
+    type: USER_GUIDE_CONTENT,
     data: data,
 });

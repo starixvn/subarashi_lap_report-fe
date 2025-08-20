@@ -226,17 +226,17 @@ export const GroupCell = props => {
     return (_isDirectToCurrency && directDrilldown) || drilldown;
 };
 
-function mapDispatchToProps(dispatch) {
+const mapDispatchToProps = function (dispatch) {
     const { getReportData, toggleLoader, setRequestParam, setReportData, setReloadReport, setBreadcrumbParams } = ActionCreators;
     return bindActionCreators(
         Object.assign({}, { getReportData, toggleLoader, setRequestParam, setReportData, setReloadReport, setBreadcrumbParams }),
         dispatch
     );
-}
+};
 
-function mapStateToProps(state) {
+const mapStateToProps = function (state) {
     const { reportData, requestParam, breadcrumbParams } = state;
     return Object.assign({}, { reportData, requestParam, breadcrumbParams });
-}
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(React.memo(GroupCell));

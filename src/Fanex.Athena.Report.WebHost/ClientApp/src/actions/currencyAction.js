@@ -1,6 +1,6 @@
-import * as types from './types';
+import { SET_SELECTED_CURRENCY } from './types';
 
 export const setSelectedCurrency = item => ({
-    type: types.SET_SELECTED_CURRENCY,
+    type: SET_SELECTED_CURRENCY,
     data: item,
 });

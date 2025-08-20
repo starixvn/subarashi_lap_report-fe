@@ -7,7 +7,7 @@ import Site from '@/lib/site';
 import StringHelper from '@/lib/stringHelper';
 import useBaseCurrencyForMultiSelectCurrency from '@/hooks/useBaseCurrencyForMultiSelectCurrency';
 import useSubsidiarySearch from '@/hooks/useSubsidiarySearch';
-import * as pages from '@/constants/pages';
+import { WL_ANALYSIS } from '@/constants/pages';
 import { ActionCreators } from '../../actions/index.js';
 import Service from '../../common/Service.js';
 import { useValidParam } from './useValidParam';
@@ -15,7 +15,7 @@ import { ALL_SELECTED_TEXT, SortBy, SortOrder, SearchMode, ViewInTimeMode } from
 
 export const useFilterAction = () => {
     const isValidModel = useValidParam();
-    const loadedData = useRouteLoaderData(pages.WL_ANALYSIS);
+    const loadedData = useRouteLoaderData(WL_ANALYSIS);
     const dispatch = useDispatch();
     const [
         requestParam,

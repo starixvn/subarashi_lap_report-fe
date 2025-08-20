@@ -1,11 +1,11 @@
-import * as paths from '@/constants/path';
-import * as pages from '@/constants/pages';
+import { BETLIST } from '@/constants/path';
+import { MATCH_WL } from '@/constants/pages';
 
 export const BetListPageUrl = {
-    BETTYPE_WINLOSS: `/${paths.BETLIST}/${pages.MATCH_WL}/BetTypeWinLoss`,
-    OUTRIGHT: `/${paths.BETLIST}/${pages.MATCH_WL}/Outright`,
-    MIXPARLAY: `/${paths.BETLIST}/${pages.MATCH_WL}/MixParlay`,
-    MATCH_BETTYPE: `/${paths.BETLIST}/${pages.MATCH_WL}/MatchBetType`,
+    BETTYPE_WINLOSS: `/${BETLIST}/${MATCH_WL}/BetTypeWinLoss`,
+    OUTRIGHT: `/${BETLIST}/${MATCH_WL}/Outright`,
+    MIXPARLAY: `/${BETLIST}/${MATCH_WL}/MixParlay`,
+    MATCH_BETTYPE: `/${BETLIST}/${MATCH_WL}/MatchBetType`,
 };
 
 export const ApiUrl = {

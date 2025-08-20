@@ -1,4 +1,4 @@
-import * as types from './types.js';
+import { SET_REPORT_DATA, SET_RELOAD_REPORT } from './types.js';
 import DataService from '@/lib/dataService';
 import { toggleLoader } from '@/actions/loaderAction';
 import { ApiUrl } from '../common/constants.js';
@@ -17,11 +17,11 @@ export const getReportData = params => dispatch => {
 };
 
 export const setReportData = data => ({
-    type: types.SET_REPORT_DATA,
+    type: SET_REPORT_DATA,
     data: data,
 });
 
 export const setReloadReport = data => ({
-    type: types.SET_RELOAD_REPORT,
+    type: SET_RELOAD_REPORT,
     data: data,
 });

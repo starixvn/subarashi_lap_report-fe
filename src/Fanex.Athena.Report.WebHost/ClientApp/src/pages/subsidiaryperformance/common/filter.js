@@ -1,6 +1,6 @@
-import * as ReportConstant from '@/constants/report';
+import { TreeViewOption as ReportConstant_TreeViewOption } from '@/constants/report';
 
 export const TreeViewOption = {
-    ...ReportConstant.TreeViewOption,
+    ...ReportConstant_TreeViewOption,
     includeSelectedParentKey: true,
 };

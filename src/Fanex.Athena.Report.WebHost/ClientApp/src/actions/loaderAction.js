@@ -1,8 +1,8 @@
 import LangHelper from '@/helpers/langHelper';
-import * as types from './types';
+import { TOGGLE_LOADER } from './types';
 
 export const toggleLoader = show => ({
-    type: types.TOGGLE_LOADER,
+    type: TOGGLE_LOADER,
     data: show,
 });
 

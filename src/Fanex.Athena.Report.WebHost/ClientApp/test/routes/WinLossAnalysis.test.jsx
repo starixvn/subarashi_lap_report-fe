@@ -11,7 +11,13 @@ jest.mock('../../src/pages/winlossanalysis', () => ({
 describe('WinLossAnalysisRoute', () => {
     const renderWithRouter = (initialEntries = ['/']) => {
         return render(
-            <MemoryRouter initialEntries={initialEntries}>
+            <MemoryRouter 
+                initialEntries={initialEntries}
+                future={{
+                    v7_startTransition: true,
+                    v7_relativeSplatPath: true
+                }}
+            >
                 <WinLossAnalysisRoute />
             </MemoryRouter>
         );

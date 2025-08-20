@@ -192,10 +192,11 @@ export const renderDetailDataSection = dataList => {
 
 const buildDetailDataRow = (dataItem, index) => {
     const { dateString, productName, turnover, amount, sharingAmount, refno, promotionName, productCode, betID } = dataItem;
+    const displayIndex = index + 1;
 
     return (
         <Row key={`row-${uuidv4()}`}>
-            <Cell className="center-align">{++index}</Cell>
+            <Cell className="center-align">{displayIndex}</Cell>
             <Cell className="center-align">{dateString}</Cell>
             <Cell className="center-align">{refno}</Cell>
             <Cell className="center-align">{betID}</Cell>

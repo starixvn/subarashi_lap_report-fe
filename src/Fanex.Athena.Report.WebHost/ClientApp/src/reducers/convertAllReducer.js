@@ -1,8 +1,8 @@
-import * as types from '../actions/types';
+import { CHANGE_IS_CONVERT_ALL } from '../actions/types';
 import createReducer from '../lib/createReducer.js';
 
 export const isConvertAll = createReducer(null, {
-    [types.CHANGE_IS_CONVERT_ALL](state, action) {
+    [CHANGE_IS_CONVERT_ALL](state, action) {
         return action.data;
     },
 });

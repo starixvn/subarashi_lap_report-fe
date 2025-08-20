@@ -49,7 +49,13 @@ const BuildMainBody = (data, { viewType }) => {
 
                     rows.push(
                         <Row key={key}>
-                            {viewType === SubsidiaryViewType.MASTER_MANAGEMENT && cur === 0 && pro === 0 && sub === 0 && (
+                            {(() => {
+                                const isMasterManagement = viewType === SubsidiaryViewType.MASTER_MANAGEMENT;
+                                const isFirstCurrency = cur === 0;
+                                const isFirstProduct = pro === 0;
+                                const isFirstSub = sub === 0;
+                                return isMasterManagement && isFirstCurrency && isFirstProduct && isFirstSub;
+                            })() && (
                                 <Cell title={subData.whiteLabel} rowSpan={subData.totalItem}>
                                     {subData.whiteLabel}
                                 </Cell>

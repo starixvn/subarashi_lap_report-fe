@@ -16,7 +16,10 @@ const UserGuide = props => {
     };
 
     const { className, title, content, contentTitle, isHtml } = props;
-    const isDisplay = isShow && content && (React.isValidElement(content) || content.length > 0) ? true : false;
+    const hasContent = !!content;
+    const hasValidElement = React.isValidElement(content);
+    const hasContentLength = content && content.length > 0;
+    const isDisplay = isShow && hasContent && (hasValidElement || hasContentLength);
 
     return (
         <div>

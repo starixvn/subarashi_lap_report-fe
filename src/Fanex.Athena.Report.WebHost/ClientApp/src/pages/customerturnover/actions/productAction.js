@@ -1,5 +1,4 @@
-import * as productAction from '@/actions/productAction';
-import * as bettypeAction from './bettypeAction';
+import { fetchBetTypeList } from './bettypeAction';
 import { CHILD_ID_PREFIX } from '../common/filterSettings';
 
 export const setSelectedProducts = (selectedProductAndSportIds, sportProducts, productHasNoSport) => async dispatch => {
@@ -13,19 +12,19 @@ const setSelectedSportProducts = (ids, productHasNoSport) => async dispatch => {
     const sportIds = ids
         .filter(id => id.startsWith(CHILD_ID_PREFIX) || productHasNoSport.includes(Number(id)))
         .map(childId => Number(childId.replace(CHILD_ID_PREFIX, '')));
-    dispatch(productAction.setSelectedProducts(sportIds.join(',')));
+    dispatch(setSelectedProducts(sportIds.join(',')));
 };
 
 const setBettypeList = (ids, sportProducts) => async dispatch => {
     if (!ids?.length) {
-        dispatch(bettypeAction.fetchBetTypeList([]));
+        dispatch(fetchBetTypeList([]));
         return;
     }
 
     const productIds = getProductIds(ids, sportProducts);
     const selectedSportProducts = getSportProducts(ids, productIds, sportProducts);
 
-    dispatch(bettypeAction.fetchBetTypeList(selectedSportProducts));
+    dispatch(fetchBetTypeList(selectedSportProducts));
 };
 
 const getProductIds = (ids, sportProducts) => {

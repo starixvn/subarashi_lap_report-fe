@@ -1,26 +1,26 @@
-import * as types from './types';
+import { SET_IS_SHOW_POPUP, SET_POPUP_URL, SET_POPUP_TITLE, SET_POPUP_STYLE_CLASS_NAME, SET_IS_REFRESH } from './types';
 
 export const setIsShowPopup = isShow => ({
-    type: types.SET_IS_SHOW_POPUP,
+    type: SET_IS_SHOW_POPUP,
     data: isShow,
 });
 
 export const setPopupUrl = url => ({
-    type: types.SET_POPUP_URL,
+    type: SET_POPUP_URL,
     data: url,
 });
 
 export const setPopupTitle = title => ({
-    type: types.SET_POPUP_TITLE,
+    type: SET_POPUP_TITLE,
     data: title,
 });
 
 export const setPopupStyleClassName = styleClassName => ({
-    type: types.SET_POPUP_STYLE_CLASS_NAME,
+    type: SET_POPUP_STYLE_CLASS_NAME,
     data: styleClassName,
 });
 
 export const setIsRefresh = isRefresh => ({
-    type: types.SET_IS_REFRESH,
+    type: SET_IS_REFRESH,
     data: isRefresh,
 });

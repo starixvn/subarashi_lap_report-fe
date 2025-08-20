@@ -16,11 +16,12 @@
             "experimentalObjectRestSpread": true
         }
     },
-    "plugins": ["react"],
+    "plugins": ["react", "import"],
     "extends": [
         "eslint:recommended",
         "plugin:prettier/recommended",
-        "plugin:react/recommended"
+        "plugin:react/recommended",
+        "plugin:import/recommended"
     ],
     "rules": {
         "react/prop-types": "off",
@@ -34,13 +35,19 @@
         "prefer-const": "error",
         "arrow-body-style": ["error", "as-needed"],
         "arrow-parens": ["error", "as-needed"],
-        "consistent-return": "error",
         "eqeqeq": ["error", "always"],
         "curly": ["error", "all"],
         "complexity": ["error", {"max": 10}],
         "max-depth": ["error", {"max": 3}],
         "no-var": "error",
         "prefer-template": "error",
+        "import/no-namespace": "off",
+        "import/no-duplicates": "error",
+        "import/no-unresolved": "off",
+        "radix": "error",
+        "default-param-last": "error",
+        "no-nested-ternary": "warn",
+        "consistent-return": "error",
         "prettier/prettier": [
             "warn",
             {

@@ -1,6 +1,6 @@
-import * as types from './types';
+import { CHANGE_IS_CONVERT_ALL } from './types';
 
 export const changeIsConvertAll = checked => ({
-    type: types.CHANGE_IS_CONVERT_ALL,
+    type: CHANGE_IS_CONVERT_ALL,
     data: checked,
 });

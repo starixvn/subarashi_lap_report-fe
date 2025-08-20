@@ -1,6 +1,6 @@
-import * as types from './types';
+import { SET_DATE } from './types';
 
 export const setSelectedDate = checked => ({
-    type: types.SET_DATE,
+    type: SET_DATE,
     data: checked,
 });

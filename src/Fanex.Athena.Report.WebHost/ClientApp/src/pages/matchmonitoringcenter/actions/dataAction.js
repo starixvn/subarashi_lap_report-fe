@@ -1,6 +1,6 @@
-import * as types from './types';
+import { SET_LAST_FETCH_TIME } from './types';
 
 export const setLastFetchTime = item => ({
-    type: types.SET_LAST_FETCH_TIME,
+    type: SET_LAST_FETCH_TIME,
     data: item,
 });

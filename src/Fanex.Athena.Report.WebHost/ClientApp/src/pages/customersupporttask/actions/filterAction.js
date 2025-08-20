@@ -1,4 +1,4 @@
-import * as currencyAction from '@/actions/currencyAction';
+import { setSelectedCurrency as currencyAction_setSelectedCurrency } from '@/actions/currencyAction';
 import { SET_SELECTED_SUPPORT_TASK } from './types';
 
 export const setSelectedSupportTask = option => ({
@@ -6,4 +6,4 @@ export const setSelectedSupportTask = option => ({
     data: option,
 });
 
-export const setSelectedCurrency = currencyAction.setSelectedCurrency;
+export const setSelectedCurrency = currencyAction_setSelectedCurrency;

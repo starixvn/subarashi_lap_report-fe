@@ -87,7 +87,7 @@ const FormFilter = () => {
         setCurrentBaseCurrency(value);
     };
 
-    const onChangeSelectedProducts = (currentItem, selectedItemsKey) => {
+    const onChangeSelectedProducts = (_currentItem, selectedItemsKey) => {
         const filteredProducts = formData.productOptions.filter(x => selectedItemsKey.split(',').includes(x.code));
         setCurrentProduct(filteredProducts);
     };

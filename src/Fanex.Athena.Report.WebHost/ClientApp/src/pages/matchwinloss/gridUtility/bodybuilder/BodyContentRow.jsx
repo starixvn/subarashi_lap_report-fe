@@ -10,7 +10,7 @@ import Service, { constants } from '../../common';
 import { ActionCreators } from '../../actions';
 import CommonCells from '../CommonCells';
 
-function BodyContentRow(props) {
+const BodyContentRow = function (props) {
     const navigate = useNavigateParams();
 
     const dispatch = useDispatch();
@@ -169,6 +169,6 @@ function BodyContentRow(props) {
     }
 
     return rows;
-}
+};
 
 export default BodyContentRow;

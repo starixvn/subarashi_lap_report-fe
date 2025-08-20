@@ -1,6 +1,6 @@
 import createReducer from '@/lib/createReducer.js';
 import { SET_SELECTED_SUPPORT_TASK } from '../actions/types';
-import * as currencyReducer from '@/reducers/currencyReducer';
+import { selectedCurrency as currencyReducer_selectedCurrency } from '@/reducers/currencyReducer';
 
 export const selectedSupportTask = createReducer(
     {},
@@ -11,4 +11,4 @@ export const selectedSupportTask = createReducer(
     }
 );
 
-export const selectedCurrency = currencyReducer.selectedCurrency;
+export const selectedCurrency = currencyReducer_selectedCurrency;

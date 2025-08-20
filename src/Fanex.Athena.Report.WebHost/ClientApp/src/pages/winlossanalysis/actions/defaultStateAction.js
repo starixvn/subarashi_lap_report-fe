@@ -1,6 +1,6 @@
-import * as types from './types';
+import { SET_DEFAULT_STATE } from './types';
 
 export const setDefaultState = item => ({
-    type: types.SET_DEFAULT_STATE,
+    type: SET_DEFAULT_STATE,
     data: item,
 });

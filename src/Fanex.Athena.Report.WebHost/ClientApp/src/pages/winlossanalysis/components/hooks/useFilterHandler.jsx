@@ -47,7 +47,7 @@ export const useFilterHandler = () => {
 
     const onSubsidiaryDropDownChangeHandler = useCallback((currentItem, selectedItemsKey) => dispatch(setSubsidiaryList(selectedItemsKey)), []);
 
-    const onDateRangeChangeHandler = useCallback((date, isValidMonthRange = true, limitedMonthRange) => {
+    const onDateRangeChangeHandler = useCallback((date, limitedMonthRange, isValidMonthRange = true) => {
         if (isValidMonthRange) {
             dispatch(setDateRange(date));
         } else {
@@ -153,7 +153,7 @@ export const useFilterHandler = () => {
         });
     }, []);
 
-    const onHourChangeHandler = useCallback((currentItem, selectedItemsKey) => dispatch(setHour(selectedItemsKey)), []);
+    const onHourChangeHandler = useCallback((_currentItem, selectedItemsKey) => dispatch(setHour(selectedItemsKey)), []);
 
     return {
         onUserNameInputHandler,

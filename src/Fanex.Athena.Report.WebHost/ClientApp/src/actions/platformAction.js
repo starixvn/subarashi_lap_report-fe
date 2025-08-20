@@ -1,6 +1,6 @@
-import * as types from './types';
+import { SET_SELECTED_PLATFORM } from './types';
 
 export const setSelectedPlatform = item => ({
-    type: types.SET_SELECTED_PLATFORM,
+    type: SET_SELECTED_PLATFORM,
     data: item,
 });

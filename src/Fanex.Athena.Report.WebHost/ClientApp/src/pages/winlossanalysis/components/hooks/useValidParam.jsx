@@ -36,17 +36,23 @@ export const useValidParam = () => {
     );
 
     const { isSubsidiarySearch } = useSubsidiarySearch();
-    return (
-        !!selectedProduct &&
-        !!selectedStatus &&
-        !!selectedLiveStatus &&
-        !!selectedCurrency &&
-        !!selectedBettype &&
-        !!selectedSport &&
-        !!selectedPlatform &&
-        !!selectedCustomerClass &&
-        !!selectedOddsGroup &&
-        (selectedViewInTime === ViewInTimeMode.Financial || !!selectedHour) &&
-        (!isSubsidiarySearch || !!selectedSubsidiary)
-    );
+
+    const hasSelectedProduct = !!selectedProduct;
+    const hasSelectedStatus = !!selectedStatus;
+    const hasSelectedLiveStatus = !!selectedLiveStatus;
+    const hasSelectedCurrency = !!selectedCurrency;
+    const hasSelectedBettype = !!selectedBettype;
+    const hasSelectedSport = !!selectedSport;
+    const hasSelectedPlatform = !!selectedPlatform;
+    const hasSelectedCustomerClass = !!selectedCustomerClass;
+    const hasSelectedOddsGroup = !!selectedOddsGroup;
+
+    const hasValidTimeSelection = selectedViewInTime === ViewInTimeMode.Financial || !!selectedHour;
+    const hasValidSubsidiary = !isSubsidiarySearch || !!selectedSubsidiary;
+
+    const basicRequirementsMet = hasSelectedProduct && hasSelectedStatus && hasSelectedLiveStatus;
+    const additionalRequirementsMet = hasSelectedCurrency && hasSelectedBettype && hasSelectedSport;
+    const platformRequirementsMet = hasSelectedPlatform && hasSelectedCustomerClass && hasSelectedOddsGroup;
+
+    return basicRequirementsMet && additionalRequirementsMet && platformRequirementsMet && hasValidTimeSelection && hasValidSubsidiary;
 };

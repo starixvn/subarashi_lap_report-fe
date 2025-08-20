@@ -85,7 +85,7 @@ const BetListTable = props => {
 
     const buildFooter = () => {
         if (!props.totalColumns || !props.totalColumns.length) {
-            return false;
+            return null;
         }
 
         const timestamp = new Date().getTime();

@@ -1,8 +1,8 @@
-import * as types from '../actions/types';
+import { SET_DATE } from '../actions/types';
 import createReducer from '../lib/createReducer.js';
 
 export const selectedDate = createReducer(null, {
-    [types.SET_DATE](state, action) {
+    [SET_DATE](state, action) {
         return action.data;
     },
 });

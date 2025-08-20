@@ -55,7 +55,13 @@ const FormFilter = () => {
 
     const [allSelected, setAllSelected] = useState(true);
 
-    const isFormValid = !selectedProduct?.length || !selectedCurrency || !selectedTickets?.length || !bettypeList?.length || !selectedBettype;
+    const hasSelectedProduct = !!selectedProduct?.length;
+    const hasSelectedCurrency = !!selectedCurrency;
+    const hasSelectedTickets = !!selectedTickets?.length;
+    const hasBettypeList = !!bettypeList?.length;
+    const hasSelectedBettype = !!selectedBettype;
+
+    const isFormValid = !hasSelectedProduct || !hasSelectedCurrency || !hasSelectedTickets || !hasBettypeList || !hasSelectedBettype;
 
     const { sendRequest } = useToggleRequest();
 

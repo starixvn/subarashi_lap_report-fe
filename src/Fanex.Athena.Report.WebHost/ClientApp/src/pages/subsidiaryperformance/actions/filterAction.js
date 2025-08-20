@@ -1,12 +1,20 @@
-import * as types from './types';
+import {
+    SET_SUBSIDIARY,
+    SET_WHITELABEL,
+    SET_DATE_RANGE,
+    CHANGE_CONVERT_ALL,
+    CHANGE_INCLUDE_DRAW_DATA,
+    CHANGE_EXCLUDE_TEST,
+    CHANGE_SEPRATE_SABA_WINLOSS,
+} from './types';
 
 export const setSelectedSubsidiary = subsidiaryKeys => ({
-    type: types.SET_SUBSIDIARY,
+    type: SET_SUBSIDIARY,
     data: subsidiaryKeys,
 });
 
 export const setSelectedWhiteLabel = whiteLabelKeys => ({
-    type: types.SET_WHITELABEL,
+    type: SET_WHITELABEL,
     data: whiteLabelKeys,
 });
 
@@ -17,27 +25,27 @@ export const setDateRange = dateRange => {
     };
 
     return {
-        type: types.SET_DATE_RANGE,
+        type: SET_DATE_RANGE,
         data: range,
     };
 };
 
 export const changeConvertAll = checked => ({
-    type: types.CHANGE_CONVERT_ALL,
+    type: CHANGE_CONVERT_ALL,
     data: checked,
 });
 
 export const changeIncludeDrawData = checked => ({
-    type: types.CHANGE_INCLUDE_DRAW_DATA,
+    type: CHANGE_INCLUDE_DRAW_DATA,
     data: checked,
 });
 
 export const changeExcludeTest = checked => ({
-    type: types.CHANGE_EXCLUDE_TEST,
+    type: CHANGE_EXCLUDE_TEST,
     data: checked,
 });
 
 export const changeSeparateSabaWinLoss = checked => ({
-    type: types.CHANGE_SEPRATE_SABA_WINLOSS,
+    type: CHANGE_SEPRATE_SABA_WINLOSS,
     data: checked,
 });

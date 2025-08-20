@@ -1,12 +1,12 @@
-import * as types from './types.js';
+import { SET_TIMEZONE, SET_REPORTBY, SET_DATE_RANGE, CHANGE_GROUPBY, CHANGE_IS_CONVERT_ALL, CHANGE_IS_INCLUDE_DRAW_DATA } from './types.js';
 
 export const setSelectedTimeZone = value => ({
-    type: types.SET_TIMEZONE,
+    type: SET_TIMEZONE,
     data: value,
 });
 
 export const setSelectedReportBy = value => ({
-    type: types.SET_REPORTBY,
+    type: SET_REPORTBY,
     data: value,
 });
 
@@ -17,22 +17,22 @@ export const setDateRange = dateRange => {
     };
 
     return {
-        type: types.SET_DATE_RANGE,
+        type: SET_DATE_RANGE,
         data: range,
     };
 };
 
 export const changeGroupBy = value => ({
-    type: types.CHANGE_GROUPBY,
+    type: CHANGE_GROUPBY,
     data: value,
 });
 
 export const changeIsConvertAll = checked => ({
-    type: types.CHANGE_IS_CONVERT_ALL,
+    type: CHANGE_IS_CONVERT_ALL,
     data: checked,
 });
 
 export const changeIsIncludeDrawData = checked => ({
-    type: types.CHANGE_IS_INCLUDE_DRAW_DATA,
+    type: CHANGE_IS_INCLUDE_DRAW_DATA,
     data: checked,
 });

@@ -1,6 +1,6 @@
-import * as types from './types';
+import { SET_FORM_DATA } from './types';
 
 export const setFormData = item => ({
-    type: types.SET_FORM_DATA,
+    type: SET_FORM_DATA,
     data: item,
 });

@@ -1,4 +1,4 @@
-import * as types from './types';
+import { SET_DATE_RANGE } from './types';
 
 export const setDateRange = dateRange => {
     const range = {
@@ -7,7 +7,7 @@ export const setDateRange = dateRange => {
     };
 
     return {
-        type: types.SET_DATE_RANGE,
+        type: SET_DATE_RANGE,
         data: range,
     };
 };

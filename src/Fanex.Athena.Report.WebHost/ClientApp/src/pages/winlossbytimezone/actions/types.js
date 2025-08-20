@@ -1,4 +1,5 @@
 export const FETCH_DATA = 'FETCH_DATA';
+export const SET_GRID_DATA = 'SET_GRID_DATA';
 
 export const GET_TIMEZONE = 'GET_TIMEZONE';
 export const SET_TIMEZONE = 'SET_TIMEZONE';

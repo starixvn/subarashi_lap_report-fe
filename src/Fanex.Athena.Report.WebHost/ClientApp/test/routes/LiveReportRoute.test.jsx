@@ -16,7 +16,13 @@ jest.mock('../../src/pages/livereport/matchlist', () => ({
 describe('LiveReportRoute', () => {
     const renderWithRouter = (initialEntries = ['/']) => {
         return render(
-            <MemoryRouter initialEntries={initialEntries}>
+            <MemoryRouter 
+                initialEntries={initialEntries}
+                future={{
+                    v7_startTransition: true,
+                    v7_relativeSplatPath: true
+                }}
+            >
                 <LiveReportRoute />
             </MemoryRouter>
         );
@@ -38,8 +44,9 @@ describe('LiveReportRoute', () => {
         expect(container).toBeInTheDocument();
     });
 
-    test('handles route navigation between summary and matchlist', () => {
-        const { container } = renderWithRouter(['/summary']);
-        expect(container).toBeInTheDocument();
+    test('renders MatchList component on /MatchList route', () => {
+        const { getByTestId } = renderWithRouter(['/MatchList']);
+        expect(getByTestId('livereport-matchlist-page')).toBeInTheDocument();
+        expect(getByTestId('livereport-matchlist-page')).toHaveTextContent('Live Report Match List Page');
     });
 });

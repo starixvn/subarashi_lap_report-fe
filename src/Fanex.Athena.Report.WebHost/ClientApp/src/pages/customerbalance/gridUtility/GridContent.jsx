@@ -18,8 +18,8 @@ export const GenerateReportTitle = (fromDate, toDate, currencyName) => {
 export const BuildBody = (data, isEnableSingleWallet, isAllowedCustomerCommission) =>
     data.map(item => (
         <Row key={`row-${item.index}`}>
-            <Cell title={parseInt(item.index)} className={'center-align'} key={`col-${0}`}>
-                {parseInt(item.index)}
+            <Cell title={parseInt(item.index, 10)} className={'center-align'} key={`col-${0}`}>
+                {parseInt(item.index, 10)}
             </Cell>
             <Cell title={item.externalId} className={'left-align'} key={`col-externalid`}>
                 {item.externalId}

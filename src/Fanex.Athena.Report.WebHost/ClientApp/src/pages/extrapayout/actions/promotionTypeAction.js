@@ -1,13 +1,13 @@
 import DataService from '@/lib/dataService';
-import * as types from './types';
+import { SET_SELECTED_PROMOTION_TYPES, SET_PROMOTION_TYPE_LIST } from './types';
 
 const setSelectedPromotionTypes = data => ({
-    type: types.SET_SELECTED_PROMOTION_TYPES,
+    type: SET_SELECTED_PROMOTION_TYPES,
     data: data,
 });
 
 const setPromotionTypeList = list => ({
-    type: types.SET_PROMOTION_TYPE_LIST,
+    type: SET_PROMOTION_TYPE_LIST,
     data: list,
 });
 

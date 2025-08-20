@@ -1,6 +1,6 @@
-import * as types from './types';
+import { CHANGE_IS_EXCLUDE_TEST } from './types';
 
 export const changeIsExcludeTest = checked => ({
-    type: types.CHANGE_IS_EXCLUDE_TEST,
+    type: CHANGE_IS_EXCLUDE_TEST,
     data: checked,
 });

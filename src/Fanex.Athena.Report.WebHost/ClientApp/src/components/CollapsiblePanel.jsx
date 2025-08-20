@@ -23,13 +23,18 @@ const CollapsiblePanel = props => {
 
     const { className, children, isCollapseMode, isCustomCollapse, stickyFooter, iconToggle } = props;
 
+    const getDisplayStyle = () => {
+        if (isCustomCollapse) {
+            return 'block';
+        }
+        return isCollapsed ? 'none' : 'block';
+    };
+
     const containerClassnames = classNames('page-filter', className || '', children ? '' : 'min');
 
     return (
         <div className={containerClassnames}>
-            <div style={{ display: isCustomCollapse ? 'block' : isCollapsed ? 'none' : 'block' }}>
-                {children ? children : <div style={{ opacity: 0 }}>Extend Row</div>}
-            </div>
+            <div style={{ display: getDisplayStyle() }}>{children ? children : <div style={{ opacity: 0 }}>Extend Row</div>}</div>
             <div className={`caret-block ${children ? `` : `min`}`}>{stickyFooter}</div>
             {!!isCollapseMode &&
                 (iconToggle ?? (

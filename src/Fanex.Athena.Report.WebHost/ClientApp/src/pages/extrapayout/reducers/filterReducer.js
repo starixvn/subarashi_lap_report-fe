@@ -1,20 +1,20 @@
-import * as types from '../actions/types';
+import { SET_REPORT_FILTER, SET_DETAIL_PARAMS, SET_CONVERT_ALL_TO_BASE_CURRENCY } from '../actions/types';
 import createReducer from '@/lib/createReducer.js';
 
 const reportFilter = createReducer(null, {
-    [types.SET_REPORT_FILTER](state, action) {
+    [SET_REPORT_FILTER](state, action) {
         return action.data;
     },
 });
 
 const detailParams = createReducer(null, {
-    [types.SET_DETAIL_PARAMS](state, action) {
+    [SET_DETAIL_PARAMS](state, action) {
         return action.data;
     },
 });
 
 const isConvertAllToBaseCurrency = createReducer(true, {
-    [types.SET_CONVERT_ALL_TO_BASE_CURRENCY](state, action) {
+    [SET_CONVERT_ALL_TO_BASE_CURRENCY](state, action) {
         return action.data;
     },
 });

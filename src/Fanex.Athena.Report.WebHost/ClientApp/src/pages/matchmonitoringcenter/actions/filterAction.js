@@ -1,40 +1,49 @@
-import * as types from './types';
+import {
+    SET_SELECTED_MATCH_STATUS,
+    SET_SELECTED_TRIGGERED_ALERT,
+    SET_SELECTED_MATCH,
+    SET_MATCH_LIST,
+    SET_DEFAULT_STATE,
+    SET_SELECTED_LEAGUE,
+    SET_APP_UUID,
+    SET_LEAGUE_LIST,
+} from './types';
 import DataService from '@/lib/dataService';
 
 import { constants } from '../common';
 
 export const setSelectedMatchStatus = item => ({
-    type: types.SET_SELECTED_MATCH_STATUS,
+    type: SET_SELECTED_MATCH_STATUS,
     data: item,
 });
 
 export const setSelectedTriggeredAlert = item => ({
-    type: types.SET_SELECTED_TRIGGERED_ALERT,
+    type: SET_SELECTED_TRIGGERED_ALERT,
     data: item,
 });
 
 export const setSelectedMatch = item => ({
-    type: types.SET_SELECTED_MATCH,
+    type: SET_SELECTED_MATCH,
     data: item,
 });
 
 export const setMatchList = item => ({
-    type: types.SET_MATCH_LIST,
+    type: SET_MATCH_LIST,
     data: item,
 });
 
 export const setDefaultState = item => ({
-    type: types.SET_DEFAULT_STATE,
+    type: SET_DEFAULT_STATE,
     data: item,
 });
 
 export const setSelectedLeague = item => ({
-    type: types.SET_SELECTED_LEAGUE,
+    type: SET_SELECTED_LEAGUE,
     data: item,
 });
 
 export const setAppUuid = value => ({
-    type: types.SET_APP_UUID,
+    type: SET_APP_UUID,
     data: value,
 });
 
@@ -56,6 +65,6 @@ export const getMatchList = leagueIds => {
 };
 
 export const setLeagueList = item => ({
-    type: types.SET_LEAGUE_LIST,
+    type: SET_LEAGUE_LIST,
     data: item,
 });

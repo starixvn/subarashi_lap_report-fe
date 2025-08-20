@@ -1,10 +1,10 @@
-import * as types from '../actions/types.js';
+import { SET_REPORT_DATA, SET_RELOAD_REPORT } from '../actions/types.js';
 import createReducer from '@/lib/createReducer.js';
 
 const reportData = createReducer(
     {},
     {
-        [types.SET_REPORT_DATA](state, action) {
+        [SET_REPORT_DATA](state, action) {
             return action.data;
         },
     }
@@ -13,7 +13,7 @@ const reportData = createReducer(
 const reloadReport = createReducer(
     {},
     {
-        [types.SET_RELOAD_REPORT](state, action) {
+        [SET_RELOAD_REPORT](state, action) {
             return action.data;
         },
     }

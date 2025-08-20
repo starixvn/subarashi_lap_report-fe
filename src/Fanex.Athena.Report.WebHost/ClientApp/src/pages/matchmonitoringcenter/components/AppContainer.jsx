@@ -84,15 +84,16 @@ export const AppContainer = () => {
         data.matchList = data.matchList.map(item => ({ ...item, status: matchIds.includes(item.id) }));
         data.leagueList = data.leagueList.map(item => ({ ...item, status: leagueIds.includes(item.id) }));
 
-        const defaultState = {};
-        defaultState.selectedBaseCurrency = defaultBaseCurrency;
-        defaultState.selectedMatch = data.matchList.map(item => item.id);
-        defaultState.selectedLeague = data.leagueList.map(item => item.id);
-        defaultState.selectedMatchStatus = MatchStatus[0];
-        defaultState.selectedTriggeredAlert = TriggerAlert[0];
-        defaultState.selectedCurrency = CurrencySelectAll;
-        defaultState.leagueList = data.leagueList.map(item => ({ ...item, status: true }));
-        defaultState.baseCurrencyList = defaultBaseCurrencyList;
+        const defaultState = {
+            selectedBaseCurrency: defaultBaseCurrency,
+            selectedMatch: data.matchList.map(item => item.id),
+            selectedLeague: data.leagueList.map(item => item.id),
+            selectedMatchStatus: MatchStatus[0],
+            selectedTriggeredAlert: TriggerAlert[0],
+            selectedCurrency: CurrencySelectAll,
+            leagueList: data.leagueList.map(item => ({ ...item, status: true })),
+            baseCurrencyList: defaultBaseCurrencyList,
+        };
 
         const params = {
             MatchStatus: MatchStatus[0].value,

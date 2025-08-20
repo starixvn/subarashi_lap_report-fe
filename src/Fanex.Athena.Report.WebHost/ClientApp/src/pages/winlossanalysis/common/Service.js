@@ -9,8 +9,11 @@ import {
     GroupByList,
     ALL_SELECTED_TEXT,
     ProductCode,
+    ApiUrl,
+    ViewInTimeMode,
+    MAX_PAGE_EXPORT_PAGE_SIZE,
+    NUMBER_OF_CUNCURRENT_DOWNLOAD_REQUEST,
 } from './constants';
-import { ApiUrl, ViewInTimeMode, MAX_PAGE_EXPORT_PAGE_SIZE, NUMBER_OF_CUNCURRENT_DOWNLOAD_REQUEST } from '../common/constants.js';
 import DataService from '@/lib/dataService';
 
 export default class Service {

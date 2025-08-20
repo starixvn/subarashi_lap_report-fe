@@ -7,7 +7,7 @@ import useNavigateParams from '@/hooks/useNavigateParams';
 import CommonCells from '../CommonCells';
 import { constants } from '../../common';
 
-function FooterSpecialBetTypeRows(props) {
+const FooterSpecialBetTypeRows = function (props) {
     const navigate = useNavigateParams();
     const requestParam = useSelector(state => state.requestParam);
 
@@ -60,6 +60,6 @@ function FooterSpecialBetTypeRows(props) {
             <CommonCells data={item} />
         </Row>
     ));
-}
+};
 
 export default FooterSpecialBetTypeRows;

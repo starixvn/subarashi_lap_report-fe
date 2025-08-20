@@ -16,10 +16,10 @@ const Log = ({ monitoringID }) => {
     );
 };
 
-function mapStateToProps(state) {
+const mapStateToProps = function (state) {
     return {
         monitoringID: state.monitoringID,
     };
-}
+};
 
 export default connect(mapStateToProps)(Log);

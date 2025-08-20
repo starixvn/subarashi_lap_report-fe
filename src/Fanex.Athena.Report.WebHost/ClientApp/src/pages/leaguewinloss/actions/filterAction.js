@@ -1,12 +1,12 @@
-import * as types from './types.js';
+import { SET_REPORT_FILTER, SET_BREADCRUMB_PARAMS } from './types.js';
 
 const setReportFilter = data => ({
-    type: types.SET_REPORT_FILTER,
+    type: SET_REPORT_FILTER,
     data: data,
 });
 
 const setBreadcrumbParams = data => ({
-    type: types.SET_BREADCRUMB_PARAMS,
+    type: SET_BREADCRUMB_PARAMS,
     data: data,
 });
 
