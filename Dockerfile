@@ -14,14 +14,15 @@ RUN npm install
 
 WORKDIR /src
 
-COPY NuGet.Config .
-RUN dotnet nuget add source http://nuget.nexdev.net/api/v2
+RUN dotnet nuget add source https://nuget.nexdev.net/api/v2
 
 COPY src/Fanex.Athena.Report.Core/Fanex.Athena.Report.Core.csproj ./Fanex.Athena.Report.Core/
-RUN dotnet restore Fanex.Athena.Report.Core/Fanex.Athena.Report.Core.csproj -v n
+RUN --mount=type=cache,target=/root/.nuget/packages \
+    dotnet restore Fanex.Athena.Report.Core/Fanex.Athena.Report.Core.csproj -v n
 
 COPY src/Fanex.Athena.Report.WebHost/Fanex.Athena.Report.WebHost.csproj ./Fanex.Athena.Report.WebHost/
-RUN dotnet restore Fanex.Athena.Report.WebHost/Fanex.Athena.Report.WebHost.csproj -v n
+RUN --mount=type=cache,target=/root/.nuget/packages \
+    dotnet restore Fanex.Athena.Report.WebHost/Fanex.Athena.Report.WebHost.csproj -v n
 
 COPY src .
 
@@ -36,11 +37,12 @@ RUN case "$TRANSFORM_CONFIG" in \
 
 WORKDIR /src/Fanex.Athena.Report.WebHost
 
-RUN dotnet publish "Fanex.Athena.Report.WebHost.csproj" -c Release -o /publish \
+RUN dotnet publish "Fanex.Athena.Report.WebHost.csproj" \
+    -c Release -o /publish \
     --use-current-runtime \
     --self-contained false
 
-FROM hub.nexdev.net/base/dotnet/core/aspnet:8.0-alpine-25h1 AS final
+FROM hub.nexdev.net/base/dotnet/core/aspnet:8.0-alpine-25h2 AS final
 
 ENV DOTNET_HOSTBUILDER__RELOADCONFIGONCHANGE=false
 ENV ASPNETCORE_HTTP_PORTS=5000
