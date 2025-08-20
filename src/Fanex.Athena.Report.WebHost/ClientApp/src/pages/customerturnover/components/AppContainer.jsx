@@ -26,7 +26,10 @@ export const AppContainer = () => {
         }
         const data = result.data;
 
-        data.currencyList = data.currencyList.map(item => ({ value: item.key, label: item.value }));
+        data.currencyList = data.currencyList.map(item => ({
+            value: item.key,
+            label: item.value,
+        }));
         data.productTreeViewOptions = Service.convertToCheckedItems(data.productOptions);
         data.productHasNoSport = data.productTreeViewOptions.filter(product => !product.children?.length).map(product => product.id);
         if (!data.productHasNoSport) {

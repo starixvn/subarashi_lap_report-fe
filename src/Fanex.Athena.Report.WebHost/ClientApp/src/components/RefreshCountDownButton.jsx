@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 
-const RefreshCountDown = ({ value, options, onRefresh, isPaused }) => {
+const RefreshCountDownButton = ({ value, options, onRefresh, isPaused }) => {
     const [count, setCount] = useState(value);
     const [selectedInterval, setSelectedInterval] = useState(value);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -74,14 +74,14 @@ const RefreshCountDown = ({ value, options, onRefresh, isPaused }) => {
     );
 };
 
-RefreshCountDown.propTypes = {
+RefreshCountDownButton.propTypes = {
     value: PropTypes.number,
     options: PropTypes.array,
     onRefresh: PropTypes.func,
     isPaused: PropTypes.bool,
 };
 
-RefreshCountDown.defaultProps = {
+RefreshCountDownButton.defaultProps = {
     value: 60,
     options: [60, 75, 90, 105, 120],
     onIntervalChange: () => {},
@@ -89,4 +89,4 @@ RefreshCountDown.defaultProps = {
     isPaused: false,
 };
 
-export default RefreshCountDown;
+export default RefreshCountDownButton;

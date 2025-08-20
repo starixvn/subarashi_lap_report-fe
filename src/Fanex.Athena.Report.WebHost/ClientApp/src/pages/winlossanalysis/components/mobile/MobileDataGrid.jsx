@@ -21,7 +21,7 @@ const SmallColumnWidths = [125, 105, 110, 26];
 const LargeColumnWidths = ['31%', '31%', '31%', '7%'];
 
 export const MobileDataGrid = () => {
-    const [requestParam, reportData, reloadReport] = useSelector(
+    const [requestParam, reportData, , reloadReport] = useSelector(
         state => [state.requestParam, state.reportData, state.reportTitle, state.reloadReport, state.selectedProduct],
         shallowEqual
     );
@@ -53,8 +53,14 @@ export const MobileDataGrid = () => {
 
     const dataSource = useMemo(
         () => [
-            { id: MobileGroupByHeaderDisplayType.ExternalId, text: HeaderText.ExternalId },
-            { id: MobileGroupByHeaderDisplayType.SystemId, text: HeaderText.SystemId },
+            {
+                id: MobileGroupByHeaderDisplayType.ExternalId,
+                text: HeaderText.ExternalId,
+            },
+            {
+                id: MobileGroupByHeaderDisplayType.SystemId,
+                text: HeaderText.SystemId,
+            },
         ],
         []
     );
@@ -149,12 +155,20 @@ export const MobileDataGrid = () => {
 
     const onSort = (sortBy, sortOrder) => {
         const requestSortOrder = sortOrder === 'asc' ? SortOrder.ASC : SortOrder.DESC;
-        const params = { ...requestParam, SortBy: sortBy, SortOrder: requestSortOrder };
+        const params = {
+            ...requestParam,
+            SortBy: sortBy,
+            SortOrder: requestSortOrder,
+        };
         submitRequest(params);
     };
 
     const onPaging = (pageIndex, pageSize) => {
-        const params = { ...requestParam, PageSize: pageSize, PageIndex: pageIndex };
+        const params = {
+            ...requestParam,
+            PageSize: pageSize,
+            PageIndex: pageIndex,
+        };
         submitRequest(params);
     };
 

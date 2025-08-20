@@ -54,7 +54,7 @@ const FormFilter = () => {
         setSelectTop(value);
     };
 
-    const onChangeSelectedProducts = (currentItem, selectedItemsKey) => {
+    const onChangeSelectedProducts = (_currentItem, selectedItemsKey) => {
         const filteredProducts = formData.productOptions.filter(x => selectedItemsKey.split(',').includes(x.code));
         dispatch(setSelectedProducts(filteredProducts));
     };
@@ -83,22 +83,18 @@ const FormFilter = () => {
         dispatch(setGridData(null));
     };
 
-    const getParams = () => {
-        const params = {
-            FromDate: Site.convertDateToString(dateRange.fromDate),
-            ToDate: Site.convertDateToString(dateRange.toDate),
-            OrderItem: requestParam?.OrderItem ? requestParam.OrderItem : Service.getOrderItem(constants.SortKeys.Deposit),
-            ProductOptions: selectedProducts,
-            TopCount: selectTop.value,
-            IsExcludedTestData: excludeTestData === 'true',
-            CurrencyName: selectedCurrency.label,
-            CurrencyId: selectedCurrency.value,
-            PageIndex: DefaultPagingOption.PageIndex,
-            PageSize: DefaultPagingOption.PageSize,
-        };
-
-        return params;
-    };
+    const getParams = () => ({
+        FromDate: Site.convertDateToString(dateRange.fromDate),
+        ToDate: Site.convertDateToString(dateRange.toDate),
+        OrderItem: requestParam?.OrderItem ? requestParam.OrderItem : Service.getOrderItem(constants.SortKeys.Deposit),
+        ProductOptions: selectedProducts,
+        TopCount: selectTop.value,
+        IsExcludedTestData: excludeTestData === 'true',
+        CurrencyName: selectedCurrency.label,
+        CurrencyId: selectedCurrency.value,
+        PageIndex: DefaultPagingOption.PageIndex,
+        PageSize: DefaultPagingOption.PageSize,
+    });
 
     const fetchUserGuide = () => {
         if (!userGuideContent) {

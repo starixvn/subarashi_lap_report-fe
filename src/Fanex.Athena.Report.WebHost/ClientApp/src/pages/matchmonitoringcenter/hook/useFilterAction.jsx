@@ -89,19 +89,15 @@ export const useFilterAction = () => {
         dispatch(setGridData(null));
     };
 
-    const getParams = () => {
-        const params = {
-            MatchStatus: selectedMatchStatus.value,
-            MatchIdList: selectedMatch,
-            TriggeredAlert: selectedTriggeredAlert.value,
-            BaseCurrency: selectedBaseCurrency.isEmpty ? '' : selectedBaseCurrency.label,
-            BaseCurrencyName: selectedBaseCurrency.label,
-            CurrencyName: selectedCurrency.label,
-            CurrencyId: selectedCurrency.value,
-        };
-
-        return params;
-    };
+    const getParams = () => ({
+        MatchStatus: selectedMatchStatus.value,
+        MatchIdList: selectedMatch,
+        TriggeredAlert: selectedTriggeredAlert.value,
+        BaseCurrency: selectedBaseCurrency.isEmpty ? '' : selectedBaseCurrency.label,
+        BaseCurrencyName: selectedBaseCurrency.label,
+        CurrencyName: selectedCurrency.label,
+        CurrencyId: selectedCurrency.value,
+    });
 
     const fetchUserGuide = () => {
         if (!userGuideContent) {

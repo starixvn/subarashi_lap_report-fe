@@ -47,7 +47,10 @@ export const AppContainer = () => {
 
         const data = result.data;
 
-        data.baseCurrencies = data.baseCurrencies.map(item => ({ value: item.key, label: item.value }));
+        data.baseCurrencies = data.baseCurrencies.map(item => ({
+            value: item.key,
+            label: item.value,
+        }));
 
         data.currencies = [
             CurrencySelectAll,
@@ -64,11 +67,17 @@ export const AppContainer = () => {
         const defaultBaseCurrencyList = data.baseCurrencies;
 
         if (!selectedBaseCurrency) {
-            selectedBaseCurrency = { value: DEFAULT_BASE_CURRENCY_VALUE, label: data.defaultBaseCurrency };
+            selectedBaseCurrency = {
+                value: DEFAULT_BASE_CURRENCY_VALUE,
+                label: data.defaultBaseCurrency,
+            };
         }
 
         if (!defaultBaseCurrency) {
-            defaultBaseCurrency = { value: DEFAULT_BASE_CURRENCY_VALUE, label: data.defaultBaseCurrency };
+            defaultBaseCurrency = {
+                value: DEFAULT_BASE_CURRENCY_VALUE,
+                label: data.defaultBaseCurrency,
+            };
         }
 
         if (selectedCurrency.value !== 0 && !data.baseCurrencies.find(x => x.label === selectedCurrency.label)) {
@@ -81,8 +90,14 @@ export const AppContainer = () => {
         const matchIds = data.matchIds.split(',').map(item => Number(item.trim()));
         const leagueIds = data.leagueIds.split(',').map(item => Number(item.trim()));
 
-        data.matchList = data.matchList.map(item => ({ ...item, status: matchIds.includes(item.id) }));
-        data.leagueList = data.leagueList.map(item => ({ ...item, status: leagueIds.includes(item.id) }));
+        data.matchList = data.matchList.map(item => ({
+            ...item,
+            status: matchIds.includes(item.id),
+        }));
+        data.leagueList = data.leagueList.map(item => ({
+            ...item,
+            status: leagueIds.includes(item.id),
+        }));
 
         const defaultState = {
             selectedBaseCurrency: defaultBaseCurrency,

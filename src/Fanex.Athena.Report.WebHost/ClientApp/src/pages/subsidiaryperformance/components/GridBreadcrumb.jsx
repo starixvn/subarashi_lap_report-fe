@@ -25,12 +25,26 @@ const GridBreadcrumb = () => {
         }
 
         if (level === ReportLevel.MAIN) {
-            sendRequest(() => dispatch(fetchGridData(ApiUrl.DATA_URL, { ...requestParam, DrillDownLevel: level })));
+            sendRequest(() =>
+                dispatch(
+                    fetchGridData(ApiUrl.DATA_URL, {
+                        ...requestParam,
+                        DrillDownLevel: level,
+                    })
+                )
+            );
             return;
         }
 
         if (level === ReportLevel.CUSTOMER) {
-            sendRequest(() => dispatch(fetchGridData(ApiUrl.DETAIL_URL, { ...requestParam, DrillDownLevel: level })));
+            sendRequest(() =>
+                dispatch(
+                    fetchGridData(ApiUrl.DETAIL_URL, {
+                        ...requestParam,
+                        DrillDownLevel: level,
+                    })
+                )
+            );
             return;
         }
     };

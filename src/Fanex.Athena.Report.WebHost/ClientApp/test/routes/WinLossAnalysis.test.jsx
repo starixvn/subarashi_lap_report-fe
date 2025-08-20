@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
-import WinLossAnalysisRoute from '../../src/routes/WinLossAnalysis';
+import WinLossAnalysisRoute from '../../src/routes/WinLossAnalysisRoute';
 
 jest.mock('../../src/pages/winlossanalysis', () => ({ 
     __esModule: true, 

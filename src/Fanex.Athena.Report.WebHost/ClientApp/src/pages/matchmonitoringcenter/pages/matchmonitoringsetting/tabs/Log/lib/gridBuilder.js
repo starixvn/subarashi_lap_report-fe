@@ -27,7 +27,7 @@ export const BuildBody = data => {
         return BuildEmptyBody();
     }
 
-    const rows = data.map((item, index) => (
+    return data.map((item, index) => (
         <Row key={index}>
             <Cell className="left-align">{item.timeStamp}</Cell>
             <Cell className="left-align">{item.type}</Cell>
@@ -36,8 +36,6 @@ export const BuildBody = data => {
             <Cell className="left-align">{item.detail}</Cell>
         </Row>
     ));
-
-    return rows;
 };
 
 const BuildEmptyBody = () => (

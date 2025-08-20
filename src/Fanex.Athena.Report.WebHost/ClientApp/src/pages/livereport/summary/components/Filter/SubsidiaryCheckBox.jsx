@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import CheckBox from '@/components/CheckBox';
 import LangHelper from '@/helpers/langHelper';
 
-function SubsidiaryCheckBox(props) {
+const SubsidiaryCheckBox = props => {
     const { value, onChange } = props;
 
     return (
@@ -12,7 +12,7 @@ function SubsidiaryCheckBox(props) {
             <CheckBox id="SubsidiarySearch" checked={value} onChange={onChange} label={LangHelper.getSingleResource('SubsidiarySearch')} />
         </div>
     );
-}
+};
 
 const propTypes = {
     onChange: PropTypes.func,

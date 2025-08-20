@@ -44,12 +44,20 @@ export const DataGrid = () => {
 
     const onSort = (sortBy, sortOrder) => {
         const requestSortOrder = sortOrder === 'asc' ? SortOrder.ASC : SortOrder.DESC;
-        const params = { ...requestParam, SortBy: sortBy, SortOrder: requestSortOrder };
+        const params = {
+            ...requestParam,
+            SortBy: sortBy,
+            SortOrder: requestSortOrder,
+        };
         submitRequest(params);
     };
 
     const onPaging = (pageIndex, pageSize) => {
-        const params = { ...requestParam, PageSize: pageSize, PageIndex: pageIndex };
+        const params = {
+            ...requestParam,
+            PageSize: pageSize,
+            PageIndex: pageIndex,
+        };
         submitRequest(params);
     };
 

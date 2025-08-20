@@ -74,9 +74,21 @@ export default class Service {
 
     static buildBreakDownOptionFromGroupByMode = (groupByMode, licenseeName) => {
         const breakDownByOption = {
-            Product: { value: BreakdownByMode.Product, label: LangHelper.getSingleResource('Product'), isDisabled: false },
-            Currency: { value: BreakdownByMode.Currency, label: LangHelper.getSingleResource('Currency'), isDisabled: false },
-            Player: { value: BreakdownByMode.Player, label: LangHelper.getSingleResource('Player'), isDisabled: true },
+            Product: {
+                value: BreakdownByMode.Product,
+                label: LangHelper.getSingleResource('Product'),
+                isDisabled: false,
+            },
+            Currency: {
+                value: BreakdownByMode.Currency,
+                label: LangHelper.getSingleResource('Currency'),
+                isDisabled: false,
+            },
+            Player: {
+                value: BreakdownByMode.Player,
+                label: LangHelper.getSingleResource('Player'),
+                isDisabled: true,
+            },
         };
         switch (Number(groupByMode)) {
             case GroupByMode.Product:
@@ -120,14 +132,13 @@ export default class Service {
         if (normalizeText === ALL_SELECTED_TEXT) {
             return ALL_SELECTED_TEXT;
         }
-        const currencyCodesText = currencyListIds.split(',').reduce((prev, cur, index) => {
+        return currencyListIds.split(',').reduce((prev, cur, index) => {
             const code = currencyList.find(c => c.id === cur).value;
             if (index === 0) {
                 return code;
             }
             return `${prev},${code}`;
         }, '');
-        return currencyCodesText;
     };
 
     static getFile = async params => {
@@ -140,7 +151,11 @@ export default class Service {
         for (let i = 1; i <= totalPage; ) {
             const arrayTask = [];
             for (let j = 1; j <= NUMBER_OF_CUNCURRENT_DOWNLOAD_REQUEST && i <= totalPage; j++) {
-                const exportExcelFileParam = { ...params, PageSize: MAX_PAGE_EXPORT_PAGE_SIZE, PageIndex: i };
+                const exportExcelFileParam = {
+                    ...params,
+                    PageSize: MAX_PAGE_EXPORT_PAGE_SIZE,
+                    PageIndex: i,
+                };
                 arrayTask.push(this.downloadExcelFile(exportExcelFileParam));
                 i++;
             }
@@ -157,6 +172,7 @@ export default class Service {
         return response.data.totalRow;
     };
 
+    // eslint-disable-next-line sonarjs/cognitive-complexity
     static downloadExcelFile = async params => {
         try {
             const response = await DataService.getProxyFile(DataService.apiKeys.report, ApiUrl.EXPORT_EXCEL_URL, params);

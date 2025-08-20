@@ -61,7 +61,10 @@ const FormFilter = () => {
     const hasBettypeList = !!bettypeList?.length;
     const hasSelectedBettype = !!selectedBettype;
 
-    const isFormValid = !hasSelectedProduct || !hasSelectedCurrency || !hasSelectedTickets || !hasBettypeList || !hasSelectedBettype;
+    const missingProduct = !hasSelectedProduct;
+    const missingCurrency = !hasSelectedCurrency;
+    const missingTicketsOrBettype = !hasSelectedTickets || !hasBettypeList || !hasSelectedBettype;
+    const isFormValid = missingProduct || missingCurrency || missingTicketsOrBettype;
 
     const { sendRequest } = useToggleRequest();
 
@@ -162,7 +165,7 @@ const FormFilter = () => {
             bettypeList.map(item => item.id)
         );
 
-        const params = {
+        return {
             FromDate: Site.convertDateToString(dateRange.fromDate),
             ToDate: Site.convertDateToString(dateRange.toDate),
             UserName: username,
@@ -178,8 +181,6 @@ const FormFilter = () => {
             PageIndex: DefaultPagingOption.PageIndex,
             PageSize: requestParam?.PageSize || DefaultPagingOption.PageSize,
         };
-
-        return params;
     };
 
     const fetchUserGuide = () => {
@@ -238,7 +239,10 @@ const FormFilter = () => {
                             url={ApiUrl.SEARCH_CUSTOMER}
                             onSelect={value => dispatch(setUsername(value))}
                             onInput={value => dispatch(setUsername(value))}
-                            htmlAttributes={{ placeholder: LangHelper.getSingleResource('All'), id: 'Username' }}
+                            htmlAttributes={{
+                                placeholder: LangHelper.getSingleResource('All'),
+                                id: 'Username',
+                            }}
                         />
                     </div>
                 </div>

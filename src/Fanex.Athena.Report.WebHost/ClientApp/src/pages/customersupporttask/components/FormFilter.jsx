@@ -88,15 +88,15 @@ const FormFilter = ({ formData, selectedCurrency, selectedSupportTask, setSelect
     );
 };
 
-function mapStateToProps(state) {
+const mapStateToProps = state => {
     const { formData, selectedCurrency, selectedSupportTask } = state;
     return Object.assign({}, { formData, selectedCurrency, selectedSupportTask });
-}
+};
 
-function mapDispatchToProps(dispatch) {
+const mapDispatchToProps = dispatch => {
     const { setSelectedCurrency, setSelectedSupportTask, toggleLoader } = ActionCreators;
 
     return bindActionCreators(Object.assign({}, { setSelectedCurrency, setSelectedSupportTask, toggleLoader }), dispatch);
-}
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(FormFilter);

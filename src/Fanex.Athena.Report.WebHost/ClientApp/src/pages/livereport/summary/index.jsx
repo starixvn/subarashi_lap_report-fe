@@ -9,7 +9,10 @@ import '@/styles/pages/livereportsummary.scss';
 import { constants } from './common';
 import useSessionStore from '@/hooks/useSessionStore';
 
-const defaultState = { dateRange: constants.DefaultDateRange, selectedSubsidiary: '' };
+const defaultState = {
+    dateRange: constants.DefaultDateRange,
+    selectedSubsidiary: '',
+};
 const resetState = { selectedProductCode: null, isLoading: false };
 
 const LiveReportSummary = () => {

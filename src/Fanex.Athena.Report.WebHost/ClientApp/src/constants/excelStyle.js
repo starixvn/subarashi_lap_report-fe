@@ -10,7 +10,10 @@ export const headerCellStyle = {
     font: { bold: true, color: { rgb: '2C2C2C' }, sz: '12' },
     alignment: { horizontal: 'center', vertical: 'center' },
     fill: { patternType: 'solid', fgColor: { rgb: '9EB4C3' } },
-    border: { left: { style: 'thin', color: { rgb: 'D6D6D6' } }, bottom: { style: 'thin', color: { rgb: 'D6D6D6' } } },
+    border: {
+        left: { style: 'thin', color: { rgb: 'D6D6D6' } },
+        bottom: { style: 'thin', color: { rgb: 'D6D6D6' } },
+    },
 };
 
 const bodyTextStyle = { alignment: { vertical: 'center', wrapText: '1' } };
@@ -30,11 +33,20 @@ const totalTextStyle = { font: { bold: true } };
 const totalDecimalStyle = { ...totalTextStyle, numFmt: '#,##0.00' };
 export const totalCellStyle = {
     default: totalTextStyle,
-    rowspan: { ...totalTextStyle, alignment: { horizontal: 'center', vertical: 'center' } },
-    center: { ...totalTextStyle, alignment: { vertical: 'center', horizontal: 'center' } },
+    rowspan: {
+        ...totalTextStyle,
+        alignment: { horizontal: 'center', vertical: 'center' },
+    },
+    center: {
+        ...totalTextStyle,
+        alignment: { vertical: 'center', horizontal: 'center' },
+    },
     number: { ...totalTextStyle, numFmt: '#,##0' },
     decimal: totalDecimalStyle,
-    negativeDecimal: { ...totalDecimalStyle, font: { bold: true, color: { rgb: 'FF0000' } } },
+    negativeDecimal: {
+        ...totalDecimalStyle,
+        font: { bold: true, color: { rgb: 'FF0000' } },
+    },
 };
 
 const grandTotalTextStyle = {
@@ -48,10 +60,16 @@ const grandTotalTextStyle = {
 const decimalGrandTotalStyle = { ...grandTotalTextStyle, numFmt: '#,##0.00' };
 export const grandTotalCellStyle = {
     default: grandTotalTextStyle,
-    rowspan: { ...grandTotalTextStyle, alignment: { horizontal: 'center', vertical: 'center' } },
+    rowspan: {
+        ...grandTotalTextStyle,
+        alignment: { horizontal: 'center', vertical: 'center' },
+    },
     center: { ...grandTotalTextStyle, alignment: { horizontal: 'center' } },
     number: { ...grandTotalTextStyle, numFmt: '#,##0' },
     decimal: decimalGrandTotalStyle,
-    negativeDecimal: { ...decimalGrandTotalStyle, font: { bold: true, color: { rgb: 'FF0000' } } },
+    negativeDecimal: {
+        ...decimalGrandTotalStyle,
+        font: { bold: true, color: { rgb: 'FF0000' } },
+    },
     percent: { ...grandTotalTextStyle, numFmt: '#,##0.00%' },
 };

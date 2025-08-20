@@ -11,7 +11,10 @@ import reducer from './reducers';
 import { constants } from './common';
 
 const Turnover = () => {
-    const store = Store.createStore(reducer, { gridData: null, dateRange: { ...constants.DateRange } });
+    const store = Store.createStore(reducer, {
+        gridData: null,
+        dateRange: { ...constants.DateRange },
+    });
     return (
         <Provider store={store}>
             <AppContainer />

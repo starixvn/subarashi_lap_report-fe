@@ -2,7 +2,17 @@ import { shallowEqual, useSelector } from 'react-redux';
 import { ViewInTimeMode } from '../../common/constants';
 import useSubsidiarySearch from '@/hooks/useSubsidiarySearch';
 
-// eslint-disable-next-line complexity
+const validateBasicRequirements = (selectedProduct, selectedStatus, selectedLiveStatus) => !!selectedProduct && !!selectedStatus && !!selectedLiveStatus;
+
+const validateAdditionalRequirements = (selectedCurrency, selectedBettype, selectedSport) => !!selectedCurrency && !!selectedBettype && !!selectedSport;
+
+const validatePlatformRequirements = (selectedPlatform, selectedCustomerClass, selectedOddsGroup) =>
+    !!selectedPlatform && !!selectedCustomerClass && !!selectedOddsGroup;
+
+const validateTimeSelection = (selectedViewInTime, selectedHour) => selectedViewInTime === ViewInTimeMode.Financial || !!selectedHour;
+
+const validateSubsidiary = (isSubsidiarySearch, selectedSubsidiary) => !isSubsidiarySearch || !!selectedSubsidiary;
+
 export const useValidParam = () => {
     const [
         selectedProduct,
@@ -37,22 +47,14 @@ export const useValidParam = () => {
 
     const { isSubsidiarySearch } = useSubsidiarySearch();
 
-    const hasSelectedProduct = !!selectedProduct;
-    const hasSelectedStatus = !!selectedStatus;
-    const hasSelectedLiveStatus = !!selectedLiveStatus;
-    const hasSelectedCurrency = !!selectedCurrency;
-    const hasSelectedBettype = !!selectedBettype;
-    const hasSelectedSport = !!selectedSport;
-    const hasSelectedPlatform = !!selectedPlatform;
-    const hasSelectedCustomerClass = !!selectedCustomerClass;
-    const hasSelectedOddsGroup = !!selectedOddsGroup;
+    const basicRequirementsMet = validateBasicRequirements(selectedProduct, selectedStatus, selectedLiveStatus);
+    const additionalRequirementsMet = validateAdditionalRequirements(selectedCurrency, selectedBettype, selectedSport);
+    const platformRequirementsMet = validatePlatformRequirements(selectedPlatform, selectedCustomerClass, selectedOddsGroup);
+    const hasValidTimeSelection = validateTimeSelection(selectedViewInTime, selectedHour);
+    const hasValidSubsidiary = validateSubsidiary(isSubsidiarySearch, selectedSubsidiary);
 
-    const hasValidTimeSelection = selectedViewInTime === ViewInTimeMode.Financial || !!selectedHour;
-    const hasValidSubsidiary = !isSubsidiarySearch || !!selectedSubsidiary;
+    const coreRequirementsMet = basicRequirementsMet && additionalRequirementsMet && platformRequirementsMet;
+    const validationsPassed = hasValidTimeSelection && hasValidSubsidiary;
 
-    const basicRequirementsMet = hasSelectedProduct && hasSelectedStatus && hasSelectedLiveStatus;
-    const additionalRequirementsMet = hasSelectedCurrency && hasSelectedBettype && hasSelectedSport;
-    const platformRequirementsMet = hasSelectedPlatform && hasSelectedCustomerClass && hasSelectedOddsGroup;
-
-    return basicRequirementsMet && additionalRequirementsMet && platformRequirementsMet && hasValidTimeSelection && hasValidSubsidiary;
+    return coreRequirementsMet && validationsPassed;
 };

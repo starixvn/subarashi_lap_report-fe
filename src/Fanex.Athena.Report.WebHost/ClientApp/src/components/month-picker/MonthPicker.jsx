@@ -4,33 +4,62 @@ import moment from 'moment';
 import Month from './Month';
 import Day from './Day';
 
-// eslint-disable-next-line complexity
-const MonthPicker = props => {
-    const format = 'MM/DD/YYYY';
+const formatDate = (date, month, year) => `${month < 9 ? `0${month + 1}` : month + 1}/${date < 10 ? `0${date}` : date}/${year}`;
 
-    const minDate = moment(props.minDate, format);
-    const maxDate = moment(props.maxDate, format);
+const parseMinMaxDates = (minDateStr, maxDateStr, format) => {
+    const minDate = moment(minDateStr, format);
+    const maxDate = moment(maxDateStr, format);
 
-    const min = { year: minDate.year(), month: minDate.month(), date: minDate.date() };
-    const max = { year: maxDate.year(), month: maxDate.month(), date: maxDate.date() };
+    return {
+        min: { year: minDate.year(), month: minDate.month(), date: minDate.date() },
+        max: { year: maxDate.year(), month: maxDate.month(), date: maxDate.date() },
+    };
+};
 
+const getInitialToValue = (props, toDate, max) => {
+    if (props.showDate) {
+        return toDate.date();
+    }
+    if (toDate.year() === max.year && toDate.month() === max.month) {
+        return max.date;
+    }
+    return moment({ year: toDate.year(), month: toDate.month() }).daysInMonth();
+};
+
+const calculateDateRange = (value, min, max) => {
+    const minDate = value.year === min.year && value.month === min.month ? min.date : 1;
+    const maxDate = value.year === max.year && value.month === max.month ? max.date : moment({ year: value.year, month: value.month }).daysInMonth();
+
+    return { minDate, maxDate };
+};
+
+const useMonthPickerState = (props, format) => {
+    const { min, max } = parseMinMaxDates(props.minDate, props.maxDate, format);
     const fromDate = moment(props.fromDate, format);
     const toDate = moment(props.toDate, format);
 
-    const [month, setMonth] = useState({ year: fromDate.year(), month: fromDate.month() });
+    const [month, setMonth] = useState({
+        year: fromDate.year(),
+        month: fromDate.month(),
+    });
     const [from, setFrom] = useState(props.showDate ? fromDate.date() : 1);
-    const getInitialToValue = () => {
-        if (props.showDate) {
-            return toDate.date();
-        }
-        if (toDate.year() === max.year && toDate.month() === max.month) {
-            return max.date;
-        }
-        return moment({ year: toDate.year(), month: toDate.month() }).daysInMonth();
+    const [to, setTo] = useState(getInitialToValue(props, toDate, max));
+
+    return {
+        min,
+        max,
+        fromDate,
+        toDate,
+        month,
+        setMonth,
+        from,
+        setFrom,
+        to,
+        setTo,
     };
+};
 
-    const [to, setTo] = useState(getInitialToValue());
-
+const useMonthPickerEffect = (props, from, to, fromDate, toDate) => {
     useEffect(() => {
         if (!props.showDate) {
             props.onChange({
@@ -39,13 +68,17 @@ const MonthPicker = props => {
             });
         }
     }, [from, to, fromDate, toDate, props]);
+};
 
-    const formatDate = (date, month, year) => `${month < 9 ? `0${month + 1}` : month + 1}/${date < 10 ? `0${date}` : date}/${year}`;
+const MonthPicker = props => {
+    const format = 'MM/DD/YYYY';
+    const { min, max, fromDate, toDate, month, setMonth, from, setFrom, to, setTo } = useMonthPickerState(props, format);
+
+    useMonthPickerEffect(props, from, to, fromDate, toDate);
 
     const onMonthChange = useCallback(
         value => {
-            const minDate = value.year === min.year && value.month === min.month ? min.date : 1;
-            const maxDate = value.year === max.year && value.month === max.month ? max.date : moment({ year: value.year, month: value.month }).daysInMonth();
+            const { minDate, maxDate } = calculateDateRange(value, min, max);
 
             setMonth(value);
             setFrom(minDate);
@@ -75,7 +108,10 @@ const MonthPicker = props => {
         });
     };
 
-    const daysInMonth = moment({ year: month.year, month: month.month }).daysInMonth();
+    const daysInMonth = moment({
+        year: month.year,
+        month: month.month,
+    }).daysInMonth();
 
     const startDate = month.year === min.year && month.month === min.month ? min.date : 1;
     const endDate = month.year === max.year && month.month === max.month ? max.date : daysInMonth;

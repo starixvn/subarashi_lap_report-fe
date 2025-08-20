@@ -4,7 +4,8 @@ import LangHelper from '@/helpers/langHelper';
 import DataRow from './DataRow';
 import NewRuleRow from './NewRuleRow';
 
-export const BuildBody = (data, baseCurrencyList, addNewRule, onDataChanged, setAddNewRule, defaultBaseCurrency, monitoringID) => {
+export const BuildBody = params => {
+    const { data, baseCurrencyList, addNewRule, onDataChanged, setAddNewRule, defaultBaseCurrency, monitoringID } = params;
     if ((!data || !data.length) && !addNewRule) {
         return BuildEmptyBody();
     }

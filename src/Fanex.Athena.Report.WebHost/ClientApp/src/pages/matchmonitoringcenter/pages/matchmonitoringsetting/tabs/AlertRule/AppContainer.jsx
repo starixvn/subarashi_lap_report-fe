@@ -14,9 +14,9 @@ const AppContainer = ({ isLoading, sweetAlertOption }) => (
     </div>
 );
 
-function mapStateToProps(state) {
+const mapStateToProps = state => {
     const { isLoading, sweetAlertOption } = state;
     return Object.assign({}, { isLoading, sweetAlertOption });
-}
+};
 
 export default connect(mapStateToProps)(AppContainer);

@@ -1,15 +1,11 @@
 import React from 'react';
 import Select, { components } from 'react-select';
 
-export default function ReportSelect(props) {
-    return (
-        <Select
-            components={{ DropdownIndicator: CustomDropdownIndicator }}
-            className="report-select-container"
-            classNamePrefix="report-select"
-            {...props}></Select>
-    );
-}
+const ReportSelect = props => (
+    <Select components={{ DropdownIndicator: CustomDropdownIndicator }} className="report-select-container" classNamePrefix="report-select" {...props}></Select>
+);
+
+export default ReportSelect;
 
 const CustomDropdownIndicator = props => {
     const { selectProps } = props;

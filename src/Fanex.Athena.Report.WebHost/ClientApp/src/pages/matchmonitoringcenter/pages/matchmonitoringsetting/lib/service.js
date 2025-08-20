@@ -69,9 +69,10 @@ export const buildConfirmAlertOption = (item, templateKey, buildConfirmMessage, 
     });
 };
 
-// eslint-disable-next-line complexity
+// eslint-disable-next-line complexity, sonarjs/cognitive-complexity
 export const createAlertRule = async (item, monitoringID, dispatch, setAddNewRule, onDataChanged) => {
     try {
+        // eslint-disable-line sonarjs/cognitive-complexity
         if (!monitoringID) {
             alert('Cannot create alert rule: MonitoringID is missing');
             return false;
@@ -114,9 +115,10 @@ export const createAlertRule = async (item, monitoringID, dispatch, setAddNewRul
     }
 };
 
-// eslint-disable-next-line complexity
+// eslint-disable-next-line complexity, sonarjs/cognitive-complexity
 export const updateAlertRule = async (item, dispatch, setIsEdited, onDataChanged) => {
     try {
+        // eslint-disable-line sonarjs/cognitive-complexity
         const params = {
             settingId: item.settingID,
             settingName: item.settingName.trim(),

@@ -25,7 +25,9 @@ const tryAddPageToSession = pathName => {
         return;
     }
 
-    const savedPages = { ...JSON.parse(sessionStorage.getItem(LRF_SAVED_PAGE_SESSION_KEY)) };
+    const savedPages = {
+        ...JSON.parse(sessionStorage.getItem(LRF_SAVED_PAGE_SESSION_KEY)),
+    };
 
     if (!savedPages[pathName]) {
         savedPages[pathName] = true;

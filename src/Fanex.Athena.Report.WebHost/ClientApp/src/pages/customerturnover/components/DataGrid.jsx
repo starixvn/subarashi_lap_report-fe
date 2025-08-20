@@ -14,7 +14,7 @@ import { DefaultPagingOption } from '../common/filterSettings';
 import { ApiUrl } from '../common/apiSettings';
 import ActionCreators from '../actions';
 
-function DataGrid() {
+const DataGrid = () => {
     const formData = useSelector(state => state.formData);
     const requestParam = useSelector(state => state.requestParam);
     const gridData = useSelector(state => state.gridData);
@@ -39,7 +39,10 @@ function DataGrid() {
 
     const { TableSettings } = constants;
 
-    const options = { isAllowedCustomerCommission: formData.isAllowedCustomerCommission, reportBy: requestParam.ReportBy };
+    const options = {
+        isAllowedCustomerCommission: formData.isAllowedCustomerCommission,
+        reportBy: requestParam.ReportBy,
+    };
 
     const currenPagingOption = {
         PageIndex: requestParam.PageIndex,
@@ -49,7 +52,11 @@ function DataGrid() {
     };
 
     const onPaging = (pageIndex, pageSize) => {
-        const params = { ...requestParam, PageSize: pageSize, PageIndex: pageIndex };
+        const params = {
+            ...requestParam,
+            PageSize: pageSize,
+            PageIndex: pageIndex,
+        };
         sendRequest(() => DataService.postReportData(ApiUrl.DATA_URL, params), updateData);
         dispatch(setRequestParam(params));
     };
@@ -79,6 +86,6 @@ function DataGrid() {
             />
         </>
     );
-}
+};
 
 export default DataGrid;

@@ -45,7 +45,7 @@ export const useFilterHandler = () => {
 
     const onUserNameInputHandler = useCallback(value => dispatch(setUsername(value)), []);
 
-    const onSubsidiaryDropDownChangeHandler = useCallback((currentItem, selectedItemsKey) => dispatch(setSubsidiaryList(selectedItemsKey)), []);
+    const onSubsidiaryDropDownChangeHandler = useCallback((_currentItem, selectedItemsKey) => dispatch(setSubsidiaryList(selectedItemsKey)), []);
 
     const onDateRangeChangeHandler = useCallback((date, limitedMonthRange, isValidMonthRange = true) => {
         if (isValidMonthRange) {
@@ -56,11 +56,11 @@ export const useFilterHandler = () => {
         }
     }, []);
 
-    const onStatusChangeHandler = useCallback((currentItem, selectedItemsKey) => dispatch(setSelectedStatus(selectedItemsKey)), []);
+    const onStatusChangeHandler = useCallback((_currentItem, selectedItemsKey) => dispatch(setSelectedStatus(selectedItemsKey)), []);
 
-    const onLiveStatusChangeHandler = useCallback((currentItem, selectedItemsKey) => dispatch(setSelectedLiveStatus(selectedItemsKey)), []);
+    const onLiveStatusChangeHandler = useCallback((_currentItem, selectedItemsKey) => dispatch(setSelectedLiveStatus(selectedItemsKey)), []);
 
-    const onProductChangeHandler = useCallback((currentItem, selectedItemsKey) => {
+    const onProductChangeHandler = useCallback((_currentItem, selectedItemsKey) => {
         batch(() => {
             dispatch(setSelectedProducts(selectedItemsKey));
             if (!Service.isContainProductSportBook(selectedItemsKey)) {
@@ -71,11 +71,11 @@ export const useFilterHandler = () => {
         });
     }, []);
 
-    const onSportChangeHandler = useCallback((currentItem, selectedItemsKey) => dispatch(setSelectedSport(selectedItemsKey)), []);
+    const onSportChangeHandler = useCallback((_currentItem, selectedItemsKey) => dispatch(setSelectedSport(selectedItemsKey)), []);
 
-    const onBetTypeChangeHandler = useCallback((currentItem, selectedItemsKey) => dispatch(setSelectedBettype(selectedItemsKey)), []);
+    const onBetTypeChangeHandler = useCallback((_currentItem, selectedItemsKey) => dispatch(setSelectedBettype(selectedItemsKey)), []);
 
-    const onRiskLevelChangeHandler = useCallback((currentItem, selectedItemsKey) => {
+    const onRiskLevelChangeHandler = useCallback((_currentItem, selectedItemsKey) => {
         const customerClass = formData.riskLevelList
             .filter(r => selectedItemsKey.includes(r.id))
             .map(r => r.customerClassList)
@@ -83,11 +83,11 @@ export const useFilterHandler = () => {
         dispatch(setSelectedCustomerClass(customerClass));
     }, []);
 
-    const onOddsGroupChangeHandler = useCallback((currentItem, selectedItemsKey) => dispatch(setSelectedOddsGroup(selectedItemsKey)), []);
+    const onOddsGroupChangeHandler = useCallback((_currentItem, selectedItemsKey) => dispatch(setSelectedOddsGroup(selectedItemsKey)), []);
 
-    const onPlatformChangeHandler = useCallback((currentItem, selectedItemsKey) => dispatch(setSelectedPlatform(selectedItemsKey)), []);
+    const onPlatformChangeHandler = useCallback((_currentItem, selectedItemsKey) => dispatch(setSelectedPlatform(selectedItemsKey)), []);
 
-    const onCurrencyChangeHandler = useCallback((currentItem, selectedItemsKey) => dispatch(setSelectedCurrency(selectedItemsKey)), []);
+    const onCurrencyChangeHandler = useCallback((_currentItem, selectedItemsKey) => dispatch(setSelectedCurrency(selectedItemsKey)), []);
 
     const onBaseCurrencyChangeHandler = useCallback(item => dispatch(setSelectedBaseCurrency(item)), []);
 
@@ -146,7 +146,12 @@ export const useFilterHandler = () => {
             dispatch(setGroupInOriginalCurrency(defaultState.isGroupInOriginalCurrency));
             dispatch(setSelectedGroupByOption(defaultState.selectedGroupByOption));
             dispatch(setSelectedBreakDownByOption(defaultState.selectedBreakDownByOption));
-            dispatch(setDateRange({ startDate: defaultState.dateRange.fromDate, endDate: defaultState.dateRange.toDate }));
+            dispatch(
+                setDateRange({
+                    startDate: defaultState.dateRange.fromDate,
+                    endDate: defaultState.dateRange.toDate,
+                })
+            );
             dispatch(setSelectedCashOutMode(defaultState.selectedCashOutMode));
             dispatch(setHour(defaultState.selectedHour));
             dispatch(setSelectedViewInTime(value));

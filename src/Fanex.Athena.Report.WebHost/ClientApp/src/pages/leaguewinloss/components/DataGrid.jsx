@@ -22,31 +22,34 @@ export const DataGrid = props => {
 
     const { pagingOption, AppData, requestParam } = props;
 
-    const contentData = data.map(item => {
+    const addCurrencyName = item => {
+        const currency = AppData.currencyList.find(x => x.key === item.currency);
+        if (currency) {
+            item.currencyName = currency.value;
+        }
+        return item;
+    };
+
+    const processDetailData = rows => {
+        if (!rows.detail || !rows.detail.data) {
+            return rows;
+        }
+        rows.detail.data = rows.detail.data.map(addCurrencyName);
+        return rows;
+    };
+
+    const processItemDetail = item => {
         if (!item.detail) {
             return item;
         }
-
-        // Level 1
         item.detail = item.detail.map(rows => {
-            let currency = AppData.currencyList.find(x => x.key === rows.currency);
-            currency && (rows.currencyName = currency.value);
-            if (!rows.detail || !rows.detail.data) {
-                return rows;
-            }
-
-            // Level 2
-            rows.detail.data = rows.detail.data.map(cells => {
-                currency = AppData.currencyList.find(x => x.key === cells.currency);
-                currency && (cells.currencyName = currency.value);
-                return cells;
-            });
-
-            return rows;
+            addCurrencyName(rows);
+            return processDetailData(rows);
         });
-
         return item;
-    });
+    };
+
+    const contentData = data.map(processItemDetail);
 
     const drillDownData = level => {
         const currentLevel = requestParam.DrillDownLevel;
@@ -87,13 +90,33 @@ export const DataGrid = props => {
     );
 };
 
-function mapDispatchToProps(dispatch) {
+const mapDispatchToProps = dispatch => {
     const { setRequestParam, toggleLoader, getReportData, setReportTitle, setBreadcrumbParams } = ActionCreators;
-    return bindActionCreators({ setRequestParam, toggleLoader, getReportData, setReportTitle, setBreadcrumbParams }, dispatch);
-}
-function mapStateToProps(state) {
+    return bindActionCreators(
+        {
+            setRequestParam,
+            toggleLoader,
+            getReportData,
+            setReportTitle,
+            setBreadcrumbParams,
+        },
+        dispatch
+    );
+};
+const mapStateToProps = state => {
     const { formData, requestParam, pagingOption, reportData, reportTitle, reloadReport, breadcrumbParams } = state;
-    return Object.assign({}, { AppData: formData, requestParam, pagingOption, reportData, reportTitle, reloadReport, breadcrumbParams });
-}
+    return Object.assign(
+        {},
+        {
+            AppData: formData,
+            requestParam,
+            pagingOption,
+            reportData,
+            reportTitle,
+            reloadReport,
+            breadcrumbParams,
+        }
+    );
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(DataGrid);

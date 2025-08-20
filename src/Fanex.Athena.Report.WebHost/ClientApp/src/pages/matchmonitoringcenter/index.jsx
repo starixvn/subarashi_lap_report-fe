@@ -9,7 +9,11 @@ import '@/styles/pages/matchmonitoringcenter/index.scss';
 
 const MatchMonitoringCenter = () => {
     const { RefreshCountdown } = constants;
-    const store = Store.createStore(reducer, { reportFilter: { DefaultRefreshCountdown: RefreshCountdown.DefaultRefreshCountdown } });
+    const store = Store.createStore(reducer, {
+        reportFilter: {
+            DefaultRefreshCountdown: RefreshCountdown.DefaultRefreshCountdown,
+        },
+    });
 
     return (
         <Provider store={store}>

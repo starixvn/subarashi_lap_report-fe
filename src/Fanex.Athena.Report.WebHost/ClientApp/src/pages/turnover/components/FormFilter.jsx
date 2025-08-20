@@ -110,21 +110,17 @@ const FormFilter = () => {
         dispatch(setGridData(null));
     };
 
-    const getParams = () => {
-        const params = {
-            FromDate: dateRange.fromDate,
-            ToDate: dateRange.toDate,
-            UserName: username,
-            ProductOptions: selectedProducts,
-            IsExcludedTestData: excludeTestData === 'true',
-            BaseCurrency: selectedBaseCurrency.isEmpty ? '' : selectedBaseCurrency.label,
-            BaseCurrencyName: selectedBaseCurrency.label,
-            CurrencyName: selectedCurrency.label,
-            CurrencyId: selectedCurrency.value,
-        };
-
-        return params;
-    };
+    const getParams = () => ({
+        FromDate: dateRange.fromDate,
+        ToDate: dateRange.toDate,
+        UserName: username,
+        ProductOptions: selectedProducts,
+        IsExcludedTestData: excludeTestData === 'true',
+        BaseCurrency: selectedBaseCurrency.isEmpty ? '' : selectedBaseCurrency.label,
+        BaseCurrencyName: selectedBaseCurrency.label,
+        CurrencyName: selectedCurrency.label,
+        CurrencyId: selectedCurrency.value,
+    });
 
     const fetchUserGuide = () => {
         if (!userGuideContent) {

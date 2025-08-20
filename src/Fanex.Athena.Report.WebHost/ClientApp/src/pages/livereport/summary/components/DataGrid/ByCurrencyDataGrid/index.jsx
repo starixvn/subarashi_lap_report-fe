@@ -5,7 +5,7 @@ import { LiveReportTable } from '../../../gridUltility';
 import LangHelper from '@/helpers/langHelper';
 import { BuildByCurrencyBody, BuildByCurrencyHeaders } from './GridBuilder';
 
-function ByCurrencyDataGrid() {
+const ByCurrencyDataGrid = () => {
     const gridData = useSelector(state => state.gridData?.dataByCurrency);
     const formData = useSelector(state => state.formData);
     const selectedProductCode = useSelector(state => state.selectedProductCode);
@@ -26,6 +26,6 @@ function ByCurrencyDataGrid() {
             body={BuildByCurrencyBody(gridData)}
         />
     );
-}
+};
 
 export default ByCurrencyDataGrid;

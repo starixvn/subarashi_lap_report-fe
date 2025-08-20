@@ -8,8 +8,7 @@ export default class DataService {
 
     static buildProxyUrl(apiKey, apiUrl) {
         const encodeUrl = apiUrl.replace(new RegExp('/', 'g'), '_');
-        const proxyUrl = `Proxy/${apiKey}/${encodeUrl}`;
-        return proxyUrl;
+        return `Proxy/${apiKey}/${encodeUrl}`;
     }
 
     static getProxyData(apiKey, apiUrl, params) {

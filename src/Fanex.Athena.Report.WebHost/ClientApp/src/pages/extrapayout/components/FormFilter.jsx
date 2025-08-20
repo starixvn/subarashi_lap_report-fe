@@ -78,7 +78,7 @@ export const FormFilter = props => {
                 keyField={'code'}
                 valueField={'name'}
                 statusField={'status'}
-                onChange={(currentItem, selectedItemsKey) => onChangeProduct(selectedItemsKey)}
+                onChange={(_currentItem, selectedItemsKey) => onChangeProduct(selectedItemsKey)}
             />
         ) : null;
     };
@@ -95,7 +95,7 @@ export const FormFilter = props => {
                 keyField={'value'}
                 valueField={'label'}
                 statusField={'status'}
-                onChange={(currentItem, selectedItemsKey) => props.setSelectedPromotionTypes(selectedItemsKey)}
+                onChange={(_currentItem, selectedItemsKey) => props.setSelectedPromotionTypes(selectedItemsKey)}
             />
         ) : null;
     };
@@ -116,7 +116,7 @@ export const FormFilter = props => {
                 keyField={'key'}
                 valueField={'value'}
                 statusField={'status'}
-                onChange={(currentItem, selectedItemsKey) => onChangeCurrency(selectedItemsKey)}
+                onChange={(_currentItem, selectedItemsKey) => onChangeCurrency(selectedItemsKey)}
             />
         ) : null;
     };
@@ -179,7 +179,11 @@ export const FormFilter = props => {
             keyField="value"
             valueField="name"
             statusField="checked"
-            texts={{ SelectOptions: 'Please select', All: 'All', SelectedItemCount: '# selected' }}
+            texts={{
+                SelectOptions: 'Please select',
+                All: 'All',
+                SelectedItemCount: '# selected',
+            }}
             isAllTextShown={false}
             hasSearchBox={false}
             treeViewOption={TreeViewOption}
@@ -265,10 +269,9 @@ export const FormFilter = props => {
         const hasSelectedPromotionTypes = !!props.selectedPromotionTypes;
         const hasSelectedBaseCurrency = !!props.selectedBaseCurrency;
 
-        const result =
-            hasValidSubsidiary && hasSelectedProduct && hasSelectedCurrency && hasPromotionTypeList && hasSelectedPromotionTypes && hasSelectedBaseCurrency;
-
-        return result;
+        const hasBasicRequirements = hasValidSubsidiary && hasSelectedProduct && hasSelectedCurrency;
+        const hasPromotionRequirements = hasPromotionTypeList && hasSelectedPromotionTypes && hasSelectedBaseCurrency;
+        return hasBasicRequirements && hasPromotionRequirements;
     };
 
     const exportExcel = () => {
@@ -436,7 +439,7 @@ export const FormFilter = props => {
     );
 };
 
-function mapStateToProps(state) {
+const mapStateToProps = state => {
     const {
         formData,
         requestParam,
@@ -475,10 +478,8 @@ function mapStateToProps(state) {
             drillDownRequest,
         }
     );
-}
+};
 
-function mapDispatchToProps(dispatch) {
-    return bindActionCreators(ActionCreators, dispatch);
-}
+const mapDispatchToProps = dispatch => bindActionCreators(ActionCreators, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(FormFilter);

@@ -6,7 +6,10 @@ export const SettingConst = {
     ReportByDaily: 2,
 };
 
-export const CurrencySelectAll = { value: 0, label: LangHelper.getSingleResource('All') };
+export const CurrencySelectAll = {
+    value: 0,
+    label: LangHelper.getSingleResource('All'),
+};
 
 export const ReportBy = [
     { value: 1, label: LangHelper.getSingleResource('Summary') },

@@ -6,7 +6,31 @@ import ActionCreators from '../../actions';
 import { ApiUrl, ReportLevel } from '../../common/constants';
 import DataService from '@/lib/dataService';
 
-// eslint-disable-next-line complexity
+const getCellDisplayData = (level, rowData, isDirectToCurrency) => {
+    switch (level) {
+        case ReportLevel.MAIN:
+            return {
+                textValue: isDirectToCurrency ? rowData.sportName : rowData.leagueName,
+                key: isDirectToCurrency && rowData.sportType !== 0 ? rowData.sportType : rowData.leagueId,
+                property: isDirectToCurrency && rowData.sportType !== 0 ? 'sportType' : 'leagueId',
+            };
+        case ReportLevel.MATCH:
+            return {
+                textValue: rowData.matchName,
+                key: rowData.matchId,
+                property: 'matchId',
+            };
+        case ReportLevel.BETTYPE:
+            return {
+                textValue: rowData.betTypeName,
+                key: rowData.betTypeId,
+                property: 'betTypeId',
+            };
+        default:
+            return { textValue: '', key: null, property: '' };
+    }
+};
+
 export const GroupCell = props => {
     const {
         rowData,
@@ -24,24 +48,7 @@ export const GroupCell = props => {
     const _isDrillDown = !!rowData.isBreakdown;
     const _isDirectToCurrency = !!rowData.isDirectToCurrency;
 
-    let textValue, key, property;
-    switch (level) {
-        case ReportLevel.MAIN:
-            textValue = _isDirectToCurrency ? rowData.sportName : rowData.leagueName;
-            key = _isDirectToCurrency && rowData.sportType !== 0 ? rowData.sportType : rowData.leagueId;
-            property = _isDirectToCurrency && rowData.sportType !== 0 ? 'sportType' : 'leagueId';
-            break;
-        case ReportLevel.MATCH:
-            textValue = rowData.matchName;
-            key = rowData.matchId;
-            property = 'matchId';
-            break;
-        case ReportLevel.BETTYPE:
-            textValue = rowData.betTypeName;
-            key = rowData.betTypeId;
-            property = 'betTypeId';
-            break;
-    }
+    const { textValue, key, property } = getCellDisplayData(level, rowData, _isDirectToCurrency);
 
     const _handleDirectBreakDownCurrency = async () => {
         const dataList = reportData.data;
@@ -91,15 +98,13 @@ export const GroupCell = props => {
 
         for (let i = 0; i < dataList.length; i++) {
             const detailData = dataList[i].detail;
-            if (!detailData) {
-                continue;
-            }
+            if (detailData) {
+                rowIndex = detailData.findIndex(_ => _[property] === key);
 
-            rowIndex = detailData.findIndex(_ => _[property] === key);
-
-            if (rowIndex !== -1) {
-                itemIndex = i;
-                break;
+                if (rowIndex !== -1) {
+                    itemIndex = i;
+                    break;
+                }
             }
         }
 
@@ -229,7 +234,17 @@ export const GroupCell = props => {
 const mapDispatchToProps = function (dispatch) {
     const { getReportData, toggleLoader, setRequestParam, setReportData, setReloadReport, setBreadcrumbParams } = ActionCreators;
     return bindActionCreators(
-        Object.assign({}, { getReportData, toggleLoader, setRequestParam, setReportData, setReloadReport, setBreadcrumbParams }),
+        Object.assign(
+            {},
+            {
+                getReportData,
+                toggleLoader,
+                setRequestParam,
+                setReportData,
+                setReloadReport,
+                setBreadcrumbParams,
+            }
+        ),
         dispatch
     );
 };

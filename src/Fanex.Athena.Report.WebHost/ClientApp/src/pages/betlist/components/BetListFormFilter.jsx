@@ -8,7 +8,7 @@ import DataService from '@/lib/dataService';
 
 import Service, { constants } from '../common';
 
-function BetListFormFilter() {
+const BetListFormFilter = () => {
     const formData = useSelector(state => state.formData);
     const gridData = useSelector(state => state.gridData);
 
@@ -32,6 +32,6 @@ function BetListFormFilter() {
     const FormFilter = getBetListPageWithPageName(formData.pageName).FormFilter;
 
     return <FormFilter processExcel={processExcel} isValidExcel={isValidExcel} />;
-}
+};
 
 export default BetListFormFilter;

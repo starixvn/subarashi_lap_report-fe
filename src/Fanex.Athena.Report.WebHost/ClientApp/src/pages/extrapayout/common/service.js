@@ -3,7 +3,8 @@ import Site from '@/lib/site';
 import Report from '@/lib/report';
 
 export default class Service {
-    static getTitle(fromDate, toDate, currency, baseCurrency, ProductCodeList, username, isConvertAllToBaseCurrency) {
+    static getTitle(params) {
+        const { fromDate, toDate, currency, baseCurrency, ProductCodeList, username, isConvertAllToBaseCurrency } = params;
         const dateRangeText = fromDate && toDate ? `, ${Site.convertDateToString(fromDate)} ? ${Site.convertDateToString(toDate)}` : '';
 
         const currencyName = baseCurrency === '' ? currency : baseCurrency;

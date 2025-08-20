@@ -1,7 +1,7 @@
 import React from 'react';
 import { usePageViewEvent } from '@/hooks/gtagEvents';
 
-function RouteLayout({ id, pageName, layout: Layout, component: Component, ...rest }) {
+const RouteLayout = ({ id, pageName, layout: Layout, component: Component, ...rest }) => {
     usePageViewEvent(pageName ?? id);
 
     if (!Layout) {
@@ -13,6 +13,6 @@ function RouteLayout({ id, pageName, layout: Layout, component: Component, ...re
             <Component />
         </Layout>
     );
-}
+};
 
 export default React.memo(RouteLayout);

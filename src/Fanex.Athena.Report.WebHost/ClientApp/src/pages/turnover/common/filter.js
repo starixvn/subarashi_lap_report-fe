@@ -5,4 +5,7 @@ export const ExcludeTestDataOptions = [
     { value: 'false', label: LangHelper.getSingleResource('No') },
 ];
 
-export const CurrencySelectAll = { value: 0, label: LangHelper.getSingleResource('All') };
+export const CurrencySelectAll = {
+    value: 0,
+    label: LangHelper.getSingleResource('All'),
+};

@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
-import LeagueWinLossRoute from '../../src/routes/LeagueWinLoss';
+import LeagueWinLossRoute from '../../src/routes/LeagueWinLossRoute';
 
 jest.mock('../../src/pages/leaguewinloss', () => ({ 
     __esModule: true, 

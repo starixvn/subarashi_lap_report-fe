@@ -5,7 +5,7 @@ import { LiveReportTable } from '../../../gridUltility';
 import LangHelper from '@/helpers/langHelper';
 import { BuildBySportBody, BuildBySportHeaders } from './GridBuilder';
 
-function BySportDataGrid() {
+const BySportDataGrid = () => {
     const gridData = useSelector(state => state.gridData?.dataBySport);
     const isShowedDetailLink = useSelector(state => state.gridData.isShowedDetailLink);
 
@@ -28,6 +28,6 @@ function BySportDataGrid() {
             body={BuildBySportBody(gridData, isShowedDetailLink)}
         />
     );
-}
+};
 
 export default BySportDataGrid;

@@ -12,7 +12,11 @@ export const fetchBetTypeList = sportProducts => async dispatch => {
         dispatch(toggleLoader(true));
 
         const cacheKey = `${BETTYPE_CACHE_KEY}:${sportProducts.map(x => x.name).join(',')}`;
-        const data = await Service.fetchBetTypeList({ url: ApiUrl.BETTYPE_URL, cacheKey: cacheKey, sportProducts });
+        const data = await Service.fetchBetTypeList({
+            url: ApiUrl.BETTYPE_URL,
+            cacheKey: cacheKey,
+            sportProducts,
+        });
         if (!data) {
             return;
         }

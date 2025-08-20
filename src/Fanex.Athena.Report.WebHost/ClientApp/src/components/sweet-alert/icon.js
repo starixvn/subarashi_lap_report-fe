@@ -4,14 +4,12 @@ export const errorIconMarkup = () => {
     const icon = `${ICON}--error`;
     const line = `${icon}__line`;
 
-    const markup = `
+    return `
     <div class="${icon}__x-mark">
       <span class="${line} ${line}--left"></span>
       <span class="${line} ${line}--right"></span>
     </div>
   `;
-
-    return markup;
 };
 
 export const warningIconMarkup = () => {

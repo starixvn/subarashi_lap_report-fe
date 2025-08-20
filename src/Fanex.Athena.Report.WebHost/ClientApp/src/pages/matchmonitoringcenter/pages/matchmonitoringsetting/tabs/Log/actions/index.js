@@ -48,7 +48,9 @@ export const getActionList = logTypes => async (dispatch, getState) => {
             return;
         }
 
-        const response = await DataService.getReportData(ApiUrl.GET_ACTION_LIST, { logTypes });
+        const response = await DataService.getReportData(ApiUrl.GET_ACTION_LIST, {
+            logTypes,
+        });
 
         if (response && response.data) {
             const actionOptions = response.data.map(item => ({

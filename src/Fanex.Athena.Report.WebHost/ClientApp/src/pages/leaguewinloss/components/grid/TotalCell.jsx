@@ -64,14 +64,14 @@ export const TotalCell = props => {
     );
 };
 
-function mapDispatchToProps(dispatch) {
+const mapDispatchToProps = dispatch => {
     const { getReportData, toggleLoader, setReportData, setReloadReport } = ActionCreators;
     return bindActionCreators(Object.assign({}, { getReportData, toggleLoader, setReportData, setReloadReport }), dispatch);
-}
+};
 
-function mapStateToProps(state) {
+const mapStateToProps = state => {
     const { reportData } = state;
     return Object.assign({}, { reportData });
-}
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(React.memo(TotalCell));

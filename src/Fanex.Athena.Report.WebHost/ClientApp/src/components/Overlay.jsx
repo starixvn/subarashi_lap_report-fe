@@ -44,7 +44,9 @@ const Overlay = ({ children, closeOnOutsideClick, isOpening, onOpen, onClose }) 
         return () => document.removeEventListener('click', eventListener);
     }, [closeOnOutsideClick, handleClickOutside]);
 
-    const mergedClassName = classNames(wrapperClasses.OVERLAY, { [wrapperClasses.OVERLAY_OPEN]: isOpen });
+    const mergedClassName = classNames(wrapperClasses.OVERLAY, {
+        [wrapperClasses.OVERLAY_OPEN]: isOpen,
+    });
 
     const style = { display: isOpen ? 'block' : 'none' };
 

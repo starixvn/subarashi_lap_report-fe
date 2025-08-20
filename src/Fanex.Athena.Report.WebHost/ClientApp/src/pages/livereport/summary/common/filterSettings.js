@@ -1,6 +1,9 @@
 import LangHelper from '@/helpers/langHelper';
 
-export const CurrencySelectAll = { value: 0, label: LangHelper.getSingleResource('All') };
+export const CurrencySelectAll = {
+    value: 0,
+    label: LangHelper.getSingleResource('All'),
+};
 
 export const LiveStatuses = [
     { value: 2, label: LangHelper.getSingleResource('All') },

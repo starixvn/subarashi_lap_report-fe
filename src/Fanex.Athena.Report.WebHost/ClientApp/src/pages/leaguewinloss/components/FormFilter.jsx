@@ -83,7 +83,7 @@ export const FormFilter = props => {
                     keyField={'code'}
                     valueField={'name'}
                     statusField={'status'}
-                    onChange={(currentItem, selectedItemsKey) => onChangeProduct(selectedItemsKey)}
+                    onChange={(_currentItem, selectedItemsKey) => onChangeProduct(selectedItemsKey)}
                     isValid={!!props.selectedProduct}
                 />
             )
@@ -122,7 +122,7 @@ export const FormFilter = props => {
                 isAllTextShown={true}
                 hasSearchBox={true}
                 treeViewOption={TreeViewOption}
-                onChange={(currentItem, selectedItemsKey) => props.setSelectedSport(selectedItemsKey)}
+                onChange={(_currentItem, selectedItemsKey) => props.setSelectedSport(selectedItemsKey)}
                 isValid={!!props.selectedSport}
             />
         );
@@ -160,7 +160,7 @@ export const FormFilter = props => {
                 isAllTextShown={true}
                 hasSearchBox={true}
                 treeViewOption={TreeViewOption}
-                onChange={(currentItem, selectedItemsKey) => props.setSelectedBettype(selectedItemsKey)}
+                onChange={(_currentItem, selectedItemsKey) => props.setSelectedBettype(selectedItemsKey)}
                 isValid={!!props.selectedBettype}
             />
         );
@@ -185,7 +185,7 @@ export const FormFilter = props => {
                     keyField={'key'}
                     valueField={'value'}
                     statusField={'status'}
-                    onChange={(currentItem, selectedItemsKey) => onChangeCurrency(selectedItemsKey)}
+                    onChange={(_currentItem, selectedItemsKey) => onChangeCurrency(selectedItemsKey)}
                     isValid={!!props.selectedCurrency}
                 />
             )
@@ -229,7 +229,7 @@ export const FormFilter = props => {
                     keyField={'value'}
                     valueField={'label'}
                     statusField={'status'}
-                    onChange={(currentItem, selectedItemsKey) => props.setSelectedStatus(selectedItemsKey)}
+                    onChange={(_currentItem, selectedItemsKey) => props.setSelectedStatus(selectedItemsKey)}
                     isValid={!!props.selectedStatus}
                 />
             )
@@ -300,9 +300,9 @@ export const FormFilter = props => {
         const hasSelectedBettype = !!props.selectedBettype;
         const hasSelectedBaseCurrency = !!props.selectedBaseCurrency;
 
-        const result = hasSelectedProduct && hasSelectedStatus && hasSelectedCurrency && hasSelectedSport && hasSelectedBettype && hasSelectedBaseCurrency;
-
-        return result;
+        const hasProductAndStatus = hasSelectedProduct && hasSelectedStatus && hasSelectedCurrency;
+        const hasSportAndBettype = hasSelectedSport && hasSelectedBettype && hasSelectedBaseCurrency;
+        return hasProductAndStatus && hasSportAndBettype;
     };
 
     const exportExcel = () => {
@@ -399,7 +399,9 @@ export const FormFilter = props => {
                                 url={ApiUrl.CUSTOMER_SEARCH_URL}
                                 onSelect={value => props.setUsername(value)}
                                 onInput={value => props.setUsername(value)}
-                                htmlAttributes={{ placeholder: LangHelper.getSingleResource('ExternalIdOrSystemId') }}
+                                htmlAttributes={{
+                                    placeholder: LangHelper.getSingleResource('ExternalIdOrSystemId'),
+                                }}
                             />
                         </div>
                     </div>
@@ -443,7 +445,7 @@ export const FormFilter = props => {
     );
 };
 
-function mapStateToProps(state) {
+const mapStateToProps = state => {
     const {
         requestParam,
         formData,
@@ -482,10 +484,8 @@ function mapStateToProps(state) {
             breadcrumbParams,
         }
     );
-}
+};
 
-function mapDispatchToProps(dispatch) {
-    return bindActionCreators(ActionCreators, dispatch);
-}
+const mapDispatchToProps = dispatch => bindActionCreators(ActionCreators, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(FormFilter);

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Table } from '@legion-lib/react-grid';
 
-function LiveReportTable(props) {
+const LiveReportTable = props => {
     const { tableTitle, header, body, footer } = props;
 
     return (
@@ -11,7 +11,7 @@ function LiveReportTable(props) {
             <Table autoWidth={true} autoHeight={false} bodyHeight="100%" isIncludeScrollWidth={false} header={header} body={body} footer={footer} />
         </div>
     );
-}
+};
 
 LiveReportTable.propTypes = {
     tableTitle: PropTypes.string.isRequired,

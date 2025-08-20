@@ -9,7 +9,10 @@ import { DefaultDateRange } from './common/dateSetting.js';
 import '@/styles/pages/extrapayout.scss';
 
 const ExtraPayout = () => {
-    const store = Store.createStore(reducer, { ...DefaultDateRange, reportFilter: { PageSize: DefaultPageSize } });
+    const store = Store.createStore(reducer, {
+        ...DefaultDateRange,
+        reportFilter: { PageSize: DefaultPageSize },
+    });
 
     return (
         <Provider store={store}>

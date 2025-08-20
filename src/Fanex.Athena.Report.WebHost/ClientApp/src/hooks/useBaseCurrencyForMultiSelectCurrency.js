@@ -50,7 +50,10 @@ export const useBaseCurrencyForMultiSelectCurrency = (initSelectedBaseCurrency, 
         defaultBaseCurrencyRef.current = selectedBaseCurrency;
     }
 
-    return { baseCurrencyList: currentBaseCurrencyList, selectedBaseCurrency: currentBaseCurrency };
+    return {
+        baseCurrencyList: currentBaseCurrencyList,
+        selectedBaseCurrency: currentBaseCurrency,
+    };
 };
 
 export default useBaseCurrencyForMultiSelectCurrency;

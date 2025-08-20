@@ -245,14 +245,34 @@ export const DataGrid = props => {
     );
 };
 
-function mapDispatchToProps(dispatch) {
+const mapDispatchToProps = dispatch => {
     const { setRequestParam, toggleLoader, getReportData, setReportTitle, setDetailParams, setDrillDownRequest } = ActionCreators;
-    return bindActionCreators({ setRequestParam, toggleLoader, getReportData, setReportTitle, setDetailParams, setDrillDownRequest }, dispatch);
-}
+    return bindActionCreators(
+        {
+            setRequestParam,
+            toggleLoader,
+            getReportData,
+            setReportTitle,
+            setDetailParams,
+        },
+        dispatch
+    );
+};
 
-function mapStateToProps(state) {
+const mapStateToProps = state => {
     const { requestParam, reportData, reportTitle, reloadReport, detailParams, selectedCurrency, isConvertAllToBaseCurrency, drillDownRequest } = state;
-    return Object.assign({}, { requestParam, reportData, reportTitle, reloadReport, detailParams, selectedCurrency, isConvertAllToBaseCurrency, drillDownRequest });
-}
+    return Object.assign(
+        {},
+        {
+            requestParam,
+            reportData,
+            reportTitle,
+            reloadReport,
+            detailParams,
+            selectedCurrency,
+            isConvertAllToBaseCurrency,
+        }
+    );
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(DataGrid);

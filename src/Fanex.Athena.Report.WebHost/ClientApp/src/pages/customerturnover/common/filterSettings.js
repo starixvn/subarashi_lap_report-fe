@@ -13,12 +13,21 @@ export const TicketFilterValue = {
     Draw: 3,
 };
 
-export const TicketFilterOptionAll = { value: TicketFilterValue.All, label: LangHelper.getSingleResource('All') };
+export const TicketFilterOptionAll = {
+    value: TicketFilterValue.All,
+    label: LangHelper.getSingleResource('All'),
+};
 
 export const TicketFilterOptions = [
     { value: TicketFilterValue.Won, label: LangHelper.getSingleResource('Won') },
-    { value: TicketFilterValue.Lost, label: LangHelper.getSingleResource('Lost') },
-    { value: TicketFilterValue.Draw, label: LangHelper.getSingleResource('Draw') },
+    {
+        value: TicketFilterValue.Lost,
+        label: LangHelper.getSingleResource('Lost'),
+    },
+    {
+        value: TicketFilterValue.Draw,
+        label: LangHelper.getSingleResource('Draw'),
+    },
 ];
 
 export const DefaultPagingOption = {

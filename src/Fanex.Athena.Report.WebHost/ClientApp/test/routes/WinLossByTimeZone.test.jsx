@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
-import LicenseeWinLossByTimeZoneRoute from '../../src/routes/WinLossByTimeZone';
+import LicenseeWinLossByTimeZoneRoute from '../../src/routes/LicenseeWinLossByTimeZoneRoute';
 
 jest.mock('../../src/pages/winlossbytimezone', () => ({ 
     __esModule: true, 

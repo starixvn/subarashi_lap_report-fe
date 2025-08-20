@@ -34,37 +34,45 @@ const Month = ({ id, label, value, min, max, onChange }) => {
 
     const formatString = (month, year) => `${shortMonths[month]} ${year}`;
 
+    const renderExpandedYear = (year, min, max, value) => {
+        const options = [];
+        options.push(
+            <li key={year} className="year" style={{ fontWeight: 'bold' }}>
+                <a href="javascript:;">{year}</a>
+            </li>
+        );
+
+        const minMonth = year === min.year ? min.month : 0;
+        const maxMonth = year === max.year ? max.month : 11;
+
+        for (let j = minMonth; j <= maxMonth; j++) {
+            const isSelected = year === value.year && j === value.month;
+            const valueItem = { year, month: j };
+
+            options.push(
+                <li key={`${j}${year}`} className="month-option" onClick={() => handleChange(valueItem)}>
+                    <a href="javascript:;" className={`${isSelected ? 'selected' : ''}`}>
+                        {fullMonths[j]}
+                    </a>
+                </li>
+            );
+        }
+        return options;
+    };
+
+    const renderCollapsedYear = year => (
+        <li key={year} className="year" onClick={() => setExpandYear(year)}>
+            <a href="javascript:;">{year}</a>
+        </li>
+    );
+
     const renderOption = (min, max, value) => {
         const options = [];
         for (let i = min.year; i <= max.year; i++) {
             if (i === expandYear) {
-                options.push(
-                    <li key={i} className="year" style={{ fontWeight: 'bold' }}>
-                        <a href="javascript:;">{i}</a>
-                    </li>
-                );
-
-                const minMonth = i === min.year ? min.month : 0;
-                const maxMonth = i === max.year ? max.month : 11;
-
-                for (let j = minMonth; j <= maxMonth; j++) {
-                    const isSelected = i === value.year && j === value.month;
-                    const valueItem = { year: i, month: j };
-
-                    options.push(
-                        <li key={`${j}${i}`} className="month-option" onClick={() => handleChange(valueItem)}>
-                            <a href="javascript:;" className={`${isSelected ? 'selected' : ''}`}>
-                                {fullMonths[j]}
-                            </a>
-                        </li>
-                    );
-                }
+                options.push(...renderExpandedYear(i, min, max, value));
             } else {
-                options.push(
-                    <li key={i} className="year" onClick={() => setExpandYear(i)}>
-                        <a href="javascript:;">{i}</a>
-                    </li>
-                );
+                options.push(renderCollapsedYear(i));
             }
         }
         return options;
@@ -94,8 +102,12 @@ const Month = ({ id, label, value, min, max, onChange }) => {
         return { year, month };
     };
 
-    const checkValidMonth = (month, year) =>
-        (year > min.year && year < max.year) || (year === min.year && month >= min.month) || (year === max.year && month <= max.month);
+    const checkValidMonth = (month, year) => {
+        const isWithinYearRange = year > min.year && year < max.year;
+        const isMinYearValid = year === min.year && month >= min.month;
+        const isMaxYearValid = year === max.year && month <= max.month;
+        return isWithinYearRange || isMinYearValid || isMaxYearValid;
+    };
 
     const goToMonth = (e, newValue) => {
         e.preventDefault();

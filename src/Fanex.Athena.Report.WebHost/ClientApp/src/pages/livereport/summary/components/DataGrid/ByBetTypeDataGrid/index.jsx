@@ -5,7 +5,7 @@ import { LiveReportTable } from '../../../gridUltility';
 import LangHelper from '@/helpers/langHelper';
 import { BuildByBetTypeBody, BuildByBetTypeHeaders } from './GridBuilder';
 
-function ByBetTypeDataGrid() {
+const ByBetTypeDataGrid = () => {
     const gridData = useSelector(state => state.gridData?.dataByBetType);
     const formData = useSelector(state => state.formData);
     const selectedProductCode = useSelector(state => state.selectedProductCode);
@@ -26,6 +26,6 @@ function ByBetTypeDataGrid() {
             body={BuildByBetTypeBody(gridData, options)}
         />
     );
-}
+};
 
 export default ByBetTypeDataGrid;

@@ -16,7 +16,10 @@ const HeaderRow = ({ defaultSelectedHeaderKey, onSort, children, sortBy, sortOrd
                 newSortOrder = sortBy === child.props.sortBy ? sortOrder : null;
             }
 
-            return React.cloneElement(child, { onSort: onSort, sortOrder: newSortOrder });
+            return React.cloneElement(child, {
+                onSort: onSort,
+                sortOrder: newSortOrder,
+            });
         });
     return <tr {...rest}>{renderChildren()}</tr>;
 };

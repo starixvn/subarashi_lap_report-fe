@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
-import CustomerSupportTasksRoute from '../../src/routes/CustomerSupportTasksRoute';
+import CustomerSupportTasksRoute from '../../src/routes/CustomerSupportTaskRoute';
 
 jest.mock('../../src/pages/customersupporttask', () => ({ 
     __esModule: true, 

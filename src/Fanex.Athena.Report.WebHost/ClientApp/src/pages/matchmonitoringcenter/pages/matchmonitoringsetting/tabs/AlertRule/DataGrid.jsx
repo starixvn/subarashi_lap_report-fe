@@ -16,7 +16,7 @@ const fetchReportData = async (params, apiUrl) => {
     return response.data;
 };
 
-function DataGrid() {
+const DataGrid = () => {
     const dispatch = useDispatch();
     const gridData = useSelector(state => state.gridData);
     const addNewRule = useSelector(state => state.addNewRule);
@@ -86,6 +86,6 @@ function DataGrid() {
             {renderAddNewRuleButton()}
         </>
     );
-}
+};
 
 export default DataGrid;

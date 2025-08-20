@@ -1,6 +1,59 @@
 import React, { useRef, useCallback, useEffect } from 'react';
 import { InputType } from '../../../lib/constants';
 
+const validateTextValue = value => value && value.trim() !== '';
+
+const validateNumberValue = (value, min, max, SQL_MONEY_MAX) => {
+    if (value === '') {
+        return true;
+    }
+
+    const numValue = parseFloat(value);
+    const isValidNumber = !isNaN(numValue);
+    const isWithinMaxLimit = numValue <= SQL_MONEY_MAX;
+    const isAboveMinLimit = min === undefined || numValue >= min;
+    const isBelowMaxLimit = max === undefined || numValue <= max;
+
+    return isValidNumber && isWithinMaxLimit && isAboveMinLimit && isBelowMaxLimit;
+};
+
+const processNumberInput = value => {
+    let processed = value;
+
+    if (processed.includes('e') || processed.includes('E')) {
+        processed = processed.replace(/[eE]/g, '');
+    }
+
+    if (processed.includes('-')) {
+        processed = processed.replace(/-/g, '');
+    }
+
+    return processed;
+};
+
+const clampNumberValue = (value, min, max, SQL_MONEY_MAX) => {
+    if (value === '' || value === '.') {
+        return value;
+    }
+
+    const numValue = parseFloat(value);
+    if (isNaN(numValue)) {
+        return value;
+    }
+
+    if (numValue > SQL_MONEY_MAX) {
+        return SQL_MONEY_MAX.toString();
+    }
+    if (min !== undefined && numValue < min) {
+        return min.toString();
+    }
+    if (max !== undefined && numValue > max) {
+        return max.toString();
+    }
+
+    return value;
+};
+
 const InputCell = ({ value, fieldKey, onChange, type = InputType.text, width = '100%', min, max }) => {
     const valueRef = useRef(value);
     const SQL_MONEY_MAX = 922337203685477;
@@ -10,31 +63,17 @@ const InputCell = ({ value, fieldKey, onChange, type = InputType.text, width = '
         valueRef.current = value;
     }, [value]);
 
-    // eslint-disable-next-line complexity
     const isValidValue = () => {
         if (!value) {
             return false;
         }
-        if (type === InputType.text && value.trim() === '') {
-            return false;
+
+        if (type === InputType.text) {
+            return validateTextValue(value);
         }
 
-        if (type === InputType.number && value !== '') {
-            const numValue = parseFloat(value);
-            if (isNaN(numValue)) {
-                return false;
-            }
-
-            if (numValue > SQL_MONEY_MAX) {
-                return false;
-            }
-
-            if (min !== undefined && numValue < min) {
-                return false;
-            }
-            if (max !== undefined && numValue > max) {
-                return false;
-            }
+        if (type === InputType.number) {
+            return validateNumberValue(value, min, max, SQL_MONEY_MAX);
         }
 
         return true;
@@ -67,34 +106,13 @@ const InputCell = ({ value, fieldKey, onChange, type = InputType.text, width = '
     };
 
     const handleChange = useCallback(
-        // eslint-disable-next-line complexity, max-depth
         e => {
             let newValue = e.target.value;
 
             if (type === InputType.number) {
-                if (newValue.includes('e') || newValue.includes('E')) {
-                    newValue = newValue.replace(/[eE]/g, '');
-                }
-
-                if (newValue.includes('-')) {
-                    newValue = newValue.replace(/-/g, '');
-                }
-
+                newValue = processNumberInput(newValue);
                 newValue = limitDecimalPlaces(newValue);
-
-                if (newValue !== '' && newValue !== '.') {
-                    const numValue = parseFloat(newValue);
-                    if (!isNaN(numValue)) {
-                        // eslint-disable-next-line max-depth
-                        if (numValue > SQL_MONEY_MAX) {
-                            newValue = SQL_MONEY_MAX.toString();
-                        } else if (min !== undefined && numValue < min) {
-                            newValue = min.toString();
-                        } else if (max !== undefined && numValue > max) {
-                            newValue = max.toString();
-                        }
-                    }
-                }
+                newValue = clampNumberValue(newValue, min, max, SQL_MONEY_MAX);
             }
 
             if (newValue !== valueRef.current) {

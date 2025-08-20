@@ -100,7 +100,13 @@ const DataGrid = () => {
         gridData.data.sort((matchA, matchB) => objectComparator(matchA, matchB, sortOrderBy, getValue));
 
         dispatch(setGridData(gridData));
-        dispatch(setRequestParam({ ...requestParam, SortColumn: sortBy, SortDirection: sortOrderBy }));
+        dispatch(
+            setRequestParam({
+                ...requestParam,
+                SortColumn: sortBy,
+                SortDirection: sortOrderBy,
+            })
+        );
     };
 
     return (

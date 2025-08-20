@@ -67,8 +67,10 @@ const FormFilter = () => {
     const hasRequiredTriggeredAlert = !!selectedTriggeredAlert;
     const hasRequiredBaseCurrency = !!selectedBaseCurrency;
 
-    const isFormValid =
-        !hasRequiredLeague || !hasRequiredMatch || !hasRequiredCurrency || !hasRequiredMatchStatus || !hasRequiredTriggeredAlert || !hasRequiredBaseCurrency;
+    const missingLeagueOrMatch = !hasRequiredLeague || !hasRequiredMatch;
+    const missingCurrencyOrStatus = !hasRequiredCurrency || !hasRequiredMatchStatus;
+    const missingAlertOrBase = !hasRequiredTriggeredAlert || !hasRequiredBaseCurrency;
+    const isFormValid = missingLeagueOrMatch || missingCurrencyOrStatus || missingAlertOrBase;
 
     useEffect(() => {
         fetchData();

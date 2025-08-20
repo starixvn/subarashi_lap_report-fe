@@ -20,7 +20,7 @@ const getMatchUrl = sportId => {
     }
 };
 
-function MatchCell({ data, ...rest }) {
+const MatchCell = ({ data, ...rest }) => {
     const navigate = useNavigateParams();
     const dispatch = useDispatch();
     const requestParam = useSelector(state => state.requestParam);
@@ -68,6 +68,6 @@ function MatchCell({ data, ...rest }) {
             </a>
         </Cell>
     );
-}
+};
 
 export default MatchCell;

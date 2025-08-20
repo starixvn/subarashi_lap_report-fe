@@ -7,7 +7,11 @@ export const useRenderRowOption = () => {
     const isShowBetEffectiveField = isGroupByPlayerMode;
     const isBreakDownPlayerMode = requestParam.BreakdownMode === BreakdownByMode.Player;
 
-    return { isGroupByPlayerMode, isBreakDownPlayerMode, isShowBetEffectiveField };
+    return {
+        isGroupByPlayerMode,
+        isBreakDownPlayerMode,
+        isShowBetEffectiveField,
+    };
 };
 
 export default useRenderRowOption;

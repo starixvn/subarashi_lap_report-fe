@@ -8,7 +8,10 @@ import '@/styles/pages/winlossanalysis.scss';
 import useStyleSheetLink from '@/hooks/useStyleSheetLink';
 import { DefaultState } from './common/constants';
 
-const store = Store.createStore(reducer, { ...DefaultState, defaultState: { ...DefaultState } });
+const store = Store.createStore(reducer, {
+    ...DefaultState,
+    defaultState: { ...DefaultState },
+});
 
 const WinLossAnalysis = () => {
     const styleSheet = useStyleSheetLink();

@@ -2,6 +2,12 @@ import React, { useEffect } from 'react';
 import { Table, HeaderCell, HeaderRow, Row, Cell } from '@legion-lib/react-grid';
 import PropTypes from 'prop-types';
 
+const ALIGNMENT_CLASSES = {
+    CENTER: 'center-align',
+    RIGHT: 'right-align',
+    LEFT: '',
+};
+
 const BetListTable = props => {
     useEffect(() => {
         props.afterLoad && props.afterLoad();
@@ -96,7 +102,7 @@ const BetListTable = props => {
         const cells = [];
 
         cells.push(
-            <Cell key="total" className="right-align" colSpan={startTotalIndex}>
+            <Cell key="total" className={ALIGNMENT_CLASSES.RIGHT} colSpan={startTotalIndex}>
                 {totalText}
             </Cell>
         );
@@ -134,7 +140,7 @@ const BetListTable = props => {
 
     const renderNodata = () => (
         <div className="result-content">
-            <p className="no-info-row center-align">{getResource('NoInfo')}</p>
+            <p className={`no-info-row ${ALIGNMENT_CLASSES.CENTER}`}>{getResource('NoInfo')}</p>
         </div>
     );
 
@@ -243,20 +249,20 @@ BetListTable.defaultProps = {
     sortableColumns: ['Stake', 'WinLoss', 'LicenseeWL'],
     totalColumns: ['Stake', 'WinLoss', 'LicenseeWL'],
     columnAlignments: [
-        'center-align',
-        '',
-        '',
-        'center-align',
-        'center-align',
-        'right-align',
-        'right-align',
-        'right-align',
-        'right-align',
-        'right-align',
-        'right-align',
-        'center-align',
-        'center-align',
-        'center-align',
+        ALIGNMENT_CLASSES.CENTER,
+        ALIGNMENT_CLASSES.LEFT,
+        ALIGNMENT_CLASSES.LEFT,
+        ALIGNMENT_CLASSES.CENTER,
+        ALIGNMENT_CLASSES.CENTER,
+        ALIGNMENT_CLASSES.RIGHT,
+        ALIGNMENT_CLASSES.RIGHT,
+        ALIGNMENT_CLASSES.RIGHT,
+        ALIGNMENT_CLASSES.RIGHT,
+        ALIGNMENT_CLASSES.RIGHT,
+        ALIGNMENT_CLASSES.RIGHT,
+        ALIGNMENT_CLASSES.CENTER,
+        ALIGNMENT_CLASSES.CENTER,
+        ALIGNMENT_CLASSES.CENTER,
     ],
     data: null,
     total: null,

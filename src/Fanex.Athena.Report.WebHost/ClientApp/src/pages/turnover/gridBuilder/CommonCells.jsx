@@ -2,7 +2,7 @@ import React from 'react';
 import { Cell } from '@legion-lib/react-grid';
 
 import NumberFormat from '@/lib/numberFormat';
-function CommonCells({ data, options, hideClosingBalance, hideOpeningBalance }) {
+const CommonCells = ({ data, options, hideClosingBalance, hideOpeningBalance }) => {
     const { hasCustomerComm, hasCasinoTransfer, isEnableSingleWallet, isHidePlayerWL } = options;
 
     // isEnableSingleWallet
@@ -103,6 +103,6 @@ function CommonCells({ data, options, hideClosingBalance, hideOpeningBalance }) 
             )}
         </>
     );
-}
+};
 
 export default CommonCells;

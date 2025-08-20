@@ -16,7 +16,7 @@
             "experimentalObjectRestSpread": true
         }
     },
-    "plugins": ["react", "import"],
+    "plugins": ["react", "import", "sonarjs"],
     "extends": [
         "eslint:recommended",
         "plugin:prettier/recommended",
@@ -48,6 +48,16 @@
         "default-param-last": "error",
         "no-nested-ternary": "warn",
         "consistent-return": "error",
+        "no-implicit-globals": "error",
+        "max-statements-per-line": ["error", {"max": 1}],
+        "max-nested-callbacks": ["error", 3],
+        "max-params": ["error", 6],
+        "sonarjs/cognitive-complexity": ["error", 15],
+        "sonarjs/max-switch-cases": ["error", 30],
+        "sonarjs/no-duplicate-string": ["error", {"threshold": 5}],
+        "sonarjs/no-identical-functions": "error",
+        "sonarjs/prefer-immediate-return": "error",
+        "sonarjs/no-small-switch": "error",
         "prettier/prettier": [
             "warn",
             {

@@ -5,7 +5,7 @@ import { TreeViewOption } from '@/constants/report';
 import useSubsidiarySearch from '@/hooks/useSubsidiarySearch';
 import LangHelper from '@/helpers/langHelper';
 
-function SubsidiaryDropDown(props) {
+const SubsidiaryDropDown = props => {
     const { isWhiteLabelView } = useSubsidiarySearch();
 
     return (
@@ -25,6 +25,6 @@ function SubsidiaryDropDown(props) {
             />
         </div>
     );
-}
+};
 
 export default React.memo(SubsidiaryDropDown);

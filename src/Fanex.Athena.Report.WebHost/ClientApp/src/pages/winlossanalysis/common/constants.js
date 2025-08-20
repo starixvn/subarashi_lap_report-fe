@@ -70,36 +70,132 @@ export const GroupByList = [
     { value: GroupByMode.Hour, label: LangHelper.getSingleResource('Hour') },
     { value: GroupByMode.Date, label: LangHelper.getSingleResource('Date') },
     { value: GroupByMode.Month, label: LangHelper.getSingleResource('Month') },
-    { value: GroupByMode.Product, label: LangHelper.getSingleResource('Product') },
+    {
+        value: GroupByMode.Product,
+        label: LangHelper.getSingleResource('Product'),
+    },
     { value: GroupByMode.Sport, label: LangHelper.getSingleResource('Sport') },
-    { value: GroupByMode.BetType, label: LangHelper.getSingleResource('BetType') },
-    { value: GroupByMode.Currency, label: LangHelper.getSingleResource('Currency') },
-    { value: GroupByMode.Platform, label: LangHelper.getSingleResource('Platform') },
+    {
+        value: GroupByMode.BetType,
+        label: LangHelper.getSingleResource('BetType'),
+    },
+    {
+        value: GroupByMode.Currency,
+        label: LangHelper.getSingleResource('Currency'),
+    },
+    {
+        value: GroupByMode.Platform,
+        label: LangHelper.getSingleResource('Platform'),
+    },
     { value: GroupByMode.Agent, label: LangHelper.getSingleResource('Agent') },
 ];
 
 export const DisplayGroupBreakDownMapping = [
-    { groupByMode: GroupByMode.Date, breakdownMode: BreakdownByMode.Currency, isDisplayBreakDownInCurrency: true },
-    { groupByMode: GroupByMode.Date, breakdownMode: BreakdownByMode.Product, isDisplayBreakDownInCurrency: false },
-    { groupByMode: GroupByMode.Month, breakdownMode: BreakdownByMode.Currency, isDisplayBreakDownInCurrency: true },
-    { groupByMode: GroupByMode.Month, breakdownMode: BreakdownByMode.Product, isDisplayBreakDownInCurrency: false },
-    { groupByMode: GroupByMode.Product, breakdownMode: BreakdownByMode.Currency, isDisplayBreakDownInCurrency: true },
-    { groupByMode: GroupByMode.Product, breakdownMode: BreakdownByMode.Product, isDisplayBreakDownInCurrency: true },
-    { groupByMode: GroupByMode.Sport, breakdownMode: BreakdownByMode.Currency, isDisplayBreakDownInCurrency: true },
-    { groupByMode: GroupByMode.Sport, breakdownMode: BreakdownByMode.Product, isDisplayBreakDownInCurrency: true },
-    { groupByMode: GroupByMode.BetType, breakdownMode: BreakdownByMode.Currency, isDisplayBreakDownInCurrency: true },
-    { groupByMode: GroupByMode.BetType, breakdownMode: BreakdownByMode.Product, isDisplayBreakDownInCurrency: true },
-    { groupByMode: GroupByMode.Currency, breakdownMode: BreakdownByMode.Currency, isDisplayBreakDownInCurrency: true },
-    { groupByMode: GroupByMode.Currency, breakdownMode: BreakdownByMode.Product, isDisplayBreakDownInCurrency: true },
-    { groupByMode: GroupByMode.Platform, breakdownMode: BreakdownByMode.Currency, isDisplayBreakDownInCurrency: true },
-    { groupByMode: GroupByMode.Platform, breakdownMode: BreakdownByMode.Product, isDisplayBreakDownInCurrency: false },
-    { groupByMode: GroupByMode.Player, breakdownMode: BreakdownByMode.Currency, isDisplayBreakDownInCurrency: true },
-    { groupByMode: GroupByMode.Player, breakdownMode: BreakdownByMode.Product, isDisplayBreakDownInCurrency: true },
-    { groupByMode: GroupByMode.Agent, breakdownMode: BreakdownByMode.Currency, isDisplayBreakDownInCurrency: true },
-    { groupByMode: GroupByMode.Agent, breakdownMode: BreakdownByMode.Product, isDisplayBreakDownInCurrency: true },
-    { groupByMode: GroupByMode.Agent, breakdownMode: BreakdownByMode.Player, isDisplayBreakDownInCurrency: true },
-    { groupByMode: GroupByMode.Hour, breakdownMode: BreakdownByMode.Product, isDisplayBreakDownInCurrency: true },
-    { groupByMode: GroupByMode.Hour, breakdownMode: BreakdownByMode.Currency, isDisplayBreakDownInCurrency: true },
+    {
+        groupByMode: GroupByMode.Date,
+        breakdownMode: BreakdownByMode.Currency,
+        isDisplayBreakDownInCurrency: true,
+    },
+    {
+        groupByMode: GroupByMode.Date,
+        breakdownMode: BreakdownByMode.Product,
+        isDisplayBreakDownInCurrency: false,
+    },
+    {
+        groupByMode: GroupByMode.Month,
+        breakdownMode: BreakdownByMode.Currency,
+        isDisplayBreakDownInCurrency: true,
+    },
+    {
+        groupByMode: GroupByMode.Month,
+        breakdownMode: BreakdownByMode.Product,
+        isDisplayBreakDownInCurrency: false,
+    },
+    {
+        groupByMode: GroupByMode.Product,
+        breakdownMode: BreakdownByMode.Currency,
+        isDisplayBreakDownInCurrency: true,
+    },
+    {
+        groupByMode: GroupByMode.Product,
+        breakdownMode: BreakdownByMode.Product,
+        isDisplayBreakDownInCurrency: true,
+    },
+    {
+        groupByMode: GroupByMode.Sport,
+        breakdownMode: BreakdownByMode.Currency,
+        isDisplayBreakDownInCurrency: true,
+    },
+    {
+        groupByMode: GroupByMode.Sport,
+        breakdownMode: BreakdownByMode.Product,
+        isDisplayBreakDownInCurrency: true,
+    },
+    {
+        groupByMode: GroupByMode.BetType,
+        breakdownMode: BreakdownByMode.Currency,
+        isDisplayBreakDownInCurrency: true,
+    },
+    {
+        groupByMode: GroupByMode.BetType,
+        breakdownMode: BreakdownByMode.Product,
+        isDisplayBreakDownInCurrency: true,
+    },
+    {
+        groupByMode: GroupByMode.Currency,
+        breakdownMode: BreakdownByMode.Currency,
+        isDisplayBreakDownInCurrency: true,
+    },
+    {
+        groupByMode: GroupByMode.Currency,
+        breakdownMode: BreakdownByMode.Product,
+        isDisplayBreakDownInCurrency: true,
+    },
+    {
+        groupByMode: GroupByMode.Platform,
+        breakdownMode: BreakdownByMode.Currency,
+        isDisplayBreakDownInCurrency: true,
+    },
+    {
+        groupByMode: GroupByMode.Platform,
+        breakdownMode: BreakdownByMode.Product,
+        isDisplayBreakDownInCurrency: false,
+    },
+    {
+        groupByMode: GroupByMode.Player,
+        breakdownMode: BreakdownByMode.Currency,
+        isDisplayBreakDownInCurrency: true,
+    },
+    {
+        groupByMode: GroupByMode.Player,
+        breakdownMode: BreakdownByMode.Product,
+        isDisplayBreakDownInCurrency: true,
+    },
+    {
+        groupByMode: GroupByMode.Agent,
+        breakdownMode: BreakdownByMode.Currency,
+        isDisplayBreakDownInCurrency: true,
+    },
+    {
+        groupByMode: GroupByMode.Agent,
+        breakdownMode: BreakdownByMode.Product,
+        isDisplayBreakDownInCurrency: true,
+    },
+    {
+        groupByMode: GroupByMode.Agent,
+        breakdownMode: BreakdownByMode.Player,
+        isDisplayBreakDownInCurrency: true,
+    },
+    {
+        groupByMode: GroupByMode.Hour,
+        breakdownMode: BreakdownByMode.Product,
+        isDisplayBreakDownInCurrency: true,
+    },
+    {
+        groupByMode: GroupByMode.Hour,
+        breakdownMode: BreakdownByMode.Currency,
+        isDisplayBreakDownInCurrency: true,
+    },
 ];
 
 export const DefaultPagingOption = {
@@ -116,9 +212,18 @@ export const CashOutMode = {
 };
 
 export const CashOutModeList = [
-    { value: CashOutMode.IncludeCOFromSB, label: LangHelper.getSingleResource('IncludeCOFromSB') },
-    { value: CashOutMode.ExcludeCOFromSB, label: LangHelper.getSingleResource('ExcludeCOFromSB') },
-    { value: CashOutMode.ViewCOOnly, label: LangHelper.getSingleResource('ViewCOOnly') },
+    {
+        value: CashOutMode.IncludeCOFromSB,
+        label: LangHelper.getSingleResource('IncludeCOFromSB'),
+    },
+    {
+        value: CashOutMode.ExcludeCOFromSB,
+        label: LangHelper.getSingleResource('ExcludeCOFromSB'),
+    },
+    {
+        value: CashOutMode.ViewCOOnly,
+        label: LangHelper.getSingleResource('ViewCOOnly'),
+    },
 ];
 
 export const SortBy = {

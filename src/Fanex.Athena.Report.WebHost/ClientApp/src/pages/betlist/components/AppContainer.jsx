@@ -12,7 +12,7 @@ import BetListHelper from '@/helpers/betlistHelper';
 import { ActionCreators } from '../actions';
 import Service from '../common';
 import DataGrid from './DataGrid';
-import BetListFormFilter from './FormFilter';
+import BetListFormFilter from './BetListFormFilter';
 
 export const AppContainer = () => {
     const location = useLocation();

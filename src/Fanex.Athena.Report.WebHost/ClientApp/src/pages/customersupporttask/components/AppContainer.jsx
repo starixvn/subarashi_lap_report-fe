@@ -26,7 +26,10 @@ export const AppContainer = () => {
         }
 
         if (result.data.currencies.length) {
-            result.data.currencies = result.data.currencies.map(item => ({ ...item, status: true }));
+            result.data.currencies = result.data.currencies.map(item => ({
+                ...item,
+                status: true,
+            }));
             const defaultSelectedCurrency = result.data.currencies.map(item => item.key).join(',');
             dispatch(setSelectedCurrency(defaultSelectedCurrency));
         }

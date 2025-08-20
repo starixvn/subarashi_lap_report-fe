@@ -60,7 +60,10 @@ const DataRow = ({ item: initialItem, baseCurrencyList, defaultBaseCurrency, onD
 
         const itemAlertRule = item.alertRule || {};
         const initialAlertRule = initialItem.alertRule || {};
-        const alertRuleKeys = Object.keys({ ...itemAlertRule, ...initialAlertRule });
+        const alertRuleKeys = Object.keys({
+            ...itemAlertRule,
+            ...initialAlertRule,
+        });
 
         for (const key of alertRuleKeys) {
             if (itemAlertRule[key] !== initialAlertRule[key]) {

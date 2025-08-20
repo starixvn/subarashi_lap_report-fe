@@ -76,7 +76,83 @@ export const renderFooter = (data, drilldownLevel) => {
     return totalRows;
 };
 
-// eslint-disable-next-line complexity
+const renderIndexCell = (indexRowSpan, index) => {
+    if (indexRowSpan <= 0) {
+        return null;
+    }
+    return (
+        <Cell className="center-align" rowSpan={indexRowSpan}>
+            {index}
+        </Cell>
+    );
+};
+
+const renderDateCell = (indexRowSpan, drilldownLevel, dateString) => {
+    if (indexRowSpan <= 0 || drilldownLevel !== 0) {
+        return null;
+    }
+    return (
+        <Cell className="center-align" rowSpan={indexRowSpan}>
+            {dateString}
+        </Cell>
+    );
+};
+
+const renderAccountCells = params => {
+    const { indexRowSpan, drilldownLevel, promotionType, nickname, username, custId, handleDrilldownBetlist } = params;
+    if (indexRowSpan <= 0 || drilldownLevel !== 1) {
+        return null;
+    }
+
+    const clickHandler = e => handleDrilldownBetlist(e, custId, nickname, username);
+
+    return [buildAccountText(promotionType, nickname, indexRowSpan, clickHandler), buildAccountText(promotionType, username, indexRowSpan, clickHandler)];
+};
+
+const renderCurrencyCell = (curencyRowSpan, drilldownLevel, currency, currencyName, date, handleDrilldown) => {
+    if (curencyRowSpan <= 0) {
+        return null;
+    }
+
+    if (drilldownLevel === 0) {
+        return (
+            <Cell className="center-align" rowSpan={curencyRowSpan}>
+                <a href="#" onClick={e => handleDrilldown(e, currency, currencyName, date)}>
+                    {currencyName}
+                </a>
+            </Cell>
+        );
+    }
+
+    if (drilldownLevel === 1) {
+        return (
+            <Cell className="center-align" rowSpan={curencyRowSpan}>
+                {currencyName}
+            </Cell>
+        );
+    }
+
+    return null;
+};
+
+const renderProductCell = (productRowSpan, productName) => {
+    if (productRowSpan <= 0) {
+        return null;
+    }
+    return (
+        <Cell className="left-align" rowSpan={productRowSpan}>
+            {productName}
+        </Cell>
+    );
+};
+
+const renderPromotionCell = (drilldownLevel, promotionName) => {
+    if (drilldownLevel !== 1) {
+        return null;
+    }
+    return <Cell className="left-align">{promotionName}</Cell>;
+};
+
 const buildDataRow = (dataItem, drilldownLevel, handleDrilldown, handleDrilldownBetlist) => {
     const {
         index,
@@ -102,40 +178,20 @@ const buildDataRow = (dataItem, drilldownLevel, handleDrilldown, handleDrilldown
 
     return (
         <Row key={`row-${uuidv4()}`}>
-            {indexRowSpan > 0 && (
-                <Cell className="center-align" rowSpan={indexRowSpan}>
-                    {index}
-                </Cell>
-            )}
-            {indexRowSpan > 0 && drilldownLevel === 0 && (
-                <Cell className="center-align" rowSpan={indexRowSpan}>
-                    {dateString}
-                </Cell>
-            )}
-            {indexRowSpan > 0 &&
-                drilldownLevel === 1 &&
-                buildAccountText(promotionType, nickname, indexRowSpan, e => handleDrilldownBetlist(e, custId, nickname, username))}
-            {indexRowSpan > 0 &&
-                drilldownLevel === 1 &&
-                buildAccountText(promotionType, username, indexRowSpan, e => handleDrilldownBetlist(e, custId, nickname, username))}
-            {curencyRowSpan > 0 && drilldownLevel === 0 && (
-                <Cell className="center-align" rowSpan={curencyRowSpan}>
-                    <a href="#" onClick={e => handleDrilldown(e, currency, currencyName, date)}>
-                        {currencyName}
-                    </a>
-                </Cell>
-            )}
-            {curencyRowSpan > 0 && drilldownLevel === 1 && (
-                <Cell className="center-align" rowSpan={curencyRowSpan}>
-                    {currencyName}
-                </Cell>
-            )}
-            {productRowSpan > 0 && (
-                <Cell className="left-align" rowSpan={productRowSpan}>
-                    {productName}
-                </Cell>
-            )}
-            {drilldownLevel === 1 && <Cell className="left-align">{promotionName}</Cell>}
+            {renderIndexCell(indexRowSpan, index)}
+            {renderDateCell(indexRowSpan, drilldownLevel, dateString)}
+            {renderAccountCells({
+                indexRowSpan,
+                drilldownLevel,
+                promotionType,
+                nickname,
+                username,
+                custId,
+                handleDrilldownBetlist,
+            })}
+            {renderCurrencyCell(curencyRowSpan, drilldownLevel, currency, currencyName, date, handleDrilldown)}
+            {renderProductCell(productRowSpan, productName)}
+            {renderPromotionCell(drilldownLevel, promotionName)}
             {buildCommonRow(turnover, betCount, amount, sharingAmount, productCode)}
         </Row>
     );

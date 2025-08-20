@@ -16,8 +16,14 @@ export const ExcelPopUp = () => {
     const dispatch = useDispatch();
     const [exportExcelMode, setExportExcelMode] = useState(ExportExcelMode.All);
     const options = [
-        { label: decode(LangHelper.getSingleResource('BothGroupByAndBreakdownLevelOption')), value: ExportExcelMode.All },
-        { label: decode(LangHelper.getSingleResource('GroupByLevelOnlyOption')), value: ExportExcelMode.GroupByLevelOnly },
+        {
+            label: decode(LangHelper.getSingleResource('BothGroupByAndBreakdownLevelOption')),
+            value: ExportExcelMode.All,
+        },
+        {
+            label: decode(LangHelper.getSingleResource('GroupByLevelOnlyOption')),
+            value: ExportExcelMode.GroupByLevelOnly,
+        },
     ];
 
     const _onclickHandler = () => {

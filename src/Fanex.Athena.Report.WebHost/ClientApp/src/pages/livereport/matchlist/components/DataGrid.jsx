@@ -12,7 +12,7 @@ import Service, { constants } from '../common';
 import { BuildBody, BuildHeaders } from '../gridBuilder';
 import { ActionCreators } from '../actions';
 
-function DataGrid() {
+const DataGrid = () => {
     const [searchParams] = useSearchParams();
 
     const dispatch = useDispatch();
@@ -41,7 +41,11 @@ function DataGrid() {
     const { ApiUrl } = constants;
 
     const onSort = (sortBy, sortOrderBy) => {
-        const params = { ...requestParam, SortColumn: sortBy, SortDirection: sortOrderBy };
+        const params = {
+            ...requestParam,
+            SortColumn: sortBy,
+            SortDirection: sortOrderBy,
+        };
         sendRequest(() => fetchReportData(params), updateGridData);
     };
 
@@ -76,6 +80,6 @@ function DataGrid() {
             />
         </>
     );
-}
+};
 
 export default DataGrid;
