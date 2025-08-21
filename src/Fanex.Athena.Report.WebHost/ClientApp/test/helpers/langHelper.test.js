@@ -1,6 +1,7 @@
 describe('LangHelper', () => {
     beforeEach(() => {
         jest.resetModules()
+        jest.unmock('@/helpers/langHelper')
         delete window.pageLanguage
         window._language_en_US = { Key: 'Val', May2: 'May', DateRange: 'Date Range' }
         window._language_vi_VN = { Key: 'GiaTri', DateRange: 'Khoang Ngay' }

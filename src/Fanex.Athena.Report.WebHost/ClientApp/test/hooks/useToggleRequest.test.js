@@ -17,6 +17,8 @@ describe('useToggleRequest', () => {
 
 	afterEach(() => {
 		console.error.mockRestore()
+		jest.clearAllMocks()
+		jest.restoreAllMocks()
 	})
 	test('dispatches start/stop and callback on success', async () => {
 		const reducer = (state = { isLoading: false }, action) => {
