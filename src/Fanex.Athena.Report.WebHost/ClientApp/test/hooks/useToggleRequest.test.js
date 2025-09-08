@@ -8,6 +8,13 @@ import * as types from '@/actions/types'
 
 jest.mock('@/helpers/langHelper', () => ({ __esModule: true, default: { getSingleResource: jest.fn(() => 'Error') } }))
 
+// Mock react-redux to use real hooks for this test
+jest.mock('react-redux', () => ({
+	...jest.requireActual('react-redux'),
+	useDispatch: jest.requireActual('react-redux').useDispatch,
+	useSelector: jest.requireActual('react-redux').useSelector
+}))
+
 const createRealStore = (reducer) => createStore(reducer, applyMiddleware(thunk))
 
 describe('useToggleRequest', () => {

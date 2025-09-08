@@ -12,6 +12,15 @@ jest.mock('@/pages/customerturnover/components/DataGrid')
 jest.mock('@/pages/customerturnover/actions/index')
 jest.mock('@/pages/customerturnover/common')
 
+// Mock useDispatch to return a shared dispatch function
+const mockDispatch = jest.fn()
+jest.mock('react-redux', () => ({
+	...jest.requireActual('react-redux'),
+	useDispatch: () => mockDispatch,
+	// Use real useSelector so it reads from the test store
+	useSelector: jest.requireActual('react-redux').useSelector
+}))
+
 const mockUseToggleRequest = require('@/hooks/useToggleRequest')
 const mockDataService = require('@/lib/dataService')
 const mockActionCreators = require('@/pages/customerturnover/actions/index')
@@ -31,7 +40,6 @@ jest.mock('@/pages/customerturnover/components/DataGrid', () => () => (
 
 describe('CustomerTurnover AppContainer', () => {
 	let store
-	let mockDispatch
 	let mockSendRequest
 
 	const createMockStore = (initialState = {}) => {
@@ -44,7 +52,7 @@ describe('CustomerTurnover AppContainer', () => {
 	}
 
 	beforeEach(() => {
-		mockDispatch = jest.fn()
+		mockDispatch.mockClear()
 		mockSendRequest = jest.fn()
 		
 		mockUseToggleRequest.default = jest.fn(() => ({

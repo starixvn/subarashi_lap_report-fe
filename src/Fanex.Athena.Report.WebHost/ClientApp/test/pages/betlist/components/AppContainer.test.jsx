@@ -21,6 +21,15 @@ jest.mock('@/pages/betlist/components/BetListFormFilter')
 jest.mock('@/pages/betlist/actions')
 jest.mock('@/pages/betlist/common')
 
+// Mock useDispatch to return a shared dispatch function
+const mockDispatch = jest.fn()
+jest.mock('react-redux', () => ({
+	...jest.requireActual('react-redux'),
+	useDispatch: () => mockDispatch,
+	// Use real useSelector so it reads from the test store
+	useSelector: jest.requireActual('react-redux').useSelector
+}))
+
 const mockUseLocation = useLocation
 const mockUseParams = useParams
 const mockUseToggleRequest = require('@/hooks/useToggleRequest')
@@ -50,7 +59,6 @@ jest.mock('@/pages/betlist/components/BetListFormFilter', () => () => (
 
 describe('BetList AppContainer', () => {
 	let store
-	let mockDispatch
 	let mockSendRequest
 
 	const createMockStore = (initialState = {}) => {
@@ -63,7 +71,7 @@ describe('BetList AppContainer', () => {
 	}
 
 	beforeEach(() => {
-		mockDispatch = jest.fn()
+		mockDispatch.mockClear()
 		mockSendRequest = jest.fn()
 		
 		mockUseLocation.mockReturnValue({

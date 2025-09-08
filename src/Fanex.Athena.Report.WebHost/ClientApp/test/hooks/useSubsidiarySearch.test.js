@@ -5,6 +5,12 @@ import { legacy_createStore as createStore } from 'redux'
 import { useSubsidiarySearch } from '@/hooks/useSubsidiarySearch'
 import { SubsidiaryViewType } from '@/constants/report'
 
+// Mock react-redux to use real useSelector for this test
+jest.mock('react-redux', () => ({
+	...jest.requireActual('react-redux'),
+	useSelector: jest.requireActual('react-redux').useSelector
+}))
+
 describe('useSubsidiarySearch', () => {
 	const makeWrapper = (state) => ({ children }) => {
 		const reducer = (s = state) => s

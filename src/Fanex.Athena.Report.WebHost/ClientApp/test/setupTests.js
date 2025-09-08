@@ -1,4 +1,28 @@
 import '@testing-library/jest-dom'
+import { TextEncoder, TextDecoder } from 'util';
+import { ExcludeTestDataOptions } from '@/pages/turnover/common/filter';
+
+Object.defineProperty(window, 'matchMedia', {
+    writable: true,
+    value: jest.fn().mockImplementation(query => ({
+        matches: false,
+        media: query,
+        onchange: null,
+        addListener: jest.fn(), // Deprecated
+        removeListener: jest.fn(), // Deprecated
+        addEventListener: jest.fn(),
+        removeEventListener: jest.fn(),
+        dispatchEvent: jest.fn(),
+    })),
+});
+
+if (global.TextEncoder === undefined) {
+    global.TextEncoder = TextEncoder;
+}
+
+if (global.TextDecoder === undefined) {
+    global.TextDecoder = TextDecoder;
+}
 
 // Suppress React Router future flag warnings in tests
 const originalWarn = console.warn;
@@ -20,6 +44,7 @@ console.error = (...args) => {
 
 // Mock window.alert to prevent JSDOM "Not implemented" errors
 global.window.alert = jest.fn();
+global.alert = global.window.alert;
 
 // Mock axios globally to prevent interceptor errors in src/lib/axios.js
 jest.mock('axios', () => {
@@ -67,6 +92,3 @@ jest.mock('axios', () => {
     };
     return mockAxios;
 });
-
-
-
