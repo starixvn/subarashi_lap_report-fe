@@ -58,6 +58,7 @@ export const DataGrid = (props) => {
 
         const newRequestParam = {
             ...requestParam,
+            CurrencyName: currencyName,
             CurrencyIdList: currency,
             DrillDownFromDate: drilldownFromDateValue,
             DrillDownToDate: drilldownToDateValue,
@@ -80,11 +81,14 @@ export const DataGrid = (props) => {
         props.getReportData(ApiUrl.REPORT_DATA_URL, newRequestParam);
     };
 
-    const _handleDrilldownBetlist = (e, custId, nickname, username) => {
+    const _handleDrilldownBetlist = (e, custId, nickname, username, currencyName) => {
         e.preventDefault();
+
+        const newBetlistBaseCurrency = currencyName && !requestParam.IsConvertAllToBaseCurrency ? currencyName : requestParam.BaseCurrencyName;
 
         const detailParams = {
             ...requestParam,
+            CurrencyName: newBetlistBaseCurrency,
             PageSize: 50,
             PageIndex: 1,
             IsExportExcel: false,
@@ -93,10 +97,7 @@ export const DataGrid = (props) => {
             ExternalId: nickname,
         };
 
-        const viewIn = LangHelper.getSingleResource('Viewin').replace(
-            '{0}',
-            requestParam.currencyName ? requestParam.currencyName : requestParam.BaseCurrencyName
-        );
+        const viewIn = LangHelper.getSingleResource('Viewin').replace('{0}', newBetlistBaseCurrency);
 
         const fromDate = new Date(requestParam.DrillDownFromDate);
         const fromDateValue = Service.getFormattedDate(fromDate);

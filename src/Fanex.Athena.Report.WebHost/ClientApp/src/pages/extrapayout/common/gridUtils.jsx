@@ -44,6 +44,9 @@ export const renderFooter = (data, drilldownLevel) => {
         colSpan = drilldownLevel === 0 ? 2 : 3,
         rowSpan = total.length;
 
+    const dataSummary = data.totalSummary;
+    const summaryColSpan = colSpan * 2;
+
     for (let i = 0; i < rowSpan; i++) {
         const item = total[i];
         const { currencyName, turnover, betCount, amount, sharingAmount } = item;
@@ -52,7 +55,7 @@ export const renderFooter = (data, drilldownLevel) => {
             <Row key={currencyName} className="light-footer">
                 {i === 0 && (
                     <Cell className="center-align" rowSpan={rowSpan} colSpan={colSpan}>
-                        {LangHelper.getSingleResource('Total')}
+                        {`${LangHelper.getSingleResource('TotalIn')} ${dataSummary.currencyName}`}
                     </Cell>
                 )}
                 <Cell title={currencyName} className="center-align" colSpan={colSpan}>
@@ -62,9 +65,6 @@ export const renderFooter = (data, drilldownLevel) => {
             </Row>
         );
     }
-
-    const dataSummary = data.totalSummary;
-    const summaryColSpan = colSpan * 2;
 
     totalRows.push(
         <Row key={`tr-grandtotal`} className="fixed-table-grant-total">
@@ -113,8 +113,8 @@ const buildDataRow = (dataItem, drilldownLevel, handleDrilldown, handleDrilldown
                     {dateString}
                 </Cell>
             )}
-            {indexRowSpan > 0  && drilldownLevel === 1 && buildAccountText(promotionType, nickname, indexRowSpan, (e)=> handleDrilldownBetlist(e, custId, nickname, username))}
-            {indexRowSpan > 0  && drilldownLevel === 1 && buildAccountText(promotionType, username, indexRowSpan, (e)=> handleDrilldownBetlist(e, custId, nickname, username))}
+            {indexRowSpan > 0  && drilldownLevel === 1 && buildAccountText(promotionType, nickname, indexRowSpan, (e)=> handleDrilldownBetlist(e, custId, nickname, username,currencyName))}
+            {indexRowSpan > 0  && drilldownLevel === 1 && buildAccountText(promotionType, username, indexRowSpan, (e)=> handleDrilldownBetlist(e, custId, nickname, username,currencyName))}
             {curencyRowSpan > 0 && drilldownLevel === 0 && (
                 <Cell className="center-align" rowSpan={curencyRowSpan}>
                     <a href="#" onClick={(e) => handleDrilldown(e, currency, currencyName, date)}>
@@ -139,10 +139,10 @@ const buildDataRow = (dataItem, drilldownLevel, handleDrilldown, handleDrilldown
 };
 
 const buildAccountText = (promotionType, textValue, indexRowSpan, onClickFunc) =>
-    promotionType === PayoutPromotionType.OddsBoostAdjustment 
+    promotionType === PayoutPromotionType.OddsBoostAdjustment
         && <Cell className="center-align" rowSpan={indexRowSpan}>
                 {textValue}
-            </Cell> 
+            </Cell>
         || <Cell className="center-align" rowSpan={indexRowSpan}>
                 <a href="#" onClick={onClickFunc}>
                     {textValue}
@@ -209,14 +209,14 @@ const buildDetailDataRow = (dataItem, index) => {
     );
 };
 
-export const renderDetailFooter = (data) => {
+export const renderDetailFooter = (data, baseCurrency) => {
     const dataSummary = data.totalSummary;
     const summaryColSpan = 6;
 
     return (
         <Row key={`tr-grandtotal`} className="light-footer">
             <Cell className="center-align" colSpan={summaryColSpan}>
-                {LangHelper.getSingleResource('Total')}
+                {`${LangHelper.getSingleResource('TotalIn')} ${baseCurrency}`}
             </Cell>
             <Cell className="right-align">{NumberFormat.formatDecimal(dataSummary.turnover)}</Cell>
             <Cell className={`right-align ${dataSummary.amount < 0 ? 'negative' : ''}`}>{NumberFormat.formatDecimal(dataSummary.amount)}</Cell>
