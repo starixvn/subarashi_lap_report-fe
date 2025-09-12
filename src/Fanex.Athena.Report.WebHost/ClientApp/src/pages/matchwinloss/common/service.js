@@ -1,7 +1,7 @@
 import LangHelper from '@/helpers/langHelper';
 import { SpecialProducts, MaxLength, VsSportTypes, SupportDrillDownProducts } from './apiSettings';
 
-class Service {
+export default class Service {
     static generateReportTitle(date, currencyName, products) {
         const matchWinLossTitle = LangHelper.getSingleResource('MatchWinLoss');
         if (!products?.length || !currencyName) {
@@ -80,5 +80,3 @@ class Service {
         return SupportDrillDownProducts.includes(product);
     }
 }
-
-export default Service;

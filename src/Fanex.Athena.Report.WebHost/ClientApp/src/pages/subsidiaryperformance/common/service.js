@@ -1,15 +1,12 @@
 import LangHelper from '@/helpers/langHelper';
+import ReportTitleHelper from '@/lib/reportTitleHelper';
 
-class Service {
+export default class Service {
     static generateReportTitle(fromDate, toDate, selectedBaseCurrency) {
-        const baseCurrency = `${LangHelper.getSingleResource('BaseCurrency')}: ${selectedBaseCurrency}`;
-
-        return `${LangHelper.getSingleResource('SubsidiaryPerformance')}, ${fromDate} - ${toDate}, ${baseCurrency}`;
+        return ReportTitleHelper.generateTitleWithBaseCurrency('SubsidiaryPerformance', fromDate, toDate, selectedBaseCurrency);
     }
 
     static showErrorMsg() {
         alert(LangHelper.getSingleResource('ErrorProcessingMsg'));
     }
 }
-
-export default Service;

@@ -1,10 +1,11 @@
 import React from 'react';
 import { Row, Cell, HeaderRow, HeaderCell } from '@legion-lib/react-grid';
 import { headerText } from './constants';
-import NumberFormat from '@/lib/numberFormat';
 import LangHelper from '@/helpers/langHelper';
 import GroupCell from '../components/grid/GroupCell';
 import TotalCell from '../components/grid/TotalCell';
+import { FinancialDataCells, CenterAlignedCell, LeftAlignedCell } from '@/components/grid/FormattedCell';
+import { RIGHT_ALIGN } from '@/constants/gridClasses';
 import { v4 as uuidv4 } from 'uuid';
 
 export const renderHeader = drilldownLevel => (
@@ -58,62 +59,41 @@ export const renderDataSection = (dataList, drilldownLevel, isTotalRow) => {
 };
 
 const buildDataRow = (dataItem, drilldownLevel) => {
-    const { index, betCount, turnOver, licenseeWL, customerWL, isDirectToCurrency } = dataItem;
+    const { index, isDirectToCurrency } = dataItem;
 
     return (
         <Row className="total-row" key={`total-row-${index}-${drilldownLevel}`}>
             {(isDirectToCurrency && <GroupCell rowData={dataItem} level={drilldownLevel} />) || <TotalCell rowData={dataItem} level={drilldownLevel} />}
-            <Cell className="right-align">{NumberFormat.format(betCount)}</Cell>
-            <Cell className="right-align">{NumberFormat.formatDecimal(turnOver)}</Cell>
-            <Cell className="right-align">{NumberFormat.formatDecimal(customerWL)}</Cell>
-            <Cell className={`right-align ${licenseeWL < 0 ? 'negative' : ''}`}>{NumberFormat.formatDecimal(licenseeWL)}</Cell>
+            <FinancialDataCells data={dataItem} />
         </Row>
     );
 };
 
-const buildDetailDataRow = (dataItem, index, drilldownLevel) => {
-    const { playerCount, betCount, turnOver, licenseeWL, customerWL } = dataItem;
-
-    return (
-        <Row key={`detail-row-${uuidv4()}`}>
-            <Cell className="center-align">{++index}</Cell>
-            <GroupCell rowData={dataItem} level={drilldownLevel} />
-            <Cell className="right-align">{NumberFormat.format(playerCount)}</Cell>
-            <Cell className="right-align">{NumberFormat.format(betCount)}</Cell>
-            <Cell className="right-align">{NumberFormat.formatDecimal(turnOver)}</Cell>
-            <Cell className="right-align">{NumberFormat.formatDecimal(customerWL)}</Cell>
-            <Cell className={`right-align ${licenseeWL < 0 ? 'negative' : ''}`}>{NumberFormat.formatDecimal(licenseeWL)}</Cell>
-        </Row>
-    );
-};
+const buildDetailDataRow = (dataItem, index, drilldownLevel) => (
+    <Row key={`detail-row-${uuidv4()}`}>
+        <CenterAlignedCell>{++index}</CenterAlignedCell>
+        <GroupCell rowData={dataItem} level={drilldownLevel} />
+        <FinancialDataCells data={dataItem} />
+    </Row>
+);
 
 const buildCurrencyDataRow = (dataItem, drilldownLevel) => {
-    const { currencyName, playerCount, betCount, turnOver, licenseeWL, customerWL } = dataItem;
+    const { currencyName } = dataItem;
 
     return (
         <Row className="currency-row" key={`currency-row-${uuidv4()}-${drilldownLevel}`}>
-            <Cell className="center-align"></Cell>
-            <Cell className="left-align">{currencyName}</Cell>
-            <Cell className="right-align">{NumberFormat.format(playerCount)}</Cell>
-            <Cell className="right-align">{NumberFormat.format(betCount)}</Cell>
-            <Cell className="right-align">{NumberFormat.formatDecimal(turnOver)}</Cell>
-            <Cell className="right-align">{NumberFormat.formatDecimal(customerWL)}</Cell>
-            <Cell className={`right-align ${licenseeWL < 0 ? 'negative' : ''}`}>{NumberFormat.formatDecimal(licenseeWL)}</Cell>
+            <CenterAlignedCell></CenterAlignedCell>
+            <LeftAlignedCell>{currencyName}</LeftAlignedCell>
+            <FinancialDataCells data={dataItem} />
         </Row>
     );
 };
 
-const buildTotalRow = dataItem => {
-    const { betCount, turnOver, licenseeWL, customerWL } = dataItem;
-    return (
-        <Row className="grant-total-row" key="grantTotal-row">
-            <Cell className="right-align" colSpan="3">
-                {LangHelper.getSingleResource('Total')}
-            </Cell>
-            <Cell className="right-align">{NumberFormat.format(betCount)}</Cell>
-            <Cell className="right-align">{NumberFormat.formatDecimal(turnOver)}</Cell>
-            <Cell className="right-align">{NumberFormat.formatDecimal(customerWL)}</Cell>
-            <Cell className={`right-align ${licenseeWL < 0 ? 'negative' : ''}`}>{NumberFormat.formatDecimal(licenseeWL)}</Cell>
-        </Row>
-    );
-};
+const buildTotalRow = dataItem => (
+    <Row className="grant-total-row" key="grantTotal-row">
+        <Cell className={RIGHT_ALIGN} colSpan="3">
+            {LangHelper.getSingleResource('Total')}
+        </Cell>
+        <FinancialDataCells data={dataItem} />
+    </Row>
+);

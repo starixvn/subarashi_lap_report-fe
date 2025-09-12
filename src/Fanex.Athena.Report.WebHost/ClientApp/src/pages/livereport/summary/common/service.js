@@ -1,10 +1,11 @@
 import LangHelper from '@/helpers/langHelper';
 import { LiveStatusesReportTitle } from './filterSettings';
 
-class Service {
+export default class Service {
     static generateReportTitle(liveIndicator, fromDate, toDate, currencyName) {
-        const liveReportTitle = `${LangHelper.getSingleResource('LiveReport')}`;
-        const liveIndicatorTitle = `${LiveStatusesReportTitle.find(status => status.value === liveIndicator).label} ${LangHelper.getSingleResource('Data')}`;
+        const liveReportTitle = LangHelper.getSingleResource('LiveReport');
+        const statusItem = LiveStatusesReportTitle.find(status => status.value === liveIndicator);
+        const liveIndicatorTitle = `${statusItem.label} ${LangHelper.getSingleResource('Data')}`;
         const dateTitle = `${fromDate} → ${toDate}`;
         const currencyTitle = LangHelper.getSingleResource('Viewin').replace('{0}', currencyName);
         return `${liveReportTitle} - ${liveIndicatorTitle}, ${dateTitle} - ${currencyTitle}`;
@@ -89,5 +90,3 @@ class Service {
         return count === subsidiaryItem.children.length;
     }
 }
-
-export default Service;

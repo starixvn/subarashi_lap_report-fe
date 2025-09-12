@@ -1,10 +1,10 @@
 import NumberFormat from '@/lib/numberFormat';
-import Site from '@/lib/site';
+import FileDownloadHelper from '@/lib/fileDownloadHelper';
 import { TableSettings } from './constants';
 
-class Service {
+export default class Service {
     static downloadExcelFile(response, fileName) {
-        Site.downloadFile(response.data, `${fileName}.xls`);
+        FileDownloadHelper.downloadExcelFile(response, fileName);
     }
 
     static convertToBetListController(controller) {
@@ -54,5 +54,3 @@ class Service {
         };
     }
 }
-
-export default Service;

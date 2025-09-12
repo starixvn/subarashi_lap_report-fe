@@ -4,6 +4,7 @@ import { HeaderText, SortBy } from './constants';
 import NumberFormat from '@/lib/numberFormat';
 import TreeViewGridRowNode from './grid/TreeViewGridRowNode';
 import LangHelper from '@/helpers/langHelper';
+import { RIGHT_ALIGN, CENTER_ALIGN, BORDER_LEFT_0 } from '@/constants/gridClasses';
 
 export const renderHeader = option => {
     const { isGroupByPlayerMode, isBreakDownPlayerMode } = option;
@@ -11,7 +12,7 @@ export const renderHeader = option => {
     const _renderDefaultHeader = () => {
         const prefixKey = 'hearder-default';
         const headerCells = [
-            <HeaderCell className="border-left-0" key={`${prefixKey}-#`} colWidth={30}>
+            <HeaderCell className={BORDER_LEFT_0} key={`${prefixKey}-#`} colWidth={30}>
                 #
             </HeaderCell>,
             <HeaderCell key={`${prefixKey}-${HeaderText.GroupBy}`} colWidth={200}>
@@ -25,7 +26,7 @@ export const renderHeader = option => {
     const _renderGroupByPlayerModeHeaderCell = () => {
         const prefixKey = 'hearder-player';
         const headerCells = [
-            <HeaderCell key={`${prefixKey}-#`} className="border-left-0" rowSpan={2} colWidth={30}>
+            <HeaderCell key={`${prefixKey}-#`} className={BORDER_LEFT_0} rowSpan={2} colWidth={30}>
                 #
             </HeaderCell>,
             <HeaderCell key={`${prefixKey}-${HeaderText.GroupBy}`} rowSpan={1} colSpan={2} colWidth={200}>
@@ -102,18 +103,18 @@ export const renderFooter = (dataItem, option) => {
     const totalCellColSpan = isGroupByPlayerMode || isBreakDownPlayerMode ? 3 : 2;
     return (
         <Row className="grant-total-row" key="grantTotal-row">
-            <Cell className="center-align" colSpan={totalCellColSpan}>
+            <Cell className={CENTER_ALIGN} colSpan={totalCellColSpan}>
                 {LangHelper.getSingleResource('Total')}
             </Cell>
-            <Cell className="right-align">{NumberFormat.format(betCount)}</Cell>
-            <Cell className="right-align">{NumberFormat.formatDecimal(turnover)}</Cell>
-            <Cell className="right-align">{NumberFormat.formatDecimal(netTurnover)}</Cell>
-            <Cell className="right-align">{NumberFormat.formatDecimal(playerWinloss)}</Cell>
-            {isGroupByPlayerMode && <Cell className="right-align">{NumberFormat.formatDecimal(betEffective)}</Cell>}
-            <Cell className="right-align">{NumberFormat.formatDecimal(playerComm)}</Cell>
-            <Cell className={`right-align ${licWinloss < 0 ? 'negative' : ''}`}>{NumberFormat.formatDecimal(licWinloss)}</Cell>
-            <Cell className="right-align">{NumberFormat.formatDecimal(licComm)}</Cell>
-            <Cell className={`right-align ${margin < 0 ? 'negative' : ''}`}>{NumberFormat.formatDecimal(margin * 100)}%</Cell>
+            <Cell className={RIGHT_ALIGN}>{NumberFormat.format(betCount)}</Cell>
+            <Cell className={RIGHT_ALIGN}>{NumberFormat.formatDecimal(turnover)}</Cell>
+            <Cell className={RIGHT_ALIGN}>{NumberFormat.formatDecimal(netTurnover)}</Cell>
+            <Cell className={RIGHT_ALIGN}>{NumberFormat.formatDecimal(playerWinloss)}</Cell>
+            {isGroupByPlayerMode && <Cell className={RIGHT_ALIGN}>{NumberFormat.formatDecimal(betEffective)}</Cell>}
+            <Cell className={RIGHT_ALIGN}>{NumberFormat.formatDecimal(playerComm)}</Cell>
+            <Cell className={`${RIGHT_ALIGN} ${licWinloss < 0 ? 'negative' : ''}`}>{NumberFormat.formatDecimal(licWinloss)}</Cell>
+            <Cell className={RIGHT_ALIGN}>{NumberFormat.formatDecimal(licComm)}</Cell>
+            <Cell className={`${RIGHT_ALIGN} ${margin < 0 ? 'negative' : ''}`}>{NumberFormat.formatDecimal(margin * 100)}%</Cell>
         </Row>
     );
 };

@@ -1,5 +1,5 @@
 import LangHelper from '@/helpers/langHelper';
-import Site from '@/lib/site';
+import FileDownloadHelper from '@/lib/fileDownloadHelper';
 import {
     CashOutModeList,
     ExportExcelMode,
@@ -174,37 +174,8 @@ export default class Service {
 
     // eslint-disable-next-line sonarjs/cognitive-complexity
     static downloadExcelFile = async params => {
-        try {
-            const response = await DataService.getProxyFile(DataService.apiKeys.report, ApiUrl.EXPORT_EXCEL_URL, params);
-            const contentType = response.headers['content-type'];
-            if (contentType && contentType.indexOf('application/json') > -1) {
-                const RowsExceedLimitErrorCode = 1001;
-                Site.readAsJson(response.data, result => {
-                    if (result.ErrorCode === RowsExceedLimitErrorCode) {
-                        this._showExportWarning();
-                    } else {
-                        const msg = result.ErrorMsg || LangHelper.getSingleResource('ErrorProcessingMsg');
-                        alert(msg);
-                    }
-                });
-            } else {
-                const NoContentStatusCode = 204;
-                if (response.status === NoContentStatusCode) {
-                    alert(LangHelper.getSingleResource('NoInfo'));
-                } else {
-                    const fileName = params.ExportExcelMode === ExportExcelMode.All ? 'WinLossReportGroupByAndBreakdownBy' : 'WinLossReportGroupBy';
-                    const isZipFile = response.headers['content-type'] === 'application/zip';
-                    const pageSuffix = isZipFile ? `_${params.PageIndex}` : '';
-                    const fileNameWithExt = `${fileName}${pageSuffix}.${isZipFile ? 'zip' : 'xls'}`;
-
-                    Site.downloadFile(response.data, fileNameWithExt);
-                    return true;
-                }
-            }
-            return false;
-        } catch (error) {
-            alert(LangHelper.getSingleResource('ErrorProcessingMsg'));
-            return null;
-        }
+        const response = await DataService.getProxyFile(DataService.apiKeys.report, ApiUrl.EXPORT_EXCEL_URL, params);
+        const fileName = params.ExportExcelMode === ExportExcelMode.All ? 'WinLossReportGroupByAndBreakdownBy' : 'WinLossReportGroupBy';
+        return FileDownloadHelper.downloadExcelFileAdvanced(params, response, fileName);
     };
 }

@@ -3,7 +3,7 @@ import cache from '@/lib/cache';
 import DataService from '@/lib/dataService';
 import { CHILD_ID_PREFIX } from './filterSettings';
 
-class Service {
+export default class Service {
     static generateReportTitle(fromDate, toDate, currencyName, minimumOdds, userName) {
         const title = LangHelper.getSingleResource('CustomerTurnover');
         const dateTitle = `${fromDate} → ${toDate}`;
@@ -86,5 +86,3 @@ class Service {
         xmlDoc.documentElement.appendChild(bettypeElem);
     };
 }
-
-export default Service;
