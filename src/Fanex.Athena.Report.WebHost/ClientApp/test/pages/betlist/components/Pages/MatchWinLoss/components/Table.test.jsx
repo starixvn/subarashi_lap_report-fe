@@ -14,7 +14,7 @@ jest.mock('@/pages/betlist/components/Pages/MatchWinLoss/constant/tableSettings'
   ColumnAlignments: []
 }))
 
-import Table from '@/pages/betlist/components/Pages/MatchWinLoss/components/Table'
+import Table from '@/pages/betlist/components/Pages/MatchWinLoss/components/MatchWinLossTable'
 
 const mockStore = configureStore([])
 

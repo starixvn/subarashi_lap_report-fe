@@ -1,6 +1,6 @@
 import React from 'react'
 import { render, screen, fireEvent } from '@testing-library/react'
-import HeaderCell from '@/pages/betlist/customGrid/HeaderCell'
+import HeaderCell from '@/pages/betlist/customGrid/BetListHeaderCell'
 
 describe('HeaderCell', () => {
     test('renders non-sortable header when sortBy is not provided', () => {

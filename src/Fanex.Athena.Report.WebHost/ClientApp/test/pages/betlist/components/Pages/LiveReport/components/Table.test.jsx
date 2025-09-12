@@ -14,7 +14,7 @@ jest.mock('@/pages/betlist/components/Pages/LiveReport/common/tableSettings', ()
   ColumnAlignments: []
 }))
 
-import Table from '@/pages/betlist/components/Pages/LiveReport/components/Table'
+import Table from '@/pages/betlist/components/Pages/LiveReport/components/LiveReportTable'
 
 const mockStore = configureStore([])
 
