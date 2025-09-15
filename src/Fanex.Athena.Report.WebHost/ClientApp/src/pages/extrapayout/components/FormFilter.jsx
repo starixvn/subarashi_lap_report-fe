@@ -208,8 +208,13 @@ export const FormFilter = (props) => {
             params.Username,
             isConvertAllToBaseCurrency
         );
+
+        const newDrillDownRequest = {};
+        newDrillDownRequest[ReportLevel.MAIN] = params;
+
         props.setReportTitle(title);
         props.setRequestParam(params);
+        props.setDrillDownRequest(newDrillDownRequest);
         props.toggleLoader(true);
         props.getReportData(ApiUrl.REPORT_DATA_URL, params);
     };
@@ -450,6 +455,7 @@ function mapStateToProps(state) {
         subsidiarySearch,
         selectedSubsidiary,
         isConvertAllToBaseCurrency,
+        drillDownRequest,
     } = state;
 
     return Object.assign(
@@ -469,6 +475,7 @@ function mapStateToProps(state) {
             subsidiarySearch,
             selectedSubsidiary,
             isConvertAllToBaseCurrency,
+            drillDownRequest,
         }
     );
 }
