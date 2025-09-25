@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const HeaderRow = ({ defaultSelectedHeaderKey, onSort, children, sortBy, sortOrder, ...rest }) => {
+const CustomHeaderRow = ({ defaultSelectedHeaderKey, onSort, children, sortBy, sortOrder, ...rest }) => {
     const renderChildren = () =>
         // Register onSort event
         React.Children.map(children, child => {
@@ -24,7 +24,7 @@ const HeaderRow = ({ defaultSelectedHeaderKey, onSort, children, sortBy, sortOrd
     return <tr {...rest}>{renderChildren()}</tr>;
 };
 
-HeaderRow.propTypes = {
+CustomHeaderRow.propTypes = {
     defaultSelectedHeaderKey: PropTypes.string,
     onSort: PropTypes.func,
     children: PropTypes.node,
@@ -32,11 +32,11 @@ HeaderRow.propTypes = {
     sortOrder: PropTypes.string,
 };
 
-HeaderRow.defaultProps = {
+CustomHeaderRow.defaultProps = {
     defaultSelectedHeaderKey: null,
     onSort: null,
     sortBy: null,
     sortOrder: null,
 };
 
-export default HeaderRow;
+export default CustomHeaderRow;

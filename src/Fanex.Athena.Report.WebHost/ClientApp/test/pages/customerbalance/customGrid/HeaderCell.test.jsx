@@ -1,6 +1,6 @@
 import React from 'react'
 import { render, screen, fireEvent } from '@testing-library/react'
-import HeaderCell from '@/pages/customerbalance/customGrid/HeaderCell'
+import HeaderCell from '@/pages/customerbalance/customGrid/CustomHeaderCell'
 
 describe('CustomerBalance HeaderCell', () => {
   test('renders and toggles sort order; lockArrow overrides', () => {

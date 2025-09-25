@@ -3,13 +3,13 @@ import Site from '@/lib/site';
 import Report from '@/lib/report';
 
 export default class Service {
-    static getTitle(params) {
-        const { fromDate, toDate, currency, baseCurrency, ProductCodeList, username, isConvertAllToBaseCurrency } = params;
+    // eslint-disable-next-line max-params
+    static getTitle(fromDate, toDate, currency, baseCurrency, productCodeList, username, isConvertAllToBaseCurrency) {
         const dateRangeText = fromDate && toDate ? `, ${Site.convertDateToString(fromDate)} ? ${Site.convertDateToString(toDate)}` : '';
 
         const currencyName = baseCurrency === '' ? currency : baseCurrency;
         const baseCurrencyText = isConvertAllToBaseCurrency ? `, ${LangHelper.getSingleResource('BaseCurrency')}: ${currencyName}` : '';
-        const productText = ` (${ProductCodeList.replaceAll(',', ', ')})`;
+        const productText = ` (${productCodeList.replaceAll(',', ', ')})`;
         const userNameText = username === '' ? '' : `, ${LangHelper.getSingleResource('Username')}: ${username}`;
 
         return `${LangHelper.getSingleResource('ExtraPayout') + dateRangeText}, ${LangHelper.getSingleResource('Currency')}: ${currency}${

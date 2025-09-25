@@ -9,15 +9,15 @@ import { headerText, PayoutPromotionType } from './constants';
 
 const ProductTIP = 'TIP';
 
-export const renderHeader = drilldownLevel => (
+export const renderHeader = drillDownLevel => (
     <HeaderRow style={{ height: 32 }}>
         <HeaderCell colWidth={50}>#</HeaderCell>
-        {drilldownLevel === 0 && <HeaderCell colWidth={100}>{headerText.date}</HeaderCell>}
-        {drilldownLevel === 1 && <HeaderCell colWidth={120}>{headerText.externalId}</HeaderCell>}
-        {drilldownLevel === 1 && <HeaderCell colWidth={120}>{headerText.systemId}</HeaderCell>}
+        {drillDownLevel === 0 && <HeaderCell colWidth={100}>{headerText.date}</HeaderCell>}
+        {drillDownLevel === 1 && <HeaderCell colWidth={120}>{headerText.externalId}</HeaderCell>}
+        {drillDownLevel === 1 && <HeaderCell colWidth={120}>{headerText.systemId}</HeaderCell>}
         <HeaderCell colWidth={70}>{headerText.currency}</HeaderCell>
         <HeaderCell colWidth={150}>{headerText.product}</HeaderCell>
-        {drilldownLevel === 1 && <HeaderCell colWidth={270}>{headerText.promotionType}</HeaderCell>}
+        {drillDownLevel === 1 && <HeaderCell colWidth={270}>{headerText.promotionType}</HeaderCell>}
         <HeaderCell colWidth={110}>{headerText.turnover}</HeaderCell>
         <HeaderCell colWidth={100}>{headerText.totalTransaction}</HeaderCell>
         <HeaderCell colWidth={110}>{headerText.customerAmount}</HeaderCell>

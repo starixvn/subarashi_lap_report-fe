@@ -16,8 +16,8 @@ jest.mock('@/pages/customerbalance/common', () => ({
     }
   }
 }))
-jest.mock('@/pages/customerbalance/customGrid/HeaderCell', () => ({ children }) => <th>{children}</th>)
-jest.mock('@/pages/customerbalance/customGrid/HeaderRow', () => ({ children }) => <tr>{children}</tr>)
+jest.mock('@/pages/customerbalance/customGrid/CustomHeaderCell', () => ({ children }) => <th>{children}</th>)
+jest.mock('@/pages/customerbalance/customGrid/CustomHeaderRow', () => ({ children }) => <tr>{children}</tr>)
 
 import { BuildHeaders } from '@/pages/customerbalance/gridUtility/Headers'
 
