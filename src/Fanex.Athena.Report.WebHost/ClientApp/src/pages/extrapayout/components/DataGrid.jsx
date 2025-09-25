@@ -254,6 +254,7 @@ const mapDispatchToProps = dispatch => {
             getReportData,
             setReportTitle,
             setDetailParams,
+            setDrillDownRequest,
         },
         dispatch
     );
@@ -271,6 +272,7 @@ const mapStateToProps = state => {
             detailParams,
             selectedCurrency,
             isConvertAllToBaseCurrency,
+            drillDownRequest,
         }
     );
 };

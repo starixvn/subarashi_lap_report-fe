@@ -1,4 +1,4 @@
-import { SET_REPORT_FILTER, SET_DETAIL_PARAMS, SET_CONVERT_ALL_TO_BASE_CURRENCY } from './types';
+import { SET_REPORT_FILTER, SET_DETAIL_PARAMS, SET_CONVERT_ALL_TO_BASE_CURRENCY, SET_DRILL_DOWN_REQUEST } from './types';
 
 const setReportFilter = data => ({
     type: SET_REPORT_FILTER,
@@ -15,12 +15,10 @@ const setConvertAllToBaseCurrency = data => ({
     data: data,
 });
 
-const setDrillDownRequest = (data) => {
-    return {
-        type: types.SET_DRILL_DOWN_REQUEST,
-        data: data,
-    };
-};
+const setDrillDownRequest = data => ({
+    type: SET_DRILL_DOWN_REQUEST,
+    data: data,
+});
 
 export default {
     setReportFilter,

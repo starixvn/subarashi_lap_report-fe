@@ -1,4 +1,4 @@
-import { SET_REPORT_FILTER, SET_DETAIL_PARAMS, SET_CONVERT_ALL_TO_BASE_CURRENCY } from '../actions/types';
+import { SET_REPORT_FILTER, SET_DETAIL_PARAMS, SET_CONVERT_ALL_TO_BASE_CURRENCY, SET_DRILL_DOWN_REQUEST } from '../actions/types';
 import createReducer from '@/lib/createReducer.js';
 
 const reportFilter = createReducer(null, {
@@ -19,11 +19,14 @@ const isConvertAllToBaseCurrency = createReducer(true, {
     },
 });
 
-const drillDownRequest = createReducer({}, {
-    [types.SET_DRILL_DOWN_REQUEST](state, action) {
-        return action.data;
-    },
-});
+const drillDownRequest = createReducer(
+    {},
+    {
+        [SET_DRILL_DOWN_REQUEST](state, action) {
+            return action.data;
+        },
+    }
+);
 
 export default {
     reportFilter,
