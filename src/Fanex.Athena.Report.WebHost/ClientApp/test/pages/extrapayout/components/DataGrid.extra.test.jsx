@@ -1,11 +1,13 @@
 import React from 'react'
 import { render, screen, fireEvent } from '@testing-library/react'
 
-jest.mock('@legion-lib/react-breadcrumb', () => ({ Breadcrumb: ({ items, value, onChange }) => (
-  <div data-testid="bc" data-value={value}>
-    {items.map(it => <button key={it.value} data-testid={`bc-${it.value}`} onClick={() => onChange(it)}>{it.label}</button>)}
-  </div>
-)}))
+jest.mock('@legion-lib/react-breadcrumb', () => ({
+  Breadcrumb: ({ items, value, onChange }) => (
+    <div data-testid="bc" data-value={value}>
+      {items.map(it => <button key={it.value} data-testid={`bc-${it.value}`} onClick={() => onChange(it)}>{it.label}</button>)}
+    </div>
+  )
+}))
 
 jest.mock('@legion-lib/react-grid', () => ({
   Table: ({ onSort, onPaging, header, body, footer }) => (
@@ -28,11 +30,11 @@ const mockPost = jest.fn(() => Promise.resolve({ data: { rows: [] } }))
 jest.mock('@/lib/dataService', () => ({ __esModule: true, default: { postReportData: (...a) => mockPost(...a) } }))
 
 jest.mock('@/pages/extrapayout/common/service', () => ({ __esModule: true, default: { getFormattedDate: d => '2024-01-01', getTitle: () => 'TITLE', showErrorMsg: jest.fn() } }))
-jest.mock('@/pages/extrapayout/common/constants', () => ({ ApiUrl: { REPORT_DATA_URL: '/data', REPORT_DETAIL_DATA_URL: '/detail' }, ReportLevel: { MAIN: 0, CUSTOMER: 2 }, BreadcrumbText: { main: 'Main', customer: 'Customer' }, DefaultPagingOption: { PageList: [10,20,50] } }))
+jest.mock('@/pages/extrapayout/common/constants', () => ({ ApiUrl: { REPORT_DATA_URL: '/data', REPORT_DETAIL_DATA_URL: '/detail' }, ReportLevel: { MAIN: 0, CUSTOMER: 2 }, BreadcrumbText: { main: 'Main', customer: 'Customer' }, DefaultPagingOption: { PageList: [10, 20, 50] } }))
 
 const mockUtils = {
   renderHeader: jest.fn(() => <div data-testid="h" />),
-  renderDataSection: jest.fn((data, level, onDrilldown, onBetlist) => ({ bodyData: <button data-testid="betlist" onClick={e => onBetlist(e, 1, 'nick', 'user')} /> , index: 0 })),
+  renderDataSection: jest.fn((data, level, onDrilldown, onBetlist) => ({ bodyData: <button data-testid="betlist" onClick={e => onBetlist(e, 1, 'nick', 'user')} />, index: 0 })),
   renderFooter: jest.fn(() => <div data-testid="f" />),
 }
 jest.mock('@/pages/extrapayout/common/gridUtils', () => ({
@@ -46,18 +48,20 @@ jest.mock('@/pages/extrapayout/components/Detail', () => ({ data }) => <div data
 import { DataGrid as Comp } from '@/pages/extrapayout/components/DataGrid'
 
 const baseProps = () => ({
-  reportData: { data: [{},{}], totalRows: 100 },
+  reportData: { data: [{}, {}], totalRows: 100 },
   requestParam: { DrillDownLevel: 2, FromDate: '2024-01-01', ToDate: '2024-01-31', PageIndex: 1, PageSize: 50, BaseCurrencyName: 'USD', ProductCodeList: [], Username: 'u', DrillDownFromDate: '2024-01-01', DrillDownToDate: '2024-01-31' },
   detailParams: null,
   selectedCurrency: 1,
   isConvertAllToBaseCurrency: false,
   reportTitle: 'T',
   reloadReport: false,
+  drillDownRequest: { 0: { FromDate: '2024-01-01', ToDate: '2024-01-31', BaseCurrencyName: 'USD' } },
   setRequestParam: jest.fn(),
   toggleLoader: jest.fn(),
   getReportData: jest.fn(),
   setReportTitle: jest.fn(),
-  setDetailParams: jest.fn()
+  setDetailParams: jest.fn(),
+  setDrillDownRequest: jest.fn()
 })
 
 test('returns null when data is null', () => {
