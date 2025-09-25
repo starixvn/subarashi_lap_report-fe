@@ -58,6 +58,7 @@ export const DataGrid = (props) => {
 
         const newRequestParam = {
             ...requestParam,
+            CurrencyName: currencyName,
             CurrencyIdList: currency,
             DrillDownFromDate: drilldownFromDateValue,
             DrillDownToDate: drilldownToDateValue,
@@ -74,17 +75,24 @@ export const DataGrid = (props) => {
             props.isConvertAllToBaseCurrency
         );
 
+        const updatedDrillDownRequest = { ...props.drillDownRequest };
+        updatedDrillDownRequest[drilldownDate] = newRequestParam;
+
         props.setReportTitle(title);
         props.setRequestParam(newRequestParam);
+        props.setDrillDownRequest(updatedDrillDownRequest);
         props.toggleLoader(true);
         props.getReportData(ApiUrl.REPORT_DATA_URL, newRequestParam);
     };
 
-    const _handleDrilldownBetlist = (e, custId, nickname, username) => {
+    const _handleDrilldownBetlist = (e, custId, nickname, username, currencyName) => {
         e.preventDefault();
+
+        const newBetlistBaseCurrency = currencyName && !requestParam.IsConvertAllToBaseCurrency ? currencyName : requestParam.BaseCurrencyName;
 
         const detailParams = {
             ...requestParam,
+            CurrencyName: newBetlistBaseCurrency,
             PageSize: 50,
             PageIndex: 1,
             IsExportExcel: false,
@@ -93,10 +101,7 @@ export const DataGrid = (props) => {
             ExternalId: nickname,
         };
 
-        const viewIn = LangHelper.getSingleResource('Viewin').replace(
-            '{0}',
-            requestParam.currencyName ? requestParam.currencyName : requestParam.BaseCurrencyName
-        );
+        const viewIn = LangHelper.getSingleResource('Viewin').replace('{0}', newBetlistBaseCurrency);
 
         const fromDate = new Date(requestParam.DrillDownFromDate);
         const fromDateValue = Service.getFormattedDate(fromDate);
@@ -161,11 +166,12 @@ export const DataGrid = (props) => {
         }
 
         props.toggleLoader(true);
+
+        const storedRequestParam = props.drillDownRequest[level];
         const newRequestParam = {
-            ...requestParam,
+            ...storedRequestParam,
             PageSize: 50,
             PageIndex: 1,
-            CurrencyIdList: props.selectedCurrency,
             DrillDownLevel: level,
         };
 
@@ -240,13 +246,13 @@ export const DataGrid = (props) => {
 };
 
 function mapDispatchToProps(dispatch) {
-    const { setRequestParam, toggleLoader, getReportData, setReportTitle, setDetailParams } = ActionCreators;
-    return bindActionCreators({ setRequestParam, toggleLoader, getReportData, setReportTitle, setDetailParams }, dispatch);
+    const { setRequestParam, toggleLoader, getReportData, setReportTitle, setDetailParams, setDrillDownRequest } = ActionCreators;
+    return bindActionCreators({ setRequestParam, toggleLoader, getReportData, setReportTitle, setDetailParams, setDrillDownRequest }, dispatch);
 }
 
 function mapStateToProps(state) {
-    const { requestParam, reportData, reportTitle, reloadReport, detailParams, selectedCurrency, isConvertAllToBaseCurrency } = state;
-    return Object.assign({}, { requestParam, reportData, reportTitle, reloadReport, detailParams, selectedCurrency, isConvertAllToBaseCurrency });
+    const { requestParam, reportData, reportTitle, reloadReport, detailParams, selectedCurrency, isConvertAllToBaseCurrency, drillDownRequest } = state;
+    return Object.assign({}, { requestParam, reportData, reportTitle, reloadReport, detailParams, selectedCurrency, isConvertAllToBaseCurrency, drillDownRequest });
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(DataGrid);

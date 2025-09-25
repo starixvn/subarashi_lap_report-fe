@@ -21,8 +21,16 @@ const setConvertAllToBaseCurrency = (data) => {
     };
 };
 
+const setDrillDownRequest = (data) => {
+    return {
+        type: types.SET_DRILL_DOWN_REQUEST,
+        data: data,
+    };
+};
+
 export default {
     setReportFilter,
     setDetailParams,
     setConvertAllToBaseCurrency,
+    setDrillDownRequest,
 };

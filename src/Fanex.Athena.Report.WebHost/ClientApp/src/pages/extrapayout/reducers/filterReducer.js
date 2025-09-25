@@ -19,8 +19,15 @@ const isConvertAllToBaseCurrency = createReducer(true, {
     },
 });
 
+const drillDownRequest = createReducer({}, {
+    [types.SET_DRILL_DOWN_REQUEST](state, action) {
+        return action.data;
+    },
+});
+
 export default {
     reportFilter,
     detailParams,
     isConvertAllToBaseCurrency,
+    drillDownRequest,
 };

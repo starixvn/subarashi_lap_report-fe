@@ -63,7 +63,7 @@ export const Detail = (props) => {
                         bodyHeight={430}
                         header={renderDetailHeader()}
                         body={renderDetailDataSection(data.data)}
-                        footer={renderDetailFooter(data)}
+                        footer={renderDetailFooter(data, param.BaseCurrency)}
                     />
                 ) : (
                     <NoDataTitle />
