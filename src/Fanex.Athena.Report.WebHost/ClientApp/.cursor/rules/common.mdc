@@ -1,0 +1,11 @@
+---
+description:
+globs:
+alwaysApply: true
+---
+
+- Project key is "LAP.ReportFE", use this info for sonarqube mcp
+- Always run "npm run test" for make sure all tests success after any changes
+- Always run "npm run lint" to get error, warnings, then fix it after any changes
+- Use "sequential-thinking" mcp for any decision making
+- Always not generate comment in code

@@ -1,0 +1,38 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run lint)",
+      "Bash(npx eslint:*)",
+      "Bash(grep:*)",
+      "Bash(for:*)",
+      "Bash(do echo \"=== $file ===\")",
+      "Bash(done)",
+      "Bash(npx prettier:*)",
+      "Bash(npm run test:*)",
+      "Bash(find:*)",
+      "Bash(do)",
+      "Bash(if grep -q \"v7_startTransition\" \"$file\")",
+      "Bash(then)",
+      "Bash(sed:*)",
+      "Bash(fi)",
+      "mcp__sonarqube__sonar_health_check",
+      "mcp__sonarqube__get_project_issues",
+      "Bash(npm run lint:*)",
+      "Bash(npm run build:*)",
+      "Bash(npm run:*)",
+      "Bash(npm test)",
+      "Bash(timeout 45 npm test)",
+      "mcp__sonarqube__get_project_issue_details",
+      "Bash(npm install:*)",
+      "Bash(true)",
+      "mcp__sonarqube__get_file_coverage",
+      "mcp__sequential-thinking__sequentialthinking",
+      "mcp__sonarqube__get_token_info",
+      "Bash(timeout 30 npm test:*)",
+      "mcp__sonarqube__get_project_metrics",
+      "mcp__sonarqube__get_file_duplications"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
