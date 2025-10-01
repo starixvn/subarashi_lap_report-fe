@@ -1124,4 +1124,7 @@
   <data name="OnlyOnce" xml:space="preserve">
     <value>Only once</value>
   </data>
+  <data name="OddsBoostBonus" xml:space="preserve">
+    <value>Odds Boost Bonus</value>
+  </data>
 </root>

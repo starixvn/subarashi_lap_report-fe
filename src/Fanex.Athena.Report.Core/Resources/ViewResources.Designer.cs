@@ -1627,6 +1627,15 @@ namespace Fanex.Athena.Report.Core.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Odds Boost Bonus.
+        /// </summary>
+        public static string OddsBoostBonus {
+            get {
+                return ResourceManager.GetString("OddsBoostBonus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Odds Group.
         /// </summary>
         public static string OddsGroup {

@@ -15,11 +15,14 @@ import { renderHeader, renderDataSection, renderFooter } from '../common/gridUti
 import { ApiUrl, ReportLevel, BreadcrumbText, DefaultPagingOption } from '../common/constants';
 import Service from '../common/service';
 import Detail from './Detail';
+import OddsBoostBonusDetail from './OddsBoostBonusDetail';
 
 export const DataGrid = (props) => {
     const [showBetList, setShowBetList] = useState(false);
     const [betListData, setBetListData] = useState(null);
     const [betlistTitle, setBetlistTitle] = useState('');
+    const [showOddsBoostBonus, setShowOddsBoostBonus] = useState(false);
+    const [oddsBoostBonusParams, setOddsBoostBonusParams] = useState(null);
     const [pagingOption, setPagingOption] = useState(DefaultPagingOption);
 
     const breadcrumbItems = [
@@ -158,6 +161,26 @@ export const DataGrid = (props) => {
         props.setDetailParams(null);
     };
 
+    const _handleOddsBoostBonusDetail = (e, currencyName) => {
+        e.preventDefault();
+
+        const newBaseCurrency = currencyName && !requestParam.IsConvertAllToBaseCurrency ? currencyName : requestParam.BaseCurrencyName;
+
+        const oddsBoostParams = {
+            ...requestParam,
+            CurrencyName: newBaseCurrency,
+            IsExportExcel: false
+        };
+
+        setOddsBoostBonusParams(oddsBoostParams);
+        setShowOddsBoostBonus(true);
+    };
+
+    const closeOddsBoostBonusPopup = () => {
+        setShowOddsBoostBonus(false);
+        setOddsBoostBonusParams(null);
+    };
+
     const drillDownData = (level) => {
         const currentLevel = requestParam.DrillDownLevel;
 
@@ -209,7 +232,7 @@ export const DataGrid = (props) => {
     };
 
     var lastIndex = requestParam.DrillDownLevel === ReportLevel.CUSTOMER && pagingOption.PageIndex > 1 ? pagingOption.LastIndex : 0;
-    var { bodyData, index } = renderDataSection(data, requestParam.DrillDownLevel, _handleDrilldown, _handleDrilldownBetlist, lastIndex);
+    var { bodyData, index } = renderDataSection(data, requestParam.DrillDownLevel, _handleDrilldown, _handleDrilldownBetlist, _handleOddsBoostBonusDetail, lastIndex);
     var currenPagingOption = {
         PageIndex: requestParam.PageIndex,
         PageSize: requestParam.PageSize,
@@ -239,6 +262,11 @@ export const DataGrid = (props) => {
             {requestParam.DrillDownLevel === ReportLevel.CUSTOMER && showBetList && (
                 <Popup isShow={showBetList} title={LangHelper.getSingleResource('PromotionDetails')} className="betlist-container" onClose={closeBetListPopup}>
                     <Detail data={betListData} title={betlistTitle} param={detailParams} />
+                </Popup>
+            )}
+            {requestParam.DrillDownLevel === ReportLevel.CUSTOMER && showOddsBoostBonus && (
+                <Popup isShow={showOddsBoostBonus} title={LangHelper.getSingleResource('PromotionDetails')} className="betlist-container" onClose={closeOddsBoostBonusPopup}>
+                    <OddsBoostBonusDetail param={oddsBoostBonusParams} />
                 </Popup>
             )}
         </div>

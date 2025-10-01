@@ -1068,4 +1068,7 @@
   <data name="OnlyOnce" xml:space="preserve">
     <value>เพียงครั้งเดียว</value>
   </data>
+  <data name="OddsBoostBonus" xml:space="preserve">
+    <value>ตัวเพิ่มอัตราต่อรอง โบนัส </value>
+  </data>
 </root>
