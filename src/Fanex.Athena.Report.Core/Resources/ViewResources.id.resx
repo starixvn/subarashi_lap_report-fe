@@ -1059,4 +1059,7 @@
   <data name="OnlyOnce" xml:space="preserve">
     <value>Hanya sekali</value>
   </data>
+  <data name="OddsBoostBonus" xml:space="preserve">
+    <value>Penambah Peluang Bonus</value>
+  </data>
 </root>

@@ -8,6 +8,8 @@ export const ApiUrl = {
     EXPORT_REPORT_DATA_URL: 'Api/ExtraPayout/ExportExcel',
     REPORT_DETAIL_DATA_URL: 'Api/ExtraPayout/GetDetailData',
     EXPORT_REPORT_DETAIL_DATA_URL: 'Api/ExtraPayout/ExportDetailExcel',
+    ODDS_BOOST_BONUS_DETAIL_DATA_URL: 'Api/ExtraPayout/GetOddsBoostBonusDetailData',
+    EXPORT_ODDS_BOOST_BONUS_DETAIL_DATA_URL: 'Api/ExtraPayout/ExportOddsBoostBonusDetailExcel',
 };
 
 export const headerText = {

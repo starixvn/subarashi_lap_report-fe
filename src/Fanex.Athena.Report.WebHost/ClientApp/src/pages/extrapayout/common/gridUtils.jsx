@@ -27,11 +27,11 @@ export const renderHeader = (drilldownLevel) => {
     );
 };
 
-export const renderDataSection = (dataList, drilldownLevel, handleDrilldown, handleDrilldownBetlist, index) => {
+export const renderDataSection = (dataList, drilldownLevel, handleDrilldown, handleDrilldownBetlist, handleOddsBoostBonusDetail, index) => {
     const dataRows = [];
 
     for (let i = 0; i < dataList.length; i++) {
-        dataRows.push(buildDataRow(dataList[i], drilldownLevel, handleDrilldown, handleDrilldownBetlist));
+        dataRows.push(buildDataRow(dataList[i], drilldownLevel, handleDrilldown, handleDrilldownBetlist, handleOddsBoostBonusDetail));
     }
 
     return { bodyData: dataRows, index };
@@ -78,7 +78,7 @@ export const renderFooter = (data, drilldownLevel) => {
     return totalRows;
 };
 
-const buildDataRow = (dataItem, drilldownLevel, handleDrilldown, handleDrilldownBetlist) => {
+const buildDataRow = (dataItem, drilldownLevel, handleDrilldown, handleDrilldownBetlist, handleOddsBoostBonusDetail) => {
     const {
         index,
         indexRowSpan,
@@ -113,8 +113,8 @@ const buildDataRow = (dataItem, drilldownLevel, handleDrilldown, handleDrilldown
                     {dateString}
                 </Cell>
             )}
-            {indexRowSpan > 0  && drilldownLevel === 1 && buildAccountText(promotionType, nickname, indexRowSpan, (e)=> handleDrilldownBetlist(e, custId, nickname, username,currencyName))}
-            {indexRowSpan > 0  && drilldownLevel === 1 && buildAccountText(promotionType, username, indexRowSpan, (e)=> handleDrilldownBetlist(e, custId, nickname, username,currencyName))}
+            {indexRowSpan > 0  && drilldownLevel === 1 && buildAccountText(promotionType, nickname, indexRowSpan, (e)=> handleDrilldownBetlist(e, custId, nickname, username, currencyName), (e)=> handleOddsBoostBonusDetail(e, currencyName))}
+            {indexRowSpan > 0  && drilldownLevel === 1 && buildAccountText(promotionType, username, indexRowSpan, (e)=> handleDrilldownBetlist(e, custId, nickname, username, currencyName), (e)=> handleOddsBoostBonusDetail(e, currencyName))}
             {curencyRowSpan > 0 && drilldownLevel === 0 && (
                 <Cell className="center-align" rowSpan={curencyRowSpan}>
                     <a href="#" onClick={(e) => handleDrilldown(e, currency, currencyName, date)}>
@@ -138,16 +138,25 @@ const buildDataRow = (dataItem, drilldownLevel, handleDrilldown, handleDrilldown
     );
 };
 
-const buildAccountText = (promotionType, textValue, indexRowSpan, onClickFunc) =>
-    promotionType === PayoutPromotionType.OddsBoostAdjustment
-        && <Cell className="center-align" rowSpan={indexRowSpan}>
-                {textValue}
+const buildAccountText = (promotionType, textValue, indexRowSpan, onClickFunc, onOddsBoostClickFunc) => {
+    if (promotionType === PayoutPromotionType.OddsBoostAdjustment) {
+        return (
+            <Cell className="center-align" rowSpan={indexRowSpan}>
+                {textValue && <a href="#" onClick={onOddsBoostClickFunc}>
+                    {LangHelper.getSingleResource('OddsBoostBonus')}
+                </a>}
             </Cell>
-        || <Cell className="center-align" rowSpan={indexRowSpan}>
+        );
+    } else {
+        return (
+            <Cell className="center-align" rowSpan={indexRowSpan}>
                 <a href="#" onClick={onClickFunc}>
                     {textValue}
                 </a>
             </Cell>
+        );
+    }
+}
 
 const buildCommonRow = (turnover, betCount, amount, sharingAmount, productCode) => {
     return (
