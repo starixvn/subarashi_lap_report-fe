@@ -62,7 +62,7 @@ $white: #fff;
 
 .betlist-container {
     .header-content {
-        .table>thead>tr>th {
+        .table > thead > tr > th {
             vertical-align: middle;
             text-align: center;
             border: 1px solid #ffffff;
@@ -74,16 +74,16 @@ $white: #fff;
             color: #fff;
         }
     }
-    
+
     .header-title {
         &.selected {
             text-decoration: underline;
         }
     }
-    
+
     .footer-content {
-        .table>tbody>tr {
-            &.light-footer>td {
+        .table > tbody > tr {
+            &.light-footer > td {
                 background: #ffffff;
             }
         }
@@ -423,33 +423,37 @@ $white: #fff;
     }
 }
 
-.mobile-betlist-container{
-    .report-title-container{
-       padding-left: 5px; 
+.mobile-betlist-container {
+    .report-title-container {
+        padding-left: 5px;
     }
-    .fixed-table-grant-total{
+
+    .fixed-table-grant-total {
         text-align: right;
-        .cell-total{
+
+        .cell-total {
             display: flex;
             justify-content: space-between;
         }
-        td.cell-total-winloss{
+
+        td.cell-total-winloss {
             border-right-color: #b8c3c9;
             overflow: visible;
-            &+ td{
+
+            & + td {
                 border-left-color: #b8c3c9;
             }
         }
-        td:first-child{
+
+        td:first-child {
             text-align: center;
         }
     }
 
-    tr
-    {
-        &.row-active{
-            &.collapse-row, &.collapse-row:hover{
-                td:first-child{
+    tr {
+        &.row-active {
+            &.collapse-row, &.collapse-row:hover {
+                td:first-child {
                     background: #F6DFA1;
                 }
             }
@@ -457,65 +461,200 @@ $white: #fff;
     }
 
     &.betlist-container {
-        .bettype, .match{
+        .bettype, .match {
             text-align: left;
         }
-        .match + div.league{
+
+        .match + div.league {
             text-align: left;
         }
     }
 
-    .collapse-row{
-        td:first-child{
+    .collapse-row {
+        td:first-child {
             background: #9EB4C3;
         }
     }
-    
-    .table > tbody{
-        tr td{
-           &.cell-collapse{
-            padding-left: 0px;
-            padding-right: 0px;
-           }
-           &.cell-stake{
-            padding-left: 0px;
-            .stake{
+
+    .table > tbody {
+        tr td {
+            &.cell-collapse {
+                padding-left: 0px;
+                padding-right: 0px;
+            }
+
+            &.cell-stake {
+                padding-left: 0px;
+
+                .stake {
+                    word-break: break-all;
+                }
+            }
+
+            &.cell-winloss .underdog {
                 word-break: break-all;
             }
-           }
-           &.cell-winloss .underdog{
-            word-break: break-all;
-           }
         }
-        tr.fixed-table-grant-total:hover{
-            td{
+
+        tr.fixed-table-grant-total:hover {
+            td {
                 background-color: #b8c3c9;
             }
         }
-    }  
-    .icon{
+    }
+
+    .icon {
         color: #217A4A;
         font-size: 22px;
     }
-    .cell-index{
-        .index{
+
+    .cell-index {
+        .index {
             color: #AA5200;
         }
+
         margin-bottom: 4px;
-    }  
-    .cell-odd{
+    }
+
+    .cell-odd {
         display: flex;
         margin-top: 4px;
     }
-    .cell-external-id{
+
+    .cell-external-id {
         border-bottom: 1px solid #BFB9A9;
         background: #D9D2C0;
     }
-    .cell-choice{
+
+    .cell-choice {
         margin-top: 8px;
     }
-    .table .status{
+
+    .table .status {
         margin-top: 8px;
     }
 }
 
+.offer-name-list.void {
+    text-decoration: line-through;
+}
+
+.hybrid-parlay-match-ticket-list.void, .hybrid-parlay-match-ticket-list .list-builder .void {
+    text-decoration: line-through;
+}
+
+.hybrid-parlay-match-ticket-list .list-builder {
+    list-style: none;
+    padding: 5px 10px 5px 5px;
+    margin: 0;
+    border-radius: 3px;
+    background-color: #EDFCFF;
+    margin-bottom: 3px;
+}
+
+.hybrid-parlay-match-ticket-list .list-builder li {
+    position: relative;
+    padding-right: 20px;
+    padding: 5px 10px 5px 0;
+    border-right: 2px solid #0066CC;
+    font-weight: bold;
+    color: #003399;
+}
+
+.hybrid-parlay-match-ticket-list .list-builder li:after {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -5px;
+    width: 6px;
+    height: 6px;
+    border: 1px solid #0066CC;
+    background-color: #fff;
+    border-radius: 50%;
+    content: '';
+}
+
+.hybrid-parlay-match-ticket-list .list-builder li:first-child:before {
+    position: absolute;
+    content: '';
+    top: 0;
+    right: -2px;
+    background-color: #E7FBFF;
+    width: 3px;
+    height: 50%;
+}
+
+.hybrid-parlay-match-ticket-list .list-builder li:last-child:before {
+    position: absolute;
+    content: '';
+    bottom: 0;
+    right: -2px;
+    background-color: #E7FBFF;
+    width: 3px;
+    height: 50%;
+}
+
+.hybrid-parlay-match-ticket-list .status {
+    border-radius: 23px;
+    border: 1px solid #0066CC;
+    padding: 0 5px 1px 5px;
+    font-size: 11px;
+    font-weight: bold;
+    color: #0066CC;
+    margin: 2px 0 2px 5px;
+    display: inline-block;
+    text-transform: capitalize;
+}
+
+.hybrid-parlay-match-ticket-list .list-builder.single {
+    padding: 0;
+    background: none;
+}
+
+.hybrid-parlay-match-ticket-list .list-builder.single li {
+    border: 0;
+    padding: 0;
+}
+
+.hybrid-parlay-match-ticket-list .list-builder.single li:after, .hybrid-parlay-match-ticket-list .list-builder.single li:before {
+    display: none;
+}
+
+.hybrid-parlay-match-ticket-list .info .league {
+    margin-bottom: 3px;
+}
+
+.hybrid-parlay-match-ticket-list .info .live {
+    color: #B50000;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+.hybrid-parlay-match-ticket-list .odds {
+    font-weight: bold;
+    color: #039;
+}
+
+.hybrid-parlay-match-ticket-list .odds .old-odds {
+    color: #9B9B9B;
+    text-decoration: line-through;
+    margin-right: 4px;
+}
+
+.hybrid-parlay-match-ticket-list .odds .cur-odds {
+    font-weight: bold;
+}
+
+.offer-name-list.void {
+    text-decoration: line-through;
+}
+
+.hybrid-parlay-match-ticket-list.void, .hybrid-parlay-match-ticket-list .list-builder .void {
+    text-decoration: line-through;
+}
+
+span.strikethrough {
+    text-decoration: line-through;
+    color: #bbb;
+    font-weight: bold !important;
+}
